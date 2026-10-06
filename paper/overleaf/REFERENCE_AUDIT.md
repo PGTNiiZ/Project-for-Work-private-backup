@@ -1,0 +1,29 @@
+# Reference Audit
+
+All 16 bibliography entries used by `main.tex` were checked against an official publisher record, Crossref metadata, or (for LinkSocial) the public dataset repository plus IEEE Xplore document identifier. Bibliographic author names are citations and do not affect manuscript anonymity.
+
+| Citation | Verified source | DOI / identifier | Why cited | Where used |
+|---|---|---|---|---|
+| Shu et al., “User Identity Linkage across Online Social Networks: A Review,” 2017 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/3068777.3068781) | `10.1145/3068777.3068781` | Defines cross-platform user identity linkage and its evidence families. | Introduction; Related Work—Cross-Platform Identity Resolution |
+| Thirumuruganathan et al., “Deep Learning for Blocking in Entity Matching: A Design Space Exploration,” 2021 | [PVLDB / DOI](https://doi.org/10.14778/3476249.3476294) | `10.14778/3476249.3476294` | Positions learned semantic blocking as future work while preserving the paper's fixed-blocking boundary. | Related Work—Candidate Generation; Results—Retrieval Ceiling |
+| Yao, “User Identity Linkage Across Multiple Social Network Based on Profile Features,” 2023 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/3650400.3650622) | `10.1145/3650400.3650622` | Direct profile-feature comparator in the application domain. | Introduction; Related Work—Cross-Platform Identity Resolution |
+| Papadakis et al., “Blocking and Filtering Techniques for Entity Resolution: A Survey,” 2021 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/3377455) | `10.1145/3377455` | Establishes blocking as a scalable ER stage and motivates separate retrieval reporting. | Introduction; Related Work—Candidate Generation |
+| Li et al., “A Survey on Blocking Technology of Entity Resolution,” 2020 | [Springer](https://link.springer.com/article/10.1007/s11390-020-0350-4) | `10.1007/s11390-020-0350-4` | Corroborates the computation/completeness trade-off of blocking. | Introduction; Related Work—Candidate Generation |
+| Barlaug and Gulla, “Neural Networks for Entity Matching: A Survey,” 2021 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/3442200) | `10.1145/3442200` | Synthesizes neural entity-matching stages and cautions against conflating pipeline components. | Introduction; Related Work—Pair Representation |
+| Chow, “On Optimum Recognition Error and Reject Tradeoff,” 1970 | [IEEE DOI](https://doi.org/10.1109/TIT.1970.1054406) | `10.1109/TIT.1970.1054406` | Provides foundational reject-option decision theory. | Related Work—Three-Way and Human-Review Decisions |
+| Li et al., “Deep Entity Matching with Pre-Trained Language Models,” 2020 | [PVLDB / DOI](https://doi.org/10.14778/3421424.3421431) | `10.14778/3421424.3421431` | Positions transformer language models for heterogeneous entity matching. | Introduction; Related Work—Pair Representation |
+| Hendrickx et al., “Machine Learning with a Reject Option: A Survey,” 2024 | [Springer](https://link.springer.com/article/10.1007/s10994-024-06534-x) | `10.1007/s10994-024-06534-x` | Grounds abstention/rejection and review-burden framing. | Introduction; Related Work—Three-Way and Human-Review Decisions |
+| Qian et al., “SystemER: A Human-in-the-Loop System for Explainable Entity Resolution,” 2019 | [PVLDB / DOI](https://doi.org/10.14778/3352063.3352068) | `10.14778/3352063.3352068` | Distinguishes an operational human-review system from the manuscript's offline REVIEW output. | Introduction; Related Work—Three-Way and Human-Review Decisions |
+| Ouyang et al., “Record Linkage Based on a Three-Way Decision with the Use of Granular Descriptors,” 2019 | [ScienceDirect / DOI](https://doi.org/10.1016/j.eswa.2018.12.038) | `10.1016/j.eswa.2018.12.038` | Establishes three-way record linkage as prior art. | Introduction; Related Work—Three-Way Decisions |
+| Sun et al., “A Genetic Algorithm Based Entity Resolution Approach with Active Learning,” 2017 | [Springer / DOI](https://doi.org/10.1007/s11704-015-5276-6) | `10.1007/s11704-015-5276-6` | Establishes GA-based entity resolution as prior art. | Introduction; Related Work—Evolutionary Optimization |
+| Sharma and Dyreson, “LINKSOCIAL,” 2018 | [IEEE DOI](https://doi.org/10.1109/ICBK.2018.00042) and [dataset repository](https://github.com/vishalshar/Dataset-LinkSocial) | `10.1109/ICBK.2018.00042`; IEEE Xplore document `8588801` | Original corpus/publication provenance. | Related Work; Methodology—Dataset |
+| Fellegi and Sunter, “A Theory for Record Linkage,” 1969 | [Taylor & Francis](https://www.tandfonline.com/doi/abs/10.1080/01621459.1969.10501049) | `10.1080/01621459.1969.10501049` | Foundational probabilistic record-linkage decision theory. | Related Work—Three-Way Decisions |
+| Niculescu-Mizil and Caruana, “Predicting Good Probabilities with Supervised Learning,” 2005 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/1102351.1102430) | `10.1145/1102351.1102430` | Grounds supervised probability calibration and isotonic regression. | Related Work—Evolutionary Optimization and Evaluation |
+| Christen et al., “Consistently Evaluating Record Linkage Classifiers,” 2026 | [ACM Digital Library](https://dl.acm.org/doi/10.1145/3786768) | `10.1145/3786768` | Supports application-dependent evaluation and multi-outcome reporting. | Related Work—Evaluation |
+
+## Exclusions and boundaries
+
+- No citation was added solely to increase bibliography length.
+- Search results without verifiable author, venue, year, and DOI/official identifier were excluded.
+- No claim of first use or absence of prior combinations is made.
+- Scopus and Web of Science were not used because no authenticated access was available; publisher records, Crossref, ACM, Springer, ScienceDirect/DOI records, and the verified dataset repository were used instead.

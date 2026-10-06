@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "seed": 101,
+      "independent_metrics": "PASS",
+      "risk_minimal": "PASS",
+      "static_scope_unchanged": "PASS",
+      "anytime_vectors": "PASS"
+    },
+    {
+      "seed": 202,
+      "independent_metrics": "PASS",
+      "risk_minimal": "PASS",
+      "static_scope_unchanged": "PASS",
+      "anytime_vectors": "PASS"
+    },
+    {
+      "seed": 303,
+      "independent_metrics": "PASS",
+      "risk_minimal": "PASS",
+      "static_scope_unchanged": "PASS",
+      "anytime_vectors": "PASS"
+    }
+  ],
+  "numeric_table": "PASS",
+  "citation_closure": "PASS",
+  "citation_count": 13,
+  "figure_presence": "PASS",
+  "reference_labels": "PASS",
+  "off_topic_and_anonymity": "PASS",
+  "tex_build": "PASS",
+  "overfull": false,
+  "remaining_warnings": [
+    "font substitutions",
+    "one underfull paragraph",
+    "one underfull page box"
+  ]
+}
