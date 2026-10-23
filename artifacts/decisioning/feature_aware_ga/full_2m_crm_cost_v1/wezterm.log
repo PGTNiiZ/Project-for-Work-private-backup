@@ -1,0 +1,24 @@
+[ 76%] AUDIT: loaded 2,073,842 scored candidates from resumable chunks
+[ 58%] AUDIT: computing availability coverage and reliability by evidence group
+[ 62%] GA_SELECTOR: optimizing score-only and one-guard GA policies on validation
+[ 64%] GA_SELECTOR: completed guard score_only (1/6)
+[ 66%] GA_SELECTOR: completed guard name (2/6)
+[ 68%] GA_SELECTOR: completed guard bio (3/6)
+[ 71%] GA_SELECTOR: completed guard url (4/6)
+[ 73%] GA_SELECTOR: completed guard image (5/6)
+[ 75%] GA_SELECTOR: completed guard style (6/6)
+[ 77%] GA_WEIGHTED: optimizing availability-gated evidence weights on validation
+[ 77%] GA_WEIGHTED: generation 0/60; validation cost 54922.00
+[ 79%] GA_WEIGHTED: generation 5/60; validation cost 5170.20
+[ 80%] GA_WEIGHTED: generation 10/60; validation cost 5122.70
+[ 81%] GA_WEIGHTED: generation 15/60; validation cost 5117.60
+[ 83%] GA_WEIGHTED: generation 20/60; validation cost 5115.00
+[ 85%] GA_WEIGHTED: generation 25/60; validation cost 4974.90
+[ 86%] GA_WEIGHTED: generation 30/60; validation cost 4932.70
+[ 87%] GA_WEIGHTED: generation 35/60; validation cost 4909.80
+[ 89%] GA_WEIGHTED: generation 40/60; validation cost 4909.70
+[ 91%] GA_WEIGHTED: generation 45/60; validation cost 4902.70
+[ 92%] GA_WEIGHTED: generation 50/60; validation cost 4901.20
+[ 93%] GA_WEIGHTED: generation 55/60; validation cost 4899.00
+[ 95%] GA_WEIGHTED: generation 59/60; validation cost 4897.10
+[100%] DONE: validation policy frozen; test intentionally not evaluated

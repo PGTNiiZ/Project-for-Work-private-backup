@@ -1,0 +1,34 @@
+{
+  "schema_id": "authoritative_run_v2.corrected_gb17.v1",
+  "source": "experiments/icsec_final/authoritative_run_v2/features.py",
+  "ordered_columns": [
+    "username_jaro", "username_lev_sim", "username_token_sort",
+    "fullname_jaro", "fullname_lev_sim", "fullname_token_sort", "name_sim",
+    "bio_jaccard", "bio_len_ratio", "both_have_bio", "location_jaro",
+    "location_exact", "both_have_location", "same_platform",
+    "username_len_diff", "fullname_wordcount_diff", "username_prefix3_match"
+  ],
+  "dtype": "float32",
+  "normalization": "null/float NaN to empty; Unicode NFKC; casefold; trim; lstrip leading @; collapse whitespace",
+  "features": [
+    {"name":"username_jaro","formula":"Jaro(username_a,username_b), else 0 if either empty","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"username_lev_sim","formula":"1-Levenshtein.distance(a,b)/max(len(a),len(b)); empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"username_token_sort","formula":"RapidFuzz token_sort_ratio(a,b)/100; empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"fullname_jaro","formula":"Jaro(fullName_a,fullName_b), else 0 if either empty","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"fullname_lev_sim","formula":"1-Levenshtein.distance(a,b)/max(len(a),len(b)); empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"fullname_token_sort","formula":"RapidFuzz token_sort_ratio(a,b)/100; empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"name_sim","formula":"max JaroWinkler across nonempty username/fullName cross-field combinations; default 0","range":[0,1],"missing":"omit unavailable comparisons; all unavailable -> 0","symmetric":true},
+    {"name":"bio_jaccard","formula":"Jaccard(set(bio_a.split()),set(bio_b.split())); empty union -> 0","range":[0,1],"missing":"empty/empty -> 0","symmetric":true},
+    {"name":"bio_len_ratio","formula":"min(len(a),len(b))/max(len(a),len(b)); both empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"both_have_bio","formula":"float(bool(bio_a and bio_b))","range":[0,1],"missing":"0 if either absent","symmetric":true},
+    {"name":"location_jaro","formula":"Jaro(location_a,location_b), else 0 if either empty","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"location_exact","formula":"float(bool(location_a and location_a == location_b))","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"both_have_location","formula":"float(bool(location_a and location_b))","range":[0,1],"missing":"0 if either absent","symmetric":true},
+    {"name":"same_platform","formula":"float(bool(platform_a and platform_a == platform_b))","range":[0,1],"missing":"0 if A absent or unequal","symmetric":true},
+    {"name":"username_len_diff","formula":"abs(len(a)-len(b))/max(len(a),len(b)); both empty -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"fullname_wordcount_diff","formula":"abs(len(a.split())-len(b.split()))/max(wordcounts); both zero -> 0","range":[0,1],"missing":"0","symmetric":true},
+    {"name":"username_prefix3_match","formula":"float(len(a)>=3 and len(b)>=3 and a[:3]==b[:3])","range":[0,1],"missing":"0","symmetric":true}
+  ],
+  "input_exclusions": ["labels", "entity IDs", "model scores", "embeddings"],
+  "feature18": {"column":"bert_cos", "not_in_gb17":true}
+}

@@ -1,0 +1,17 @@
+{
+  "docs/research_rebuild/phase_01/01_DATASET_AND_FEATURE_LINEAGE.md": "17ec08da3006a5abdd0a1cab94d0a271233b1d086d2046a8206a9146802ac35b",
+  "docs/research_rebuild/phase_01/dataset_audit_outputs.json": "89f1ca7c72f559deaadc9ef882ae31a185aff0edd899116724fa4a78602a05ce",
+  "docs/research_rebuild/phase_01/dataset_candidate_accounting.json": "aa473ff87bc963e7dc0e089db009a3a65a7fc697e65bca2a683d2453634d8871",
+  "docs/research_rebuild/phase_01/dataset_candidate_audit.py": "fe6b8314da468b0e100fececc60f1153bd89aba7b440be68c7a2bdf4d0efaeb3",
+  "docs/research_rebuild/phase_01/dataset_inventory.csv": "a819087bc078deaab2815d46cafad50506edd7daddc78d3bb30839382c5ed49f",
+  "docs/research_rebuild/phase_01/dataset_inventory.json": "7989c1ecaa692f52ab5b524615271eac37175474a0c268ebbf13919b050fcb1a",
+  "docs/research_rebuild/phase_01/dataset_notebook_evidence.json": "63ffd428c00a5c1bee811bba0d2e8f6ece2e205a254f3c0c15680b90dd640a1d",
+  "docs/research_rebuild/phase_01/dataset_readonly_audit.py": "d723286884df5562b905a0b926d93c48ea3d3702781fe249ac311662c48b0467",
+  "docs/research_rebuild/phase_01/dataset_reconciliation_audit.py": "9331d87c844326fc76567b8f9db780c23f106c6d943cbf096677cc0f152eb574",
+  "docs/research_rebuild/phase_01/dataset_reconciliation_outputs.json": "388d4e9e1ae51c8d50f6ad70fa71c8b920ead02b5c3fb8659c7dde4beb538ee7",
+  "docs/research_rebuild/phase_01/dataset_report_renderer.py": "50c83f08e8c694c8e72abfde27924a06fde109828bdc388f96808bc9a326070d",
+  "docs/research_rebuild/phase_01/dataset_v2_feature_audit.py": "9a93dead4a7779435fa56e4a1966dfca5c14a078fda871bf1cbb50a13b967be1",
+  "docs/research_rebuild/phase_01/dataset_v2_feature_verification.json": "805125ae2da796a4c1040fe4b70e123aeafd56d6639c0c101ecf038661c9fd2e",
+  "docs/research_rebuild/phase_01/dataset_workbook07_evidence.json": "f025809279e960bb4b63482226fa06a7da7fa2c59add184254e8c88c099e255a",
+  "docs/research_rebuild/phase_01/transformation_verification.csv": "b983339cf7e4dc947bf4001a9a4c9e0b270b57b352ee87e758d895a897a4da90"
+}

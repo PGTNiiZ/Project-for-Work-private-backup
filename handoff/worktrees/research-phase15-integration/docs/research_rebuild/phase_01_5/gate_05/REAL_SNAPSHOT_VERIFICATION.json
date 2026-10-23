@@ -1,0 +1,123 @@
+{
+  "approved_snapshot": false,
+  "candidate_artifact": {
+    "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/candidates/workflow.parquet",
+    "rows": 2086245,
+    "sha256": "30d168d48d8ca610ce3be5ea46bfccd124aa6676044ab68d58f56a8ef5b480b0"
+  },
+  "feature_alignment": {
+    "bert_cos_sha256": "9c5693483020ae2a9937d979474df30ec5156e4b20632ad8a6e9866393947297",
+    "feature17_columns_match_registry": true,
+    "feature17_feature18_pair_order_equal": true,
+    "feature17_rows": 2073842,
+    "feature18_pair_columns": [
+      "profile_row_id_a",
+      "profile_row_id_b",
+      "bert_cos"
+    ],
+    "feature18_rows": 2073842,
+    "gb17_sha256": "960fe07b6e46abae8502d4bc8fae6dd8a0589f5bb61d7faea9ae07534f85a057",
+    "persisted_bert_cos_sample_dot_product_rows": 16,
+    "persisted_bert_cos_sample_matches_embedding_dot_products": true
+  },
+  "historical_pair_key_rejoin": {
+    "ambiguous_endpoint_keys": 0,
+    "blocking_miss_rows_without_candidate_endpoint_mapping": 1034,
+    "decision_artifact": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/decisions/B0_workflow.parquet",
+    "decision_artifact_sha256": "bc565dd3a88e0441d4418437cbe2f5bad7c3b1a56eef45b90df545c1355dd678",
+    "exact_and_scored_keys": 193692,
+    "historical_split_role_manifest": "NOT VERIFIED; new candidate fold roles are not substituted for historical roles",
+    "matched_explicit_endpoint_keys": 193692,
+    "metric_replay_performed": false,
+    "pair_key_scheme": "sha256('v2-pair:<lower-profile_row_id>:<higher-profile_row_id>')",
+    "pair_key_source": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/real_adapters.py",
+    "pair_key_source_sha256": "59c4a3f65266a3f25c1e07da5a056c2f87732cbb723e0720075123d1493b4c67"
+  },
+  "minilm_artifacts": {
+    "embedding_dtype": "float32",
+    "embedding_ids_match_snapshot_order": true,
+    "embedding_ids_sha256": "ceb4b0ae81b49c631594aa1ec4bd0b0ce8ec362e028967367ee7ffcba61caea5",
+    "embedding_norm_max": 1.0000001192092896,
+    "embedding_norm_min": 0.9999998211860657,
+    "embedding_shape": [
+      36807,
+      384
+    ],
+    "historical_embedding_to_model_revision_lineage": "NOT VERIFIED: local model cache is identified, but embedding artifact has no binding manifest",
+    "historical_text_serialization": "NOT VERIFIED: persisted documents specify fields and [empty], but encoder preprocessing implementation/manifest is absent",
+    "local_snapshot_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "model_identifier": "sentence-transformers/all-MiniLM-L6-v2",
+    "module_types": [
+      "Transformer",
+      "Pooling",
+      "Normalize"
+    ],
+    "pooling_config": {
+      "pooling_mode_cls_token": false,
+      "pooling_mode_max_tokens": false,
+      "pooling_mode_mean_sqrt_len_tokens": false,
+      "pooling_mode_mean_tokens": true,
+      "word_embedding_dimension": 384
+    },
+    "tokenizer_bundle_sha256": "78a3daa92dcec076e80baaa628a6553bcbd0b431a214eb02d72c8b5672e69e09",
+    "tokenizer_file_sha256": {
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "weights_downloaded_or_replaced": false,
+    "weights_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db"
+  },
+  "pair_routing": {
+    "cross_role_dropped": 1482122,
+    "cross_role_dropped_by_pair_type": {
+      "AUTO_EXACT": 41,
+      "MODEL_SCORED": 1482081
+    },
+    "input_pairs": 2086245,
+    "same_role_by_pair_type": {
+      "AUTO_EXACT": 12362,
+      "MODEL_SCORED": 591761
+    },
+    "same_role_pairs": 604123
+  },
+  "snapshot": {
+    "approval_note": "Technical verification only; human snapshot/exclusion approval is not asserted.",
+    "approved_snapshot": false,
+    "columns": 21,
+    "deterministic": true,
+    "eligible_rows": 36804,
+    "entity_atomic": true,
+    "entity_count": 15297,
+    "entity_fold_assignment_sha256": "ceaeff9d3eca81e3662d6c6bf0e0f475f0be3842d63460a0a29674567f56b4f3",
+    "entity_role_assignment_sha256": "237f30fe3937611f5461bace924cc0165f4dce4f5642af81a0494f8acf30b86e",
+    "entity_role_counts": {
+      "CALIBRATION": 3061,
+      "POLICY_VALIDATION": 3059,
+      "TEST": 3062,
+      "TRAIN": 6115
+    },
+    "excluded_profile_row_ids_sha256": "d586b6a812438a31c7462a3ab8e657d5143c81ae208879ee5d5453a2760b95d0",
+    "excluded_unmapped_rows": 3,
+    "fold_count": 5,
+    "heldout_fold": 0,
+    "platform_counts_eligible": {
+      "googleplus": 11889,
+      "instagram": 10956,
+      "twitter": 13959
+    },
+    "profile_role_counts": {
+      "CALIBRATION": 7365,
+      "POLICY_VALIDATION": 7360,
+      "TEST": 7365,
+      "TRAIN": 14714
+    },
+    "profile_row_id_unique": 36807,
+    "rows": 36807,
+    "snapshot_path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+    "snapshot_sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+    "split_seed": 20261010
+  },
+  "verification_kind": "technical candidate snapshot and read-only artifact verification"
+}

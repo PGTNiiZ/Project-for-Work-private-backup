@@ -1,0 +1,85 @@
+{
+  "coordinate_zero_fill": {
+    "latitude": {
+      "zero_rows": 36426,
+      "empty_rows": 0
+    },
+    "longitude": {
+      "zero_rows": 36426,
+      "empty_rows": 0
+    }
+  },
+  "workbook_image_reconciliation": {
+    "rows": 24729,
+    "compared_cells": 964431,
+    "boolean_serialization_equivalent_differences": {},
+    "remaining_mismatches_by_column": {},
+    "remaining_mismatched_cells": 0
+  },
+  "checks": [
+    {
+      "transformation": "stored blocking key name_prefix3",
+      "checked_rows": 36807,
+      "mismatch_rows": 123,
+      "status": "FAIL",
+      "source": "thesis_rebuild/00_notebook_history/original/07_blocking.ipynb:cell5",
+      "detail": ""
+    },
+    {
+      "transformation": "stored blocking key fullname_prefix3",
+      "checked_rows": 36807,
+      "mismatch_rows": 893,
+      "status": "FAIL",
+      "source": "thesis_rebuild/00_notebook_history/original/07_blocking.ipynb:cell5",
+      "detail": ""
+    },
+    {
+      "transformation": "stored blocking url_domain",
+      "checked_rows": 36807,
+      "mismatch_rows": 0,
+      "status": "PASS",
+      "source": "thesis_rebuild/00_notebook_history/original/07_blocking.ipynb:cell5",
+      "detail": ""
+    },
+    {
+      "transformation": "prepare pure rule on cleaned24729 userName_clean",
+      "checked_rows": 24729,
+      "mismatch_rows": 1,
+      "status": "FAIL",
+      "source": "src/identity_resolution/stages/prepare.py:98-116,149-155",
+      "detail": ""
+    },
+    {
+      "transformation": "prepare pure rule on cleaned24729 fullName_clean",
+      "checked_rows": 24729,
+      "mismatch_rows": 0,
+      "status": "PASS",
+      "source": "src/identity_resolution/stages/prepare.py:98-116,149-155",
+      "detail": ""
+    },
+    {
+      "transformation": "prepare pure rule on cleaned24729 profile_id",
+      "checked_rows": 24729,
+      "mismatch_rows": 0,
+      "status": "PASS",
+      "source": "src/identity_resolution/stages/prepare.py:98-116,149-155",
+      "detail": ""
+    },
+    {
+      "transformation": "prepare pure rule on cleaned24729 bio_clean",
+      "checked_rows": 24729,
+      "mismatch_rows": 0,
+      "status": "PASS",
+      "source": "src/identity_resolution/stages/prepare.py:151",
+      "detail": ""
+    },
+    {
+      "transformation": "workbook image cells semantic comparison",
+      "checked_rows": 964431,
+      "mismatch_rows": 0,
+      "status": "PASS",
+      "source": "thesis_rebuild/build_dataset_excel.py:63-75,155-156",
+      "detail": "String True/False vs Excel boolean 1/0 treated serialization-equivalent"
+    }
+  ]
+}

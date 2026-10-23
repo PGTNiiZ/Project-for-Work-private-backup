@@ -7,3 +7,4 @@
 5. ใช้ภาพจาก `fig/` สำหรับรายงาน/สไลด์
 6. เริ่มอ่าน source หลักจาก `src/s08_multi.py`, `src/s09_full.py`, `src/s10_crm.py`
 7. ถ้าต้องการ flow การรันแบบเดิม ให้ใช้ไฟล์ใน `run/`
+8. ถ้าต้องการ optimize feature/model/threshold ด้วย genetic algorithm ให้รัน `genetic_algorithm_tuning.py` หรือ `run/r_ga.ps1`

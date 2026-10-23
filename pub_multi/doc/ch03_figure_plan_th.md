@@ -41,7 +41,7 @@
 ## รูปที่ 3.4 Pair Building Pipeline
 
 ตำแหน่งที่ควรใส่  
-วางหลังย่อหน้าที่อธิบาย `stage8_pair_builder.py` ในหัวข้อ 3.3
+วางหลังย่อหน้าที่อธิบาย `pipelines/stage8_pair_builder.py` ในหัวข้อ 3.3
 
 สิ่งที่รูปควรแสดง  
 การสร้าง positive pairs จากเอนทิตีเดียวกันข้ามแพลตฟอร์ม การสร้าง random negatives และการสร้าง hard negatives พร้อมบอกว่าขั้นตอนนี้ใช้เฉพาะคู่ข้ามแพลตฟอร์ม

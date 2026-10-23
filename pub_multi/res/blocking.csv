@@ -1,8 +1,3 @@
-﻿item,value
-profiles_total,36804.0
-all_cross_platform_pairs,449149239.0
-ground_truth_positive_pairs,29243.0
-exact_match_pairs,12403.0
-candidate_pairs_for_model,2073842.0
-search_space_reduction_pct,99.53551184798958
-ground_truth_coverage_pct,88.6742126320829
+version https://git-lfs.github.com/spec/v1
+oid sha256:a741bc6b79b208363ee1e02371fdecb462c441e4e30b5d9de84fb6f2d734fa0d
+size 260

@@ -1,0 +1,67 @@
+{
+  "policy_version": "one_stage_weighted_v1",
+  "genome_order": [
+    "t_match",
+    "t_review",
+    "w_probability",
+    "w_name",
+    "w_bio",
+    "w_url",
+    "w_location",
+    "w_social",
+    "w_image",
+    "w_style"
+  ],
+  "feature_order": [
+    "probability",
+    "name",
+    "bio",
+    "url",
+    "location",
+    "social",
+    "image",
+    "style"
+  ],
+  "score_formula": "sum(mask * weight * score) / sum(mask * weight)",
+  "decision_rule": "MATCH if score >= t_match; NO_MATCH if score < t_review; REVIEW otherwise",
+  "selection_split": "val",
+  "validation_rows": 8580,
+  "test_evaluated": false,
+  "source": "/Users/thawaree.kha/Project-for-Work/pub_multi/data/train_all.parquet",
+  "source_sha256": "ae3735c3d68dc99560aa86a3a6ace9a558276e67ce8639cd2fbd64d814944c03",
+  "cost_policy_version": "crm_derived_v1",
+  "cost_weights": {
+    "W_FP": 2.0,
+    "W_FN": 1.0,
+    "W_REV": 0.1
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "population_size": 128,
+  "generations": 100,
+  "elite_size": 16,
+  "active_features": {
+    "probability": true,
+    "name": true,
+    "bio": true,
+    "url": true,
+    "location": false,
+    "social": true,
+    "image": true,
+    "style": true
+  },
+  "quality_gates_reported_not_optimized": {
+    "precision_min": 0.99,
+    "recall_min": 0.7
+  }
+}

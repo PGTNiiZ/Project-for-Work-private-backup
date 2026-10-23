@@ -1,6 +1,3 @@
-﻿group,name,count
-exact,username_exact,11133
-exact,external_url_exact,1270
-candidate,username_prefix3,1026466
-candidate,fullname_prefix3,1041315
-candidate,external_domain,6061
+version https://git-lfs.github.com/spec/v1
+oid sha256:9f4058ff4d7e0f1d04e37181c62497ef58de9335d35e9b7f0eacb0cebdc2aa5d
+size 178

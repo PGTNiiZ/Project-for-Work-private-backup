@@ -1,0 +1,14 @@
+{
+  "policy": "selector:bio",
+  "selection_rule": "lower validation decision cost; test evaluated exactly once after policy freeze",
+  "validation_cost": 150.34,
+  "test_metrics": {
+    "fp": 7,
+    "fn": 63,
+    "review": 3812,
+    "precision": 0.9973138910207214,
+    "recall": 0.5924321860041031,
+    "f1": 0.7433147433147432,
+    "cost": 174.24
+  }
+}

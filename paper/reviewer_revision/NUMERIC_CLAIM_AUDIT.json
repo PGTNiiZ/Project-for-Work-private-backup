@@ -1,0 +1,15 @@
+{
+  "verified_phrases": [
+    "Automatic recall rises from 0.7357 to 0.7748",
+    "automatic F1 from 0.8420 to 0.8667",
+    "The loss falls by 499.6",
+    "$U$ worsens by 12.2",
+    "the direct-risk rule has lower loss than B2/B3 in seed 101."
+  ],
+  "Chow_better_than_B2_B3_seeds": [
+    101
+  ],
+  "U_B3_minus_Chow": -20.799999999999955,
+  "U_B3_minus_B2": -1.7999999999999545,
+  "aggregate_recomputation": "PASS"
+}

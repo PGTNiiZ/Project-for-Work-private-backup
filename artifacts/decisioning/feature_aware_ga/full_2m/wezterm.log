@@ -1,0 +1,68 @@
+[  2%] PREFLIGHT: validated source cache; exporting 2,073,842 scored candidates
+[  7%] EXPORT: completed chunk 1: 0-50,000
+[  8%] EXPORT: completed chunk 2: 50,000-100,000
+[ 10%] EXPORT: completed chunk 3: 100,000-150,000
+[ 12%] EXPORT: completed chunk 4: 150,000-200,000
+[ 13%] EXPORT: completed chunk 5: 200,000-250,000
+[ 15%] EXPORT: completed chunk 6: 250,000-300,000
+[ 17%] EXPORT: completed chunk 7: 300,000-350,000
+[ 19%] EXPORT: completed chunk 8: 350,000-400,000
+[ 20%] EXPORT: completed chunk 9: 400,000-450,000
+[ 22%] EXPORT: completed chunk 10: 450,000-500,000
+[ 24%] EXPORT: completed chunk 11: 500,000-550,000
+[ 25%] EXPORT: completed chunk 12: 550,000-600,000
+[ 27%] EXPORT: completed chunk 13: 600,000-650,000
+[ 29%] EXPORT: completed chunk 14: 650,000-700,000
+[ 30%] EXPORT: completed chunk 15: 700,000-750,000
+[ 32%] EXPORT: completed chunk 16: 750,000-800,000
+[ 34%] EXPORT: completed chunk 17: 800,000-850,000
+[ 35%] EXPORT: completed chunk 18: 850,000-900,000
+[ 37%] EXPORT: completed chunk 19: 900,000-950,000
+[ 39%] EXPORT: completed chunk 20: 950,000-1,000,000
+[ 40%] EXPORT: completed chunk 21: 1,000,000-1,050,000
+[ 42%] EXPORT: completed chunk 22: 1,050,000-1,100,000
+[ 44%] EXPORT: completed chunk 23: 1,100,000-1,150,000
+[ 46%] EXPORT: completed chunk 24: 1,150,000-1,200,000
+[ 47%] EXPORT: completed chunk 25: 1,200,000-1,250,000
+[ 49%] EXPORT: completed chunk 26: 1,250,000-1,300,000
+[ 51%] EXPORT: completed chunk 27: 1,300,000-1,350,000
+[ 52%] EXPORT: completed chunk 28: 1,350,000-1,400,000
+[ 54%] EXPORT: completed chunk 29: 1,400,000-1,450,000
+[ 56%] EXPORT: completed chunk 30: 1,450,000-1,500,000
+[ 57%] EXPORT: completed chunk 31: 1,500,000-1,550,000
+[ 59%] EXPORT: completed chunk 32: 1,550,000-1,600,000
+[ 61%] EXPORT: completed chunk 33: 1,600,000-1,650,000
+[ 62%] EXPORT: completed chunk 34: 1,650,000-1,700,000
+[ 64%] EXPORT: completed chunk 35: 1,700,000-1,750,000
+[ 66%] EXPORT: completed chunk 36: 1,750,000-1,800,000
+[ 67%] EXPORT: completed chunk 37: 1,800,000-1,850,000
+[ 69%] EXPORT: completed chunk 38: 1,850,000-1,900,000
+[ 71%] EXPORT: completed chunk 39: 1,900,000-1,950,000
+[ 73%] EXPORT: completed chunk 40: 1,950,000-2,000,000
+[ 74%] EXPORT: completed chunk 41: 2,000,000-2,050,000
+[ 75%] EXPORT: completed chunk 42: 2,050,000-2,073,842
+[ 76%] AUDIT: loaded 2,073,842 scored candidates from resumable chunks
+[ 58%] AUDIT: computing availability coverage and reliability by evidence group
+[ 62%] GA_SELECTOR: optimizing score-only and one-guard GA policies on validation
+[ 64%] GA_SELECTOR: completed guard score_only (1/6)
+[ 66%] GA_SELECTOR: completed guard name (2/6)
+[ 68%] GA_SELECTOR: completed guard bio (3/6)
+[ 71%] GA_SELECTOR: completed guard url (4/6)
+[ 73%] GA_SELECTOR: completed guard image (5/6)
+[ 75%] GA_SELECTOR: completed guard style (6/6)
+[ 77%] GA_WEIGHTED: optimizing availability-gated evidence weights on validation
+[ 77%] GA_WEIGHTED: generation 0/60; validation cost 74483.60
+[ 79%] GA_WEIGHTED: generation 5/60; validation cost 5264.38
+[ 80%] GA_WEIGHTED: generation 10/60; validation cost 5145.88
+[ 81%] GA_WEIGHTED: generation 15/60; validation cost 3877.16
+[ 83%] GA_WEIGHTED: generation 20/60; validation cost 3820.10
+[ 85%] GA_WEIGHTED: generation 25/60; validation cost 3812.28
+[ 86%] GA_WEIGHTED: generation 30/60; validation cost 3800.96
+[ 87%] GA_WEIGHTED: generation 35/60; validation cost 3797.10
+[ 89%] GA_WEIGHTED: generation 40/60; validation cost 3444.52
+[ 91%] GA_WEIGHTED: generation 45/60; validation cost 3164.34
+[ 92%] GA_WEIGHTED: generation 50/60; validation cost 3102.76
+[ 93%] GA_WEIGHTED: generation 55/60; validation cost 2959.46
+[ 95%] GA_WEIGHTED: generation 59/60; validation cost 2626.20
+[ 97%] SEALED_TEST: applying frozen selector:style policy once
+[100%] DONE: full feature-aware GA, sealed test, projection, and Thai report completed

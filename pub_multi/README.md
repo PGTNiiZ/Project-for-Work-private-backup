@@ -33,3 +33,27 @@ best tuning row จาก rebuilt experiment:
 - random_neg_ratio = 0.75
 - hard_neg_ratio = 2.0
 - test_f1 = 0.9316
+
+## Genetic algorithm tuning
+
+`genetic_algorithm_tuning.py` ใช้ genetic algorithm เลือก feature พร้อม tune
+hyperparameters ของ Gradient Boosting และ MATCH threshold โดยใช้ validation split
+เป็น fitness เท่านั้น และประเมิน test split หลังจบการค้นหาหนึ่งครั้ง เพื่อป้องกัน
+test leakage
+
+รันแบบเต็ม:
+
+```bash
+python3.11 pub_multi/genetic_algorithm_tuning.py
+```
+
+ทดลองแบบเร็ว ก่อนสั่ง full search:
+
+```bash
+python3.11 pub_multi/genetic_algorithm_tuning.py \
+  --population-size 6 --generations 3 \
+  --max-train-rows 10000 --max-val-rows 3000
+```
+
+ผลลัพธ์อยู่ใน `pub_multi/ga_output/`: model pickle, selected features,
+generation history และ JSON report ใช้ `--seed` เพื่อให้ผลทำซ้ำได้

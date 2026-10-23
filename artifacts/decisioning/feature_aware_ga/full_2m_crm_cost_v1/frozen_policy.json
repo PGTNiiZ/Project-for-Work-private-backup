@@ -1,0 +1,18 @@
+{
+  "policy": "selector:name",
+  "validation_cost": 3498.6000000000004,
+  "guard": "name",
+  "thresholds": [
+    0.999,
+    0.9772757231237615,
+    0.9870551274480683,
+    0.0
+  ],
+  "cost_policy_version": "crm_derived_v1",
+  "cost_weights": {
+    "W_FP": 2.0,
+    "W_FN": 1.0,
+    "W_REV": 0.1
+  },
+  "selection_rule": "lower validation decision cost; no test metric was read before freeze"
+}

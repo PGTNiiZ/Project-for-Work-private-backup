@@ -7,8 +7,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import exp_r1_ga_redecision as ga
-import run_ga_experiments as runner
+from experiments.code import exp_r1_ga_redecision as ga
+from experiments.code import run_ga_experiments as runner
 
 
 def synthetic_r1_data(test_actual):
@@ -60,7 +60,7 @@ class GARunnerIntegrationTests(unittest.TestCase):
         scenarios = runner._scenario_specs("r1-sensitivity", None)
         self.assertEqual([name for name, _ in scenarios], ["A_current", "B_fp10", "C_fn2"])
         self.assertEqual([weights.as_dict() for _, weights in scenarios], [
-            {"W_FP": 5.0, "W_FN": 1.0, "W_REV": 0.02},
+            {"W_FP": 2.0, "W_FN": 1.0, "W_REV": 0.1},
             {"W_FP": 10.0, "W_FN": 1.0, "W_REV": 0.02},
             {"W_FP": 5.0, "W_FN": 2.0, "W_REV": 0.02},
         ])
@@ -112,16 +112,17 @@ class GARegressionTests(unittest.TestCase):
         val = data.scored.loc[data.scored["split"] == "val"]
         hi = val.loc[val["score"] >= runner.NSIM_MIN_SCORE]
         const_fn_below = int(((val["score"] < runner.NSIM_MIN_SCORE) & (val["actual"] == 1)).sum())
+        legacy_config = ga.GAConfig(weights=ga.CostWeights(5.0, 1.0, 0.02))
         best, history = ga.run_ga(hi["score"].to_numpy(), hi["name_sim"].to_numpy(),
                                   hi["actual"].to_numpy(dtype=np.int8), const_fn_below,
-                                  verbose=False)
+                      config=legacy_config, verbose=False)
         np.testing.assert_allclose(best, np.array([0.9990, 0.9642, 0.9875, 0.5052]), atol=0.0002)
         self.assertEqual(len(history), 40)
 
         test = data.scored.loc[data.scored["split"] == "test"]
         metrics = runner._metric_with_cost(
             ga.decide_code(test["score"].to_numpy(), test["name_sim"].to_numpy(), best),
-            test["actual"].to_numpy(), consts["test"], ga.default_weights(),
+            test["actual"].to_numpy(), consts["test"], legacy_config.weights,
         )
         self.assertAlmostEqual(metrics["F1"], 0.8292, places=4)
         self.assertAlmostEqual(metrics["cost"], 2062.3, delta=0.1)

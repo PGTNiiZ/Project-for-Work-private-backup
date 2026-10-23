@@ -1,0 +1,139 @@
+{
+  "run_id": "N0",
+  "model": "gb",
+  "leaderboard": [
+    {
+      "model": "gb",
+      "validation_average_precision": 0.9821325924489064,
+      "validation_roc_auc": 0.9756389330859603
+    },
+    {
+      "model": "rf",
+      "validation_average_precision": 0.9809902236339381,
+      "validation_roc_auc": 0.9740572161259619
+    },
+    {
+      "model": "logreg",
+      "validation_average_precision": 0.9524323983918417,
+      "validation_roc_auc": 0.936408514454345
+    }
+  ],
+  "validation_metrics": {
+    "average_precision": 0.98085866644618,
+    "roc_auc": 0.9763166486942784,
+    "precision": 0.9727427597955707,
+    "recall": 0.9113087095303237,
+    "f1": 0.9410241318422602,
+    "threshold": 0.45000000000000007
+  },
+  "leakage_report": {
+    "component_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "self_pairs": 0,
+    "rows_by_split": {
+      "train": 41803,
+      "val": 8580,
+      "test": 8313
+    },
+    "label_dist_by_split": {
+      "train": {
+        "0": 21333,
+        "1": 20470
+      },
+      "val": {
+        "1": 4386,
+        "0": 4194
+      },
+      "test": {
+        "1": 4387,
+        "0": 3926
+      }
+    },
+    "single_feature_check": [
+      {
+        "feature": "bio_sbert_cosine",
+        "best_threshold_rule": ">= 0.3507",
+        "best_accuracy": 0.8284614459280645
+      },
+      {
+        "feature": "fullname_token_sort",
+        "best_threshold_rule": ">= 0.4545",
+        "best_accuracy": 0.8250932274750391
+      },
+      {
+        "feature": "fullname_jaro",
+        "best_threshold_rule": ">= 0.6773",
+        "best_accuracy": 0.8248526404426801
+      },
+      {
+        "feature": "fullname_lev",
+        "best_threshold_rule": ">= 0.3333",
+        "best_accuracy": 0.8143871045350656
+      },
+      {
+        "feature": "username_token_sort",
+        "best_threshold_rule": ">= 0.4762",
+        "best_accuracy": 0.7989895344640924
+      },
+      {
+        "feature": "username_lev",
+        "best_threshold_rule": ">= 0.3333",
+        "best_accuracy": 0.7819078551666065
+      },
+      {
+        "feature": "username_jaro",
+        "best_threshold_rule": ">= 0.6330",
+        "best_accuracy": 0.779261397810658
+      },
+      {
+        "feature": "bio_tfidf_cosine",
+        "best_threshold_rule": ">= 0.0388",
+        "best_accuracy": 0.656922891856129
+      },
+      {
+        "feature": "platform_pair_code",
+        "best_threshold_rule": ">= 1.0000",
+        "best_accuracy": 0.5418019968723686
+      },
+      {
+        "feature": "style_punct_diff",
+        "best_threshold_rule": "< 0.0443",
+        "best_accuracy": 0.5416817033561891
+      }
+    ],
+    "split_stats": {
+      "train": {
+        "profiles": 22478,
+        "positive_pairs": 20470,
+        "random_negatives": 15346,
+        "hard_negatives": 5987
+      },
+      "val": {
+        "profiles": 7925,
+        "positive_pairs": 4386,
+        "random_negatives": 3289,
+        "hard_negatives": 905
+      },
+      "test": {
+        "profiles": 6401,
+        "positive_pairs": 4387,
+        "random_negatives": 3290,
+        "hard_negatives": 636
+      }
+    }
+  },
+  "config": {
+    "feature_set": "N0",
+    "run_id": "N0",
+    "include_groups": "",
+    "seed": 42,
+    "random_neg_ratio": 0.75,
+    "hard_neg_ratio": 2.0,
+    "output_root": "artifacts/evaluation/name_similarity",
+    "offline_text_only": true,
+    "evaluate_test": false
+  }
+}

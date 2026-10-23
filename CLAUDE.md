@@ -1,5 +1,11 @@
 # Project Context: Identity Resolution Pipeline
 
+> **Current-status note:** อ่าน `docs/GETTING_STARTED_TH.md` ก่อน ไฟล์นี้บันทึกบริบท
+> ของ notebook pipeline รุ่นแรก จึงมี metric และ threshold บางส่วนที่ไม่ใช่สถานะ
+> production/research ล่าสุด
+> Canonical production architecture อยู่ที่ `docs/ARCHITECTURE_TH.md` และ
+> implementation หลักอยู่ใต้ `src/identity_resolution/`
+
 ## Project Goal
 ระบบ **Identity Resolution** — จับคู่ social media profiles ข้าม platform (Twitter, Google+, Instagram) ว่าเป็นคนเดียวกันหรือเปล่า แล้ว merge เป็น unified customer profile พร้อม lead score
 

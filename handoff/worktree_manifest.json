@@ -1,0 +1,477 @@
+[
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/E1_E3_FEATURE_CONTRACT.md",
+    "sha256": "09adc9be5f2c4aef772f8fb1e5e1599fd240a2bc3c2f90b6d3b518f0373b9e09"
+  },
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/FEATURE_REGISTRY.json",
+    "sha256": "c5cdb756fc955eabb52bc8dbe58fade8479b1852dc6deb886128f337d335a3c5"
+  },
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/FEATURE_SPEC_V1.md",
+    "sha256": "887db35d8035712b070557caace790ae0dce42154f454f37fa2a83560a40a6ef"
+  },
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/MINILM_LINEAGE.md",
+    "sha256": "0e811b3bbbff84126ae77589d034eb43ca7e72cbe736c437ef00f070c3a958e4"
+  },
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/VERIFICATION_REPORT.md",
+    "sha256": "7c45e5bd07707fc1a5cc96fefc6fa7e0960f67c233090ad94f0d94633d1b1c03"
+  },
+  {
+    "worktree": "research-gate4-feature-spec",
+    "path": "tests/test_feature17_synthetic.py",
+    "sha256": "47f49c00aad1fbf3d408bf4ad0f9aac54d2b4394f02d686231572c3b59476ba0"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/LABEL_ACCESS_LIFECYCLE.md",
+    "sha256": "e75fa251348fbaf1a52155d03cbaa22cb85e1d4c04c9db990af741de705f8d9e"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/LEAKAGE_THREAT_MODEL.md",
+    "sha256": "69e653750625138bec650f28e85123b278e1d21b0c0a299a29368686772b7270"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/README.md",
+    "sha256": "03beabf395c5e2689989a5e8275d3f5576d99a0322b49aa1f61f7cdb5c6a7646"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/SPLIT_MANIFEST_SCHEMA.json",
+    "sha256": "9195f9fed5e5d8c0722408750efd9295e4ce4cc502cd28a2c013609656133dff"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/SPLIT_PROTOCOL.md",
+    "sha256": "bae1409c4a919caf9c2d181e570aea465d24b94f5b2c1a887b1ad18017f71657"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/VERIFICATION_REPORT.md",
+    "sha256": "0bf1f73ff3a6a91ba9c3acebd28ea661d7b6c39cff3c97d2f092191f7cb4a10b"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/split_safety.py",
+    "sha256": "05dc190f76e6a41d11467aaa3df04cace846623b8ec13865f2aed502f62ae42a"
+  },
+  {
+    "worktree": "research-gate5-split-safety",
+    "path": "tests/test_gate05_split_safety.py",
+    "sha256": "ea1704ae16d3a49b56545e78852e3bdcd60c178314335f0d737f499d916a0aeb"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/ACCOUNTING_INVARIANTS.md",
+    "sha256": "e1913216150d69c4d1aced5edc08d947587770893985852d2061931a2ff924be"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/EVALUATOR_SPEC.md",
+    "sha256": "85d5b6681de7f2d7fd409c8855fc5215fb0ed5357206c7901091ff06541601d5"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/METRIC_DEFINITIONS.md",
+    "sha256": "a9d47dde9aa624663c4ace94961954f9bafb8c39bcb29f4753dd1ab992f8fb09"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/SPEC.md",
+    "sha256": "c08c968f1528ec3f8f9c3ac3ba6cb1614891afe680f2fe7ce565235cde82510a"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/VERIFICATION_REPORT.md",
+    "sha256": "acc2078e96df79ffcfd096e8fd7a0c75615c12b0dfb02a9b043a590d207fd135"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/evaluator.py",
+    "sha256": "495b7b9814153a25ebc29a481324379137b60d8df00ce7aea4981f628d963701"
+  },
+  {
+    "worktree": "research-gate6-evaluator",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/test_evaluator.py",
+    "sha256": "7a291749942722b669fb6bd5bd7a27e0584a1a49609f2eaaa93535d223be7d36"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/CACHE_VALIDATION_SPEC.md",
+    "sha256": "cce6842ac13d71e6234e33a6598a144d9945ef2c224f5ad202a64636f3c2ec79"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/README.md",
+    "sha256": "53959580255bbf7a5a40124dcea0925805e5b18baa6d3e820c7c245b23e49afb"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/RUN_ARTIFACT_CONTRACT.md",
+    "sha256": "d4878764ce90d1a4ee29d0a8d046f1e13e3bb22432e4c5a3f8c3e2281d536fbb"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/RUN_MANIFEST_SCHEMA.json",
+    "sha256": "f325dab72615dc169a7e710ed74face948c3995abebf2461a6b516ad6da1e8ef"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/VERIFICATION_REPORT.md",
+    "sha256": "2fec8f5137af9abcafb9c9b76f51b4cb1e12723ce3c4aa10846e02ee0b7d35d3"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/run_manifest.py",
+    "sha256": "c1594c15e4177f6aa27b3a5b7ccf1be1deb99bcb7810fb1ca0e5654994c5b6cb"
+  },
+  {
+    "worktree": "research-gate7-run-isolation",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/tests/test_run_manifest.py",
+    "sha256": "aa8cecad5f31e8a60e6a98996d59406c4328e98e9e3f59b6e02b161ea49be0e6"
+  },
+  {
+    "worktree": "research-gate8-governance",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/DATA_GOVERNANCE_ASSESSMENT.md",
+    "sha256": "a59a2cc608949813934cbda4b76e7917e376ce9f78f892022b7c9419b763a24d"
+  },
+  {
+    "worktree": "research-gate8-governance",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/HUMAN_APPROVAL_CHECKLIST.md",
+    "sha256": "5cc974c316be6a96785cb87357217ca4c54c9afe35cc310029823403021b702a"
+  },
+  {
+    "worktree": "research-gate8-governance",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/PRIVACY_AND_PUBLICATION_POLICY_DRAFT.md",
+    "sha256": "727b656d3a73a64d6d5e1753c7bfa11b81a93503fb13ba6a85097e846d58c8bf"
+  },
+  {
+    "worktree": "research-gate8-governance",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/SOURCE_AND_REUSE_RIGHTS_MATRIX.md",
+    "sha256": "8aebe08217dead91c7cf0e32026e423e0b8717260e5814a5f944c5e04cf94f96"
+  },
+  {
+    "worktree": "research-gate9-protocol",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/EXPERIMENT_CONFIG_V1.json",
+    "sha256": "d591a0a9b6129f9da85b7ba963d161076196b41fbd1b2f9b659cf90109e39139"
+  },
+  {
+    "worktree": "research-gate9-protocol",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/MASTER_PROTOCOL_V1_DRAFT.md",
+    "sha256": "cdbc009e44d25b4924cb853ab0825aabce33f616b2d3ee2493dc0cf331f519bb"
+  },
+  {
+    "worktree": "research-gate9-protocol",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/PROTOCOL_OPEN_DECISIONS.md",
+    "sha256": "3528d0cb40335984cfba6a2065be1234a46006a7eaa4a8cdcfd6990b6746b093"
+  },
+  {
+    "worktree": "research-gate9-protocol",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/RESEARCH_QUESTIONS_AND_HYPOTHESES.md",
+    "sha256": "281de28d58acf35aa4b15178fcb03ed95ef379bf9ccc7c655bee48096dc3e50e"
+  },
+  {
+    "worktree": "research-gate9-protocol",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/SELECTION_AND_FREEZE_RULES.md",
+    "sha256": "6473165566164629d6b193973baede4621c04da87349fb059d32c6d3798d9435"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/GATE_4_7_CLOSURE_REPORT.md",
+    "sha256": "949480c2dbbeff4ce84f5b1658cb1c0f25fc7f1748e3c2424697635c6a5f02b8"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/GATE_STATUS_MATRIX.md",
+    "sha256": "b8effc7656bd68dfda36257d772bfd751c9fca1fb451265bba15c67a14275d1b"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/HUMAN_APPROVAL_REQUEST.md",
+    "sha256": "b3b0dcb9a7b72d0feb179e255d591fc9ea366e460d67e45e54dc15caab3a2055"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/INTEGRATED_TEST_EVIDENCE.json",
+    "sha256": "84e2cddb9631eb952db85526d7897fa0986a0894fa9d72d0e74b53f79d96b633"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/INTEGRATION_REPORT.md",
+    "sha256": "74bbbed62a6e48c846dd68b342dd13dad116c71adb72f8733b6b626c6995381c"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/MASTER_PROTOCOL_FREEZE_CANDIDATE.md",
+    "sha256": "c8c44c30581531223094e23a1cfc124d16ea01653d978c71448abe42489a1c3d"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/NEXT_ACTIONS.md",
+    "sha256": "ca896bf46a8c84507553896b79ad37271737397c339029b15f236a11cde6c721"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/E1_E3_FEATURE_CONTRACT.md",
+    "sha256": "09adc9be5f2c4aef772f8fb1e5e1599fd240a2bc3c2f90b6d3b518f0373b9e09"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/FEATURE18_CONTRACT_V1.json",
+    "sha256": "545689d19b8d741e72e23a13679486e0b0212381646ce50396f682723b1dafd6"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/FEATURE_REGISTRY.json",
+    "sha256": "c5cdb756fc955eabb52bc8dbe58fade8479b1852dc6deb886128f337d335a3c5"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/FEATURE_SPEC_V1.md",
+    "sha256": "887db35d8035712b070557caace790ae0dce42154f454f37fa2a83560a40a6ef"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/MINILM_LINEAGE.md",
+    "sha256": "73238fb42ca16ee6a0c05f9d1881826c8750431d555cdb96bf0e412fc007fdbf"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/VERIFICATION_REPORT.md",
+    "sha256": "c7f4fd7670a272763c4492d2f71d51fce943d6cc32dcdd6dcd943b3bffdcba52"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/feature18_contract.py",
+    "sha256": "bd611a0941dda62b178cca17f11ef8cb9719ae65a43d5f12b2e826794c8d8df6"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/test_feature18_contract.py",
+    "sha256": "69a43f0b6019b35d9846d06282589f69e16e2c7bcb4feb8cb4eff2688ce8833c"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_04/tests/test_feature17_synthetic.py",
+    "sha256": "47f49c00aad1fbf3d408bf4ad0f9aac54d2b4394f02d686231572c3b59476ba0"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/LABEL_ACCESS_LIFECYCLE.md",
+    "sha256": "e75fa251348fbaf1a52155d03cbaa22cb85e1d4c04c9db990af741de705f8d9e"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/LEAKAGE_THREAT_MODEL.md",
+    "sha256": "69e653750625138bec650f28e85123b278e1d21b0c0a299a29368686772b7270"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/README.md",
+    "sha256": "03beabf395c5e2689989a5e8275d3f5576d99a0322b49aa1f61f7cdb5c6a7646"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/REAL_SNAPSHOT_VERIFICATION.json",
+    "sha256": "b3232895e0c2a4c233beca0bd862e47c10e7ab732761ab4793badb656746982a"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/SPLIT_MANIFEST_SCHEMA.json",
+    "sha256": "9195f9fed5e5d8c0722408750efd9295e4ce4cc502cd28a2c013609656133dff"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/SPLIT_PROTOCOL.md",
+    "sha256": "bae1409c4a919caf9c2d181e570aea465d24b94f5b2c1a887b1ad18017f71657"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/VERIFICATION_REPORT.md",
+    "sha256": "91aa968eb626e25ca4ae36e88cec61dadd87e883208c5d528c100d8896d355ae"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/real_snapshot_audit.py",
+    "sha256": "7528051036d500922730ea129213398417e35591f0cc0427bb274339cd2fafcc"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/snapshot_split.py",
+    "sha256": "2e3a52987db7b0a1a4c84ae93b7c856995f6af92b7ac491572e586f66f27b0ce"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/split_safety.py",
+    "sha256": "05dc190f76e6a41d11467aaa3df04cace846623b8ec13865f2aed502f62ae42a"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/test_real_snapshot_pipeline.py",
+    "sha256": "3aaa2e1df7832937200008c471f14f12514c309dd4cc6f9c0a18b00561b172d6"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/test_snapshot_split.py",
+    "sha256": "8872733329c103fef250462c8fc248c9e88e859e29d6a9ddaac94861e7e3eeda"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_05/tests/test_gate05_split_safety.py",
+    "sha256": "9486cb0f652693654e10dc53c191371b2ac11ce3b6af828520437e69e854c5e4"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/ACCOUNTING_INVARIANTS.md",
+    "sha256": "e1913216150d69c4d1aced5edc08d947587770893985852d2061931a2ff924be"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/EVALUATOR_SPEC.md",
+    "sha256": "85d5b6681de7f2d7fd409c8855fc5215fb0ed5357206c7901091ff06541601d5"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/METRIC_DEFINITIONS.md",
+    "sha256": "a9d47dde9aa624663c4ace94961954f9bafb8c39bcb29f4753dd1ab992f8fb09"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/SPEC.md",
+    "sha256": "c08c968f1528ec3f8f9c3ac3ba6cb1614891afe680f2fe7ce565235cde82510a"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/VERIFICATION_REPORT.md",
+    "sha256": "fcf9bd964358188907b2290816e67cba09b484b882cf13631c34b76c97d86f71"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/evaluator.py",
+    "sha256": "495b7b9814153a25ebc29a481324379137b60d8df00ce7aea4981f628d963701"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/pair_adapter.py",
+    "sha256": "a38e7067da5011abece4d4f01396b3c740aeeb570ecc3dd8c7fb4a03bb041867"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/test_evaluator.py",
+    "sha256": "7a291749942722b669fb6bd5bd7a27e0584a1a49609f2eaaa93535d223be7d36"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_06/test_pair_adapter.py",
+    "sha256": "d6e24c8c9ebc5b3a41c431d83faa9990406b1fe974f4db28ae4fd9e9616f5dcd"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/CACHE_VALIDATION_SPEC.md",
+    "sha256": "cce6842ac13d71e6234e33a6598a144d9945ef2c224f5ad202a64636f3c2ec79"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/README.md",
+    "sha256": "d0308d18d0cdeeb562083d48a5640a7b1133512a5452777fe93c8274845cacdc"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/RUN_ARTIFACT_CONTRACT.md",
+    "sha256": "d4878764ce90d1a4ee29d0a8d046f1e13e3bb22432e4c5a3f8c3e2281d536fbb"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/RUN_MANIFEST_SCHEMA.json",
+    "sha256": "3c172b1a07cf269b4b4184dd187e638d116f7d66bb9c5093c5237fbcde82bea6"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/VERIFICATION_REPORT.md",
+    "sha256": "29236d3197997e7ca440e66f45fc4edc50eeaac7832c9c69c581cb5ec9443a70"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/run_manifest.py",
+    "sha256": "fed33202fbd8a6d0ddb7bd2ad846d55cadef0e61a27b5097960c4db9dde836b9"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/tests/test_artifact_bytes_lifecycle.py",
+    "sha256": "a019797ab322d030b508e668c18abc4114c69ba0a12b31fcd6f6a6d825e32201"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/tests/test_cross_gate_integration.py",
+    "sha256": "1984dbfc78715539659590b434466ea52b0a2d07007cfac703fa9ebceb14b7c2"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_07/tests/test_run_manifest.py",
+    "sha256": "ff87a03286e1c60476e7c479110d6c8ca693882d66b728d83b859fd017056077"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/DATA_GOVERNANCE_ASSESSMENT.md",
+    "sha256": "a59a2cc608949813934cbda4b76e7917e376ce9f78f892022b7c9419b763a24d"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/HUMAN_APPROVAL_CHECKLIST.md",
+    "sha256": "5cc974c316be6a96785cb87357217ca4c54c9afe35cc310029823403021b702a"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/PRIVACY_AND_PUBLICATION_POLICY_DRAFT.md",
+    "sha256": "727b656d3a73a64d6d5e1753c7bfa11b81a93503fb13ba6a85097e846d58c8bf"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_08/SOURCE_AND_REUSE_RIGHTS_MATRIX.md",
+    "sha256": "8aebe08217dead91c7cf0e32026e423e0b8717260e5814a5f944c5e04cf94f96"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/EXPERIMENT_CONFIG_V1.json",
+    "sha256": "d591a0a9b6129f9da85b7ba963d161076196b41fbd1b2f9b659cf90109e39139"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/MASTER_PROTOCOL_V1_DRAFT.md",
+    "sha256": "cdbc009e44d25b4924cb853ab0825aabce33f616b2d3ee2493dc0cf331f519bb"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/PROTOCOL_OPEN_DECISIONS.md",
+    "sha256": "5c1fcd5cb0818f27092c626106c52071f2341d9a81975803c5ee93adf57206f7"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/RESEARCH_QUESTIONS_AND_HYPOTHESES.md",
+    "sha256": "281de28d58acf35aa4b15178fcb03ed95ef379bf9ccc7c655bee48096dc3e50e"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "docs/research_rebuild/phase_01_5/gate_09/SELECTION_AND_FREEZE_RULES.md",
+    "sha256": "6473165566164629d6b193973baede4621c04da87349fb059d32c6d3798d9435"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "experiments/icsec_final/authoritative_run_v2/FEATURE_SCHEMA.md",
+    "sha256": "b4f0f555420154bc267d4f4c02a8f094cc8504270ce66c9daab0d6641b9a1c05"
+  },
+  {
+    "worktree": "research-phase15-integration",
+    "path": "experiments/icsec_final/authoritative_run_v2/features.py",
+    "sha256": "9975f02ff9086c96e68823d8c02d153bc44adc966973a2b066f175cc907250e0"
+  }
+]

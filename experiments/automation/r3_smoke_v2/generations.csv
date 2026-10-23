@@ -1,6 +1,3 @@
-experiment,scenario,seed,generation,objective_val_cost,val_cost,t_m,t_r,c_promote,c_demote
-r3,A_current,42,0,333.32,691.32,0.9751,0.6418,0.9853,0.5359
-r3,A_current,42,1,310.76,668.76,0.9581,0.538,0.9792,0.5359
-r3,A_current,42,2,292.3,650.3,0.999,0.6127,0.9707,0.379
-r3,A_current,42,3,271.82,629.82,0.999,0.5904,0.9707,0.379
-r3,A_current,42,4,271.82,629.82,0.999,0.5904,0.9707,0.379
+version https://git-lfs.github.com/spec/v1
+oid sha256:2cfab4870854ac548abf2730662afa5ef4cac3223635476fae8dcbdc471ba41a
+size 382

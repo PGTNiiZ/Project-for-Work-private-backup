@@ -1,5 +1,3 @@
-﻿metric,simple,advanced,improvement
-Candidate Pairs,8391,8651,-3.10% fewer
-Exact Matches,9712,9712,Same
-Total Selected,18103,18363,-1.44% fewer
-Search Space Reduction,99.9960%,99.9959%,+-0.0001 pts
+version https://git-lfs.github.com/spec/v1
+oid sha256:b3862d0fad82cb2f4084c26f1cc0040bc891c3b0bbba932d6723abc11e2374f8
+size 200

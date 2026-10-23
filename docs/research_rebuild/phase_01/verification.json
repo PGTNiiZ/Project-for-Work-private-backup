@@ -1,0 +1,29 @@
+{
+  "required_markdown_files": 7,
+  "all_required_files_present": true,
+  "dataset_inventory_records": 28,
+  "dataset_source_hashes_verified": 26,
+  "lineage_records": 1077,
+  "lineage_source_hashes_verified": 199,
+  "lineage_metric_evidence_links_verified": 48,
+  "metric_records": 221,
+  "metric_checks_passed": 142,
+  "summary_comparisons_agreed": 76,
+  "metric_source_hashes_verified": 133,
+  "required_workbooks_available_and_hashed": 6,
+  "workbook_sheets_scanned": 62,
+  "transformation_checks": 134,
+  "transformation_status_counts": {
+    "PASS": 97,
+    "FAIL": 35,
+    "UNPROVEN": 1,
+    "NOT_EXECUTED": 1
+  },
+  "candidate_accounting_invariants_pass": true,
+  "audit_script_syntax_pass": true,
+  "workbook_header_only_policy_pass": true,
+  "platform_personal_url_scan_hits": 0,
+  "privacy_scope": "No full automated semantic PII certification; report outputs reviewed as aggregate/code/schema metadata.",
+  "scientific_status": "PHASE_1_PARTIAL_PHASE_2_BLOCKED",
+  "git_branch": "main"
+}

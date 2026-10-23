@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gate7.run-manifest.v1",
+  "title": "Isolated experiment run manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_schema", "compatibility", "pair_count", "run_id", "state", "artifacts"],
+  "properties": {
+    "manifest_schema": {"const": 1},
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dataset_identity", "schema_identity", "pair_population_identity", "chunk_size", "model_identity", "source_identity", "split_identity", "configuration_identity", "environment_identity", "seed"],
+      "properties": {
+        "dataset_identity": {"type": "string", "minLength": 1},
+        "schema_identity": {"type": "string", "minLength": 1},
+        "pair_population_identity": {"type": "string", "minLength": 1},
+        "chunk_size": {"type": "integer", "minimum": 1},
+        "model_identity": {"type": "string", "minLength": 1},
+        "source_identity": {"type": "string", "minLength": 1},
+        "split_identity": {"type": "string", "minLength": 1},
+        "configuration_identity": {"type": "string", "minLength": 1},
+        "environment_identity": {"type": "string", "minLength": 1},
+        "seed": {"type": "integer", "minimum": 0}
+      }
+    },
+    "pair_count": {"type": "integer", "minimum": 0},
+    "run_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "state": {"enum": ["CREATED", "RUNNING", "COMPLETE", "FAILED"]},
+    "artifacts": {"type": "array", "items": {"type": "object", "required": ["path", "sha256"], "additionalProperties": false, "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}}
+  }
+}

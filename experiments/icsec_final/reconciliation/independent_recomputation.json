@@ -1,0 +1,123 @@
+{
+  "verification_type": "independent read-only reconciliation from persisted pair-key artifacts; no historical files overwritten",
+  "generated_at_utc": "2026-09-03T07:50:01.531031+00:00",
+  "source_lineage": {
+    "experiments/scored_pairs_enriched.parquet": {
+      "path": "experiments/scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801",
+      "mtime_utc": "2026-08-10T07:13:07.272652+00:00"
+    },
+    "experiments/pair_features17.parquet": {
+      "path": "experiments/pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591",
+      "mtime_utc": "2026-08-10T07:13:06.968355+00:00"
+    },
+    "experiments/pair_bert_cos.parquet": {
+      "path": "experiments/pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7",
+      "mtime_utc": "2026-08-10T07:13:06.868012+00:00"
+    },
+    "experiments/icsec_final/primary_reproduction/gb17_probabilities.parquet": {
+      "path": "experiments/icsec_final/primary_reproduction/gb17_probabilities.parquet",
+      "bytes": 6166125,
+      "sha256": "a00b9b40557a147955e650d5852c94e37d5f17aeb634e699b6b051d85c22b2ce",
+      "mtime_utc": "2026-09-02T04:21:18.754409+00:00"
+    },
+    "experiments/icsec_final/primary_reproduction/gb18_probabilities.parquet": {
+      "path": "experiments/icsec_final/primary_reproduction/gb18_probabilities.parquet",
+      "bytes": 6311873,
+      "sha256": "a6cedf1e6f9d7a642b7d47fcbffd04dc15b0a8b62278762745e66f0d56b4931c",
+      "mtime_utc": "2026-09-02T04:21:56.509717+00:00"
+    },
+    "experiments/icsec_final/primary_reproduction/decisions/sealed_test_decisions.parquet": {
+      "path": "experiments/icsec_final/primary_reproduction/decisions/sealed_test_decisions.parquet",
+      "bytes": 951622,
+      "sha256": "5a9deaf43c9054c2fd8a893cbd9147f948248ad7f6fb30c1633ba200a62e95f8",
+      "mtime_utc": "2026-09-02T04:25:40.104323+00:00"
+    },
+    "experiments/icsec_final/primary_reproduction/test_results.csv": {
+      "path": "experiments/icsec_final/primary_reproduction/test_results.csv",
+      "bytes": 513,
+      "sha256": "a644f4c95b66e51ffab34e573c81cbb55350506819c04ccb9e7bce7f714fae4b",
+      "mtime_utc": "2026-09-02T04:21:59.290272+00:00"
+    },
+    "experiments/icsec_final/primary_reproduction/raw_metrics_recomputed.csv": {
+      "path": "experiments/icsec_final/primary_reproduction/raw_metrics_recomputed.csv",
+      "bytes": 323,
+      "sha256": "7d0392b8dd13fc385c9c2d2d0fa33e3f74aa66ff9929a71f826ca9a34bc5822e",
+      "mtime_utc": "2026-09-02T04:25:40.110914+00:00"
+    },
+    "data_for_project/normalized_profiles_with_profile_id.csv": {
+      "path": "data_for_project/normalized_profiles_with_profile_id.csv",
+      "bytes": 19790271,
+      "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+      "mtime_utc": "2026-08-06T09:30:02.042178+00:00"
+    }
+  },
+  "candidate_scope": {
+    "profiles_raw": 36807,
+    "workflow_pairs": 2086245,
+    "exact_tier_pairs": 12403,
+    "model_scored_pairs": 2073842,
+    "sum_check": 2086245,
+    "all_cross_platform_pairs": 449149239,
+    "positive_total_all_platforms": 29247,
+    "positive_cross_platform": 29243,
+    "positive_same_platform": 4,
+    "candidate_covered_cross_platform_positive": 25931,
+    "blocking_misses_cross_platform": 3312,
+    "retrieval_recall": 0.8867421263208289,
+    "space_reduction": 0.9953551184798958
+  },
+  "test_model_scored_scope": {
+    "rows": 191693,
+    "positive_rows": 4033,
+    "negative_rows": 187660,
+    "pair_key_alignment_with_probability_artifacts": true,
+    "metrics": {
+      "GB-17": {
+        "TP": 0,
+        "FP": 8,
+        "FN": 970,
+        "REVIEW": 3192,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "utility_2_1_01": 1305.2
+      },
+      "GB-18": {
+        "TP": 2655,
+        "FP": 64,
+        "FN": 825,
+        "REVIEW": 623,
+        "precision": 0.9764619345347554,
+        "recall": 0.7629310344827587,
+        "F1": 0.8565897725439586,
+        "utility_2_1_01": 1015.3
+      },
+      "GB-18-GA": {
+        "TP": 2994,
+        "FP": 96,
+        "FN": 559,
+        "REVIEW": 847,
+        "precision": 0.9689320388349515,
+        "recall": 0.8426681677455671,
+        "F1": 0.9013999698931205,
+        "utility_2_1_01": 835.7
+      }
+    }
+  },
+  "current_candidate_test_exact_scope": {
+    "rows": 3747,
+    "TP": 3736,
+    "FP": 11
+  },
+  "scope_checks": {
+    "exact_plus_model_scored_equals_workflow": true,
+    "same_platform_positive_difference_equals_four": true,
+    "retrieval_recall_denominator_definition": "candidate-covered cross-platform positives / all cross-platform positives"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "protocol_version": "authoritative_run_v1",
+  "profiles_eligible": 36804,
+  "platform_counts": {
+    "twitter": 13959,
+    "googleplus": 11889,
+    "instagram": 10956
+  },
+  "all_platform_positives": 29247,
+  "cross_platform_positives": 29243,
+  "same_platform_positives": 4,
+  "possible_cross_platform_pairs": 449149239,
+  "exact_tier_pairs": 12403,
+  "model_scored_candidate_pairs": 2073842,
+  "workflow_candidate_pairs": 2086245,
+  "candidate_covered_cross_platform_positives": 25931,
+  "cross_platform_blocking_misses": 3312,
+  "retrieval_recall": 0.8867421263208289,
+  "candidate_space_reduction": 0.9953551184798958,
+  "exact_tier_breakdown": {
+    "username_exact": 11133,
+    "external_url_exact": 1270
+  },
+  "blocking_key_breakdown": {
+    "username_prefix3": 1026466,
+    "fullname_prefix3": 1041315,
+    "external_domain": 6061
+  },
+  "invariants": {
+    "exact_plus_scored_equals_workflow": true,
+    "covered_plus_missed_equals_cross_positive": true,
+    "all_equals_cross_plus_same": true
+  }
+}

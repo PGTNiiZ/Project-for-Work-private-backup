@@ -30,7 +30,7 @@
 - `Project-for-Work/clean_data/location_mapping_pipeline.py` location normalization
 - `Project-for-Work/image_process/create_normalized_db.py` normalized profile database
 - `Project-for-Work/image_process/recover_profile_images.py` image recovery pipeline
-- `stage8_pair_builder.py` pair building
+- `pipelines/stage8_pair_builder.py` pair building
 - `Project-for-Work/train_data/stage9_features_pipeline_chunked.py` feature engineering
 - `Project-for-Work/train_data/leakage_safe_experiment/run_experiment.py` leakage-safe baseline
 - `Project-for-Work/train_data/stage10_13_training_pipeline.py` training/calibration pipeline เดิม

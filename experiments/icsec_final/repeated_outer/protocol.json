@@ -1,0 +1,9 @@
+{
+  "outer_seeds": [
+    101,
+    202,
+    303
+  ],
+  "outer_test_pct": 30,
+  "note": "Each outer test is selected before fitting/calibration/GA selection; metrics include outer-specific exact/blocking constants."
+}

@@ -4,7 +4,7 @@
 > `experiments/r1_results.json`, `r2_results.json`, `r3_results.json`,
 > `r4_privacy_tradeoff.json`, `r2_r3_fn_recovery.json`, `r6_results.json`, `r6_blocking_recovery.json`
 > — ไม่มีตัวเลขพิมพ์มือ harness/entity-aware split เดียวกันทุก experiment
-> (ดู `EXPERIMENT_PLAN.md`, `exp_lib.py`)
+> (ดู `docs/plans/EXPERIMENT_PLAN.md`, `experiments/code/exp_lib.py`)
 
 ## 1. ตาราง R0–R5 บน TEST (unbiased, 191,693 scored pairs)
 
@@ -66,7 +66,7 @@ Media Users: A BERT-Based Entity Resolution Approach" ซึ่งใช้ BERT
 k-bit code แล้ว bucket ตาม Hamming distance) แทน string-based blocking — เป้าหมายคือให้จับคู่ที่
 username/fullname ต่างกันโดยสิ้นเชิงได้ ถ้าความหมาย/context อื่นยังคล้ายกัน
 
-**สถาปัตยกรรมที่ implement จริง** (`exp_r6_bert_er.py`): DistilBERT (bi-encoder, encode ทีละ
+**สถาปัตยกรรมที่ implement จริง** (`experiments/code/exp_r6_bert_er.py`): DistilBERT (bi-encoder, encode ทีละ
 โปรไฟล์) → hash head (Linear→LayerNorm→tanh, 64 บิต, เทรนด้วย cosine contrastive loss) สำหรับ
 blocking + match head (interaction features `[h_a,h_b,h_a·h_b,|h_a-h_b|]` → MLP) สำหรับตัดสิน
 MATCH — ตาม Fig.3 ของ paper ต้นฉบับ (Encoding → Blocking decoder → Matching decoder)
@@ -137,7 +137,7 @@ blocking-missed ได้แค่ 3 คู่ (0.09%) — ต้องมี GP
 > **แผน implement ฉบับละเอียดระดับโค้ด** (code diff ทีละจุด, hyperparameter sweep plan,
 > evaluation protocol, timeline 3–4 วัน, ความเสี่ยง+ทางแก้) อยู่ที่ `experiments/R6_GPU_IMPLEMENT_PLAN.md`
 
-โครงสร้างโค้ดของ R6 (`exp_r6_bert_er.py`) ออกแบบไว้ให้สลับจาก frozen-backbone กลับไปเป็น
+โครงสร้างโค้ดของ R6 (`experiments/code/exp_r6_bert_er.py`) ออกแบบไว้ให้สลับจาก frozen-backbone กลับไปเป็น
 full fine-tuning ได้โดยไม่ต้องเขียนใหม่ทั้งหมด — งานที่เหลือคือปรับ config/hyperparameter แล้วรัน
 บนเครื่องที่มี GPU ขั้นตอนที่แนะนำมีดังนี้ (ไม่ใช่สิ่งที่ทำในรอบทดลองนี้ เก็บไว้เป็น future work)
 
@@ -146,7 +146,7 @@ fine-tune DistilBERT/BERT-base ที่ batch ขนาดพอเหมาะ
 6.3 วินาที/step (batch=16) คาดว่า GPU จะเร็วขึ้น ~30–60 เท่า (~0.1–0.2 วินาที/step) ทำให้ 1 epoch
 (~2,000 step) เหลือ ~5–10 นาที และเทรนหลาย epoch เสร็จได้ภายใน 1–2 ชั่วโมง
 
-**2) การแก้โค้ด** (ใน `exp_r6_bert_er.py`):
+**2) การแก้โค้ด** (ใน `experiments/code/exp_r6_bert_er.py`):
    - `BertERModel.__init__`: เอา `self.backbone.eval()` และ `p.requires_grad_(False)` ออก
    - `train_heads()` → เปลี่ยนกลับเป็นแบบ fine-tune ทั้งตัว: ใส่ `model.backbone.parameters()`
      กลับเข้า optimizer พร้อม differential LR (backbone `lr=2e-5`, head `lr=1e-3` — ค่าที่เตรียม
@@ -181,5 +181,5 @@ blocking เป็น **ส่วนเสริม** ของ blocking เด�
 ---
 *ไฟล์ประกอบ: `r1_results.json`, `r2_results.json`, `r3_results.json`, `r4_privacy_tradeoff.json`
 (+ `.png` กราฟ F1 vs L), `r2_r3_fn_recovery.json`, `r3_ga_history.json`, `r6_results.json`,
-`r6_blocking_recovery.json` — โค้ด: `exp_r1_ga_redecision.py` (ของเดิม ไม่แก้), `exp_r2_bert_feature.py`,
-`exp_r4_bloom_privacy.py`, `exp_r6_bert_er.py`*
+`r6_blocking_recovery.json` — โค้ด: `experiments/code/exp_r1_ga_redecision.py` (ของเดิม ไม่แก้), `experiments/code/exp_r2_bert_feature.py`,
+`experiments/code/exp_r4_bloom_privacy.py`, `experiments/code/exp_r6_bert_er.py`*

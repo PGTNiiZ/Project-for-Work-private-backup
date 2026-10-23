@@ -1,7 +1,7 @@
 # แผน Implement ละเอียด: R6 BERT-ER แบบ GPU Fine-tuning (Future Work)
 
 > ขยายจากหัวข้อ 6 ของ `REPORT_R0_R5.md` — เอกสารนี้คือ blueprint ระดับโค้ดสำหรับคนที่จะสานต่อ
-> ทุกการแก้ไขอ้างอิงไฟล์ `exp_r6_bert_er.py` เวอร์ชันปัจจุบัน (frozen-backbone) เป็นจุดตั้งต้น
+> ทุกการแก้ไขอ้างอิงไฟล์ `experiments/code/exp_r6_bert_er.py` เวอร์ชันปัจจุบัน (frozen-backbone) เป็นจุดตั้งต้น
 > เป้าหมาย: กู้ 3,316 คู่ blocking-missed ให้ได้ ≥10–20% และดัน R6-GA test F1 ≥ 0.8373 (เท่า R3)
 
 ---
@@ -25,9 +25,9 @@ GPU consumer เร็วกว่า CPU สำหรับ transformer ~30–6
 pip install torch --index-url https://download.pytorch.org/whl/cu121   # ให้ตรง CUDA version
 pip install transformers pandas pyarrow scikit-learn jellyfish
 # copy ไฟล์ที่ต้องใช้จากโปรเจกต์ (ไม่ต้อง copy ทั้ง repo):
-#   exp_lib.py, exp_r1_ga_redecision.py, exp_r2_bert_feature.py, exp_r6_bert_er.py
+#   experiments/code/exp_lib.py, experiments/code/exp_r1_ga_redecision.py, experiments/code/exp_r2_bert_feature.py, experiments/code/exp_r6_bert_er.py
 #   experiments/scored_pairs_enriched.parquet        (cache กลาง — สร้างครั้งเดียวจาก exp_lib)
-#   analysis_decision_matrix/blocking_missed_pairs.csv (held-out 3,316 คู่)
+#   artifacts/decisioning/analysis_decision_matrix/blocking_missed_pairs.csv (held-out 3,316 คู่)
 #   Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv
 ```
 
@@ -201,7 +201,7 @@ recovery จะ overfit กับ test pool และเชื่อไม่ไ
 
 ## Phase 3 — Evaluation (ครึ่งวัน) — protocol ต้องเหมือนรอบ CPU เป๊ะ
 
-ลำดับที่ต้องรัน (ทุกข้อมีโค้ดอยู่แล้วใน `exp_r6_bert_er.py` ส่วน `main()`):
+ลำดับที่ต้องรัน (ทุกข้อมีโค้ดอยู่แล้วใน `experiments/code/exp_r6_bert_er.py` ส่วน `main()`):
 
 1. encode โปรไฟล์ทั้ง 36,807 ด้วย backbone ที่ fine-tune แล้ว → cache `.npy`
 2. `compute_hash_codes()` + `build_buckets()` → รายงาน bucket size distribution

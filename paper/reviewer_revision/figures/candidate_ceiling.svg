@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="232.941531pt" height="88.812pt" viewBox="0 0 232.941531 88.812" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-05T15:35:33.199166</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 88.812 
+L 232.941531 88.812 
+L 232.941531 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 25.221026 47.84328 
+L 186.789363 47.84328 
+Q 187.944423 47.84328 187.944423 47.327688 
+L 187.944423 31.172472 
+Q 187.944423 30.65688 186.789363 30.65688 
+L 25.221026 30.65688 
+Q 24.065966 30.65688 24.065966 31.172472 
+L 24.065966 47.327688 
+Q 24.065966 47.84328 25.221026 47.84328 
+z
+" clip-path="url(#p8fcf54e5ce)" style="fill: #edf2f4; stroke: #506b7b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 189.099483 47.84328 
+L 207.720506 47.84328 
+Q 208.875566 47.84328 208.875566 47.327688 
+L 208.875566 31.172472 
+Q 208.875566 30.65688 207.720506 30.65688 
+L 189.099483 30.65688 
+Q 187.944423 30.65688 187.944423 31.172472 
+L 187.944423 47.327688 
+Q 187.944423 47.84328 189.099483 47.84328 
+z
+" clip-path="url(#p8fcf54e5ce)" style="fill: #f4f0ec; stroke: #8a725d; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 6.1px; font-family: 'DejaVu Sans'; fill: #506b7b" transform="translate(92.288773 37.174293)">covered</text>
+    <text style="font-weight: 700; font-size: 6.1px; font-family: 'DejaVu Sans'; fill: #506b7b" transform="translate(94.236007 44.495484)">25,931</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'DejaVu Sans'; fill: #8a725d" transform="translate(186.502338 37.208322)">missed</text>
+    <text style="font-weight: 700; font-size: 6px; font-family: 'DejaVu Sans'; fill: #8a725d" transform="translate(188.921088 44.409494)">3,312</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #263238" x="116.470766" y="18.6264" transform="rotate(-0 116.470766 18.6264)">29,243 cross-platform positives</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 5.9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #6f787d" x="116.470766" y="61.5924" transform="rotate(-0 116.470766 61.5924)">candidate generation from 449,149,239 possible pairs</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 5.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #263238" x="116.470766" y="77.06016" transform="rotate(-0 116.470766 77.06016)">retrieval recall 88.6742%  ·  a downstream scorer cannot recover a missed pair</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8fcf54e5ce">
+   <rect x="20.215766" y="1.44" width="192.51" height="85.932"/>
+  </clipPath>
+ </defs>
+</svg>

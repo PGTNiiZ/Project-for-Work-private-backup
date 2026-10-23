@@ -66,26 +66,21 @@ STRICT_REPORT = STRICT_ROOT / "reports" / "evaluation_summary.json"
 TUNING_SUMMARY = TUNED_ROOT / "tuning_summary.csv"
 
 SOURCE_MAP = {
-    "s01_prep.py": PROJECT_ROOT / "clean_data" / "preprocess_dataset.py",
-    "s02_loc.py": PROJECT_ROOT / "clean_data" / "location_mapping_pipeline.py",
-    "s03_norm.py": PROJECT_ROOT / "image_process" / "create_normalized_db.py",
-    "s04_img.py": PROJECT_ROOT / "image_process" / "recover_profile_images.py",
-    "s05_pair.py": WORKSPACE_ROOT / "stage8_pair_builder.py",
-    "s06_feat.py": PROJECT_ROOT / "train_data" / "stage9_features_pipeline_chunked.py",
-    "s07_base.py": PROJECT_ROOT / "train_data" / "leakage_safe_experiment" / "run_experiment.py",
-    "s08_multi.py": PROJECT_ROOT / "train_data" / "stage7_13_multimodal_suite" / "run_multimodal_suite.py",
-    "s09_full.py": PROJECT_ROOT / "train_data" / "stage7_14_full_candidate_pipeline" / "run_full_candidate_pipeline.py",
-    "s10_crm.py": PROJECT_ROOT / "train_data" / "stage15_crm_entity_pipeline" / "run_crm_entity_pipeline.py",
-    "s11_train.py": PROJECT_ROOT / "train_data" / "stage10_13_training_pipeline.py",
-    "s12_imgpair.py": PROJECT_ROOT / "image_process" / "profile_image_pair_features.py",
+    "s01_prep.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "prepare.py",
+    "s02_loc.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "location.py",
+    "s03_norm.py": PROJECT_ROOT / "src" / "identity_resolution" / "imaging" / "normalized_store.py",
+    "s04_img.py": PROJECT_ROOT / "src" / "identity_resolution" / "imaging" / "recover.py",
+    "s05_pair.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "pairs.py",
+    "s06_feat.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "features.py",
+    "s07_base.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "train_base.py",
+    "s08_multi.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "train_multimodal.py",
+    "s09_full.py": PROJECT_ROOT / "src" / "identity_resolution" / "workflows" / "full_candidate.py",
+    "s10_crm.py": PROJECT_ROOT / "src" / "identity_resolution" / "workflows" / "crm.py",
+    "s11_train.py": PROJECT_ROOT / "src" / "identity_resolution" / "stages" / "train_neural.py",
+    "s12_imgpair.py": PROJECT_ROOT / "src" / "identity_resolution" / "imaging" / "pair_features.py",
 }
 
-RUNNER_MAP = {
-    "r_feat.ps1": PROJECT_ROOT / "train_data" / "run_stage9_pipeline.ps1",
-    "r_multi.ps1": SUITE_ROOT / "run_multimodal_suite.ps1",
-    "r_full.ps1": FULL_ROOT / "run_full_candidate_pipeline.ps1",
-    "r_crm.ps1": CRM_ROOT / "run_crm_entity_pipeline.ps1",
-}
+RUNNER_MAP = {}
 
 REF_MAP = {
     "main_report.json": MAIN_REPORT,

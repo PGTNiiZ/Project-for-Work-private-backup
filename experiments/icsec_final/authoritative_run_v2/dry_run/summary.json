@@ -1,0 +1,8 @@
+{
+  "NOT_MANUSCRIPT_EVIDENCE": true,
+  "b0_decisions": [2, 1, 0, 0, 0, 0],
+  "b1": {"policy": [0.92475, 0.87425], "requested_evaluations": 8, "realized_evaluations": 8},
+  "b2": {"policy": [0.986625, 0.8500000000000001, 0.5625, 0.22499999999999998], "requested_evaluations": 16, "realized_evaluations": 16},
+  "b3": {"policy": [0.938770281052288, 0.8561097408019169, 0.6135787967666899, 0.3739122868116254], "requested_evaluations": 16, "realized_evaluations": 16},
+  "b2_b3_budget_equal": true
+}

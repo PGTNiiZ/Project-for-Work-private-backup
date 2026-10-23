@@ -1,0 +1,44 @@
+{
+  "policy": {
+    "policy": "selector:style",
+    "validation_cost": 2550.74,
+    "guard": "style",
+    "thresholds": [
+      0.9966566711660273,
+      0.9641082008999179,
+      0.9990748438029837,
+      0.2710219517914981
+    ],
+    "selection_rule": "lower validation decision cost; no test metric was read before freeze"
+  },
+  "scored_test_metrics": {
+    "fp": 1,
+    "fn": 879,
+    "review": 4975,
+    "precision": 0.9984567901234568,
+    "recall": 0.16042648152739897,
+    "f1": 0.2764366588335826,
+    "cost": 983.5
+  },
+  "system_test_metrics": {
+    "TP": 4383,
+    "FP": 12,
+    "FN": 1885,
+    "REVIEW": 4975,
+    "precision": 0.9973,
+    "recall": 0.4995,
+    "F1": 0.6656,
+    "cost": 2044.5
+  },
+  "full_projection_metrics": {
+    "TP": 14474,
+    "FP": 92,
+    "FN": 6284,
+    "REVIEW": 34955,
+    "precision": 0.9937,
+    "recall": 0.4949,
+    "F1": 0.6607,
+    "cost": 7443.1
+  },
+  "test_evaluation_count": 1
+}

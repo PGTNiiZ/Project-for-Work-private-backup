@@ -1,0 +1,151 @@
+{
+  "artifact_path": "experiments/icsec_final/authoritative_run_v2/features/gb17.parquet",
+  "sha256": "960fe07b6e46abae8502d4bc8fae6dd8a0589f5bb61d7faea9ae07534f85a057",
+  "rows": 2073842,
+  "columns": [
+    "profile_row_id_a",
+    "profile_row_id_b",
+    "username_jaro",
+    "username_lev_sim",
+    "username_token_sort",
+    "fullname_jaro",
+    "fullname_lev_sim",
+    "fullname_token_sort",
+    "name_sim",
+    "bio_jaccard",
+    "bio_len_ratio",
+    "both_have_bio",
+    "location_jaro",
+    "location_exact",
+    "both_have_location",
+    "same_platform",
+    "username_len_diff",
+    "fullname_wordcount_diff",
+    "username_prefix3_match"
+  ],
+  "source": "experiments/icsec_final/authoritative_run_v2/features.py:22-113",
+  "missing_endpoint_rows": 0,
+  "elapsed_seconds": 23.778886374995636,
+  "features": [
+    {
+      "name": "username_jaro",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "username_lev_sim",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "username_token_sort",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "fullname_jaro",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "fullname_lev_sim",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "fullname_token_sort",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "name_sim",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "bio_jaccard",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "bio_len_ratio",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "both_have_bio",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "location_jaro",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "location_exact",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "both_have_location",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "same_platform",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "username_len_diff",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "fullname_wordcount_diff",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "username_prefix3_match",
+      "checked_rows": 2073842,
+      "mismatch_rows": 0,
+      "max_absolute_difference": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "privacy": "No labels or per-pair values exported. Existing features read and pure formulas replayed."
+}

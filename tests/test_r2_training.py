@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import exp_r2_bert_feature as r2
+from experiments.code import exp_r2_bert_feature as r2
 
 
 class R2TrainingIntegrationTests(unittest.TestCase):

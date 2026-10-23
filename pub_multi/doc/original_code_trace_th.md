@@ -19,7 +19,7 @@
 | Location normalization | `Project-for-Work/clean_data/location_mapping_pipeline.py` | map และ normalize location |
 | Normalized profile DB | `Project-for-Work/image_process/create_normalized_db.py` | สร้างฐานข้อมูลโปรไฟล์ที่ผ่านการ normalize แล้ว |
 | Image recovery / image assets | `Project-for-Work/image_process/recover_profile_images.py` | ดึง/กู้รูปโปรไฟล์เพื่อใช้ต่อใน pipeline ด้านภาพ |
-| Pair building | `stage8_pair_builder.py` | สร้าง positive pairs, random negatives, hard negatives |
+| Pair building | `pipelines/stage8_pair_builder.py` | สร้าง positive pairs, random negatives, hard negatives |
 | Feature engineering | `Project-for-Work/train_data/stage9_features_pipeline_chunked.py` | สร้าง pair features แบบ chunked |
 | Baseline / leakage-safe experiment | `Project-for-Work/train_data/leakage_safe_experiment/run_experiment.py` | เปรียบเทียบโมเดล baseline ในสาย leakage-safe |
 | Main multimodal suite | `Project-for-Work/train_data/stage7_13_multimodal_suite/run_multimodal_suite.py` | สาย train/eval หลักของ multimodal |

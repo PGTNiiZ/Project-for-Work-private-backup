@@ -1,0 +1,75 @@
+{
+  "run": "authoritative_run_v2r1",
+  "lifecycle": "artifact preparation -> seal -> scientific runner (no test-label-value materialization) -> predictions frozen/hashed -> final label reveal",
+  "git_commit": "1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b",
+  "git_branch": "main",
+  "git_dirty": true,
+  "git_untracked_present": true,
+  "python": "3.11.15 (main, Aug  5 2026, 15:33:48) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "dataset": {
+    "path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+    "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1"
+  },
+  "frozen_inputs": {
+    "candidates/exact_tier.parquet": "92556d0574800b25ed3df72e1d84e343a1fbd08b4525ecf667600ef77aafc9cd",
+    "candidates/model_scored.parquet": "2e22d025b77f7c350239f0e1680f8d07e8cef8cb5017edc3e3ebe883bb9f2aa9",
+    "candidates/workflow.parquet": "30d168d48d8ca610ce3be5ea46bfccd124aa6676044ab68d58f56a8ef5b480b0",
+    "features/gb17.parquet": "960fe07b6e46abae8502d4bc8fae6dd8a0589f5bb61d7faea9ae07534f85a057",
+    "features/bert_cos.parquet": "9c5693483020ae2a9937d979474df30ec5156e4b20632ad8a6e9866393947297",
+    "splits/outer_101.json": "06a2934e7985dbdbfccef79dab9bc636fbb5f9cca3516092d01f92be72b432aa",
+    "splits/outer_202.json": "ec9f42adc892aceea74e3d78418261f38a32a7ad04d087c2688860832382d10b",
+    "splits/outer_303.json": "9d80c03e8a90c3a6cd28ad122c358f467a68ca338aa9c96174478ca86d6371fc",
+    "routing/outer_101/workflow.parquet": "7f0a77e94f596c7600a7591167bc4e35e0861edd16895e7965ef81e3edf9d59f",
+    "routing/outer_202/workflow.parquet": "270e63be4c5e8ec38e65204b97db921558397e4fa476e5fe02301b05d8fcc08d",
+    "routing/outer_303/workflow.parquet": "4514db734d3f8c0ca7f9c42bf1deb24cb89f15e0aecfc124fcb54aa569ce03b9"
+  },
+  "sources": {
+    "experiments/code/run_icsec_authoritative_v2.py": "21135adb17a3c798bc7e96d855ad12ac973d4640512e97da75716d07b4a77956",
+    "experiments/icsec_final/authoritative_run_v2/features.py": "9975f02ff9086c96e68823d8c02d153bc44adc966973a2b066f175cc907250e0",
+    "experiments/icsec_final/authoritative_run_v2/policies.py": "951b16ccab46b33f40f7b796ccb268b1630f8f9e0aa71bf44c8965998b8fb50b",
+    "experiments/icsec_final/authoritative_run_v2/final_runner.py": "61bf80f161172177b124ceece4ceb6c2930c76617d0a371d656deb86eab46b37",
+    "experiments/icsec_final/authoritative_run_v2/artifact_producers.py": "8de8513e2b6b031629d247e516f52fcc35af3f942422818e317fb7727276f377",
+    "experiments/icsec_final/authoritative_run_v2/real_adapters.py": "59c4a3f65266a3f25c1e07da5a056c2f87732cbb723e0720075123d1493b4c67",
+    "experiments/icsec_final/authoritative_run_v2/label_sealing.py": "192149d9345ad69004c1da30a26638f6315a7ea42b2260b0e6da0ecab4847cce",
+    "experiments/icsec_final/authoritative_run_v2r1/final_runner_r1.py": "f529e4b5a711021f3dd9beeafb834c7e9237cbd217ac02da12feb4cf3336ec03",
+    "experiments/icsec_final/authoritative_run_v2r1/sealed_guard.py": "abc3d10830838267cb2a627068dc80f913907f0e0d6ea6d7807b0a47af9496c0",
+    "experiments/icsec_final/authoritative_run_v2r1/run_v2r1.py": "81c90e5ac3fab40347d8d1219c6a0506db77d244469202ca151deffafdd5c64e",
+    "experiments/icsec_final/authoritative_run_v2r1/PROTOCOL_V2R1.md": "0c60bbd98a53740497a79b43f9aeb1988246c5c8ccdc740f2ba1f4653f2e056f"
+  },
+  "minilm": {
+    "model_identifier": "sentence-transformers/all-MiniLM-L6-v2",
+    "frozen_cache_sha256": "9c5693483020ae2a9937d979474df30ec5156e4b20632ad8a6e9866393947297",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "revision_source": "local huggingface hub refs/main"
+  },
+  "scientific_input_manifests": {
+    "101": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/input_artifact_manifest.json",
+      "sha256": "7c73f3f0a567b96ba696dca38681d8d70cd13045cc00bf18605090b2b95d976b"
+    },
+    "202": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/input_artifact_manifest.json",
+      "sha256": "8c98b76409cebb3230998fb2288a77cc0402e4692c98c79a865f2b50de036634"
+    },
+    "303": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/input_artifact_manifest.json",
+      "sha256": "9f944e20518618babf72b2b9516e929f6e4e861af2b4680e7d4cdf96dbfdbca5"
+    }
+  },
+  "sealed_label_artifacts": {
+    "101": "5aed2ffaa590a2b9724671540d9ce64785a2edb87bf7369f1fc8f37461ac2dfe",
+    "202": "15ac532abe97ac875c323f826c4cfcd2713b68d08aa5bcafd12f9c1a30901559",
+    "303": "715ea204b93e38e8c93fbda71190db4edef1bd855e959c2b16768543b2155906"
+  },
+  "development_label_artifacts": {
+    "101": "e6eb98944be605b58c8373c22f62358177086037d9a026ccbb4d1d9d40a28f06",
+    "202": "3d3bc35b2a1ad7d9e22869fe45a00857867de77baa9d6eef47b23f0198089e1b",
+    "303": "43bcf2bb6a94951ed8fe070bf3389877df041be5aabff36d57cefe3445b08dc0"
+  },
+  "blocking_miss_artifacts": {
+    "101": "3fb42afde05d3f3a949a4bd41f7c7db414dac6db5a4ffdb2782f62352712e12f",
+    "202": "3fb42afde05d3f3a949a4bd41f7c7db414dac6db5a4ffdb2782f62352712e12f",
+    "303": "3fb42afde05d3f3a949a4bd41f7c7db414dac6db5a4ffdb2782f62352712e12f"
+  }
+}

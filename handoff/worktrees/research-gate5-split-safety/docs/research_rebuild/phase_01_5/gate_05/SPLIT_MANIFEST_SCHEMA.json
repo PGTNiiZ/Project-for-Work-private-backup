@@ -1,0 +1,31 @@
+{
+  "schema_version": "gate5.split_manifest.v1",
+  "status": "PROPOSAL_NOT_DATA_MANIFEST",
+  "split_seed": 20261010,
+  "fold_count": 5,
+  "fold_ids": [0, 1, 2, 3, 4],
+  "entity_assignment": {
+    "unit": "entity_id",
+    "stratification": "sorted unique platform-pattern signature per entity",
+    "algorithm": "within each stratum: sort entity keys; deterministic shuffle keyed by seed and stratum; round-robin to folds",
+    "mapping_hash": "required SHA-256; do not place entity IDs in public manifest"
+  },
+  "outer_role_mapping": {
+    "TEST": "i",
+    "CALIBRATION": "(i+1) mod 5",
+    "POLICY_VALIDATION": "(i+2) mod 5",
+    "TRAIN": "remaining two folds"
+  },
+  "required_snapshot_fields": ["snapshot_id", "snapshot_sha256", "schema_id", "eligibility_rule_id", "entity_mapping_sha256", "assignment_code_sha256"],
+  "aggregate_counts_required": ["profiles_by_fold", "entities_by_fold", "platform_pattern_entities_by_fold", "role_entities", "role_profiles", "cross_role_pairs_by_source_and_type", "unknown_endpoint_pairs", "duplicate_pair_keys"],
+  "pair_routing": {
+    "pair_key": "canonical unordered pair of distinct profile_row_id values",
+    "retain_if": "both endpoint entities map to same role",
+    "otherwise": "exclude and count as cross_role_dropped"
+  },
+  "label_artifacts": {
+    "test_labels_separate_from_development_artifacts": true,
+    "label_access_phase": "FINAL_EVALUATION_ONLY",
+    "external_blinding_claim": false
+  }
+}

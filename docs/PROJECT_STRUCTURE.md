@@ -1,46 +1,60 @@
 # Project Structure
 
-## Current layout
+## Repository map
 
-- `scripts/analysis/`
-  - Small reporting or comparison scripts.
-- `scripts/image/`
-  - Standalone image-related utilities that are not part of the main `image_process/` module folder.
-- `archive/`
-  - Old notebook copies and scratch artifacts that should stay out of active project folders.
-- `image_process/`
-  - Image download, profile recovery, feature extraction, and matching logic.
-- `clean_data/`
-  - Dataset cleanup and preprocessing code.
-- `bigram_username_and_fullname/`
-  - Username and full-name matching experiments and pipelines.
-- `bio_vector/`
-  - Bio/text embedding notebooks and experiments.
-- `train_data/`
-  - Candidate generation, labeling, training, evaluation, and export stages.
-- `data/`
-  - Raw and processed datasets plus generated outputs used by the pipelines.
-- `data_for_project/`
-  - Shared exported CSVs that are consumed across notebooks and scripts.
-- `confix/`
-  - Fix-up scripts for migration or repair tasks.
-- `docs/`
-  - Human-readable documentation about repo organization.
+```text
+Project-for-Work/
+├── README.md                 # entry point and common commands
+├── requirements.txt          # shared Python dependencies
+├── artifacts/
+│   ├── decisioning/          # evaluation JSON and decision-matrix analysis
+│   ├── evaluation/           # canonical Stage 5 evaluation outputs
+│   └── pair_building/        # pair-construction summaries
+├── data/                     # source and processed datasets
+├── data_for_project/         # shared project exports
+├── docs/
+│   ├── plans/                # implementation plans and roadmaps
+│   ├── prompts/              # reusable task prompts
+│   └── reports/              # findings and human-readable analysis
+├── experiments/
+│   ├── code/                 # R0–R6 implementations and runners
+│   ├── walkthroughs/         # teaching notebooks
+│   └── automation/           # recorded experiment runs
+├── notebooks/                # canonical lifecycle notebooks
+├── src/identity_resolution/  # canonical 7-stage ML architecture
+├── presentation/             # slide sources and generated presentation
+├── pub_multi/                # publication package
+└── tests/                    # automated tests
+```
+
+`train_data/` and `image_process/` retain large data/model artifacts at their
+historical paths. New Python source belongs only in `src/identity_resolution/`.
 
 ## Placement guide
 
-- New reusable Python scripts: `scripts/<topic>/`
-- New notebooks: keep them inside the closest domain folder, not at repo root
-- Notebook copies, backups, and abandoned variants: `archive/`
-- One-off repair scripts: `confix/`
-- Generated reports and metrics: under the owning data folder
-- Temporary files and caches: keep them ignored by git
+| New item | Location |
+|---|---|
+| Production stage or workflow | `src/identity_resolution/` |
+| R-series implementation or runner | `experiments/code/` |
+| Canonical lifecycle notebook | `notebooks/` |
+| Reproducible research walkthrough | `experiments/walkthroughs/` |
+| Plan or roadmap | `docs/plans/` |
+| Research finding or narrative report | `docs/reports/` |
+| Reusable prompt | `docs/prompts/` |
+| Generated metric/report | `artifacts/<topic>/` |
+| Backup or abandoned variant | Git history; do not add another source copy |
+
+## Naming rules
+
+- Use lowercase `snake_case` for new folders and Python files.
+- Keep numeric stage prefixes only where they communicate execution order.
+- Do not create folders that differ only by letter case.
+- Use descriptive output folders instead of `out2`, `final_new`, or `backup_latest`.
+- Resolve runtime paths from `Path(__file__)` or the repository root, never from
+  an assumed current working directory.
 
 ## Root-level rule
 
-Only keep these at repository root:
-
-- repo metadata such as `.gitignore`
-- shared dependency files such as `requirements.txt`
-- high-level documentation such as `README.md`
-- major domain folders
+The root should contain only repository metadata, dependency/configuration files,
+high-level documentation, and major category/domain folders. A new loose script,
+notebook, JSON report, or backup at root should be treated as misplaced.

@@ -1,0 +1,115 @@
+{
+  "GB-17": {
+    "configuration": "GB-17",
+    "feature_columns": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match"
+    ],
+    "model": "sklearn.ensemble.GradientBoostingClassifier",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "random_state": 42
+    },
+    "project_standard_source": "Project-for-Work/pub_multi/bench_classical_leaksafe.py",
+    "model_seed": 42,
+    "calibration": "sklearn.isotonic.IsotonicRegression(out_of_bounds='clip')",
+    "train_neg_ratio": 3.0,
+    "class_counts_before_undersampling": {
+      "0": 501930,
+      "1": 6691
+    },
+    "class_counts_after_undersampling": {
+      "0": 20073,
+      "1": 6691
+    },
+    "n_model_train_before_undersampling": 508621,
+    "n_model_train_after_undersampling": 26764,
+    "n_model_calibration": 27699,
+    "sampled_model_train_pair_key_sha256": "0f85930860d47d6ff53827c652c54d29b8b1769e33c0a7b9f590d19ec71a91f2",
+    "calibration_average_precision": 0.9433411773649008,
+    "fit_seconds": 20.243970417010132,
+    "probability_artifact": "gb17_probabilities.parquet",
+    "model_artifact": "model/gb17_model.pkl",
+    "calibrator_artifact": "model/gb17_calibrator.pkl",
+    "label_access": {
+      "model_fit": "model_train only",
+      "probability_calibration": "model_calibration only",
+      "ga_optimisation": "ga_validation only after model fitting",
+      "held_out_test": "not accessed by this training function"
+    }
+  },
+  "GB-18": {
+    "configuration": "GB-18",
+    "feature_columns": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match",
+      "bert_cos"
+    ],
+    "model": "sklearn.ensemble.GradientBoostingClassifier",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "random_state": 42
+    },
+    "project_standard_source": "Project-for-Work/pub_multi/bench_classical_leaksafe.py",
+    "model_seed": 42,
+    "calibration": "sklearn.isotonic.IsotonicRegression(out_of_bounds='clip')",
+    "train_neg_ratio": 3.0,
+    "class_counts_before_undersampling": {
+      "0": 501930,
+      "1": 6691
+    },
+    "class_counts_after_undersampling": {
+      "0": 20073,
+      "1": 6691
+    },
+    "n_model_train_before_undersampling": 508621,
+    "n_model_train_after_undersampling": 26764,
+    "n_model_calibration": 27699,
+    "sampled_model_train_pair_key_sha256": "0f85930860d47d6ff53827c652c54d29b8b1769e33c0a7b9f590d19ec71a91f2",
+    "calibration_average_precision": 0.9489312309120224,
+    "fit_seconds": 22.22774079197552,
+    "probability_artifact": "gb18_probabilities.parquet",
+    "model_artifact": "model/gb18_model.pkl",
+    "calibrator_artifact": "model/gb18_calibrator.pkl",
+    "label_access": {
+      "model_fit": "model_train only",
+      "probability_calibration": "model_calibration only",
+      "ga_optimisation": "ga_validation only after model fitting",
+      "held_out_test": "not accessed by this training function"
+    }
+  }
+}

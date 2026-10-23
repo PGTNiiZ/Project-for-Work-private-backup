@@ -1,2 +1,3 @@
-experiment,scenario,seed,t_m,t_r,c_promote,c_demote,val_cost,objective_val_cost,test_TP,test_FP,test_FN,test_REVIEW,test_precision,test_recall,test_F1,test_cost,runtime_seconds
-r3,A_current,42,0.999,0.5904190414151658,0.9576787203603366,0.3899671978898349,629.62,271.62,6581,50,1847,580,0.9925,0.75,0.8543,2108.6,0.045822
+version https://git-lfs.github.com/spec/v1
+oid sha256:8351d533ce4d143d509a1bf99c486531d53da9d4abacbdf23bd401498e2218fc
+size 322

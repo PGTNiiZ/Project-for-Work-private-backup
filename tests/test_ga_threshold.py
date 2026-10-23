@@ -2,11 +2,16 @@ import unittest
 
 import numpy as np
 
-import exp_r1_ga_redecision as ga
-from exp_lib import MATCH, NO_MATCH, REVIEW
+from experiments.code import exp_r1_ga_redecision as ga
+from experiments.code.exp_lib import MATCH, NO_MATCH, REVIEW
+from identity_resolution.core.business_cost import CRM_COST_POLICY_VERSION
 
 
 class GATresholdUnitTests(unittest.TestCase):
+    def test_default_cost_is_crm_derived_v1(self):
+        self.assertEqual(CRM_COST_POLICY_VERSION, "crm_derived_v1")
+        self.assertEqual(ga.default_weights().as_dict(), {"W_FP": 2.0, "W_FN": 1.0, "W_REV": 0.1})
+
     def test_decide_code_all_boundaries(self):
         genome = np.array([0.90, 0.70, 0.80, 0.40])
         prob = np.array([0.6999, 0.70, 0.70, 0.70, 0.70, 0.90])
@@ -28,9 +33,9 @@ class GATresholdUnitTests(unittest.TestCase):
     def test_cost_formula(self):
         decisions = np.array([MATCH, NO_MATCH, REVIEW, MATCH], dtype=np.int8)
         actual = np.array([0, 1, 0, 1], dtype=np.int8)
-        weights = ga.CostWeights(5.0, 1.0, 0.02)
+        weights = ga.CostWeights()
         self.assertEqual(ga.confusion_counts(decisions, actual), {"FP": 1, "FN": 1, "REVIEW": 1})
-        self.assertAlmostEqual(ga.raw_cost(decisions, actual, weights), 6.02)
+        self.assertAlmostEqual(ga.raw_cost(decisions, actual, weights), 3.1)
 
     def test_seed_reproduces_genome_and_history(self):
         prob = np.linspace(0.50, 0.995, 24)

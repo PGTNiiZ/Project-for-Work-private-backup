@@ -1,0 +1,7 @@
+[  0%] START: starting chained model-weight and feature-aware GA workflow
+[  5%] CACHE: loading labeled feature population
+[ 15%] CACHE: deriving evidence scores and availability masks
+[ 25%] CACHE: saved 58,696 pairs with score/mask evidence
+[ 30%] MODEL: training Logistic Regression and Gradient Boosting on train split
+[ 40%] MODEL: fitting logistic_regression (1/2)
+[ 50%] MODEL: fitting gradient_boosting (2/2)

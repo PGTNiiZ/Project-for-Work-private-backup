@@ -1,0 +1,271 @@
+{
+  "run_id": "primary_reproduction",
+  "experiment": "GB-17 vs GB-18 vs GB-18-GA",
+  "smoke": false,
+  "split": {
+    "version": "entity_nested_v1",
+    "seed": 42,
+    "roles": [
+      "model_train",
+      "model_calibration",
+      "ga_validation",
+      "test",
+      "drop"
+    ],
+    "outer_test_sealed": true,
+    "cross_entity_or_cross_split_pairs": "drop and excluded"
+  },
+  "features": {
+    "gb17": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match"
+    ],
+    "gb18": [
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match",
+      "bert_cos"
+    ],
+    "feature_18": "bert_cos from cached pair_bert_cos.parquet"
+  },
+  "gb_configuration": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "random_state": 42
+  },
+  "training": {
+    "model_seed": 42,
+    "train_neg_ratio": 3.0,
+    "calibration": "isotonic on model_calibration",
+    "hyperparameter_selection": "none; project-standard benchmark configuration"
+  },
+  "manual_thresholds": {
+    "MATCH": 0.98,
+    "REVIEW": 0.95
+  },
+  "ga": {
+    "implementation": "exp_r1_ga_redecision.py",
+    "seeds": [
+      7,
+      42,
+      123,
+      999,
+      2025
+    ],
+    "population": 60,
+    "generations": 40,
+    "elite": 12,
+    "mutation_probability": 0.3,
+    "mutation_sigma": 0.02,
+    "weights": {
+      "W_FP": 2.0,
+      "W_FN": 1.0,
+      "W_REV": 0.1
+    },
+    "selection": {
+      "policy": "minimum ga_validation weighted cost; ties resolved by smallest GA seed",
+      "selected_seed": 999,
+      "selected_genome": {
+        "t_m": 0.9798877883476613,
+        "t_r": 0.6035751931953067,
+        "c_promote": 0.9561245224549983,
+        "c_demote": 0.6561585668398386
+      },
+      "selected_validation_cost": 589.8,
+      "seed_statistics": {
+        "val_cost": {
+          "mean": 589.96,
+          "sample_std": 0.08944271910001192,
+          "min": 589.8,
+          "max": 590.0
+        },
+        "objective_val_cost": {
+          "mean": 231.95999999999998,
+          "sample_std": 0.08944271909998651,
+          "min": 231.8,
+          "max": 232.0
+        },
+        "t_m": {
+          "mean": 0.9774731567517192,
+          "sample_std": 0.0038471020307485806,
+          "min": 0.9726771966761525,
+          "max": 0.9808174722780885
+        },
+        "t_r": {
+          "mean": 0.6002582725126256,
+          "sample_std": 0.006856644044230874,
+          "min": 0.5923439660350598,
+          "max": 0.6086098479235141
+        },
+        "c_promote": {
+          "mean": 0.9562741244761707,
+          "sample_std": 0.000193555616417592,
+          "min": 0.9561245224549983,
+          "max": 0.9565985418725562
+        },
+        "c_demote": {
+          "mean": 0.2902034508677157,
+          "sample_std": 0.2114282254744553,
+          "min": 0.13787019764103792,
+          "max": 0.6561585668398386
+        },
+        "validation_TP": {
+          "mean": 2227.0,
+          "sample_std": 0.0,
+          "min": 2227.0,
+          "max": 2227.0
+        },
+        "validation_FP": {
+          "mean": 12.0,
+          "sample_std": 0.0,
+          "min": 12.0,
+          "max": 12.0
+        },
+        "validation_FN": {
+          "mean": 547.0,
+          "sample_std": 0.0,
+          "min": 547.0,
+          "max": 547.0
+        },
+        "validation_REVIEW": {
+          "mean": 189.6,
+          "sample_std": 0.8944271909999159,
+          "min": 188.0,
+          "max": 190.0
+        },
+        "validation_precision": {
+          "mean": 0.9945999999999999,
+          "sample_std": 1.2412670766236366e-16,
+          "min": 0.9946,
+          "max": 0.9946
+        },
+        "validation_recall": {
+          "mean": 0.7608,
+          "sample_std": 0.0,
+          "min": 0.7608,
+          "max": 0.7608
+        },
+        "validation_F1": {
+          "mean": 0.8622,
+          "sample_std": 0.0,
+          "min": 0.8622,
+          "max": 0.8622
+        }
+      },
+      "test_evaluations_during_selection": 0
+    }
+  },
+  "input_artifacts": {
+    "scored_pairs_enriched": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "pair_features17": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "pair_bert_cos": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "blocking_missed_pairs": {
+      "path": "/Users/thawaree.kha/Project-for-Work/artifacts/decisioning/analysis_decision_matrix/blocking_missed_pairs.csv",
+      "bytes": 1844539,
+      "sha256": "b43bbaa36f3118ef3eeeebc015290481d67b23e6a06b6ee0e112da1d5e3e8a1e"
+    },
+    "profiles": {
+      "path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+      "bytes": 19790271,
+      "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1"
+    },
+    "runner_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/run_gb_transformer_experiments.py",
+      "bytes": 40552,
+      "sha256": "52b1aedaf9096e754a4e5dd12290cb91c228659aede48a3cf41ec6ceaef6b3a5"
+    },
+    "exp_lib_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_lib.py",
+      "bytes": 11524,
+      "sha256": "984adb9cf584210f5c2cbbae15062346388211df4812f0f32f91dcfd0f661db4"
+    },
+    "ga_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_r1_ga_redecision.py",
+      "bytes": 7610,
+      "sha256": "b6dc3eede40e33e8fea65ef4ea49d5ac3f05c0ab7a6d6ad1fae8ef36c14b8c23"
+    },
+    "r2_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_r2_bert_feature.py",
+      "bytes": 46220,
+      "sha256": "98da5cb8b2d976bb021f03a593b64f9ca0b36451656fc3c6b2c262ebfef9d698"
+    },
+    "gb_benchmark_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/pub_multi/bench_classical_leaksafe.py",
+      "bytes": 9321,
+      "sha256": "826d2c6d57fcad7b63df7d3c51559ad9a143fcef7ec4e2261b11143fee15be50"
+    },
+    "r0_nested_summary": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/automation/r1_nested_primary_20260809/summary.json",
+      "bytes": 6925,
+      "sha256": "230ee6ccd0fb7e97db046793592f061ed08538aa0150ca6934e4518655596818"
+    },
+    "r3_summary": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/automation/r3_primary_20260809/summary.json",
+      "bytes": 6898,
+      "sha256": "7dbba13415fd6f7f585b372cb9aac86f93a7d509f8b0405c1b898fb1b0bcaff5"
+    }
+  },
+  "output_artifacts": {
+    "probabilities": [
+      "gb17_probabilities.parquet",
+      "gb18_probabilities.parquet"
+    ],
+    "models": [
+      "model/gb17_model.pkl",
+      "model/gb17_calibrator.pkl",
+      "model/gb18_model.pkl",
+      "model/gb18_calibrator.pkl"
+    ]
+  },
+  "label_access": {
+    "before_final_test_evaluation": [
+      "model_train",
+      "model_calibration",
+      "ga_validation"
+    ],
+    "test": "fetched once after selected genome; no test metric used for selection"
+  },
+  "generated_at": "2026-09-02T11:21:59.333311+07:00"
+}

@@ -1,6 +1,6 @@
 # Pipeline ล่าสุดจริงที่สอดคล้องกับโค้ดปัจจุบัน
 
-เอกสารนี้ใช้แทนภาพ plan เดิมในกรณีที่ต้องการให้รูปประกอบในรายงานตรงกับ implementation ล่าสุดของโครงการจริง โดยยึดเส้นหลักจากโค้ดปัจจุบัน ได้แก่ `preprocess_dataset.py`, `location_mapping_pipeline.py`, `create_normalized_db.py`, `stage8_pair_builder.py`, `stage9_features_pipeline_chunked.py`, `run_rebuilt_pipeline.py`, `run_multimodal_suite.py`, `stage10_13_training_pipeline.py`, `run_full_candidate_pipeline.py` และ `run_crm_entity_pipeline.py`
+เอกสารนี้ใช้แทนภาพ plan เดิมในกรณีที่ต้องการให้รูปประกอบในรายงานตรงกับ implementation ล่าสุดของโครงการจริง โดยยึดเส้นหลักจากโค้ดปัจจุบัน ได้แก่ `preprocess_dataset.py`, `location_mapping_pipeline.py`, `create_normalized_db.py`, `pipelines/stage8_pair_builder.py`, `stage9_features_pipeline_chunked.py`, `run_rebuilt_pipeline.py`, `run_multimodal_suite.py`, `stage10_13_training_pipeline.py`, `run_full_candidate_pipeline.py` และ `run_crm_entity_pipeline.py`
 
 ## รูปที่ 3.2 เวอร์ชันล่าสุดจริง: End-to-End Pipeline
 
@@ -31,7 +31,7 @@ flowchart TB
     end
 
     subgraph S2["Training Data Preparation"]
-        G["stage8_pair_builder.py<br/>positive + random negative + hard negative<br/>24,663,633 labeled pairs"]:::feat
+        G["pipelines/stage8_pair_builder.py<br/>positive + random negative + hard negative<br/>24,663,633 labeled pairs"]:::feat
         H["stage9_features_pipeline_chunked.py<br/>entity split + profile cache + TF-IDF + SBERT + chunked features"]:::feat
         I["Split artifacts<br/>train_profiles 15,848 / val_profiles 17,595 / test_profiles 3,364<br/>train_pairs 10,133,486 / val_pairs 4,511,311 / test_pairs 462,908"]:::feat
         J["Merged feature matrices<br/>train / val / test parquet"]:::feat

@@ -7,10 +7,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-import exp_r1_ga_redecision as ga
-import exp_r2_bert_feature as r2
-import run_ga_experiments as runner
-from exp_lib import build_nested_entity_split
+from experiments.code import exp_r1_ga_redecision as ga
+from experiments.code import exp_r2_bert_feature as r2
+from experiments.code import run_ga_experiments as runner
+from experiments.code.exp_lib import build_nested_entity_split
 
 
 KEYS = ["profile_id_a", "profile_id_b"]

@@ -1,0 +1,92 @@
+{
+  "policy": "minimum ga_validation weighted cost; ties resolved by smallest GA seed",
+  "selected_seed": 7,
+  "selected_genome": {
+    "t_m": 0.9501994517310716,
+    "t_r": 0.5,
+    "c_promote": 0.9740620307054073,
+    "c_demote": 0.10996178844195043
+  },
+  "selected_validation_cost": 244.0,
+  "seed_statistics": {
+    "val_cost": {
+      "mean": 244.0,
+      "sample_std": 0.0,
+      "min": 244.0,
+      "max": 244.0
+    },
+    "objective_val_cost": {
+      "mean": 242.0,
+      "sample_std": 0.0,
+      "min": 242.0,
+      "max": 242.0
+    },
+    "t_m": {
+      "mean": 0.9651003366895308,
+      "sample_std": 0.017131831594837357,
+      "min": 0.9501994517310716,
+      "max": 0.9892000016327334
+    },
+    "t_r": {
+      "mean": 0.5,
+      "sample_std": 0.0,
+      "min": 0.5,
+      "max": 0.5
+    },
+    "c_promote": {
+      "mean": 0.9741406808973666,
+      "sample_std": 0.0003988493892099627,
+      "min": 0.9735111299649617,
+      "max": 0.9745874811409297
+    },
+    "c_demote": {
+      "mean": 0.30908991248176393,
+      "sample_std": 0.19679853844266054,
+      "min": 0.10996178844195043,
+      "max": 0.5675139665655591
+    },
+    "validation_TP": {
+      "mean": 2370.0,
+      "sample_std": 0.0,
+      "min": 2370.0,
+      "max": 2370.0
+    },
+    "validation_FP": {
+      "mean": 4.0,
+      "sample_std": 0.0,
+      "min": 4.0,
+      "max": 4.0
+    },
+    "validation_FN": {
+      "mean": 216.0,
+      "sample_std": 0.0,
+      "min": 216.0,
+      "max": 216.0
+    },
+    "validation_REVIEW": {
+      "mean": 200.0,
+      "sample_std": 0.0,
+      "min": 200.0,
+      "max": 200.0
+    },
+    "validation_precision": {
+      "mean": 0.9983000000000001,
+      "sample_std": 1.2412670766236366e-16,
+      "min": 0.9983,
+      "max": 0.9983
+    },
+    "validation_recall": {
+      "mean": 0.8631,
+      "sample_std": 0.0,
+      "min": 0.8631,
+      "max": 0.8631
+    },
+    "validation_F1": {
+      "mean": 0.9258,
+      "sample_std": 0.0,
+      "min": 0.9258,
+      "max": 0.9258
+    }
+  },
+  "test_evaluations_during_selection": 0
+}

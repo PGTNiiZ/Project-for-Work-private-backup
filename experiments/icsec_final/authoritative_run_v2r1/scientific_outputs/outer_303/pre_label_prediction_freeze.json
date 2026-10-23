@@ -1,0 +1,29 @@
+{
+  "generated_at": 1788597021.8216598,
+  "model_identifiers": [
+    "GB-17",
+    "GB-18"
+  ],
+  "pair_key_hash": "5815de55200581e7a9449d3f20e4e0f43e6ab2acc4714c9b5455276582e43632",
+  "phase": "PRE_LABEL_PREDICTION_FREEZE",
+  "policy_identifiers": [
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "GB17_B0"
+  ],
+  "pre_test_freeze_hashes": {
+    "__policy_state__": "d60bd5880a20afe3c7dbb9af90ffaca990052059ccd4709e8196894a9384b5fd",
+    "fairness.json": "baff1a7e5b39edf53a3c00e0d5495d63fe62f6c0785d2c3c96f48834d35053c7",
+    "models/GB-17_calibrator.pkl": "53781e4b7201d5606aa4ca34313a458aa0d4d74dd2f0cef345fbebda0e207b9e",
+    "models/GB-17_model.pkl": "16a1405d9b198dc5f308ab49ff9d79eed43b9f6f73bb16191c702e772ee307f1",
+    "models/GB-18_calibrator.pkl": "a68e9bb9cb2e049976f3d47900935bf1370e6457d45ecbea74e27b9b8028986c",
+    "models/GB-18_model.pkl": "1fd3f7057666e66711e55184edb324eddf4b81d4beac6243ba50b1f9cc6f50de",
+    "policies.json": "d6a392a932dd6ad1b593ff32064a81b945bea34937a49bc8a8d2fc1926dd24f2",
+    "training.json": "5793b9245d6a6a29834e2065e4ed57ed6030c2ebaeb6462e98cec9d5653bd328"
+  },
+  "prediction_artifact": "sealed_predictions/predictions.parquet",
+  "prediction_sha256": "25bc27c17ef59c7c740114c2f160e5d3cea7d3570f0717e3ddb3fa3a83b0e4ce",
+  "row_count": 1000015
+}

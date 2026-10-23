@@ -1,0 +1,255 @@
+{
+  "active_groups": [
+    "name",
+    "bio",
+    "url",
+    "image",
+    "style"
+  ],
+  "thresholds": [
+    0.999,
+    0.960708558936543,
+    0.9928214630080828,
+    0.2868673093365348
+  ],
+  "weights": {
+    "name": 0.13226243072477348,
+    "bio": 0.4228639853358023,
+    "url": 0.17728339487762865,
+    "image": 0.20666508361746655,
+    "style": 0.060925105444329025
+  },
+  "validation_metrics": {
+    "fp": 33,
+    "fn": 2107,
+    "review": 17672,
+    "precision": 0.9847222222222223,
+    "recall": 0.22253609541745134,
+    "f1": 0.3630312339989759,
+    "cost": 2625.44
+  },
+  "selection_policy": "weights and thresholds selected by validation cost only; test remains sealed until final policy selection",
+  "history": [
+    {
+      "generation": 0,
+      "validation_cost": 74483.6,
+      "thresholds": [
+        0.974395,
+        0.410985,
+        0.880142,
+        0.28764
+      ],
+      "weights": {
+        "name": 0.076035,
+        "bio": 0.197189,
+        "url": 0.341716,
+        "image": 0.139765,
+        "style": 0.245294
+      }
+    },
+    {
+      "generation": 5,
+      "validation_cost": 5264.38,
+      "thresholds": [
+        0.9985,
+        0.622371,
+        1.0,
+        0.257298
+      ],
+      "weights": {
+        "name": 0.010038,
+        "bio": 0.529708,
+        "url": 0.326332,
+        "image": 0.091678,
+        "style": 0.042245
+      }
+    },
+    {
+      "generation": 10,
+      "validation_cost": 5145.88,
+      "thresholds": [
+        0.999,
+        0.609131,
+        1.0,
+        0.291061
+      ],
+      "weights": {
+        "name": 0.041772,
+        "bio": 0.51464,
+        "url": 0.187567,
+        "image": 0.25602,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 15,
+      "validation_cost": 3877.16,
+      "thresholds": [
+        0.999,
+        0.678447,
+        1.0,
+        0.327805
+      ],
+      "weights": {
+        "name": 0.076725,
+        "bio": 0.543333,
+        "url": 0.126949,
+        "image": 0.252993,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 20,
+      "validation_cost": 3820.1000000000004,
+      "thresholds": [
+        0.999,
+        0.611817,
+        1.0,
+        0.352519
+      ],
+      "weights": {
+        "name": 0.079802,
+        "bio": 0.563614,
+        "url": 0.120933,
+        "image": 0.235651,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 25,
+      "validation_cost": 3812.2799999999997,
+      "thresholds": [
+        0.999,
+        0.702155,
+        0.999483,
+        0.352519
+      ],
+      "weights": {
+        "name": 0.08596,
+        "bio": 0.574443,
+        "url": 0.130264,
+        "image": 0.209333,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 30,
+      "validation_cost": 3800.96,
+      "thresholds": [
+        0.999,
+        0.737983,
+        1.0,
+        0.352519
+      ],
+      "weights": {
+        "name": 0.093623,
+        "bio": 0.546152,
+        "url": 0.141495,
+        "image": 0.218731,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 35,
+      "validation_cost": 3797.1000000000004,
+      "thresholds": [
+        0.999,
+        0.698797,
+        1.0,
+        0.355519
+      ],
+      "weights": {
+        "name": 0.092229,
+        "bio": 0.557451,
+        "url": 0.136804,
+        "image": 0.213516,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 40,
+      "validation_cost": 3444.52,
+      "thresholds": [
+        0.999,
+        0.808651,
+        1.0,
+        0.346033
+      ],
+      "weights": {
+        "name": 0.088078,
+        "bio": 0.570286,
+        "url": 0.136449,
+        "image": 0.205188,
+        "style": 0.0
+      }
+    },
+    {
+      "generation": 45,
+      "validation_cost": 3164.34,
+      "thresholds": [
+        0.999,
+        0.83232,
+        1.0,
+        0.352451
+      ],
+      "weights": {
+        "name": 0.096374,
+        "bio": 0.520014,
+        "url": 0.145081,
+        "image": 0.216138,
+        "style": 0.022393
+      }
+    },
+    {
+      "generation": 50,
+      "validation_cost": 3102.76,
+      "thresholds": [
+        0.999,
+        0.866963,
+        0.985841,
+        0.346609
+      ],
+      "weights": {
+        "name": 0.121631,
+        "bio": 0.438307,
+        "url": 0.187054,
+        "image": 0.229584,
+        "style": 0.023423
+      }
+    },
+    {
+      "generation": 55,
+      "validation_cost": 2959.46,
+      "thresholds": [
+        0.999,
+        0.938359,
+        0.985841,
+        0.347366
+      ],
+      "weights": {
+        "name": 0.104069,
+        "bio": 0.471439,
+        "url": 0.169051,
+        "image": 0.166738,
+        "style": 0.088704
+      }
+    },
+    {
+      "generation": 59,
+      "validation_cost": 2626.2,
+      "thresholds": [
+        0.999,
+        0.960709,
+        0.992821,
+        0.290692
+      ],
+      "weights": {
+        "name": 0.138674,
+        "bio": 0.443824,
+        "url": 0.147382,
+        "image": 0.206242,
+        "style": 0.063879
+      }
+    }
+  ]
+}

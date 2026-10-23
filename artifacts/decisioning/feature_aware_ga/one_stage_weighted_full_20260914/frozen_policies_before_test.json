@@ -1,0 +1,89 @@
+{
+  "frozen_at": "2026-09-14T08:07:51.262201+00:00",
+  "selection_split": "val",
+  "selection_rule": "minimum validation cost, then FP, FN, REVIEW, and seed",
+  "test_rows_read_before_freeze": false,
+  "source": "/Users/thawaree.kha/Project-for-Work/pub_multi/data/train_all.parquet",
+  "source_sha256": "ae3735c3d68dc99560aa86a3a6ace9a558276e67ce8639cd2fbd64d814944c03",
+  "active_features_frozen_from_validation": {
+    "probability": true,
+    "name": true,
+    "bio": true,
+    "url": true,
+    "location": false,
+    "social": true,
+    "image": true,
+    "style": true
+  },
+  "policies": {
+    "score_only_2threshold": {
+      "seed": 42,
+      "genome": [
+        0.9467952562493226,
+        0.09564044353349782,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation_metrics": {
+        "precision": 0.9930245535714286,
+        "recall": 0.8114455084359325,
+        "f1": 0.8930991217063989,
+        "cost": 385.9,
+        "fp": 25.0,
+        "fn": 124.0,
+        "review": 2119.0,
+        "basic_quality_gates_pass": true
+      }
+    },
+    "legacy_name_guard_4threshold": {
+      "seed": 42,
+      "genome": [
+        0.9305846020431561,
+        0.10070087539307397,
+        0.9732005638320891,
+        0.0007609210642746216
+      ],
+      "validation_metrics": {
+        "precision": 0.9790339702760085,
+        "recall": 0.8410852713178295,
+        "f1": 0.904831984302183,
+        "cost": 475.0,
+        "fp": 79.0,
+        "fn": 124.0,
+        "review": 1930.0,
+        "basic_quality_gates_pass": false
+      }
+    },
+    "one_stage_weighted_10gene": {
+      "seed": 43,
+      "genome": [
+        0.9290405096256583,
+        0.09822185422619543,
+        0.9438248552353296,
+        0.0,
+        0.02827462195868273,
+        0.0,
+        0.0,
+        0.027900522805987645,
+        0.0,
+        0.0
+      ],
+      "validation_metrics": {
+        "precision": 0.9933920704845814,
+        "recall": 0.8226174190606476,
+        "f1": 0.8999750561237216,
+        "cost": 377.4,
+        "fp": 24.0,
+        "fn": 122.0,
+        "review": 2074.0,
+        "basic_quality_gates_pass": true
+      }
+    }
+  }
+}
