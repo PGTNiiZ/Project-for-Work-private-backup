@@ -1,0 +1,92 @@
+{
+  "policy": "minimum ga_validation weighted cost; ties resolved by smallest GA seed",
+  "selected_seed": 123,
+  "selected_genome": {
+    "t_m": 0.999,
+    "t_r": 0.576806293937804,
+    "c_promote": 0.9511359956637583,
+    "c_demote": 0.0
+  },
+  "selected_validation_cost": 205.4,
+  "seed_statistics": {
+    "val_cost": {
+      "mean": 209.67999999999998,
+      "sample_std": 2.393115124685812,
+      "min": 205.4,
+      "max": 210.8
+    },
+    "objective_val_cost": {
+      "mean": 209.67999999999998,
+      "sample_std": 2.393115124685812,
+      "min": 205.4,
+      "max": 210.8
+    },
+    "t_m": {
+      "mean": 0.9988902645423217,
+      "sample_std": 0.0002453759429108181,
+      "min": 0.9984513227116083,
+      "max": 0.999
+    },
+    "t_r": {
+      "mean": 0.5153612587875609,
+      "sample_std": 0.034348818868951955,
+      "min": 0.5,
+      "max": 0.576806293937804
+    },
+    "c_promote": {
+      "mean": 0.9508087642569294,
+      "sample_std": 0.0007072174380565386,
+      "min": 0.9500460626311065,
+      "max": 0.9515490869967387
+    },
+    "c_demote": {
+      "mean": 0.3298613576506789,
+      "sample_std": 0.21652710667704705,
+      "min": 0.0,
+      "max": 0.5812168127581933
+    },
+    "validation_TP": {
+      "mean": 2270.2,
+      "sample_std": 0.8366600265340756,
+      "min": 2269.0,
+      "max": 2271.0
+    },
+    "validation_FP": {
+      "mean": 5.0,
+      "sample_std": 0.0,
+      "min": 5.0,
+      "max": 5.0
+    },
+    "validation_FN": {
+      "mean": 176.8,
+      "sample_std": 2.6832815729997477,
+      "min": 172.0,
+      "max": 178.0
+    },
+    "validation_REVIEW": {
+      "mean": 228.8,
+      "sample_std": 2.949576240750525,
+      "min": 227.0,
+      "max": 234.0
+    },
+    "validation_precision": {
+      "mean": 0.9978,
+      "sample_std": 0.0,
+      "min": 0.9978,
+      "max": 0.9978
+    },
+    "validation_recall": {
+      "mean": 0.8599,
+      "sample_std": 0.00029999999999996696,
+      "min": 0.8595,
+      "max": 0.8602
+    },
+    "validation_F1": {
+      "mean": 0.9237399999999999,
+      "sample_std": 0.00016733200530684976,
+      "min": 0.9235,
+      "max": 0.9239
+    }
+  },
+  "test_evaluations_during_selection": 0
+}

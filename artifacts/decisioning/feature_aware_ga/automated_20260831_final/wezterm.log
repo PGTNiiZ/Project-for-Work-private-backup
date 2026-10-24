@@ -1,0 +1,33 @@
+[  0%] START: starting chained model-weight and feature-aware GA workflow
+[  5%] CACHE: loading labeled feature population
+[ 15%] CACHE: deriving evidence scores and availability masks
+[ 25%] CACHE: saved 58,696 pairs with score/mask evidence
+[ 30%] MODEL: training Logistic Regression and Gradient Boosting on train split
+[ 40%] MODEL: fitting logistic_regression (1/2)
+[ 50%] MODEL: fitting gradient_boosting (2/2)
+[ 55%] MODEL: selected gradient_boosting by validation AP=0.979692
+[ 58%] AUDIT: computing availability coverage and reliability by evidence group
+[ 62%] GA_SELECTOR: optimizing score-only and one-guard GA policies on validation
+[ 64%] GA_SELECTOR: completed guard score_only (1/6)
+[ 66%] GA_SELECTOR: completed guard name (2/6)
+[ 68%] GA_SELECTOR: completed guard bio (3/6)
+[ 71%] GA_SELECTOR: completed guard url (4/6)
+[ 73%] GA_SELECTOR: completed guard image (5/6)
+[ 75%] GA_SELECTOR: completed guard style (6/6)
+[ 77%] GA_WEIGHTED: optimizing availability-gated evidence weights on validation
+[ 77%] GA_WEIGHTED: generation 0/60; validation cost 502.62
+[ 79%] GA_WEIGHTED: generation 5/60; validation cost 299.84
+[ 80%] GA_WEIGHTED: generation 10/60; validation cost 274.04
+[ 81%] GA_WEIGHTED: generation 15/60; validation cost 274.00
+[ 83%] GA_WEIGHTED: generation 20/60; validation cost 273.86
+[ 85%] GA_WEIGHTED: generation 25/60; validation cost 273.84
+[ 86%] GA_WEIGHTED: generation 30/60; validation cost 273.84
+[ 87%] GA_WEIGHTED: generation 35/60; validation cost 273.84
+[ 89%] GA_WEIGHTED: generation 40/60; validation cost 273.84
+[ 91%] GA_WEIGHTED: generation 45/60; validation cost 273.84
+[ 92%] GA_WEIGHTED: generation 50/60; validation cost 273.84
+[ 93%] GA_WEIGHTED: generation 55/60; validation cost 273.84
+[ 95%] GA_WEIGHTED: generation 59/60; validation cost 273.84
+[ 98%] TEST: freezing validation winner and evaluating held-out test once
+[100%] DONE: all model-weight, GA selector, weighted policy, and detailed report stages completed
+Detailed report: artifacts/decisioning/feature_aware_ga/automated_20260831_final/DETAILED_REPORT_TH.md

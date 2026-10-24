@@ -1,0 +1,74 @@
+{
+  "policy_version": "one_stage_weighted_v1",
+  "projection_only": true,
+  "policy_tuning_performed": false,
+  "source_sha256_verified": true,
+  "dataset_rows": 58696,
+  "split_rows": {
+    "train": 41803,
+    "val": 8580,
+    "test": 8313
+  },
+  "overall_metrics": [
+    {
+      "split_name": "all",
+      "policy": "one_stage_weighted_10gene",
+      "rows": 58696,
+      "positive_support": 29243,
+      "tp": 24541,
+      "tn": 20260,
+      "fp": 73,
+      "fn": 380,
+      "review": 13442,
+      "precision": 0.9970342081742098,
+      "recall": 0.8392093834421913,
+      "f1": 0.911339287372115,
+      "cost": 1870.2,
+      "precision_gate_pass": true,
+      "recall_gate_pass": true,
+      "basic_quality_gates_pass": true
+    },
+    {
+      "split_name": "all",
+      "policy": "score_only_2threshold",
+      "rows": 58696,
+      "positive_support": 29243,
+      "tp": 24277,
+      "tn": 20291,
+      "fp": 69,
+      "fn": 382,
+      "review": 13677,
+      "precision": 0.9971658588679865,
+      "recall": 0.83018158191704,
+      "f1": 0.906044150851854,
+      "cost": 1887.7,
+      "precision_gate_pass": true,
+      "recall_gate_pass": true,
+      "basic_quality_gates_pass": true
+    },
+    {
+      "split_name": "all",
+      "policy": "legacy_name_guard_4threshold",
+      "rows": 58696,
+      "positive_support": 29243,
+      "tp": 25097,
+      "tn": 20353,
+      "fp": 366,
+      "fn": 390,
+      "review": 12490,
+      "precision": 0.9856262027255233,
+      "recall": 0.8582224805936464,
+      "f1": 0.9175227580155741,
+      "cost": 2371.0,
+      "precision_gate_pass": false,
+      "recall_gate_pass": true,
+      "basic_quality_gates_pass": false
+    }
+  ],
+  "artifacts": {
+    "report": "ALL_DATASET_REPORT_TH.md",
+    "pair_decisions": "all_dataset_decisions.parquet",
+    "metrics_by_split": "all_dataset_metrics_by_split.csv",
+    "platform_metrics": "all_dataset_platform_metrics.csv"
+  }
+}

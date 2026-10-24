@@ -1,0 +1,22 @@
+# Selection and Freeze Rules — Gate 9 (draft)
+
+**Draft only; not an approval or execution permit.** Shared terms: profile pair; entity=`user_folder`; roles=train, calibration, validation, test; actions=MATCH, REVIEW, NO_MATCH.
+
+## Freeze sequence (proposed)
+
+1. **Prerequisites:** record the exact primary-source protocol/Phase 1 documents and hashes from the dirty primary worktree; reconcile them with Gate 4 feature, Gate 5 split, Gate 6 evaluator/label lifecycle, and Gate 7 run-isolation/provenance contracts. The references were read but are absent from this isolated base commit; any unresolved conflict blocks progression.
+2. **Before data-dependent work:** approve the primary estimand/contrast, eligibility and pair scope, feature definitions, all-positive and blocking-miss denominator treatment, costs, margin, metric formulas, calibrated methods and adaptive-validation strategy, model families, policy genome/constraints, optimizer budget, exact five-fold entity-role mapping and exclusions, seeds, runtime/storage budget, privacy and data-governance constraints.
+3. **Split freeze:** assign each eligible entity to one deterministic fold using the approved platform-pattern stratification and seed 20261010. For each outer i, TEST=i, CALIBRATION=(i+1)%5, POLICY_VALIDATION=(i+2)%5, remaining folds TRAIN. Publish a protected hashed manifest and aggregate checks; verify entity roles and pair endpoint eligibility without viewing TEST outcomes. Count excluded cross-role pairs by permitted aggregate scope. Exact-tier treatment and blocking misses must be fixed before selection.
+4. **Training/calibration:** fit scorers on TRAIN only; fit isotonic/sigmoid candidates on CALIBRATION only. Brier-based calibrator selection and subsequent scorer/policy selection use POLICY_VALIDATION in the draft; resolve and disclose the adaptive reuse or redesign it before freeze. Persist all identities and source/config/input hashes. No TEST-derived change to features, preprocessing, hyperparameters, calibration, policy, costs or eligibility.
+5. **Policy selection:** evaluate P0–P5 only as approved. P3/P4/P5 (random/Sobol/GA) use the same expanded policy class, bounds, initialization, objective and per-run budget; compare against P0/P1/P2 baselines. Keep C0/C1 candidate-retrieval comparisons separate from optimizer attribution. Freeze objective, constraints, tie-breaking, optimizer settings, seeds, and full trace. No mid-run budget increase or unregistered candidate family.
+6. **Seal:** record hashes for source, data, split, configuration, predictor, calibrator, selected policy, predictions, and evaluator. Freeze code and prediction artifacts. Independent reviewer confirms Gate 4–7 conditions and test-label access boundary.
+7. **One-time evaluation:** only the designated evaluator joins test labels after freeze. Generate row-level pair-keyed decisions and aggregate metrics; independently recompute counts and metrics. Any failure invalidates that evaluation; do not retune and reuse the same test. New selection requires a fresh test role/corpus or explicitly labeled exploratory status.
+8. **Report:** publish all approved arms, per split, uncertainty, denominators and failures; do not report only winners. Distinguish conditional fixed constants from resampled observations, policy cost from business cost, scored-pair from full workflow results, and calibration from ranking quality.
+
+## Selection criterion and abstention
+
+Selection criterion and cost weights are unresolved. Before lock, scientific owner must specify action-by-label loss, including REVIEW for positive and negative labels, and clarify whether a review is unresolved or adjudicated. For primary end-to-end metrics, positive REVIEW is not a true positive; report it explicitly and include in unresolved-positive denominator. Fixed threshold controls and direct-risk comparator require the same frozen calibrated probabilities and pair scope. Do not claim a cost winner is universally preferable.
+
+## Stop conditions
+
+Stop before fitting or evaluation if canonical documents are absent/unreconciled; contracts conflict; there is entity leakage; test labels are available to selection code; pair keys or scope cannot be reconciled; k, seeds, metrics, cost or budget are unspecified; there is unapproved test reuse; or privacy/ethics/license requirements are unresolved. Gate 9 draft status itself is a stop condition for all experiments.

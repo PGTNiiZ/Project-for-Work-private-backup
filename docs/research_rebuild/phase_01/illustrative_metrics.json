@@ -1,0 +1,30 @@
+[
+  {
+    "illustrative": true,
+    "TP": 6,
+    "FP": 1,
+    "FN": 2,
+    "R_positive": 2,
+    "R_negative": 3,
+    "precision": 0.8571428571428571,
+    "automatic_recall": 0.6,
+    "conditional_recall": 0.75,
+    "automatic_F1": 0.7058823529411765,
+    "conditional_F1": 0.8,
+    "U": 4.5
+  },
+  {
+    "illustrative": true,
+    "TP": 6,
+    "FP": 1,
+    "FN": 1,
+    "R_positive": 3,
+    "R_negative": 3,
+    "precision": 0.8571428571428571,
+    "automatic_recall": 0.6,
+    "conditional_recall": 0.8571428571428571,
+    "automatic_F1": 0.7058823529411765,
+    "conditional_F1": 0.8571428571428571,
+    "U": 3.6
+  }
+]

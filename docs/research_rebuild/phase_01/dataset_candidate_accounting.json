@@ -1,0 +1,163 @@
+{
+  "numeric_entity_mapping": {
+    "profile_rows": 36807,
+    "unique_profile_row_id": 36807,
+    "known_entity_groups": 15297,
+    "entity_groups_with_multiple_numeric_profile_id": 0,
+    "numeric_ids_with_multiple_folder_values": 0,
+    "missing_user_folder": 3,
+    "missing_numeric_profile_id": 3,
+    "missing_row_id": 0
+  },
+  "eligibility": {
+    "all_snapshot_rows": 36807,
+    "fc_eligible_rows": 36804,
+    "dropped_missing_numeric_ids": 3,
+    "platform_counts": {
+      "twitter": 13959,
+      "googleplus": 11889,
+      "instagram": 10956
+    },
+    "missing_entity_remaining": 0,
+    "source": "src/identity_resolution/workflows/full_candidate.py:50-68"
+  },
+  "canonical_candidate_accounting": {
+    "exact": 12403,
+    "scored": 2073842,
+    "workflow": 2086245,
+    "exact_true_positive": 12340,
+    "exact_false_positive": 63,
+    "cross_platform_positives": 29243,
+    "all_platform_positives": 29247,
+    "same_platform_positives": 4,
+    "covered_positive": 25931,
+    "missed_positive": 3312,
+    "possible_cross_platform_pairs": 449149239,
+    "retrieval_recall": 0.8867421263208289,
+    "reduction": 0.9953551184798958,
+    "exact_breakdown_incremental": {
+      "username_exact": 11133,
+      "external_url_exact": 1270
+    },
+    "blocking_breakdown_incremental": {
+      "username_prefix3": 1026466,
+      "fullname_prefix3": 1041315,
+      "external_domain": 6061
+    },
+    "invariants": {
+      "exact_scored_disjoint": true,
+      "exact_plus_scored_equals_workflow": true,
+      "covered_plus_missed_equals_positive": true,
+      "all_equals_cross_plus_same": true
+    }
+  },
+  "candidate_artifacts": [
+    {
+      "path": "experiments/icsec_final/authoritative_run_v2/candidates/exact_tier.parquet",
+      "sha256": "92556d0574800b25ed3df72e1d84e343a1fbd08b4525ecf667600ef77aafc9cd",
+      "rows": 12403,
+      "columns": [
+        "profile_row_id_a",
+        "profile_row_id_b",
+        "pair_type"
+      ],
+      "duplicate_unordered_excess": 0,
+      "recomputed_missing_keys": 0,
+      "recomputed_extra_keys": 0,
+      "cross_platform_positive_count": 12340
+    },
+    {
+      "path": "experiments/icsec_final/authoritative_run_v2/candidates/model_scored.parquet",
+      "sha256": "2e22d025b77f7c350239f0e1680f8d07e8cef8cb5017edc3e3ebe883bb9f2aa9",
+      "rows": 2073842,
+      "columns": [
+        "profile_row_id_a",
+        "profile_row_id_b",
+        "pair_type"
+      ],
+      "duplicate_unordered_excess": 0,
+      "recomputed_missing_keys": 0,
+      "recomputed_extra_keys": 0,
+      "cross_platform_positive_count": 13591
+    },
+    {
+      "path": "experiments/icsec_final/authoritative_run_v2/candidates/workflow.parquet",
+      "sha256": "30d168d48d8ca610ce3be5ea46bfccd124aa6676044ab68d58f56a8ef5b480b0",
+      "rows": 2086245,
+      "columns": [
+        "profile_row_id_a",
+        "profile_row_id_b",
+        "pair_type"
+      ],
+      "duplicate_unordered_excess": 0,
+      "recomputed_missing_keys": 0,
+      "recomputed_extra_keys": 0,
+      "cross_platform_positive_count": 25931
+    }
+  ],
+  "legacy_candidates": {
+    "rows": 873956,
+    "unambiguous_known_entity_pairs": 870650,
+    "unresolved_pairs": 3306,
+    "positives_unambiguous": 25209,
+    "labeled_positive_unique_pair_keys": 29243,
+    "labeled_positive_keys_in_candidates": 25252,
+    "labeled_positive_keys_not_in_candidates": 3991,
+    "positive_key_coverage": 0.8635228943678829,
+    "caution": "String profile keys collapse duplicates. This is artifact intersection, not row-level canonical retrieval recall."
+  },
+  "historical_gt_csv": {
+    "path": "train_data/ground_truth_pairs.csv",
+    "sha256": "4fc8573e90487405d058ea7632b516f9b979fabb719a624faa78efa3bf6f76ee",
+    "matrix_npz_present": false,
+    "rows": 58500,
+    "directed_unique_pairs": 58500,
+    "self_pairs": 0,
+    "out_of_range": 0,
+    "nonunit_match": 0,
+    "asymmetric_directed_pairs": 0,
+    "different_index_entity_pairs": 6,
+    "cross_platform_upper_pairs": 29246,
+    "same_platform_upper_pairs": 4,
+    "index_vs_current_merged_folder_mismatch": 3,
+    "index_vs_current_merged_username_mismatch": 0
+  },
+  "existing_minilm_embeddings": {
+    "embedding_path": "experiments/profile_embeddings_minilm.npy",
+    "embedding_sha256": "b8d5844b8f7c51fd21e390824269baa57e4564be69cf6e41a8f7f19a795981f0",
+    "id_path": "experiments/profile_embeddings_minilm_ids.npy",
+    "id_sha256": "ceb4b0ae81b49c631594aa1ec4bd0b0ce8ec362e028967367ee7ffcba61caea5",
+    "shape": [
+      36807,
+      384
+    ],
+    "id_count": 36807,
+    "duplicate_ids": 0,
+    "norm_min": 0.9999998211860657,
+    "norm_max": 1.0000001192092896,
+    "ids_not_in_current_eligible": 3,
+    "eligible_ids_without_embedding": 0
+  },
+  "feature18_replay": [
+    {
+      "path": "experiments/pair_bert_cos.parquet",
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7",
+      "rows": 2073842,
+      "missing_embedding_endpoints": 0,
+      "mismatch_rows_vs_existing_legacy_embedding": 0,
+      "max_abs_difference": 0.0,
+      "cosine_out_of_range": 0,
+      "note": "V2 independently regenerated embeddings may differ; mismatch is not proof V2 incorrect. Existing encoder revision not inferred from filename."
+    },
+    {
+      "path": "experiments/icsec_final/authoritative_run_v2/features/bert_cos.parquet",
+      "sha256": "9c5693483020ae2a9937d979474df30ec5156e4b20632ad8a6e9866393947297",
+      "rows": 2073842,
+      "missing_embedding_endpoints": 0,
+      "mismatch_rows_vs_existing_legacy_embedding": 0,
+      "max_abs_difference": 6.556510925292969e-07,
+      "cosine_out_of_range": 0,
+      "note": "V2 independently regenerated embeddings may differ; mismatch is not proof V2 incorrect. Existing encoder revision not inferred from filename."
+    }
+  ]
+}

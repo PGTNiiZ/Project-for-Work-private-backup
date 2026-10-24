@@ -1,0 +1,30 @@
+{
+  "selection_split": "val",
+  "selected_model": "gradient_boosting",
+  "validation": {
+    "logistic_regression": {
+      "ap": 0.9419855064035814,
+      "auc": 0.9242293400708588,
+      "precision": 0.8715531463587085,
+      "recall": 0.8431372549019608,
+      "f1": 0.8571097462046587,
+      "fp": 545,
+      "fn": 688,
+      "review": 0,
+      "threshold": 0.4200000000000001
+    },
+    "gradient_boosting": {
+      "ap": 0.9796918717483472,
+      "auc": 0.9723927859507024,
+      "precision": 0.9688190522956052,
+      "recall": 0.8996808025535795,
+      "f1": 0.9329708003310084,
+      "fp": 127,
+      "fn": 440,
+      "review": 0,
+      "threshold": 0.5100000000000001
+    }
+  },
+  "selected_threshold": 0.5100000000000001,
+  "test_is_sealed": true
+}

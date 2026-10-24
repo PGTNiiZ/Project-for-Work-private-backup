@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope_invariants": {
+    "exact_plus_scored_equals_workflow": true,
+    "covered_plus_missed_equals_cross_positive": true,
+    "all_equals_cross_plus_same": true
+  },
+  "row_level_checks": [
+    {
+      "outer_seed": 101,
+      "method": "GB-17",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 199559
+    },
+    {
+      "outer_seed": 101,
+      "method": "GB-18",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 199559
+    },
+    {
+      "outer_seed": 101,
+      "method": "GB-18-GA",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 199559
+    },
+    {
+      "outer_seed": 202,
+      "method": "GB-17",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 182980
+    },
+    {
+      "outer_seed": 202,
+      "method": "GB-18",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 182980
+    },
+    {
+      "outer_seed": 202,
+      "method": "GB-18-GA",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 182980
+    },
+    {
+      "outer_seed": 303,
+      "method": "GB-17",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 186404
+    },
+    {
+      "outer_seed": 303,
+      "method": "GB-18",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 186404
+    },
+    {
+      "outer_seed": 303,
+      "method": "GB-18-GA",
+      "confusion_identity": true,
+      "decomposition_identity": true,
+      "workflow_rows": 186404
+    }
+  ],
+  "rows_evaluated": 9,
+  "metric_source": "new authoritative row-level decisions only"
+}

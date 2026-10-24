@@ -1,0 +1,116 @@
+{
+  "version": "entity_nested_v1",
+  "seed": 42,
+  "outer_split": "existing entity-aware cache split; test remains sealed",
+  "development_entity_allocation": {
+    "model_train": 70,
+    "model_calibration": 15,
+    "ga_validation": 15
+  },
+  "pair_counts": {
+    "model_train": 510981,
+    "model_calibration": 26246,
+    "ga_validation": 22873,
+    "test": 195440,
+    "dropped": 1330705
+  },
+  "entity_counts": {
+    "model_train": 7413,
+    "model_calibration": 1606,
+    "ga_validation": 1510,
+    "test": 4554
+  },
+  "entity_overlap_check": "passed",
+  "source_inputs": {
+    "scored_pairs_enriched": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "pair_features17": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "pair_bert_cos": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "blocking_missed_pairs": {
+      "path": "/Users/thawaree.kha/Project-for-Work/artifacts/decisioning/analysis_decision_matrix/blocking_missed_pairs.csv",
+      "bytes": 1844539,
+      "sha256": "b43bbaa36f3118ef3eeeebc015290481d67b23e6a06b6ee0e112da1d5e3e8a1e"
+    },
+    "profiles": {
+      "path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+      "bytes": 19790271,
+      "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1"
+    },
+    "runner_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/run_gb_transformer_experiments.py",
+      "bytes": 40552,
+      "sha256": "52b1aedaf9096e754a4e5dd12290cb91c228659aede48a3cf41ec6ceaef6b3a5"
+    },
+    "exp_lib_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_lib.py",
+      "bytes": 11524,
+      "sha256": "984adb9cf584210f5c2cbbae15062346388211df4812f0f32f91dcfd0f661db4"
+    },
+    "ga_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_r1_ga_redecision.py",
+      "bytes": 7610,
+      "sha256": "b6dc3eede40e33e8fea65ef4ea49d5ac3f05c0ab7a6d6ad1fae8ef36c14b8c23"
+    },
+    "r2_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_r2_bert_feature.py",
+      "bytes": 46220,
+      "sha256": "98da5cb8b2d976bb021f03a593b64f9ca0b36451656fc3c6b2c262ebfef9d698"
+    },
+    "gb_benchmark_source": {
+      "path": "/Users/thawaree.kha/Project-for-Work/pub_multi/bench_classical_leaksafe.py",
+      "bytes": 9321,
+      "sha256": "826d2c6d57fcad7b63df7d3c51559ad9a143fcef7ec4e2261b11143fee15be50"
+    },
+    "r0_nested_summary": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/automation/r1_nested_primary_20260809/summary.json",
+      "bytes": 6925,
+      "sha256": "230ee6ccd0fb7e97db046793592f061ed08538aa0150ca6934e4518655596818"
+    },
+    "r3_summary": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/automation/r3_primary_20260809/summary.json",
+      "bytes": 6898,
+      "sha256": "7dbba13415fd6f7f585b372cb9aac86f93a7d509f8b0405c1b898fb1b0bcaff5"
+    }
+  },
+  "scored_feature_row_count": 2073842,
+  "feature_columns": [
+    "username_jaro",
+    "username_lev_sim",
+    "username_token_sort",
+    "fullname_jaro",
+    "fullname_lev_sim",
+    "fullname_token_sort",
+    "name_sim",
+    "bio_jaccard",
+    "bio_len_ratio",
+    "both_have_bio",
+    "location_jaro",
+    "location_exact",
+    "both_have_location",
+    "same_platform",
+    "username_len_diff",
+    "fullname_wordcount_diff",
+    "username_prefix3_match",
+    "bert_cos"
+  ],
+  "roles": [
+    "model_train",
+    "model_calibration",
+    "ga_validation",
+    "test",
+    "drop"
+  ],
+  "test_sealed_until": "final_test_evaluation",
+  "smoke": false
+}

@@ -1,0 +1,309 @@
+{
+  "invariant": "SEALED_TEST_LABEL_VALUES_MATERIALIZED_BEFORE_FINAL_EVALUATION == 0",
+  "pre_final_label_value_materializations": 0,
+  "final_evaluation_label_value_materializations": 10,
+  "events": [
+    {
+      "event": "phase_change",
+      "phase": "PREPARATION",
+      "order": 0,
+      "timestamp": 1788596844.619974
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "parquet_footer_inspection",
+      "requested_columns": [],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 1,
+      "timestamp": 1788596844.784807
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pair_key_only_read",
+      "requested_columns": [
+        "pair_key"
+      ],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 2,
+      "timestamp": 1788596844.9745579
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "parquet_footer_inspection",
+      "requested_columns": [],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 3,
+      "timestamp": 1788596845.476846
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pair_key_only_read",
+      "requested_columns": [
+        "pair_key"
+      ],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 4,
+      "timestamp": 1788596845.659602
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/sealed_test_labels/labels.parquet",
+      "operation": "parquet_footer_inspection",
+      "requested_columns": [],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 5,
+      "timestamp": 1788596846.158707
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/sealed_test_labels/labels.parquet",
+      "operation": "pair_key_only_read",
+      "requested_columns": [
+        "pair_key"
+      ],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 6,
+      "timestamp": 1788596846.330197
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "parquet_footer_inspection",
+      "requested_columns": [],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 7,
+      "timestamp": 1788596847.339434
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pair_key_only_read",
+      "requested_columns": [
+        "pair_key"
+      ],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 8,
+      "timestamp": 1788596847.519233
+    },
+    {
+      "event": "phase_change",
+      "phase": "TRAINING",
+      "order": 9,
+      "timestamp": 1788596853.857218
+    },
+    {
+      "event": "phase_change",
+      "phase": "POLICY_SELECTION",
+      "order": 10,
+      "timestamp": 1788596894.151192
+    },
+    {
+      "event": "phase_change",
+      "phase": "PREDICTION_GENERATION",
+      "order": 11,
+      "timestamp": 1788596898.708051
+    },
+    {
+      "event": "phase_change",
+      "phase": "FINAL_EVALUATION",
+      "order": 12,
+      "timestamp": 1788596901.246921
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 13,
+      "timestamp": 1788596901.415245
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 14,
+      "timestamp": 1788596902.071788
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 15,
+      "timestamp": 1788596902.721396
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 16,
+      "timestamp": 1788596903.357016
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_101/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 17,
+      "timestamp": 1788596903.983339
+    },
+    {
+      "event": "phase_change",
+      "phase": "POST_EVALUATION",
+      "order": 18,
+      "timestamp": 1788596904.559702
+    },
+    {
+      "event": "phase_change",
+      "phase": "PREPARATION",
+      "order": 19,
+      "timestamp": 1788596905.9074318
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "parquet_footer_inspection",
+      "requested_columns": [],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 20,
+      "timestamp": 1788596906.125695
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "PREPARATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pair_key_only_read",
+      "requested_columns": [
+        "pair_key"
+      ],
+      "label_column_materialized": false,
+      "allowed": true,
+      "order": 21,
+      "timestamp": 1788596906.3082418
+    },
+    {
+      "event": "phase_change",
+      "phase": "TRAINING",
+      "order": 22,
+      "timestamp": 1788596913.030841
+    },
+    {
+      "event": "phase_change",
+      "phase": "POLICY_SELECTION",
+      "order": 23,
+      "timestamp": 1788596954.3505359
+    },
+    {
+      "event": "phase_change",
+      "phase": "PREDICTION_GENERATION",
+      "order": 24,
+      "timestamp": 1788596958.440554
+    },
+    {
+      "event": "phase_change",
+      "phase": "FINAL_EVALUATION",
+      "order": 25,
+      "timestamp": 1788596961.022706
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 26,
+      "timestamp": 1788596961.172044
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 27,
+      "timestamp": 1788596961.83343
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 28,
+      "timestamp": 1788596962.484597
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 29,
+      "timestamp": 1788596963.126843
+    },
+    {
+      "event": "sealed_artifact_access",
+      "phase": "FINAL_EVALUATION",
+      "resource": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_202/sealed_test_labels/labels.parquet",
+      "operation": "pandas.read_parquet",
+      "requested_columns": null,
+      "label_column_materialized": true,
+      "allowed": true,
+      "order": 30,
+      "timestamp": 1788596963.77217
+    },
+    {
+      "event": "phase_change",
+      "phase": "POST_EVALUATION",
+      "order": 31,
+      "timestamp": 1788596964.355285
+    }
+  ]
+}

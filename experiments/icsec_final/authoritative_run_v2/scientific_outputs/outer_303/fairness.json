@@ -1,0 +1,1 @@
+{"bounds_equal": true, "budget": 12000, "decision_implementation": "decide_four_parameter", "objective": "2*FP+FN+0.1*REVIEW", "passed": true, "policy_class_equal": true, "validation_dataset_hash": "4b799e0c0d4429e6be608c7d1492641304534d182b8579854adef92027c23a3e"}

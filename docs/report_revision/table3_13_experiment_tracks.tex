@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,landscape,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Thonburi}
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{booktabs,tabularx,array}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\begin{document}
+\begin{center}
+\small
+\textbf{ตารางที่ 3.13 สรุปผลเชิงตัวเลขและการคัดเลือกแบบจำลองในแต่ละสายการทดลอง}
+
+\vspace{0.5em}
+\begin{tabularx}{\linewidth}{p{3.2cm}p{4cm}p{2cm}XX}
+\toprule
+สายการทดลอง & แบบจำลอง/ชุดคุณลักษณะ & จำนวนคุณลักษณะ & ผล Validation หรือเกณฑ์คัดเลือก & ผลการทดสอบ (Test) \\
+\midrule
+1. Classical Leakage-safe & Gradient Boosting & 22 & Average Precision = 0.9733\newline F1 = 0.9368 & Average Precision = 0.9703\newline F1 = 0.9337 \\
+\addlinespace
+2. Multimodal Suite (Final Model) & Gradient Boosting (\texttt{image\_context}) & 41 & Composite Score = 0.9613\newline Average Precision = 0.9776\newline F1 = 0.9339 & Average Precision = 0.9789\newline F1 = 0.9340 \\
+\addlinespace
+3. Neural Reference & IdentityMLP & 22 & Average Precision $\approx$ 1.0000\textsuperscript{1} & Average Precision = 0.7344\newline F1 = 0.8296 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\footnotesize
+\textsuperscript{1} ค่า Average Precision $\approx$ 1.0000 เป็นค่าที่ปรากฏในรายงานเดิมของสาย Neural Reference แต่ไม่ได้ระบุชุดข้อมูลไว้อย่างชัดเจน จึงไม่ควรนำมาเปรียบเทียบกับผล Test โดยตรง ส่วนผล Test ที่ตรวจสอบได้คือ Average Precision = 0.7344 และ F1 = 0.8296
+
+\textbf{หมายเหตุ:} \texttt{image\_context} เป็นชื่อชุดคุณลักษณะของสาย Multimodal ส่วนแบบจำลองที่ใช้คือ Gradient Boosting
+\end{document}

@@ -1,0 +1,97 @@
+{
+  "NOT_MANUSCRIPT_EVIDENCE": true,
+  "global_candidate_scope": {
+    "exact_tier.parquet": 12403,
+    "model_scored.parquet": 2073842,
+    "workflow.parquet": 2086245
+  },
+  "seeds": {
+    "101": {
+      "exact_tier.parquet": {
+        "TRAIN": 6018,
+        "CALIBRATION": 1349,
+        "POLICY_VALIDATION": 1363,
+        "SEALED_TEST": 3631,
+        "cross_role_dropped": 42,
+        "input_pairs": 12403,
+        "same_role_pairs": 12361
+      },
+      "model_scored.parquet": {
+        "TRAIN": 489165,
+        "CALIBRATION": 24443,
+        "POLICY_VALIDATION": 26152,
+        "SEALED_TEST": 190061,
+        "cross_role_dropped": 1344021,
+        "input_pairs": 2073842,
+        "same_role_pairs": 729821
+      },
+      "workflow.parquet": {
+        "TRAIN": 495183,
+        "CALIBRATION": 25792,
+        "POLICY_VALIDATION": 27515,
+        "SEALED_TEST": 193692,
+        "cross_role_dropped": 1344063,
+        "input_pairs": 2086245,
+        "same_role_pairs": 742182
+      }
+    },
+    "202": {
+      "exact_tier.parquet": {
+        "TRAIN": 6115,
+        "CALIBRATION": 1264,
+        "POLICY_VALIDATION": 1303,
+        "SEALED_TEST": 3680,
+        "cross_role_dropped": 41,
+        "input_pairs": 12403,
+        "same_role_pairs": 12362
+      },
+      "model_scored.parquet": {
+        "TRAIN": 513112,
+        "CALIBRATION": 20693,
+        "POLICY_VALIDATION": 23164,
+        "SEALED_TEST": 193851,
+        "cross_role_dropped": 1323022,
+        "input_pairs": 2073842,
+        "same_role_pairs": 750820
+      },
+      "workflow.parquet": {
+        "TRAIN": 519227,
+        "CALIBRATION": 21957,
+        "POLICY_VALIDATION": 24467,
+        "SEALED_TEST": 197531,
+        "cross_role_dropped": 1323063,
+        "input_pairs": 2086245,
+        "same_role_pairs": 763182
+      }
+    },
+    "303": {
+      "exact_tier.parquet": {
+        "TRAIN": 6009,
+        "CALIBRATION": 1292,
+        "POLICY_VALIDATION": 1334,
+        "SEALED_TEST": 3728,
+        "cross_role_dropped": 40,
+        "input_pairs": 12403,
+        "same_role_pairs": 12363
+      },
+      "model_scored.parquet": {
+        "TRAIN": 481047,
+        "CALIBRATION": 24228,
+        "POLICY_VALIDATION": 24825,
+        "SEALED_TEST": 200003,
+        "cross_role_dropped": 1343739,
+        "input_pairs": 2073842,
+        "same_role_pairs": 730103
+      },
+      "workflow.parquet": {
+        "TRAIN": 487056,
+        "CALIBRATION": 25520,
+        "POLICY_VALIDATION": 26159,
+        "SEALED_TEST": 203731,
+        "cross_role_dropped": 1343779,
+        "input_pairs": 2086245,
+        "same_role_pairs": 742466
+      }
+    }
+  }
+}

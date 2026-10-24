@@ -1,0 +1,554 @@
+{
+  "score_only": [
+    {
+      "generation": 0,
+      "validation_cost": 8751.380000000001,
+      "genome": [
+        0.986984,
+        0.527032,
+        0.966476,
+        0.105441
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 3438.48,
+      "genome": [
+        0.999,
+        0.901186,
+        0.833403,
+        0.167784
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 2579.44,
+      "genome": [
+        0.999,
+        0.952761,
+        0.60736,
+        0.178903
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 2551.18,
+      "genome": [
+        0.999,
+        0.963682,
+        0.820831,
+        0.183931
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 2551.06,
+      "genome": [
+        0.996746,
+        0.964023,
+        0.849571,
+        0.212013
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 2551.06,
+      "genome": [
+        0.996746,
+        0.964023,
+        0.849571,
+        0.212013
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2551.06,
+      "genome": [
+        0.996746,
+        0.964023,
+        0.849571,
+        0.212013
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2551.06,
+      "genome": [
+        0.996746,
+        0.964023,
+        0.849571,
+        0.212013
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2551.06,
+      "genome": [
+        0.996746,
+        0.964023,
+        0.849571,
+        0.212013
+      ]
+    }
+  ],
+  "name": [
+    {
+      "generation": 0,
+      "validation_cost": 29783.6,
+      "genome": [
+        0.984786,
+        0.562045,
+        0.906017,
+        0.18705
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 8512.2,
+      "genome": [
+        0.999,
+        0.529894,
+        0.960243,
+        0.407868
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 6505.4400000000005,
+      "genome": [
+        0.999,
+        0.644242,
+        0.990179,
+        0.424252
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 6500.18,
+      "genome": [
+        0.999,
+        0.736308,
+        0.990179,
+        0.409632
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 5251.8,
+      "genome": [
+        0.999,
+        0.785363,
+        0.987055,
+        0.412207
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 4104.0,
+      "genome": [
+        0.999,
+        0.865172,
+        0.987055,
+        0.382446
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2835.68,
+      "genome": [
+        0.997489,
+        0.962507,
+        1.0,
+        0.420468
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2834.7200000000003,
+      "genome": [
+        0.999,
+        0.963289,
+        0.986948,
+        0.443843
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2834.7200000000003,
+      "genome": [
+        0.999,
+        0.963289,
+        0.986948,
+        0.443843
+      ]
+    }
+  ],
+  "bio": [
+    {
+      "generation": 0,
+      "validation_cost": 6305.18,
+      "genome": [
+        0.994836,
+        0.737449,
+        0.971193,
+        0.289611
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 3388.94,
+      "genome": [
+        0.999,
+        0.83875,
+        0.926038,
+        0.324598
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 2906.14,
+      "genome": [
+        0.999,
+        0.977503,
+        0.956599,
+        0.308377
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 2628.86,
+      "genome": [
+        0.999,
+        0.960957,
+        0.955414,
+        0.199099
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 2573.12,
+      "genome": [
+        0.99712,
+        0.962222,
+        0.980463,
+        0.107605
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 2566.2200000000003,
+      "genome": [
+        0.998865,
+        0.962222,
+        0.952479,
+        0.019354
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2565.94,
+      "genome": [
+        0.999,
+        0.962222,
+        0.951692,
+        0.0
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2565.94,
+      "genome": [
+        0.999,
+        0.962222,
+        0.951692,
+        0.0
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2565.8,
+      "genome": [
+        0.99726,
+        0.963349,
+        0.951692,
+        0.0
+      ]
+    }
+  ],
+  "url": [
+    {
+      "generation": 0,
+      "validation_cost": 7133.66,
+      "genome": [
+        0.992541,
+        0.573601,
+        0.617961,
+        0.008194
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 6349.64,
+      "genome": [
+        0.995508,
+        0.665415,
+        0.629645,
+        0.387786
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 6347.7,
+      "genome": [
+        0.995508,
+        0.76466,
+        0.603697,
+        0.138707
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 4457.780000000001,
+      "genome": [
+        0.996707,
+        0.812859,
+        0.623614,
+        0.0
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 3465.5,
+      "genome": [
+        0.999,
+        0.886797,
+        0.503768,
+        0.0
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 2561.1,
+      "genome": [
+        0.999,
+        0.96308,
+        0.592209,
+        0.0
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2560.86,
+      "genome": [
+        0.99703,
+        0.964037,
+        0.592209,
+        0.0
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2560.84,
+      "genome": [
+        0.99703,
+        0.964188,
+        0.647019,
+        0.0
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2560.84,
+      "genome": [
+        0.99703,
+        0.964188,
+        0.647019,
+        0.0
+      ]
+    }
+  ],
+  "image": [
+    {
+      "generation": 0,
+      "validation_cost": 6320.6,
+      "genome": [
+        0.98166,
+        0.77647,
+        0.507878,
+        0.315039
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 4754.700000000001,
+      "genome": [
+        0.999,
+        0.790543,
+        1.0,
+        0.303475
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 3584.96,
+      "genome": [
+        0.999,
+        0.8823,
+        1.0,
+        0.209403
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 2614.7200000000003,
+      "genome": [
+        0.999,
+        0.945159,
+        0.993583,
+        0.158534
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 2551.36,
+      "genome": [
+        0.999,
+        0.961855,
+        0.951953,
+        0.088101
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 2551.12,
+      "genome": [
+        0.999,
+        0.963152,
+        0.956303,
+        0.091051
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2551.08,
+      "genome": [
+        0.999,
+        0.963535,
+        0.987983,
+        0.091051
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2551.08,
+      "genome": [
+        0.999,
+        0.963535,
+        0.987983,
+        0.091051
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2551.02,
+      "genome": [
+        0.999,
+        0.96359,
+        1.0,
+        0.091051
+      ]
+    }
+  ],
+  "style": [
+    {
+      "generation": 0,
+      "validation_cost": 11423.880000000001,
+      "genome": [
+        0.978599,
+        0.578411,
+        0.959963,
+        0.244891
+      ]
+    },
+    {
+      "generation": 5,
+      "validation_cost": 5677.92,
+      "genome": [
+        0.999,
+        0.636278,
+        1.0,
+        0.313498
+      ]
+    },
+    {
+      "generation": 10,
+      "validation_cost": 5673.28,
+      "genome": [
+        0.999,
+        0.692835,
+        1.0,
+        0.358271
+      ]
+    },
+    {
+      "generation": 15,
+      "validation_cost": 4425.24,
+      "genome": [
+        0.999,
+        0.786785,
+        0.999737,
+        0.299609
+      ]
+    },
+    {
+      "generation": 20,
+      "validation_cost": 3441.4,
+      "genome": [
+        0.999,
+        0.877626,
+        1.0,
+        0.249152
+      ]
+    },
+    {
+      "generation": 25,
+      "validation_cost": 2558.64,
+      "genome": [
+        0.999,
+        0.95827,
+        0.988722,
+        0.294767
+      ]
+    },
+    {
+      "generation": 30,
+      "validation_cost": 2551.0,
+      "genome": [
+        0.999,
+        0.963111,
+        1.0,
+        0.269866
+      ]
+    },
+    {
+      "generation": 35,
+      "validation_cost": 2550.96,
+      "genome": [
+        0.999,
+        0.963368,
+        0.999075,
+        0.271211
+      ]
+    },
+    {
+      "generation": 39,
+      "validation_cost": 2550.76,
+      "genome": [
+        0.999,
+        0.964108,
+        0.999075,
+        0.271011
+      ]
+    }
+  ]
+}

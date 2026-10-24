@@ -1,0 +1,58 @@
+{
+  "version": "entity_nested_v1",
+  "seed": 101,
+  "outer_split": "existing entity-aware cache split; test remains sealed",
+  "development_entity_allocation": {
+    "model_train": 70,
+    "model_calibration": 15,
+    "ga_validation": 15
+  },
+  "pair_counts": {
+    "model_train": 524966,
+    "model_calibration": 21548,
+    "ga_validation": 23169,
+    "test": 198534,
+    "dropped": 1318028
+  },
+  "entity_counts": {
+    "model_train": 7549,
+    "model_calibration": 1478,
+    "ga_validation": 1532,
+    "test": 4518
+  },
+  "entity_overlap_check": "passed",
+  "outer_seed": 101,
+  "outer_assignment": "MD5(icsec-outer-v1:seed:entity_key) < 30 => test",
+  "test_labels_accessed_before_final_evaluation": false,
+  "selected_ga_test_evaluations": 1,
+  "constants": {
+    "model_train": {
+      "tp_exact": 6209,
+      "fp_exact": 20,
+      "fn_blocking": 0,
+      "total_pos": 12958,
+      "n_scored": 518737
+    },
+    "model_calibration": {
+      "tp_exact": 1223,
+      "fp_exact": 0,
+      "fn_blocking": 0,
+      "total_pos": 2532,
+      "n_scored": 20325
+    },
+    "ga_validation": {
+      "tp_exact": 1216,
+      "fp_exact": 0,
+      "fn_blocking": 0,
+      "total_pos": 2640,
+      "n_scored": 21953
+    },
+    "test": {
+      "tp_exact": 3692,
+      "fp_exact": 6,
+      "fn_blocking": 1028,
+      "total_pos": 8829,
+      "n_scored": 194836
+    }
+  }
+}

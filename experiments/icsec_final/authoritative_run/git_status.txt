@@ -1,0 +1,187 @@
+ M CLAUDE.md
+ D Confix/fix-data-platform.py
+ D Confix/fix_numpy.py
+ D EXPERIMENT_PLAN.md
+ D IMPLEMENTATION_PLAN.md
+ D PROJECT_FINDINGS_AND_IMPROVEMENT.md
+ D PROMPT_AUTOMATION_R2_R5.md
+ M README.md
+ D REPORT_R0_R5.ipynb
+ D ROADMAP_5MONTH.md
+ D Train-Data/preprocess_pipeline_backup.ipynb
+ D _presentation_extract.txt
+ D analysis_decision_matrix/blocking_missed_pairs.csv
+ D analysis_decision_matrix/blocking_missed_pairs.json
+ D analysis_decision_matrix/error_analysis_report.md
+ D analysis_decision_matrix/fn_nomatch_but_actually_yes.csv
+ D analysis_decision_matrix/fp_match_but_actually_no.csv
+ D analysis_decision_matrix/review_actual_match.csv
+ D analysis_decision_matrix/review_actual_nomatch.csv
+ D analysis_decision_matrix/review_redecision.csv
+ D analysis_decision_matrix/summary.json
+ D archive/train_data/invalid/matrix-data.ipynb
+ D "archive/train_data/notebooks/stage10_dataset copy.ipynb"
+ D "archive/train_data/notebooks/stage7_blocking copy.ipynb"
+ D "archive/train_data/notebooks/stage8_labeling copy.ipynb"
+ D "archive/train_data/notebooks/stage9_features copy.ipynb"
+ D bigram_username_and_fullname/bigram_full_pipeline.py
+ D bio_vector/sbert_mpnet_matching.ipynb
+ D bio_vector/vector_embredding.ipynb
+ D build_r0_r3_report.py
+ D clean_data/location_mapping_pipeline.py
+ D clean_data/preprocess_dataset.py
+ D data/processed/view_train_dataset.ipynb
+ M docs/PROJECT_STRUCTURE.md
+ D exp_lib.py
+ D exp_r1_ga_redecision.py
+ D exp_r2_bert_feature.py
+ D exp_r4_bloom_privacy.py
+ D exp_r6_bert_er.py
+ M experiments/R6_GPU_IMPLEMENT_PLAN.md
+ M experiments/REPORT_R0_R5.md
+ M experiments/r1_results.json
+ M experiments/walkthroughs/00_shared_protocol/00_shared_protocol.ipynb
+ M experiments/walkthroughs/build_walkthrough_notebooks.py
+ M experiments/walkthroughs/gb_transformer_ga/GB_transformer_GA.ipynb
+ M experiments/walkthroughs/r0_baseline/R0_baseline.ipynb
+ M experiments/walkthroughs/r1_ga_redecision/R1_ga_redecision.ipynb
+ M experiments/walkthroughs/r2_minilm_feature/R2_minilm_feature.ipynb
+ M experiments/walkthroughs/r3_minilm_ga/R3_minilm_ga.ipynb
+ M experiments/walkthroughs/r4_bloom_manual/R4_bloom_manual.ipynb
+ M experiments/walkthroughs/r5_bloom_ga/R5_bloom_ga.ipynb
+ M experiments/walkthroughs/r6_bert_er/R6_bert_er.ipynb
+ D image_process/ArcFace.ipynb
+ D image_process/create_normalized_db.py
+ D image_process/image_caption.py
+ D image_process/image_embeddings.py
+ D image_process/image_features.py
+ D image_process/image_matching_pipeline.py
+ D image_process/merge_image_data.py
+ D image_process/profile_image_pair_features.py
+ D image_process/pull-picture.ipynb
+ D image_process/recover_profile_images.py
+ D models_platform_thresholds.json
+ D noisy_or_report.json
+ D pair_stats.json
+ D prompt_library.md
+ M pub_multi/README.md
+ M pub_multi/USE.md
+ M pub_multi/build_pkg.py
+ M pub_multi/doc/ch03_content_outputs_th.md
+ M pub_multi/doc/ch03_figure_plan_th.md
+ M pub_multi/doc/ch03_methodology_formal_th.md
+ M pub_multi/doc/file_map.md
+ M pub_multi/doc/original_code_trace_th.md
+ M pub_multi/doc/pipeline_latest_actual.mmd
+ M pub_multi/doc/pipeline_latest_actual_th.md
+ M pub_multi/doc/scope_business_vs_experiment_th.md
+ D pub_multi/run/r_crm.ps1
+ D pub_multi/run/r_feat.ps1
+ D pub_multi/run/r_full.ps1
+ D pub_multi/run/r_multi.ps1
+ D pub_multi/src/s01_prep.py
+ D pub_multi/src/s02_loc.py
+ D pub_multi/src/s03_norm.py
+ D pub_multi/src/s04_img.py
+ D pub_multi/src/s05_pair.py
+ D pub_multi/src/s06_feat.py
+ D pub_multi/src/s07_base.py
+ D pub_multi/src/s08_multi.py
+ D pub_multi/src/s09_full.py
+ D pub_multi/src/s10_crm.py
+ D pub_multi/src/s11_train.py
+ D pub_multi/src/s12_imgpair.py
+ D reports_adaptive_threshold.json
+ D reports_eval_gb_baseline.json
+ M requirements.txt
+ D run_ga_experiments.py
+ D run_gb_transformer_experiments.py
+ D scripts/analysis/compare_pipeline_metrics.py
+ D scripts/image/advanced_embeddings.py
+ D stage10_eval_harness.py
+ D stage11_adaptive_threshold.py
+ D stage16_error_groups.py
+ D stage17_error_analysis.py
+ D stage18_review_redecision.py
+ D stage8_pair_builder.py
+ D stage9_noisy_or_fusion.py
+ M tests/test_ga_runner.py
+ M tests/test_ga_threshold.py
+ M tests/test_nested_protocol.py
+ M tests/test_r2_training.py
+ D train_data/build_ground_truth_matrix.ipynb
+ D train_data/check_combined_profiles.ipynb
+ D train_data/leakage_safe_experiment/run_experiment.ps1
+ D train_data/leakage_safe_experiment/run_experiment.py
+ D train_data/load_data.ipynb
+ D train_data/preprocess_pipeline_backup.ipynb
+ D train_data/run_stage10_13_training_noleak.ps1
+ D train_data/run_stage10_13_training_noleak_strict.ps1
+ D train_data/run_stage9_pipeline.ps1
+ D train_data/stage10_13_training_pipeline.py
+ D train_data/stage10_dataset.ipynb
+ D train_data/stage11_training.ipynb
+ D train_data/stage12_13_calibration_evaluation.ipynb
+ D train_data/stage14_inference.ipynb
+ D train_data/stage15_16_17_merge_scoring_export.ipynb
+ D train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.ps1
+ D train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py
+ D train_data/stage7_13_multimodal_suite/run_multimodal_suite.ps1
+ D train_data/stage7_13_multimodal_suite/run_multimodal_suite.py
+ D train_data/stage7_14_full_candidate_pipeline/run_full_candidate_pipeline.ps1
+ D train_data/stage7_14_full_candidate_pipeline/run_full_candidate_pipeline.py
+ D train_data/stage7_8_rebuilt_experiment/run_rebuilt_pipeline.ps1
+ D train_data/stage7_8_rebuilt_experiment/run_rebuilt_pipeline.py
+ D train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.ps1
+ D train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py
+ D train_data/stage7_8_rebuilt_experiment_tuned/run_rebuilt_pipeline.ps1
+ D train_data/stage7_8_rebuilt_experiment_tuned/run_rebuilt_pipeline.py
+ D train_data/stage7_8_rebuilt_experiment_tuned/tune_rebuilt_pipeline.py
+ D train_data/stage7_blocking.ipynb
+ D train_data/stage8_labeling.ipynb
+ D train_data/stage9_compare_features.py
+ D train_data/stage9_features.ipynb
+ D train_data/stage9_features_pipeline.py
+ D train_data/stage9_features_pipeline_chunked.py
+ D train_data/v2/stage10_dataset_v2.ipynb
+ D train_data/v2/stage11_training_v2.ipynb
+ D train_data/v2/stage12_13_calibration_evaluation_v2.ipynb
+ D train_data/v2/stage14_inference_v2.ipynb
+ D train_data/v2/stage15_16_17_merge_scoring_export_v2.ipynb
+ D train_data/v2/stage6_preprocessing_v2.ipynb
+ D train_data/v2/stage7_blocking_v2.ipynb
+ D train_data/v2/stage8_labeling_v2.ipynb
+ D train_data/v2/stage9_features_v2.ipynb
+?? docs/ARCHITECTURE_TH.md
+?? docs/CLEANUP_REPORT_TH.md
+?? docs/GETTING_STARTED_TH.md
+?? docs/README.md
+?? docs/REMOVAL_CANDIDATES.md
+?? docs/plans/
+?? docs/prompts/
+?? docs/reports/
+?? experiments/__init__.py
+?? experiments/automation/run_full_feature_aware_wezterm.sh
+?? experiments/code/
+?? experiments/icsec_final/
+?? experiments/walkthroughs/r1_ga_redecision/DATA_DICTIONARY.md
+?? experiments/walkthroughs/r1_ga_redecision/data/
+?? experiments/walkthroughs/r1_ga_redecision/export_r1_ga_input_detail.py
+?? manuscript/
+?? notebooks/
+?? paper/
+?? presentation/CHAPTER_13_GA_BUSINESS_COST_SPEAKER_SCRIPT_TH.md
+?? presentation/PROJECT_REPORT_SPEAKER_SCRIPT_TH.md
+?? presentation/source_extract.txt
+?? pub_multi/genetic_algorithm_tuning.py
+?? pub_multi/run/r_ga.ps1
+?? pub_multi/src/genetic_optimizer.py
+?? pub_multi/tests/
+?? pyproject.toml
+?? report-source.md
+?? src/
+?? tests/test_core_architecture.py
+?? tests/test_feature_aware_ga.py
+?? tests/test_feature_registry.py
+?? tests/test_name_similarity.py
+?? uv.lock

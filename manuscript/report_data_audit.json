@@ -1,0 +1,46 @@
+{
+  "source": "data_for_project/normalized_profiles_with_profile_id.csv",
+  "input_rows": 36807,
+  "eligible_rows": 36804,
+  "excluded_invalid_id_rows": 3,
+  "unique_entities": 15297,
+  "platform_counts_input": {
+    "twitter": 13960,
+    "googleplus": 11890,
+    "instagram": 10957
+  },
+  "platform_counts_eligible": {
+    "twitter": 13959,
+    "googleplus": 11889,
+    "instagram": 10956
+  },
+  "ground_truth_pairs_all": 29247,
+  "ground_truth_pairs_cross_platform": 29243,
+  "ground_truth_pairs_same_platform": 4,
+  "field_nonempty": {
+    "userName": {
+      "count": 36723,
+      "coverage": 0.9977178254136442
+    },
+    "fullName": {
+      "count": 35952,
+      "coverage": 0.9767707229603064
+    },
+    "bio": {
+      "count": 30167,
+      "coverage": 0.8195995326975847
+    },
+    "location": {
+      "count": 12794,
+      "coverage": 0.34759692449805746
+    },
+    "externalUrl_clean": {
+      "count": 30580,
+      "coverage": 0.8308202244138343
+    },
+    "external_domain": {
+      "count": 30580,
+      "coverage": 0.8308202244138343
+    }
+  }
+}

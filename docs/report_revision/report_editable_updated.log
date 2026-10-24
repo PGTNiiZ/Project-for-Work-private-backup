@@ -1,0 +1,10 @@
+**
+(report_editable_updated.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+! ! LaTeX Error: File `report.cls' not found..
+\@missingfileerror ...or: File `#1.#2' not found.}
+                                                  
+l.4 \usepackage
+               [a4paper,top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm]{geometry}
+No pages of output.

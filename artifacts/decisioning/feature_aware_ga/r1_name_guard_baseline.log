@@ -1,0 +1,11 @@
+Loading cache ...
+  gen  0  val cost      7,706.6  g=[0.9957 0.7384 0.9665 0.4826]
+  gen  5  val cost      5,208.0  g=[0.999  0.7706 1.     0.458 ]
+  gen 10  val cost      4,009.5  g=[0.999  0.8968 1.     0.4395]
+  gen 15  val cost      2,820.4  g=[0.999  0.9621 1.     0.449 ]
+  gen 20  val cost      2,819.4  g=[0.999  0.9642 0.9887 0.4834]
+  gen 25  val cost      2,819.2  g=[0.999  0.9642 0.9877 0.5052]
+  gen 30  val cost      2,818.7  g=[0.999  0.9642 0.9875 0.5052]
+  gen 35  val cost      2,818.7  g=[0.999  0.9642 0.9875 0.5052]
+  gen 39  val cost      2,818.7  g=[0.999  0.9642 0.9875 0.5052]
+Saved -> /Users/thawaree.kha/Project-for-Work/experiments/r1_results.json, /Users/thawaree.kha/Project-for-Work/experiments/r1_ga_history.json

@@ -1,0 +1,55 @@
+{
+  "policy_version": "one_stage_weighted_v1",
+  "validation_only": true,
+  "test_evaluated": false,
+  "best_seed": 50,
+  "best_genome": [
+    0.9292691254363367,
+    0.1136738673408006,
+    0.9221761381872645,
+    0.027207856174793765,
+    0.0,
+    0.01764807303714192,
+    0.0,
+    0.0,
+    0.03296793260079981,
+    0.0
+  ],
+  "thresholds": [
+    0.9292691254363367,
+    0.1136738673408006
+  ],
+  "weights": {
+    "probability": 0.9221761381872645,
+    "name": 0.027207856174793765,
+    "bio": 0.0,
+    "url": 0.01764807303714192,
+    "location": 0.0,
+    "social": 0.0,
+    "image": 0.03296793260079981,
+    "style": 0.0
+  },
+  "validation_metrics": {
+    "fp": 24,
+    "fn": 127,
+    "review": 2035,
+    "precision": 0.9933259176863182,
+    "recall": 0.8144094847241222,
+    "f1": 0.8950137810072664,
+    "cost": 378.5,
+    "precision_gate_pass": true,
+    "recall_gate_pass": true,
+    "basic_quality_gates_pass": true,
+    "platform_precision_gate_pass": true
+  },
+  "validation_status": "BASIC_AND_PLATFORM_GATES_PASSED_REVIEW_CAPACITY_UNSET",
+  "artifacts": {
+    "report": "REPORT_TH.md",
+    "trials": "seed_results.csv",
+    "summary": "policy_summary.csv",
+    "weights": "weight_stability.csv",
+    "coverage": "feature_coverage.csv",
+    "bootstrap": "bootstrap_intervals.csv",
+    "platform_metrics": "platform_pair_metrics.csv"
+  }
+}

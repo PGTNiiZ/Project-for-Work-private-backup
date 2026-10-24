@@ -1,0 +1,7 @@
+captured_utc=2026-09-03T09:06:19.697931+00:00
+platform=macOS-26.5.2-arm64-arm-64bit
+machine=arm64
+python=/Users/thawaree.kha/Project-for-Work/.venv/bin/python3.11
+python_implementation=CPython
+processor=arm
+cwd=/Users/thawaree.kha/Project-for-Work

@@ -1,0 +1,287 @@
+{
+  "version": "full_feature_aware_v1",
+  "created_at": "2026-08-30T17:56:52.150026+00:00",
+  "source": "experiments/scored_pairs_enriched.parquet",
+  "source_sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801",
+  "source_rows": 2086245,
+  "exported_scored_rows": 2073842,
+  "exact_rows": 12403,
+  "source_decision_counts": {
+    "AUTO_LOW": 1979400,
+    "AUTO_REVIEW": 86296,
+    "AUTO_EXACT": 12403,
+    "AUTO_HIGH": 8146
+  },
+  "source_split_counts": {
+    "val": 1019553,
+    "drop": 871252,
+    "test": 195440
+  },
+  "scope": "full",
+  "chunk_size": 50000,
+  "chunk_count": 42,
+  "chunks": [
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000000000_000050000.parquet",
+      "start": 0,
+      "stop": 50000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000050000_000100000.parquet",
+      "start": 50000,
+      "stop": 100000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000100000_000150000.parquet",
+      "start": 100000,
+      "stop": 150000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000150000_000200000.parquet",
+      "start": 150000,
+      "stop": 200000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000200000_000250000.parquet",
+      "start": 200000,
+      "stop": 250000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000250000_000300000.parquet",
+      "start": 250000,
+      "stop": 300000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000300000_000350000.parquet",
+      "start": 300000,
+      "stop": 350000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000350000_000400000.parquet",
+      "start": 350000,
+      "stop": 400000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000400000_000450000.parquet",
+      "start": 400000,
+      "stop": 450000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000450000_000500000.parquet",
+      "start": 450000,
+      "stop": 500000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000500000_000550000.parquet",
+      "start": 500000,
+      "stop": 550000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000550000_000600000.parquet",
+      "start": 550000,
+      "stop": 600000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000600000_000650000.parquet",
+      "start": 600000,
+      "stop": 650000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000650000_000700000.parquet",
+      "start": 650000,
+      "stop": 700000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000700000_000750000.parquet",
+      "start": 700000,
+      "stop": 750000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000750000_000800000.parquet",
+      "start": 750000,
+      "stop": 800000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000800000_000850000.parquet",
+      "start": 800000,
+      "stop": 850000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000850000_000900000.parquet",
+      "start": 850000,
+      "stop": 900000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000900000_000950000.parquet",
+      "start": 900000,
+      "stop": 950000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_000950000_001000000.parquet",
+      "start": 950000,
+      "stop": 1000000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001000000_001050000.parquet",
+      "start": 1000000,
+      "stop": 1050000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001050000_001100000.parquet",
+      "start": 1050000,
+      "stop": 1100000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001100000_001150000.parquet",
+      "start": 1100000,
+      "stop": 1150000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001150000_001200000.parquet",
+      "start": 1150000,
+      "stop": 1200000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001200000_001250000.parquet",
+      "start": 1200000,
+      "stop": 1250000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001250000_001300000.parquet",
+      "start": 1250000,
+      "stop": 1300000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001300000_001350000.parquet",
+      "start": 1300000,
+      "stop": 1350000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001350000_001400000.parquet",
+      "start": 1350000,
+      "stop": 1400000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001400000_001450000.parquet",
+      "start": 1400000,
+      "stop": 1450000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001450000_001500000.parquet",
+      "start": 1450000,
+      "stop": 1500000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001500000_001550000.parquet",
+      "start": 1500000,
+      "stop": 1550000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001550000_001600000.parquet",
+      "start": 1550000,
+      "stop": 1600000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001600000_001650000.parquet",
+      "start": 1600000,
+      "stop": 1650000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001650000_001700000.parquet",
+      "start": 1650000,
+      "stop": 1700000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001700000_001750000.parquet",
+      "start": 1700000,
+      "stop": 1750000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001750000_001800000.parquet",
+      "start": 1750000,
+      "stop": 1800000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001800000_001850000.parquet",
+      "start": 1800000,
+      "stop": 1850000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001850000_001900000.parquet",
+      "start": 1850000,
+      "stop": 1900000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001900000_001950000.parquet",
+      "start": 1900000,
+      "stop": 1950000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_001950000_002000000.parquet",
+      "start": 1950000,
+      "stop": 2000000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_002000000_002050000.parquet",
+      "start": 2000000,
+      "stop": 2050000,
+      "rows": 50000
+    },
+    {
+      "path": "artifacts/decisioning/feature_aware_ga/full_2m/feature_chunks/decisioning_features_002050000_002073842.parquet",
+      "start": 2050000,
+      "stop": 2073842,
+      "rows": 23842
+    }
+  ],
+  "evidence_groups": [
+    "name",
+    "bio",
+    "url",
+    "location",
+    "image",
+    "style"
+  ],
+  "image_evidence": "pHash plus caption-to-opposite-name token similarity; unavailable caption-SBERT and dHash are explicit zeros",
+  "missingness": "availability masks are stored separately; missing evidence is not interpreted as similarity zero by policy"
+}

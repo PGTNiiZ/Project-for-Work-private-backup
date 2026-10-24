@@ -1,0 +1,252 @@
+{
+  "python": "3.11.15 (main, Aug  5 2026, 15:33:48) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "source_artifacts": {
+    "data_for_project/normalized_profiles_with_profile_id.csv": {
+      "path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+      "bytes": 19790271,
+      "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1"
+    },
+    "experiments/code/run_icsec_authoritative_v2.py": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/code/run_icsec_authoritative_v2.py",
+      "bytes": 16826,
+      "sha256": "bfcf6b72bcf937ee764542517373634233e08bc182dcca8a90d681e752d23385"
+    },
+    "experiments/icsec_final/authoritative_run_v2/features.py": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/features.py",
+      "bytes": 5132,
+      "sha256": "9975f02ff9086c96e68823d8c02d153bc44adc966973a2b066f175cc907250e0"
+    },
+    "experiments/icsec_final/authoritative_run_v2/label_sealing.py": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/label_sealing.py",
+      "bytes": 1216,
+      "sha256": "192149d9345ad69004c1da30a26638f6315a7ea42b2260b0e6da0ecab4847cce"
+    },
+    "experiments/icsec_final/authoritative_run_v2/policies.py": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/policies.py",
+      "bytes": 5050,
+      "sha256": "951b16ccab46b33f40f7b796ccb268b1630f8f9e0aa71bf44c8965998b8fb50b"
+    },
+    "experiments/icsec_final/authoritative_run_v2/provenance.py": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/provenance.py",
+      "bytes": 969,
+      "sha256": "7e1c0de40dd1012decd9b26a0044c36fde44b72dfad5c84c7788e0f064e94828"
+    },
+    "experiments/icsec_final/authoritative_run_v2/PROTOCOL.md": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/PROTOCOL.md",
+      "bytes": 1826,
+      "sha256": "0ff3e32e991c3555db194a8380df8acea49402004942cd5ad606d3379de9e27f"
+    },
+    "experiments/icsec_final/authoritative_run_v2/BASELINE_PROTOCOL.md": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/BASELINE_PROTOCOL.md",
+      "bytes": 1761,
+      "sha256": "3d78dfe80a8d38762aeecc7c200829c0183014dc69272ebd62c72907a0018485"
+    },
+    "experiments/icsec_final/authoritative_run_v2/CLAIM_PROTOCOL.md": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/CLAIM_PROTOCOL.md",
+      "bytes": 730,
+      "sha256": "59258230a6e6102542908ad1a45f2fec8cdebe8d8f371bebc8b297cf888d59ff"
+    },
+    "experiments/icsec_final/authoritative_run_v2/FEATURE_SCHEMA.md": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/FEATURE_SCHEMA.md",
+      "bytes": 3242,
+      "sha256": "b4f0f555420154bc267d4f4c02a8f094cc8504270ce66c9daab0d6641b9a1c05"
+    },
+    "experiments/icsec_final/authoritative_run_v2/DATA_GOVERNANCE.md": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/DATA_GOVERNANCE.md",
+      "bytes": 1291,
+      "sha256": "59126f3dbbea052143b5c4b434c2a18d42e730997d09e096e385d4f4923820e0"
+    },
+    "legacy_scored_pairs_enriched": {
+      "classification": "REGENERATE",
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/scored_pairs_enriched.parquet",
+      "bytes": 9577326,
+      "sha256": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801"
+    },
+    "legacy_pair_features17": {
+      "classification": "REGENERATE",
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_features17.parquet",
+      "bytes": 32494840,
+      "sha256": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591"
+    },
+    "legacy_pair_bert_cos": {
+      "classification": "REGENERATE",
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/pair_bert_cos.parquet",
+      "bytes": 13456136,
+      "sha256": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7"
+    },
+    "legacy_predecessor": {
+      "classification": "UNVERIFIABLE_HISTORICAL",
+      "path": "/Users/thawaree.kha/Project-for-Work/train_data/stage15_crm_entity_pipeline/artifacts/match_decisions.parquet"
+    }
+  },
+  "candidate_scope": {
+    "profiles_eligible": 36804,
+    "all_platform_positives": 29247,
+    "cross_platform_positives": 29243,
+    "same_platform_positives": 4,
+    "possible_cross_platform_pairs": 449149239,
+    "exact_tier_pairs": 12403,
+    "model_scored_candidate_pairs": 2073842,
+    "workflow_candidate_pairs": 2086245,
+    "candidate_covered_cross_platform_positives": 25931,
+    "cross_platform_blocking_misses": 3312,
+    "retrieval_recall": 0.8867421263208289,
+    "candidate_space_reduction": 0.9953551184798958,
+    "exact_tier_breakdown": {
+      "username_exact": 11133,
+      "external_url_exact": 1270
+    },
+    "blocking_key_breakdown": {
+      "username_prefix3": 1026466,
+      "fullname_prefix3": 1041315,
+      "external_domain": 6061
+    },
+    "invariants": {
+      "exact_plus_scored_equals_workflow": true,
+      "covered_plus_missed_equals_cross_positive": true,
+      "all_equals_cross_plus_same": true
+    }
+  },
+  "gb17": {
+    "rows": 2073842,
+    "columns": [
+      "profile_row_id_a",
+      "profile_row_id_b",
+      "username_jaro",
+      "username_lev_sim",
+      "username_token_sort",
+      "fullname_jaro",
+      "fullname_lev_sim",
+      "fullname_token_sort",
+      "name_sim",
+      "bio_jaccard",
+      "bio_len_ratio",
+      "both_have_bio",
+      "location_jaro",
+      "location_exact",
+      "both_have_location",
+      "same_platform",
+      "username_len_diff",
+      "fullname_wordcount_diff",
+      "username_prefix3_match"
+    ],
+    "artifact": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/features/gb17.parquet",
+      "bytes": 31869249,
+      "sha256": "960fe07b6e46abae8502d4bc8fae6dd8a0589f5bb61d7faea9ae07534f85a057"
+    }
+  },
+  "minilm": {
+    "model_identifier": "sentence-transformers/all-MiniLM-L6-v2",
+    "text_logic": "fullName + bio + location; [empty] sentinel; normalized embeddings",
+    "rows": 2073842,
+    "artifact": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/features/bert_cos.parquet",
+      "bytes": 13456233,
+      "sha256": "9c5693483020ae2a9937d979474df30ec5156e4b20632ad8a6e9866393947297"
+    }
+  },
+  "gb18_columns": [
+    "username_jaro",
+    "username_lev_sim",
+    "username_token_sort",
+    "fullname_jaro",
+    "fullname_lev_sim",
+    "fullname_token_sort",
+    "name_sim",
+    "bio_jaccard",
+    "bio_len_ratio",
+    "both_have_bio",
+    "location_jaro",
+    "location_exact",
+    "both_have_location",
+    "same_platform",
+    "username_len_diff",
+    "fullname_wordcount_diff",
+    "username_prefix3_match",
+    "bert_cos"
+  ],
+  "legacy_path_check": {
+    "checked_files": [
+      "experiments/code/run_icsec_authoritative_v2.py",
+      "experiments/icsec_final/authoritative_run_v2/features.py",
+      "experiments/icsec_final/authoritative_run_v2/pipeline.py",
+      "experiments/icsec_final/authoritative_run_v2/policies.py"
+    ],
+    "legacy_hits": {}
+  },
+  "label_sealing": {
+    "unauthorized_attempts": 7,
+    "unauthorized_failures": 7,
+    "PRE-FINAL TEST-LABEL READS": 7,
+    "final_reads": 1
+  },
+  "policy_equivalence": {
+    "same_genome_decisions_equal": true,
+    "b2_evaluations": 16,
+    "b3_evaluations": 16,
+    "budget_difference": 0,
+    "b2_policy": [
+      0.986625,
+      0.8500000000000001,
+      0.5625,
+      0.22499999999999998
+    ],
+    "b3_policy": [
+      0.9291385275584959,
+      0.8690902745691658,
+      0.9346657723392847,
+      0.2184830557743137
+    ]
+  },
+  "split_validation": {
+    "seeds": [
+      {
+        "seed": 101,
+        "profile_counts": {
+          "TRAIN": 17864,
+          "CALIBRATION": 3902,
+          "POLICY_VALIDATION": 4001,
+          "SEALED_TEST": 11037
+        },
+        "entity_overlap_check": "passed"
+      },
+      {
+        "seed": 202,
+        "profile_counts": {
+          "TRAIN": 18271,
+          "CALIBRATION": 3778,
+          "POLICY_VALIDATION": 3793,
+          "SEALED_TEST": 10962
+        },
+        "entity_overlap_check": "passed"
+      },
+      {
+        "seed": 303,
+        "profile_counts": {
+          "TRAIN": 17829,
+          "CALIBRATION": 3877,
+          "POLICY_VALIDATION": 3912,
+          "SEALED_TEST": 11186
+        },
+        "entity_overlap_check": "passed"
+      }
+    ],
+    "outer_seeds_executed": false
+  },
+  "B0": {
+    "thresholds": [
+      0.98,
+      0.95
+    ],
+    "validation_tuning": false,
+    "test_access": false
+  },
+  "B1": {
+    "family": "simple_two_threshold",
+    "expanded_name_logic": false,
+    "test_access": false
+  },
+  "final_seeds_not_executed": true
+}

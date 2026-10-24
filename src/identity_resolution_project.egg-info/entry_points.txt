@@ -1,0 +1,4 @@
+[console_scripts]
+identity-crm = identity_resolution.workflows.crm:main
+identity-full-candidate = identity_resolution.workflows.full_candidate:main
+identity-ml = identity_resolution.cli:main

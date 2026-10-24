@@ -1,0 +1,14 @@
+{
+  "analysis_script": "/Users/thawaree.kha/Project-for-Work/experiments/code/analyze_icsec_primary.py",
+  "analysis_script_sha256": "602cb3a795ce55ccd9b1222057d3911ce1e43716c7b2ccacc291b2855d19da78",
+  "run_dir": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/primary_reproduction",
+  "source_hashes": {
+    "cache": "396884be39c3aca894df8db56115dbe78b45694737dcb04fb3190974a5f53801",
+    "features17": "215d2a1ee5464f4c11774052ef5510451a2f49d7bda4ec40435dae10f870d591",
+    "bert_cos": "687e93cb46b12df3ae47b26f2eeaafafcf16f6a566146e3d5198d4cefeef97b7",
+    "profiles": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+    "blocking_missed": "b43bbaa36f3118ef3eeeebc015290481d67b23e6a06b6ee0e112da1d5e3e8a1e"
+  },
+  "bootstrap_samples": 2000,
+  "privacy": "No usernames, names, biographies, locations, URLs, profile images, or other profile text are exported by this analysis."
+}

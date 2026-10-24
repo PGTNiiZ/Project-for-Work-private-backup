@@ -1,0 +1,56 @@
+{
+  "status": "DRAFT_NOT_APPROVED",
+  "execution_authorized": false,
+  "base_commit": "1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b",
+  "branch": "research/phase15-protocol",
+  "canonical_protocol_source": "docs/plans/EXPERIMENT_REWRITE_PROTOCOL_TH.md (read-only from primary worktree; uncommitted and absent from clean draft base)",
+  "terminology": {
+    "profile_row_id": "stable profile-row ID; not an entity ID",
+    "entity_id": "approved grouping key derived from user_folder, subject to Gate 2/3 evidence",
+    "pair_key": "canonical unordered profile_row_id pair",
+    "roles": ["TRAIN", "CALIBRATION", "POLICY_VALIDATION", "TEST"],
+    "actions": ["MATCH", "REVIEW", "NO_MATCH"]
+  },
+  "split_proposal": {
+    "method": "deterministic entity-level stratification by observed platform-pattern signature",
+    "entity_disjoint": true,
+    "folds": 5,
+    "seed": 20261010,
+    "roles_by_outer_i": {"TEST": "i", "CALIBRATION": "(i+1)%5", "POLICY_VALIDATION": "(i+2)%5", "TRAIN": "remaining two folds"},
+    "cross_role_pairs": "exclude_and_count_by_role_and_pair_type"
+  },
+  "stages": {
+    "A": {"name": "Data Foundation", "snapshot": "owner-approved normalized snapshot and exclusion/mapping/label/hash manifest required"},
+    "B": {"name": "Candidate Retrieval", "C0": "historical exact username/URL plus prefix blocking", "C1": "C0 union top-k lexical character-ngram TF-IDF; vocabulary/IDF fitted on TRAIN only", "retrieval_k": [10, 20, 50], "primary_k": 20, "k_scope": "per query and target platform", "labels_visible_to_retrieval": false},
+    "C": {"name": "Entity Split", "folds": 5, "seed": 20261010, "roles_by_outer_i": {"TEST": "i", "CALIBRATION": "(i+1)%5", "POLICY_VALIDATION": "(i+2)%5", "TRAIN": "remaining two folds"}, "cross_role_pairs": "exclude_and_count"},
+    "D": {"name": "Scorer Experiments", "E1": {"model": "LogisticRegression", "features": "corrected17"}, "E2": {"model": "GradientBoosting", "features": "corrected17"}, "E3": {"model": "GradientBoosting", "features": "corrected18 = corrected17 + bert_cos"}, "E2_E3_feature_delta": ["bert_cos"], "train_negative_positive_ratio": "3:1_if_feasible", "same_train_pair_keys_across_E1_E2_E3": true},
+    "E": {"name": "Calibration and Policy Experiments", "calibrators": ["isotonic", "sigmoid"], "calibrator_selection": "POLICY_VALIDATION_Brier_proposed_adaptive_reuse", "policies": ["P0_fixed", "P1_Chow", "P2_exact_two_threshold", "P3_random", "P4_scrambled_Sobol", "P5_GA"], "costs": {"FN": [1], "FP": [1, 2, 5], "REVIEW": [0.05, 0.1, 0.2]}, "optimizer_seeds": [101, 202, 303, 404, 505], "objective_calls_per_method_seed_fold_cost": 2048, "checkpoints": [128, 512, 2048], "GA": {"population": 60, "elite": 12, "uniform_crossover_per_gene": true, "gaussian_mutation_sigma": 0.02, "mutation_probability_per_gene": 0.30}, "aggregate_objective_calls_planned": 1382400},
+    "F": {"name": "Freeze and Evaluation", "prediction_freeze_before_test_labels": true, "independent_metric_recompute": true, "external_validation_claim": false}
+  },
+  "policy_ids": ["P0", "P1", "P2", "P3", "P4", "P5"],
+  "calibration": {"role": "CALIBRATION", "methods": ["isotonic", "sigmoid"], "selection_metric": "Brier on POLICY_VALIDATION (adaptive reuse with policy selection must be acknowledged)", "test_fit_forbidden": true},
+  "statistics": {
+    "primary_contrast": "TBD_OWNER_APPROVAL",
+    "bootstrap": "OWNER_DECISION_REQUIRED; paired per-fold differences required",
+    "confidence_level": null,
+    "bootstrap_replicates": null,
+    "multiplicity": "TBD_OWNER_APPROVAL",
+    "practical_margin": null,
+    "report_per_outer_split": true,
+    "report_mean_and_sample_sd": true
+  },
+  "metrics": ["TP", "FP", "FN", "R+", "R-", "automatic_precision", "automatic_recall", "automatic_F1", "candidate_coverage", "candidate_TN", "blocking_recall", "U", "PR_AUC", "ROC_AUC", "Brier", "log_loss"],
+  "budget": {
+    "policy_objective_calls_per_method_seed_fold_cost": 2048,
+    "checkpoints": [128, 512, 2048],
+    "count_initialization_and_duplicates": true,
+    "aggregate_calls_planned_not_executed": 1382400,
+    "development_runtime_pilot_required_before_full_run": true,
+    "compute_hours": null,
+    "storage_limit": null,
+    "training_fits": "one per declared scorer x fold/seed, subject to freeze; no fits executed"
+  },
+  "seeds": {"split": 20261010, "optimizer": [101, 202, 303, 404, 505], "model_seeds": "TBD_OWNER_APPROVAL", "freeze_before_execution": true},
+  "pending_contracts": ["Gate 4 feature contract", "Gate 5 split-safety contract", "Gate 6 evaluator and label-access contract", "Gate 7 run-isolation and provenance contract"],
+  "forbidden_until_approved": ["training", "optimization", "calibration fitting", "test-label access", "test evaluation"]
+}

@@ -1,0 +1,249 @@
+{"run_id": "N1", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 14741, "updated_at": "2026-08-30T17:02:26.763427+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 14822, "updated_at": "2026-08-30T17:02:26.763431+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 14828, "updated_at": "2026-08-30T17:02:26.763438+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 14797, "updated_at": "2026-08-30T17:02:26.763421+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 14825, "updated_at": "2026-08-30T17:02:26.763496+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 14797, "updated_at": "2026-08-30T17:02:39.016757+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 14828, "updated_at": "2026-08-30T17:02:39.167677+00:00"}
+{"run_id": "N1", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 14741, "updated_at": "2026-08-30T17:02:39.186693+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 14797, "updated_at": "2026-08-30T17:02:39.594677+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 14828, "updated_at": "2026-08-30T17:02:39.637365+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 14741, "updated_at": "2026-08-30T17:02:39.651244+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 14825, "updated_at": "2026-08-30T17:02:40.208735+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 14822, "updated_at": "2026-08-30T17:02:40.233478+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 14825, "updated_at": "2026-08-30T17:02:40.563293+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 14822, "updated_at": "2026-08-30T17:02:40.638318+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 17098, "updated_at": "2026-08-30T17:03:07.950996+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 17121, "updated_at": "2026-08-30T17:03:07.951411+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 17146, "updated_at": "2026-08-30T17:03:07.951388+00:00"}
+{"run_id": "N1", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 17093, "updated_at": "2026-08-30T17:03:07.951571+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 17161, "updated_at": "2026-08-30T17:03:07.985274+00:00"}
+{"run_id": "N1", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 17093, "updated_at": "2026-08-30T17:03:14.385219+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 17161, "updated_at": "2026-08-30T17:03:14.387421+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 17121, "updated_at": "2026-08-30T17:03:14.390056+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 17098, "updated_at": "2026-08-30T17:03:14.402224+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 17146, "updated_at": "2026-08-30T17:03:14.444746+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 17146, "updated_at": "2026-08-30T17:03:14.669895+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 17098, "updated_at": "2026-08-30T17:03:14.697396+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 17093, "updated_at": "2026-08-30T17:03:14.700752+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 17161, "updated_at": "2026-08-30T17:03:14.702206+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 17121, "updated_at": "2026-08-30T17:03:14.715693+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "fitting logreg, gradient boosting, and random forest", "pid": 17121, "updated_at": "2026-08-30T17:03:35.721171+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "fitting logreg, gradient boosting, and random forest", "pid": 17093, "updated_at": "2026-08-30T17:03:35.846463+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "fitting logreg, gradient boosting, and random forest", "pid": 17098, "updated_at": "2026-08-30T17:03:36.966911+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "fitting logreg, gradient boosting, and random forest", "pid": 17146, "updated_at": "2026-08-30T17:03:37.058934+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "fitting logreg, gradient boosting, and random forest", "pid": 17161, "updated_at": "2026-08-30T17:03:37.199252+00:00"}
+{"run_id": "N2", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 17098, "updated_at": "2026-08-30T17:04:46.250449+00:00"}
+{"run_id": "N2", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 17098, "updated_at": "2026-08-30T17:04:46.390287+00:00"}
+{"run_id": "N4", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 17146, "updated_at": "2026-08-30T17:04:46.799654+00:00"}
+{"run_id": "N1", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 17093, "updated_at": "2026-08-30T17:04:46.864266+00:00"}
+{"run_id": "N4", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 17146, "updated_at": "2026-08-30T17:04:46.914870+00:00"}
+{"run_id": "N1", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 17093, "updated_at": "2026-08-30T17:04:46.964110+00:00"}
+{"run_id": "N3", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 17121, "updated_at": "2026-08-30T17:04:47.321244+00:00"}
+{"run_id": "N3", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 17121, "updated_at": "2026-08-30T17:04:47.459321+00:00"}
+{"run_id": "N5", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 17161, "updated_at": "2026-08-30T17:04:52.429373+00:00"}
+{"run_id": "N5", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 17161, "updated_at": "2026-08-30T17:04:52.492342+00:00"}
+{"run_id": "N1", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 20266, "progress": 0, "updated_at": "2026-08-30T17:07:14.852286+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 20274, "progress": 0, "updated_at": "2026-08-30T17:07:14.863496+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 20292, "progress": 0, "updated_at": "2026-08-30T17:07:14.892899+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 20329, "progress": 0, "updated_at": "2026-08-30T17:07:14.968302+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 20336, "progress": 0, "updated_at": "2026-08-30T17:07:14.968363+00:00"}
+{"run_id": "N1", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 20266, "progress": 3, "updated_at": "2026-08-30T17:07:21.012886+00:00"}
+{"run_id": "N2", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 20274, "progress": 3, "updated_at": "2026-08-30T17:07:21.013598+00:00"}
+{"run_id": "N4", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 20329, "progress": 3, "updated_at": "2026-08-30T17:07:21.013987+00:00"}
+{"run_id": "N5", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 20336, "progress": 3, "updated_at": "2026-08-30T17:07:21.019375+00:00"}
+{"run_id": "N3", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 20292, "progress": 3, "updated_at": "2026-08-30T17:07:21.020063+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 20292, "progress": 5, "updated_at": "2026-08-30T17:07:21.265343+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 20266, "progress": 5, "updated_at": "2026-08-30T17:07:21.266582+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 20336, "progress": 5, "updated_at": "2026-08-30T17:07:21.268813+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 20274, "progress": 5, "updated_at": "2026-08-30T17:07:21.270257+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 20329, "progress": 5, "updated_at": "2026-08-30T17:07:21.270764+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 20336, "progress": 8, "updated_at": "2026-08-30T17:07:32.598285+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 20274, "progress": 8, "updated_at": "2026-08-30T17:07:32.766288+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 20266, "progress": 8, "updated_at": "2026-08-30T17:07:32.835521+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 20329, "progress": 8, "updated_at": "2026-08-30T17:07:32.844777+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 20292, "progress": 8, "updated_at": "2026-08-30T17:07:32.879056+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 20336, "progress": 11, "updated_at": "2026-08-30T17:07:32.890026+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 20274, "progress": 11, "updated_at": "2026-08-30T17:07:33.097797+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 20329, "progress": 11, "updated_at": "2026-08-30T17:07:33.173684+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 20266, "progress": 11, "updated_at": "2026-08-30T17:07:33.174192+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 20336, "progress": 15, "updated_at": "2026-08-30T17:07:33.212107+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 20292, "progress": 11, "updated_at": "2026-08-30T17:07:33.213481+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 20274, "progress": 15, "updated_at": "2026-08-30T17:07:33.408306+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 20329, "progress": 15, "updated_at": "2026-08-30T17:07:33.462117+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 20266, "progress": 15, "updated_at": "2026-08-30T17:07:33.463536+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 20292, "progress": 15, "updated_at": "2026-08-30T17:07:33.488925+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 20336, "progress": 18, "updated_at": "2026-08-30T17:07:33.489447+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 20274, "progress": 18, "updated_at": "2026-08-30T17:07:33.622811+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 20329, "progress": 18, "updated_at": "2026-08-30T17:07:33.675731+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 20266, "progress": 18, "updated_at": "2026-08-30T17:07:33.678365+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 20292, "progress": 18, "updated_at": "2026-08-30T17:07:33.705770+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 20336, "progress": 21, "updated_at": "2026-08-30T17:07:33.708304+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 20274, "progress": 21, "updated_at": "2026-08-30T17:07:33.837142+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 20329, "progress": 21, "updated_at": "2026-08-30T17:07:33.888138+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 20266, "progress": 21, "updated_at": "2026-08-30T17:07:33.891708+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 20292, "progress": 21, "updated_at": "2026-08-30T17:07:33.921631+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 20336, "progress": 24, "updated_at": "2026-08-30T17:07:33.921682+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 20274, "progress": 24, "updated_at": "2026-08-30T17:07:34.058244+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 20329, "progress": 24, "updated_at": "2026-08-30T17:07:34.107437+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 20266, "progress": 24, "updated_at": "2026-08-30T17:07:34.112666+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 20292, "progress": 24, "updated_at": "2026-08-30T17:07:34.144402+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 20336, "progress": 28, "updated_at": "2026-08-30T17:07:34.166306+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 20274, "progress": 28, "updated_at": "2026-08-30T17:07:34.310374+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 20329, "progress": 28, "updated_at": "2026-08-30T17:07:34.355243+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 20266, "progress": 28, "updated_at": "2026-08-30T17:07:34.362404+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 20292, "progress": 28, "updated_at": "2026-08-30T17:07:34.391601+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 20336, "progress": 31, "updated_at": "2026-08-30T17:07:34.402362+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 20274, "progress": 31, "updated_at": "2026-08-30T17:07:34.529905+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 20329, "progress": 31, "updated_at": "2026-08-30T17:07:34.578331+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 20266, "progress": 31, "updated_at": "2026-08-30T17:07:34.582378+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 20292, "progress": 31, "updated_at": "2026-08-30T17:07:34.605527+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 20336, "progress": 34, "updated_at": "2026-08-30T17:07:34.607406+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 20274, "progress": 34, "updated_at": "2026-08-30T17:07:34.733518+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 20329, "progress": 34, "updated_at": "2026-08-30T17:07:34.801698+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 20266, "progress": 34, "updated_at": "2026-08-30T17:07:34.811459+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 20336, "progress": 37, "updated_at": "2026-08-30T17:07:34.843777+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 20292, "progress": 34, "updated_at": "2026-08-30T17:07:34.847997+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 20274, "progress": 37, "updated_at": "2026-08-30T17:07:34.983539+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 20329, "progress": 37, "updated_at": "2026-08-30T17:07:35.050527+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 20336, "progress": 41, "updated_at": "2026-08-30T17:07:35.063678+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 20266, "progress": 37, "updated_at": "2026-08-30T17:07:35.064138+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 20292, "progress": 37, "updated_at": "2026-08-30T17:07:35.071729+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 20274, "progress": 41, "updated_at": "2026-08-30T17:07:35.263818+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 20329, "progress": 41, "updated_at": "2026-08-30T17:07:35.327900+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 20336, "progress": 44, "updated_at": "2026-08-30T17:07:35.334403+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 20266, "progress": 41, "updated_at": "2026-08-30T17:07:35.351741+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 20292, "progress": 41, "updated_at": "2026-08-30T17:07:35.357912+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 20274, "progress": 44, "updated_at": "2026-08-30T17:07:35.461861+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 20329, "progress": 44, "updated_at": "2026-08-30T17:07:35.529229+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 20336, "progress": 47, "updated_at": "2026-08-30T17:07:35.536598+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 20266, "progress": 44, "updated_at": "2026-08-30T17:07:35.550677+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 20292, "progress": 44, "updated_at": "2026-08-30T17:07:35.560223+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 20274, "progress": 47, "updated_at": "2026-08-30T17:07:35.665124+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 20329, "progress": 47, "updated_at": "2026-08-30T17:07:35.729758+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 20336, "progress": 50, "updated_at": "2026-08-30T17:07:35.731266+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 20266, "progress": 47, "updated_at": "2026-08-30T17:07:35.753433+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 20292, "progress": 47, "updated_at": "2026-08-30T17:07:35.762102+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 20274, "progress": 50, "updated_at": "2026-08-30T17:07:35.864214+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 20329, "progress": 50, "updated_at": "2026-08-30T17:07:35.929562+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 20336, "progress": 54, "updated_at": "2026-08-30T17:07:35.936657+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 20266, "progress": 50, "updated_at": "2026-08-30T17:07:35.949552+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 20292, "progress": 50, "updated_at": "2026-08-30T17:07:35.956946+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 20274, "progress": 54, "updated_at": "2026-08-30T17:07:36.067840+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 20329, "progress": 54, "updated_at": "2026-08-30T17:07:36.133763+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 20336, "progress": 57, "updated_at": "2026-08-30T17:07:36.147459+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 20266, "progress": 54, "updated_at": "2026-08-30T17:07:36.149697+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 20292, "progress": 54, "updated_at": "2026-08-30T17:07:36.163621+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 20274, "progress": 57, "updated_at": "2026-08-30T17:07:36.267595+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 20329, "progress": 57, "updated_at": "2026-08-30T17:07:36.342877+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 20336, "progress": 60, "updated_at": "2026-08-30T17:07:36.349659+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 20266, "progress": 57, "updated_at": "2026-08-30T17:07:36.362749+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 20292, "progress": 57, "updated_at": "2026-08-30T17:07:36.370113+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 20274, "progress": 60, "updated_at": "2026-08-30T17:07:36.472001+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 20329, "progress": 60, "updated_at": "2026-08-30T17:07:36.540655+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 20336, "progress": 63, "updated_at": "2026-08-30T17:07:36.549318+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 20266, "progress": 60, "updated_at": "2026-08-30T17:07:36.564614+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 20292, "progress": 60, "updated_at": "2026-08-30T17:07:36.565283+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 20274, "progress": 63, "updated_at": "2026-08-30T17:07:36.682607+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 20329, "progress": 63, "updated_at": "2026-08-30T17:07:36.790589+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 20336, "progress": 67, "updated_at": "2026-08-30T17:07:36.805211+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 20292, "progress": 63, "updated_at": "2026-08-30T17:07:36.819475+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 20266, "progress": 63, "updated_at": "2026-08-30T17:07:36.840129+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 20274, "progress": 67, "updated_at": "2026-08-30T17:07:37.076647+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 20336, "progress": 70, "updated_at": "2026-08-30T17:07:37.157372+00:00"}
+{"run_id": "N5", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 20336, "progress": 70, "updated_at": "2026-08-30T17:07:37.159396+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 20292, "progress": 67, "updated_at": "2026-08-30T17:07:37.167526+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 20329, "progress": 67, "updated_at": "2026-08-30T17:07:37.168977+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 20266, "progress": 67, "updated_at": "2026-08-30T17:07:37.202781+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 20274, "progress": 70, "updated_at": "2026-08-30T17:07:37.312173+00:00"}
+{"run_id": "N2", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 20274, "progress": 70, "updated_at": "2026-08-30T17:07:37.314206+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 20292, "progress": 70, "updated_at": "2026-08-30T17:07:37.400176+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 20329, "progress": 70, "updated_at": "2026-08-30T17:07:37.401103+00:00"}
+{"run_id": "N3", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 20292, "progress": 70, "updated_at": "2026-08-30T17:07:37.401919+00:00"}
+{"run_id": "N4", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 20329, "progress": 70, "updated_at": "2026-08-30T17:07:37.402661+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 20266, "progress": 70, "updated_at": "2026-08-30T17:07:37.428654+00:00"}
+{"run_id": "N1", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 20266, "progress": 70, "updated_at": "2026-08-30T17:07:37.430657+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 20336, "progress": 70, "updated_at": "2026-08-30T17:07:39.935612+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 20336, "progress": 70, "updated_at": "2026-08-30T17:07:39.981196+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 20336, "progress": 78, "updated_at": "2026-08-30T17:07:40.084919+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 20336, "progress": 78, "updated_at": "2026-08-30T17:07:40.085479+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 20274, "progress": 70, "updated_at": "2026-08-30T17:07:40.195121+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 20274, "progress": 70, "updated_at": "2026-08-30T17:07:40.245049+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 20329, "progress": 70, "updated_at": "2026-08-30T17:07:40.250707+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 20266, "progress": 70, "updated_at": "2026-08-30T17:07:40.250604+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 20266, "progress": 70, "updated_at": "2026-08-30T17:07:40.290906+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 20329, "progress": 70, "updated_at": "2026-08-30T17:07:40.293750+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 20292, "progress": 70, "updated_at": "2026-08-30T17:07:40.303275+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 20292, "progress": 70, "updated_at": "2026-08-30T17:07:40.348914+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 20274, "progress": 78, "updated_at": "2026-08-30T17:07:40.359953+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 20274, "progress": 78, "updated_at": "2026-08-30T17:07:40.360872+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 20329, "progress": 78, "updated_at": "2026-08-30T17:07:40.385281+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 20329, "progress": 78, "updated_at": "2026-08-30T17:07:40.385818+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 20266, "progress": 78, "updated_at": "2026-08-30T17:07:40.389848+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 20266, "progress": 78, "updated_at": "2026-08-30T17:07:40.390503+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 20292, "progress": 78, "updated_at": "2026-08-30T17:07:40.429101+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 20292, "progress": 78, "updated_at": "2026-08-30T17:07:40.429645+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 20274, "progress": 86, "updated_at": "2026-08-30T17:08:22.263103+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 20274, "progress": 86, "updated_at": "2026-08-30T17:08:22.263918+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 20266, "progress": 86, "updated_at": "2026-08-30T17:08:22.944654+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 20266, "progress": 86, "updated_at": "2026-08-30T17:08:22.945514+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 20292, "progress": 86, "updated_at": "2026-08-30T17:08:23.291301+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 20292, "progress": 86, "updated_at": "2026-08-30T17:08:23.291911+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 20329, "progress": 86, "updated_at": "2026-08-30T17:08:23.518425+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 20329, "progress": 86, "updated_at": "2026-08-30T17:08:23.519144+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 20336, "progress": 86, "updated_at": "2026-08-30T17:08:24.866091+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 20336, "progress": 86, "updated_at": "2026-08-30T17:08:24.866725+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 20274, "progress": 94, "updated_at": "2026-08-30T17:08:41.935310+00:00"}
+{"run_id": "N2", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 20274, "progress": 95, "updated_at": "2026-08-30T17:08:41.995325+00:00"}
+{"run_id": "N2", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 20274, "progress": 98, "updated_at": "2026-08-30T17:08:42.167501+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 20329, "progress": 94, "updated_at": "2026-08-30T17:08:42.207002+00:00"}
+{"run_id": "N4", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 20329, "progress": 95, "updated_at": "2026-08-30T17:08:42.256011+00:00"}
+{"run_id": "N2", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 20274, "progress": 100, "updated_at": "2026-08-30T17:08:42.269613+00:00"}
+{"run_id": "N4", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 20329, "progress": 98, "updated_at": "2026-08-30T17:08:42.434030+00:00"}
+{"run_id": "N4", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 20329, "progress": 100, "updated_at": "2026-08-30T17:08:42.574530+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 20266, "progress": 94, "updated_at": "2026-08-30T17:08:43.417340+00:00"}
+{"run_id": "N1", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 20266, "progress": 95, "updated_at": "2026-08-30T17:08:43.465094+00:00"}
+{"run_id": "N1", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 20266, "progress": 98, "updated_at": "2026-08-30T17:08:43.628472+00:00"}
+{"run_id": "N1", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 20266, "progress": 100, "updated_at": "2026-08-30T17:08:43.714372+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 20292, "progress": 94, "updated_at": "2026-08-30T17:08:43.777052+00:00"}
+{"run_id": "N3", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 20292, "progress": 95, "updated_at": "2026-08-30T17:08:43.819081+00:00"}
+{"run_id": "N3", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 20292, "progress": 98, "updated_at": "2026-08-30T17:08:43.958818+00:00"}
+{"run_id": "N3", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 20292, "progress": 100, "updated_at": "2026-08-30T17:08:44.033403+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 20336, "progress": 94, "updated_at": "2026-08-30T17:08:46.111821+00:00"}
+{"run_id": "N5", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 20336, "progress": 95, "updated_at": "2026-08-30T17:08:46.153015+00:00"}
+{"run_id": "N5", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 20336, "progress": 98, "updated_at": "2026-08-30T17:08:46.283387+00:00"}
+{"run_id": "N5", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 20336, "progress": 100, "updated_at": "2026-08-30T17:08:46.366334+00:00"}
+{"run_id": "N6", "state": "PREPARING", "detail": "loading profiles and experiment configuration", "pid": 26577, "progress": 0, "updated_at": "2026-08-30T17:09:38.740512+00:00"}
+{"run_id": "N6", "state": "PREPARING", "detail": "aligning local MiniLM embedding cache", "pid": 26577, "progress": 3, "updated_at": "2026-08-30T17:09:43.163247+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "building entity-aware pairs and feature matrix", "pid": 26577, "progress": 5, "updated_at": "2026-08-30T17:09:43.367368+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 2,934/58,696 pair feature rows", "pid": 26577, "progress": 8, "updated_at": "2026-08-30T17:09:53.148704+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 5,868/58,696 pair feature rows", "pid": 26577, "progress": 11, "updated_at": "2026-08-30T17:09:53.357720+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 8,802/58,696 pair feature rows", "pid": 26577, "progress": 15, "updated_at": "2026-08-30T17:09:53.547133+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 11,736/58,696 pair feature rows", "pid": 26577, "progress": 18, "updated_at": "2026-08-30T17:09:53.737432+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 14,670/58,696 pair feature rows", "pid": 26577, "progress": 21, "updated_at": "2026-08-30T17:09:53.926527+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 17,604/58,696 pair feature rows", "pid": 26577, "progress": 24, "updated_at": "2026-08-30T17:09:54.126485+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 20,538/58,696 pair feature rows", "pid": 26577, "progress": 28, "updated_at": "2026-08-30T17:09:54.320195+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 23,472/58,696 pair feature rows", "pid": 26577, "progress": 31, "updated_at": "2026-08-30T17:09:54.511691+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 26,406/58,696 pair feature rows", "pid": 26577, "progress": 34, "updated_at": "2026-08-30T17:09:54.707035+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 29,340/58,696 pair feature rows", "pid": 26577, "progress": 37, "updated_at": "2026-08-30T17:09:54.908830+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 32,274/58,696 pair feature rows", "pid": 26577, "progress": 41, "updated_at": "2026-08-30T17:09:55.109433+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 35,208/58,696 pair feature rows", "pid": 26577, "progress": 44, "updated_at": "2026-08-30T17:09:55.309572+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 38,142/58,696 pair feature rows", "pid": 26577, "progress": 47, "updated_at": "2026-08-30T17:09:55.507594+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 41,076/58,696 pair feature rows", "pid": 26577, "progress": 50, "updated_at": "2026-08-30T17:09:55.707565+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 44,010/58,696 pair feature rows", "pid": 26577, "progress": 54, "updated_at": "2026-08-30T17:09:55.914578+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 46,944/58,696 pair feature rows", "pid": 26577, "progress": 57, "updated_at": "2026-08-30T17:09:56.126981+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 49,878/58,696 pair feature rows", "pid": 26577, "progress": 60, "updated_at": "2026-08-30T17:09:56.334636+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 52,812/58,696 pair feature rows", "pid": 26577, "progress": 63, "updated_at": "2026-08-30T17:09:56.528594+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 55,746/58,696 pair feature rows", "pid": 26577, "progress": 67, "updated_at": "2026-08-30T17:09:56.722883+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 58,680/58,696 pair feature rows", "pid": 26577, "progress": 70, "updated_at": "2026-08-30T17:09:56.917216+00:00"}
+{"run_id": "N6", "state": "FEATURES", "detail": "computed 58,696/58,696 pair feature rows", "pid": 26577, "progress": 70, "updated_at": "2026-08-30T17:09:56.919002+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "feature matrix complete; preparing model matrices", "pid": 26577, "progress": 70, "updated_at": "2026-08-30T17:09:59.352343+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "fitting logreg (1/3)", "pid": 26577, "progress": 70, "updated_at": "2026-08-30T17:09:59.378826+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "completed logreg (1/3)", "pid": 26577, "progress": 78, "updated_at": "2026-08-30T17:09:59.469786+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "fitting gb (2/3)", "pid": 26577, "progress": 78, "updated_at": "2026-08-30T17:09:59.470365+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "completed gb (2/3)", "pid": 26577, "progress": 86, "updated_at": "2026-08-30T17:10:43.385804+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "fitting rf (3/3)", "pid": 26577, "progress": 86, "updated_at": "2026-08-30T17:10:43.387213+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "completed rf (3/3)", "pid": 26577, "progress": 94, "updated_at": "2026-08-30T17:10:59.207622+00:00"}
+{"run_id": "N6", "state": "TRAINING", "detail": "calibrating selected model and choosing validation threshold", "pid": 26577, "progress": 95, "updated_at": "2026-08-30T17:10:59.255031+00:00"}
+{"run_id": "N6", "state": "VALIDATING", "detail": "saving validation-selected model and feature manifest", "pid": 26577, "progress": 98, "updated_at": "2026-08-30T17:10:59.408490+00:00"}
+{"run_id": "N6", "state": "DONE", "detail": "validation complete; test remains sealed", "pid": 26577, "progress": 100, "updated_at": "2026-08-30T17:10:59.478385+00:00"}

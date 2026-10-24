@@ -1,0 +1,12 @@
+{
+  "policy": "selector:style",
+  "validation_cost": 2550.74,
+  "guard": "style",
+  "thresholds": [
+    0.9966566711660273,
+    0.9641082008999179,
+    0.9990748438029837,
+    0.2710219517914981
+  ],
+  "selection_rule": "lower validation decision cost; no test metric was read before freeze"
+}

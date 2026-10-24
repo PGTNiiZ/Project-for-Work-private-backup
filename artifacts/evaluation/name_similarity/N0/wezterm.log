@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 216, in <module>
+    main()
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 212, in main
+    _run_training(args)
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 153, in _run_training
+    _prepare_offline_embeddings(base, profiles)
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 79, in _prepare_offline_embeddings
+    np.save(base.SBERT_EMBEDDINGS_PATH, aligned)
+  File "/Users/thawaree.kha/Project-for-Work/.venv/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 568, in save
+    file_ctx = open(file, "wb")
+               ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/thawaree.kha/Project-for-Work/train_data/stage7_13_multimodal_suite/shared_cache/sbert_embeddings.npy'
+[N0] PREPARING: loading profiles and experiment configuration
+[N0] PREPARING: aligning local MiniLM embedding cache
+[N0] FEATURES: building entity-aware pairs and feature matrix
+[N0] TRAINING: fitting logreg, gradient boosting, and random forest
+[N0] VALIDATING: saving validation-selected model and feature manifest
+[N0] FAILED: Object of type PosixPath is not JSON serializable
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 242, in <module>
+    main()
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 238, in main
+    _run_training(args)
+  File "/Users/thawaree.kha/Project-for-Work/experiments/code/exp_name_similarity_ablation.py", line 193, in _run_training
+    (run_dir / "validation_metrics.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/Users/thawaree.kha/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type PosixPath is not JSON serializable
+[N0] PREPARING: loading profiles and experiment configuration
+[N0] PREPARING: aligning local MiniLM embedding cache
+[N0] FEATURES: building entity-aware pairs and feature matrix
+[N0] TRAINING: fitting logreg, gradient boosting, and random forest
+[N0] VALIDATING: saving validation-selected model and feature manifest
+[N0] DONE: validation complete; test remains sealed
+{
+  "run_id": "N0",
+  "average_precision": 0.98085866644618,
+  "roc_auc": 0.9763166486942784,
+  "precision": 0.9727427597955707,
+  "recall": 0.9113087095303237,
+  "f1": 0.9410241318422602,
+  "threshold": 0.45000000000000007
+}

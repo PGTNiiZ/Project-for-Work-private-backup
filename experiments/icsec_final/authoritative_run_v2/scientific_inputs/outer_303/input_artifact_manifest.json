@@ -1,0 +1,59 @@
+{
+  "NOT_MANUSCRIPT_EVIDENCE": true,
+  "seed": 303,
+  "authoritative_source_input": {
+    "path": "/Users/thawaree.kha/Project-for-Work/data_for_project/normalized_profiles_with_profile_id.csv",
+    "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+    "bytes": 19790271
+  },
+  "producer_source": {
+    "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/artifact_producers.py",
+    "sha256": "0939f2d1b8d929118e23f54ee84ade3d9e571ec963e6daefebbe3863db38e1de",
+    "bytes": 14755
+  },
+  "split_manifest_sha256": "18d93d1689431734c56f328c812a140bad7250ec774f0a1b8db161e3a3e41c0d",
+  "creation_environment": {
+    "python": "3.11.15 (main, Aug  5 2026, 15:33:48) [Clang 22.1.3 ]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit"
+  },
+  "global_blocking_invariant": {
+    "cross_platform_positives": 29243,
+    "candidate_covered_positives": 25931,
+    "blocking_misses": 3312,
+    "covered_plus_missed_equals_all": true
+  },
+  "artifacts": {
+    "development": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/development_labels/labels.parquet",
+      "sha256": "43bcf2bb6a94951ed8fe070bf3389877df041be5aabff36d57cefe3445b08dc0",
+      "bytes": 35434315,
+      "row_count": 538735,
+      "role_scope": "TRAIN|CALIBRATION|POLICY_VALIDATION"
+    },
+    "sealed_test": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/sealed_test_labels/labels.parquet",
+      "sha256": "715ea204b93e38e8c93fbda71190db4edef1bd855e959c2b16768543b2155906",
+      "bytes": 13444493,
+      "row_count": 203731,
+      "role_scope": "SEALED_TEST"
+    },
+    "blocking_miss": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/blocking_misses/positive_pairs.parquet",
+      "sha256": "3fb42afde05d3f3a949a4bd41f7c7db414dac6db5a4ffdb2782f62352712e12f",
+      "bytes": 212704,
+      "row_count": 3312,
+      "role_scope": "GLOBAL_CROSS_PLATFORM_POSITIVES_NOT_CANDIDATED"
+    },
+    "blocking_miss_routes": {
+      "path": "/Users/thawaree.kha/Project-for-Work/experiments/icsec_final/authoritative_run_v2/scientific_inputs/outer_303/blocking_misses/same_role_routes.parquet",
+      "sha256": "88f90dcdc4af40846743150225c1fabbdaf1f0dcfb720d53f8bb8ce1a436b7af",
+      "bytes": 229082,
+      "row_count": 3312,
+      "role_scope": "SAME_ROLE_WORKFLOW"
+    }
+  },
+  "disjointness": {
+    "development_sealed_pair_overlap": 0,
+    "development_sealed_entity_overlap": 0
+  }
+}

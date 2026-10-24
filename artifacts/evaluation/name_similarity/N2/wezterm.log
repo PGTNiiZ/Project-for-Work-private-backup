@@ -1,0 +1,89 @@
+[N2] PREPARING: loading profiles and experiment configuration
+[N2] PREPARING: aligning local MiniLM embedding cache
+[N2] FEATURES: building entity-aware pairs and feature matrix
+[N2] PREPARING: loading profiles and experiment configuration
+[N2] PREPARING: aligning local MiniLM embedding cache
+[N2] FEATURES: building entity-aware pairs and feature matrix
+[N2] TRAINING: fitting logreg, gradient boosting, and random forest
+[N2] VALIDATING: saving validation-selected model and feature manifest
+[N2] DONE: validation complete; test remains sealed
+{
+  "run_id": "N2",
+  "average_precision": 0.9846756516230804,
+  "roc_auc": 0.9810919981881918,
+  "precision": 0.9847087378640776,
+  "recall": 0.9249886000911993,
+  "f1": 0.9539148836115683,
+  "threshold": 0.4700000000000001
+}
+[N2]   0% PREPARING: loading profiles and experiment configuration
+[N2]   3% PREPARING: aligning local MiniLM embedding cache
+[N2]   5% FEATURES: building entity-aware pairs and feature matrix
+[N2]   8% FEATURES: computed 2,934/58,696 pair feature rows
+[N2]  11% FEATURES: computed 5,868/58,696 pair feature rows
+[N2]  15% FEATURES: computed 8,802/58,696 pair feature rows
+[N2]  18% FEATURES: computed 11,736/58,696 pair feature rows
+[N2]  21% FEATURES: computed 14,670/58,696 pair feature rows
+[N2]  24% FEATURES: computed 17,604/58,696 pair feature rows
+[N2]  28% FEATURES: computed 20,538/58,696 pair feature rows
+[N2]  31% FEATURES: computed 23,472/58,696 pair feature rows
+[N2]  34% FEATURES: computed 26,406/58,696 pair feature rows
+[N2]  37% FEATURES: computed 29,340/58,696 pair feature rows
+[N2]  41% FEATURES: computed 32,274/58,696 pair feature rows
+[N2]  44% FEATURES: computed 35,208/58,696 pair feature rows
+[N2]  47% FEATURES: computed 38,142/58,696 pair feature rows
+[N2]  50% FEATURES: computed 41,076/58,696 pair feature rows
+[N2]  54% FEATURES: computed 44,010/58,696 pair feature rows
+[N2]  57% FEATURES: computed 46,944/58,696 pair feature rows
+[N2]  60% FEATURES: computed 49,878/58,696 pair feature rows
+[N2]  63% FEATURES: computed 52,812/58,696 pair feature rows
+[N2]  67% FEATURES: computed 55,746/58,696 pair feature rows
+[N2]  70% FEATURES: computed 58,680/58,696 pair feature rows
+[N2]  70% FEATURES: computed 58,696/58,696 pair feature rows
+[N2]  70% TRAINING: feature matrix complete; preparing model matrices
+[N2]  70% TRAINING: fitting logreg (1/3)
+[N2]  78% TRAINING: completed logreg (1/3)
+[N2]  78% TRAINING: fitting gb (2/3)
+      Iter       Train Loss   Remaining Time 
+         1           1.3104           52.87s
+         2           1.2422           52.92s
+         3           1.1790           51.84s
+         4           1.1223           52.72s
+         5           1.0698           49.98s
+         6           1.0212           47.96s
+         7           0.9768           46.49s
+         8           0.9356           45.40s
+         9           0.8978           44.43s
+        10           0.8625           43.61s
+        20           0.6073           39.90s
+        30           0.4700           37.33s
+        40           0.3890           35.63s
+        50           0.3374           33.99s
+        60           0.3039           32.60s
+        70           0.2801           31.20s
+        80           0.2635           29.78s
+        90           0.2504           28.37s
+       100           0.2418           27.02s
+       200           0.1928           13.70s
+       300           0.1617            0.00s
+[N2]  86% TRAINING: completed gb (2/3)
+[N2]  86% TRAINING: fitting rf (3/3)
+[Parallel(n_jobs=1)]: Done  49 tasks      | elapsed:    2.1s
+[Parallel(n_jobs=1)]: Done 199 tasks      | elapsed:    9.1s
+[Parallel(n_jobs=1)]: Done 400 out of 400 | elapsed:   19.3s finished
+[Parallel(n_jobs=1)]: Done  49 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=1)]: Done 199 tasks      | elapsed:    0.2s
+[Parallel(n_jobs=1)]: Done 400 out of 400 | elapsed:    0.3s finished
+[N2]  94% TRAINING: completed rf (3/3)
+[N2]  95% TRAINING: calibrating selected model and choosing validation threshold
+[N2]  98% VALIDATING: saving validation-selected model and feature manifest
+[N2] 100% DONE: validation complete; test remains sealed
+{
+  "run_id": "N2",
+  "average_precision": 0.9846756516230804,
+  "roc_auc": 0.9810919981881918,
+  "precision": 0.9847087378640776,
+  "recall": 0.9249886000911993,
+  "f1": 0.9539148836115683,
+  "threshold": 0.4700000000000001
+}
