@@ -134,3 +134,17 @@ train_data/**/logs/
 !**/*.json
 !**/*.txt
 !**/*.md
+
+# Restored from handoff/parts in private transfer snapshot
+/experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/fixture_input.json
+/experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/fixture_input.json
+/experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/fixture_input.json
+/experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/fixture_input.json
+/experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/fixture_input.json
+/experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/fixture_input.json
+/thesis_rebuild/experiment_excel.zip
+/thesis_rebuild/experiment_excel/01_multimodal_and_GA.xlsx
+/thesis_rebuild/experiment_excel/01b_GA_full_feature_to_decision.xlsx
+/thesis_rebuild/experiment_excel/02_ICSEC_model_inputs.xlsx
+/thesis_rebuild/experiment_excel/03_ICSEC_V2R1_GA.xlsx
+/thesis_rebuild/experiment_excel/05_R0_R6_experiment_history.xlsx
