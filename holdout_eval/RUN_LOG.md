@@ -147,3 +147,15 @@ STOP only if (a) no usable config to retrain from, (b) LinkSocial end-to-end F1 
 - Freeze is run from a dedicated clean `git worktree` of the toolkit commit, because the main working tree holds another session's
   untracked `research_v2_runs/*` work and the untracked `research_v2_review_workspace/`; neither was committed, ignored or modified.
 - `requests` must be installed in `.venv` before running the collector; GITHUB_TOKEN required; collector header reminds to check ToS/ethics.
+
+## 2026-10-26 (session d9) — Step 2: FREEZE
+- Frozen at 2026-10-25T19:20:17Z (= 2026-10-26 02:20 +07) against commit 78aa6620 (`git status` clean: dirty=false),
+  run from a dedicated detached `git worktree` of 78aa6620 (see Step-1 rationale). 43 files hashed: GB-17/GB-18 model +
+  calibrator and policies.json for seeds 101/202/303 (LFS content verified against SHA256SUMS.txt), v2r1_manifest.json,
+  PROTOCOL_V2R1.md, V2 features.py/policies.py, full_candidate.py, core/text.py, core/pairs.py, adapter, evaluate/aggregate/
+  schema/scrub/freeze, collector, tier-3 synth, measure_reuse, freeze_spec.json, and the 11 files of the MiniLM snapshot
+  1110a243… (absolute HF-cache paths).
+- Manifest: threshold = null (per-seed frozen policies in `resolved.policies`), reference_f1 = 0.861031, delta = 0.05,
+  decision rule text as pre-registered; `resolved` = freeze_spec.json.
+- Re-checked from the main working tree: all 43 hashes match (check_manifest → no warnings).
+- No holdout data exists yet. Next: install `requests` in .venv, set GITHUB_TOKEN, confirm ToS/ethics, then run the collector.

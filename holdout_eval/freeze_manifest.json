@@ -1,0 +1,311 @@
+{
+  "frozen_at_utc": "2026-10-25T19:20:17.720071+00:00",
+  "git": {
+    "commit": "78aa66200ba62546f98495be1bba355d23e5d0f6",
+    "dirty": false
+  },
+  "files": {
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/models/GB-17_model.pkl": "a821889c7da2aa7867c85b1827bbd334e8e708680673050e494d4b8a8ce36de2",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/models/GB-17_calibrator.pkl": "2fc8a30b19bdcdbbb38413c45d68a33bd6905b267beb13eec31c81569c3f24bd",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/models/GB-18_model.pkl": "479b9d45a237f5bf9b7ca9af0fc524185b439c7169a29cc6e3a2bb945e4573ff",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/models/GB-18_calibrator.pkl": "50fde3bf34fe38f23a02788fbff8f492d40d4de504096f4957c7ba29663a40b0",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/policies.json": "3ff3fd0aa0435ddd1533340dd45475389477688c4248e3162176524ab5fdcd6f",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/models/GB-17_model.pkl": "19883cafe9e1527f03d2427f29b0864db2c5850a9da320292e39c214bed0c623",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/models/GB-17_calibrator.pkl": "a53f657b05f631965426e4df7d9ff9de1cec883e5c0be07146bfa96d6c7d4f0f",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/models/GB-18_model.pkl": "13533b086a069c69b881d66c5a1cf2128c778f58d3d853ca5f130b2a15d3d22a",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/models/GB-18_calibrator.pkl": "eb8935db16e9db3926363aeff131688677793154053939f92e1cccb6631d91dc",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/policies.json": "cad8fe3a338840466ee91512d8a678b4c99134c123857ed3ec4b41e003e7c377",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/models/GB-17_model.pkl": "16a1405d9b198dc5f308ab49ff9d79eed43b9f6f73bb16191c702e772ee307f1",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/models/GB-17_calibrator.pkl": "53781e4b7201d5606aa4ca34313a458aa0d4d74dd2f0cef345fbebda0e207b9e",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/models/GB-18_model.pkl": "1fd3f7057666e66711e55184edb324eddf4b81d4beac6243ba50b1f9cc6f50de",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/models/GB-18_calibrator.pkl": "a68e9bb9cb2e049976f3d47900935bf1370e6457d45ecbea74e27b9b8028986c",
+    "../experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/policies.json": "d6a392a932dd6ad1b593ff32064a81b945bea34937a49bc8a8d2fc1926dd24f2",
+    "../experiments/icsec_final/authoritative_run_v2r1/provenance/v2r1_manifest.json": "3f74f44207de9b4b72bd7eb08ff0f344aea8bf03b0b9b853f6e2db2ef017a7db",
+    "../experiments/icsec_final/authoritative_run_v2r1/PROTOCOL_V2R1.md": "0c60bbd98a53740497a79b43f9aeb1988246c5c8ccdc740f2ba1f4653f2e056f",
+    "../experiments/icsec_final/authoritative_run_v2/features.py": "9975f02ff9086c96e68823d8c02d153bc44adc966973a2b066f175cc907250e0",
+    "../experiments/icsec_final/authoritative_run_v2/policies.py": "951b16ccab46b33f40f7b796ccb268b1630f8f9e0aa71bf44c8965998b8fb50b",
+    "../src/identity_resolution/workflows/full_candidate.py": "c8b166881b0c368eb7a19e14c328c8830e83d8fc7bccb8b92db20f119aea53a4",
+    "../src/identity_resolution/core/text.py": "204a5652c54e2b1d91c5a69c7f29e55e52ce8b75860a43e6a23fc6858bc11f46",
+    "../src/identity_resolution/core/pairs.py": "138d2e54b4d3c981a17b48cbce05c41726f77606dae6e6f22e340c7880a612d3",
+    "adapter/run_v2r1.py": "32573114f9b9807a21e5b5629c0389c11e5b013fec82597627bd63ada59cefb1",
+    "common/evaluate.py": "d2912ff64d6f61187961a40b0b66dccf8e2b95465d631c0d13405d5d22f4df2d",
+    "common/aggregate.py": "3f007b1eb7710846c78666a814491a2bd643b3374674ac480b0c122ef3faa032",
+    "common/schema.py": "458487e88b6766d9f35600124ab3deb82e476c9a7f689277dbb62768367cce5c",
+    "common/scrub.py": "a6c46ab01647a1f2c196259c399f61b4c2f96160f861f969879ce37d7f578d61",
+    "common/freeze.py": "3c2a39d319c1fae51b372bb8e395c35d497f157e6fe13abbe3601002a20e5e7f",
+    "tier1/collect_github_social.py": "5074a4494d7085a3f95a3cd7c43d78b147a10b0d13b62b1c1b91ce4fb959cfb0",
+    "tier3/synth_usernames.py": "756a091578a5a5b9d73b4c19d911b6ce0e87d0aeb264efb2bf6d194db2ff36d3",
+    "tools/measure_reuse.py": "6dcb18da296f05f5a1e1c4bb4851ee1503baec308b213c44cb9d8bd54f047710",
+    "freeze_spec.json": "8babb0f34de521df10860c387d86a41b9000a8a305e62c46d7d7911ecd2bb638",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "/Users/thawaree.kha/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+  },
+  "threshold": null,
+  "possible_threshold": null,
+  "reference_f1": 0.861031,
+  "delta": 0.05,
+  "primary_metric": "mean_f1_end_to_end_match_only_3_seeds",
+  "decision_rule": "PRIMARY (external_url dropped both sides), method GB-18+B3, mean of seeds 101/202/303: transfer SUPPORTED iff lower bound of 95% bootstrap CI (1,000 resamples of GitHub-side entities) of holdout end-to-end MATCH-only F1 >= LinkSocial F1 0.861031 - delta 0.05 = 0.811031. Always report holdout-minus-LinkSocial difference with CI; all results reported regardless of outcome.",
+  "bootstrap": {
+    "n": 1000,
+    "ci": 0.95,
+    "unit": "left entity"
+  },
+  "resolved": {
+    "pipeline": "experiments/icsec_final/authoritative_run_v2r1 (GB-18 = 17 handcrafted features + MiniLM bert_cos; isotonic; frozen policies)",
+    "pipeline_commit": "c68c9d20 (working tree; artifacts originally from BACKUP@ab93b36, hashes in v2r1_manifest.json)",
+    "why_v2r1": "PROTOCOL_V2R1.md: integrity-repaired rerun of v2 (sealed-label materialisation guard, pre-label prediction freeze, fresh provenance); 'if it passes, it is the ONLY numerical source for the paper'. Complete for 3 seeds: models, calibrators, policies, sealed predictions, decisions.",
+    "status_th_main_system": "docs/STATUS_TH.md (50d95e9, 24 Oct 2026): main system still uses the original model and thresholds (R3 not adopted); STATUS_TH does not mention V2/V2R1. The holdout therefore evaluates the paper's V2R1 system, NOT the deployed main system.",
+    "primary_method": "B3",
+    "primary_method_source": "paper/reviewer_revision/main.tex L9 (title: 'Genetic Decision Optimization') and L16 (abstract: genetic optimization of a three-way policy) -> GB-18 + B3",
+    "methods": [
+      "GB17_B0",
+      "B0",
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "seeds": [
+      101,
+      202,
+      303
+    ],
+    "policies": {
+      "101": {
+        "GB17_B0": {
+          "model": "GB-17",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B0": {
+          "model": "GB-18",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B1": {
+          "model": "GB-18",
+          "match_threshold": 0.9,
+          "possible_match_threshold": 0.5,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B2": {
+          "model": "GB-18",
+          "match_threshold": 0.9160850830078126,
+          "possible_match_threshold": 0.574951171875,
+          "name_sim_promote": 0.96966552734375,
+          "name_sim_demote": 0.0312744140625,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        },
+        "B3": {
+          "model": "GB-18",
+          "match_threshold": 0.9328667891460326,
+          "possible_match_threshold": 0.5,
+          "name_sim_promote": 0.9712756320976768,
+          "name_sim_demote": 0.11395647012659907,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        }
+      },
+      "202": {
+        "GB17_B0": {
+          "model": "GB-17",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B0": {
+          "model": "GB-18",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B1": {
+          "model": "GB-18",
+          "match_threshold": 0.9131484375,
+          "possible_match_threshold": 0.5194921875,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B2": {
+          "model": "GB-18",
+          "match_threshold": 0.9943533325195313,
+          "possible_match_threshold": 0.5270751953125,
+          "name_sim_promote": 0.977081298828125,
+          "name_sim_demote": 0.33739013671875,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        },
+        "B3": {
+          "model": "GB-18",
+          "match_threshold": 0.999,
+          "possible_match_threshold": 0.5287054791743097,
+          "name_sim_promote": 0.9768137036760767,
+          "name_sim_demote": 0.05408213418661234,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        }
+      },
+      "303": {
+        "GB17_B0": {
+          "model": "GB-17",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B0": {
+          "model": "GB-18",
+          "match_threshold": 0.98,
+          "possible_match_threshold": 0.95,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B1": {
+          "model": "GB-18",
+          "match_threshold": 0.9,
+          "possible_match_threshold": 0.5,
+          "rule": "MATCH if p>=t_match; REVIEW(POSSIBLE_MATCH) if p>=t_review; else NO_MATCH"
+        },
+        "B2": {
+          "model": "GB-18",
+          "match_threshold": 0.900966796875,
+          "possible_match_threshold": 0.56640625,
+          "name_sim_promote": 0.9501953125,
+          "name_sim_demote": 0.287109375,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        },
+        "B3": {
+          "model": "GB-18",
+          "match_threshold": 0.9125238304089598,
+          "possible_match_threshold": 0.5263206296522533,
+          "name_sim_promote": 0.9505744583187686,
+          "name_sim_demote": 0.3989742153389613,
+          "rule": "MATCH if p>=t_match; NO_MATCH if p<t_review; band: MATCH if name_sim>=c_promote, NO_MATCH if name_sim<c_demote, else REVIEW"
+        }
+      }
+    },
+    "policy_source": "authoritative_run_v2r1/scientific_outputs/outer_{seed}/policies.json (SHA256SUMS OK)",
+    "thresholds_rule_applied": "frozen values exist -> used as-is (rule 7 derivation NOT needed)",
+    "conditions": {
+      "PRIMARY": "adapter --drop-external-url (external_url removed both sides)",
+      "LEAKAGE_CEILING": "with external_url; secondary only"
+    },
+    "decision_rule": {
+      "primary_method": "B3",
+      "condition": "PRIMARY",
+      "metric": "mean over seeds 101/202/303 of end-to-end MATCH-only F1 (blocked-out gold = FN; REVIEW positives = FN), evaluate.py/aggregate.py",
+      "linksocial_f1": 0.861031,
+      "linksocial_f1_definition": "F_auto: automatic end-to-end F1 counting blocking misses and positive REVIEW as FN = same definition as evaluate.py MATCH-only",
+      "linksocial_f1_source": "recomputed from authoritative_run_v2r1/scientific_outputs/outer_*/decisions/B3_workflow.parquet; equals paper/reviewer_revision/main.tex L183 (0.8610)",
+      "linksocial_f_dec_secondary": 0.890293,
+      "linksocial_f_dec_source": "authoritative_run_v2/FINAL_RESULTS.md (B3 F1 0.8903; REVIEW positives excluded from denominator) — reported as secondary sensitivity",
+      "delta": 0.05,
+      "supported_if": "lower 95% bootstrap CI bound of holdout mean F1 >= linksocial_f1 - 0.05",
+      "threshold_value": 0.811031,
+      "bootstrap": {
+        "n": 1000,
+        "ci": 0.95,
+        "unit": "left (github) entity, same resample across the 3 seeds",
+        "seed": 20261026
+      }
+    },
+    "linksocial_reference_all_methods": {
+      "GB17_B0": {
+        "per_seed_F_auto": {
+          "101": 0.77252,
+          "202": 0.847586,
+          "303": 0.869749
+        },
+        "mean_F_auto": 0.829952,
+        "per_seed_F_dec": {
+          "101": 0.820547,
+          "202": 0.858012,
+          "303": 0.869749
+        },
+        "mean_F_dec": 0.849436,
+        "mean_review_rate": 0.001884
+      },
+      "B0": {
+        "per_seed_F_auto": {
+          "101": 0.79845,
+          "202": 0.855854,
+          "303": 0.871552
+        },
+        "mean_F_auto": 0.841952,
+        "per_seed_F_dec": {
+          "101": 0.825323,
+          "202": 0.85602,
+          "303": 0.871552
+        },
+        "mean_F_dec": 0.850965,
+        "mean_review_rate": 0.000871
+      },
+      "B1": {
+        "per_seed_F_auto": {
+          "101": 0.87221,
+          "202": 0.856333,
+          "303": 0.871622
+        },
+        "mean_F_auto": 0.866722,
+        "per_seed_F_dec": {
+          "101": 0.891488,
+          "202": 0.888429,
+          "303": 0.893195
+        },
+        "mean_F_dec": 0.891037,
+        "mean_review_rate": 0.003847
+      },
+      "B2": {
+        "per_seed_F_auto": {
+          "101": 0.855837,
+          "202": 0.853237,
+          "303": 0.87424
+        },
+        "mean_F_auto": 0.861105,
+        "per_seed_F_dec": {
+          "101": 0.889141,
+          "202": 0.889309,
+          "303": 0.891996
+        },
+        "mean_F_dec": 0.890149,
+        "mean_review_rate": 0.004273
+      },
+      "B3": {
+        "per_seed_F_auto": {
+          "101": 0.855616,
+          "202": 0.853237,
+          "303": 0.87424
+        },
+        "mean_F_auto": 0.861031,
+        "per_seed_F_dec": {
+          "101": 0.889573,
+          "202": 0.889309,
+          "303": 0.891996
+        },
+        "mean_F_dec": 0.890293,
+        "mean_review_rate": 0.004318
+      }
+    },
+    "tier3_reuse": {
+      "value": 0.3829,
+      "source": "tools/measure_reuse.py on LinkSocial dev entities (non-SEALED_TEST per seed): 0.385233/0.381570/0.381912"
+    },
+    "minilm": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "source": "v2r1_manifest.json#minilm; local HF cache snapshot"
+    },
+    "adapter_fidelity": "adapter scoring path reproduced stored V2R1 seed-101 B3 calibrated probabilities exactly (max |dp| = 0.0) and decisions 100% on 2,000 sampled LinkSocial MODEL_SCORED pairs (no labels read)",
+    "known_feature_availability_mismatch": [
+      "Bluesky profiles carry no location (collector sets ''): location features inactive",
+      "external_url dropped in PRIMARY: URL exact tier and external_domain blocking key inactive",
+      "Bluesky usernames are full handles (e.g. *.bsky.social); usernames are NOT altered (rule 2)",
+      "no image features in GB-18"
+    ]
+  }
+}
