@@ -16,3 +16,11 @@
    `python -m common.evaluate --records <records.csv> --scores scores.csv --left <src> --right <src> --manifest freeze_manifest.json`
 
 ชั้น 2 ใช้โมเดลย่อย 5 ฟีเจอร์ (ชื่อ + location) ชั้น 3 เป็น sensitivity analysis ห้ามรายงานเป็นผล confirmatory
+
+## Research V2 run (2026-10-26) — pipeline = ICSEC authoritative_run_v2r1 (ดู RUN_LOG.md)
+รันจากโฟลเดอร์นี้ด้วย `../.venv/bin/python`
+1. Collect (หลัง freeze เท่านั้น): `python tier1/collect_github_social.py --target bluesky --pairs 1200 --out data/tier1`
+2. Score ทุก method × seed × condition:
+   `python -m adapter.run_v2r1 --records data/tier1/records.csv --left github --right bluesky --seed 101 --method B3 --drop-external-url --out data/tier1/scores_B3_101_PRIMARY.csv`
+   (PRIMARY = `--drop-external-url`; ไม่ใส่ flag = LEAKAGE CEILING)
+3. Aggregate + decision rule: `python -m common.aggregate --records data/tier1/records.csv --left github --right bluesky --manifest freeze_manifest.json --method B3 --condition PRIMARY --scores 101=... 202=... 303=... --strata data/tier1/strata.csv --out results/tier1_B3_PRIMARY.json`

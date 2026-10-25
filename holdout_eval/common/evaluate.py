@@ -27,15 +27,42 @@ from common.freeze import sha256
 from common.schema import gold_pairs, read_records
 
 
+DECISIONS = ("MATCH", "REVIEW", "NO_MATCH")
+
+
+def has_decisions(scores: pd.DataFrame) -> bool:
+    """True เมื่อ adapter ส่ง decision ที่ policy ที่ freeze แล้วตัดสินไว้ (เช่น B2/B3 ที่ใช้ name_sim band)"""
+    if "decision" not in scores.columns:
+        return False
+    bad = set(scores["decision"].unique()) - set(DECISIONS)
+    if bad:
+        raise ValueError(f"decision ต้องเป็น {DECISIONS} เท่านั้น พบ {sorted(bad)}")
+    return True
+
+
+def predicted(scores: pd.DataFrame, threshold: float | None, include_possible: bool = False,
+              possible_threshold: float | None = None) -> pd.Series:
+    """mask ของคู่ที่ถือว่า merge: decision column ถ้ามี ไม่งั้นใช้ threshold บน score"""
+    if has_decisions(scores):
+        keep = ("MATCH", "REVIEW") if include_possible else ("MATCH",)
+        return scores["decision"].isin(keep)
+    thr = possible_threshold if include_possible else threshold
+    if thr is None:
+        raise ValueError("ไม่มี decision column จึงต้องระบุ threshold")
+    return scores["score"] >= thr
+
+
 def per_left_stats(scores: pd.DataFrame, gold: set, left_ids: list[str],
-                   threshold: float, ks=(1, 10)) -> pd.DataFrame:
+                   threshold: float | None, ks=(1, 10),
+                   pred: pd.Series | None = None) -> pd.DataFrame:
     gold_by_left: dict[str, set] = {}
     for l, r in gold:
         gold_by_left.setdefault(l, set()).add(r)
 
     scores = scores.copy()
     scores["label"] = [(l, r) in gold for l, r in zip(scores.left_id, scores.right_id)]
-    scores["pred"] = scores["score"] >= threshold
+    scores["pred"] = (pred.values if pred is not None
+                      else predicted(scores, threshold).values)
     grouped = {k: g for k, g in scores.groupby("left_id")}
 
     rows = []
@@ -80,11 +107,24 @@ def bootstrap(stats: pd.DataFrame, n: int, ci: float, seed: int, ks=(1, 10)) -> 
 
 
 def possible_block(scores: pd.DataFrame, gold: set, left_ids: list[str],
-                   match_thr: float, possible_thr: float, n_boot: int, seed: int) -> dict:
+                   match_thr: float | None, possible_thr: float | None, n_boot: int,
+                   seed: int) -> dict:
     """MATCH+POSSIBLE (score >= possible_thr นับเป็นการ merge) และ review rate
 
     review rate = สัดส่วนคู่ candidate ที่ score อยู่ใน [possible_thr, match_thr)
+    ถ้ามี decision column: MATCH+POSSIBLE = MATCH หรือ REVIEW และ review rate = สัดส่วน REVIEW
     """
+    if has_decisions(scores):
+        pred = predicted(scores, None, include_possible=True)
+        stats = per_left_stats(scores, gold, left_ids, None, pred=pred)
+        in_review = scores["decision"] == "REVIEW"
+        return {
+            "possible_threshold": "frozen policy decisions (REVIEW = POSSIBLE_MATCH)",
+            "point": summarize(stats),
+            "ci95": bootstrap(stats, n_boot, 0.95, seed),
+            "review_rate": float(in_review.mean()) if len(scores) else 0.0,
+            "n_review": int(in_review.sum()),
+        }
     if possible_thr > match_thr:
         raise ValueError("possible_threshold ต้อง <= match threshold")
     stats = per_left_stats(scores, gold, left_ids, possible_thr)
@@ -124,20 +164,23 @@ def main() -> None:
     ap.add_argument("--out", default="results.json")
     args = ap.parse_args()
 
+    scores = pd.read_csv(args.scores, dtype={"left_id": str, "right_id": str})
+    decision_mode = has_decisions(scores)
     manifest, warnings = {}, []
     if args.manifest:
         manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-        threshold = manifest["threshold"]
+        threshold = manifest.get("threshold")
         warnings = check_manifest(manifest)
-    elif args.threshold is not None:
+    elif args.threshold is not None or decision_mode:
         threshold = args.threshold
         warnings.append("ไม่ได้ใช้ manifest — ผลนี้ไม่นับเป็น confirmatory")
     else:
         raise SystemExit("ต้องระบุ --manifest หรือ --threshold")
+    if threshold is None and not decision_mode:
+        raise SystemExit("manifest ไม่มี threshold และ scores ไม่มี decision column")
 
     records = read_records(args.records)
     gold = gold_pairs(records, args.left, args.right)
-    scores = pd.read_csv(args.scores, dtype={"left_id": str, "right_id": str})
     left_ids = records.loc[records.source == args.left, "record_id"].tolist()
 
     stats = per_left_stats(scores, gold, left_ids, threshold)
@@ -149,6 +192,7 @@ def main() -> None:
     ci95 = bootstrap(stats, args.n_boot, 0.95, args.seed)
     result = {
         "threshold": threshold,
+        "decision_source": "frozen policy decision column" if decision_mode else "score >= threshold",
         "n_left": len(left_ids),
         "n_gold_pairs": len(gold),
         "n_candidates": len(scores),
@@ -162,7 +206,7 @@ def main() -> None:
     possible = args.possible_threshold
     if possible is None:
         possible = manifest.get("possible_threshold")
-    if possible is not None:
+    if possible is not None or decision_mode:
         result["match_plus_possible"] = possible_block(
             scores, gold, left_ids, threshold, possible, args.n_boot, args.seed)
 

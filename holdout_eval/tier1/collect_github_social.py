@@ -41,7 +41,8 @@ from common.scrub import patterns, scrub  # noqa: E402
 GH = "https://api.github.com"
 BSKY = "https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile"
 X_API = "https://api.x.com/2/users/by/username/{}"
-MAX_GH_ID = 230_000_000  # ขอบบนโดยประมาณของ user id ปัจจุบัน ปรับได้
+MAX_GH_ID = 230_000_000
+STOP_BIO_REMOVED = 0.20  # STOP (c): สัดส่วนตัวอักษร bio (ทั้งสองฝั่ง ทุกคู่) ที่ scrub ลบออก  # ขอบบนโดยประมาณของ user id ปัจจุบัน ปรับได้
 
 
 class GitHub:
@@ -181,9 +182,15 @@ def main() -> None:
         ent = f"gh:{g['id']}"
         gp = patterns(g["login"], handle, "github")
         tp = patterns(g["login"], handle, "target")
-        g_bio, h1 = scrub(g.get("bio") or "", gp)
+        g_bio_raw, t_bio_raw = g.get("bio") or "", t["bio"] or ""
+        g_bio, h1 = scrub(g_bio_raw, gp)
         g_url, h2 = scrub(g.get("blog") or "", gp)
-        t_bio, h3 = scrub(t["bio"], tp)
+        t_bio, h3 = scrub(t_bio_raw, tp)
+        for raw_bio, new_bio in ((g_bio_raw, g_bio), (t_bio_raw, t_bio)):
+            before = len(re.sub(r"\s+", " ", raw_bio).strip())
+            counts["bio_chars_total"] += before
+            counts["bio_chars_removed"] += max(before - len(new_bio), 0)
+        counts["pairs_with_bio_scrubbed"] += bool(h1 or h3)
         t_url, h4 = scrub(t["external_url"], tp)
         hits = {"github": h1 | h2, args.target: h3 | h4}
         for side, names in hits.items():
@@ -204,7 +211,16 @@ def main() -> None:
     n_pairs_built = len(flags)
     counts["pairs"] = n_pairs_built
     counts["pairs_with_scrubbed_reference"] = sum(f["flag"] for f in flags)
-    (out / "scrub_counts.json").write_text(json.dumps(dict(sorted(counts.items())), indent=2))
+    removed = counts["bio_chars_removed"] / counts["bio_chars_total"] if counts["bio_chars_total"] else 0.0
+    summary = dict(sorted(counts.items()))
+    summary["bio_content_removed_fraction"] = round(removed, 6)
+    summary["pairs_with_bio_scrubbed_fraction"] = (round(counts["pairs_with_bio_scrubbed"] / n_pairs_built, 6)
+                                                    if n_pairs_built else 0.0)
+    (out / "scrub_counts.json").write_text(json.dumps(summary, indent=2))
+    if removed > STOP_BIO_REMOVED:
+        # STOP condition (c) ของผู้วิจัย: scrub ลบเนื้อหา bio ของคู่ holdout เกิน 20% → หยุดและถามผู้วิจัย
+        sys.exit(f"STOP (c): scrub removed {removed:.1%} of holdout bio content (> {STOP_BIO_REMOVED:.0%}); "
+                 "records.csv NOT written — ask the researcher")
     pd.DataFrame(flags).to_csv(out / "strata.csv", index=False)
     print("scrub counts:", dict(sorted(counts.items())))
     df = pd.DataFrame(rows).drop_duplicates("record_id")

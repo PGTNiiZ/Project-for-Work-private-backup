@@ -47,7 +47,8 @@ def main() -> None:
     ap.add_argument("--repo", required=True)
     ap.add_argument("--files", nargs="+", required=True,
                     help="ไฟล์โมเดล, config, รายชื่อฟีเจอร์ ฯลฯ ที่ต้อง freeze")
-    ap.add_argument("--threshold", type=float, required=True)
+    ap.add_argument("--threshold", type=float,
+                    help="threshold เดียว (เว้นได้เมื่อ policy ต่อ method/seed อยู่ใน --extra)")
     ap.add_argument("--decision-rule", required=True)
     ap.add_argument("--possible-threshold", type=float,
                     help="เกณฑ์ POSSIBLE_MATCH (secondary, ไม่ใช่ confirmatory)")
@@ -55,8 +56,12 @@ def main() -> None:
                     help="F1 บน LinkSocial ระดับ end-to-end ที่ใช้เทียบ")
     ap.add_argument("--delta", type=float, help="ค่า tolerance ของ decision rule")
     ap.add_argument("--primary-metric", default="f1")
+    ap.add_argument("--extra", help="JSON ของค่าที่ resolve แล้ว (policy ต่อ seed, reference ฯลฯ) ฝังใน manifest")
     ap.add_argument("--out", default="freeze_manifest.json")
     args = ap.parse_args()
+    extra = json.loads(Path(args.extra).read_text(encoding="utf-8")) if args.extra else None
+    if args.threshold is None and not (extra and extra.get("policies")):
+        raise SystemExit("ต้องระบุ --threshold หรือ --extra ที่มี policies")
 
     git = git_info(args.repo)
     if "error" in git:
@@ -75,6 +80,7 @@ def main() -> None:
         "primary_metric": args.primary_metric,
         "decision_rule": args.decision_rule,
         "bootstrap": {"n": 1000, "ci": 0.95, "unit": "left entity"},
+        "resolved": extra,
     }
     Path(args.out).write_text(json.dumps(manifest, ensure_ascii=False, indent=2),
                               encoding="utf-8")

@@ -89,9 +89,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--records", required=True)
     ap.add_argument("--levels", type=float, nargs="+", default=[0, 0.1, 0.2, 0.3, 0.4, 0.5])
-    ap.add_argument("--reuse", type=float, default=0.3,
-                    help="ความน่าจะเป็นที่คนใช้ username หลักเดิมซ้ำข้ามแพลตฟอร์ม "
-                         "(สมมติฐาน ควรปรับให้ตรงกับสัดส่วนที่เห็นใน LinkSocial)")
+    ap.add_argument("--reuse", type=float, default=0.3829,
+                    help="ความน่าจะเป็นที่คนใช้ username หลักเดิมซ้ำข้ามแพลตฟอร์ม — ค่าเริ่มต้นวัดจาก "
+                         "LinkSocial dev data (tools/measure_reuse.py; ดู RUN_LOG.md 2026-10-26)")
     ap.add_argument("--seed", type=int, default=20261026)
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
