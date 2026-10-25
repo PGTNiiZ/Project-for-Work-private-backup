@@ -1,0 +1,10 @@
+{
+  "exp_id": "E5-4",
+  "priority": "SUPPORTING",
+  "name": "Leave-one-attribute-group-out ablation (5 groups)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "150",
+  "planned_validation_evals": "30",
+  "planned_test_evals": "0",
+  "depends_on": "E5-3"
+}

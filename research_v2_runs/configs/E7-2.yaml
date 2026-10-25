@@ -1,0 +1,10 @@
+{
+  "exp_id": "E7-2",
+  "priority": "ESSENTIAL",
+  "name": "2x2x2 factorial stage attribution (Blocker x Matcher x Policy)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "8",
+  "planned_test_evals": "6",
+  "depends_on": "E7-1"
+}

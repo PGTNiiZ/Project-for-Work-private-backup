@@ -1,0 +1,10 @@
+{
+  "exp_id": "E8-1",
+  "priority": "OPTIONAL",
+  "name": "Keyed Bloom-encoded similarity vs plaintext",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "100",
+  "planned_validation_evals": "4",
+  "planned_test_evals": "0",
+  "depends_on": "G1;GX-T8 threat model"
+}

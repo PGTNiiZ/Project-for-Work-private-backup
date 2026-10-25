@@ -1,0 +1,10 @@
+{
+  "exp_id": "E6-3",
+  "priority": "ESSENTIAL",
+  "name": "Closed-form cost-optimal threshold t*=c_FP/(c_FP+c_FN) (+4 cost scenarios)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "4",
+  "planned_test_evals": "1",
+  "depends_on": "E6-7"
+}

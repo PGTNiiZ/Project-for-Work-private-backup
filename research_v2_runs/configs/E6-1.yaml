@@ -1,0 +1,10 @@
+{
+  "exp_id": "E6-1",
+  "priority": "SUPPORTING",
+  "name": "Fixed/historical policies: t=0.5; R0 (0.98/0.95); stage18 manual 4-gene rule",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "3",
+  "planned_test_evals": "1",
+  "depends_on": "E6-7"
+}

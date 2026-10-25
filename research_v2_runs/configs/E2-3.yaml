@@ -1,0 +1,10 @@
+{
+  "exp_id": "E2-3",
+  "priority": "ESSENTIAL",
+  "name": "Tuned weighted rule (weights on simplex + threshold; same budget as T3)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "200",
+  "planned_test_evals": "1",
+  "depends_on": "E2-1"
+}

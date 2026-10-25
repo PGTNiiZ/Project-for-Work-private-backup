@@ -1,0 +1,10 @@
+{
+  "exp_id": "E1-6",
+  "priority": "CONDITIONAL",
+  "name": "Supervised meta-blocking (GSM-style)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "25",
+  "planned_validation_evals": "5",
+  "planned_test_evals": "0",
+  "depends_on": "E1-5;G3 (run only if best PC < 0.90)"
+}

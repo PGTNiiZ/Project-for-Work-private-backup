@@ -1,0 +1,10 @@
+{
+  "exp_id": "D0-4",
+  "priority": "ESSENTIAL",
+  "name": "Leakage, duplicate and historical-exposure audit",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "0",
+  "planned_test_evals": "0",
+  "depends_on": "D0-2"
+}

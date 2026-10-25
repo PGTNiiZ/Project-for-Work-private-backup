@@ -1,0 +1,10 @@
+{
+  "exp_id": "E4-3",
+  "priority": "CONDITIONAL",
+  "name": "Fine-tuned bi-encoder (contrastive)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "15",
+  "planned_validation_evals": "3",
+  "planned_test_evals": "0",
+  "depends_on": "E5-3;T4 inclusion rule"
+}

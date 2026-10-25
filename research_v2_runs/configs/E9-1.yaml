@@ -1,0 +1,10 @@
+{
+  "exp_id": "E9-1",
+  "priority": "CONDITIONAL",
+  "name": "Profile image similarity feature",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "25",
+  "planned_validation_evals": "1",
+  "planned_test_evals": "0",
+  "depends_on": "G1;GX-T9 image rights;coverage>=50%"
+}

@@ -1,0 +1,10 @@
+{
+  "exp_id": "E3-1",
+  "priority": "SUPPORTING",
+  "name": "Logistic Regression on F-LEX",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "17",
+  "planned_validation_evals": "200",
+  "planned_test_evals": "0",
+  "depends_on": "E2-1;G4"
+}

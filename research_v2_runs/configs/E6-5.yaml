@@ -1,0 +1,10 @@
+{
+  "exp_id": "E6-5",
+  "priority": "ESSENTIAL",
+  "name": "Genetic algorithm on historical 4-gene policy space, budget-matched (replicates R1/R3 and ICSEC-v2 B3 under V2 protocol)",
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "planned_training_jobs": "0",
+  "planned_validation_evals": "20480",
+  "planned_test_evals": "1",
+  "depends_on": "E6-4"
+}
