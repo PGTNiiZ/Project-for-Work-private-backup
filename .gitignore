@@ -148,3 +148,12 @@ train_data/**/logs/
 /thesis_rebuild/experiment_excel/02_ICSEC_model_inputs.xlsx
 /thesis_rebuild/experiment_excel/03_ICSEC_V2R1_GA.xlsx
 /thesis_rebuild/experiment_excel/05_R0_R6_experiment_history.xlsx
+
+# holdout_eval: collected/derived data must never be committed
+holdout_eval/data/
+holdout_eval/raw/
+holdout_eval/**/out/
+holdout_eval/**/*.csv
+holdout_eval/**/*.jsonl
+holdout_eval/**/progress.json
+/data/
