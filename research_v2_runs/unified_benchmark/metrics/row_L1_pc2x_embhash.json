@@ -1,0 +1,28 @@
+{
+ "row": {
+  "id": "L1_pc2x_embhash",
+  "layer": 1,
+  "stage": "blocking_2x",
+  "name_th": "PC ที่งบ 2 เท่า: hash ของ embedding แบบ R6 (MiniLM ตรึง + hash head 64 บิต)",
+  "model_job": null,
+  "rule": null,
+  "budget": "2x",
+  "metrics_only": "PC"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "PC_2x": {
+   "found": 16765,
+   "ground_truth": 23391,
+   "PC": 0.7167286563208072,
+   "candidates": 702988
+  },
+  "PC_1x": {
+   "found": 15221,
+   "ground_truth": 23391,
+   "PC": 0.650720362532598,
+   "candidates": 351494
+  }
+ },
+ "runtime_seconds": 0.0007665409939363599
+}

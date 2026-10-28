@@ -1,0 +1,63 @@
+{
+ "job": "J_sparse_FLEX35_LR",
+ "config": {
+  "blocker": "sparse",
+  "features": "FLEX35",
+  "learner": "LR",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "C": 4.516333212324759,
+    "class_weight": null
+   },
+   "best_inner_AP": 0.965610567823449,
+   "configs": 200,
+   "seconds": 24.52359583300131
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "C": 6.341019097257306,
+    "class_weight": null
+   },
+   "best_inner_AP": 0.9649416977628958,
+   "configs": 200,
+   "seconds": 20.43325854098657
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "C": 45.103545259953314,
+    "class_weight": null
+   },
+   "best_inner_AP": 0.966029796518586,
+   "configs": 200,
+   "seconds": 19.986139792003087
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "C": 99.34516401491223,
+    "class_weight": "balanced"
+   },
+   "best_inner_AP": 0.9664387403286396,
+   "configs": 200,
+   "seconds": 28.51355295800022
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9574178626311004,
+  "23": 0.9572897221893583,
+  "42": 0.957504481091735,
+  "71": 0.9573980441232552,
+  "101": 0.9576162247073573
+ },
+ "score_sha256": "6bffaeb10190af475560a3b587645447e3bcd80c83bf1b9b609d24208605dfda",
+ "runtime_seconds": 95.53106637499877
+}

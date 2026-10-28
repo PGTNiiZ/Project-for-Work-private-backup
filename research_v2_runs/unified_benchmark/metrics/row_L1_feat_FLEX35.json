@@ -1,0 +1,18 @@
+{
+ "row": {
+  "id": "L1_feat_FLEX35",
+  "layer": 1,
+  "stage": "features",
+  "name_th": "feature ความคล้ายของข้อความ 35 ตัว (F-LEX35) — ค่าอ้างอิง",
+  "model_job": "J_sparse_FLEX35_GBDT",
+  "rule": "three_way",
+  "alias_of": "L1_block_sparse"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "alias_of": "L1_block_sparse",
+  "note": "identical configuration; metrics read from the aliased row",
+  "source_sha256": "9911b52f87e9d4d84208dc0198c2f7444eeeb8c8547d171fc552fe74e2219213"
+ },
+ "runtime_seconds": 0.0006082079926272854
+}

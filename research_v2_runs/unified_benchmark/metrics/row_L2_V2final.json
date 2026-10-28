@@ -1,0 +1,26 @@
+{
+ "row": {
+  "id": "L2_V2final",
+  "layer": 2,
+  "stage": "historical_system",
+  "name_th": "V2 ระบบสุดท้าย: sparse + fusion GBDT + สามทาง",
+  "model_job": "J_sparse_FUSION41_GBDT",
+  "rule": "three_way",
+  "exact_tier": false,
+  "deviations": [
+   "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+   "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+   "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+   "V2 calibrator/policy were selected on reused development OOF; here nested",
+   "alias of L1_feat_FUSION41"
+  ],
+  "alias_of": "L1_feat_FUSION41"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "alias_of": "L1_feat_FUSION41",
+  "note": "identical configuration; metrics read from the aliased row",
+  "source_sha256": "a443e41707527850af4f5a1efa5553c54dab58030afc188434277a2dc0c1287f"
+ },
+ "runtime_seconds": 0.0009615419985493645
+}

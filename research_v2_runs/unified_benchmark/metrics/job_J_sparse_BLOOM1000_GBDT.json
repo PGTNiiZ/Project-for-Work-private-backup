@@ -1,0 +1,75 @@
+{
+ "job": "J_sparse_BLOOM1000_GBDT",
+ "config": {
+  "blocker": "sparse",
+  "features": "BLOOM1000",
+  "learner": "GBDT",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 20,
+    "l2_regularization": 9.34017113905432
+   },
+   "best_inner_AP": 0.9503641537947078,
+   "configs": 200,
+   "seconds": 279.79463612500695
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 2.683337772912729
+   },
+   "best_inner_AP": 0.9519992760954235,
+   "configs": 200,
+   "seconds": 239.00901750000776
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 31,
+    "max_iter": 50,
+    "min_samples_leaf": 20,
+    "l2_regularization": 2.0206171784574627
+   },
+   "best_inner_AP": 0.9547635939975408,
+   "configs": 200,
+   "seconds": 206.1858109169989
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.00013471282565744874
+   },
+   "best_inner_AP": 0.9551126006763005,
+   "configs": 200,
+   "seconds": 215.55684162500256
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9529259619252852,
+  "23": 0.952650499437159,
+  "42": 0.9527267319471981,
+  "71": 0.9524723566346026,
+  "101": 0.9528814943910847
+ },
+ "score_sha256": "8487a1f19fd03001aa078d725b2a355dbced05c5dff1d0ffeb50eb991d823acb",
+ "runtime_seconds": 941.8533610419981
+}

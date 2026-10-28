@@ -1,0 +1,51 @@
+{
+ "job": "J_B0_R18_IdentityMLP",
+ "config": {
+  "blocker": "B0",
+  "features": "R18",
+  "learner": "IdentityMLP",
+  "tuning": "none (documented fixed config)",
+  "note": "R2/R3 IdentityMLP [256,128,64], FocalLoss(0.25,2), Adam 1e-3, wd 1e-5, cosine LR, 30 epochs, patience 5, neg ratio 3; early stopping on a 15% entity-hash slice of the training rows"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 105.94370545800484
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 112.77217570900393
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 111.1844150419929
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 124.09886541700689
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9694259724784932,
+  "23": 0.96965139714299,
+  "42": 0.9690055411317815,
+  "71": 0.9685161584576678,
+  "101": 0.9683660900695982
+ },
+ "score_sha256": "93fb738705a382c62e38e4692e681ccc6f2869817f39220e111eb8bb97ed677e",
+ "runtime_seconds": 455.59027754199633
+}

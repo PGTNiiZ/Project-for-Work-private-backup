@@ -1,0 +1,51 @@
+{
+ "job": "J_B0_R17_GBfixed",
+ "config": {
+  "blocker": "B0",
+  "features": "R17",
+  "learner": "GBfixed",
+  "tuning": "none (documented fixed config)",
+  "note": "GB-17"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 116.75214304200199
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 108.36263591700117
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 103.11161525000352
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 97.97951158300566
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.970061153951864,
+  "23": 0.9702411841403937,
+  "42": 0.9700582924296018,
+  "71": 0.9702420713732409,
+  "101": 0.970364928825531
+ },
+ "score_sha256": "5ec68d1f24572cd63697be88dd1d63650b9f18e092c8ebbae86fc3f87d76f43d",
+ "runtime_seconds": 428.0815920830064
+}

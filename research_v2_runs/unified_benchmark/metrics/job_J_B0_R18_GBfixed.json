@@ -1,0 +1,51 @@
+{
+ "job": "J_B0_R18_GBfixed",
+ "config": {
+  "blocker": "B0",
+  "features": "R18",
+  "learner": "GBfixed",
+  "tuning": "none (documented fixed config)",
+  "note": "GB-18 / ICSEC v2 model"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 98.82062075000431
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 147.76995141599036
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 107.22885208399384
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 137.19636687499587
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9741411405717985,
+  "23": 0.9743583769566093,
+  "42": 0.9740491193408651,
+  "71": 0.9741157661917644,
+  "101": 0.9741653287715258
+ },
+ "score_sha256": "38e459531d2b899d8f8629e2d86cb0f4f8488137cd8f53325a9cee7a0198098a",
+ "runtime_seconds": 495.56669274999877
+}

@@ -1,0 +1,75 @@
+{
+ "job": "J_multipass_FLEX35_GBDT",
+ "config": {
+  "blocker": "multipass",
+  "features": "FLEX35",
+  "learner": "GBDT",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.0021651308005596168
+   },
+   "best_inner_AP": 0.9762312051205282,
+   "configs": 200,
+   "seconds": 444.3860519590089
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.001070517182627714
+   },
+   "best_inner_AP": 0.9764323849978511,
+   "configs": 200,
+   "seconds": 480.0598825000052
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.1598669132888568
+   },
+   "best_inner_AP": 0.9797174190301768,
+   "configs": 200,
+   "seconds": 371.3107522920036
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.48970912406688744
+   },
+   "best_inner_AP": 0.9810472991747208,
+   "configs": 200,
+   "seconds": 375.78584050000063
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9738880963990645,
+  "23": 0.9741418616523508,
+  "42": 0.9738485521348724,
+  "71": 0.9742699261797706,
+  "101": 0.9740812098962671
+ },
+ "score_sha256": "40e8fdea582b6451fd21146973a7c955325461da08a86d8282488167ff680a1d",
+ "runtime_seconds": 1672.9700888340012
+}

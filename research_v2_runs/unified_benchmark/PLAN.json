@@ -1,0 +1,1053 @@
+{
+ "title": "Unified development-only benchmark",
+ "created_utc": "2026-10-27T09:49:17.944455+00:00",
+ "harness": {
+  "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+  "folds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "never_read": [
+   "data_derived/sealed_test.parquet",
+   "data_derived/final",
+   "data_derived/split_manifest.parquet",
+   "metrics/final_summary.json",
+   "metrics/primary_contrasts.json"
+  ],
+  "ledger_lines_required": 21,
+  "labels": "canonical cross-platform same-entity pairs; total 29,243; development 23,391",
+  "outer_evaluation": "4-fold entity-disjoint out-of-fold over folds 0-3; candidate pairs never cross folds",
+  "nested_inner_split": {
+   "definition": "for outer fold f, T = other three folds; c = (f+1) mod 4 is the inner selection fold; A = T minus c",
+   "hyperparameter_tuning": "fit on rows of A, AP on rows of c (labels of f never read)",
+   "inner_scores": "for every g in T: model fit on T minus g, scores rows of g (cross-fitted, never scores own training rows)",
+   "calibration_fit": "on inner scores of A only; method chosen by pooled Brier of a 2-way swap inside A (fit on one fold of A, score the other, both directions); chosen method refit on all of A",
+   "decision_rule_tuning": "on calibrated inner scores of c only (labels, blocking misses of c)",
+   "outer_scores": "model fit on all of T scores fold f; the A-fitted calibrator and c-tuned rule are applied unchanged",
+   "disclosed_shift": "outer model uses 3 folds while calibrator/rule inputs come from 2-fold models"
+  },
+  "calibration_methods": [
+   "platt",
+   "isotonic"
+  ],
+  "calibration_rule": "minimum pooled Brier on the inner 2-way swap; ties -> platt",
+  "score_space": "probability models: logit of clipped probability; LinearSVM: raw decision value",
+  "model_tuning": {
+   "optimizer": "optuna TPE seed 42",
+   "configs": 200,
+   "objective": "AP on inner selection fold c",
+   "train_negative_ratio": 3
+  },
+  "model_seeds": [
+   11,
+   23,
+   42,
+   71,
+   101
+  ],
+  "rule_seeds": [
+   11,
+   23,
+   42,
+   71,
+   101
+  ],
+  "rule_search_budget": 2048,
+  "metrics": [
+   "blocking PC (per fold and pooled)",
+   "candidate AP (raw outer scores pooled over 4 folds, mean/SD over seeds)",
+   "end-to-end automatic recall = automatic true matches / 23,391",
+   "recall if review is perfect = (automatic TP + reviewed positives) / 23,391",
+   "automatic precision",
+   "false merges (automatic FP)",
+   "review count",
+   "cost per pair at FP:FN:REVIEW = 2:1:0.1; FN = true pairs neither auto-matched nor reviewed, including blocking misses; denominator = all cross-platform pairs inside the four development folds",
+   "cost sensitivity: the same frozen decisions re-costed at 5:1:0.02"
+  ],
+  "candidate_budget": "primary = 1x sparse budget (fold-local count of V2 sparse matched candidates = B0 native count); 2x reported as a secondary PC-only table",
+  "bug_fixes_applied_to_all_historical_methods": [
+   "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+   "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+   "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives"
+  ],
+  "parallelism": "up to 4 concurrent model jobs, 2 threads each; runtime per row logged",
+  "append_only": "metrics/<row>.json and ledger/runs.jsonl refuse to overwrite",
+  "stage0_smoke": "one row with 2 configs and 1 seed to check plumbing; written to work/smoke only and never reported"
+ },
+ "model_spaces": {
+  "GBDT": "protocol.json GBDT space (learning_rate {0.03,0.1}, max_leaf_nodes {15,31,63}, max_iter {50,100,150}, min_samples_leaf {20,50}, l2 log[1e-6,10])",
+  "LR": "protocol.json LR space (C log[1e-3,100], class_weight {None,balanced}) + StandardScaler fit on training rows",
+  "RF": "n_estimators {200,400}, max_depth {8,12,18,None}, min_samples_leaf {1,5,20}, max_features {sqrt,0.5} (pre-declared here; no historical space recorded)",
+  "ExtraTrees": "same space as RF",
+  "MLP": "sklearn MLP hidden {(64,),(128,64),(256,128,64)}, alpha log[1e-6,1e-2], learning_rate_init log[1e-4,1e-2], early_stopping on 10% of training rows, max_iter 100, StandardScaler",
+  "AdaBoost": "n_estimators {50,100,200}, learning_rate log[0.05,1.5], depth-1 stumps",
+  "LinearSVM": "LinearSVC C log[1e-3,100], class_weight {None,balanced}, StandardScaler; scores = decision_function"
+ },
+ "model_jobs": {
+  "J_B0_FLEX35_GBDT": {
+   "blocker": "B0",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_GBDT": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_dense_FLEX35_GBDT": {
+   "blocker": "dense",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_hybrid_union_FLEX35_GBDT": {
+   "blocker": "hybrid_union",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_hybrid_rrf_FLEX35_GBDT": {
+   "blocker": "hybrid_rrf",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_multipass_FLEX35_GBDT": {
+   "blocker": "multipass",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_embhash_FLEX35_GBDT": {
+   "blocker": "embhash",
+   "features": "FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FSEM_GBDT": {
+   "blocker": "sparse",
+   "features": "FSEM",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FUSION41_GBDT": {
+   "blocker": "sparse",
+   "features": "FUSION41",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_H23_GBDT": {
+   "blocker": "sparse",
+   "features": "H23",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_R17_GBDT": {
+   "blocker": "sparse",
+   "features": "R17",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_R18_GBDT": {
+   "blocker": "sparse",
+   "features": "R18",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_BLOOM250_GBDT": {
+   "blocker": "sparse",
+   "features": "BLOOM250",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_BLOOM500_GBDT": {
+   "blocker": "sparse",
+   "features": "BLOOM500",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_BLOOM1000_GBDT": {
+   "blocker": "sparse",
+   "features": "BLOOM1000",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_BLOOM2000_GBDT": {
+   "blocker": "sparse",
+   "features": "BLOOM2000",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N1_GBDT": {
+   "blocker": "sparse",
+   "features": "N1",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N2_GBDT": {
+   "blocker": "sparse",
+   "features": "N2",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N3_GBDT": {
+   "blocker": "sparse",
+   "features": "N3",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N4_GBDT": {
+   "blocker": "sparse",
+   "features": "N4",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N5_GBDT": {
+   "blocker": "sparse",
+   "features": "N5",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_N6_GBDT": {
+   "blocker": "sparse",
+   "features": "N6",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_H23_FLEX35_GBDT": {
+   "blocker": "sparse",
+   "features": "H23_FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_LR": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "LR",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_RF": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "RF",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_ExtraTrees": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "ExtraTrees",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_MLP": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "MLP",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_AdaBoost": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "AdaBoost",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_sparse_FLEX35_LinearSVM": {
+   "blocker": "sparse",
+   "features": "FLEX35",
+   "learner": "LinearSVM",
+   "tuning": "TPE200",
+   "note": ""
+  },
+  "J_B0_H23_GBfixed": {
+   "blocker": "B0",
+   "features": "H23",
+   "learner": "GBfixed",
+   "tuning": "none (documented fixed config)",
+   "note": "thesis/production GB n=300 lr=0.05 depth=6 -> HistGradientBoosting(max_iter=300, learning_rate=0.05, max_depth=6); image features unavailable"
+  },
+  "J_B0_R17_GBfixed": {
+   "blocker": "B0",
+   "features": "R17",
+   "learner": "GBfixed",
+   "tuning": "none (documented fixed config)",
+   "note": "GB-17"
+  },
+  "J_B0_R18_GBfixed": {
+   "blocker": "B0",
+   "features": "R18",
+   "learner": "GBfixed",
+   "tuning": "none (documented fixed config)",
+   "note": "GB-18 / ICSEC v2 model"
+  },
+  "J_B0_R18_IdentityMLP": {
+   "blocker": "B0",
+   "features": "R18",
+   "learner": "IdentityMLP",
+   "tuning": "none (documented fixed config)",
+   "note": "R2/R3 IdentityMLP [256,128,64], FocalLoss(0.25,2), Adam 1e-3, wd 1e-5, cosine LR, 30 epochs, patience 5, neg ratio 3; early stopping on a 15% entity-hash slice of the training rows"
+  },
+  "J_multipass2x_H23_FLEX35_GBDT": {
+   "blocker": "multipass2x",
+   "features": "H23_FLEX35",
+   "learner": "GBDT",
+   "tuning": "TPE200",
+   "note": ""
+  }
+ },
+ "rows": [
+  {
+   "id": "L1_block_B0",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "คัดคู่ด้วยคีย์ 3 ตัวอักษรแรก + โดเมน (B0)",
+   "model_job": "J_B0_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "protocol.json B0; pairs_<f>_B0.npy",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_sparse",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "TF-IDF ทั้งโปรไฟล์ (sparse) — ค่าอ้างอิง",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "pairs_<f>_sparse_matched.npy (V2)",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_dense",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "เวกเตอร์ความหมาย MiniLM (dense)",
+   "model_job": "J_dense_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "pairs_<f>_dense_matched.npy",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_hybrid_union",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "รวม sparse + dense แบบ union",
+   "model_job": "J_hybrid_union_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "pairs_<f>_hybrid_union_matched.npy",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_hybrid_rrf",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "รวม sparse + dense แบบจัดอันดับ (RRF)",
+   "model_job": "J_hybrid_rrf_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "pairs_<f>_hybrid_rrf_matched.npy",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_multipass",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "หลายเส้นทาง (post-hoc)",
+   "model_job": "J_multipass_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "posthoc multipass_dev_fold<f>_1.0x.npy",
+   "deviations": []
+  },
+  {
+   "id": "L1_block_embhash",
+   "layer": 1,
+   "stage": "blocking",
+   "name_th": "hash ของ embedding แบบ R6 (MiniLM ตรึง + hash head 64 บิต)",
+   "model_job": "J_embhash_FLEX35_GBDT",
+   "rule": "three_way",
+   "budget": "1x",
+   "source": "new: experiments/code/exp_r6_bert_er.py design re-implemented",
+   "deviations": [
+    "frozen MiniLM retrieval embeddings instead of frozen DistilBERT; hash head trained per fold on the other three folds; candidates ranked by Hamming distance then code cosine and cut at the 1x budget (original used radius buckets with no budget)"
+   ]
+  },
+  {
+   "id": "L1_pc2x_sparse",
+   "layer": 1,
+   "stage": "blocking_2x",
+   "name_th": "PC ที่งบ 2 เท่า: TF-IDF ทั้งโปรไฟล์ (sparse) — ค่าอ้างอิง",
+   "model_job": null,
+   "rule": null,
+   "budget": "2x",
+   "metrics_only": "PC"
+  },
+  {
+   "id": "L1_pc2x_multipass",
+   "layer": 1,
+   "stage": "blocking_2x",
+   "name_th": "PC ที่งบ 2 เท่า: หลายเส้นทาง (post-hoc)",
+   "model_job": null,
+   "rule": null,
+   "budget": "2x",
+   "metrics_only": "PC"
+  },
+  {
+   "id": "L1_pc2x_embhash",
+   "layer": 1,
+   "stage": "blocking_2x",
+   "name_th": "PC ที่งบ 2 เท่า: hash ของ embedding แบบ R6 (MiniLM ตรึง + hash head 64 บิต)",
+   "model_job": null,
+   "rule": null,
+   "budget": "2x",
+   "metrics_only": "PC"
+  },
+  {
+   "id": "L1_feat_FSEM",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "feature ความหมาย 6 ตัว (F-SEM)",
+   "model_job": "J_sparse_FSEM_GBDT",
+   "rule": "three_way",
+   "deviations": []
+  },
+  {
+   "id": "L1_feat_FUSION41",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "ข้อความ + ความหมาย 41 ตัว (V2 fusion)",
+   "model_job": "J_sparse_FUSION41_GBDT",
+   "rule": "three_way",
+   "deviations": []
+  },
+  {
+   "id": "L1_feat_H23",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "feature งานก่อน 23 ตัว (historical-23 = ฐานของ N0)",
+   "model_job": "J_sparse_H23_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "bio_mentions constant empty (not in dev schema)",
+    "bio embedding = frozen MiniLM, not MPNet",
+    "bio TF-IDF fit on training folds only"
+   ]
+  },
+  {
+   "id": "L1_feat_R17",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "feature ชุด R 17 ตัว (name_sim แก้แล้ว)",
+   "model_job": "J_sparse_R17_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "rapidfuzz Jaro-Winkler/Levenshtein instead of jellyfish (same formulas)",
+    "text = V2-normalized fields",
+    "same_platform is constant 0 for cross-platform candidates",
+    "name_sim ungated (bug fix)"
+   ]
+  },
+  {
+   "id": "L1_feat_R18",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "feature ชุด R 17 + ความคล้าย MiniLM (18 ตัว)",
+   "model_job": "J_sparse_R18_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "as R17",
+    "bert_cos = cosine of MiniLM (pinned revision) of \"fullname bio location\" from V2-normalized text"
+   ]
+  },
+  {
+   "id": "L1_feat_BLOOM250",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "ชื่อเข้ารหัส Bloom L=250 + 10 feature ที่ไม่ใช่ชื่อ",
+   "model_job": "J_sparse_BLOOM250_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "salt, k=10, bigrams as original; non-name columns from R17",
+    "text = V2-normalized fields"
+   ]
+  },
+  {
+   "id": "L1_feat_BLOOM500",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "Bloom L=500",
+   "model_job": "J_sparse_BLOOM500_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "salt, k=10, bigrams as original; non-name columns from R17",
+    "text = V2-normalized fields"
+   ]
+  },
+  {
+   "id": "L1_feat_BLOOM1000",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "Bloom L=1000",
+   "model_job": "J_sparse_BLOOM1000_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "salt, k=10, bigrams as original; non-name columns from R17",
+    "text = V2-normalized fields"
+   ]
+  },
+  {
+   "id": "L1_feat_BLOOM2000",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "Bloom L=2000",
+   "model_job": "J_sparse_BLOOM2000_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "salt, k=10, bigrams as original; non-name columns from R17",
+    "text = V2-normalized fields"
+   ]
+  },
+  {
+   "id": "L1_feat_N1",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + Damerau ของชื่อ (N1)",
+   "model_job": "J_sparse_N1_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_N2",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + char n-gram ของชื่อ (N2)",
+   "model_job": "J_sparse_N2_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_N3",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + token set ของชื่อ (N3)",
+   "model_job": "J_sparse_N3_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_N4",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + handle (N4)",
+   "model_job": "J_sparse_N4_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_N5",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + ชื่อข้ามช่อง (N5)",
+   "model_job": "J_sparse_N5_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_N6",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "งานก่อน 23 + char n-gram + handle (N6)",
+   "model_job": "J_sparse_N6_GBDT",
+   "rule": "three_way",
+   "deviations": [
+    "original base = multimodal model with images; here base = historical-23 (images unavailable), so N0 == H23 row",
+    "name primitives imported from src/identity_resolution/core/name_similarity.py on V2-normalized username/fullname",
+    "N6 groups = char_ngram + handle (from original N6 config)"
+   ]
+  },
+  {
+   "id": "L1_feat_H23_FLEX35",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "ชุดรวม งานก่อน 23 + ข้อความ 35 (58 ตัว)",
+   "model_job": "J_sparse_H23_FLEX35_GBDT",
+   "rule": "three_way",
+   "deviations": []
+  },
+  {
+   "id": "L1_feat_FLEX35",
+   "layer": 1,
+   "stage": "features",
+   "name_th": "feature ความคล้ายของข้อความ 35 ตัว (F-LEX35) — ค่าอ้างอิง",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "three_way",
+   "alias_of": "L1_block_sparse"
+  },
+  {
+   "id": "L1_model_GBDT",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "GBDT (HistGradientBoosting) — ค่าอ้างอิง",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "three_way",
+   "space": "protocol.json GBDT space (learning_rate {0.03,0.1}, max_leaf_nodes {15,31,63}, max_iter {50,100,150}, min_samples_leaf {20,50}, l2 log[1e-6,10])",
+   "alias_of": "L1_block_sparse"
+  },
+  {
+   "id": "L1_model_LR",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "logistic regression",
+   "model_job": "J_sparse_FLEX35_LR",
+   "rule": "three_way",
+   "space": "protocol.json LR space (C log[1e-3,100], class_weight {None,balanced}) + StandardScaler fit on training rows"
+  },
+  {
+   "id": "L1_model_RF",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "random forest",
+   "model_job": "J_sparse_FLEX35_RF",
+   "rule": "three_way",
+   "space": "n_estimators {200,400}, max_depth {8,12,18,None}, min_samples_leaf {1,5,20}, max_features {sqrt,0.5} (pre-declared here; no historical space recorded)"
+  },
+  {
+   "id": "L1_model_ExtraTrees",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "extra trees",
+   "model_job": "J_sparse_FLEX35_ExtraTrees",
+   "rule": "three_way",
+   "space": "same space as RF"
+  },
+  {
+   "id": "L1_model_MLP",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "MLP (sklearn)",
+   "model_job": "J_sparse_FLEX35_MLP",
+   "rule": "three_way",
+   "space": "sklearn MLP hidden {(64,),(128,64),(256,128,64)}, alpha log[1e-6,1e-2], learning_rate_init log[1e-4,1e-2], early_stopping on 10% of training rows, max_iter 100, StandardScaler"
+  },
+  {
+   "id": "L1_model_AdaBoost",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "AdaBoost",
+   "model_job": "J_sparse_FLEX35_AdaBoost",
+   "rule": "three_way",
+   "space": "n_estimators {50,100,200}, learning_rate log[0.05,1.5], depth-1 stumps"
+  },
+  {
+   "id": "L1_model_LinearSVM",
+   "layer": 1,
+   "stage": "model",
+   "name_th": "linear SVM",
+   "model_job": "J_sparse_FLEX35_LinearSVM",
+   "rule": "three_way",
+   "space": "LinearSVC C log[1e-3,100], class_weight {None,balanced}, StandardScaler; scores = decision_function"
+  },
+  {
+   "id": "L1_rule_manual_098_095",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "เกณฑ์มือ 0.98/0.95 (R0)",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "manual_098_095",
+   "search_budget": "fixed",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_stage18",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "กฎ stage 18 genome [0.98,0.95,0.9,0.7]",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "stage18",
+   "search_budget": "fixed",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_fixed_05",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "คงที่ 0.5",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "fixed_05",
+   "search_budget": "fixed",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_f1max",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "threshold ที่ F1 สูงสุดบน fold เลือก (grid protocol 99 ค่า)",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "f1max",
+   "search_budget": "grid",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_closed_cost",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "threshold สูตรปิด FP/(FP+FN)=2/3",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "closed_cost",
+   "search_budget": "fixed",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_chow",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "Chow ต้นทุน 2:1:0.1",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "chow",
+   "search_budget": "fixed",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_dual_sobol",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "สองเกณฑ์ ค้นด้วย Sobol ไม่สุ่มสลับ (ICSEC B1)",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "dual_sobol",
+   "search_budget": "2048",
+   "deviations": [
+    "original budget 12,000; harness budget 2,048; unscrambled Sobol is seed-free so all rule seeds coincide"
+   ]
+  },
+  {
+   "id": "L1_rule_three_way",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "สองเกณฑ์ ค้นแบบสุ่ม (V2 three-way) — ค่าอ้างอิง",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "three_way",
+   "search_budget": "2048",
+   "deviations": [],
+   "alias_of": "L1_block_sparse"
+  },
+  {
+   "id": "L1_rule_genome_GA",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "กฎ 4 ยีน + name_sim ค้นด้วย GA",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "genome_GA",
+   "search_budget": "2048",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_genome_sobol",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "กฎ 4 ยีน ค้นด้วย Sobol สุ่มสลับ",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "genome_sobol",
+   "search_budget": "2048",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_genome_TPE",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "กฎ 4 ยีน ค้นด้วย TPE",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "genome_TPE",
+   "search_budget": "2048",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_genome_random",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "กฎ 4 ยีน ค้นแบบสุ่ม",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "genome_random",
+   "search_budget": "2048",
+   "deviations": []
+  },
+  {
+   "id": "L1_rule_feature_aware_GA",
+   "layer": 1,
+   "stage": "decision_rule",
+   "name_th": "GA ที่ให้น้ำหนักกลุ่มหลักฐาน (7 ยีน)",
+   "model_job": "J_sparse_FLEX35_GBDT",
+   "rule": "feature_aware_GA",
+   "search_budget": "2048",
+   "deviations": [
+    "original 10 genes over probability/name/bio/url/location/social/image/style; social, image and style unavailable in F-LEX35 -> 7 genes (t_match, t_review, w_probability, w_name, w_bio, w_url, w_location)",
+    "group score = max of that group's Jaro-Winkler/TF-IDF/exact columns, availability = both_present",
+    "GA population 64, elites 12, uniform crossover, mutation p=0.4 sigma=0.05, 2048 evaluations (original pop 128 x 100 generations)"
+   ]
+  },
+  {
+   "id": "L2_R0",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "R0: คะแนนเดิม + เกณฑ์มือ 0.98/0.95",
+   "model_job": "J_B0_H23_GBfixed",
+   "rule": "manual_098_095",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "original score came from the 41-feature multimodal model with images; re-implemented with the 23 text/attribute features of the same thesis suite",
+    "model trained inside the harness (original production model saw the whole corpus)",
+    "harness calibration (original isotonic)",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_R1",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "R1: คะแนนเดิม + GA 4 ยีน (ต้นทุน 5:1:0.02)",
+   "model_job": "J_B0_H23_GBfixed",
+   "rule": "genome_GA_5_1_002",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "as R0",
+    "GA harness settings, 2,048 evaluations (original pop 60 x 40 generations ~1,980)",
+    "objective cost 5:1:0.02 as original",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_R3",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "R3: MiniLM feature 18 + IdentityMLP + GA (5:1:0.02)",
+   "model_job": "J_B0_R18_IdentityMLP",
+   "rule": "genome_GA_5_1_002",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "MLP trained on entity-disjoint inner folds (original: 85% of val pairs, pair-level split)",
+    "GA tuned on held inner fold (original: on rows used for training)",
+    "R18 feature deviations",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_GB17",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "GB-17: GB 17 feature + เกณฑ์มือ",
+   "model_job": "J_B0_R17_GBfixed",
+   "rule": "manual_098_095",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "HistGradientBoosting equivalent of GradientBoosting(300,0.05,6)",
+    "name_sim ungated",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_GB18GA",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "GB-18 + GA (ICSEC v1, ต้นทุน 2:1:0.1)",
+   "model_job": "J_B0_R18_GBfixed",
+   "rule": "genome_GA",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "as GB-17",
+    "GA harness settings and 2,048 evaluations",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_ICSEC_B1",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "ICSEC v2 B1: GB-18 + สองเกณฑ์ Sobol",
+   "model_job": "J_B0_R18_GBfixed",
+   "rule": "dual_sobol",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "budget 2,048 instead of 12,000",
+    "ICSEC v2 routing dropped cross-role pairs; harness keeps fold-local candidates",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_ICSEC_B3",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "ICSEC v2 B3: GB-18 + กฎขยาย GA",
+   "model_job": "J_B0_R18_GBfixed",
+   "rule": "genome_GA",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "original GA mutation-only pop 60 at 12,000 evaluations; harness GA with crossover at 2,048",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_thesis23",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "วิทยานิพนธ์: GB 23 feature + threshold F1 สูงสุด",
+   "model_job": "J_B0_H23_GBfixed",
+   "rule": "f1max",
+   "exact_tier": true,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "original evaluated on sampled pairs without blocking; here deployed on B0 candidates",
+    "image features unavailable",
+    "exact tier: pairs with identical username (>=3 chars) or identical non-empty link are automatic MATCH regardless of score (as in production/R-series/ICSEC)"
+   ]
+  },
+  {
+   "id": "L2_V2final",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "V2 ระบบสุดท้าย: sparse + fusion GBDT + สามทาง",
+   "model_job": "J_sparse_FUSION41_GBDT",
+   "rule": "three_way",
+   "exact_tier": false,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "V2 calibrator/policy were selected on reused development OOF; here nested",
+    "alias of L1_feat_FUSION41"
+   ],
+   "alias_of": "L1_feat_FUSION41"
+  },
+  {
+   "id": "L2_posthoc_combined",
+   "layer": 2,
+   "stage": "historical_system",
+   "name_th": "post-hoc: หลายเส้นทาง 2× + ชุดรวม 58 + Chow",
+   "model_job": "J_multipass2x_H23_FLEX35_GBDT",
+   "rule": "chow",
+   "exact_tier": false,
+   "deviations": [
+    "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+    "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+    "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+    "own nested calibrator (original transported the V2 calibrator)",
+    "budget 2x (its native configuration), so not equal-budget with Layer 1"
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "item": "image features (thesis 37/41, historical-41, feature-aware image gene)",
+   "reason": "no development-only image linkage can be verified; raw/image caches contain sealed-test profiles"
+  },
+  {
+   "item": "#1 first name-similarity matching (Jan 2026)",
+   "reason": "no result artifact and no recoverable split/config"
+  },
+  {
+   "item": "#3 SBERT/MPNet bio-vector notebooks",
+   "reason": "no recoverable metric/config"
+  },
+  {
+   "item": "N7 phonetic name group",
+   "reason": "excluded as instructed by the researcher; NOTE: code exists (feature_registry N7, latin_soundex_match) so it is recoverable in principle"
+  },
+  {
+   "item": "bigram top-1 ranking (#2)",
+   "reason": "different task (top-1 per source profile) and different label files"
+  },
+  {
+   "item": "R2, R4, R5 as full systems",
+   "reason": "not requested in Layer 2; their representations are covered in Layer 1 (R18, Bloom)"
+  },
+  {
+   "item": "R6 hash head + match head end-to-end (R6-GA)",
+   "reason": "match head on frozen DistilBERT not requested; blocking part covered by L1_block_embhash"
+  },
+  {
+   "item": "notebook IdentityMLP v1/v2 (#4)",
+   "reason": "notebooks absent from checkout; config only partially recoverable"
+  },
+  {
+   "item": "strict MLP 22 / leak-safe 22 features / 7-family benchmark as originally configured",
+   "reason": "feature lists live in absent run directories; model families covered in Layer 1 on F-LEX35"
+  }
+ ],
+ "rule_cost_variants": {
+  "genome_GA_5_1_002": "genome GA with objective cost 5:1:0.02 (R-series original weights)"
+ }
+}

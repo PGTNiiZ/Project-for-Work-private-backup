@@ -1,0 +1,75 @@
+{
+ "job": "J_sparse_N6_GBDT",
+ "config": {
+  "blocker": "sparse",
+  "features": "N6",
+  "learner": "GBDT",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.04599698782070137
+   },
+   "best_inner_AP": 0.9751265573935951,
+   "configs": 200,
+   "seconds": 447.92071283300174
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 20,
+    "l2_regularization": 4.726556370380119
+   },
+   "best_inner_AP": 0.9747786811428371,
+   "configs": 200,
+   "seconds": 464.7507648339961
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 31,
+    "max_iter": 150,
+    "min_samples_leaf": 20,
+    "l2_regularization": 9.839933611022051
+   },
+   "best_inner_AP": 0.9769628472618037,
+   "configs": 200,
+   "seconds": 535.3576682499988
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 3.0855470336310795e-06
+   },
+   "best_inner_AP": 0.9776737526234566,
+   "configs": 200,
+   "seconds": 556.8828340839973
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9761802514895843,
+  "23": 0.9758388421703895,
+  "42": 0.9760621830200309,
+  "71": 0.9760429493727967,
+  "101": 0.9763657016777115
+ },
+ "score_sha256": "69dcac7e23e2ea5054a2c76a9ee572d87906b36206602a8689013993be967360",
+ "runtime_seconds": 2006.7736527499947
+}

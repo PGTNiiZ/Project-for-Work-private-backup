@@ -1,0 +1,51 @@
+{
+ "job": "J_B0_H23_GBfixed",
+ "config": {
+  "blocker": "B0",
+  "features": "H23",
+  "learner": "GBfixed",
+  "tuning": "none (documented fixed config)",
+  "note": "thesis/production GB n=300 lr=0.05 depth=6 -> HistGradientBoosting(max_iter=300, learning_rate=0.05, max_depth=6); image features unavailable"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 124.9231744580029
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 115.22282033300144
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 101.54980933299521
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {},
+   "best_inner_AP": null,
+   "configs": 0,
+   "seconds": 100.91946674999781
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9813197027329503,
+  "23": 0.9812384306588695,
+  "42": 0.9811719029929032,
+  "71": 0.9815033372279928,
+  "101": 0.9813125712544544
+ },
+ "score_sha256": "f9e5e30a96be735d5180c45f2949506716454b83715be11b8c5214a2b640012e",
+ "runtime_seconds": 444.5753234580043
+}

@@ -1,0 +1,71 @@
+{
+ "job": "J_sparse_FLEX35_RF",
+ "config": {
+  "blocker": "sparse",
+  "features": "FLEX35",
+  "learner": "RF",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "n_estimators": 400,
+    "max_depth": 18,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt"
+   },
+   "best_inner_AP": 0.9769096091625638,
+   "configs": 200,
+   "seconds": 3576.8310828749964
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "n_estimators": 400,
+    "max_depth": 18,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt"
+   },
+   "best_inner_AP": 0.9767168816431637,
+   "configs": 200,
+   "seconds": 4530.337798332999
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "n_estimators": 400,
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "max_features": "sqrt"
+   },
+   "best_inner_AP": 0.9770661284068682,
+   "configs": 200,
+   "seconds": 14139.377206207995
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "n_estimators": 400,
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "max_features": "sqrt"
+   },
+   "best_inner_AP": 0.979308630150587,
+   "configs": 200,
+   "seconds": 3108.407156041998
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.9746326040608018,
+  "23": 0.9744601392190779,
+  "42": 0.9742708112043793,
+  "71": 0.9744986930813001,
+  "101": 0.9743915879629484
+ },
+ "score_sha256": "88473c1c9e28f5c7fda2baa27c74ebb1e2c3c0d6de1440495bc1b4e6ff3884c5",
+ "runtime_seconds": 25356.877650625
+}

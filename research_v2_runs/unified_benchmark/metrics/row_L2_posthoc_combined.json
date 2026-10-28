@@ -1,0 +1,358 @@
+{
+ "row": {
+  "id": "L2_posthoc_combined",
+  "layer": 2,
+  "stage": "historical_system",
+  "name_th": "post-hoc: หลายเส้นทาง 2× + ชุดรวม 58 + Chow",
+  "model_job": "J_multipass2x_H23_FLEX35_GBDT",
+  "rule": "chow",
+  "exact_tier": false,
+  "deviations": [
+   "name_sim computed for every pair (max Jaro-Winkler over username/fullname cross combinations), never gated by an earlier model score",
+   "all TF-IDF/vocabularies fit on outer training folds only (unlabeled text of the evaluated fold never used)",
+   "labels: canonical V2 definition (same exact user_folder, different platform); 23,391 development positives",
+   "own nested calibrator (original transported the V2 calibrator)",
+   "budget 2x (its native configuration), so not equal-budget with Layer 1"
+  ]
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "mean": {
+   "candidate_AP": 0.9766704238301342,
+   "auto_recall": 0.8066777820529263,
+   "recall_perfect_review": 0.9025522636911634,
+   "auto_precision": 0.9955485003049613,
+   "false_merges": 84.4,
+   "review": 6350.0,
+   "review_positives": 2242.6,
+   "auto_tp": 18869.0,
+   "cost_2_1_0.1": 3083.2000000000003,
+   "cost_per_pair_2_1_0.1": 4.29094243037994e-05,
+   "cost_5_1_0.02": 2828.3999999999996,
+   "cost_per_pair_5_1_0.02": 3.9363328911801436e-05
+  },
+  "sd": {
+   "candidate_AP": 0.00021448164787270452,
+   "auto_recall": 0.0038728457320238267,
+   "recall_perfect_review": 0.000871228706239518,
+   "auto_precision": 0.0005141298502578051,
+   "false_merges": 10.089598604503552,
+   "review": 314.8912510693176,
+   "review_positives": 103.25841370077308,
+   "auto_tp": 90.58973451776973,
+   "cost_2_1_0.1": 25.218346496152268,
+   "cost_per_pair_2_1_0.1": 3.5096806241684904e-07,
+   "cost_5_1_0.02": 55.9508945415531,
+   "cost_per_pair_5_1_0.02": 7.786782155100661e-07
+  },
+  "PC": 0.9375828310033774,
+  "candidates": 702988,
+  "calibrator_choices": {
+   "platt": 19,
+   "isotonic": 1
+  },
+  "per_seed": {
+   "11": {
+    "candidate_AP": 0.9769737735085271,
+    "auto_recall": 0.8040699414304647,
+    "recall_perfect_review": 0.9029113761703219,
+    "auto_precision": 0.9960809236309713,
+    "false_merges": 74,
+    "review": 6314,
+    "review_positives": 2312,
+    "auto_tp": 18808,
+    "cost_2_1_0.1": 3050.4,
+    "cost_per_pair_2_1_0.1": 4.245294106652493e-05,
+    "cost_5_1_0.02": 2767.28,
+    "cost_per_pair_5_1_0.02": 3.8512711367221713e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0023285601048411457,
+       "isotonic": 0.0023332162617016225
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0021478638396512945,
+       "isotonic": 0.002172833314436521
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0022103869796628105,
+       "isotonic": 0.002217221666978221
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0024057224559118125,
+       "isotonic": 0.0024225650647981163
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     }
+    }
+   },
+   "23": {
+    "candidate_AP": 0.9764087083781582,
+    "auto_recall": 0.81065367021504,
+    "recall_perfect_review": 0.9021846009148818,
+    "auto_precision": 0.9947017783140114,
+    "false_merges": 101,
+    "review": 6227,
+    "review_positives": 2141,
+    "auto_tp": 18962,
+    "cost_2_1_0.1": 3112.7,
+    "cost_per_pair_2_1_0.1": 4.331998087390904e-05,
+    "cost_5_1_0.02": 2917.54,
+    "cost_per_pair_5_1_0.02": 4.0603905612126e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0023449355579449153,
+       "isotonic": 0.002363143695779652
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0021655137376678135,
+       "isotonic": 0.0021696000200453524
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.002216947665629322,
+       "isotonic": 0.0022256829495317268
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.002381974382416583,
+       "isotonic": 0.0023945698535501924
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     }
+    }
+   },
+   "42": {
+    "candidate_AP": 0.9766903594522122,
+    "auto_recall": 0.8012910948655466,
+    "recall_perfect_review": 0.9033388910264631,
+    "auto_precision": 0.9956969825754356,
+    "false_merges": 81,
+    "review": 6736,
+    "review_positives": 2387,
+    "auto_tp": 18743,
+    "cost_2_1_0.1": 3096.6,
+    "cost_per_pair_2_1_0.1": 4.309591440683225e-05,
+    "cost_5_1_0.02": 2800.72,
+    "cost_per_pair_5_1_0.02": 3.897810159449177e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.002352109123431676,
+       "isotonic": 0.0023638035323007584
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0021099766486110364,
+       "isotonic": 0.002126872421692241
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0022316800098079086,
+       "isotonic": 0.0022354422789458324
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0024326092827087814,
+       "isotonic": 0.002443851182309236
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     }
+    }
+   },
+   "71": {
+    "candidate_AP": 0.9765366810218682,
+    "auto_recall": 0.8090718652473173,
+    "recall_perfect_review": 0.9031251335983925,
+    "auto_precision": 0.9955286691215149,
+    "false_merges": 85,
+    "review": 6557,
+    "review_positives": 2200,
+    "auto_tp": 18925,
+    "cost_2_1_0.1": 3091.7,
+    "cost_per_pair_2_1_0.1": 4.302772026467844e-05,
+    "cost_5_1_0.02": 2822.14,
+    "cost_per_pair_5_1_0.02": 3.927620741590698e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0023197263939975666,
+       "isotonic": 0.002338267868391086
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.002117903182502298,
+       "isotonic": 0.0021317096621473633
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0021919307168911575,
+       "isotonic": 0.0021938837455049566
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0023788730966754447,
+       "isotonic": 0.0023866975685922125
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     }
+    }
+   },
+   "101": {
+    "candidate_AP": 0.9767425967899056,
+    "auto_recall": 0.8083023385062631,
+    "recall_perfect_review": 0.9012013167457569,
+    "auto_precision": 0.9957341478828734,
+    "false_merges": 81,
+    "review": 5916,
+    "review_positives": 2173,
+    "auto_tp": 18907,
+    "cost_2_1_0.1": 3064.6,
+    "cost_per_pair_2_1_0.1": 4.265056490705229e-05,
+    "cost_5_1_0.02": 2834.32,
+    "cost_per_pair_5_1_0.02": 3.9445718569260734e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0023335353785378836,
+       "isotonic": 0.002335065414197416
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.002103833951434448,
+       "isotonic": 0.002107935980532566
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.0022079605197582986,
+       "isotonic": 0.0022262028214839937
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     },
+     "3": {
+      "calibrator": "isotonic",
+      "brier": {
+       "platt": 0.0024213685215645547,
+       "isotonic": 0.0024209813256408
+      },
+      "rule": {
+       "type": "chow"
+      },
+      "rule_evaluations": 0
+     }
+    }
+   }
+  }
+ },
+ "runtime_seconds": 8.461782416998176
+}

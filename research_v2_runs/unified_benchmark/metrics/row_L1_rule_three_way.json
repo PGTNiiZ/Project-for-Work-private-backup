@@ -1,0 +1,20 @@
+{
+ "row": {
+  "id": "L1_rule_three_way",
+  "layer": 1,
+  "stage": "decision_rule",
+  "name_th": "สองเกณฑ์ ค้นแบบสุ่ม (V2 three-way) — ค่าอ้างอิง",
+  "model_job": "J_sparse_FLEX35_GBDT",
+  "rule": "three_way",
+  "search_budget": "2048",
+  "deviations": [],
+  "alias_of": "L1_block_sparse"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "alias_of": "L1_block_sparse",
+  "note": "identical configuration; metrics read from the aliased row",
+  "source_sha256": "9911b52f87e9d4d84208dc0198c2f7444eeeb8c8547d171fc552fe74e2219213"
+ },
+ "runtime_seconds": 0.0005959999980404973
+}

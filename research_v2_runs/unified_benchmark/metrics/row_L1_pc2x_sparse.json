@@ -1,0 +1,28 @@
+{
+ "row": {
+  "id": "L1_pc2x_sparse",
+  "layer": 1,
+  "stage": "blocking_2x",
+  "name_th": "PC ที่งบ 2 เท่า: TF-IDF ทั้งโปรไฟล์ (sparse) — ค่าอ้างอิง",
+  "model_job": null,
+  "rule": null,
+  "budget": "2x",
+  "metrics_only": "PC"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "PC_2x": {
+   "found": 21896,
+   "ground_truth": 23391,
+   "PC": 0.9360865290068829,
+   "candidates": 702988
+  },
+  "PC_1x": {
+   "found": 21576,
+   "ground_truth": 23391,
+   "PC": 0.922406053610363,
+   "candidates": 351494
+  }
+ },
+ "runtime_seconds": 0.0012685839901678264
+}

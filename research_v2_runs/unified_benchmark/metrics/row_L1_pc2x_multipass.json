@@ -1,0 +1,28 @@
+{
+ "row": {
+  "id": "L1_pc2x_multipass",
+  "layer": 1,
+  "stage": "blocking_2x",
+  "name_th": "PC ที่งบ 2 เท่า: หลายเส้นทาง (post-hoc)",
+  "model_job": null,
+  "rule": null,
+  "budget": "2x",
+  "metrics_only": "PC"
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "PC_2x": {
+   "found": 21931,
+   "ground_truth": 23391,
+   "PC": 0.9375828310033774,
+   "candidates": 702988
+  },
+  "PC_1x": {
+   "found": 21860,
+   "ground_truth": 23391,
+   "PC": 0.9345474755247745,
+   "candidates": 351494
+  }
+ },
+ "runtime_seconds": 0.0007540420047007501
+}

@@ -1,0 +1,67 @@
+{
+ "job": "J_sparse_FLEX35_MLP",
+ "config": {
+  "blocker": "sparse",
+  "features": "FLEX35",
+  "learner": "MLP",
+  "tuning": "TPE200",
+  "note": ""
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "smoke": false,
+ "folds": {
+  "0": {
+   "selection_fold": 1,
+   "best_params": {
+    "hidden": "128-64",
+    "alpha": 1.3515971397874235e-05,
+    "learning_rate_init": 0.00028615625446547173
+   },
+   "best_inner_AP": 0.9785531625136427,
+   "configs": 200,
+   "seconds": 814.8644770000101
+  },
+  "1": {
+   "selection_fold": 2,
+   "best_params": {
+    "hidden": "128-64",
+    "alpha": 1.8217303327726345e-05,
+    "learning_rate_init": 0.00790681392046059
+   },
+   "best_inner_AP": 0.9778545542987168,
+   "configs": 200,
+   "seconds": 439.2317311660008
+  },
+  "2": {
+   "selection_fold": 3,
+   "best_params": {
+    "hidden": "64",
+    "alpha": 2.080993868223671e-06,
+    "learning_rate_init": 0.003206085941197795
+   },
+   "best_inner_AP": 0.977775123020923,
+   "configs": 200,
+   "seconds": 480.82370266599173
+  },
+  "3": {
+   "selection_fold": 0,
+   "best_params": {
+    "hidden": "64",
+    "alpha": 0.008973120288451174,
+    "learning_rate_init": 0.006025528890318208
+   },
+   "best_inner_AP": 0.9801595677661015,
+   "configs": 200,
+   "seconds": 1080.9838651669997
+  }
+ },
+ "candidate_AP_per_seed": {
+  "11": 0.973775903212425,
+  "23": 0.9732562995007726,
+  "42": 0.9742450529342147,
+  "71": 0.9736227037252544,
+  "101": 0.9733683273094713
+ },
+ "score_sha256": "67a8c60c2115f48b27d2e6ca777a4e916a4e3b5418a102bdd92532c34b189021",
+ "runtime_seconds": 2818.8741911249963
+}
