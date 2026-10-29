@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.9600270749277199,
+  "name": "LR-fusion",
+  "source_summary": "metrics/model_LR-fusion.json",
+  "source_summary_sha256": "b34cbc20cc82f69855574def2cfc43ea59e5517fc3a68a6a964e7d11b6e4a2d1",
+  "n_pairs": 351494,
+  "seed_count": 1,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.05029283299882081
+}

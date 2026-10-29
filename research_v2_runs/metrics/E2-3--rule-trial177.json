@@ -1,0 +1,11 @@
+{
+  "mean_fold_AP": 0.8523897526625632,
+  "fold_AP": [
+    0.8592798320273294,
+    0.8535614636804779,
+    0.8477038306329173,
+    0.8490138843095283
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.06717987500087474
+}

@@ -1,0 +1,12 @@
+{
+  "reference_commit": "a2dce399a36b354ce7464e22f1facf2ffe407508",
+  "reference_method": "SHA256 reconstructed from immutable pre-run Git objects; LFS content uses oid if only pointer available",
+  "files_checked": 4265,
+  "content_SHA256_measured": 4265,
+  "LFS_pointer_cases": 16,
+  "mismatches": 0,
+  "difference_details": [],
+  "baseline_aggregate_sha256": "72adc71fcfeb12466a754001ef13c07a9176f3da6247c25f197a0124cf975f2b",
+  "current_aggregate_sha256": "72adc71fcfeb12466a754001ef13c07a9176f3da6247c25f197a0124cf975f2b",
+  "filenames_not_output": true
+}

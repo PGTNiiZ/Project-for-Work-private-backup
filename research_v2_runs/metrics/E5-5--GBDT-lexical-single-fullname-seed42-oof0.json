@@ -1,0 +1,9 @@
+{
+  "training_rows": 64772,
+  "training_positives": 16193,
+  "training_negatives": 48579,
+  "train_negative_ratio_limit": 3,
+  "candidate_AP": 0.8817517177529033,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.5736725419992581
+}

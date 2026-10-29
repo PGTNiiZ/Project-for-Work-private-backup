@@ -1,0 +1,23 @@
+[
+  "advanced_embeddings.py",
+  "bigram_full_pipeline.py",
+  "check_status.ipynb",
+  "compare_pipeline_metrics.py",
+  "create_normalized_db.py",
+  "data/processed/bigram_pipeline_comparison_view.ipynb",
+  "data/processed/bigram_pipeline_results_view.ipynb",
+  "data/processed/bigram_pipeline_results_with_location_view.ipynb",
+  "data/processed/check.ipynb",
+  "data/processed/location_mapping_view.ipynb",
+  "dataset.ipynb",
+  "fix_embedding_paths.py",
+  "fix_numpy.py",
+  "image_caption.py",
+  "image_embeddings.py",
+  "image_features.py",
+  "load_dataset.py",
+  "location_mapping_pipeline.py",
+  "merge_image_data.py",
+  "preprocess_dataset.py",
+  "vector_embredding.ipynb"
+]

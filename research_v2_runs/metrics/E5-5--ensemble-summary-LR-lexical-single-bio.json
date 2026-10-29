@@ -1,0 +1,8 @@
+{
+  "candidate_AP": 0.19338797037426556,
+  "summary_sha256": "a5374bdd44d3347768cb27c3efd22e113b739408e5ed563a963537f922a05c08",
+  "name": "LR-lexical-single-bio",
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.04683091700280784
+}

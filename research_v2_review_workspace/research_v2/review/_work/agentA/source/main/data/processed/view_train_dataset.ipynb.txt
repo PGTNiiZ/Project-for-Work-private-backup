@@ -1,0 +1,27 @@
+# CELL 0
+import pandas as pd
+pd.set_option('display.max_colwidth', 25)
+
+df = pd.read_csv('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/train_dataset.csv')
+print(f'Shape: {df.shape}')
+print(f'label: {df["label"].value_counts().to_dict()}')
+
+view_cols = ['profile_id_a','userName_a','platform_a',
+             'profile_id_b','userName_b','platform_b','label']
+df[view_cols]
+# CELL 1
+df[df['label']==1][view_cols]
+# CELL 2
+# ดู features ทั้ง 17
+feature_cols = ['username_jaro','username_token_sort','username_levenshtein','username_both_empty',
+                'fullname_jaro','fullname_token_sort','fullname_levenshtein','fullname_both_empty',
+                'bio_jaro','bio_token_sort','bio_levenshtein','bio_both_empty',
+                'bio_tfidf_cosine','url_exact_match','url_domain_match','same_platform','location_sim']
+print('=== feature distribution (SAME_PERSON) ===')
+df[df['label']==1][feature_cols].describe().round(3)
+# CELL 3
+df['platform_pair'] = df.apply(
+    lambda r: '_'.join(sorted([str(r['platform_a']), str(r['platform_b'])])), axis=1
+)
+print('=== platform_pair vs label ===')
+df.groupby('platform_pair')['label'].value_counts().unstack(fill_value=0)

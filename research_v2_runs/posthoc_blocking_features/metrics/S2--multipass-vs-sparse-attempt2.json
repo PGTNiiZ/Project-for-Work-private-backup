@@ -1,0 +1,11 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S2",
+  "key": "multipass-vs-sparse-attempt2",
+  "start": "2026-10-26T00:57:11.421467+00:00",
+  "config_sha256": "42281f74fe5c253740edf8b3fbed0d1f0baf971af79d1d2d036c0996e592c7e0",
+  "test_access": false,
+  "status": "DONE",
+  "end": "2026-10-26T00:58:53.072258+00:00",
+  "runtime_seconds": 101.65047262500593
+}

@@ -1,0 +1,5 @@
+refs/heads/main 1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b 2026-08-10T10:58:38+07:00
+refs/remotes/origin/HEAD 1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b 2026-08-10T10:58:38+07:00
+refs/remotes/origin/docs/project-reorganization-plan 50d95e98ea0ffd885aecc32547388a55c8b4affc 2026-10-24T06:07:19+07:00
+refs/remotes/origin/main 1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b 2026-08-10T10:58:38+07:00
+refs/remotes/origin/work/safe-20260309-173639 08f4c5e454f11b5800403fcb2f60759d1aee33ef 2026-03-12T21:40:03+07:00

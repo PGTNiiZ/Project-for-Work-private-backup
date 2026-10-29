@@ -1,0 +1,207 @@
+
+## main@1e0a2db:exp_r6_bert_er.py
+36: กฎที่ต้องรักษาเข้มงวด (ไม่งั้นผล "กู้คืนได้" จะเป็น data leakage/circular):
+37:   3,316 คู่ blocking-missed (BLOCKING_MISSED) ห้ามใช้ train เด็ดขาด -- ใช้เป็น held-out
+38:   recovery test เท่านั้น (ตรวจว่า hash ที่เทรนจากคู่อื่นล้วน ๆ จะจับคู่เหล่านี้ไว้ bucket เดียวกัน
+39:   โดยไม่เคยเห็นมันมาก่อนหรือไม่)
+40: 
+60: import torch.nn as nn
+61: from sklearn.metrics import average_precision_score
+62: from sklearn.model_selection import train_test_split
+63: 
+64: from exp_lib import (EXP, MATCH, NO_MATCH, REVIEW, BLOCKING_MISSED, PROFILES,
+65:                      build_cache, evaluate, save_json, split_constants)
+66: import exp_r1_ga_redecision as r1
+67: from exp_r2_bert_feature import FocalLoss, decide_manual
+68: 
+69: SEED = 42
+70: MODEL_NAME = "distilbert-base-uncased"
+71: HASH_BITS = 64
+101: 
+102: 
+103: def log(msg: str) -> None:
+104:     line = f"[{time.strftime('%H:%M:%S')}] {msg}"
+105:     print(line, flush=True)
+108: 
+109: 
+110: def set_seed(seed: int) -> None:
+111:     random.seed(seed)
+112:     np.random.seed(seed)
+113:     torch.manual_seed(seed)
+114: 
+115: 
+116: # ---------------------------------------------------------------- profile text + tokenization ----
+117: def clean_field(x) -> str:
+118:     s = str(x).strip()
+119:     return "" if s.lower() in ("", "nan") else s
+120: 
+121: 
+122: def build_profile_texts() -> pd.DataFrame:
+123:     df = pd.read_csv(PROFILES, keep_default_na=False, low_memory=False)
+124:     df["profile_row_id"] = pd.to_numeric(df["profile_row_id"], errors="coerce").astype("Int64")
+125:     df = df[df["profile_row_id"].notna()].copy()
+126: 
+127:     def row_text(r):
+128:         parts = []
+129:         for tag, col in [("username", "userName"), ("fullname", "fullName"),
+138: 
+139: 
+140: def tokenize_all_profiles(tokenizer) -> dict:
+141:     prof_text = build_profile_texts()
+142:     ids = prof_text["profile_row_id"].tolist()
+152: # ---------------------------------------------------------------- model ----
+153: class BertERModel(nn.Module):
+154:     def __init__(self, model_name: str, hash_bits: int):
+155:         super().__init__()
+156:         from transformers import AutoModel
+169: 
+170:     @torch.no_grad()
+171:     def encode(self, input_ids: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+172:         out = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
+173:         tok = out.last_hidden_state
+177:         return summed / counts  # mean pooling
+178: 
+179:     def hash_embed(self, h: torch.Tensor) -> torch.Tensor:
+180:         return self.hash_head(h)
+181: 
+182:     def match_logit(self, h_a: torch.Tensor, h_b: torch.Tensor) -> torch.Tensor:
+183:         feat = torch.cat([h_a, h_b, h_a * h_b, (h_a - h_b).abs()], dim=-1)
+184:         return self.match_head(feat).squeeze(-1)
+185: 
+186: 
+187: def cosine_contrastive_loss(z_a: torch.Tensor, z_b: torch.Tensor, labels: torch.Tensor,
+188:                             margin: float = COSINE_MARGIN) -> torch.Tensor:
+189:     cos = torch.nn.functional.cosine_similarity(z_a, z_b, dim=-1)
+194: 
+195: 
+196: def quantization_reg(z: torch.Tensor) -> torch.Tensor:
+197:     return (1.0 - z.pow(2)).mean()
+198: 
+200: # ---------------------------------------------------------------- encode all profiles (ONE-TIME, frozen backbone) ----
+201: @torch.no_grad()
+202: def encode_all_profiles(model: BertERModel, tok: dict, device) -> tuple[np.ndarray, np.ndarray]:
+203:     if EMB_PATH.exists() and EMB_IDS_PATH.exists():
+204:         log(f"embeddings cache found -> {EMB_PATH}")
+228: 
+229: # ---------------------------------------------------------------- training pairs ----
+230: def build_training_pairs(cache: pd.DataFrame) -> pd.DataFrame:
+231:     bm = pd.read_csv(BLOCKING_MISSED, keep_default_na=False)
+232:     bm_pairs = set(zip(bm["profile_id_a"].astype(int), bm["profile_id_b"].astype(int)))
+233: 
+234:     scored = cache[cache.decision_source != "AUTO_EXACT"]
+235:     val = scored[scored.split == "val"][["profile_id_a", "profile_id_b", "actual"]].copy()
+236:     val = val.rename(columns={"actual": "label"})
+237:     before = len(val)
+248:     platform = prof["platform"] if "platform" in prof.columns else pd.Series(dtype=object)
+249: 
+250:     from exp_lib import bucket as split_bucket
+251:     keys = folder.where(folder != "", "pid:" + folder.index.astype(str))
+252:     prof_split = keys.map(split_bucket)
+253:     val_ids = prof_split[prof_split == "val"].index.values
+254: 
+255:     # ขนาดตาม target หลัง undersample (pos*NEG_RATIO) ไม่ใช่จำนวน negative ดิบก่อน undersample
+256:     n_extra = int((val.label == 1).sum() * NEG_RATIO * EXTRA_RANDOM_NEG_RATIO)
+257:     rng = np.random.default_rng(SEED)
+258:     extra_rows = []
+259:     tries = 0
+277:     neg = pairs[pairs.label == 0]
+278:     n_neg_keep = min(len(neg), int(len(pos) * NEG_RATIO))
+279:     neg = neg.sample(n=n_neg_keep, random_state=SEED)
+280:     out = pd.concat([pos, neg], ignore_index=True).sample(frac=1.0, random_state=SEED).reset_index(drop=True)
+281:     log(f"training pairs: total={len(out):,} pos={int((out.label==1).sum()):,} "
+282:         f"neg={int((out.label==0).sum()):,} (cache negs before extra={before - int(val.label.sum()):,}, "
+286: 
+287: # ---------------------------------------------------------------- train heads on frozen embeddings ----
+288: def pairs_to_row_indices(pairs: pd.DataFrame, id_to_row: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+289:     a_idx = pairs["profile_id_a"].map(id_to_row).values.astype(np.int64)
+290:     b_idx = pairs["profile_id_b"].map(id_to_row).values.astype(np.int64)
+294: 
+295: @torch.no_grad()
+296: def eval_ap(model, embs: torch.Tensor, a_idx, b_idx, labels) -> float:
+297:     model.eval()
+298:     h_a, h_b = embs[a_idx], embs[b_idx]
+302: 
+303: 
+304: def train_heads(model: BertERModel, embs: torch.Tensor, id_to_row: dict,
+305:                 train_df: pd.DataFrame, holdout_df: pd.DataFrame):
+306:     focal = FocalLoss(alpha=0.25, gamma=2.0)
+328:         model.train()
+329:         model.backbone.eval()  # backbone แช่แข็งเสมอ ไม่ปิด eval mode
+330:         rng = np.random.default_rng(SEED + epoch)
+331:         rng.shuffle(idx_all)
+332:         total_loss, total_match, total_hash = 0.0, 0.0, 0.0
+381: 
+382: # ---------------------------------------------------------------- hashing + blocking ----
+383: def compute_hash_codes(model: BertERModel, embs: torch.Tensor) -> np.ndarray:
+384:     model.eval()
+385:     with torch.no_grad():
+391: 
+392: 
+393: def build_buckets(codes: np.ndarray, ids: np.ndarray) -> dict:
+394:     buckets: dict[int, list[int]] = {}
+395:     for code, pid in zip(codes.tolist(), ids.tolist()):
+398: 
+399: 
+400: def neighbor_codes(code: int, radius: int = 1):
+401:     yield code
+402:     if radius >= 1:
+405: 
+406: 
+407: def blocking_recovery_eval(id_to_code: dict, radius: int) -> dict:
+408:     bm = pd.read_csv(BLOCKING_MISSED, keep_default_na=False)
+409:     n = len(bm)
+422: 
+423: 
+424: def enumerate_bucket_pairs(buckets: dict, max_bucket_size: int = 2000) -> pd.DataFrame:
+425:     rows_a, rows_b = [], []
+426:     skipped_large = 0
+445: 
+446: # ---------------------------------------------------------------- match scoring (fast: tensor indexing only) ----
+447: def score_pairs_with_match_head(model: BertERModel, embs: torch.Tensor, id_to_row: dict,
+448:                                 pairs: pd.DataFrame, chunk: int = 50000) -> np.ndarray:
+449:     """out[i] = probability for pairs.iloc[i]; NaN if either id was never encoded
+450:     (only happens in R6_SMOKE mode where profile encoding is subsampled -- in the
+451:     full run every profile_id in `pairs` is guaranteed to have been encoded)."""
+452:     model.eval()
+470: 
+471: 
+472: def main():
+473:     LOG_PATH.write_text("", encoding="utf-8")
+474:     log(f"=== R6 BERT-ER start (SMOKE={SMOKE}, frozen-backbone mode) ===")
+475:     set_seed(SEED)
+476:     device = torch.device("cpu")
+477: 
+478:     cache = build_cache()
+479:     consts = split_constants(cache)
+480:     assert consts["full"]["total_pos"] == 29247
+481: 
+498:     train_pairs = train_pairs[keep].reset_index(drop=True)
+499:     idx = np.arange(len(train_pairs))
+500:     idx_train, idx_holdout = train_test_split(idx, test_size=0.15, random_state=SEED,
+501:                                               stratify=train_pairs["label"].values)
+502:     train_df = train_pairs.iloc[idx_train].reset_index(drop=True)
+547: 
+548:     # apples-to-apples กับ R0-R5: score ทุกคู่ที่ blocking เดิมเจอ (2,073,842 คู่) ด้วย match_head
+549:     scored = cache[cache.decision_source != "AUTO_EXACT"][["profile_id_a", "profile_id_b", "actual", "split", "name_sim"]]
+550:     probs_orig = score_pairs_with_match_head(model, embs, id_to_row, scored[["profile_id_a", "profile_id_b"]])
+551:     prob_df = pd.DataFrame({"profile_id_a": scored.profile_id_a.values, "profile_id_b": scored.profile_id_b.values,
+554: 
+555:     scored_p = scored.merge(prob_df, on=["profile_id_a", "profile_id_b"], how="left")
+556:     results = {"thresholds": {"MATCH": 0.98, "REVIEW": 0.95}, "splits": {}}
+557:     for sp in ["test", "full"]:
+558:         sub = scored_p if sp == "full" else scored_p[scored_p.split == sp]
+559:         code = decide_manual(sub["probability_r6"].values)
+560:         actual = sub["actual"].values.astype(np.int8)
+561:         m = evaluate(code, actual, consts[sp])
+562:         results["splits"][sp] = m
+563:         log(f"R6 [{sp}] manual-threshold {m}")
+564: 
+565:     val = scored_p[scored_p.split == "val"]
+566:     best, history = r1.run_ga(val["probability_r6"].values, val["name_sim"].values,
+567:                               val["actual"].values.astype(np.int8), 0)
+568:     results["ga_genome"] = dict(t_m=float(best[0]), t_r=float(best[1]), c_promote=float(best[2]), c_demote=float(best[3]))
+569:     results["ga_rules"] = {}
+570:     for sp in ["test", "full"]:
+571:         sub = scored_p if sp == "full" else scored_p[scored_p.split == sp]
+572:         code = r1.decide_code(sub["probability_r6"].values, sub["name_sim"].values, best)
+573:         actual = sub["actual"].values.astype(np.int8)

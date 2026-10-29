@@ -1,0 +1,218 @@
+# CELL 1
+# ─── Config ───────────────────────────────────────────────────────────────
+OUTPUT_DIR     = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+PROFILES_CSV   = f'{OUTPUT_DIR}/all_profiles_cleaned.csv'
+LABELED_CSV    = f'{OUTPUT_DIR}/labeled_pairs.csv'
+FEATURES_CSV   = f'{OUTPUT_DIR}/feature_matrix.csv'
+FEAT_COLS_PKL  = f'{OUTPUT_DIR}/feature_cols.pkl'
+TFIDF_MAX_FEAT = 5000
+# ──────────────────────────────────────────────────────────────────────────
+
+import os, pickle
+import numpy as np
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity as sk_cosine
+
+try:
+    from rapidfuzz import fuzz as rfuzz
+    HAS_RAPIDFUZZ = True
+except ImportError:
+    HAS_RAPIDFUZZ = False
+    from difflib import SequenceMatcher
+
+df_clean      = pd.read_csv(PROFILES_CSV)
+labeled_pairs = pd.read_csv(LABELED_CSV)
+print(f'df_clean: {len(df_clean):,} | labeled_pairs: {len(labeled_pairs):,}')
+print(f'Positive pairs: {(labeled_pairs["label"]==1).sum():,} | Negative: {(labeled_pairs["label"]==0).sum():,}')
+# CELL 3
+# --- 9.1 String Similarity Features ---
+
+def string_sim(a: str, b: str, method: str = 'jaro') -> float:
+    """คำนวณ string similarity [0,1]"""
+    a, b = str(a).strip(), str(b).strip()
+    if not a or not b:
+        return 0.0
+    if HAS_RAPIDFUZZ:
+        if method == 'jaro':
+            return rfuzz.WRatio(a, b) / 100.0
+        elif method == 'token_sort':
+            return rfuzz.token_sort_ratio(a, b) / 100.0
+        else:
+            return rfuzz.ratio(a, b) / 100.0
+    else:
+        return SequenceMatcher(None, a, b).ratio()
+
+# สร้าง lookup index โดยใช้ profile_id column โดยตรง
+profile_lookup = df_clean.set_index('profile_id')
+
+print('📊 Step 9.1: Computing String Similarity Features...')
+print('=' * 60)
+
+feature_rows = []
+text_fields  = [
+    ('userName_clean', 'username'),
+    ('fullName_clean', 'fullname'),
+    ('bio_clean',      'bio'),
+]
+methods = ['jaro', 'token_sort', 'levenshtein']
+
+total        = len(labeled_pairs)
+report_every = max(total // 5, 1)
+
+for i, (_, pair) in enumerate(labeled_pairs.iterrows()):
+    row = {
+        'profile_id_a': pair['profile_id_a'],
+        'profile_id_b': pair['profile_id_b'],
+        'entity_id_a':  pair.get('entity_id_a', ''),
+        'label':        pair['label'],
+    }
+
+    id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+    if id_a in profile_lookup.index and id_b in profile_lookup.index:
+        r_a = profile_lookup.loc[id_a]
+        r_b = profile_lookup.loc[id_b]
+        if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+        if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+
+        for col, prefix in text_fields:
+            val_a = str(r_a.get(col, '') or '')
+            val_b = str(r_b.get(col, '') or '')
+            for method in methods:
+                row[f'{prefix}_{method}'] = string_sim(val_a, val_b, method)
+            row[f'{prefix}_both_empty'] = 1.0 if (len(val_a.strip()) == 0 and len(val_b.strip()) == 0) else 0.0
+    else:
+        for col, prefix in text_fields:
+            for method in methods:
+                row[f'{prefix}_{method}'] = 0.0
+            row[f'{prefix}_both_empty'] = 1.0
+
+    feature_rows.append(row)
+    if (i + 1) % report_every == 0:
+        print(f'  Progress: {i+1:,}/{total:,} ({(i+1)/total*100:.0f}%)')
+
+feature_df = pd.DataFrame(feature_rows)
+feat_cols  = [c for c in feature_df.columns if c not in ['profile_id_a','profile_id_b','entity_id_a','label']]
+print(f'\n  Features created: {len(feat_cols)} → {feat_cols}')
+print(f'\n✅ Step 9.1 เสร็จ — {len(feat_cols)} string similarity features')
+# CELL 5
+# --- 9.2 TF-IDF Cosine Similarity ---
+print('📊 Step 9.2: TF-IDF Cosine Similarity (bio)')
+print('=' * 60)
+
+all_bios    = df_clean['bio_clean'].fillna('').tolist()
+tfidf       = TfidfVectorizer(max_features=TFIDF_MAX_FEAT, stop_words='english', min_df=2)
+tfidf_matrix = tfidf.fit_transform(all_bios)
+
+bio_keys    = df_clean['profile_id'].tolist()
+key_to_idx  = {k: i for i, k in enumerate(bio_keys)}
+
+tfidf_scores = []
+for _, pair in labeled_pairs.iterrows():
+    idx_a = key_to_idx.get(pair['profile_id_a'])
+    idx_b = key_to_idx.get(pair['profile_id_b'])
+    if idx_a is not None and idx_b is not None:
+        sim = sk_cosine(tfidf_matrix[idx_a:idx_a+1], tfidf_matrix[idx_b:idx_b+1])[0][0]
+        tfidf_scores.append(float(sim))
+    else:
+        tfidf_scores.append(0.0)
+
+feature_df['bio_tfidf_cosine'] = tfidf_scores
+
+print(f'  TF-IDF vocabulary size : {len(tfidf.vocabulary_):,}')
+print(f'  Mean cosine similarity : {np.mean(tfidf_scores):.4f}')
+print(f'  Positive pairs mean    : {feature_df[feature_df["label"]==1]["bio_tfidf_cosine"].mean():.4f}')
+print(f'  Negative pairs mean    : {feature_df[feature_df["label"]==0]["bio_tfidf_cosine"].mean():.4f}')
+print(f'\n✅ Step 9.2 เสร็จ — เพิ่ม column: bio_tfidf_cosine')
+# CELL 7
+# --- 9.3 URL Features ---
+print('📊 Step 9.3: URL & Domain Features')
+print('=' * 60)
+
+url_exact  = []
+url_domain = []
+
+for _, pair in labeled_pairs.iterrows():
+    id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+    if id_a in profile_lookup.index and id_b in profile_lookup.index:
+        r_a = profile_lookup.loc[id_a]
+        r_b = profile_lookup.loc[id_b]
+        if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+        if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+
+        u_a = str(r_a.get('externalUrl_clean', '') or '')
+        u_b = str(r_b.get('externalUrl_clean', '') or '')
+        d_a = str(r_a.get('url_domain', '') or '')
+        d_b = str(r_b.get('url_domain', '') or '')
+
+        url_exact.append(1.0 if (u_a and u_b and u_a == u_b) else 0.0)
+        url_domain.append(1.0 if (d_a and d_b and d_a == d_b) else 0.0)
+    else:
+        url_exact.append(0.0)
+        url_domain.append(0.0)
+
+feature_df['url_exact_match']  = url_exact
+feature_df['url_domain_match'] = url_domain
+
+print(f'  URL exact matches  : {sum(url_exact):.0f} ({sum(url_exact)/len(url_exact)*100:.2f}%)')
+print(f'  URL domain matches : {sum(url_domain):.0f} ({sum(url_domain)/len(url_domain)*100:.2f}%)')
+print(f'\n✅ Step 9.3 เสร็จ — เพิ่ม 2 columns: url_exact_match, url_domain_match')
+# CELL 9
+# --- 9.4 Platform & Meta Features ---
+print('📊 Step 9.4: Platform & Meta Features')
+print('=' * 60)
+
+same_plat = []
+loc_sim   = []
+
+for _, pair in labeled_pairs.iterrows():
+    id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+    if id_a in profile_lookup.index and id_b in profile_lookup.index:
+        r_a = profile_lookup.loc[id_a]
+        r_b = profile_lookup.loc[id_b]
+        if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+        if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+
+        same_plat.append(1.0 if r_a.get('platform', '') == r_b.get('platform', '') else 0.0)
+        l_a = str(r_a.get('location_clean', '') or '')
+        l_b = str(r_b.get('location_clean', '') or '')
+        loc_sim.append(string_sim(l_a, l_b, 'jaro') if (l_a.strip() and l_b.strip()) else 0.0)
+    else:
+        same_plat.append(0.0)
+        loc_sim.append(0.0)
+
+feature_df['same_platform'] = same_plat
+feature_df['location_sim']  = loc_sim
+
+print(f'  Same platform pairs : {sum(same_plat):.0f}')
+print(f'  Location sim mean   : {np.mean(loc_sim):.4f}')
+print(f'\n✅ Step 9.4 เสร็จ')
+# CELL 11
+# --- 9.5 Combine & Save ---
+meta_cols    = ['profile_id_a', 'profile_id_b', 'entity_id_a', 'label']
+feature_cols = [c for c in feature_df.columns if c not in meta_cols]
+
+print('=' * 60)
+print('📊 STAGE 9 v2 SUMMARY — Feature Engineering')
+print('=' * 60)
+print(f'  Total pairs    : {len(feature_df):,}')
+print(f'  Total features : {len(feature_cols)}')
+print(f'  Feature list   :')
+for i, col in enumerate(feature_cols, 1):
+    print(f'    {i:2d}. {col}')
+
+print(f'\n  Feature correlations with label (top 5):')
+corrs = feature_df[feature_cols + ['label']].corr()['label'].drop('label').abs().sort_values(ascending=False)
+for feat, corr in corrs.head(5).items():
+    print(f'    {feat:30s} : {corr:.4f}')
+
+feature_df.to_csv(FEATURES_CSV, index=False)
+print(f'\n  Saved: {FEATURES_CSV} ({len(feature_df):,} rows x {len(feature_df.columns)} cols)')
+
+with open(FEAT_COLS_PKL, 'wb') as f:
+    pickle.dump(feature_cols, f)
+print(f'  Saved: {FEAT_COLS_PKL}')
+
+print(f'\n{"="*60}')
+print(f'✅ Stage 9 v2 COMPLETE')
+print(f'{"="*60}')

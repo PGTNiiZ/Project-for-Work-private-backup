@@ -1,0 +1,57 @@
+
+## backup@ab93b36:experiments/icsec_final/authoritative_run_v2/artifact_producers.py
+109:     _sha256(source)
+110:     _validate_routed_pairs(profiles, routed_workflow)
+111:     output = Path(output_root) / f"outer_{seed}"
+112:     development_dir, sealed_dir, blocking_dir = output / "development_labels", output / "sealed_test_labels", output / "blocking_misses"
+113:     for directory in (development_dir, sealed_dir, blocking_dir):
+114:         directory.mkdir(parents=True, exist_ok=True)
+115: 
+122:     routed = routed_workflow[["profile_row_id_a", "profile_row_id_b", "pair_type", "pair_key", "role"]].copy()
+123:     labeled = routed.merge(labels, on="pair_key", validate="one_to_one")
+124:     development = labeled.loc[labeled.role.isin(DEVELOPMENT_ROLES), ["pair_key", "actual", "role"]].copy()
+125:     sealed = labeled.loc[labeled.role.eq("SEALED_TEST"), ["pair_key", "actual"]].copy()
+126:     if "SEALED_TEST" in set(development.role):
+127:         raise ArtifactProducerError("development artifact contains SEALED_TEST pair")
+128: 
+129:     positive_keys = _cross_platform_positive_keys(profiles)
+130:     candidate_keys = global_candidate_keys if global_candidate_keys is not None else set(routed.pair_key)
+188:                                       "blocking_misses": len(misses), "covered_plus_missed_equals_all": covered + len(misses) == len(positive_keys)},
+189:         "artifacts": {
+190:             "development": _record(development_path, rows=len(development), scope="TRAIN|CALIBRATION|POLICY_VALIDATION"),
+191:             "sealed_test": _record(sealed_path, rows=len(sealed), scope="SEALED_TEST"),
+192:             "blocking_miss": _record(blocking_path, rows=len(blocking), scope="GLOBAL_CROSS_PLATFORM_POSITIVES_NOT_CANDIDATED"),
+193:             "blocking_miss_routes": _record(blocking_route_path, rows=len(blocking_routes), scope="SAME_ROLE_WORKFLOW"),
+194:         },
+202:             "blocking_route_path": blocking_route_path, "metadata_path": manifest_path, **manifest}
+203: 
+204: 
+205: def validate_input_artifacts(metadata_path: str | Path) -> dict[str, Any]:
+206:     metadata = json.loads(Path(metadata_path).read_text(encoding="utf-8"))
+207:     artifacts = metadata["artifacts"]
+208:     for name, value in artifacts.items():
+209:         path = Path(value["path"])
+210:         if _sha256(path) != value["sha256"]:
+211:             raise ArtifactProducerError(f"artifact hash differs: {name}")
+212:     development = pd.read_parquet(artifacts["development"]["path"])
+213:     sealed = pd.read_parquet(artifacts["sealed_test"]["path"])
+214:     blocking = pd.read_parquet(artifacts["blocking_miss"]["path"])
+215:     if set(development.columns) != {"pair_key", "actual", "role"} or not set(development.role).issubset(DEVELOPMENT_ROLES):
+216:         raise ArtifactProducerError("development artifact has invalid role/scope")
+217:     if set(sealed.columns) != LABEL_COLUMNS:
+228: 
+229: def build_real_fixture(metadata_path: str | Path, routed_workflow: pd.DataFrame, features17: pd.DataFrame, bert: pd.DataFrame) -> dict[str, Any]:
+230:     """Build a label-safe FinalSealedEvaluationRunner fixture from real schemas."""
+231:     metadata = validate_input_artifacts(metadata_path)
+232:     artifacts = metadata["artifacts"]
+233:     development = pd.read_parquet(artifacts["development"]["path"])
+234:     routes = pd.read_parquet(artifacts["blocking_miss_routes"]["path"])
+235:     rows = routed_workflow[["pair_key", "pair_type", "role"]].copy()
+236:     if not routes.empty:
+237:         rows = pd.concat([rows, routes], ignore_index=True)
+246:     return {"NOT_MANUSCRIPT_EVIDENCE": True, "rows": rows, "features17": combined[feature_columns].reset_index(drop=True),
+247:             "bert": combined[["bert_cos"]].reset_index(drop=True), "scored_pair_keys": combined.pair_key.tolist(),
+248:             "roles": {role: {f"role:{role}"} for role in ROLES}, "development_label_paths": development_paths,
+249:             "sealed_label_path": artifacts["sealed_test"]["path"], "blocking_miss_path": artifacts["blocking_miss"]["path"],
+250:             "input_artifact_manifest": str(Path(metadata_path).resolve()),
+251:             "legacy_name_sim_reachable": False}

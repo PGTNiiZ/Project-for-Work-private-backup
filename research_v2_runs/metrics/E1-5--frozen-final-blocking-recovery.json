@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "baseline": "B0",
+      "hybrid": "hybrid_rrf",
+      "recovered_positives": 361,
+      "lost_positives": 144,
+      "baseline_missed_positives": 661,
+      "recovery_fraction_of_baseline_misses": 0.546142208774584,
+      "GT_denominator": 5852
+    },
+    {
+      "baseline": "sparse",
+      "hybrid": "hybrid_rrf",
+      "recovered_positives": 77,
+      "lost_positives": 79,
+      "baseline_missed_positives": 442,
+      "recovery_fraction_of_baseline_misses": 0.17420814479638008,
+      "GT_denominator": 5852
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 9.999999747378752e-06
+}

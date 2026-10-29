@@ -1,0 +1,43 @@
+{
+  "name": "rule",
+  "exp_id": "E2-3",
+  "configs_completed": 200,
+  "validation_selection_AP": 0.9253274076205875,
+  "weights_path": "artifacts/rule_weights.npy",
+  "weights_sha256": "7d455cf2276f0c7f0de14804f84e192496cab7ab15a0cf5d411523cd854165ff",
+  "oof_path": "artifacts/oof_rule.npz",
+  "oof_sha256": "c3f24160763dab8d3f5fb703631f7fea2735eabef3a36921df6f5fe1ba5a39bd",
+  "operating_points": {
+    "validation_F1_threshold": 0.26,
+    "validation_F1": 0.890056727487046,
+    "precision_target_threshold": 0.2517981883224646,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "development_metrics": {
+    "candidate_ap": 0.9252681250237181,
+    "precision": 1.0,
+    "recall": 0.03689284390063033,
+    "f1": 0.0711603790452351,
+    "tp": 796,
+    "fp": 0,
+    "tn": 329918,
+    "fn": 20780,
+    "automatic_fn": 20780,
+    "utility_fn": 20780,
+    "rejected_positive_fn": 20780,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.03689284390063033,
+    "raw_cost": 20780.0,
+    "cost_per_pair": 0.059119074578797934,
+    "brier": 0.057914700239227804,
+    "ece15_equalmass": 0.19239848078390365
+  },
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

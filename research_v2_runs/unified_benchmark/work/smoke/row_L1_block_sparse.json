@@ -1,0 +1,120 @@
+{
+ "row": {
+  "id": "L1_block_sparse",
+  "layer": 1,
+  "stage": "blocking",
+  "name_th": "TF-IDF ทั้งโปรไฟล์ (sparse) — ค่าอ้างอิง",
+  "model_job": "J_sparse_FLEX35_GBDT",
+  "rule": "three_way",
+  "budget": "1x",
+  "source": "pairs_<f>_sparse_matched.npy (V2)",
+  "deviations": []
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "mean": {
+   "candidate_AP": 0.976315683665399,
+   "auto_recall": 0.795305886879569,
+   "recall_perfect_review": 0.8850840066692317,
+   "auto_precision": 0.9947596385220042,
+   "false_merges": 98.0,
+   "review": 5498.0,
+   "review_positives": 2100.0,
+   "auto_tp": 18603.0,
+   "cost_2_1_0.1": 3433.8,
+   "cost_per_pair_2_1_0.1": 4.778878476076361e-05,
+   "cost_5_1_0.02": 3287.96,
+   "cost_per_pair_5_1_0.02": 4.575910441551643e-05
+  },
+  "sd": {
+   "candidate_AP": NaN,
+   "auto_recall": NaN,
+   "recall_perfect_review": NaN,
+   "auto_precision": NaN,
+   "false_merges": NaN,
+   "review": NaN,
+   "review_positives": NaN,
+   "auto_tp": NaN,
+   "cost_2_1_0.1": NaN,
+   "cost_per_pair_2_1_0.1": NaN,
+   "cost_5_1_0.02": NaN,
+   "cost_per_pair_5_1_0.02": NaN
+  },
+  "PC": 0.922406053610363,
+  "candidates": 351494,
+  "calibrator_choices": {
+   "platt": 4
+  },
+  "per_seed": {
+   "11": {
+    "candidate_AP": 0.976315683665399,
+    "auto_recall": 0.795305886879569,
+    "recall_perfect_review": 0.8850840066692317,
+    "auto_precision": 0.9947596385220042,
+    "false_merges": 98,
+    "review": 5498,
+    "review_positives": 2100,
+    "auto_tp": 18603,
+    "cost_2_1_0.1": 3433.8,
+    "cost_per_pair_2_1_0.1": 4.778878476076361e-05,
+    "cost_5_1_0.02": 3287.96,
+    "cost_per_pair_5_1_0.02": 4.575910441551643e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004734453401798915,
+       "isotonic": 0.004766959255384997
+      },
+      "rule": {
+       "type": "dual",
+       "t_review": 0.114987606159062,
+       "t_match": 0.9463378169282212
+      },
+      "rule_evaluations": 2048
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004236734037468589,
+       "isotonic": 0.004251220473657672
+      },
+      "rule": {
+       "type": "dual",
+       "t_review": 0.15953371720665122,
+       "t_match": 0.9809561177909025
+      },
+      "rule_evaluations": 2048
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004292772183101645,
+       "isotonic": 0.004318711200833623
+      },
+      "rule": {
+       "type": "dual",
+       "t_review": 0.08433151514994952,
+       "t_match": 0.9207057848621597
+      },
+      "rule_evaluations": 2048
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004652840758003201,
+       "isotonic": 0.00466279050283006
+      },
+      "rule": {
+       "type": "dual",
+       "t_review": 0.15971464064360485,
+       "t_match": 0.9374569713187852
+      },
+      "rule_evaluations": 2048
+     }
+    }
+   }
+  }
+ },
+ "runtime_seconds": 0.8356895000033546
+}

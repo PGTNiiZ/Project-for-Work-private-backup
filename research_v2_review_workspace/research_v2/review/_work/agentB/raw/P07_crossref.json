@@ -1,0 +1,291 @@
+{
+  "url": "https://api.crossref.org/works/10.24963/ijcai.2022/552",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            30
+          ]
+        ],
+        "date-time": "2026-09-30T03:37:53Z",
+        "timestamp": 1790739473541,
+        "version": "4.1.0"
+      },
+      "publisher-location": "California",
+      "reference-count": 0,
+      "publisher": "International Joint Conferences on Artificial Intelligence Organization",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2022,
+            7
+          ]
+        ]
+      },
+      "abstract": "<jats:p>Entity matching (EM) is the most critical step for entity resolution (ER). While current deep\n            learning-based methods achieve very impressive performance on standard EM benchmarks, their real-world\n            application performance is much frustrating. In this paper, we highlight that such the gap between reality\n            and ideality stems from the unreasonable benchmark construction process, which is inconsistent with the\n            nature of entity matching and therefore leads to biased evaluations of current EM approaches. To this end,\n            we build a new EM corpus and re-construct EM benchmarks to challenge critical assumptions implicit in the\n            previous benchmark construction process by step-wisely changing the restricted entities, balanced labels,\n            and single-modal records in previous benchmarks into open entities, imbalanced labels, and multi-modal\n            records in an open environment. Experimental results demonstrate that the assumptions made in the previous\n            benchmark construction process are not coincidental with the open environment, which conceal the main\n            challenges of the task and therefore significantly overestimate the current progress of entity matching. The\n            constructed benchmarks and code are publicly released at https://github.com/tshu-w/ember.</jats:p>",
+      "DOI": "10.24963/ijcai.2022/552",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            16
+          ]
+        ],
+        "date-time": "2022-07-16T02:55:56Z",
+        "timestamp": 1657940156000
+      },
+      "page": "3978-3984",
+      "source": "Crossref",
+      "is-referenced-by-count": 6,
+      "title": [
+        "Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark\n            Re-Construction"
+      ],
+      "prefix": "10.24963",
+      "author": [
+        {
+          "given": "Tianshu",
+          "family": "Wang",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Chinese Information Processing Laboratory, Institute of Software, Chinese Academy of Sciences"
+            },
+            {
+              "name": "Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Hongyu",
+          "family": "Lin",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Chinese Information Processing Laboratory, Institute of Software, Chinese Academy of Sciences"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Cheng",
+          "family": "Fu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Chinese Information Processing Laboratory, Institute of Software, Chinese Academy of Sciences"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Xianpei",
+          "family": "Han",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Chinese Information Processing Laboratory, Institute of Software, Chinese Academy of Sciences"
+            },
+            {
+              "name": "State Key Laboratory of Computer Science, Institute of Software, Chinese Academy of Sciences"
+            },
+            {
+              "name": "Beijing Academy of Artificial Intelligence"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Le",
+          "family": "Sun",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Chinese Information Processing Laboratory, Institute of Software, Chinese Academy of Sciences"
+            },
+            {
+              "name": "State Key Laboratory of Computer Science, Institute of Software, Chinese Academy of Sciences"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Feiyu",
+          "family": "Xiong",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Alibaba Group"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Hui",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Alibaba Group"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Minlong",
+          "family": "Lu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Alibaba Group"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Xiuwen",
+          "family": "Zhu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Alibaba Group"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "10584",
+      "event": {
+        "name": "Thirty-First International Joint Conference on Artificial Intelligence {IJCAI-22}",
+        "theme": "Artificial Intelligence",
+        "location": "Vienna, Austria",
+        "acronym": "IJCAI-2022",
+        "number": "31",
+        "sponsor": [
+          "International Joint Conferences on Artificial Intelligence Organization (IJCAI)\n        "
+        ],
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              23
+            ]
+          ]
+        },
+        "end": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              29
+            ]
+          ]
+        }
+      },
+      "container-title": [
+        "Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence"
+      ],
+      "original-title": [],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            25
+          ]
+        ],
+        "date-time": "2025-06-25T10:29:28Z",
+        "timestamp": 1750847368000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.ijcai.org/proceedings/2022/552"
+        }
+      },
+      "subtitle": [],
+      "proceedings-subject": "Artificial Intelligence Research Articles",
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            7
+          ]
+        ]
+      },
+      "references-count": 0,
+      "URL": "https://doi.org/10.24963/ijcai.2022/552",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            7
+          ]
+        ]
+      }
+    }
+  }
+}

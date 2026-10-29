@@ -1,0 +1,12 @@
+{
+  "summary": "PASS=80 FAIL=0; ledger=171; TC01-TC12=12; PII_unclassified=0; design_unchanged=True; input_hashes_unchanged=True; NO-GO; numeric_coverage=PARTIAL",
+  "passes": 80,
+  "fails": 0,
+  "ledger_counts": {
+    "CONFLICT": 12,
+    "VERIFIED": 107,
+    "HISTORICAL_ONLY": 6,
+    "UNKNOWN": 46
+  },
+  "privacy_unclassified": []
+}

@@ -1,0 +1,29 @@
+# main@1e0a2db:train_data/v2/stage10_dataset_v2.ipynb — code cells ONLY; outputs intentionally excluded
+CELL 3
+cell_source_L1; raw_JSON_L[156]: # --- 10.1 Entity-Aware Split ---
+cell_source_L2; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 
+cell_source_L3; raw_JSON_L[158]: unique_entities = feature_df['entity_id_a'].dropna().unique()
+cell_source_L4; raw_JSON_L[159]: rng = np.random.default_rng(RANDOM_SEED)
+cell_source_L5; raw_JSON_L[160]: shuffled = unique_entities.copy()
+cell_source_L14; raw_JSON_L[169]: test_entities  = set(shuffled[n_val:])
+cell_source_L15; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 
+cell_source_L16; raw_JSON_L[171]: train_df = feature_df[feature_df['entity_id_a'].isin(train_entities)].copy()
+cell_source_L17; raw_JSON_L[172]: val_df   = feature_df[feature_df['entity_id_a'].isin(val_entities)].copy()
+cell_source_L18; raw_JSON_L[173]: test_df  = feature_df[feature_df['entity_id_a'].isin(test_entities)].copy()
+cell_source_L19; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 
+cell_source_L20; raw_JSON_L[175]: print('📊 Step 10.1: Entity-Aware Split')
+cell_source_L21; raw_JSON_L[176, 259, 334, 416, 418]: print('=' * 60)
+cell_source_L22; raw_JSON_L[177]: print(f'  Total entities : {n:,}')
+CELL 5
+cell_source_L6; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 
+cell_source_L7; raw_JSON_L[248]: if len(train_neg) > n_target_neg:
+cell_source_L8; raw_JSON_L[249]:     train_neg_sampled = train_neg.sample(n=n_target_neg, random_state=RANDOM_SEED)
+cell_source_L9; raw_JSON_L[250]:     train_balanced = pd.concat([train_pos, train_neg_sampled]).sample(frac=1, random_state=RANDOM_SEED)
+cell_source_L10; raw_JSON_L[251]: else:
+cell_source_L11; raw_JSON_L[252]:     train_balanced = train_df.copy()
+CELL 7
+cell_source_L3; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 
+cell_source_L4; raw_JSON_L[317]: # FIT ON TRAIN ONLY!
+cell_source_L5; raw_JSON_L[318]: X_train = scaler.fit_transform(train_balanced[feature_cols].values)
+cell_source_L6; raw_JSON_L[319]: y_train = train_balanced['label'].values.astype(np.float32)
+cell_source_L7; raw_JSON_L[18, 20, 23, 28, 33, 77, 82, 87, 133, 137, 142, 157, 162, 166, 170, 174, 184, 236, 243, 247, 253, 257, 308, 316, 320, 323, 326, 329, 332, 386, 397, 399, 405, 409, 413, 415]: 

@@ -1,0 +1,33 @@
+# main@1e0a2db:train_data/stage10_dataset.ipynb — code cells ONLY; outputs intentionally excluded
+CELL 3
+cell_source_L1; raw_JSON_L[142]: # --- 10.1 Entity-Aware Split ---
+cell_source_L2; raw_JSON_L[29, 143]: from sklearn.preprocessing import StandardScaler
+cell_source_L3; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L7; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L8; raw_JSON_L[149]: # แบ่ง entities (ไม่ใช่ pairs!)
+cell_source_L9; raw_JSON_L[150]: unique_entities = feature_df['entity_id_a'].unique()
+cell_source_L10; raw_JSON_L[151]: np.random.seed(RANDOM_SEED)
+cell_source_L11; raw_JSON_L[152]: np.random.shuffle(unique_entities)
+cell_source_L19; raw_JSON_L[160]: test_entities = set(unique_entities[n_val:])
+cell_source_L20; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L21; raw_JSON_L[162]: # Filter pairs ตาม entity group
+cell_source_L22; raw_JSON_L[163]: train_df = feature_df[feature_df['entity_id_a'].isin(train_entities)].copy()
+cell_source_L23; raw_JSON_L[164]: val_df = feature_df[feature_df['entity_id_a'].isin(val_entities)].copy()
+cell_source_L24; raw_JSON_L[165]: test_df = feature_df[feature_df['entity_id_a'].isin(test_entities)].copy()
+cell_source_L25; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L26; raw_JSON_L[167]: print("📊 Step 10.1: Entity-Aware Split")
+cell_source_L27; raw_JSON_L[168, 253, 327, 412, 414]: print("=" * 60)
+cell_source_L28; raw_JSON_L[169]: print(f"  Total entities : {n:,}")
+CELL 5
+cell_source_L7; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L8; raw_JSON_L[241]: if len(train_neg) > n_target_neg:
+cell_source_L9; raw_JSON_L[242]:     train_neg_sampled = train_neg.sample(n=n_target_neg, random_state=RANDOM_SEED)
+cell_source_L10; raw_JSON_L[243]:     train_balanced = pd.concat([train_pos, train_neg_sampled]).sample(frac=1, random_state=RANDOM_SEED)
+cell_source_L11; raw_JSON_L[244]: else:
+cell_source_L12; raw_JSON_L[245]:     train_balanced = train_df.copy()
+CELL 7
+cell_source_L3; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 
+cell_source_L4; raw_JSON_L[311]: # ⚠️ FIT ON TRAIN ONLY!
+cell_source_L5; raw_JSON_L[312]: X_train = scaler.fit_transform(train_balanced[feature_cols].values)
+cell_source_L6; raw_JSON_L[313]: y_train = train_balanced['label'].values.astype(np.float32)
+cell_source_L7; raw_JSON_L[30, 38, 43, 62, 64, 69, 119, 123, 128, 144, 148, 153, 157, 161, 166, 176, 228, 236, 240, 246, 251, 302, 310, 314, 317, 320, 325, 379, 390, 392, 398, 400, 404, 408, 411]: 

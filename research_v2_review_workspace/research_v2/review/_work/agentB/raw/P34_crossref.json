@@ -1,0 +1,258 @@
+{
+  "url": "https://api.crossref.org/works/10.32604/cmc.2025.073175",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            14
+          ]
+        ],
+        "date-time": "2025-12-14T00:03:10Z",
+        "timestamp": 1765670590565,
+        "version": "3.48.0"
+      },
+      "reference-count": 0,
+      "publisher": "Tech Science Press",
+      "issue": "2",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                14
+              ]
+            ],
+            "date-time": "2025-12-14T00:00:00Z",
+            "timestamp": 1765670400000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://doi.org/10.32604/TSP-CROSSMARKPOLICY"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "CMC"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "DOI": "10.32604/cmc.2025.073175",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T09:18:27Z",
+        "timestamp": 1764580707000
+      },
+      "page": "1-23",
+      "update-policy": "https://doi.org/10.32604/tsp-crossmarkpolicy",
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"
+      ],
+      "prefix": "10.32604",
+      "volume": "86",
+      "author": [
+        {
+          "given": "Shaojie",
+          "family": "Min",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Yaxiao",
+          "family": "Luo",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Kebing",
+          "family": "Liu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Qingyuan",
+          "family": "Gong",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Yang",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "17807",
+      "published-online": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "container-title": [
+        "Computers, Materials &amp; Continua"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://cdn.techscience.cn/files/cmc/2025/TSP_CMC-86-2/TSP_CMC_73175/TSP_CMC_73175.pdf",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            14
+          ]
+        ],
+        "date-time": "2025-12-14T00:00:12Z",
+        "timestamp": 1765670412000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://www.techscience.com/cmc/v86n2/64808"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "references-count": 0,
+      "journal-issue": {
+        "issue": "2",
+        "published-online": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "URL": "https://doi.org/10.32604/cmc.2025.073175",
+      "relation": {},
+      "ISSN": [
+        "1546-2226"
+      ],
+      "issn-type": [
+        {
+          "type": "electronic",
+          "value": "1546-2226"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2025-09-12",
+          "order": 0,
+          "name": "received",
+          "label": "Received",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        },
+        {
+          "value": "2025-10-29",
+          "order": 1,
+          "name": "accepted",
+          "label": "Accepted",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        },
+        {
+          "value": "2025-12-09",
+          "order": 2,
+          "name": "published",
+          "label": "Published Online",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

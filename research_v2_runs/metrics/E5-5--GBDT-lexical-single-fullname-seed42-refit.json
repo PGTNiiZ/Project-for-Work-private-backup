@@ -1,0 +1,9 @@
+{
+  "training_rows": 86304,
+  "training_positives": 21576,
+  "training_negatives": 64728,
+  "train_negative_ratio_limit": 3,
+  "artifact_sha256": "360ccaeca937b08ddec7e020d9f0b6affc6ca2631f7f19a6e4aabce9f287ec89",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.493171166999673
+}

@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.880522503205124,
+  "name": "GBDT-lexical-single-fullname",
+  "source_summary": "metrics/model_GBDT-lexical-single-fullname.json",
+  "source_summary_sha256": "6ab19de7b27a97b9709a1d8c2dd42291dc3740dc513e8d951091af7671251cac",
+  "n_pairs": 351494,
+  "seed_count": 5,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.043039125001087086
+}

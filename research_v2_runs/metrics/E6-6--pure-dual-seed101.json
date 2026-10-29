@@ -1,0 +1,10 @@
+{
+  "type": "dual",
+  "t_review": 0.12157135935174002,
+  "t_match": 0.9418197648112201,
+  "seed": 101,
+  "evaluations": 2048,
+  "cost": 3335.7,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.04595579099986935
+}

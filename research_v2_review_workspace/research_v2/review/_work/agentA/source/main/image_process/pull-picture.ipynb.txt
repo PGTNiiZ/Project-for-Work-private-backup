@@ -1,0 +1,246 @@
+# CELL 0
+pip install aiohttp aiofiles
+# CELL 1
+"""
+Image Downloader - ดึงรูปภาพทุกรูปจาก pictureURL ใน CSV
+- ใช้ async + aiohttp เพื่อดาวน์โหลดพร้อมกัน (concurrent)
+- มี retry อัตโนมัติ (สูงสุด 5 ครั้ง) กรณี network error
+- บันทึก failed URLs และ retry ซ้ำจนกว่าจะได้ครบ
+- สร้าง report สรุปผล
+"""
+
+import asyncio
+import aiohttp
+import aiofiles
+import csv
+import os
+import hashlib
+import json
+import time
+from pathlib import Path
+from urllib.parse import urlparse
+
+# ==================== CONFIG ====================
+CSV_PATH = "../data/data/Dataset-LinkSocial/data/combined_profiles.csv"
+OUTPUT_DIR = "downloaded_images"          # โฟลเดอร์เก็บรูป
+REPORT_PATH = "download_report.json"     # ไฟล์ report สรุปผล
+FAILED_CSV = "failed_urls.csv"           # ไฟล์ URL ที่ดาวน์โหลดไม่สำเร็จ
+
+MAX_CONCURRENT = 50       # จำนวน download พร้อมกันสูงสุด
+MAX_RETRIES = 5           # จำนวนครั้ง retry สูงสุดต่อ URL
+RETRY_DELAY = 2           # วินาทีรอก่อน retry (จะเพิ่มแบบ exponential)
+TIMEOUT_SEC = 30          # timeout ต่อ request (วินาที)
+MAX_FINAL_ROUNDS = 3      # จำนวนรอบ retry สำหรับ failed URLs
+# ================================================
+
+
+def get_filename(url: str, username: str, idx: int) -> str:
+    """สร้างชื่อไฟล์จาก URL + username"""
+    parsed = urlparse(url)
+    ext = Path(parsed.path).suffix.lower()
+    if ext not in {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"}:
+        ext = ".jpg"
+    safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in username)
+    url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
+    return f"{idx:05d}_{safe_name}_{url_hash}{ext}"
+
+
+async def download_one(
+    session: aiohttp.ClientSession,
+    semaphore: asyncio.Semaphore,
+    item: dict,
+    output_dir: Path,
+) -> dict:
+    """ดาวน์โหลดรูปเดียว พร้อม retry"""
+    url = item["url"]
+    filename = item["filename"]
+    filepath = output_dir / filename
+    result = {"url": url, "username": item["username"], "filename": filename, "success": False, "error": None}
+
+    # ถ้าไฟล์มีอยู่แล้วและไม่ใช่ 0 bytes ข้ามได้เลย
+    if filepath.exists() and filepath.stat().st_size > 0:
+        result["success"] = True
+        result["skipped"] = True
+        return result
+
+    async with semaphore:
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                timeout = aiohttp.ClientTimeout(total=TIMEOUT_SEC)
+                async with session.get(url, timeout=timeout, allow_redirects=True) as resp:
+                    if resp.status == 200:
+                        content = await resp.read()
+                        if len(content) > 0:
+                            async with aiofiles.open(filepath, "wb") as f:
+                                await f.write(content)
+                            result["success"] = True
+                            result["size_bytes"] = len(content)
+                            return result
+                        else:
+                            result["error"] = "Empty response body"
+                    elif resp.status in {403, 404, 410}:
+                        # ไม่มีประโยชน์ retry สำหรับ error เหล่านี้
+                        result["error"] = f"HTTP {resp.status} (permanent)"
+                        return result
+                    else:
+                        result["error"] = f"HTTP {resp.status}"
+
+            except asyncio.TimeoutError:
+                result["error"] = f"Timeout (attempt {attempt})"
+            except aiohttp.ClientError as e:
+                result["error"] = f"ClientError: {e} (attempt {attempt})"
+            except Exception as e:
+                result["error"] = f"Unknown: {e} (attempt {attempt})"
+
+            if attempt < MAX_RETRIES:
+                wait = RETRY_DELAY * (2 ** (attempt - 1))  # exponential backoff
+                await asyncio.sleep(wait)
+
+    return result
+
+
+async def download_batch(items: list, output_dir: Path) -> list:
+    """ดาวน์โหลด batch ของ items"""
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+    connector = aiohttp.TCPConnector(limit=MAX_CONCURRENT, ssl=False)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+
+    results = []
+    async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
+        tasks = [download_one(session, semaphore, item, output_dir) for item in items]
+
+        completed = 0
+        total = len(tasks)
+        for coro in asyncio.as_completed(tasks):
+            result = await coro
+            results.append(result)
+            completed += 1
+            status = "✓" if result["success"] else "✗"
+            if completed % 100 == 0 or completed == total:
+                print(f"  [{completed}/{total}] {status} {result['username']} - {result.get('error','OK')}")
+
+    return results
+
+
+def load_csv(csv_path: str) -> list:
+    """อ่าน CSV และดึง URL ที่ valid"""
+    items = []
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for idx, row in enumerate(reader):
+            url = row.get("pictureURL", "").strip()
+            if url and url.startswith("http"):
+                username = row.get("userName", f"user_{idx}").strip()
+                items.append({
+                    "idx": idx,
+                    "url": url,
+                    "username": username,
+                    "filename": get_filename(url, username, idx),
+                })
+    return items
+
+
+def save_report(results: list, elapsed: float, output_dir: Path):
+    """บันทึก report JSON และ failed CSV"""
+    success = [r for r in results if r["success"]]
+    failed = [r for r in results if not r["success"]]
+
+    report = {
+        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "total_attempted": len(results),
+        "success": len(success),
+        "failed": len(failed),
+        "success_rate": f"{len(success)/len(results)*100:.1f}%" if results else "0%",
+        "elapsed_seconds": round(elapsed, 1),
+        "output_directory": str(output_dir),
+        "failed_urls": [{"url": r["url"], "username": r["username"], "error": r["error"]} for r in failed],
+    }
+
+    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2, ensure_ascii=False)
+
+    if failed:
+        with open(FAILED_CSV, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=["url", "username", "error"])
+            writer.writeheader()
+            writer.writerows(report["failed_urls"])
+
+    print(f"\n{'='*55}")
+    print(f"  ✅ สำเร็จ  : {len(success):,} รูป")
+    print(f"  ❌ ล้มเหลว : {len(failed):,} รูป")
+    print(f"  📊 อัตรา   : {report['success_rate']}")
+    print(f"  ⏱  เวลา    : {elapsed:.1f} วินาที")
+    print(f"  📁 บันทึกที่: {output_dir}")
+    print(f"{'='*55}")
+
+    return failed
+
+
+async def main():
+    print("=" * 55)
+    print("  🖼  Image Downloader - ดึงรูปภาพทุกรูปจาก CSV")
+    print("=" * 55)
+
+    # เตรียม output directory
+    output_dir = Path(OUTPUT_DIR)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    # โหลด CSV
+    print(f"\n📂 โหลด CSV: {CSV_PATH}")
+    items = load_csv(CSV_PATH)
+    print(f"   พบ URL ทั้งหมด: {len(items):,} รายการ")
+
+    # ── รอบแรก: ดาวน์โหลดทั้งหมด ──
+    print(f"\n🚀 รอบที่ 1: ดาวน์โหลดทั้งหมด (concurrent={MAX_CONCURRENT}, retry={MAX_RETRIES}x)")
+    start = time.time()
+    all_results = await download_batch(items, output_dir)
+    elapsed = time.time() - start
+
+    failed = [r for r in all_results if not r["success"]]
+
+    # ── รอบต่อไป: retry เฉพาะ failed จนกว่าจะครบหรือหมดรอบ ──
+    round_num = 2
+    while failed and round_num <= MAX_FINAL_ROUNDS + 1:
+        # กรอง permanent errors ออก (ไม่มีประโยชน์ retry)
+        retryable = [r for r in failed if "permanent" not in str(r.get("error", ""))]
+        if not retryable:
+            print(f"\n⚠️  ที่เหลือ {len(failed)} รายการเป็น permanent error (403/404/410) ข้ามได้")
+            break
+
+        print(f"\n🔄 รอบที่ {round_num}: retry {len(retryable):,} URLs ที่ล้มเหลว...")
+        await asyncio.sleep(3)  # พักก่อน retry
+
+        retry_items = []
+        url_to_orig = {r["url"]: r for r in all_results}
+        for r in retryable:
+            retry_items.append({
+                "idx": 0,
+                "url": r["url"],
+                "username": r["username"],
+                "filename": r["filename"],
+            })
+
+        retry_results = await download_batch(retry_items, output_dir)
+
+        # อัปเดต all_results
+        retry_map = {r["url"]: r for r in retry_results}
+        for i, r in enumerate(all_results):
+            if r["url"] in retry_map:
+                all_results[i] = retry_map[r["url"]]
+
+        failed = [r for r in all_results if not r["success"]]
+        elapsed = time.time() - start
+        round_num += 1
+
+    # บันทึก report
+    print(f"\n📝 บันทึก report...")
+    save_report(all_results, elapsed, output_dir)
+    print(f"   report: {REPORT_PATH}")
+    if failed:
+        print(f"   failed: {FAILED_CSV}")
+
+
+if __name__ == "__main__":
+    await main()

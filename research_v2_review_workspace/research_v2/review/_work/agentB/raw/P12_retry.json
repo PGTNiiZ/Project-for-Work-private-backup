@@ -1,0 +1,1931 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=Blocking%20and%20Filtering%20Techniques%20for%20Entity%20Resolution%3A%20A%20Survey&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 2132331,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                24
+              ]
+            ],
+            "date-time": "2026-10-24T06:48:21Z",
+            "timestamp": 1792824501339,
+            "version": "4.5.0"
+          },
+          "reference-count": 195,
+          "publisher": "Association for Computing Machinery (ACM)",
+          "issue": "2",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    3,
+                    20
+                  ]
+                ],
+                "date-time": "2020-03-20T00:00:00Z",
+                "timestamp": 1584662400000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "funder": [
+            {
+              "name": "EU H2020 projects ExtremeEarth",
+              "award": [
+                "825258"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "825258"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SmartDataLake",
+              "award": [
+                "825041"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "825041"
+                  ]
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "ACM Comput. Surv."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                3,
+                31
+              ]
+            ]
+          },
+          "abstract": "<jats:p>Entity Resolution (ER), a core task of Data Integration, detects different entity profiles that correspond to the same real-world object. Due to its inherently quadratic complexity, a series of techniques accelerate it so that it scales to voluminous data. In this survey, we review a large number of relevant works under two different but related frameworks: Blocking and Filtering. The former restricts comparisons to entity pairs that are more likely to match, while the latter identifies quickly entity pairs that are likely to satisfy predetermined similarity thresholds. We also elaborate on hybrid approaches that combine different characteristics. For each framework we provide a comprehensive list of the relevant works, discussing them in the greater context. We conclude with the most promising directions for future work in the field.</jats:p>",
+          "DOI": "10.1145/3377455",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                20
+              ]
+            ],
+            "date-time": "2020-03-20T21:04:17Z",
+            "timestamp": 1584738257000
+          },
+          "page": "1-42",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 189,
+          "title": [
+            "Blocking and Filtering Techniques for Entity Resolution"
+          ],
+          "prefix": "10.1145",
+          "volume": "53",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-7298-9431",
+              "authenticated-orcid": false,
+              "given": "George",
+              "family": "Papadakis",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "University of Athens, Greece"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Dimitrios",
+              "family": "Skoutas",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "IMSI, Athena Research Center, Greece"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Emmanouil",
+              "family": "Thanos",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "KU Leuven, Belgium"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Themis",
+              "family": "Palpanas",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Paris Descartes University, France"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                20
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_2_1_1_1",
+              "volume-title": "Proceedings of the 2009 International Conference on Data Mining (DMIN'09)",
+              "author": "Adly Noha",
+              "year": "2009",
+              "unstructured": "Noha Adly . 2009 . Efficient record linkage using a double embedding scheme . In Proceedings of the 2009 International Conference on Data Mining (DMIN'09) . 274--281. Noha Adly. 2009. Efficient record linkage using a double embedding scheme. In Proceedings of the 2009 International Conference on Data Mining (DMIN'09). 274--281."
+            },
+            {
+              "key": "e_1_2_1_2_1",
+              "volume-title": "David Menestrina, Aditya Parameswaran, and Jeffrey Ullman.",
+              "author": "Afrati Foto",
+              "year": "2012",
+              "unstructured": "Foto Afrati , Anish Das Sarma , David Menestrina, Aditya Parameswaran, and Jeffrey Ullman. 2012 . Fuzzy joins using Mapreduce. In ICDE. 498--509. Foto Afrati, Anish Das Sarma, David Menestrina, Aditya Parameswaran, and Jeffrey Ullman. 2012. Fuzzy joins using Mapreduce. In ICDE. 498--509."
+            },
+            {
+              "key": "e_1_2_1_3_1",
+              "volume-title": "Proceedings of the 2005 International Workshop on Challenges in Web Information Retrieval and Integration (WIRI'05)",
+              "author": "Akiko",
+              "unstructured": "Akiko N. Aizawa and Keizo Oyama. 2005. A fast linkage detection scheme for multi-source information integration . In Proceedings of the 2005 International Workshop on Challenges in Web Information Retrieval and Integration (WIRI'05) . 30--39. Akiko N. Aizawa and Keizo Oyama. 2005. A fast linkage detection scheme for multi-source information integration. In Proceedings of the 2005 International Workshop on Challenges in Web Information Retrieval and Integration (WIRI'05). 30--39."
+            },
+            {
+              "key": "e_1_2_1_4_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.datak.2018.07.005"
+            },
+            {
+              "key": "e_1_2_1_5_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2732967.2732975"
+            },
+            {
+              "key": "e_1_2_1_6_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2017.139"
+            },
+            {
+              "key": "e_1_2_1_7_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/1182635.1164206"
+            },
+            {
+              "key": "e_1_2_1_8_1",
+              "first-page": "1397",
+              "article-title": "SERIMI: Class-based matching for instance matching across heterogeneous datasets",
+              "volume": "27",
+              "author": "Araújo Samur",
+              "year": "2015",
+              "unstructured": "Samur Araújo , Duc Thanh Tran , Arjen P. de Vries , and Daniel Schwabe . 2015 . SERIMI: Class-based matching for instance matching across heterogeneous datasets . IEEE TKDE 27 , 5 (2015), 1397 -- 1410 . Samur Araújo, Duc Thanh Tran, Arjen P. de Vries, and Daniel Schwabe. 2015. SERIMI: Class-based matching for instance matching across heterogeneous datasets. IEEE TKDE 27, 5 (2015), 1397--1410.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_9_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ISCC.2017.8024632"
+            },
+            {
+              "key": "e_1_2_1_10_1",
+              "volume-title": "Böhlen",
+              "author": "Augsten Nikolaus",
+              "year": "2013",
+              "unstructured": "Nikolaus Augsten and Michael H . Böhlen . 2013 . Similarity Joins in Relational Database Systems. Morgan 8 Claypool Publishers . Nikolaus Augsten and Michael H. Böhlen. 2013. Similarity Joins in Relational Database Systems. Morgan 8 Claypool Publishers."
+            },
+            {
+              "key": "e_1_2_1_11_1",
+              "volume-title": "Proceedings of the Workshop on Data Cleaning, Record Linkage and Object Consolidation at the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.",
+              "author": "Baxter Rohan",
+              "year": "2003",
+              "unstructured": "Rohan Baxter , Peter Christen , and Tim Churches . 2003 . A comparison of fast blocking methods for record linkage . In Proceedings of the Workshop on Data Cleaning, Record Linkage and Object Consolidation at the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. Rohan Baxter, Peter Christen, and Tim Churches. 2003. A comparison of fast blocking methods for record linkage. In Proceedings of the Workshop on Data Cleaning, Record Linkage and Object Consolidation at the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining."
+            },
+            {
+              "key": "e_1_2_1_12_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1242572.1242591"
+            },
+            {
+              "key": "e_1_2_1_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s00778-018-0498-5"
+            },
+            {
+              "key": "e_1_2_1_14_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s00778-008-0098-x"
+            },
+            {
+              "key": "e_1_2_1_15_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2018.02.005"
+            },
+            {
+              "key": "e_1_2_1_16_1",
+              "volume-title": "Proceedings of the 6th IEEE International Conference on Data Mining (ICDM'06)",
+              "author": "Bilenko Mikhail",
+              "unstructured": "Mikhail Bilenko , Beena Kamath , and Raymond J. Mooney . 2006. Adaptive blocking: Learning to scale up record linkage . In Proceedings of the 6th IEEE International Conference on Data Mining (ICDM'06) . 87--96. Mikhail Bilenko, Beena Kamath, and Raymond J. Mooney. 2006. Adaptive blocking: Learning to scale up record linkage. In Proceedings of the 6th IEEE International Conference on Data Mining (ICDM'06). 87--96."
+            },
+            {
+              "key": "e_1_2_1_17_1",
+              "volume-title": "Proceedings of the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD'03)",
+              "author": "Bilenko Mikhail",
+              "unstructured": "Mikhail Bilenko and Raymond J. Mooney . 2003. Adaptive duplicate detection using learnable string similarity measures . In Proceedings of the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD'03) . 39--48. Mikhail Bilenko and Raymond J. Mooney. 2003. Adaptive duplicate detection using learnable string similarity measures. In Proceedings of the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD'03). 39--48."
+            },
+            {
+              "key": "e_1_2_1_18_1",
+              "unstructured": "T. Bocek E. Hunt and B. Stiller. 2007. Fast Similarity Search in Large Dictionaries. Technical Report ifi-2007.02. Department of Informatics University of Zurich. http://fastss.csg.uzh.ch/.  T. Bocek E. Hunt and B. Stiller. 2007. Fast Similarity Search in Large Dictionaries. Technical Report ifi-2007.02. Department of Informatics University of Zurich. http://fastss.csg.uzh.ch/."
+            },
+            {
+              "key": "e_1_2_1_19_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2428536.2428537"
+            },
+            {
+              "key": "e_1_2_1_20_1",
+              "volume-title": "Proceedings of the Compression and Complexity of SEQUENCES (SEQUENCES'97)",
+              "author": "Broder Andrei Z.",
+              "year": "1997",
+              "unstructured": "Andrei Z. Broder . 1997 . On the resemblance and containment of documents . In Proceedings of the Compression and Complexity of SEQUENCES (SEQUENCES'97) . 21--29. Andrei Z. Broder. 1997. On the resemblance and containment of documents. In Proceedings of the Compression and Complexity of SEQUENCES (SEQUENCES'97). 21--29."
+            },
+            {
+              "key": "e_1_2_1_21_1",
+              "volume-title": "Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11)",
+              "author": "Cao Yunbo",
+              "year": "2011",
+              "unstructured": "Yunbo Cao , Zhiyuan Chen , Jiamin Zhu , Pei Yue , Chin-Yew Lin , and Yong Yu . 2011 . Leveraging unlabeled data to scale blocking for record linkage . In Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11) . 2211--2217. Yunbo Cao, Zhiyuan Chen, Jiamin Zhu, Pei Yue, Chin-Yew Lin, and Yong Yu. 2011. Leveraging unlabeled data to scale blocking for record linkage. In Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11). 2211--2217."
+            },
+            {
+              "key": "e_1_2_1_22_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2006.9"
+            },
+            {
+              "key": "e_1_2_1_23_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1401890.1402020"
+            },
+            {
+              "key": "e_1_2_1_24_1",
+              "volume-title": "Entity Resolution, and Duplicate Detection",
+              "author": "Christen Peter",
+              "unstructured": "Peter Christen . 2012. Data Matching - Concepts and Techniques for Record Linkage , Entity Resolution, and Duplicate Detection . Springer . Peter Christen. 2012. Data Matching - Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Springer."
+            },
+            {
+              "key": "e_1_2_1_25_1",
+              "first-page": "1537",
+              "article-title": "A survey of indexing techniques for scalable record linkage and deduplication",
+              "volume": "24",
+              "author": "Christen Peter",
+              "year": "2012",
+              "unstructured": "Peter Christen . 2012 . A survey of indexing techniques for scalable record linkage and deduplication . IEEE TKDE 24 , 9 (2012), 1537 -- 1555 . Peter Christen. 2012. A survey of indexing techniques for scalable record linkage and deduplication. IEEE TKDE 24, 9 (2012), 1537--1555.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_26_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1645953.1646173"
+            },
+            {
+              "key": "e_1_2_1_27_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3055399.3055443"
+            },
+            {
+              "key": "e_1_2_1_28_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2018.00120"
+            },
+            {
+              "key": "e_1_2_1_29_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Vassilis Christophides Vasilis Efthymiou and Kostas Stefanidis. 2015. Entity Resolution in the Web of Data. Morgan 8 Claypool Publishers.  Vassilis Christophides Vasilis Efthymiou and Kostas Stefanidis. 2015. Entity Resolution in the Web of Data. Morgan 8 Claypool Publishers.",
+              "DOI": "10.1007/978-3-031-79468-1"
+            },
+            {
+              "key": "e_1_2_1_30_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2983200.2983203"
+            },
+            {
+              "key": "e_1_2_1_31_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1103/PhysRevE.70.066111"
+            },
+            {
+              "key": "e_1_2_1_32_1",
+              "volume-title": "Proceedings of the 20th ACM Symposium on Computational Geometry (SOCG'04)",
+              "author": "Datar Mayur",
+              "unstructured": "Mayur Datar , Nicole Immorlica , Piotr Indyk , and Vahab S. Mirrokni . 2004. Locality-sensitive hashing scheme based on p-stable distributions . In Proceedings of the 20th ACM Symposium on Computational Geometry (SOCG'04) . 253--262. Mayur Datar, Nicole Immorlica, Piotr Indyk, and Vahab S. Mirrokni. 2004. Locality-sensitive hashing scheme based on p-stable distributions. In Proceedings of the 20th ACM Symposium on Computational Geometry (SOCG'04). 253--262."
+            },
+            {
+              "key": "e_1_2_1_33_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1645953.1645994"
+            },
+            {
+              "key": "e_1_2_1_34_1",
+              "volume-title": "Robust record linkage blocking using suffix arrays and Bloom filters. TKDD 5, 2",
+              "author": "de Vries Timothy",
+              "year": "2011",
+              "unstructured": "Timothy de Vries , Hui Ke , Sanjay Chawla , and Peter Christen . 2011. Robust record linkage blocking using suffix arrays and Bloom filters. TKDD 5, 2 ( 2011 ), 9:1--9:27. Timothy de Vries, Hui Ke, Sanjay Chawla, and Peter Christen. 2011. Robust record linkage blocking using suffix arrays and Bloom filters. TKDD 5, 2 (2011), 9:1--9:27."
+            },
+            {
+              "key": "e_1_2_1_35_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1327452.1327492"
+            },
+            {
+              "key": "e_1_2_1_36_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3115404.3115413"
+            },
+            {
+              "key": "e_1_2_1_37_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2856318.2856330"
+            },
+            {
+              "key": "e_1_2_1_38_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Xin Luna Dong and Divesh Srivastava. 2015. Big Data Integration. Morgan 8 Claypool Publishers.  Xin Luna Dong and Divesh Srivastava. 2015. Big Data Integration. Morgan 8 Claypool Publishers.",
+              "DOI": "10.1007/978-3-031-01853-4"
+            },
+            {
+              "key": "e_1_2_1_39_1",
+              "volume-title": "Proceedings of the 8th International Workshop on Quality in Databases (QDB'10)",
+              "author": "Draisbach Uwe",
+              "year": "2010",
+              "unstructured": "Uwe Draisbach and Felix Naumann . 2010 . DuDe: The duplicate detection toolkit . In Proceedings of the 8th International Workshop on Quality in Databases (QDB'10) . Uwe Draisbach and Felix Naumann. 2010. DuDe: The duplicate detection toolkit. In Proceedings of the 8th International Workshop on Quality in Databases (QDB'10)."
+            },
+            {
+              "key": "e_1_2_1_40_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDKE.2011.6053920"
+            },
+            {
+              "key": "e_1_2_1_41_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2012.20"
+            },
+            {
+              "key": "e_1_2_1_42_1",
+              "volume-title": "Proceedings of the 11th International Semantic Web Conference (ISWC'12)",
+              "author": "Duan Songyun",
+              "unstructured": "Songyun Duan , Achille Fokoue , Oktie Hassanzadeh , Anastasios Kementsietsidis , Kavitha Srinivas , and Michael J. Ward . 2012. Instance-based matching of large ontologies using locality-sensitive hashing . In Proceedings of the 11th International Semantic Web Conference (ISWC'12) . 49--64. Songyun Duan, Achille Fokoue, Oktie Hassanzadeh, Anastasios Kementsietsidis, Kavitha Srinivas, and Michael J. Ward. 2012. Instance-based matching of large ontologies using locality-sensitive hashing. In Proceedings of the 11th International Semantic Web Conference (ISWC'12). 49--64."
+            },
+            {
+              "key": "e_1_2_1_43_1",
+              "first-page": "1454",
+              "article-title": "Distributed representations of tuples for entity resolution",
+              "volume": "11",
+              "author": "Ebraheem Muhammad",
+              "year": "2018",
+              "unstructured": "Muhammad Ebraheem , Saravanan Thirumuruganathan , Shafiq R. Joty , Mourad Ouzzani , and Nan Tang . 2018 . Distributed representations of tuples for entity resolution . PVLDB 11 , 11 (2018), 1454 -- 1467 . Muhammad Ebraheem, Saravanan Thirumuruganathan, Shafiq R. Joty, Mourad Ouzzani, and Nan Tang. 2018. Distributed representations of tuples for entity resolution. PVLDB 11, 11 (2018), 1454--1467.",
+              "journal-title": "PVLDB"
+            },
+            {
+              "key": "e_1_2_1_44_1",
+              "volume-title": "Parallel meta-blocking: Realizing scalable entity resolution over large, heterogeneous data",
+              "author": "Efthymiou Vasilis",
+              "unstructured": "Vasilis Efthymiou , George Papadakis , George Papastefanatos , Kostas Stefanidis , and Themis Palpanas . 2015. Parallel meta-blocking: Realizing scalable entity resolution over large, heterogeneous data . In IEEE Big Data . 411--420. Vasilis Efthymiou, George Papadakis, George Papastefanatos, Kostas Stefanidis, and Themis Palpanas. 2015. Parallel meta-blocking: Realizing scalable entity resolution over large, heterogeneous data. In IEEE Big Data. 411--420."
+            },
+            {
+              "key": "e_1_2_1_45_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2016.12.001"
+            },
+            {
+              "key": "e_1_2_1_46_1",
+              "volume-title": "Big data entity resolution: From highly to somehow similar entity descriptions in the web",
+              "author": "Efthymiou Vasilis",
+              "unstructured": "Vasilis Efthymiou , Kostas Stefanidis , and Vassilis Christophides . 2015. Big data entity resolution: From highly to somehow similar entity descriptions in the web . In IEEE Big Data . 401--410. Vasilis Efthymiou, Kostas Stefanidis, and Vassilis Christophides. 2015. Big data entity resolution: From highly to somehow similar entity descriptions in the web. In IEEE Big Data. 401--410."
+            },
+            {
+              "key": "e_1_2_1_47_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2007.250581"
+            },
+            {
+              "key": "e_1_2_1_48_1",
+              "first-page": "167",
+              "article-title": "Adaptive and flexible blocking for record linkage tasks",
+              "volume": "1",
+              "author": "Evangelista Luiz",
+              "year": "2010",
+              "unstructured": "Luiz Evangelista , Eli Cortez , Altigran da Silva , and Wagner Meira Jr . 2010 . Adaptive and flexible blocking for record linkage tasks . JIDM 1 , 2 (2010), 167 -- 182 . Luiz Evangelista, Eli Cortez, Altigran da Silva, and Wagner Meira Jr. 2010. Adaptive and flexible blocking for record linkage tasks. JIDM 1, 2 (2010), 167--182.",
+              "journal-title": "JIDM"
+            },
+            {
+              "key": "e_1_2_1_49_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1080/01621459.1969.10501049"
+            },
+            {
+              "key": "e_1_2_1_50_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3231751.3231760"
+            },
+            {
+              "key": "e_1_2_1_51_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2783258.2783396"
+            },
+            {
+              "key": "e_1_2_1_52_1",
+              "volume-title": "Encyclopedia of Database Systems. 2982--2987.",
+              "author": "Gao Dengfeng",
+              "unstructured": "Dengfeng Gao . 2009. Temporal joins . In Encyclopedia of Database Systems. 2982--2987. Dengfeng Gao. 2009. Temporal joins. In Encyclopedia of Database Systems. 2982--2987."
+            },
+            {
+              "key": "e_1_2_1_53_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2367502.2367564"
+            },
+            {
+              "key": "e_1_2_1_54_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10729-014-9276-0"
+            },
+            {
+              "key": "e_1_2_1_55_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/645925.671516"
+            },
+            {
+              "key": "e_1_2_1_56_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Behzad Golshan Alon Y. Halevy George A. Mihaila and Wang-Chiew Tan. 2017. Data integration: After the teenage years. In ACM PODS. 101--106.  Behzad Golshan Alon Y. Halevy George A. Mihaila and Wang-Chiew Tan. 2017. Data integration: After the teenage years. In ACM PODS. 101--106.",
+              "DOI": "10.1145/3034786.3056124"
+            },
+            {
+              "key": "e_1_2_1_57_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/645927.672200"
+            },
+            {
+              "key": "e_1_2_1_58_1",
+              "volume-title": "Fast record linkage for company entities. CoRR abs/1907.08667",
+              "author": "Gschwind Thomas",
+              "year": "2019",
+              "unstructured": "Thomas Gschwind , Christoph Miksovic , Katsiaryna Mirylenka , and Paolo Scotton . 2019. Fast record linkage for company entities. CoRR abs/1907.08667 ( 2019 ). Thomas Gschwind, Christoph Miksovic, Katsiaryna Mirylenka, and Paolo Scotton. 2019. Fast record linkage for company entities. CoRR abs/1907.08667 (2019)."
+            },
+            {
+              "key": "e_1_2_1_59_1",
+              "volume-title": "Baxter",
+              "author": "Gu Lifang",
+              "year": "2004",
+              "unstructured": "Lifang Gu and Rohan A . Baxter . 2004 . Adaptive filtering for efficient record linkage. In Proceedings of the 4th SIAM International Conference on Data Mining (SDM'04). 477--481. Lifang Gu and Rohan A. Baxter. 2004. Adaptive filtering for efficient record linkage. In Proceedings of the 4th SIAM International Conference on Data Mining (SDM'04). 477--481."
+            },
+            {
+              "key": "e_1_2_1_60_1",
+              "volume-title": "Proceedings of the 1995 ACM SIGMOD International Conference on Management of Data (SIGMOD'95)",
+              "author": "Mauricio",
+              "unstructured": "Mauricio A. Hernández and Salvatore J. Stolfo. 1995. The merge/purge problem for large databases . In Proceedings of the 1995 ACM SIGMOD International Conference on Management of Data (SIGMOD'95) . 127--138. Mauricio A. Hernández and Salvatore J. Stolfo. 1995. The merge/purge problem for large databases. In Proceedings of the 1995 ACM SIGMOD International Conference on Management of Data (SIGMOD'95). 127--138."
+            },
+            {
+              "key": "e_1_2_1_61_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1023/A:1009761603038"
+            },
+            {
+              "key": "e_1_2_1_62_1",
+              "volume-title": "Proceedings of the 14th International Workshop on the Web and Database (WebDB'11)",
+              "author": "Isele Robert",
+              "year": "2011",
+              "unstructured": "Robert Isele , Anja Jentzsch , and Christian Bizer . 2011 . Efficient multidimensional blocking for link discovery without losing recall . In Proceedings of the 14th International Workshop on the Web and Database (WebDB'11) . Robert Isele, Anja Jentzsch, and Christian Bizer. 2011. Efficient multidimensional blocking for link discovery without losing recall. In Proceedings of the 14th International Workshop on the Web and Database (WebDB'11)."
+            },
+            {
+              "key": "e_1_2_1_63_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1206049.1206056"
+            },
+            {
+              "key": "e_1_2_1_64_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2732296.2732299"
+            },
+            {
+              "key": "e_1_2_1_65_1",
+              "volume-title": "Proceedings of the 8th International Conference on Database Systems for Advanced Applications (DASFAA'03)",
+              "author": "Jin Liang",
+              "year": "2003",
+              "unstructured": "Liang Jin , Chen Li , and Sharad Mehrotra . 2003 . Efficient record linkage in large data sets . In Proceedings of the 8th International Conference on Database Systems for Advanced Applications (DASFAA'03) . 137--146. Liang Jin, Chen Li, and Sharad Mehrotra. 2003. Efficient record linkage in large data sets. In Proceedings of the 8th International Conference on Database Systems for Advanced Applications (DASFAA'03). 137--146."
+            },
+            {
+              "key": "e_1_2_1_66_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/bdra.20521"
+            },
+            {
+              "key": "e_1_2_1_67_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.datak.2009.06.011"
+            },
+            {
+              "key": "e_1_2_1_68_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10618-018-0563-0"
+            },
+            {
+              "key": "e_1_2_1_69_1",
+              "volume-title": "Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18)",
+              "author": "Karapiperis Dimitrios",
+              "unstructured": "Dimitrios Karapiperis , Aris Gkoulalas-Divanis , and Vassilios S. Verykios . 2018. Summarization algorithms for record linkage . In Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18) . 73--84. Dimitrios Karapiperis, Aris Gkoulalas-Divanis, and Vassilios S. Verykios. 2018. Summarization algorithms for record linkage. In Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18). 73--84."
+            },
+            {
+              "key": "e_1_2_1_70_1",
+              "volume-title": "Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16)",
+              "author": "Karapiperis Dimitrios",
+              "year": "2016",
+              "unstructured": "Dimitrios Karapiperis , Dinusha Vatsalan , Vassilios S. Verykios , and Peter Christen . 2016 . Efficient record linkage using a compact hamming space . In Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16) . 209--220. Dimitrios Karapiperis, Dinusha Vatsalan, Vassilios S. Verykios, and Peter Christen. 2016. Efficient record linkage using a compact hamming space. In Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16). 209--220."
+            },
+            {
+              "key": "e_1_2_1_71_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10115-016-0919-y"
+            },
+            {
+              "key": "e_1_2_1_72_1",
+              "volume-title": "Proceedings of the 13th IEEE International Conference on Data Mining (ICDM'13)",
+              "author": "Kejriwal Mayank",
+              "unstructured": "Mayank Kejriwal and Daniel P. Miranker . 2013. An unsupervised algorithm for learning blocking schemes . In Proceedings of the 13th IEEE International Conference on Data Mining (ICDM'13) . 340--349. Mayank Kejriwal and Daniel P. Miranker. 2013. An unsupervised algorithm for learning blocking schemes. In Proceedings of the 13th IEEE International Conference on Data Mining (ICDM'13). 340--349."
+            },
+            {
+              "key": "e_1_2_1_73_1",
+              "volume-title": "Proceedings of the 9th International Workshop on Ontology Matching (OM'14)",
+              "author": "Kejriwal Mayank",
+              "unstructured": "Mayank Kejriwal and Daniel P. Miranker . 2014. A two-step blocking scheme learner for scalable link discovery . In Proceedings of the 9th International Workshop on Ontology Matching (OM'14) . 49--60. Mayank Kejriwal and Daniel P. Miranker. 2014. A two-step blocking scheme learner for scalable link discovery. In Proceedings of the 9th International Workshop on Ontology Matching (OM'14). 49--60."
+            },
+            {
+              "key": "e_1_2_1_74_1",
+              "volume-title": "Miranker",
+              "author": "Kejriwal Mayank",
+              "year": "2015",
+              "unstructured": "Mayank Kejriwal and Daniel P . Miranker . 2015 . A DNF blocking scheme learner for heterogeneous datasets. CoRR abs/1501.01694 (2015). Mayank Kejriwal and Daniel P. Miranker. 2015. A DNF blocking scheme learner for heterogeneous datasets. CoRR abs/1501.01694 (2015)."
+            },
+            {
+              "key": "e_1_2_1_75_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2012.11.008"
+            },
+            {
+              "key": "e_1_2_1_76_1",
+              "volume-title": "Proceedings of the 13th International Conference on Extending Database Technology (EDBT'10)",
+              "author": "Dongwon Lee Kim",
+              "year": "2010",
+              "unstructured": "Hung-sik Kim and Dongwon Lee . 2010 . HARRA: Fast iterative hashed record linkage for large-scale data collections . In Proceedings of the 13th International Conference on Extending Database Technology (EDBT'10) . 525--536. Hung-sik Kim and Dongwon Lee. 2010. HARRA: Fast iterative hashed record linkage for large-scale data collections. In Proceedings of the 13th International Conference on Extending Database Technology (EDBT'10). 525--536."
+            },
+            {
+              "key": "e_1_2_1_77_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2367502.2367527"
+            },
+            {
+              "key": "e_1_2_1_78_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2012.22"
+            },
+            {
+              "key": "e_1_2_1_79_1",
+              "first-page": "45",
+              "article-title": "Multi-pass sorted neighborhood blocking with MapReduce",
+              "volume": "27",
+              "author": "Kolb Lars",
+              "year": "2012",
+              "unstructured": "Lars Kolb , Andreas Thor , and Erhard Rahm . 2012 . Multi-pass sorted neighborhood blocking with MapReduce . Comput. Sci. R8D 27 , 1 (2012), 45 -- 63 . Lars Kolb, Andreas Thor, and Erhard Rahm. 2012. Multi-pass sorted neighborhood blocking with MapReduce. Comput. Sci. R8D 27, 1 (2012), 45--63.",
+              "journal-title": "Comput. Sci. R8D"
+            },
+            {
+              "key": "e_1_2_1_80_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2994509.2994535"
+            },
+            {
+              "key": "e_1_2_1_81_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/1687553.1687595"
+            },
+            {
+              "key": "e_1_2_1_82_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/1920841.1920904"
+            },
+            {
+              "key": "e_1_2_1_83_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2008.4497434"
+            },
+            {
+              "key": "e_1_2_1_84_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2078331.2078340"
+            },
+            {
+              "key": "e_1_2_1_85_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2723372.2723733"
+            },
+            {
+              "key": "e_1_2_1_86_1",
+              "volume-title": "Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18)",
+              "author": "Li Han",
+              "year": "2018",
+              "unstructured": "Han Li , Pradap Konda , Paul Suganthan , AnHai Doan , Benjamin Snyder , Youngchoon Park , Ganesh Krishnan , Rohit Deep , and Vijay Raghavendra . 2018 . MatchCatcher: A debugger for blocking in entity matching . In Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18) . 193--204. Han Li, Pradap Konda, Paul Suganthan, AnHai Doan, Benjamin Snyder, Youngchoon Park, Ganesh Krishnan, Rohit Deep, and Vijay Raghavendra. 2018. MatchCatcher: A debugger for blocking in entity matching. In Proceedings of the 21th International Conference on Extending Database Technology (EDBT'18). 193--204."
+            },
+            {
+              "key": "e_1_2_1_87_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2008.4497553"
+            },
+            {
+              "key": "e_1_2_1_88_1",
+              "volume-title": "Proceedings of the 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD'14)",
+              "author": "Liang Huizhi",
+              "unstructured": "Huizhi Liang , Yanzhe Wang , Peter Christen , and Ross W. Gayler . 2014. Noise-tolerant approximate blocking for dynamic real-time entity resolution . In Proceedings of the 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD'14) . 449--460. Huizhi Liang, Yanzhe Wang, Peter Christen, and Ross W. Gayler. 2014. Noise-tolerant approximate blocking for dynamic real-time entity resolution. In Proceedings of the 18th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD'14). 449--460."
+            },
+            {
+              "key": "e_1_2_1_89_1",
+              "first-page": "2983",
+              "article-title": "Efficiently supporting edit distance based string similarity search using B+-trees",
+              "volume": "26",
+              "author": "Lu Wei",
+              "year": "2014",
+              "unstructured": "Wei Lu , Xiaoyong Du , Marios Hadjieleftheriou , and Beng Chin Ooi . 2014 . Efficiently supporting edit distance based string similarity search using B+-trees . IEEE TKDE 26 , 12 (2014), 2983 -- 2996 . Wei Lu, Xiaoyong Du, Marios Hadjieleftheriou, and Beng Chin Ooi. 2014. Efficiently supporting edit distance based string similarity search using B+-trees. IEEE TKDE 26, 12 (2014), 2983--2996.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_90_1",
+              "volume-title": "Proceedings of the 33rd International Conference on Very Large Data Bases (VLDB'07)",
+              "author": "Lv Qin",
+              "year": "2007",
+              "unstructured": "Qin Lv , William Josephson , Zhe Wang , Moses Charikar , and Kai Li . 2007 . Multi-probe LSH: Efficient indexing for high-dimensional similarity search . In Proceedings of the 33rd International Conference on Very Large Data Bases (VLDB'07) . 950--961. Qin Lv, William Josephson, Zhe Wang, Moses Charikar, and Kai Li. 2007. Multi-probe LSH: Efficient indexing for high-dimensional similarity search. In Proceedings of the 33rd International Conference on Very Large Data Bases (VLDB'07). 950--961."
+            },
+            {
+              "key": "e_1_2_1_91_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/comjnl/bxv052"
+            },
+            {
+              "key": "e_1_2_1_92_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2433396.2433439"
+            },
+            {
+              "key": "e_1_2_1_93_1",
+              "volume-title": "Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 41--49",
+              "author": "Malhotra Pankaj",
+              "year": "2014",
+              "unstructured": "Pankaj Malhotra , Puneet Agarwal , and Gautam Shroff . 2014 . Graph-parallel entity resolution using LSH 8 IMM . In Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 41--49 . Pankaj Malhotra, Puneet Agarwal, and Gautam Shroff. 2014. Graph-parallel entity resolution using LSH 8 IMM. In Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 41--49."
+            },
+            {
+              "key": "e_1_2_1_94_1",
+              "volume-title": "PEL: Position-enhanced length filter for set similarity joins. In Grundlagen Datenbanken. 89--94.",
+              "author": "Mann Willi",
+              "year": "2014",
+              "unstructured": "Willi Mann and Nikolaus Augsten . 2014 . PEL: Position-enhanced length filter for set similarity joins. In Grundlagen Datenbanken. 89--94. Willi Mann and Nikolaus Augsten. 2014. PEL: Position-enhanced length filter for set similarity joins. In Grundlagen Datenbanken. 89--94."
+            },
+            {
+              "key": "e_1_2_1_95_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2947618.2947620"
+            },
+            {
+              "key": "e_1_2_1_96_1",
+              "first-page": "40",
+              "article-title": "Pay-as-you-go configuration of entity resolution",
+              "volume": "29",
+              "author": "Maskat Ruhaila",
+              "year": "2016",
+              "unstructured": "Ruhaila Maskat , Norman W. Paton , and Suzanne M. Embury . 2016 . Pay-as-you-go configuration of entity resolution . T-LSD-KCS 29 (2016), 40 -- 65 . Ruhaila Maskat, Norman W. Paton, and Suzanne M. Embury. 2016. Pay-as-you-go configuration of entity resolution. T-LSD-KCS 29 (2016), 40--65.",
+              "journal-title": "T-LSD-KCS"
+            },
+            {
+              "key": "e_1_2_1_97_1",
+              "volume-title": "Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 169--178",
+              "author": "McCallum Andrew",
+              "unstructured": "Andrew McCallum , Kamal Nigam , and Lyle H. Ungar . 2000. Efficient clustering of high-dimensional data sets with application to reference matching . In Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 169--178 . Andrew McCallum, Kamal Nigam, and Lyle H. Ungar. 2000. Efficient clustering of high-dimensional data sets with application to reference matching. In Proceedings of the Workshops of the EDBT/ICDT 2014 Joint Conference. 169--178."
+            },
+            {
+              "key": "e_1_2_1_98_1",
+              "volume-title": "Proceedings of the 10th International Workshop on Quality in Databases (QDB'12)",
+              "author": "McNeill W. P.",
+              "year": "2012",
+              "unstructured": "W. P. McNeill , Hakan Kardes , and Andrew Borthwick . 2012 . Dynamic record blocking: Efficient linking of massive databases in Mapreduce . In Proceedings of the 10th International Workshop on Quality in Databases (QDB'12) . W. P. McNeill, Hakan Kardes, and Andrew Borthwick. 2012. Dynamic record blocking: Efficient linking of massive databases in Mapreduce. In Proceedings of the 10th International Workshop on Quality in Databases (QDB'12)."
+            },
+            {
+              "key": "e_1_2_1_99_1",
+              "volume-title": "Proceedings of the 30th Annual ACM Symposium on Applied Computing (SAC'15)",
+              "author": "Mestre Demetrio Gomes",
+              "unstructured": "Demetrio Gomes Mestre , Carlos Eduardo S. Pires , and Dimas C. Nascimento . 2015. Adaptive sorted neighborhood blocking for entity matching with Mapreduce . In Proceedings of the 30th Annual ACM Symposium on Applied Computing (SAC'15) . 981--987. Demetrio Gomes Mestre, Carlos Eduardo S. Pires, and Dimas C. Nascimento. 2015. Adaptive sorted neighborhood blocking for entity matching with Mapreduce. In Proceedings of the 30th Annual ACM Symposium on Applied Computing (SAC'15). 981--987."
+            },
+            {
+              "key": "e_1_2_1_100_1",
+              "volume-title": "Proceedings of the 21st National Conference on Artificial Intelligence (AAAI'06)",
+              "author": "Michelson Matthew",
+              "unstructured": "Matthew Michelson and Craig A. Knoblock . 2006. Learning blocking schemes for record linkage . In Proceedings of the 21st National Conference on Artificial Intelligence (AAAI'06) . 440--445. Matthew Michelson and Craig A. Knoblock. 2006. Learning blocking schemes for record linkage. In Proceedings of the 21st National Conference on Artificial Intelligence (AAAI'06). 440--445."
+            },
+            {
+              "key": "e_1_2_1_101_1",
+              "volume-title": "Proceedings of the 27th Annual Conference on Neural Information Processing Systems (NIPS'13)",
+              "author": "Mikolov Tomas",
+              "year": "2013",
+              "unstructured": "Tomas Mikolov , Ilya Sutskever , Kai Chen , Gregory S. Corrado , and Jeffrey Dean . 2013 . Distributed representations of words and phrases and their compositionality . In Proceedings of the 27th Annual Conference on Neural Information Processing Systems (NIPS'13) . 3111--3119. Tomas Mikolov, Ilya Sutskever, Kai Chen, Gregory S. Corrado, and Jeffrey Dean. 2013. Distributed representations of words and phrases and their compositionality. In Proceedings of the 27th Annual Conference on Neural Information Processing Systems (NIPS'13). 3111--3119."
+            },
+            {
+              "key": "e_1_2_1_102_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10115-019-01347-0"
+            },
+            {
+              "key": "e_1_2_1_103_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2396761.2398606"
+            },
+            {
+              "key": "e_1_2_1_104_1",
+              "volume-title": "Proceedings of the 2011 International Conference on Information and Knowledge Engineering (IKE'11)",
+              "author": "Nelson E. D.",
+              "unstructured": "E. D. Nelson and J. R. Talburt . 2011. Entity resolution for longitudinal studies in education using OYSTER . In Proceedings of the 2011 International Conference on Information and Knowledge Engineering (IKE'11) . E. D. Nelson and J. R. Talburt. 2011. Entity resolution for longitudinal studies in education using OYSTER. In Proceedings of the 2011 International Conference on Information and Knowledge Engineering (IKE'11)."
+            },
+            {
+              "key": "e_1_2_1_105_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3233/SW-150210"
+            },
+            {
+              "key": "e_1_2_1_106_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-41335-3_25"
+            },
+            {
+              "key": "e_1_2_1_107_1",
+              "volume-title": "Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11)",
+              "author": "Ngomo Axel",
+              "year": "2011",
+              "unstructured": "Axel Ngomo and Sören Auer . 2011 . LIMES - A time-efficient approach for large-scale link discovery on the web of data . In Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11) . 2312--2317. Axel Ngomo and Sören Auer. 2011. LIMES - A time-efficient approach for large-scale link discovery on the web of data. In Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI'11). 2312--2317."
+            },
+            {
+              "key": "e_1_2_1_108_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1298406.1298446"
+            },
+            {
+              "key": "e_1_2_1_109_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/1304611.1306578"
+            },
+            {
+              "key": "e_1_2_1_110_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2018.06.006"
+            },
+            {
+              "key": "e_1_2_1_111_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Kevin O’Hare Anna Jurek-Loughrey and Cassio de Campos. 2019. A review of unsupervised and semi-supervised blocking methods for record linkage. In Linking and Mining Heterogeneous and Multi-view Data. 79--105.  Kevin O’Hare Anna Jurek-Loughrey and Cassio de Campos. 2019. A review of unsupervised and semi-supervised blocking methods for record linkage. In Linking and Mining Heterogeneous and Multi-view Data. 79--105.",
+              "DOI": "10.1007/978-3-030-01872-6_4"
+            },
+            {
+              "key": "e_1_2_1_112_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2856318.2856326"
+            },
+            {
+              "key": "e_1_2_1_113_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3132218.3132230"
+            },
+            {
+              "key": "e_1_2_1_114_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1967486.1967557"
+            },
+            {
+              "key": "e_1_2_1_115_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1998076.1998094"
+            },
+            {
+              "key": "e_1_2_1_116_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1935826.1935903"
+            },
+            {
+              "key": "e_1_2_1_117_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1998076.1998093"
+            },
+            {
+              "key": "e_1_2_1_118_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1999299.1999302"
+            },
+            {
+              "key": "e_1_2_1_119_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2124295.2124305"
+            },
+            {
+              "key": "e_1_2_1_120_1",
+              "first-page": "2665",
+              "article-title": "A blocking framework for entity resolution in highly heterogeneous information spaces",
+              "volume": "25",
+              "author": "Papadakis George",
+              "year": "2013",
+              "unstructured": "George Papadakis , Ekaterini Ioannou , Themis Palpanas , Claudia Niederée , and Wolfgang Nejdl . 2013 . A blocking framework for entity resolution in highly heterogeneous information spaces . IEEE TKDE 25 , 12 (2013), 2665 -- 2682 . George Papadakis, Ekaterini Ioannou, Themis Palpanas, Claudia Niederée, and Wolfgang Nejdl. 2013. A blocking framework for entity resolution in highly heterogeneous information spaces. IEEE TKDE 25, 12 (2013), 2665--2682.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_121_1",
+              "first-page": "1946",
+              "article-title": "Meta-blocking: Taking entity resolution to the next level",
+              "volume": "26",
+              "author": "Papadakis George",
+              "year": "2014",
+              "unstructured": "George Papadakis , Georgia Koutrika , Themis Palpanas , and Wolfgang Nejdl . 2014 . Meta-blocking: Taking entity resolution to the next level . IEEE TKDE 26 , 8 (2014), 1946 -- 1960 . George Papadakis, Georgia Koutrika, Themis Palpanas, and Wolfgang Nejdl. 2014. Meta-blocking: Taking entity resolution to the next level. IEEE TKDE 26, 8 (2014), 1946--1960.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_122_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDEW.2011.5767671"
+            },
+            {
+              "key": "e_1_2_1_123_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2016.7498364"
+            },
+            {
+              "key": "e_1_2_1_124_1",
+              "volume-title": "Companion",
+              "volume": "2018",
+              "author": "Papadakis George",
+              "year": "2018",
+              "unstructured": "George Papadakis and Themis Palpanas . 2018 . Web-scale, schema-agnostic, end-to-end entity resolution . In Companion Volume of The Web Conference 2018 (WWW'18). George Papadakis and Themis Palpanas. 2018. Web-scale, schema-agnostic, end-to-end entity resolution. In Companion Volume of The Web Conference 2018 (WWW'18)."
+            },
+            {
+              "key": "e_1_2_1_125_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2733085.2733098"
+            },
+            {
+              "key": "e_1_2_1_126_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.bdr.2016.08.002"
+            },
+            {
+              "key": "e_1_2_1_127_1",
+              "volume-title": "Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16)",
+              "author": "Papadakis George",
+              "year": "2016",
+              "unstructured": "George Papadakis , George Papastefanatos , Themis Palpanas , and Manolis Koubarakis . 2016 . Scaling entity resolution to large, heterogeneous data with enhanced meta-blocking . In Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16) . 221--232. George Papadakis, George Papastefanatos, Themis Palpanas, and Manolis Koubarakis. 2016. Scaling entity resolution to large, heterogeneous data with enhanced meta-blocking. In Proceedings of the 19th International Conference on Extending Database Technology (EDBT'16). 221--232."
+            },
+            {
+              "key": "e_1_2_1_128_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2947618.2947624"
+            },
+            {
+              "key": "e_1_2_1_129_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3229863.3236232"
+            },
+            {
+              "key": "e_1_2_1_130_1",
+              "first-page": "1316",
+              "article-title": "Progressive duplicate detection",
+              "volume": "27",
+              "author": "Papenbrock Thorsten",
+              "year": "2015",
+              "unstructured": "Thorsten Papenbrock , Arvid Heise , and Felix Naumann . 2015 . Progressive duplicate detection . IEEE TKDE 27 , 5 (2015), 1316 -- 1329 . Thorsten Papenbrock, Arvid Heise, and Felix Naumann. 2015. Progressive duplicate detection. IEEE TKDE 27, 5 (2015), 1316--1329.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_131_1",
+              "volume-title": "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP'14)",
+              "author": "Pennington Jeffrey",
+              "unstructured": "Jeffrey Pennington , Richard Socher , and Christopher D. Manning . 2014. Glove: Global vectors for word representation . In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP'14) . 1532--1543. Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. Glove: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP'14). 1532--1543."
+            },
+            {
+              "key": "e_1_2_1_132_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/11687238_46"
+            },
+            {
+              "key": "e_1_2_1_133_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1989323.1989431"
+            },
+            {
+              "key": "e_1_2_1_134_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3275536.3275539"
+            },
+            {
+              "key": "e_1_2_1_135_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2661829.2661869"
+            },
+            {
+              "key": "e_1_2_1_136_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-18032-8_45"
+            },
+            {
+              "key": "e_1_2_1_137_1",
+              "article-title": "Dynamic sorted neighborhood indexing for real-time entity resolution",
+              "volume": "6",
+              "author": "Ramadan Banda",
+              "year": "2015",
+              "unstructured": "Banda Ramadan , Peter Christen , Huizhi Liang , and Ross W. Gayler . 2015 . Dynamic sorted neighborhood indexing for real-time entity resolution . J. Data Inf. Qual. 6 , 4, Article 15 (2015), 15:1--15:29 pages. Banda Ramadan, Peter Christen, Huizhi Liang, and Ross W. Gayler. 2015. Dynamic sorted neighborhood indexing for real-time entity resolution. J. Data Inf. Qual. 6, 4, Article 15 (2015), 15:1--15:29 pages.",
+              "journal-title": "J. Data Inf. Qual."
+            },
+            {
+              "key": "e_1_2_1_138_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-40319-4_5"
+            },
+            {
+              "key": "e_1_2_1_139_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDM.2016.0153"
+            },
+            {
+              "key": "e_1_2_1_140_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2010.07.003"
+            },
+            {
+              "key": "e_1_2_1_141_1",
+              "unstructured": "Stephen V. Rice. 2007. Braided AVL trees for efficient event sets and ranked sets in the SIMSCRIPT III simulation programming language. In Western MultiConference on Computer Simulation. 150--155.  Stephen V. Rice. 2007. Braided AVL trees for efficient event sets and ranked sets in the SIMSCRIPT III simulation programming language. In Western MultiConference on Computer Simulation. 150--155."
+            },
+            {
+              "key": "e_1_2_1_142_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2017.151"
+            },
+            {
+              "key": "e_1_2_1_143_1",
+              "first-page": "2217",
+              "article-title": "Efficient and scalable processing of string similarity join",
+              "volume": "25",
+              "author": "Rong Chuitian",
+              "year": "2013",
+              "unstructured": "Chuitian Rong , Wei Lu , Xiaoli Wang , Xiaoyong Du , Yueguo Chen , and Anthony K. H. Tung . 2013 . Efficient and scalable processing of string similarity join . IEEE TKDE 25 , 10 (2013), 2217 -- 2230 . Chuitian Rong, Wei Lu, Xiaoli Wang, Xiaoyong Du, Yueguo Chen, and Anthony K. H. Tung. 2013. Efficient and scalable processing of string similarity join. IEEE TKDE 25, 10 (2013), 2217--2230.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_144_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1007568.1007652"
+            },
+            {
+              "key": "e_1_2_1_145_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jbi.2011.02.008"
+            },
+            {
+              "key": "e_1_2_1_146_1",
+              "volume-title": "Proceedings of the 21st ACM International Conference on Information and Knowledge Management (CIKM'12)",
+              "author": "Sarma Anish Das",
+              "year": "2012",
+              "unstructured": "Anish Das Sarma , Ankur Jain , Ashwin Machanavajjhala , and Philip Bohannon . 2012 . An automatic blocking mechanism for large-scale de-duplication tasks . In Proceedings of the 21st ACM International Conference on Information and Knowledge Management (CIKM'12) . 1055--1064. Anish Das Sarma, Ankur Jain, Ashwin Machanavajjhala, and Philip Bohannon. 2012. An automatic blocking mechanism for large-scale de-duplication tasks. In Proceedings of the 21st ACM International Conference on Information and Knowledge Management (CIKM'12). 1055--1064."
+            },
+            {
+              "key": "e_1_2_1_147_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2140436.2140440"
+            },
+            {
+              "key": "e_1_2_1_148_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2014.2327028"
+            },
+            {
+              "key": "e_1_2_1_149_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2011.5767835"
+            },
+            {
+              "key": "e_1_2_1_150_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2994509.2994533"
+            },
+            {
+              "key": "e_1_2_1_151_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2019.03.006"
+            },
+            {
+              "key": "e_1_2_1_152_1",
+              "first-page": "1208",
+              "article-title": "Schema-agnostic progressive entity resolution",
+              "volume": "31",
+              "author": "Simonini Giovanni",
+              "year": "2019",
+              "unstructured": "Giovanni Simonini , George Papadakis , Themis Palpanas , and Sonia Bergamaschi . 2019 . Schema-agnostic progressive entity resolution . IEEE TKDE 31 , 6 (2019), 1208 -- 1221 . Giovanni Simonini, George Papadakis, Themis Palpanas, and Sonia Bergamaschi. 2019. Schema-agnostic progressive entity resolution. IEEE TKDE 31, 6 (2019), 1208--1221.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_153_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-35173-0_32"
+            },
+            {
+              "key": "e_1_2_1_154_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-25073-6_41"
+            },
+            {
+              "key": "e_1_2_1_155_1",
+              "first-page": "143",
+              "article-title": "Linking heterogeneous data in the semantic web using scalable and domain-independent candidate selection",
+              "volume": "29",
+              "author": "Song Dezhao",
+              "year": "2017",
+              "unstructured": "Dezhao Song , Yi Luo , and Jeff Heflin . 2017 . Linking heterogeneous data in the semantic web using scalable and domain-independent candidate selection . IEEE TKDE 29 , 1 (2017), 143 -- 156 . Dezhao Song, Yi Luo, and Jeff Heflin. 2017. Linking heterogeneous data in the semantic web using scalable and domain-independent candidate selection. IEEE TKDE 29, 1 (2017), 143--156.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_156_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2017.214"
+            },
+            {
+              "key": "e_1_2_1_157_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2567948.2577263"
+            },
+            {
+              "key": "e_1_2_1_158_1",
+              "volume-title": "Fienberg",
+              "author": "Steorts Rebecca C.",
+              "year": "2014",
+              "unstructured": "Rebecca C. Steorts , Samuel L. Ventura , Mauricio Sadinle , and Stephen E . Fienberg . 2014 . A comparison of blocking methods for record linkage. In Privacy in Statistical Databases . 253--268. Rebecca C. Steorts, Samuel L. Ventura, Mauricio Sadinle, and Stephen E. Fienberg. 2014. A comparison of blocking methods for record linkage. In Privacy in Statistical Databases. 253--268."
+            },
+            {
+              "key": "e_1_2_1_159_1",
+              "first-page": "278",
+              "article-title": "Smurf: Self-service string matching using random forests",
+              "volume": "12",
+              "author": "Suganthan Paul",
+              "year": "2018",
+              "unstructured": "Paul Suganthan , Adel Ardalan , AnHai Doan , and Aditya Akella . 2018 . Smurf: Self-service string matching using random forests . PVLDB 12 , 3 (2018), 278 -- 291 . Paul Suganthan, Adel Ardalan, AnHai Doan, and Aditya Akella. 2018. Smurf: Self-service string matching using random forests. PVLDB 12, 3 (2018), 278--291.",
+              "journal-title": "PVLDB"
+            },
+            {
+              "key": "e_1_2_1_160_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3329772.3329774"
+            },
+            {
+              "key": "e_1_2_1_161_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3137765.3137810"
+            },
+            {
+              "key": "e_1_2_1_162_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3151113.3151118"
+            },
+            {
+              "key": "e_1_2_1_163_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1559845.1559905"
+            },
+            {
+              "key": "e_1_2_1_164_1",
+              "volume-title": "Mourad Ouzzani, Nan Tang, and Shafiq R. Joty.",
+              "author": "Thirumuruganathan Saravanan",
+              "year": "2018",
+              "unstructured": "Saravanan Thirumuruganathan , Shameem Ahamed Puthiya Parambath , Mourad Ouzzani, Nan Tang, and Shafiq R. Joty. 2018 . Reuse and adaptation for entity resolution through transfer learning. CoRR abs/1809.11084 (2018). Saravanan Thirumuruganathan, Shameem Ahamed Puthiya Parambath, Mourad Ouzzani, Nan Tang, and Shafiq R. Joty. 2018. Reuse and adaptation for entity resolution through transfer learning. CoRR abs/1809.11084 (2018)."
+            },
+            {
+              "key": "e_1_2_1_165_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2012.11.005"
+            },
+            {
+              "key": "e_1_2_1_166_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1807167.1807222"
+            },
+            {
+              "key": "e_1_2_1_167_1",
+              "volume-title": "Proceedings of the WWW2009 Workshop on Linked Data on the Web (LDOW'09)",
+              "author": "Volz Julius",
+              "year": "2009",
+              "unstructured": "Julius Volz , Christian Bizer , Martin Gaedke , and Georgi Kobilarov . 2009 . Silk-a link discovery framework for the web of data . In Proceedings of the WWW2009 Workshop on Linked Data on the Web (LDOW'09) . 53 pages. Julius Volz, Christian Bizer, Martin Gaedke, and Georgi Kobilarov. 2009. Silk-a link discovery framework for the web of data. In Proceedings of the WWW2009 Workshop on Linked Data on the Web (LDOW'09). 53 pages."
+            },
+            {
+              "key": "e_1_2_1_168_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/1920841.1920992"
+            },
+            {
+              "key": "e_1_2_1_169_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2213836.2213847"
+            },
+            {
+              "key": "e_1_2_1_170_1",
+              "volume-title": "Extending string similarity join to tolerant fuzzy token matching. ACM TODS 39, 1",
+              "author": "Wang Jiannan",
+              "year": "2014",
+              "unstructured": "Jiannan Wang , Guoliang Li , and Jianhua Feng . 2014. Extending string similarity join to tolerant fuzzy token matching. ACM TODS 39, 1 ( 2014 ), 7:1--7:45. Jiannan Wang, Guoliang Li, and Jianhua Feng. 2014. Extending string similarity join to tolerant fuzzy token matching. ACM TODS 39, 1 (2014), 7:1--7:45."
+            },
+            {
+              "key": "e_1_2_1_171_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2019.00042"
+            },
+            {
+              "key": "e_1_2_1_172_1",
+              "volume-title": "Jingkuan Song, and Jianqiu Ji.",
+              "author": "Wang Jingdong",
+              "year": "2014",
+              "unstructured": "Jingdong Wang , Heng Tao Shen , Jingkuan Song, and Jianqiu Ji. 2014 . Hashing for similarity search: A survey. CoRR abs/1408.2927 (2014). Jingdong Wang, Heng Tao Shen, Jingkuan Song, and Jianqiu Ji. 2014. Hashing for similarity search: A survey. CoRR abs/1408.2927 (2014)."
+            },
+            {
+              "key": "e_1_2_1_173_1",
+              "first-page": "1928",
+              "article-title": "LS-Join: Local similarity join on string collections",
+              "volume": "29",
+              "author": "Wang Jiaying",
+              "year": "2017",
+              "unstructured": "Jiaying Wang , Xiaochun Yang , Bin Wang , and Chengfei Liu . 2017 . LS-Join: Local similarity join on string collections . IEEE TKDE 29 , 9 (2017), 1928 -- 1942 . Jiaying Wang, Xiaochun Yang, Bin Wang, and Chengfei Liu. 2017. LS-Join: Local similarity join on string collections. IEEE TKDE 29, 9 (2017), 1928--1942.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_174_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2882903.2915211"
+            },
+            {
+              "key": "e_1_2_1_175_1",
+              "first-page": "166",
+              "article-title": "Semantic-aware blocking for entity resolution",
+              "volume": "28",
+              "author": "Wang Qing",
+              "year": "2016",
+              "unstructured": "Qing Wang , Mingyuan Cui , and Huizhi Liang . 2016 . Semantic-aware blocking for entity resolution . IEEE TKDE 28 , 1 (2016), 166 -- 180 . Qing Wang, Mingyuan Cui, and Huizhi Liang. 2016. Semantic-aware blocking for entity resolution. IEEE TKDE 28, 1 (2016), 166--180.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_176_1",
+              "first-page": "1916",
+              "article-title": "VChunkJoin: An efficient algorithm for edit similarity joins",
+              "volume": "25",
+              "author": "Wang Wei",
+              "year": "2013",
+              "unstructured": "Wei Wang , Jianbin Qin , Chuan Xiao , Xuemin Lin , and Heng Tao Shen . 2013 . VChunkJoin: An efficient algorithm for edit similarity joins . IEEE TKDE 25 , 8 (2013), 1916 -- 1929 . Wei Wang, Jianbin Qin, Chuan Xiao, Xuemin Lin, and Heng Tao Shen. 2013. VChunkJoin: An efficient algorithm for edit similarity joins. IEEE TKDE 25, 8 (2013), 1916--1929.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_177_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3099622.3099624"
+            },
+            {
+              "key": "e_1_2_1_178_1",
+              "first-page": "1111",
+              "article-title": "Pay-as-you-go entity resolution",
+              "volume": "25",
+              "author": "Whang Steven Euijong",
+              "year": "2013",
+              "unstructured": "Steven Euijong Whang , David Marmaros , and Hector Garcia-Molina . 2013 . Pay-as-you-go entity resolution . IEEE TKDE 25 , 5 (2013), 1111 -- 1124 . Steven Euijong Whang, David Marmaros, and Hector Garcia-Molina. 2013. Pay-as-you-go entity resolution. IEEE TKDE 25, 5 (2013), 1111--1124.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_179_1",
+              "unstructured": "Steven Euijong Whang David Menestrina Georgia Koutrika Martin Theobald and Hector Garcia-Molina. 2009. Entity resolution with iterative blocking. In SIGMOD. 219--232.  Steven Euijong Whang David Menestrina Georgia Koutrika Martin Theobald and Hector Garcia-Molina. 2009. Entity resolution with iterative blocking. In SIGMOD. 219--232."
+            },
+            {
+              "key": "e_1_2_1_180_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/1453856.1453957"
+            },
+            {
+              "key": "e_1_2_1_181_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Chuan Xiao Wei Wang Xuemin Lin and Haichuan Shang. 2009. Top-k set similarity joins. In ICDE. 916--927.  Chuan Xiao Wei Wang Xuemin Lin and Haichuan Shang. 2009. Top-k set similarity joins. In ICDE. 916--927.",
+              "DOI": "10.1109/ICDE.2009.111"
+            },
+            {
+              "key": "e_1_2_1_182_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Chuan Xiao Wei Wang Xuemin Lin and Jeffrey Xu Yu. 2008. Efficient similarity joins for near duplicate detection. In WWW. 131--140.  Chuan Xiao Wei Wang Xuemin Lin and Jeffrey Xu Yu. 2008. Efficient similarity joins for near duplicate detection. In WWW. 131--140.",
+              "DOI": "10.1145/1367497.1367516"
+            },
+            {
+              "key": "e_1_2_1_183_1",
+              "volume-title": "Jeffrey Xu Yu, and Guoren Wang",
+              "author": "Xiao Chuan",
+              "year": "2011",
+              "unstructured": "Chuan Xiao , Wei Wang , Xuemin Lin , Jeffrey Xu Yu, and Guoren Wang . 2011 . Efficient similarity joins for near-duplicate detection. ACM TODS 36, 3 (2011), 15:1--15:41. Chuan Xiao, Wei Wang, Xuemin Lin, Jeffrey Xu Yu, and Guoren Wang. 2011. Efficient similarity joins for near-duplicate detection. ACM TODS 36, 3 (2011), 15:1--15:41."
+            },
+            {
+              "key": "e_1_2_1_184_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3342263.3342268"
+            },
+            {
+              "key": "e_1_2_1_185_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Su Yan Dongwon Lee Min-Yen Kan and C. Lee Giles. 2007. Adaptive sorted neighborhood methods for efficient record linkage. In JCDL. 185--194.  Su Yan Dongwon Lee Min-Yen Kan and C. Lee Giles. 2007. Adaptive sorted neighborhood methods for efficient record linkage. In JCDL. 185--194.",
+              "DOI": "10.1145/1255175.1255213"
+            },
+            {
+              "key": "e_1_2_1_186_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wei Yan Yuan Xue and Bradley Malin. 2013. Scalable load balancing for Mapreduce-based record linkage. In IPCCC. 1--10.  Wei Yan Yuan Xue and Bradley Malin. 2013. Scalable load balancing for Mapreduce-based record linkage. In IPCCC. 1--10.",
+              "DOI": "10.1109/PCCC.2013.6742785"
+            },
+            {
+              "key": "e_1_2_1_187_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11704-015-5900-5"
+            },
+            {
+              "key": "e_1_2_1_188_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s00778-016-0449-y"
+            },
+            {
+              "key": "e_1_2_1_189_1",
+              "first-page": "2763",
+              "article-title": "Privacy-preserving similarity joins over encrypted data",
+              "volume": "12",
+              "author": "Yuan Xingliang",
+              "year": "2017",
+              "unstructured": "Xingliang Yuan , Xinyu Wang , Cong Wang , Chenyun Yu , and Sarana Nutanong . 2017 . Privacy-preserving similarity joins over encrypted data . IEEE TIFS 12 , 11 (2017), 2763 -- 2775 . Xingliang Yuan, Xinyu Wang, Cong Wang, Chenyun Yu, and Sarana Nutanong. 2017. Privacy-preserving similarity joins over encrypted data. IEEE TIFS 12, 11 (2017), 2763--2775.",
+              "journal-title": "IEEE TIFS"
+            },
+            {
+              "key": "e_1_2_1_190_1",
+              "volume-title": "ATLAS: A probabilistic algorithm for high dimensional similarity search. In SIGMOD. 997--1008.",
+              "author": "Zhai Jiaqi",
+              "year": "2011",
+              "unstructured": "Jiaqi Zhai , Yin Lou , and Johannes Gehrke . 2011 . ATLAS: A probabilistic algorithm for high dimensional similarity search. In SIGMOD. 997--1008. Jiaqi Zhai, Yin Lou, and Johannes Gehrke. 2011. ATLAS: A probabilistic algorithm for high dimensional similarity search. In SIGMOD. 997--1008."
+            },
+            {
+              "key": "e_1_2_1_191_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1088/1742-6596/887/1/012058"
+            },
+            {
+              "key": "e_1_2_1_192_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Yong Zhang Xiuxing Li Jin Wang Ying Zhang Chunxiao Xing and Xiaojie Yuan. 2017. An efficient framework for exact set similarity search using tree structure indexes. In ICDE. 759--770.  Yong Zhang Xiuxing Li Jin Wang Ying Zhang Chunxiao Xing and Xiaojie Yuan. 2017. An efficient framework for exact set similarity search using tree structure indexes. In ICDE. 759--770.",
+              "DOI": "10.1109/ICDE.2017.127"
+            },
+            {
+              "key": "e_1_2_1_193_1",
+              "first-page": "409",
+              "article-title": "A transformation-based framework for knn set similarity search",
+              "volume": "32",
+              "author": "Zhang Yong",
+              "year": "2020",
+              "unstructured": "Yong Zhang , Jiacheng Wu , Jin Wang , and Chunxiao Xing . 2020 . A transformation-based framework for knn set similarity search . IEEE TKDE 32 , 3 (2020), 409 -- 423 . Yong Zhang, Jiacheng Wu, Jin Wang, and Chunxiao Xing. 2020. A transformation-based framework for knn set similarity search. IEEE TKDE 32, 3 (2020), 409--423.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_2_1_194_1",
+              "volume-title": "Beng Chin Ooi, and Divesh Srivastava",
+              "author": "Zhang Zhenjie",
+              "year": "2010",
+              "unstructured": "Zhenjie Zhang , Marios Hadjieleftheriou , Beng Chin Ooi, and Divesh Srivastava . 2010 . Bed-tree : An all-purpose index structure for string similarity search based on edit distance. In SIGMOD. 915--926. Zhenjie Zhang, Marios Hadjieleftheriou, Beng Chin Ooi, and Divesh Srivastava. 2010. Bed-tree: An all-purpose index structure for string similarity search based on edit distance. In SIGMOD. 915--926."
+            },
+            {
+              "key": "e_1_2_1_195_1",
+              "volume-title": "Miller",
+              "author": "Zhu Erkang",
+              "year": "2019",
+              "unstructured": "Erkang Zhu , Dong Deng , Fatemeh Nargesian , and Renée J . Miller . 2019 . JOSIE : Overlap set similarity search for finding joinable tables in data lakes. In SIGMOD. 847--864. Erkang Zhu, Dong Deng, Fatemeh Nargesian, and Renée J. Miller. 2019. JOSIE: Overlap set similarity search for finding joinable tables in data lakes. In SIGMOD. 847--864."
+            }
+          ],
+          "container-title": [
+            "ACM Computing Surveys"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3377455",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3377455",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                17
+              ]
+            ],
+            "date-time": "2025-06-17T22:33:18Z",
+            "timestamp": 1750199598000
+          },
+          "score": 41.49213,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3377455"
+            }
+          },
+          "subtitle": [
+            "A Survey"
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                20
+              ]
+            ]
+          },
+          "references-count": 195,
+          "journal-issue": {
+            "issue": "2",
+            "published-print": {
+              "date-parts": [
+                [
+                  2021,
+                  3,
+                  31
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "10.1145/3377455"
+          ],
+          "URL": "https://doi.org/10.1145/3377455",
+          "ISSN": [
+            "0360-0300",
+            "1557-7341"
+          ],
+          "issn-type": [
+            {
+              "value": "0360-0300",
+              "type": "print"
+            },
+            {
+              "value": "1557-7341",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                20
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2019-02-01",
+              "order": 0,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2019-12-01",
+              "order": 1,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2020-03-20",
+              "order": 2,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        },
+        {
+          "institution": [
+            {
+              "name": "Comprehensive R Archive Network",
+              "acronym": [
+                "CRAN"
+              ]
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                1
+              ]
+            ],
+            "date-time": "2026-07-01T01:49:18Z",
+            "timestamp": 1782870558124,
+            "version": "3.54.5"
+          },
+          "description": "The goal of 'blocking' is to provide blocking methods for record linkage and deduplication using approximate nearest neighbour (ANN) algorithms and graph techniques. It supports multiple ANN implementations via 'rnndescent', 'RcppHNSW', 'RcppAnnoy', and 'mlpack' packages, and provides integration with the 'reclin2' package. The package generates shingles from character strings and similarity vectors for record comparison, and includes evaluation metrics for assessing blocking performance including false positive rate (FPR) and false negative rate (FNR) estimates. For details see: Papadakis et al. (2020) <doi:10.1145/3377455>, Steorts et al. (2014) <doi:10.1007/978-3-319-11257-2_20>, Dasylva and Goussanou (2021) <https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X202100200002>, Dasylva and Goussanou (2022) <doi:10.1007/s42081-022-00153-3>.",
+          "reference-count": 3,
+          "publisher": "The R Foundation",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "content-updated": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                30
+              ]
+            ]
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                13
+              ]
+            ]
+          },
+          "DOI": "10.32614/cran.package.blocking",
+          "type": "dataset",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                13
+              ]
+            ],
+            "date-time": "2025-06-13T21:15:16Z",
+            "timestamp": 1749849316000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "blocking: Various Blocking Methods for Entity Resolution"
+          ],
+          "prefix": "10.32614",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-8281-4301",
+              "authenticated-orcid": true,
+              "given": "Maciej",
+              "family": "Beręsewicz",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Adam",
+              "family": "Struzik",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "17266",
+          "content-created": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                13
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3377455"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-11257-2_20"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s42081-022-00153-3"
+            }
+          ],
+          "container-title": [
+            "CRAN: Contributed Packages"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                1
+              ]
+            ],
+            "date-time": "2026-07-01T01:15:51Z",
+            "timestamp": 1782868551000
+          },
+          "score": 32.07846,
+          "resource": {
+            "primary": {
+              "URL": "https://CRAN.R-project.org/package=blocking"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                13
+              ]
+            ]
+          },
+          "references-count": 3,
+          "URL": "https://doi.org/10.32614/cran.package.blocking",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                13
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2024,
+                10,
+                23
+              ]
+            ],
+            "date-time": "2024-10-23T06:25:28Z",
+            "timestamp": 1729664728130,
+            "version": "3.28.0"
+          },
+          "reference-count": 20,
+          "publisher": "IEEE",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2017,
+                12
+              ]
+            ]
+          },
+          "DOI": "10.1109/intelcct.2017.8324029",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2018,
+                4,
+                11
+              ]
+            ],
+            "date-time": "2018-04-11T21:11:11Z",
+            "timestamp": 1523481071000
+          },
+          "page": "108-113",
+          "source": "Crossref",
+          "is-referenced-by-count": 2,
+          "title": [
+            "Efficient entity resolution using multiple blocking keys for bibliographic dataset"
+          ],
+          "prefix": "10.1109",
+          "author": [
+            {
+              "given": "Dolly",
+              "family": "Mittal",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Emmanuel S.",
+              "family": "Pilli",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Madhuri",
+              "family": "Gupta",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1807167.1807296"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2367502.2367527"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s13222-012-0110-x"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3115/1557690.1557767"
+            },
+            {
+              "key": "ref14",
+              "first-page": "45",
+              "article-title": "Parallel sorted neighborhood blocking with mapreduce",
+              "volume": "180",
+              "author": "kolb",
+              "year": "0",
+              "journal-title": "Database Systems for Business Technology and Web Conference"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s00450-011-0177-x"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2012.22"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ISCC.2013.6755016"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2213836.2213840"
+            },
+            {
+              "key": "ref19",
+              "first-page": "3",
+              "article-title": "A load-balanced mapreduce algorithm for blocking-based entity-resolution with multiple keys",
+              "volume": "152",
+              "author": "hsueh",
+              "year": "2014",
+              "journal-title": "Proceedings of the Twelfth Australasian Symposium on Parallel and Distributed Computing"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MSST.2010.5496972"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/945449.945450"
+            },
+            {
+              "key": "ref6",
+              "first-page": "335",
+              "article-title": "Record linking: the design of efficient systems for linking records into individual and family histories",
+              "volume": "19",
+              "author": "newcombe",
+              "year": "1967",
+              "journal-title": "American Journal of Human Genetics"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1327452.1327492"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/2947618.2947624"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2011.127"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/223784.223807"
+            },
+            {
+              "key": "ref1",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1007/978-3-642-31164-2",
+              "author": "christen",
+              "year": "2012",
+              "journal-title": "Data Matching Concepts and Techniques for Record Linkage Entity Resolution and Duplicate Detection"
+            },
+            {
+              "key": "ref9",
+              "article-title": "Data partitioning for parallel entity matching",
+              "author": "kirsten",
+              "year": "2010",
+              "journal-title": "CoRR"
+            },
+            {
+              "journal-title": "Dataset",
+              "year": "0",
+              "key": "ref20"
+            }
+          ],
+          "event": {
+            "name": "2017 International Conference on Intelligent Communication and Computational Techniques (ICCT)",
+            "start": {
+              "date-parts": [
+                [
+                  2017,
+                  12,
+                  22
+                ]
+              ]
+            },
+            "location": "Jaipur",
+            "end": {
+              "date-parts": [
+                [
+                  2017,
+                  12,
+                  23
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "2017 International Conference on Intelligent Communication and Computational Techniques (ICCT)"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/8318445/8324009/08324029.pdf?arnumber=8324029",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                2
+              ]
+            ],
+            "date-time": "2023-09-02T01:51:23Z",
+            "timestamp": 1693619483000
+          },
+          "score": 29.277231,
+          "resource": {
+            "primary": {
+              "URL": "http://ieeexplore.ieee.org/document/8324029/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2017,
+                12
+              ]
+            ]
+          },
+          "references-count": 20,
+          "URL": "https://doi.org/10.1109/intelcct.2017.8324029",
+          "published": {
+            "date-parts": [
+              [
+                2017,
+                12
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

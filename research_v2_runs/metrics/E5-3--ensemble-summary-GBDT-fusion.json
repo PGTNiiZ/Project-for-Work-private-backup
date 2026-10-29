@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.9777767725778833,
+  "name": "GBDT-fusion",
+  "source_summary": "metrics/model_GBDT-fusion.json",
+  "source_summary_sha256": "a92a396d8573b0a595217a4353496e08c9d14475a2d49227649c604098775d3e",
+  "n_pairs": 351494,
+  "seed_count": 5,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.059867250001843786
+}

@@ -1,0 +1,62 @@
+{
+  "name": "LR-semantic",
+  "exp_id": "E4-2",
+  "learner": "LR",
+  "feature": "semantic",
+  "params": {
+    "C": 87.35561807988194,
+    "class_weight": null
+  },
+  "group": null,
+  "exclude_group": null,
+  "seeds": [
+    42
+  ],
+  "seed_AP": [
+    0.8447570845493477
+  ],
+  "seed_AP_SD": 0.0,
+  "mean_score_AP": 0.8447570845493477,
+  "model_paths": [
+    "artifacts/model_LR-semantic_seed42.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_LR-semantic_seed42.pkl": "21ffa4dad1890fbee26516c6d11bf10352cdd6539999797af9ae50e8b2866e5d"
+  },
+  "oof_path": "artifacts/oof_LR-semantic.npz",
+  "oof_sha256": "a5b2c84b61051195ce3562b196d75813d58deea716c8de4cc26aea490f2ba983",
+  "operating_points": {
+    "validation_F1_threshold": 0.73,
+    "validation_F1": 0.8268606720401968,
+    "precision_target_threshold": 0.6518268585205078,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 5,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.8447570845493486,
+    "precision": 0.7537032167586992,
+    "recall": 0.7970893585465332,
+    "f1": 0.7747893859530568,
+    "tp": 17198,
+    "fp": 5620,
+    "tn": 324298,
+    "fn": 4378,
+    "automatic_fn": 4378,
+    "utility_fn": 4378,
+    "rejected_positive_fn": 4378,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.7970893585465332,
+    "raw_cost": 15618.0,
+    "cost_per_pair": 0.044433190893727915,
+    "brier": 0.028322130421597227,
+    "ece15_equalmass": 0.06147686425411538
+  }
+}

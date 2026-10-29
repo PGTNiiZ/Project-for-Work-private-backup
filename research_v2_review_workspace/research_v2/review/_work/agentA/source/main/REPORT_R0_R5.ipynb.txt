@@ -1,0 +1,303 @@
+# CELL 1
+# PARAMETER BLOCK — override ได้จาก Master notebook (ตั้ง IS_MASTER = True แล้วกำหนดค่าก่อน %run)
+try:
+    IS_MASTER
+except NameError:
+    IS_MASTER = False
+
+if not IS_MASTER:
+    RESULTS_DIR = './experiments'   # โฟลเดอร์ไฟล์ผลการทดลอง (.json)
+    SAVE_FIGS   = False             # True = เซฟทุกกราฟเป็น .png ลง RESULTS_DIR/figs ด้วย
+
+# CELL 2
+import json
+from pathlib import Path
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+
+plt.set_loglevel('error')  # กัน warning เรื่อง font รก output
+
+# ---- โทนสี (จาก palette ที่ผ่านการ validate เรื่อง colorblind-safety แล้ว) ----
+SURFACE, GRID = '#fcfcfb', '#e1e0d9'
+INK, INK2, MUTED = '#0b0b0b', '#52514e', '#898781'
+BASELINE_AXIS = '#c3c2b7'
+
+# สีประจำแต่ละ experiment — คงที่ทุกกราฟ (สีตามตัวตน ไม่ใช่ตามอันดับ)
+EXP_COLORS = {
+    'R0': '#898781',   # baseline = เทากลาง
+    'R1': '#2a78d6',
+    'R2': '#008300',
+    'R3': '#d55181',
+    'R4': '#c98500',
+    'R5': '#1baf7a',
+}
+
+plt.rcParams.update({
+    'font.family': ['Leelawadee UI', 'Tahoma', 'DejaVu Sans'],
+    'figure.facecolor': SURFACE, 'axes.facecolor': SURFACE, 'savefig.facecolor': SURFACE,
+    'figure.dpi': 110,
+    'axes.titlelocation': 'left', 'axes.titleweight': 'bold', 'axes.titlesize': 12,
+    'axes.labelcolor': INK2, 'text.color': INK,
+    'xtick.color': MUTED, 'ytick.color': MUTED,
+    'font.size': 10,
+})
+
+FIG_DIR = Path(RESULTS_DIR) / 'figs'
+
+def style_ax(ax, grid_axis=None):
+    """โครงกราฟแบบจาง ๆ ให้ข้อมูลเด่นกว่าเส้นแกน"""
+    for side in ('top', 'right', 'left'):
+        ax.spines[side].set_visible(False)
+    ax.spines['bottom'].set_color(BASELINE_AXIS)
+    ax.tick_params(length=0)
+    if grid_axis:
+        ax.grid(axis=grid_axis, color=GRID, linewidth=0.8)
+        ax.set_axisbelow(True)
+
+def finish(fig, name):
+    if fig.get_layout_engine() is None:
+        fig.tight_layout()
+    if SAVE_FIGS:
+        FIG_DIR.mkdir(exist_ok=True)
+        fig.savefig(FIG_DIR / f'{name}.png', bbox_inches='tight', dpi=150)
+    plt.show()
+
+# CELL 3
+RES = Path(RESULTS_DIR)
+
+r1  = json.loads((RES / 'r1_results.json').read_text(encoding='utf-8'))
+r2  = json.loads((RES / 'r2_results.json').read_text(encoding='utf-8'))
+r3  = json.loads((RES / 'r3_results.json').read_text(encoding='utf-8'))
+r4  = json.loads((RES / 'r4_privacy_tradeoff.json').read_text(encoding='utf-8'))
+rec = json.loads((RES / 'r2_r3_fn_recovery.json').read_text(encoding='utf-8'))
+ga_hist = {
+    'R1': json.loads((RES / 'r1_ga_history.json').read_text(encoding='utf-8')),
+    'R3': json.loads((RES / 'r3_ga_history.json').read_text(encoding='utf-8')),
+}
+
+METRICS = ('TP', 'FP', 'FN', 'REVIEW', 'precision', 'recall', 'F1')
+rows = []
+
+def add(exp, config, split, m, L=None):
+    rows.append({'exp': exp, 'config': config, 'split': split, 'L': L,
+                 **{k: m[k] for k in METRICS}})
+
+for split in ('test', 'full'):
+    add('R0', 'R0 · 17f + threshold มือ',   split, r1['rules'][split]['R0_production'])
+    add('R1', 'R1 · 17f + GA',              split, r1['rules'][split]['R1_ga'])
+    add('R2', 'R2 · +BERT + threshold มือ', split, r2['splits'][split])
+    add('R3', 'R3 · +BERT + GA',            split, r3['rules'][split]['R3_ga'])
+    for L in r4['L_values']:
+        add('R4', f'R4 · Bloom L={L} + threshold มือ', split, r4['per_L'][str(L)]['R4_manual'][split], L)
+        add('R5', f'R5 · Bloom L={L} + GA',            split, r4['per_L'][str(L)]['R5_ga'][split], L)
+
+df = pd.DataFrame(rows)
+df.to_csv(RES / 'r0_r5_summary_tidy.csv', index=False)   # ตารางรวมทุกผลไว้ไฟล์เดียว เผื่อใช้ต่อ
+
+test = df[df.split == 'test'].set_index('config')
+full = df[df.split == 'full'].set_index('config')
+
+# หก configuration หลักที่ใช้เทียบกันในกราฟ (R4/R5 ใช้ตัวแทนที่ L=2000)
+MAIN = ['R0 · 17f + threshold มือ', 'R1 · 17f + GA', 'R2 · +BERT + threshold มือ',
+        'R3 · +BERT + GA', 'R4 · Bloom L=2000 + threshold มือ', 'R5 · Bloom L=2000 + GA']
+
+# ---------- TL;DR (คำนวณสดจากไฟล์ผล) ----------
+best = test.loc[test.F1.idxmax()]
+r0_row = test.loc['R0 · 17f + threshold มือ']
+r5_2000 = test.loc['R5 · Bloom L=2000 + GA']
+rev_drop_test = 1 - test.loc['R3 · +BERT + GA', 'REVIEW'] / test.loc['R1 · 17f + GA', 'REVIEW']
+rev_drop_full = 1 - full.loc['R3 · +BERT + GA', 'REVIEW'] / full.loc['R0 · 17f + threshold มือ', 'REVIEW']
+rec_any = rec['R3_recovered_any (MATCH or REVIEW)']
+
+print('================ TL;DR ================')
+print(f'ดีที่สุด            : {best.name}  F1 = {best.F1:.4f}  (baseline R0 = {r0_row.F1:.4f})')
+print(f'REVIEW ลดลง        : test R1→R3 = -{rev_drop_test:.0%}   |   full R0→R3 = -{rev_drop_full:.1%} '
+      f"({full.loc['R0 · 17f + threshold มือ', 'REVIEW']:,.0f} → {full.loc['R3 · +BERT + GA', 'REVIEW']:,.0f} คู่)")
+print(f"กู้ FN ที่เคยปัดตก : R3 = {rec_any}/{rec['fn_pool_size']} ({rec_any / rec['fn_pool_size']:.1%})"
+      f"   vs R2 = {rec['R2_recovered_any (MATCH or REVIEW)']}")
+print(f'ราคาของ privacy    : F1(R3) - F1(R5, L=2000) = {best.F1 - r5_2000.F1:.4f} จุด — แทบไม่เสียอะไร')
+
+# CELL 5
+disp = test.reset_index().copy()
+disp['Lsort'] = disp['L'].fillna(9999)
+disp = (disp.sort_values(['exp', 'Lsort'], ascending=[True, False])
+            .drop(columns=['exp', 'split', 'L', 'Lsort'])
+            .set_index('config'))
+
+(disp.style
+     .format({'TP': '{:,.0f}', 'FP': '{:,.0f}', 'FN': '{:,.0f}', 'REVIEW': '{:,.0f}',
+              'precision': '{:.4f}', 'recall': '{:.4f}', 'F1': '{:.4f}'})
+     .highlight_max(subset=['F1'], props='font-weight:bold; background-color:#cde2fb;')
+     .highlight_min(subset=['REVIEW'], props='font-weight:bold;')
+     .set_caption('ทุก configuration บน TEST split (191,693 scored pairs) — แถวไฮไลต์ = F1 สูงสุด, REVIEW ตัวหนา = ต่ำสุด'))
+
+# CELL 7
+d = test.loc[MAIN]
+colors = [EXP_COLORS[e] for e in d.exp]
+
+fig, ax = plt.subplots(figsize=(8.8, 3.8))
+bars = ax.barh(range(len(d)), d.F1, height=0.55, color=colors)
+ax.set_yticks(range(len(d)), d.index)
+ax.invert_yaxis()
+
+labels = ax.bar_label(bars, fmt='%.4f', padding=5, color=INK2, fontsize=9)
+best_i = list(d.F1).index(d.F1.max())
+labels[best_i].set_fontweight('bold')
+ax.text(float(d.F1.max()) + 0.075, best_i, '← ดีที่สุด', va='center', fontsize=9, color=EXP_COLORS['R3'])
+
+r0_f1 = d.iloc[0].F1
+ax.axvline(r0_f1, color=MUTED, linestyle='--', linewidth=1)
+ax.text(r0_f1 + 0.004, len(d) - 0.62, f'baseline R0 = {r0_f1:.4f}', fontsize=8.5, color=MUTED)
+
+ax.set_xlim(0, 0.97)
+ax.set_title('F1 บน TEST — R3 (BERT + GA) ดีที่สุด, R2 (BERT แต่ threshold เก่า) แย่กว่า baseline')
+style_ax(ax, grid_axis='x')
+finish(fig, 'f1_test')
+
+# CELL 9
+d = test.loc[MAIN]
+offsets = {'R0': (0, -18), 'R1': (0, 10), 'R2': (0, -18), 'R3': (12, -3), 'R4': (0, 10), 'R5': (0, -18)}
+
+fig, ax = plt.subplots(figsize=(8.8, 4.6))
+for cfg, row in d.iterrows():
+    c = EXP_COLORS[row.exp]
+    ax.scatter(row.recall, row.precision, s=95, color=c, edgecolor=SURFACE, linewidth=2, zorder=3)
+    dx, dy = offsets[row.exp]
+    ax.annotate(cfg, (row.recall, row.precision), textcoords='offset points', xytext=(dx, dy),
+                ha='center' if dx == 0 else 'left', fontsize=8.5, color=INK2)
+
+ceiling = (29247 - 3316) / 29247
+ax.axvline(ceiling, color=MUTED, linestyle='--', linewidth=1)
+ax.text(ceiling - 0.005, 0.9575, f'เพดาน recall = {ceiling:.4f}\n(blocking พลาด 3,316 คู่ — กู้ไม่ได้ใน R0–R5)',
+        ha='right', fontsize=8.5, color=MUTED)
+
+ax.set_xlim(0.50, 0.93); ax.set_ylim(0.955, 1.004)
+ax.set_xlabel('Recall'); ax.set_ylabel('Precision')
+ax.set_title('Precision–Recall (TEST) — GA เลื่อนจุดไปทางขวาโดยแทบไม่เสีย precision')
+style_ax(ax, grid_axis='both')
+finish(fig, 'pr_test')
+
+# CELL 11
+fig, axes = plt.subplots(1, 2, figsize=(10, 3.9), layout='constrained')
+panels = [(test.loc[MAIN], 'TEST (191,693 คู่)'), (full.loc[MAIN], 'FULL projection (2,073,842 คู่)')]
+for ax, (dd, title) in zip(axes, panels):
+    colors = [EXP_COLORS[e] for e in dd.exp]
+    bars = ax.barh(range(len(dd)), dd.REVIEW, height=0.55, color=colors)
+    ax.set_yticks(range(len(dd)), [c.split(' · ')[0] for c in dd.index])
+    ax.invert_yaxis()
+    ax.bar_label(bars, labels=[f'{v:,.0f}' for v in dd.REVIEW], padding=4, fontsize=9, color=INK2)
+    ax.set_xlim(0, dd.REVIEW.max() * 1.24)
+    ax.set_title(title, fontsize=10.5, fontweight='normal')
+    style_ax(ax, grid_axis='x')
+fig.suptitle('จำนวนคู่ที่ส่ง REVIEW (ภาระงานคน) — เต็มระบบ R0 → R3 ลดลง 96.8%',
+             x=0.02, ha='left', fontweight='bold', fontsize=12)
+finish(fig, 'review_workload')
+
+# CELL 13
+pool = rec['fn_pool_size']
+data = {
+    'R2 · BERT + threshold มือ': (rec['R2_recovered_to_MATCH'], rec['R2_recovered_any (MATCH or REVIEW)']),
+    'R3 · BERT + GA':            (rec['R3_recovered_to_MATCH'], rec['R3_recovered_any (MATCH or REVIEW)']),
+}
+
+fig, ax = plt.subplots(figsize=(8.8, 2.9))
+for i, (name, (to_match, any_rec)) in enumerate(data.items()):
+    segs = [(to_match, '#2a78d6', 'กู้เป็น MATCH'),
+            (any_rec - to_match, '#9ec5f4', 'กู้เป็น REVIEW'),
+            (pool - any_rec, GRID, 'ยังถูกปัดตกเหมือนเดิม')]
+    left = 0
+    for v, c, lab in segs:
+        ax.barh(i, v, left=left, height=0.5, color=c, edgecolor=SURFACE, linewidth=2,
+                label=lab if i == 0 else None)
+        left += v
+        if v >= 150:  # ป้ายตัวเลขเฉพาะ segment ที่กว้างพอ
+            ax.text(left - v / 2, i, f'{v:,}', va='center', ha='center', fontsize=8.5,
+                    color='white' if c == '#2a78d6' else INK2)
+    ax.text(pool * 1.02, i, f'{any_rec:,}/{pool:,} ({any_rec / pool:.1%})',
+            va='center', fontsize=9.5, color=INK2)
+
+ax.set_yticks(range(len(data)), list(data))
+ax.invert_yaxis()
+ax.set_xlim(0, pool * 1.30)
+ax.legend(loc='upper right', frameon=False, fontsize=8.5, ncols=3, bbox_to_anchor=(1, 1.22))
+ax.set_title(f'การกู้คืนคู่จริงที่เคยถูกปัดตก (pool = {pool:,} คู่)', pad=24)
+style_ax(ax, grid_axis='x')
+finish(fig, 'fn_recovery')
+
+# CELL 15
+Ls = r4['L_values']  # [2000, 1000, 500, 250]
+r4_f1 = [r4['per_L'][str(L)]['R4_manual']['test']['F1'] for L in Ls]
+r5_f1 = [r4['per_L'][str(L)]['R5_ga']['test']['F1'] for L in Ls]
+r3_f1 = test.loc['R3 · +BERT + GA', 'F1']
+r0_f1 = test.loc['R0 · 17f + threshold มือ', 'F1']
+
+fig, ax = plt.subplots(figsize=(8.8, 4.4))
+ax.axhline(r3_f1, color=EXP_COLORS['R3'], linestyle='--', linewidth=1)
+ax.axhline(r0_f1, color=MUTED, linestyle='--', linewidth=1)
+ax.plot(Ls, r5_f1, marker='o', markersize=8, linewidth=2, color=EXP_COLORS['R5'])
+ax.plot(Ls, r4_f1, marker='o', markersize=8, linewidth=2, color=EXP_COLORS['R4'])
+for L, y in zip(Ls, r5_f1):
+    ax.annotate(f'{y:.4f}', (L, y), textcoords='offset points', xytext=(0, 9), ha='center', fontsize=8.5, color=INK2)
+for L, y in zip(Ls, r4_f1):
+    ax.annotate(f'{y:.4f}', (L, y), textcoords='offset points', xytext=(0, -15), ha='center', fontsize=8.5, color=INK2)
+
+ax.text(2000 * 1.06, r5_f1[0], 'R5 · Bloom + GA', color=EXP_COLORS['R5'], va='center', fontsize=9.5, fontweight='bold')
+ax.text(2000 * 1.06, r4_f1[0], 'R4 · Bloom + threshold มือ', color=EXP_COLORS['R4'], va='center', fontsize=9.5, fontweight='bold')
+ax.text(238, r3_f1 + 0.0075, f'R3 (plaintext + GA) = {r3_f1:.4f}', color=EXP_COLORS['R3'], fontsize=8.5)
+ax.text(238, r0_f1 + 0.0025, f'R0 baseline = {r0_f1:.4f}', color=MUTED, fontsize=8.5)
+
+ax.set_xscale('log', base=2)
+ax.set_xticks(Ls)
+ax.xaxis.set_major_formatter(mticker.ScalarFormatter())
+ax.set_xlim(225, 5600)
+ax.set_ylim(0.70, 0.865)
+ax.set_xlabel('ความยาว Bloom filter L (บิต, log scale)')
+ax.set_ylabel('F1 (TEST)')
+ax.set_title('Privacy trade-off — L=2000 เสีย F1 เพียง 0.0044 เทียบ R3 โดยไม่เก็บชื่อ plaintext เลย')
+style_ax(ax, grid_axis='y')
+finish(fig, 'privacy_tradeoff')
+
+# CELL 17
+fig, ax = plt.subplots(figsize=(8.8, 3.8))
+for name in ('R1', 'R3'):
+    h = ga_hist[name]
+    gens  = [p['gen'] for p in h]
+    costs = [p['cost'] for p in h]
+    ax.plot(gens, costs, linewidth=2, color=EXP_COLORS[name])
+    ax.annotate(f'{name} (cost สุดท้าย {costs[-1]:,.0f})', (gens[-1], costs[-1]),
+                textcoords='offset points', xytext=(8, 0), va='center',
+                fontsize=9.5, color=EXP_COLORS[name], fontweight='bold')
+ax.margins(x=0.20)
+ax.set_xlabel('generation')
+ax.set_ylabel('best cost (val split)')
+ax.set_title('GA convergence — cost = 5·FP + 1·FN + 0.02·REVIEW')
+style_ax(ax, grid_axis='y')
+finish(fig, 'ga_convergence')
+
+# CELL 18
+gen_rows = [{'rule': 'R1 (17f)', **r1['best_genome']},
+            {'rule': 'R3 (+BERT)', **r3['best_genome']}]
+for L in r4['L_values']:
+    gen_rows.append({'rule': f'R5 (Bloom L={L})', **r4['per_L'][str(L)]['R5_best_genome']})
+
+genomes = pd.DataFrame(gen_rows).set_index('rule')
+(genomes.style
+    .format('{:.4f}')
+    .set_caption('genome ที่ GA เลือกในแต่ละการทดลอง — สังเกต t_m/t_r ของ R3/R5 ที่ต่ำกว่า R1 อย่างมีนัย'))
+
+# CELL 20
+full_main = full.loc[['R0 · 17f + threshold มือ', 'R1 · 17f + GA',
+                      'R3 · +BERT + GA', 'R5 · Bloom L=2000 + GA'], list(METRICS)]
+
+r0f, r3f = full_main.iloc[0], full_main.loc['R3 · +BERT + GA']
+print(f'R0 → R3 :  FP {r0f.FP:,.0f} → {r3f.FP:,.0f} (-{1 - r3f.FP / r0f.FP:.1%})'
+      f'   |   REVIEW {r0f.REVIEW:,.0f} → {r3f.REVIEW:,.0f} (-{1 - r3f.REVIEW / r0f.REVIEW:.1%})'
+      f'   |   F1 {r0f.F1:.4f} → {r3f.F1:.4f}')
+
+(full_main.style
+    .format({'TP': '{:,.0f}', 'FP': '{:,.0f}', 'FN': '{:,.0f}', 'REVIEW': '{:,.0f}',
+             'precision': '{:.4f}', 'recall': '{:.4f}', 'F1': '{:.4f}'})
+    .highlight_max(subset=['F1'], props='font-weight:bold; background-color:#cde2fb;')
+    .set_caption('Projection เต็มระบบ — แถวไฮไลต์ = F1 สูงสุด'))

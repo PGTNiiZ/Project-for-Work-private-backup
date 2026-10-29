@@ -1,0 +1,695 @@
+{
+  "url": "https://api.crossref.org/works/10.1186/1472-6947-9-41",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            26
+          ]
+        ],
+        "date-time": "2026-09-26T09:48:55Z",
+        "timestamp": 1790416135015,
+        "version": "4.1.0"
+      },
+      "reference-count": 51,
+      "publisher": "Springer Science and Business Media LLC",
+      "issue": "1",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2009,
+                8,
+                25
+              ]
+            ],
+            "date-time": "2009-08-25T00:00:00Z",
+            "timestamp": 1251158400000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://creativecommons.org/licenses/by/2.0"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "BMC Med Inform Decis Mak"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2009,
+            12
+          ]
+        ]
+      },
+      "DOI": "10.1186/1472-6947-9-41",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2009,
+            8,
+            25
+          ]
+        ],
+        "date-time": "2009-08-25T18:14:47Z",
+        "timestamp": 1251224087000
+      },
+      "source": "Crossref",
+      "is-referenced-by-count": 258,
+      "title": [
+        "Privacy-preserving record linkage using Bloom filters"
+      ],
+      "prefix": "10.1186",
+      "volume": "9",
+      "author": [
+        {
+          "given": "Rainer",
+          "family": "Schnell",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Tobias",
+          "family": "Bachteler",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jörg",
+          "family": "Reiher",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "297",
+      "published-online": {
+        "date-parts": [
+          [
+            2009,
+            8,
+            25
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "283_CR1",
+          "volume-title": "Data quality and record linkage techniques",
+          "author": "TN Herzog",
+          "year": "2007",
+          "unstructured": "Herzog TN, Scheuren FJ, Winkler WE: Data quality and record linkage techniques. 2007, New York: Springer"
+        },
+        {
+          "key": "283_CR2",
+          "doi-asserted-by": "publisher",
+          "first-page": "19",
+          "DOI": "10.1145/1008694.1008698",
+          "volume-title": "Proceedings of the 9th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery: 13 June 2004; Paris",
+          "author": "C Clifton",
+          "year": "2004",
+          "unstructured": "Clifton C, Kantarcioglu M, Doan A, Schadow G, Vaidya J, Elmagarmid AK, Suciu D: Privacy-preserving data integration and sharing. Proceedings of the 9th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery: 13 June 2004; Paris. Edited by: Das G, Liu B, Yu PS. 2004, New York: ACM, 19-26."
+        },
+        {
+          "key": "283_CR3",
+          "doi-asserted-by": "publisher",
+          "first-page": "121",
+          "DOI": "10.1007/978-3-540-24775-3_15",
+          "volume-title": "Advances in knowledge discovery and data mining. Proceedings of the 8th Pacific-Asia Conference: 26–28 May 2004; Sydney",
+          "author": "T Churches",
+          "year": "2004",
+          "unstructured": "Churches T, Christen P: Blind data linkage using n-gram similarity comparisons. Advances in knowledge discovery and data mining. Proceedings of the 8th Pacific-Asia Conference: 26–28 May 2004; Sydney. Edited by: Dai H, Srikant R, Zhang C. 2004, Berlin: Springer, 121-126."
+        },
+        {
+          "key": "283_CR4",
+          "doi-asserted-by": "crossref",
+          "first-page": "59",
+          "DOI": "10.1145/1077501.1077513",
+          "volume-title": "Proceedings of the 2nd International Workshop on Information Quality in Information Systems: 17 June 2005; Baltimore",
+          "author": "A Al-Lawati",
+          "year": "2005",
+          "unstructured": "Al-Lawati A, Lee D, McDaniel P: Blocking-aware private record linkage. Proceedings of the 2nd International Workshop on Information Quality in Information Systems: 17 June 2005; Baltimore. Edited by: Berti-Equille L, Batini C, Srivastava D. 2005, New York: ACM, 59-68."
+        },
+        {
+          "key": "283_CR5",
+          "doi-asserted-by": "publisher",
+          "first-page": "86",
+          "DOI": "10.1145/872757.872771",
+          "volume-title": "Proceedings of the ACM SIGMOD International Conference on Management of Data: 9–12 June 2003; San Diego",
+          "author": "R Agrawal",
+          "year": "2003",
+          "unstructured": "Agrawal R, Evfimievski A, Srikant R: Information sharing across private databases. Proceedings of the ACM SIGMOD International Conference on Management of Data: 9–12 June 2003; San Diego. Edited by: Halevy AY, Ives ZG, Doan A. 2003, New York: ACM, 86-97."
+        },
+        {
+          "key": "283_CR6",
+          "volume-title": "Proceedings of the 22nd International Conference on Data Engineering: 3–8 April 2006; Atlanta",
+          "author": "R Agrawal",
+          "year": "2006",
+          "unstructured": "Agrawal R, Asonov D, Kantarcioglu M, Li Y: Sovereign joins. Proceedings of the 22nd International Conference on Data Engineering: 3–8 April 2006; Atlanta. Edited by: Liu L, Reuter A, Whang KY, Zhang J. 2006, Los Alamitos: IEEE"
+        },
+        {
+          "key": "283_CR7",
+          "first-page": "298",
+          "volume-title": "Privacy in statistical databases. Proceedings of the UNESCO Chair in Data Privacy International Conference: 24–26 September 2008; Instanbul, Turkey",
+          "author": "M Kantarcioglu",
+          "year": "2008",
+          "unstructured": "Kantarcioglu M, Jiang W, Malin B: A privacy-preserving framework for integrating person-specific databases. Privacy in statistical databases. Proceedings of the UNESCO Chair in Data Privacy International Conference: 24–26 September 2008; Instanbul, Turkey. Edited by: Domingo-Ferrer J, Saygin Y. 2008, Berlin: Springer, 298-314."
+        },
+        {
+          "key": "283_CR8",
+          "doi-asserted-by": "publisher",
+          "first-page": "107",
+          "DOI": "10.1145/1376616.1376630",
+          "volume-title": "Proceedings of the ACM SIGMOD International Conference on Management of Data: 10–12 June 2008; Vancouver",
+          "author": "X Xiao",
+          "year": "2008",
+          "unstructured": "Xiao X, Tao Y: Dynamic anonymization: accurate statistical analysis with privacy preservation. Proceedings of the ACM SIGMOD International Conference on Management of Data: 10–12 June 2008; Vancouver. Edited by: Wang JTL. 2008, New York: ACM, 107-120."
+        },
+        {
+          "key": "283_CR9",
+          "volume-title": "Proceedings of the Network and Distributed System Security Symposium: 8–11 February 2009; San Diego, The Internet Society",
+          "author": "SSM Chow",
+          "year": "2009",
+          "unstructured": "Chow SSM, Lee JH: Two-party computation model for privacy-preserving queries over distributed databases. Proceedings of the Network and Distributed System Security Symposium: 8–11 February 2009; San Diego, The Internet Society. 2009, [ http://www.isoc.org/isoc/conferences/ndss/09/pdf/05.pdf ]"
+        },
+        {
+          "key": "283_CR10",
+          "first-page": "1",
+          "volume-title": "Advances in cryptology-CRYPTO '96. Proceedings of the 16th Annual International Cryptology Conference: 18–22 August 1996; Santa Barbara",
+          "author": "M Bellare",
+          "year": "1996",
+          "unstructured": "Bellare M, Canetti R, Krawczyk H: Keying hash functions for message authentication. Advances in cryptology-CRYPTO '96. Proceedings of the 16th Annual International Cryptology Conference: 18–22 August 1996; Santa Barbara. Edited by: Koblitz N. 1996, Berlin: Springer, 1-15."
+        },
+        {
+          "key": "283_CR11",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Churches T, Christen P: Some methods for blindfolded record linkage. BMC Med Inf Decis Mak. 2004, 4 (9):",
+          "DOI": "10.1186/1472-6947-4-9"
+        },
+        {
+          "key": "283_CR12",
+          "doi-asserted-by": "publisher",
+          "first-page": "94",
+          "DOI": "10.1145/1029179.1029203",
+          "volume-title": "Proceedings of the 2004 ACM Workshop on Privacy in the Electronic Society: 28 October 2004; Washington, DC",
+          "author": "CM O'Keefe",
+          "year": "2004",
+          "unstructured": "O'Keefe CM, Yung M, Gu L, Baxter R: Privacy-preserving data linkage protocols. Proceedings of the 2004 ACM Workshop on Privacy in the Electronic Society: 28 October 2004; Washington, DC. Edited by: De Capitani di Vimercati S, Syverson P. 2004, New York: ACM, 94-102."
+        },
+        {
+          "issue": "3",
+          "key": "283_CR13",
+          "doi-asserted-by": "crossref",
+          "first-page": "344",
+          "DOI": "10.5858/2004-128-344-ZAZPFR",
+          "volume": "128",
+          "author": "JJ Berman",
+          "year": "2004",
+          "unstructured": "Berman JJ: Zero-check: a zero-knowledge protocol for reconciling patient identities across institutions. Arch Pathol Lab Med. 2004, 128 (3): 344-346.",
+          "journal-title": "Arch Pathol Lab Med"
+        },
+        {
+          "issue": "406",
+          "key": "283_CR14",
+          "doi-asserted-by": "publisher",
+          "first-page": "414",
+          "DOI": "10.1080/01621459.1989.10478785",
+          "volume": "84",
+          "author": "MA Jaro",
+          "year": "1989",
+          "unstructured": "Jaro MA: Advances in record-linkage methodology as applied to matching the 1985 census of Tampa, Florida. J Am Stat Assoc. 1989, 84 (406): 414-420. 10.2307/2289924.",
+          "journal-title": "J Am Stat Assoc"
+        },
+        {
+          "key": "283_CR15",
+          "first-page": "323",
+          "volume-title": "Proceedings of the 1996 AMIA Annual Fall Symposium: 26–30 October 1996; Washington, DC",
+          "author": "H Bouzelat",
+          "year": "1996",
+          "unstructured": "Bouzelat H, Quantin C, Dusserre L: Extraction and anonymity protocol of medical file. Proceedings of the 1996 AMIA Annual Fall Symposium: 26–30 October 1996; Washington, DC. Edited by: Cimino JJ. 1996, Philadelphia: Hanley & Belfus, 323-327."
+        },
+        {
+          "key": "283_CR16",
+          "doi-asserted-by": "crossref",
+          "first-page": "72",
+          "DOI": "10.1055/s-0038-1633925",
+          "volume": "44",
+          "author": "C Quantin",
+          "year": "2005",
+          "unstructured": "Quantin C, Binquet C, Allaert FA, Cornet B, Pattisina R, Leteuff G, Ferdynus C, Gouyon JB: Decision analysis for the assessment of a record linkage procedure: application to a perinatal network. Methods Inf Med. 2005, 44: 72-79.",
+          "journal-title": "Methods Inf Med"
+        },
+        {
+          "key": "283_CR17",
+          "volume-title": "Proceedings of the National e-Health Privacy and Security Symposium: 24–25 October 2006; Brisbane",
+          "author": "P Christen",
+          "year": "2006",
+          "unstructured": "Christen P, Churches T: Secure health data linkage and geocoding: current approaches and research directions. Proceedings of the National e-Health Privacy and Security Symposium: 24–25 October 2006; Brisbane. Edited by: Croll P. 2006, Brisbane: Queensland University of Technology, [ http://datamining.anu.edu.au/publications/2006/ehPass2006.pdf ]"
+        },
+        {
+          "issue": "5–6",
+          "key": "283_CR18",
+          "doi-asserted-by": "publisher",
+          "first-page": "253",
+          "DOI": "10.1080/19393550802492503",
+          "volume": "17",
+          "author": "S Trepetin",
+          "year": "2008",
+          "unstructured": "Trepetin S: Privacy-preserving string comparisons in record linkage systems: a review. Information Security Journal. 2008, 17 (5–6): 253-266. 10.1080/19393550802492503.",
+          "journal-title": "Information Security Journal"
+        },
+        {
+          "key": "283_CR19",
+          "first-page": "412",
+          "volume-title": "From data to knowledge: theoretical and practical aspects of classification, data analysis, and knowledge organization",
+          "author": "W Thoben",
+          "year": "1995",
+          "unstructured": "Thoben W, Appelrath HJ, Sauer S: Record linkage of anonymous data by control numbers. From data to knowledge: theoretical and practical aspects of classification, data analysis, and knowledge organization. Edited by: Gaul W, Pfeifer D. 1995, Berlin: Springer, 412-419. [Bock H H, Gaul W and Vichi M (Series Editors): Studies in Classification, Data Analysis, and Knowledge Organization, vol 6]"
+        },
+        {
+          "issue": "4",
+          "key": "283_CR20",
+          "doi-asserted-by": "publisher",
+          "first-page": "24",
+          "DOI": "10.4018/jswis.2005100102",
+          "volume": "1",
+          "author": "M Eichelberg",
+          "year": "2005",
+          "unstructured": "Eichelberg M, Aden T, Thoben W: A distributed patient identification protocol based on control numbers with semantic annotation. International Journal on Semantic Web and Information Systems. 2005, 1 (4): 24-43.",
+          "journal-title": "International Journal on Semantic Web and Information Systems"
+        },
+        {
+          "issue": "4",
+          "key": "283_CR21",
+          "doi-asserted-by": "publisher",
+          "first-page": "333",
+          "DOI": "10.1108/eb026883",
+          "volume": "47",
+          "author": "HJ Rogers",
+          "year": "1991",
+          "unstructured": "Rogers HJ, Willett P: Searching for historical word forms in text databases using spelling-correction methods: reverse error and phonetic coding methods. J Doc. 1991, 47 (4): 333-353. 10.1108/eb026883.",
+          "journal-title": "J Doc"
+        },
+        {
+          "issue": "5",
+          "key": "283_CR22",
+          "doi-asserted-by": "publisher",
+          "first-page": "486",
+          "DOI": "10.1016/0010-4809(92)90005-U",
+          "volume": "25",
+          "author": "C Friedman",
+          "year": "1992",
+          "unstructured": "Friedman C, Sideli R: Tolerating spelling errors during patient validation. Comput Biomed Res. 1992, 25 (5): 486-509. 10.1016/0010-4809(92)90005-U.",
+          "journal-title": "Comput Biomed Res"
+        },
+        {
+          "key": "283_CR23",
+          "first-page": "70",
+          "volume-title": "Natural language processing and information systems. Proceedings of the 8th International Conference on Applications of Natural Language to Information Systems: June 2003; Burg (Spreewald), Germany",
+          "author": "R Camps",
+          "year": "2003",
+          "unstructured": "Camps R, Daude J: Improving the efficacy of approximate searching by personal-name. Natural language processing and information systems. Proceedings of the 8th International Conference on Applications of Natural Language to Information Systems: June 2003; Burg (Spreewald), Germany. Edited by: Düsterhöft A, Thalheim B. 2003, Bonn: Gesellschaft für Informatik, 70-76."
+        },
+        {
+          "key": "283_CR24",
+          "volume-title": "Chaffing and winnowing: confidentiality without encryption",
+          "author": "RL Rivest",
+          "year": "1998",
+          "unstructured": "Rivest RL: Chaffing and winnowing: confidentiality without encryption. 1998, [ http://theory.lcs.mit.edu/~rivest/chaffing.txt ]"
+        },
+        {
+          "key": "283_CR25",
+          "first-page": "497",
+          "volume-title": "Workshops Proceedings of the 6th IEEE International Conference on Data Mining: 18–22 December 2006; Hong Kong",
+          "author": "P Christen",
+          "year": "2006",
+          "unstructured": "Christen P: Privacy-preserving data linkage and geocoding: current approaches and research directions. Workshops Proceedings of the 6th IEEE International Conference on Data Mining: 18–22 December 2006; Hong Kong. Edited by: Tsumoto S. 2006, Los Alamitos: IEEE, 497-501."
+        },
+        {
+          "issue": "2",
+          "key": "283_CR26",
+          "doi-asserted-by": "publisher",
+          "first-page": "206",
+          "DOI": "10.1504/IJDMMM.2009.026076",
+          "volume": "1",
+          "author": "VS Verykios",
+          "year": "2009",
+          "unstructured": "Verykios VS, Karakasidis A, Mitrogiannis VK: Privacy preserving record linkage approaches. International Journal of Data Mining, Modelling and Management. 2009, 1 (2): 206-221. 10.1504/IJDMMM.2009.026076.",
+          "journal-title": "International Journal of Data Mining, Modelling and Management"
+        },
+        {
+          "key": "283_CR27",
+          "volume-title": "PhD thesis",
+          "author": "S Trepetin",
+          "year": "2006",
+          "unstructured": "Trepetin S: Privacy in context: the costs and benefits of a new deidentification method. PhD thesis. 2006, Massachusetts Institute of Technology, Department of Electrical Engineering and Computer Science"
+        },
+        {
+          "key": "283_CR28",
+          "doi-asserted-by": "publisher",
+          "first-page": "653",
+          "DOI": "10.1145/1247480.1247553",
+          "volume-title": "Proceedings of the ACM SIGMOD International Conference on Management of Data: 12–14 June 2007; Beijing",
+          "author": "M Scannapieco",
+          "year": "2007",
+          "unstructured": "Scannapieco M, Figotin I, Bertino E, Elmagarmid AK: Privacy preserving schema and data matching. Proceedings of the ACM SIGMOD International Conference on Management of Data: 12–14 June 2007; Beijing. Edited by: Chan CY, Ooi BC, Zhou A. 2007, New York: ACM, 653-664."
+        },
+        {
+          "key": "283_CR29",
+          "volume-title": "DIMACS Technical Report 99–50, DIMACS Center for Discrete Mathematics & Theoretical Computer Science",
+          "author": "G Hristescu",
+          "year": "1999",
+          "unstructured": "Hristescu G, Farach-Colton M: Cluster-preserving embedding of proteins. DIMACS Technical Report 99–50, DIMACS Center for Discrete Mathematics & Theoretical Computer Science. 1999, [ ftp://dimacs.rutgers.edu/pub/dimacs/TechnicalReports/TechReports/1999/99-50.ps.gz ]"
+        },
+        {
+          "key": "283_CR30",
+          "volume-title": "Technical Report CS-TR-University of Maryland 4102, Computer Science Department",
+          "author": "GR Hjaltason",
+          "year": "2000",
+          "unstructured": "Hjaltason GR, Samet H: Contractive embedding methods for similarity searching in metric spaces. Technical Report CS-TR-University of Maryland 4102, Computer Science Department. 2000, [ http://www.cs.umd.edu/~hjs/pubs/metricpruning.pdf ]"
+        },
+        {
+          "key": "283_CR31",
+          "first-page": "164",
+          "volume-title": "Bridging the digital divide: clinician consumer computer. Proceedings of the 14th Annual Health Informatics Conference: 20–22 August 2006; Sydney",
+          "author": "C Pang",
+          "year": "2006",
+          "unstructured": "Pang C, Hansen D: Improved record linkage for encrypted identifying data. Bridging the digital divide: clinician consumer computer. Proceedings of the 14th Annual Health Informatics Conference: 20–22 August 2006; Sydney. Edited by: Westbrook J, Callen J, Margelis G. 2006, Brunswick East: Health Informatics Society of Australia, 164-168. [ http://aehrc.com/pubs/papers/pdf/RP-CP-DH-improved-record-linkage-encrypted-identifying-data.pdf ]"
+        },
+        {
+          "key": "283_CR32",
+          "doi-asserted-by": "publisher",
+          "first-page": "496",
+          "DOI": "10.1109/ICDE.2008.4497458",
+          "volume-title": "Proceedings of the 24th International Conference on Data Engineering: 7–12 April 2008; Cancun, Mexico",
+          "author": "A Inan",
+          "year": "2008",
+          "unstructured": "Inan A, Kantarcioglu M, Bertino E, Scannapieco M: A hybrid approach to private record linkage. Proceedings of the 24th International Conference on Data Engineering: 7–12 April 2008; Cancun, Mexico. 2008, Los Alamitos: IEEE, 496-505."
+        },
+        {
+          "key": "283_CR33",
+          "doi-asserted-by": "publisher",
+          "first-page": "39",
+          "DOI": "10.1145/1005140.1005147",
+          "volume-title": "Proceedings of the ACM Workshop on Privacy in the Electronic Society: 30 October 2003; Washington, DC",
+          "author": "MJ Atallah",
+          "year": "2003",
+          "unstructured": "Atallah MJ, Kerschbaum F, Du W: Secure and private sequence comparisons. Proceedings of the ACM Workshop on Privacy in the Electronic Society: 30 October 2003; Washington, DC. Edited by: Samarati P, Syverson P. 2003, New York: ACM, 39-44."
+        },
+        {
+          "key": "283_CR34",
+          "volume-title": "Paper presented to the Workshop on Privacy and Security Aspects of Data Mining: 1 November 2004; Brighton",
+          "author": "P Ravikumar",
+          "year": "2004",
+          "unstructured": "Ravikumar P, Cohen WW, Fienberg SE: A secure protocol for computing string distance metrics. Paper presented to the Workshop on Privacy and Security Aspects of Data Mining: 1 November 2004; Brighton. 2004, [ http://www.cs.cmu.edu/~wcohen/postscript/psdm-2004.pdf ]"
+        },
+        {
+          "issue": "4",
+          "key": "283_CR35",
+          "doi-asserted-by": "publisher",
+          "first-page": "593",
+          "DOI": "10.3233/JCS-2005-13401",
+          "volume": "13",
+          "author": "J Vaidya",
+          "year": "2005",
+          "unstructured": "Vaidya J, Clifton C: Secure set intersection cardinality with application to association rule mining. Journal of Computer Security. 2005, 13 (4): 593-622.",
+          "journal-title": "Journal of Computer Security"
+        },
+        {
+          "key": "283_CR36",
+          "doi-asserted-by": "publisher",
+          "first-page": "1283",
+          "DOI": "10.1109/ICDE.2009.221",
+          "volume-title": "Proceedings of the 25th International Conference on Data Engineering: 29 March–2 April 2009; Shanghai",
+          "author": "M Yakout",
+          "year": "2009",
+          "unstructured": "Yakout M, Atallah MJ, Elmagarmid AK: Efficient private record linkage. Proceedings of the 25th International Conference on Data Engineering: 29 March–2 April 2009; Shanghai. 2009, 1283-1286."
+        },
+        {
+          "issue": "7",
+          "key": "283_CR37",
+          "doi-asserted-by": "publisher",
+          "first-page": "422",
+          "DOI": "10.1145/362686.362692",
+          "volume": "13",
+          "author": "BH Bloom",
+          "year": "1970",
+          "unstructured": "Bloom BH: Space/time trade-offs in hash coding with allowable errors. Communications of the ACM. 1970, 13 (7): 422-426.",
+          "journal-title": "Communications of the ACM"
+        },
+        {
+          "issue": "4",
+          "key": "283_CR38",
+          "doi-asserted-by": "publisher",
+          "first-page": "485",
+          "DOI": "10.1080/15427951.2004.10129096",
+          "volume": "1",
+          "author": "A Broder",
+          "year": "2003",
+          "unstructured": "Broder A, Mitzenmacher M: Network applications of Bloom filters: a survey. Internet Mathematics. 2003, 1 (4): 485-509.",
+          "journal-title": "Internet Mathematics"
+        },
+        {
+          "key": "283_CR39",
+          "first-page": "25",
+          "volume-title": "Proceedings of the Eight International Workshop on the Web & Databases: 16–17 June 2005; Baltimore",
+          "author": "N Jain",
+          "year": "2005",
+          "unstructured": "Jain N, Dahlin M, Tewari R: Using Bloom filters to refine web search results. Proceedings of the Eight International Workshop on the Web & Databases: 16–17 June 2005; Baltimore. Edited by: Doan A, Neven F, McCann R, Bex GJ. 2005, 25-30."
+        },
+        {
+          "key": "283_CR40",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1017/CBO9780511813603",
+          "volume-title": "Probability and computing: an introduction to randomized algorithms and probabilistic analysis",
+          "author": "M Mitzenmacher",
+          "year": "2005",
+          "unstructured": "Mitzenmacher M, Upfal E: Probability and computing: an introduction to randomized algorithms and probabilistic analysis. 2005, New York: Cambridge University Press"
+        },
+        {
+          "key": "283_CR41",
+          "doi-asserted-by": "publisher",
+          "first-page": "456",
+          "DOI": "10.1007/11841036_42",
+          "volume-title": "Algorithms-ESA 2006. Proceedings of the 14th Annual European Symposium: 11–13 September 2006; Zürich",
+          "author": "A Kirsch",
+          "year": "2006",
+          "unstructured": "Kirsch A, Mitzenmacher M: Less hashing, same performance: building a better Bloom filter. Algorithms-ESA 2006. Proceedings of the 14th Annual European Symposium: 11–13 September 2006; Zürich. Edited by: Azar Y, Erlebach T. 2006, Berlin: Springer, 456-467."
+        },
+        {
+          "key": "283_CR42",
+          "volume-title": "Applied cryptography: protocols, algorithms, and source code in C",
+          "author": "B Schneier",
+          "year": "1996",
+          "unstructured": "Schneier B: Applied cryptography: protocols, algorithms, and source code in C. 1996, New York: Wiley, 2",
+          "edition": "2"
+        },
+        {
+          "issue": "3",
+          "key": "283_CR43",
+          "doi-asserted-by": "publisher",
+          "first-page": "297",
+          "DOI": "10.2307/1932409",
+          "volume": "26",
+          "author": "LR Dice",
+          "year": "1945",
+          "unstructured": "Dice LR: Measures of the amount of ecologic association between species. Ecology. 1945, 26 (3): 297-302.",
+          "journal-title": "Ecology"
+        },
+        {
+          "key": "283_CR44",
+          "volume-title": "Introduction to modern information retrieval",
+          "author": "G Salton",
+          "year": "1983",
+          "unstructured": "Salton G, McGill MJ: Introduction to modern information retrieval. 1983, New York: McGraw-Hill"
+        },
+        {
+          "key": "283_CR45",
+          "volume-title": "Modern information retrieval",
+          "author": "R Baeza-Yates",
+          "year": "1999",
+          "unstructured": "Baeza-Yates R, Ribeiro-Neto B: Modern information retrieval. 1999, Harlow: Addison-Wesley"
+        },
+        {
+          "key": "283_CR46",
+          "first-page": "355",
+          "volume-title": "Business survey methods",
+          "author": "WE Winkler",
+          "year": "1995",
+          "unstructured": "Winkler WE: Matching and record linkage. Business survey methods. Edited by: Cox BG, Binder DA, Chinnappa BN, Christianson A, Colledge MJ, Kott PS. 1995, New York: Wiley, 355-384."
+        },
+        {
+          "key": "283_CR47",
+          "volume-title": "The art of computer programming. Sorting and searching",
+          "author": "DE Knuth",
+          "year": "1998",
+          "unstructured": "Knuth DE: The art of computer programming. Sorting and searching. 1998, Reading: Addison-Wesley, 2",
+          "edition": "2"
+        },
+        {
+          "key": "283_CR48",
+          "doi-asserted-by": "publisher",
+          "first-page": "109",
+          "DOI": "10.1007/11508069_15",
+          "volume-title": "Proceedings of the Sixth International Conference on Intelligent Data Engineering and Automated Learning: 6–8 July 2005; Brisbane, Australia",
+          "author": "P Christen",
+          "year": "2005",
+          "unstructured": "Christen P: Probabilistic data generation for deduplication and data linkage. Proceedings of the Sixth International Conference on Intelligent Data Engineering and Automated Learning: 6–8 July 2005; Brisbane, Australia. Edited by: Gallagher M, Hogan JM, Maire F. 2005, Berlin: Springer, 109-116."
+        },
+        {
+          "issue": "1–2",
+          "key": "283_CR49",
+          "first-page": "125",
+          "volume": "33",
+          "author": "R Schnell",
+          "year": "2004",
+          "unstructured": "Schnell R, Bachteler T, Bender S: A toolbox for record linkage. Austrian Journal of Statistics. 2004, 33 (1–2): 125-133.",
+          "journal-title": "Austrian Journal of Statistics"
+        },
+        {
+          "key": "283_CR50",
+          "volume-title": "Internet RFC 2104",
+          "author": "H Krawczyk",
+          "year": "1997",
+          "unstructured": "Krawczyk H, Bellare M, Canetti R: HMAC: keyed-hashing for message authentication. Internet RFC 2104. 1997, [ http://tools.ietf.org/html/rfc2104 ]"
+        },
+        {
+          "key": "283_CR51",
+          "doi-asserted-by": "publisher",
+          "first-page": "240",
+          "DOI": "10.1145/1516360.1516389",
+          "volume-title": "Proceedings of the 12th International Conference on Extending Database Technology: 24–26 March 2009; Saint Petersburg, Russia",
+          "author": "R Dewri",
+          "year": "2009",
+          "unstructured": "Dewri R, Ray I, Ray I, Whitley D: On the comparison of microdata disclosure control algorithms. Proceedings of the 12th International Conference on Extending Database Technology: 24–26 March 2009; Saint Petersburg, Russia. Edited by: Kersten M, Novikov B, Teubner J, Polutin V, Manegold S. 2009, New York: ACM, 240-251."
+        }
+      ],
+      "container-title": [
+        "BMC Medical Informatics and Decision Making"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://link.springer.com/article/10.1186/1472-6947-9-41/fulltext.html",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://link.springer.com/content/pdf/10.1186/1472-6947-9-41.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://link.springer.com/content/pdf/10.1186/1472-6947-9-41",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        },
+        {
+          "URL": "http://link.springer.com/content/pdf/10.1186/1472-6947-9-41.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            10
+          ]
+        ],
+        "date-time": "2021-10-10T01:20:46Z",
+        "timestamp": 1633828846000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-9-41"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2009,
+            8,
+            25
+          ]
+        ]
+      },
+      "references-count": 51,
+      "journal-issue": {
+        "issue": "1",
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              12
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "283"
+      ],
+      "URL": "https://doi.org/10.1186/1472-6947-9-41",
+      "relation": {},
+      "ISSN": [
+        "1472-6947"
+      ],
+      "issn-type": [
+        {
+          "value": "1472-6947",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2009,
+            8,
+            25
+          ]
+        ]
+      },
+      "article-number": "41"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+
+## backup@ab93b36:experiments/icsec_final/authoritative_run_v2/real_adapters.py
+1: """Real-artifact entity routing and lazy sealed-label boundary for v2."""
+2: from __future__ import annotations
+3: 
+12: ROLES = ("TRAIN", "CALIBRATION", "POLICY_VALIDATION", "SEALED_TEST")
+13: PAIR_COLUMNS = ("profile_row_id_a", "profile_row_id_b", "pair_type")
+14: FORBIDDEN_LABEL_COLUMNS = {"actual", "label", "ground_truth"}
+15: 
+16: 
+19: 
+20: 
+21: def entity_digest(entity: object) -> str:
+22:     value = str(entity).strip()
+23:     if not value:
+24:         raise AdapterError("missing entity")
+25:     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+26: 
+27: 
+28: def canonical_pair_key(left: object, right: object) -> str:
+29:     try:
+30:         a, b = int(left), int(right)
+37: 
+38: 
+39: def build_entity_role_map(profiles: pd.DataFrame, manifest: dict, *, entity_hash: Callable[[object], str] = entity_digest) -> dict[int, str]:
+40:     required = {"profile_row_id", "user_folder"}
+41:     if not required.issubset(profiles.columns):
+43:     if tuple(manifest.get("roles", ())) != ROLES:
+44:         raise AdapterError("manifest has invalid roles")
+45:     grouped = manifest.get("entity_role_hashes")
+46:     if not isinstance(grouped, dict):
+47:         raise AdapterError("manifest lacks entity_role_hashes")
+48:     entity_roles: dict[str, str] = {}
+49:     for role in ROLES:
+50:         keys = grouped.get(role)
+52:             raise AdapterError(f"manifest missing role {role}")
+53:         for key in keys:
+54:             if key in entity_roles:
+55:                 raise AdapterError(f"conflicting role assignment for entity hash {key}")
+56:             entity_roles[key] = role
+57:     if profiles.profile_row_id.duplicated().any():
+58:         raise AdapterError("duplicate profile-row identifier")
+59:     result: dict[int, str] = {}
+60:     for row in profiles[["profile_row_id", "user_folder"]].itertuples(index=False):
+61:         entity = str(row.user_folder).strip()
+62:         if not entity:
+63:             raise AdapterError("missing entity in profile routing input")
+64:         role = entity_roles.get(entity_hash(entity))
+65:         if role is None:
+66:             raise AdapterError("unknown entity in frozen role manifest")
+67:         result[int(row.profile_row_id)] = role
+68:     return result
+69: 
+70: 
+71: def route_pairs(pairs: pd.DataFrame, profiles: pd.DataFrame, entity_roles: dict[int, str]) -> tuple[pd.DataFrame, dict[str, int]]:
+72:     if not set(PAIR_COLUMNS).issubset(pairs.columns):
+73:         raise AdapterError(f"pairs missing {sorted(set(PAIR_COLUMNS) - set(pairs.columns))}")
+74:     if FORBIDDEN_LABEL_COLUMNS.intersection(pairs.columns):
+75:         raise AdapterError("label-dependent role routing is forbidden")
+76:     routed: list[dict[str, object]] = []
+77:     drops = 0
+78:     for row in pairs[list(PAIR_COLUMNS)].itertuples(index=False):
+79:         a, b = int(row.profile_row_id_a), int(row.profile_row_id_b)
+80:         if a not in entity_roles or b not in entity_roles:
+81:             raise AdapterError("unknown profile entity in candidate pair")
+82:         left, right = entity_roles[a], entity_roles[b]
+83:         if left != right:
+84:             drops += 1
+85:             continue
+86:         routed.append({"profile_row_id_a": a, "profile_row_id_b": b, "pair_type": row.pair_type,
+92:         raise AdapterError("invalid routed role")
+93:     report = {role: int((result.role == role).sum()) for role in ROLES}
+94:     report["cross_role_dropped"] = drops
+95:     report["input_pairs"] = int(len(pairs))
+96:     report["same_role_pairs"] = int(len(result))
+97:     if report["input_pairs"] != report["same_role_pairs"] + drops:
+98:         raise AdapterError("pair routing accounting mismatch")
+99:     return result, report
+101: 
+102: @dataclass
+103: class LazySealedLabelStore:
+104:     """The only loader that may open a real sealed-test label artifact."""
+105: 
+106:     path: str | Path
+108:     file_reads: int = 0
+109: 
+110:     def read(self, pair_keys: list[str], *, phase: str) -> pd.DataFrame:
+111:         allowed = phase == "FINAL_EVALUATION"
+112:         self.audit.append({"phase": phase, "resource": "sealed_test_labels", "allowed": allowed,
+113:                            "source": f"{inspect.getmodule(self).__name__}.LazySealedLabelStore.read"})
+114:         if not allowed:
+115:             raise AdapterError("sealed labels may be opened only during FINAL_EVALUATION")
+116:         path = Path(self.path)
+117:         if not path.is_file():
+118:             raise AdapterError("sealed label artifact is missing")
+119:         labels = pd.read_parquet(path)
+120:         self.file_reads += 1
+121:         if set(labels.columns) != {"pair_key", "actual"}:
+122:             raise AdapterError("sealed label artifact has invalid schema")
+123:         if labels.pair_key.duplicated().any():
+124:             raise AdapterError("duplicate sealed-label pair key")
+125:         requested = pd.DataFrame({"pair_key": pair_keys})
+126:         if requested.pair_key.duplicated().any():
+127:             raise AdapterError("duplicate prediction pair key")
+128:         joined = requested.merge(labels, on="pair_key", how="left", validate="one_to_one", sort=False)
+129:         if joined.actual.isna().any() or len(joined) != len(requested):
+130:             raise AdapterError("missing expected sealed-test label")
+131:         return joined
+132: 
+133:     @property
+134:     def pre_final_reads(self) -> int:
+135:         return self.file_reads - sum(bool(row["allowed"]) for row in self.audit)
+136: 
+137: 
+138: def assert_label_free_artifacts(paths: list[str | Path]) -> None:
+139:     """Reject alternate label-bearing candidate, feature, or prediction caches."""
+140:     for raw in paths:
+141:         path = Path(raw)
+143:             raise AdapterError(f"required public artifact is missing: {path}")
+144:         columns = set(pd.read_parquet(path).columns)
+145:         hidden = FORBIDDEN_LABEL_COLUMNS.intersection(columns)
+146:         if hidden:
+147:             raise AdapterError(f"hidden test-label cache path: {path.name} contains {sorted(hidden)}")
+148: 
+149: 
+150: def safe_final_join(predictions: pd.DataFrame, labels: LazySealedLabelStore, *, phase: str) -> pd.DataFrame:
+151:     if FORBIDDEN_LABEL_COLUMNS.intersection(predictions.columns):
+152:         raise AdapterError("sealed prediction input contains a label column")
+153:     if "pair_key" not in predictions.columns or predictions.pair_key.duplicated().any():
+154:         raise AdapterError("duplicate or missing prediction pair key")
+155:     if not predictions.pair_key.astype(str).str.fullmatch(r"[0-9a-f]{64}").all():
+156:         raise AdapterError("invalid safe pair key")
+157:     label_rows = labels.read(predictions.pair_key.astype(str).tolist(), phase=phase)
+158:     result = predictions.merge(label_rows, on="pair_key", how="left", validate="one_to_one", sort=False)
+159:     if len(result) != len(predictions) or result.actual.isna().any():
+160:         raise AdapterError("incomplete final label join")
+161:     return result

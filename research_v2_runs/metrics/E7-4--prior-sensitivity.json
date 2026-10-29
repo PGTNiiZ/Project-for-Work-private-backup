@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 1.0,
+      "assumed_prior": 0.061686164511641696,
+      "reweighted_precision": 0.99690534628108,
+      "assumed_expected_cost_per_pair": 0.004139130236482635,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 0.5,
+      "assumed_prior": 0.030843082255820848,
+      "reweighted_precision": 0.9936282600080659,
+      "assumed_expected_cost_per_pair": 0.0026586867825586264,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 0.1,
+      "assumed_prior": 0.00616861645116417,
+      "reweighted_precision": 0.9681673244379461,
+      "assumed_expected_cost_per_pair": 0.00147433201941942,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 1.0,
+      "assumed_prior": 0.00032554209267046316,
+      "reweighted_precision": 0.9969053462810799,
+      "assumed_expected_cost_per_pair": 4.478206425506657e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.5,
+      "assumed_prior": 0.00016277104633523158,
+      "reweighted_precision": 0.993828788774959,
+      "assumed_expected_cost_per_pair": 2.5088814103344733e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.1,
+      "assumed_prior": 3.255420926704632e-05,
+      "reweighted_precision": 0.9698834681866509,
+      "assumed_expected_cost_per_pair": 9.334213981967261e-06,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.19999728733918207,
+      "assumed_prior": 6.510753544881326e-05,
+      "reweighted_precision": 0.9847118019463721,
+      "assumed_expected_cost_per_pair": 1.3272757170095497e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 6.54099858365953e-06
+}

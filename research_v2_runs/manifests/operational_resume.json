@@ -1,0 +1,8 @@
+{
+  "resume_created_utc": "2026-10-25T22:47:28+00:00",
+  "operational_budget_minutes_assumption": 120,
+  "authorization": "Direct user message: continue the task",
+  "reason": "Original operational assumption expired during conversation gap; no researcher DEADLINE was provided. Resume local execution without changing scientific budgets or original G4 protocol hashes.",
+  "scientific_budgets_unchanged": true,
+  "G4_protocol_modified": false
+}

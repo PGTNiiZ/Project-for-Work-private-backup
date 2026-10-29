@@ -1,0 +1,31 @@
+{
+  "features": [
+    {
+      "feature": "fullname_cosine",
+      "candidate_AP": 0.8252576820748557
+    },
+    {
+      "feature": "fullname_both_present",
+      "candidate_AP": 0.06241589896066579
+    },
+    {
+      "feature": "fullname_one_missing",
+      "candidate_AP": 0.06078387455031571
+    },
+    {
+      "feature": "bio_cosine",
+      "candidate_AP": 0.19932996234906805
+    },
+    {
+      "feature": "bio_both_present",
+      "candidate_AP": 0.05833735172072951
+    },
+    {
+      "feature": "bio_one_missing",
+      "candidate_AP": 0.06666928824299004
+    }
+  ],
+  "n_pairs": 351494,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.13826062500083935
+}

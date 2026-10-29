@@ -1,0 +1,8 @@
+{
+  "candidate_AP": 0.0636024554849838,
+  "summary_sha256": "8df78d9fcaa072dbca59f56cfcb3d05db3e46b64e137aa64c0ee9b9f30e4994e",
+  "name": "LR-lexical-single-location",
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.01701975000105449
+}

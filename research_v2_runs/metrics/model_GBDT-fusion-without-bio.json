@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-fusion-without-bio",
+  "exp_id": "E5-4",
+  "learner": "GBDT",
+  "feature": "fusion",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.28297338396242927
+  },
+  "group": null,
+  "exclude_group": "bio",
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.9737667567683117,
+    0.9739060205765622,
+    0.9738161522965697,
+    0.9735004154760155,
+    0.9736209096925588
+  ],
+  "seed_AP_SD": 0.00016128417033275176,
+  "mean_score_AP": 0.9744091004462285,
+  "model_paths": [
+    "artifacts/model_GBDT-fusion-without-bio_seed11.pkl",
+    "artifacts/model_GBDT-fusion-without-bio_seed23.pkl",
+    "artifacts/model_GBDT-fusion-without-bio_seed42.pkl",
+    "artifacts/model_GBDT-fusion-without-bio_seed71.pkl",
+    "artifacts/model_GBDT-fusion-without-bio_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-fusion-without-bio_seed11.pkl": "b74c6fc450346531f08c856c156ddea6489c301202a960ebedba989f6ae5b7a4",
+    "artifacts/model_GBDT-fusion-without-bio_seed23.pkl": "384f4e05148a6d2b092981eb2b616ae13a70cafb9d251bc0319cf36c65e0a9e1",
+    "artifacts/model_GBDT-fusion-without-bio_seed42.pkl": "e5f32021f455d3e47e68469f6918de9a666488e8d5ef634f77da9974c03ae6c3",
+    "artifacts/model_GBDT-fusion-without-bio_seed71.pkl": "f60426200af76c7f7564feb18e1c15dfb8ab0817a913e5c51a98ce028f1e3f82",
+    "artifacts/model_GBDT-fusion-without-bio_seed101.pkl": "0cb9f3ec0eafdfe56484bda15425a825162849e01de062dd6be3cae6df2b3d59"
+  },
+  "oof_path": "artifacts/oof_GBDT-fusion-without-bio.npz",
+  "oof_sha256": "0243b83264f21189143eb0e6d44c80a20b3135e5320c64e4d7632ca1e57d44b3",
+  "operating_points": {
+    "validation_F1_threshold": 0.9,
+    "validation_F1": 0.9476899579992364,
+    "precision_target_threshold": 0.6019638628823967,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.974409100446235,
+    "precision": 0.8677090357383682,
+    "recall": 0.9542547274749722,
+    "f1": 0.9089263641179588,
+    "tp": 20589,
+    "fp": 3139,
+    "tn": 326779,
+    "fn": 987,
+    "automatic_fn": 987,
+    "utility_fn": 987,
+    "rejected_positive_fn": 987,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9542547274749722,
+    "raw_cost": 7265.0,
+    "cost_per_pair": 0.02066891611236607,
+    "brier": 0.009153288395506437,
+    "ece15_equalmass": 0.017620346074645337
+  }
+}

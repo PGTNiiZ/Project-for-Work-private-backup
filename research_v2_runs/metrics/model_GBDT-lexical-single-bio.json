@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-lexical-single-bio",
+  "exp_id": "E5-5",
+  "learner": "GBDT",
+  "feature": "lexical",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.7025780325534994
+  },
+  "group": "bio",
+  "exclude_group": null,
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.2828462938634527,
+    0.28109943971358564,
+    0.28119950427192864,
+    0.28181577928176055,
+    0.28121823033359955
+  ],
+  "seed_AP_SD": 0.000733159032636444,
+  "mean_score_AP": 0.2840302962207124,
+  "model_paths": [
+    "artifacts/model_GBDT-lexical-single-bio_seed11.pkl",
+    "artifacts/model_GBDT-lexical-single-bio_seed23.pkl",
+    "artifacts/model_GBDT-lexical-single-bio_seed42.pkl",
+    "artifacts/model_GBDT-lexical-single-bio_seed71.pkl",
+    "artifacts/model_GBDT-lexical-single-bio_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-lexical-single-bio_seed11.pkl": "37f237970259ba51bd61cda6c5f04df0fc062de5451a0bbf7256cc2572e99d1e",
+    "artifacts/model_GBDT-lexical-single-bio_seed23.pkl": "02c38b379d6437ac615a93f4a6e60bbca9f67b30596ce6e383f261a700eb8ae5",
+    "artifacts/model_GBDT-lexical-single-bio_seed42.pkl": "4dcf81836e2ad7e54537cca605729d1726488cc82ee91418c380b52edd899a5b",
+    "artifacts/model_GBDT-lexical-single-bio_seed71.pkl": "0347d48f66a411d7ce1004705fd940134255d09d507523bb51be24acd2d48522",
+    "artifacts/model_GBDT-lexical-single-bio_seed101.pkl": "fde9d707a330129c00c09d831edd2161a777f5b1105be8a87d1a9ff7a0e0d15b"
+  },
+  "oof_path": "artifacts/oof_GBDT-lexical-single-bio.npz",
+  "oof_sha256": "c5835aa6f43f77a0fea6fcf00ed75d449b78702dae9cd7e994afaff17ead964d",
+  "operating_points": {
+    "validation_F1_threshold": 0.44,
+    "validation_F1": 0.26902012144302895,
+    "precision_target_threshold": 0.9257014333637258,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.2840302962207116,
+    "precision": 0.48267055819044147,
+    "recall": 0.1839543937708565,
+    "f1": 0.266384778012685,
+    "tp": 3969,
+    "fp": 4254,
+    "tn": 325664,
+    "fn": 17607,
+    "automatic_fn": 17607,
+    "utility_fn": 17607,
+    "rejected_positive_fn": 17607,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.1839543937708565,
+    "raw_cost": 26115.0,
+    "cost_per_pair": 0.07429714305222848,
+    "brier": 0.08144129948416924,
+    "ece15_equalmass": 0.1503010407617233
+  }
+}

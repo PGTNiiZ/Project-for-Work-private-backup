@@ -1,0 +1,103 @@
+[
+  {
+    "family": "lexical",
+    "repo": "main",
+    "paths": [
+      "match_profile.py",
+      "enhanced_matching.py"
+    ],
+    "commits": [
+      "3472b45e1a2573d664edbc16e117934e8fd7f22d 2026-02-16 update",
+      "64d3b0becf00bbfbed34cdccf051135d738005dd 2026-01-14 initial project: profile matching and evaluation",
+      "574b5ffaa0f5413c48fe93bd4a71db41f7fa2323 2026-01-14 initial project: profile matching and evaluation"
+    ]
+  },
+  {
+    "family": "bigram",
+    "repo": "main",
+    "paths": [
+      "bigram_full_pipeline.py",
+      "bigram_username_and_fullname/bigram_full_pipeline.py"
+    ],
+    "commits": [
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03",
+      "08f4c5e454f11b5800403fcb2f60759d1aee33ef 2026-03-12 Add combined training matrix generation and outputs",
+      "e57ffcff25620af2b53a2932c436d99aea775a10 2026-03-10 10/30 Backup",
+      "397f70eb52ed4553f9e04bd3a36a9a40cc3da8bd 2026-02-24 Add location mapping and bigram pipeline results with location features",
+      "3472b45e1a2573d664edbc16e117934e8fd7f22d 2026-02-16 update"
+    ]
+  },
+  {
+    "family": "sbert",
+    "repo": "main",
+    "paths": [
+      "vector_embredding.ipynb",
+      "bio_vector/sbert_mpnet_matching.ipynb"
+    ],
+    "commits": [
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03",
+      "08f4c5e454f11b5800403fcb2f60759d1aee33ef 2026-03-12 Add combined training matrix generation and outputs",
+      "e57ffcff25620af2b53a2932c436d99aea775a10 2026-03-10 10/30 Backup",
+      "7dcc1ddc8b4b080ec419eddbb59d7d341713c58b 2026-02-24 Vector and Picture"
+    ]
+  },
+  {
+    "family": "R0R6",
+    "repo": "main",
+    "paths": [
+      "exp_lib.py",
+      "exp_r1_ga_redecision.py",
+      "exp_r2_bert_feature.py",
+      "exp_r4_bloom_privacy.py",
+      "exp_r6_bert_er.py"
+    ],
+    "commits": [
+      "1f57da1cbd31a14f97aafee30e41ed354a02f9c1 2026-08-10 Sync latest experiment code"
+    ]
+  },
+  {
+    "family": "neural_v2",
+    "repo": "main",
+    "paths": [
+      "train_data/v2",
+      "Train-Data/v2"
+    ],
+    "commits": [
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03",
+      "70264ef6549017feafaa9fe7085b059f947cab57 2026-03-18 Pipeline v2: improve blocking recall, fix merge to include POSSIBLE_MATCH",
+      "fcdf451fa25ebded100174017c8aba5c632ea992 2026-03-17 Reorganize: move v2 notebooks to Train-Data/v2/ folder"
+    ]
+  },
+  {
+    "family": "classical",
+    "repo": "main",
+    "paths": [
+      "train_data/leakage_safe_experiment/run_experiment.py",
+      "pub_multi/bench_classical_leaksafe.py"
+    ],
+    "commits": [
+      "15712887221554f3aa19ce45577300b72964bf20 2026-08-06 Upload latest project code",
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03"
+    ]
+  },
+  {
+    "family": "multimodal",
+    "repo": "main",
+    "paths": [
+      "train_data/stage7_13_multimodal_suite/run_multimodal_suite.py"
+    ],
+    "commits": [
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03"
+    ]
+  },
+  {
+    "family": "crm",
+    "repo": "main",
+    "paths": [
+      "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py"
+    ],
+    "commits": [
+      "bc0cb2af6d48cdd1848884307ab28a86bb04ae8b 2026-03-21 Backup 21/03"
+    ]
+  }
+]

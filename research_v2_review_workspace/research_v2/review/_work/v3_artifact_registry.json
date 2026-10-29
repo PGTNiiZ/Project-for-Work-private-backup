@@ -1,0 +1,135 @@
+{
+  "main:pub_multi/ref/main_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/main_report.json",
+    "sha256": "5ca507f49d4e60774f456328d6c7887d263e451aa7f15f298aecbd7551ecc435",
+    "bytes": 5813
+  },
+  "main:pub_multi/ref/full_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/full_report.json",
+    "sha256": "a3b254c0f2feb7e71ec8c5ff4b1b9761b029e65ae402076cf51df8b023a33441",
+    "bytes": 50804
+  },
+  "main:pub_multi/ref/crm_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/crm_report.json",
+    "sha256": "4274eb9d389b1871c66fbfe106caff3f57b4691ff863ac53b44ecd2581c70aec",
+    "bytes": 1446
+  },
+  "main:pub_multi/ref/base_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/base_report.json",
+    "sha256": "27760e483f1d25b1c8d142dbdefad3d715dd50ca488d503215386033a017216f",
+    "bytes": 5819
+  },
+  "main:pub_multi/ref/img_stats_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/img_stats_report.json",
+    "sha256": "ce39c70ebafeaec3458af358c34bea5abcac9282ad4dfa9ce2f618b6dc2d5424",
+    "bytes": 5795
+  },
+  "main:pub_multi/ref/strict_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/strict_report.json",
+    "sha256": "ab5c3d8c43ea9b69b63a1895195a25824fff32707a6896434164f845088697c7",
+    "bytes": 1510
+  },
+  "main:pub_multi/ref/leak_safe_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/leak_safe_report.json",
+    "sha256": "abb04dc625aeef73a916e1ec9efc81865e46e049e8699fefb93bc3b6a48d1c71",
+    "bytes": 6186
+  },
+  "main:pub_multi/ref/suite_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/ref/suite_report.json",
+    "sha256": "496d9e33d3a1ed807d2871af27e675aef62da6d74feb09072830001948f6fbdb",
+    "bytes": 4081
+  },
+  "main:pair_stats.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pair_stats.json",
+    "sha256": "6d99a6392566e2d65b1adc8ad2d5f818913b2de6afe7b4ab8868f25151445728",
+    "bytes": 207
+  },
+  "main:train_data/pair_stats.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "train_data/pair_stats.json",
+    "sha256": "6d99a6392566e2d65b1adc8ad2d5f818913b2de6afe7b4ab8868f25151445728",
+    "bytes": 207
+  },
+  "main:data/processed/pipeline_report.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "data/processed/pipeline_report.json",
+    "sha256": "9fcd3a97fd90598e8c554c48cbfee964c22d1d96d4fe747c816411fb407f29d4",
+    "bytes": 759
+  },
+  "main:train_data/stage8_labeling.ipynb": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "train_data/stage8_labeling.ipynb",
+    "sha256": "8cd55dc751c440ff574a2976490e4eadaea7511169f96304ed4477c9f306186d",
+    "bytes": 16709
+  },
+  "main:train_data/stage10_dataset.ipynb": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "train_data/stage10_dataset.ipynb",
+    "sha256": "b2a873f7f6492c4f3a16a58c54b81bac9937c2926ae93bce5a85b87f91c090a4",
+    "bytes": 16274
+  },
+  "main:train_data/v2/stage8_labeling_v2.ipynb": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "train_data/v2/stage8_labeling_v2.ipynb",
+    "sha256": "a86508185d9c3374ef0ef67e5ab862c8c939104869b0f89a304fb1d5bd3f464a",
+    "bytes": 20056
+  },
+  "main:pub_multi/res/feat_imp.csv": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/res/feat_imp.csv",
+    "sha256": "0d9c3ded2ec634d4809b85d45982f461b63592a7d5a5d6eac8d1901dd366c99f",
+    "bytes": 1330
+  },
+  "main:pub_multi/res/thr_sweep.csv": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/res/thr_sweep.csv",
+    "sha256": "49ffbb9f69a9237782c8fcac6e0446839c96acfd8e9427b1aa78c84c6c520ea2",
+    "bytes": 1302
+  },
+  "main:pub_multi/res/classical_leaksafe_cmp.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/res/classical_leaksafe_cmp.json",
+    "sha256": "d521ddbce48886024a52b054879285914aaaa204ba3d2615a835d9d0419455d1",
+    "bytes": 1760
+  },
+  "main:experiments/r3_results.json": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "experiments/r3_results.json",
+    "sha256": "a34ed05ff455370073b90412c6a0b792dbd00ac2c1544f3f9ff48e8203770523",
+    "bytes": 655
+  },
+  "main:pub_multi/doc/ch04_results_formal_th.md": {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "pub_multi/doc/ch04_results_formal_th.md",
+    "sha256": "0bc37f5d9a8829dd65dd0f050fbb8c830b8003125a3082cfbcf8285404beba0f",
+    "bytes": 65050
+  }
+}

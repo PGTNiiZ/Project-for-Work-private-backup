@@ -1,0 +1,1251 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=A%20Graph%20Matching%20Attack%20on%20Privacy-Preserving%20Record%20Linkage&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 1033019,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                28
+              ]
+            ],
+            "date-time": "2026-07-28T15:10:02Z",
+            "timestamp": 1785251402095,
+            "version": "3.55.0"
+          },
+          "publisher-location": "New York, NY, USA",
+          "reference-count": 35,
+          "publisher": "ACM",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    10,
+                    19
+                  ]
+                ],
+                "date-time": "2020-10-19T00:00:00Z",
+                "timestamp": 1603065600000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "funder": [
+            {
+              "name": "Australian Research Council",
+              "award": [
+                "DP160101934"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "DP160101934"
+                  ]
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2020,
+                10,
+                19
+              ]
+            ]
+          },
+          "DOI": "10.1145/3340531.3411931",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                10,
+                19
+              ]
+            ],
+            "date-time": "2020-10-19T05:31:04Z",
+            "timestamp": 1603085464000
+          },
+          "page": "1485-1494",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 25,
+          "title": [
+            "A Graph Matching Attack on Privacy-Preserving Record Linkage"
+          ],
+          "prefix": "10.1145",
+          "author": [
+            {
+              "given": "Anushka",
+              "family": "Vidanage",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "The Australian National University, Canberra, Australia"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Peter",
+              "family": "Christen",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "The Australian National University, Canberra, Australia"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Thilina",
+              "family": "Ranbaduge",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "The Australian National University, Canberra, Australia"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University Duisburg-Essen, Duisburg, Germany"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2020,
+                10,
+                19
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_2_2_1_1",
+              "volume-title": "Managing and Mining Graph Data. Advances in Database Systems",
+              "author": "Aggarwal Charu",
+              "unstructured": "Charu Aggarwal and Haixun Wang . 2010. Managing and Mining Graph Data. Advances in Database Systems , Vol. 40 . Springer . Charu Aggarwal and Haixun Wang. 2010. Managing and Mining Graph Data. Advances in Database Systems, Vol. 40. Springer."
+            },
+            {
+              "key": "e_1_3_2_2_2_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1327452.1327494"
+            },
+            {
+              "key": "e_1_3_2_2_3_1",
+              "article-title": "The past, present and future of the German Record Linkage Center",
+              "volume": "239",
+              "author": "Antoni Manfred",
+              "year": "2017",
+              "unstructured": "Manfred Antoni and Rainer Schnell . 2017 . The past, present and future of the German Record Linkage Center . Journal of Economics and Statistics , Vol. 239 , 2 (2017). Manfred Antoni and Rainer Schnell. 2017. The past, present and future of the German Record Linkage Center. Journal of Economics and Statistics, Vol. 239, 2 (2017).",
+              "journal-title": "Journal of Economics and Statistics"
+            },
+            {
+              "key": "e_1_3_2_2_4_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/362686.362692"
+            },
+            {
+              "key": "e_1_3_2_2_5_1",
+              "volume-title": "Graph Theory",
+              "author": "Bondy Adrian",
+              "unstructured": "Adrian Bondy and Uppaluri Murty . 2011. Graph Theory . Springer , London . Adrian Bondy and Uppaluri Murty. 2011. Graph Theory. Springer, London."
+            },
+            {
+              "key": "e_1_3_2_2_6_1",
+              "volume-title": "Medical Data Privacy Handbook",
+              "author": "Boyd James H",
+              "unstructured": "James H Boyd , Sean M Randall , and Anna M Ferrante . 2015. Application of Privacy-Preserving Techniques in Operational Record Linkage Centres . In Medical Data Privacy Handbook . Springer , 267--287. James H Boyd, Sean M Randall, and Anna M Ferrante. 2015. Application of Privacy-Preserving Techniques in Operational Record Linkage Centres. In Medical Data Privacy Handbook. Springer, 267--287."
+            },
+            {
+              "key": "e_1_3_2_2_7_1",
+              "volume-title": "Data matching -- Concepts and techniques for record linkage, entity resolution, and duplicate detection",
+              "author": "Christen Peter",
+              "unstructured": "Peter Christen . 2012. Data matching -- Concepts and techniques for record linkage, entity resolution, and duplicate detection . Springer . Peter Christen. 2012. Data matching -- Concepts and techniques for record linkage, entity resolution, and duplicate detection. Springer."
+            },
+            {
+              "key": "e_1_3_2_2_8_1",
+              "first-page": "2164",
+              "article-title": "Precise and Fast Cryptanalysis for Bloom Filter Based Privacy-Preserving Record Linkage",
+              "volume": "31",
+              "author": "Christen Peter",
+              "year": "2019",
+              "unstructured": "Peter Christen , Thilina Ranbaduge , Dinusha Vatsalan , and Rainer Schnell . 2019 . Precise and Fast Cryptanalysis for Bloom Filter Based Privacy-Preserving Record Linkage . IEEE TKDE , Vol. 31 , 11 (2019), 2164 -- 2177 . Peter Christen, Thilina Ranbaduge, Dinusha Vatsalan, and Rainer Schnell. 2019. Precise and Fast Cryptanalysis for Bloom Filter Based Privacy-Preserving Record Linkage. IEEE TKDE, Vol. 31, 11 (2019), 2164--2177.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_3_2_2_9_1",
+              "unstructured": "Chris Culnane Benjamin Rubinstein and Vanessa Teague. 2017. Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK Office for National Statistics' Privacy-Preserving Record Linkage. arXiv Preprint (2017).  Chris Culnane Benjamin Rubinstein and Vanessa Teague. 2017. Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK Office for National Statistics' Privacy-Preserving Record Linkage. arXiv Preprint (2017)."
+            },
+            {
+              "key": "e_1_3_2_2_10_1",
+              "first-page": "2956",
+              "article-title": "Composite Bloom filters for secure record linkage",
+              "volume": "26",
+              "author": "Durham Elizabeth",
+              "year": "2014",
+              "unstructured": "Elizabeth Durham , Murat Kantarcioglu , Yuan Xue , Csaba Toth , Mehmet Kuzu , and Bradley Malin . 2014 . Composite Bloom filters for secure record linkage . IEEE TKDE , Vol. 26 , 12 (2014), 2956 -- 2968 . Elizabeth Durham, Murat Kantarcioglu, Yuan Xue, Csaba Toth, Mehmet Kuzu, and Bradley Malin. 2014. Composite Bloom filters for secure record linkage. IEEE TKDE, Vol. 26, 12 (2014), 2956--2968.",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "e_1_3_2_2_11_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.ins.2016.01.074"
+            },
+            {
+              "key": "e_1_3_2_2_12_1",
+              "volume-title": "DPM/CBT@ESORICS",
+              "author": "Franke Martin",
+              "unstructured": "Martin Franke , Ziad Sehili , Marcel Gladbach , and Erhard Rahm . 2018. Post-processing Methods for High Quality Privacy-Preserving Record Linkage . In DPM/CBT@ESORICS . Springer , Cham , 263--278. Martin Franke, Ziad Sehili, Marcel Gladbach, and Erhard Rahm. 2018. Post-processing Methods for High Quality Privacy-Preserving Record Linkage. In DPM/CBT@ESORICS. Springer, Cham, 263--278."
+            },
+            {
+              "key": "e_1_3_2_2_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1080/00029890.1962.11989827"
+            },
+            {
+              "key": "e_1_3_2_2_14_1",
+              "volume-title": "KDD",
+              "author": "Grover Aditya",
+              "unstructured": "Aditya Grover and Jure Leskovec . 2016. Node2vec: Scalable Feature Learning for Networks . In KDD . ACM , New York, NY, USA , 855--864. Aditya Grover and Jure Leskovec. 2016. Node2vec: Scalable Feature Learning for Networks. In KDD. ACM, New York, NY, USA, 855--864."
+            },
+            {
+              "key": "e_1_3_2_2_15_1",
+              "volume-title": "PAKDD.",
+              "author": "Heimann Mark",
+              "unstructured": "Mark Heimann , Wei Lee , Shengjie Pan , Kuan-Yu Chen , and Danai Koutra . 2018a. HashAlign: Hash-Based Alignment of Multiple Graphs . In PAKDD. Melbourne . Mark Heimann, Wei Lee, Shengjie Pan, Kuan-Yu Chen, and Danai Koutra. 2018a. HashAlign: Hash-Based Alignment of Multiple Graphs. In PAKDD. Melbourne."
+            },
+            {
+              "key": "e_1_3_2_2_16_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3269206.3271788"
+            },
+            {
+              "key": "e_1_3_2_2_17_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s41109-019-0195-3"
+            },
+            {
+              "key": "e_1_3_2_2_18_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Martin Kroll and Simone Steinmetzer. 2015. Who Is 1011011111...1110110010? Automated cryptanalysis of Bloom filter encryptions of databases with several personal identifiers. In BIOSTEC. Springer Lisbon 341--356.  Martin Kroll and Simone Steinmetzer. 2015. Who Is 1011011111...1110110010? Automated cryptanalysis of Bloom filter encryptions of databases with several personal identifiers. In BIOSTEC. Springer Lisbon 341--356.",
+              "DOI": "10.1007/978-3-319-27707-3_21"
+            },
+            {
+              "key": "e_1_3_2_2_19_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/nav.3800020109"
+            },
+            {
+              "key": "e_1_3_2_2_20_1",
+              "volume-title": "A constraint satisfaction cryptanalysis of Bloom filters in private record linkage",
+              "author": "Kuzu Mehmet",
+              "unstructured": "Mehmet Kuzu , Murat Kantarcioglu , Elizabeth Durham , and Bradley Malin . 2011. A constraint satisfaction cryptanalysis of Bloom filters in private record linkage . In PET. Springer , Waterloo , 226--245. Mehmet Kuzu, Murat Kantarcioglu, Elizabeth Durham, and Bradley Malin. 2011. A constraint satisfaction cryptanalysis of Bloom filters in private record linkage. In PET. Springer, Waterloo, 226--245."
+            },
+            {
+              "key": "e_1_3_2_2_21_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1504/IJBDI.2017.086956"
+            },
+            {
+              "key": "e_1_3_2_2_22_1",
+              "volume-title": "Probability and computing: Randomized algorithms and probabilistic analysis",
+              "author": "Mitzenmacher Michael",
+              "unstructured": "Michael Mitzenmacher and Eli Upfal . 2005. Probability and computing: Randomized algorithms and probabilistic analysis . Cambridge University Press . Michael Mitzenmacher and Eli Upfal. 2005. Probability and computing: Randomized algorithms and probabilistic analysis. Cambridge University Press."
+            },
+            {
+              "key": "e_1_3_2_2_23_1",
+              "volume-title": "Introduction to Linear Regression Analysis 5 ed.)",
+              "author": "Montgomery Douglas",
+              "unstructured": "Douglas Montgomery , Elizabeth Peck , and Geoffrey Vining . 2012. Introduction to Linear Regression Analysis 5 ed.) . Wiley . Douglas Montgomery, Elizabeth Peck, and Geoffrey Vining. 2012. Introduction to Linear Regression Analysis 5 ed.). Wiley."
+            },
+            {
+              "key": "e_1_3_2_2_24_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.29012/jpc.v6i2.640"
+            },
+            {
+              "key": "e_1_3_2_2_26_1",
+              "first-page": "346",
+              "article-title": "On the accuracy and scalability of probabilistic data linkage over the Brazilian 114 million cohort",
+              "volume": "22",
+              "author": "Pita Robespierre",
+              "year": "2018",
+              "unstructured": "Robespierre Pita , Cl'icia Pinto , Samila Sena , Rosemeire Fiaccone , Leila Amorim , Sandra Reis , Mauricio Barreto , Spiros Denaxas , and Marcos Ennes Barreto . 2018 . On the accuracy and scalability of probabilistic data linkage over the Brazilian 114 million cohort . IEEE JBHI , Vol. 22 , 2 (2018), 346 -- 353 . Robespierre Pita, Cl'icia Pinto, Samila Sena, Rosemeire Fiaccone, Leila Amorim, Sandra Reis, Mauricio Barreto, Spiros Denaxas, and Marcos Ennes Barreto. 2018. On the accuracy and scalability of probabilistic data linkage over the Brazilian 114 million cohort. IEEE JBHI, Vol. 22, 2 (2018), 346--353.",
+              "journal-title": "IEEE JBHI"
+            },
+            {
+              "key": "e_1_3_2_2_27_1",
+              "volume-title": "Secure and Accurate Two-sep Hash Encoding for Privacy-Preserving Record Linkage",
+              "author": "Ranbaduge Thilina",
+              "unstructured": "Thilina Ranbaduge , Peter Christen , and Rainer Schnell . 2020. Secure and Accurate Two-sep Hash Encoding for Privacy-Preserving Record Linkage . In PAKDD. Springer , Singapore , 139--151. Thilina Ranbaduge, Peter Christen, and Rainer Schnell. 2020. Secure and Accurate Two-sep Hash Encoding for Privacy-Preserving Record Linkage. In PAKDD. Springer, Singapore, 139--151."
+            },
+            {
+              "key": "e_1_3_2_2_28_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jbi.2013.12.003"
+            },
+            {
+              "key": "e_1_3_2_2_29_1",
+              "volume-title": "Applied cryptography: Protocols, algorithms, and source code in C 2 ed.)",
+              "author": "Schneier Bruce",
+              "unstructured": "Bruce Schneier . 1996. Applied cryptography: Protocols, algorithms, and source code in C 2 ed.) . John Wiley and Sons, Inc. , New York . Bruce Schneier. 1996. Applied cryptography: Protocols, algorithms, and source code in C 2 ed.). John Wiley and Sons, Inc., New York."
+            },
+            {
+              "key": "e_1_3_2_2_30_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/1472-6947-9-41"
+            },
+            {
+              "key": "e_1_3_2_2_31_1",
+              "volume-title": "A Novel Error-Tolerant Anonymous Linking Code. SSRN Electronic Journal (01",
+              "author": "Schnell Rainer",
+              "year": "2011",
+              "unstructured": "Rainer Schnell , Tobias Bachteler , and Jörg Reiher . 2011. A Novel Error-Tolerant Anonymous Linking Code. SSRN Electronic Journal (01 2011 ). Rainer Schnell, Tobias Bachteler, and Jörg Reiher. 2011. A Novel Error-Tolerant Anonymous Linking Code. SSRN Electronic Journal (01 2011)."
+            },
+            {
+              "key": "e_1_3_2_2_32_1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Rainer Schnell and Christian Borgs. 2016a. Randomized response and balanced Bloom filters for privacy preserving record linkage. In ICDMW DINA. Barcelona.  Rainer Schnell and Christian Borgs. 2016a. Randomized response and balanced Bloom filters for privacy preserving record linkage. In ICDMW DINA. Barcelona.",
+              "DOI": "10.1109/ICDMW.2016.0038"
+            },
+            {
+              "key": "e_1_3_2_2_33_1",
+              "volume-title": "XOR-Folding for Bloom Filter-based Encryptions for Privacy-preserving Record Linkage. SSRN",
+              "author": "Schnell Rainer",
+              "year": "2016",
+              "unstructured": "Rainer Schnell and Christian Borgs . 2016b. XOR-Folding for Bloom Filter-based Encryptions for Privacy-preserving Record Linkage. SSRN ( 2016 ). Rainer Schnell and Christian Borgs. 2016b. XOR-Folding for Bloom Filter-based Encryptions for Privacy-preserving Record Linkage. SSRN (2016)."
+            },
+            {
+              "key": "e_1_3_2_2_34_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jisa.2017.01.002"
+            },
+            {
+              "key": "e_1_3_2_2_35_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2012.11.005"
+            },
+            {
+              "key": "e_1_3_2_2_36_1",
+              "volume-title": "Efficient Pattern Mining Based Cryptanalysis for Privacy-Preserving Record Linkage",
+              "author": "Vidanage Anushka",
+              "unstructured": "Anushka Vidanage , Thilina Ranbaduge , Peter Christen , and Rainer Schnell . 2019. Efficient Pattern Mining Based Cryptanalysis for Privacy-Preserving Record Linkage . In IEEE ICDE. IEEE , Macau , 1698--1701. Anushka Vidanage, Thilina Ranbaduge, Peter Christen, and Rainer Schnell. 2019. Efficient Pattern Mining Based Cryptanalysis for Privacy-Preserving Record Linkage. In IEEE ICDE. IEEE, Macau, 1698--1701."
+            }
+          ],
+          "event": {
+            "name": "CIKM '20: The 29th ACM International Conference on Information and Knowledge Management",
+            "location": "Virtual Event Ireland",
+            "acronym": "CIKM '20",
+            "sponsor": [
+              "SIGWEB ACM Special Interest Group on Hypertext, Hypermedia, and Web",
+              "SIGIR ACM Special Interest Group on Information Retrieval"
+            ]
+          },
+          "container-title": [
+            "Proceedings of the 29th ACM International Conference on Information &amp; Knowledge Management"
+          ],
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3340531.3411931",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3340531.3411931",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                17
+              ]
+            ],
+            "date-time": "2025-06-17T22:01:22Z",
+            "timestamp": 1750197682000
+          },
+          "score": 51.004612,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3340531.3411931"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2020,
+                10,
+                19
+              ]
+            ]
+          },
+          "references-count": 35,
+          "alternative-id": [
+            "10.1145/3340531.3411931",
+            "10.1145/3340531"
+          ],
+          "URL": "https://doi.org/10.1145/3340531.3411931",
+          "published": {
+            "date-parts": [
+              [
+                2020,
+                10,
+                19
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2020-10-19",
+              "order": 2,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T18:49:49Z",
+            "timestamp": 1790275789197,
+            "version": "4.1.0"
+          },
+          "reference-count": 35,
+          "publisher": "IEEE",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    12,
+                    9
+                  ]
+                ],
+                "date-time": "2024-12-09T00:00:00Z",
+                "timestamp": 1733702400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    12,
+                    9
+                  ]
+                ],
+                "date-time": "2024-12-09T00:00:00Z",
+                "timestamp": 1733702400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/acsac63791.2024.00064",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                18
+              ]
+            ],
+            "date-time": "2025-03-18T17:30:20Z",
+            "timestamp": 1742319020000
+          },
+          "page": "699-715",
+          "source": "Crossref",
+          "is-referenced-by-count": 4,
+          "title": [
+            "R+R: Revisiting Graph Matching Attacks on Privacy-Preserving Record Linkage"
+          ],
+          "prefix": "10.1109",
+          "author": [
+            {
+              "given": "Jochen",
+              "family": "Schäfer",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "University of Mannheim,Mannheim,Germany"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Frederik",
+              "family": "Armknecht",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Mannheim,Mannheim,Germany"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Youzhe",
+              "family": "Heng",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Mannheim,Mannheim,Germany"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3340531.3411931"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.56553/popets-2023-0054"
+            },
+            {
+              "issue": "3",
+              "key": "ref3",
+              "first-page": "251",
+              "article-title": "Research use of linked health data — a best practice protocol",
+              "volume-title": "Australian and New Zealand Journal of Public Health",
+              "volume": "26",
+              "author": "Kelman",
+              "year": "2002"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-31164-2"
+            },
+            {
+              "issue": "2",
+              "key": "ref5",
+              "article-title": "Population data centre profiles: Centre for data linkage",
+              "volume-title": "International Journal of Population Data Science",
+              "volume": "4",
+              "author": "Boyd",
+              "year": "2020"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1136/ihj-2021-000074"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JBHI.2018.2796941"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/s12874-015-0038-6"
+            },
+            {
+              "key": "ref9",
+              "volume-title": "Technische Dokumentation zur Umsetzung der Pseudonymisierung der PID-Daten für die Module Geburtshilfe und Neonatologie des QS-Verfahrens Perinatalmedizin in der Vertrauensstelle",
+              "author": "Meier",
+              "year": "2017"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-22263-4_13"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.29012/jpc.v6i2.640"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-27707-3_21"
+            },
+            {
+              "key": "ref13",
+              "first-page": "217",
+              "article-title": "A graph traversal attack on bloom filter-based medical data aggregation",
+              "volume-title": "Int. J. Big Data Intell.",
+              "volume": "4",
+              "author": "Mitchell",
+              "year": "2017"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2018.2874004"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2019.00176"
+            },
+            {
+              "key": "ref16",
+              "article-title": "Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the uk office for national statistics’ privacy-preserving record linkage",
+              "author": "Culnane",
+              "year": "2017"
+            },
+            {
+              "issue": "9",
+              "key": "ref17",
+              "first-page": "e0267893",
+              "article-title": "On the effectiveness of graph matching attacks against privacy-preserving record linkage",
+              "volume-title": "PLOS ONE",
+              "volume": "17",
+              "author": "Heng",
+              "year": "2022"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5220/0006682701950203"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2939672.2939754"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1017/cbo9780511813603"
+            },
+            {
+              "key": "ref21",
+              "article-title": "Efficient estimation of word representations in vector space",
+              "author": "Mikolov",
+              "year": "2013"
+            },
+            {
+              "key": "ref22",
+              "article-title": "Unsupervised alignment of embeddings with wasserstein procrustes",
+              "author": "Grave",
+              "year": "2018"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3340531.3412136"
+            },
+            {
+              "key": "ref24",
+              "first-page": "2292",
+              "article-title": "Sinkhorn distances: Lightspeed computation of optimal transport",
+              "volume-title": "Proceedings of the 26th International Conference on Neural Information Processing Systems - Volume 2",
+              "author": "Cuturi"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/nav.3800030109"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TAES.2016.140952"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.2139/ssrn.3549247"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/1472-6947-9-41"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/bioinformatics/btab202"
+            },
+            {
+              "key": "ref30",
+              "first-page": "45",
+              "article-title": "Software Framework for Topic Modelling with Large Corpora",
+              "volume-title": "Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks",
+              "author": "Řehůřek"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3233/SJI-200704"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/362686.362692"
+            },
+            {
+              "key": "ref33",
+              "first-page": "271",
+              "article-title": "Secure pseudonymisation for privacy-preserving probabilistic record linkage",
+              "volume-title": "Journal of Information Security and Applications",
+              "volume": "34",
+              "author": "Smith",
+              "year": "2017"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SEQUEN.1997.666900"
+            },
+            {
+              "key": "ref35",
+              "first-page": "139",
+              "article-title": "Secure and accurate two-step hash encoding for privacy-preserving record linkage",
+              "volume-title": "Advances in Knowledge Discovery and Data Mining: 24th Pacific-Asia Conference, PAKDD 2020, Singapore, May 11–14, 2020, Proceedings, Part II",
+              "author": "Ranbaduge"
+            }
+          ],
+          "event": {
+            "name": "2024 Annual Computer Security Applications Conference (ACSAC)",
+            "location": "Honolulu, HI, USA",
+            "start": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  9
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  13
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "2024 Annual Computer Security Applications Conference (ACSAC)"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/10917023/10917300/10918028.pdf?arnumber=10918028",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                3,
+                19
+              ]
+            ],
+            "date-time": "2025-03-19T05:07:12Z",
+            "timestamp": 1742360832000
+          },
+          "score": 46.684395,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/10918028/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                9
+              ]
+            ]
+          },
+          "references-count": 35,
+          "URL": "https://doi.org/10.1109/acsac63791.2024.00064",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                3
+              ]
+            ],
+            "date-time": "2026-09-03T05:52:25Z",
+            "timestamp": 1788414745404,
+            "version": "build-2803163510"
+          },
+          "reference-count": 14,
+          "publisher": "Public Library of Science (PLoS)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    9,
+                    22
+                  ]
+                ],
+                "date-time": "2022-09-22T00:00:00Z",
+                "timestamp": 1663804800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100001659",
+              "name": "Deutsche Forschungsgemeinschaft",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "407023611"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "407023611"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100001659",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "www.plosone.org"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "PLoS ONE"
+          ],
+          "abstract": "<jats:p>Linking several databases containing information on the same person is an essential step of many data workflows. Due to the potential sensitivity of the data, the identity of the persons should be kept private. Privacy-Preserving Record-Linkage (PPRL) techniques have been developed to link persons despite errors in the identifiers used to link the databases without violating their privacy. The basic approach is to use encoded quasi-identifiers instead of plain quasi-identifiers for making the linkage decision. Ideally, the encoded quasi-identifiers should prevent re-identification but still allow for a good linkage quality. While several PPRL techniques have been proposed so far, Bloom filter-based PPRL schemes (BF-PPRL) are among the most popular due to their scalability. However, a recently proposed attack on BF-PPRL based on graph similarities seems to allow individuals’ re-identification from encoded quasi-identifiers. Therefore, the graph matching attack is widely considered a serious threat to many PPRL-approaches and leads to the situation that BF-PPRL schemes are rejected as being insecure. In this work, we argue that this view is not fully justified. We show by experiments that the success of graph matching attacks requires a high overlap between encoded and plain records used for the attack. As soon as this condition is not fulfilled, the success rate sharply decreases and renders the attacks hardly effective. This necessary condition does severely limit the applicability of these attacks in practice and also allows for simple but effective countermeasures.</jats:p>",
+          "DOI": "10.1371/journal.pone.0267893",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2022,
+                9,
+                22
+              ]
+            ],
+            "date-time": "2022-09-22T18:16:49Z",
+            "timestamp": 1663870609000
+          },
+          "page": "e0267893",
+          "update-policy": "https://doi.org/10.1371/journal.pone.corrections_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 5,
+          "title": [
+            "On the effectiveness of graph matching attacks against privacy-preserving record linkage"
+          ],
+          "prefix": "10.1371",
+          "volume": "17",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-9073-4061",
+              "authenticated-orcid": true,
+              "given": "Youzhe",
+              "family": "Heng",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Frederik",
+              "family": "Armknecht",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Yanling",
+              "family": "Chen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-7843-4974",
+              "authenticated-orcid": true,
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "340",
+          "published-online": {
+            "date-parts": [
+              [
+                2022,
+                9,
+                22
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "pone.0267893.ref001",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1007/978-3-030-59706-1",
+              "volume-title": "Linking Sensitive Data: Methods and Techniques for Practical Privacy-Preserving Information Sharing",
+              "author": "P Christen",
+              "year": "2020"
+            },
+            {
+              "issue": "1",
+              "key": "pone.0267893.ref002",
+              "doi-asserted-by": "crossref",
+              "first-page": "235",
+              "DOI": "10.1016/j.jnca.2012.09.001",
+              "article-title": "A Framework for Preservation of Cloud Users’ Data Privacy Using Dynamic Reconstruction of Metadata",
+              "volume": "36",
+              "author": "A Waqar",
+              "year": "2013",
+              "journal-title": "Journal of Network and Computer Applications"
+            },
+            {
+              "key": "pone.0267893.ref003",
+              "doi-asserted-by": "crossref",
+              "first-page": "9952",
+              "DOI": "10.1007/s10916-013-9952-5",
+              "article-title": "Cryptanalysis and Improvement of ‘A Privacy Enhanced Scheme for Telecare Medical Information Systems’",
+              "volume": "37",
+              "author": "S Kumari",
+              "year": "2013",
+              "journal-title": "Journal of Medical Systems"
+            },
+            {
+              "issue": "38",
+              "key": "pone.0267893.ref004",
+              "doi-asserted-by": "crossref",
+              "first-page": "946",
+              "DOI": "10.1016/j.is.2012.11.005",
+              "article-title": "A Taxonomy of Privacy-Preserving Record Linkage Techniques",
+              "volume": "6",
+              "author": "D Vatsalan",
+              "year": "2013",
+              "journal-title": "Information Systems"
+            },
+            {
+              "key": "pone.0267893.ref005",
+              "doi-asserted-by": "crossref",
+              "first-page": "267",
+              "DOI": "10.1007/978-3-319-23633-9_11",
+              "volume-title": "Medical Data Privacy Handbook",
+              "author": "JH Boyd",
+              "year": "2015"
+            },
+            {
+              "key": "pone.0267893.ref006",
+              "doi-asserted-by": "crossref",
+              "first-page": "205",
+              "DOI": "10.1016/j.jbi.2013.12.003",
+              "article-title": "Privacy-preserving Record Linkage on Large Real World Datasets",
+              "author": "S Randall",
+              "year": "2014",
+              "journal-title": "Journal of Biomedical Informatics"
+            },
+            {
+              "key": "pone.0267893.ref007",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Christen P, Schnell R, Vatsalan D, Ranbaduge T. Efficient Cryptanalysis of Bloom Filters for Privacy-preserving Record Linkage. Advances in Knowledge Discovery and Data Mining: 21st Pacific-Asia Conference. PAKDD2017, Jeju, South Korea, May 23-26, 2017, Proceedings, Part I, pp. 628–640. Springer, 2017.",
+              "DOI": "10.1007/978-3-319-57454-7_49"
+            },
+            {
+              "key": "pone.0267893.ref008",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Vidanage A, Christen P, Ranbaduge T, Schnell R. A Graph Matching Attack on Privacy-Preserving Record Linkage. CIKM’20: The 29th ACM International Conference on Information and Knowledge Management, Virtual Event, Ireland, October 19-23, 2020. pp. 1485–1494.",
+              "DOI": "10.1145/3340531.3411931"
+            },
+            {
+              "key": "pone.0267893.ref009",
+              "unstructured": "Franke M., Sehili Z, Rohde F, Rahm E Evaluation of Hardening Techniques for Privacy-Preserving Record Linkage. EDBT 2021: 24th International Conference on Extending Database Technology, Nicosia, Cyprus, March 23–26, 2021. pp. 289–300."
+            },
+            {
+              "issue": "2",
+              "key": "pone.0267893.ref010",
+              "doi-asserted-by": "crossref",
+              "first-page": "59",
+              "DOI": "10.29012/jpc.v6i2.640",
+              "article-title": "Cryptanalysis of Basic Bloom Filters Used for Privacy Preserving Record Linkage",
+              "volume": "6",
+              "author": "F Niedermeyer",
+              "year": "2014",
+              "journal-title": "Journal of Privacy and Confidentiality"
+            },
+            {
+              "issue": "4",
+              "key": "pone.0267893.ref011",
+              "doi-asserted-by": "crossref",
+              "first-page": "217",
+              "DOI": "10.1504/IJBDI.2017.086956",
+              "article-title": "A Graph Traversal Attack on Bloom Filter-based Medical Data Aggregation",
+              "volume": "4",
+              "author": "W Mitchell",
+              "year": "2017",
+              "journal-title": "International Journal of Big Data Intelligence"
+            },
+            {
+              "key": "pone.0267893.ref012",
+              "unstructured": "Culnane C, Rubinstein BIP, Teague V. Vulnerabilities in the Use of Similarity Tables in Combination with Pseudonymisation to Preserve Data Privacy in the Uk Office for National Statistics’ Privacy-preserving Record Linkage. 2017. arXiv:1712.00871."
+            },
+            {
+              "issue": "17",
+              "key": "pone.0267893.ref013",
+              "article-title": "Evaluating Privacy-preserving Record Linkage Using Cryptographic Long-term Keys and Multibit Trees on Large Medical Datasets",
+              "volume": "06",
+              "author": "A Brown",
+              "year": "2017",
+              "journal-title": "BMC Medical Informatics and Decision Making"
+            },
+            {
+              "key": "pone.0267893.ref014",
+              "first-page": "9",
+              "author": "A Karakasidis",
+              "year": "7122",
+              "journal-title": "Fake Injection Strategies for Private Phonetic Matching"
+            }
+          ],
+          "container-title": [
+            "PLOS ONE"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://dx.plos.org/10.1371/journal.pone.0267893",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2022,
+                9,
+                22
+              ]
+            ],
+            "date-time": "2022-09-22T18:17:20Z",
+            "timestamp": 1663870640000
+          },
+          "score": 43.258488,
+          "resource": {
+            "primary": {
+              "URL": "https://dx.plos.org/10.1371/journal.pone.0267893"
+            }
+          },
+          "editor": [
+            {
+              "given": "Muhammad Khurram",
+              "family": "Khan",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "editor"
+                }
+              ]
+            }
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2022,
+                9,
+                22
+              ]
+            ]
+          },
+          "references-count": 14,
+          "journal-issue": {
+            "issue": "9",
+            "published-online": {
+              "date-parts": [
+                [
+                  2022,
+                  9,
+                  22
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.1371/journal.pone.0267893",
+          "ISSN": [
+            "1932-6203"
+          ],
+          "issn-type": [
+            {
+              "value": "1932-6203",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                9,
+                22
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

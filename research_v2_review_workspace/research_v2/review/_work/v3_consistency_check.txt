@@ -1,0 +1,85 @@
+ROUND3 VALIDATION (structural/integrity/privacy; not scientific validity)
+PASS report:THESIS_EVIDENCE_RECONCILIATION.md
+PASS report:METRIC_POPULATION_MAP.md
+PASS report:THESIS_ERRATA_TH.md
+PASS report:PLAN_IMPACT_FROM_THESIS.md
+PASS report:CONFIRMATORY_EVIDENCE_OPTIONS.md
+PASS ledger_unique_ids :: 171
+PASS ledger_status_vocabulary
+PASS ledger_pdf_pages
+PASS TC-01_status_confidence_citations
+PASS TC-02_status_confidence_citations
+PASS TC-03_status_confidence_citations
+PASS TC-04_status_confidence_citations
+PASS TC-05_status_confidence_citations
+PASS TC-06_status_confidence_citations
+PASS TC-07_status_confidence_citations
+PASS TC-08_status_confidence_citations
+PASS TC-09_status_confidence_citations
+PASS TC-10_status_confidence_citations
+PASS TC-11_status_confidence_citations
+PASS TC-12_status_confidence_citations
+PASS every_VERIFIED_has_repository_and_artifact :: 107
+PASS immutable:_input_v1/EXPERIMENT_DEPENDENCY_GRAPH.md
+PASS immutable:_input_v1/EVALUATION_AND_STATISTICS.md
+PASS immutable:_input_v1/HYPOTHESIS_EXPERIMENT_MATRIX.csv
+PASS immutable:_input_v1/HANDOFF_REPORT_TH.md
+PASS immutable:_input_v1/REFERENCES.bib
+PASS immutable:_input_v1/EXPERIMENTAL_MASTER_PLAN_TH.md
+PASS immutable:_input_v1/DUPLICATE_MAP.csv
+PASS immutable:_input_v1/REUSABLE_COMPONENTS.md
+PASS immutable:_input_v1/HISTORICAL_EXPERIMENT_MAPPING.md
+PASS immutable:_input_v1/LITERATURE_REVIEW_TH.md
+PASS immutable:_input_v1/RESEARCH_GAPS_TH.md
+PASS immutable:_input_v1/TRAINING_REQUIREMENTS.md
+PASS immutable:_input_v1/COMPUTE_AND_COST_PLAN.md
+PASS immutable:_input_v1/PAPER_EVIDENCE_MATRIX.csv
+PASS immutable:_input_v1/RESEARCH_GATES.md
+PASS immutable:_input_v1/RESEARCH_QUESTIONS_AND_HYPOTHESES.md
+PASS immutable:_input_v1/thesis/historical_thesis.pdf
+PASS design_files_unchanged :: 8
+PASS thesis_source_copy_hash
+PASS existing_v2_review_unchanged:HISTORICAL_EXPERIMENT_AUDIT.md
+PASS existing_v2_review_unchanged:REPOSITORY_COMPARISON.md
+PASS existing_v2_review_unchanged:LITERATURE_VERIFICATION_REPORT.md
+PASS existing_v2_review_unchanged:METHODOLOGICAL_RISKS.md
+PASS existing_v2_review_unchanged:HYPOTHESIS_COVERAGE_REVIEW.md
+PASS existing_v2_review_unchanged:ID_CHANGELOG.md
+PASS existing_v2_review_unchanged:TRAINING_DECISION_REPORT.md
+PASS existing_v2_review_unchanged:EXPERIMENT_REDUNDANCY_REVIEW.md
+PASS existing_v2_review_unchanged:RESEARCH_GAP_VALIDATION.md
+PASS existing_v2_review_unchanged:LITERATURE_VS_IMPLEMENTATION.md
+PASS existing_v2_review_unchanged:REPOSITORY_RESEARCH_INVENTORY.md
+PASS handoff_addendum_present
+PASS handoff_addendum_max15_lines :: 13
+PASS handoff_original_prefix_preserved
+PASS blocker_CSV_parse
+PASS new_blocker_rows
+PASS aggregate_exact_code_logged
+PASS NO_GO_preserved
+PASS PII_regex_hits_reviewed :: 11 occurrences; unclassified 0
+PASS plan_counts_unchanged_planning_only
+PASS artifact_hash:pub_multi/ref/main_report.json
+PASS artifact_hash:pub_multi/ref/full_report.json
+PASS artifact_hash:pub_multi/ref/crm_report.json
+PASS artifact_hash:pub_multi/ref/base_report.json
+PASS artifact_hash:pub_multi/ref/img_stats_report.json
+PASS artifact_hash:pub_multi/ref/strict_report.json
+PASS artifact_hash:pub_multi/ref/leak_safe_report.json
+PASS artifact_hash:pub_multi/ref/suite_report.json
+PASS artifact_hash:pair_stats.json
+PASS artifact_hash:train_data/pair_stats.json
+PASS artifact_hash:data/processed/pipeline_report.json
+PASS artifact_hash:train_data/stage8_labeling.ipynb
+PASS artifact_hash:train_data/stage10_dataset.ipynb
+PASS artifact_hash:train_data/v2/stage8_labeling_v2.ipynb
+PASS artifact_hash:pub_multi/res/feat_imp.csv
+PASS artifact_hash:pub_multi/res/thr_sweep.csv
+PASS artifact_hash:pub_multi/res/classical_leaksafe_cmp.json
+PASS artifact_hash:experiments/r3_results.json
+PASS artifact_hash:pub_multi/doc/ch04_results_formal_th.md
+PASS pinned_refs_no_remote_drift
+LEDGER {"CONFLICT": 12, "HISTORICAL_ONLY": 6, "UNKNOWN": 46, "VERIFIED": 107}
+SUBSTANTIVE_COVERAGE PARTIAL: 46 residual numeric registers UNKNOWN; no claim that every figure cell or historical lineage independently verified.
+SCIENTIFIC_EXPERIMENT_STATUS NO-GO; no new training/inference/GA/test metrics executed.
+PASS=80 FAIL=0; ledger=171; TC01-TC12=12; PII_unclassified=0; design_unchanged=True; input_hashes_unchanged=True; NO-GO; numeric_coverage=PARTIAL

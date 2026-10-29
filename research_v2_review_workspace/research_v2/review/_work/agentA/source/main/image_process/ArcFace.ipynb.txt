@@ -1,0 +1,420 @@
+# CELL 2
+import time
+import warnings
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Optional, Sequence, Tuple
+
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+SCRIPT_DIR = Path('.').absolute()  # directory ที่ notebook อยู่
+DATA_DIR = SCRIPT_DIR.parent / 'data'
+
+DIRS = {
+    'embeddings_clip': DATA_DIR / 'embeddings' / 'clip',
+    'embeddings_face': DATA_DIR / 'embeddings' / 'face',
+    'results': DATA_DIR / 'processed' / 'image_pipeline_results',
+}
+
+CLIP_DIM = 512
+ARCFACE_DIM = 512
+FUSED_DIM = CLIP_DIM + ARCFACE_DIM  # 1024
+
+TOP_K = 20           # Top-K matches ต่อ profile
+CANDIDATE_PCT = 0.10 # Candidate pool = 10%
+RANDOM_STATE = 42
+
+print('Configuration loaded')
+print(f'  CLIP dir:    {DIRS["embeddings_clip"]}')
+print(f'  ArcFace dir: {DIRS["embeddings_face"]}')
+print(f'  Results dir: {DIRS["results"]}')
+print(f'  Fused dim:   {FUSED_DIM}')
+# CELL 4
+@dataclass
+class ImageProfile:
+    profile_id: str
+    platform: str
+    clip_emb: Optional[np.ndarray] = None      # CLIP embedding (512-dim)
+    face_emb: Optional[np.ndarray] = None       # ArcFace embedding (512-dim)
+    fused_emb: Optional[np.ndarray] = None      # Fused [clip; face] (1024-dim)
+    has_clip: bool = False
+    has_face: bool = False
+
+
+def log_stage(stage: str, start_ts: float) -> None:
+    elapsed = time.time() - start_ts
+    print(f'  [{stage}] done in {elapsed:.2f}s')
+
+print('Data structures defined')
+# CELL 6
+def load_and_normalize(npy_path: Path) -> Optional[np.ndarray]:
+    if not npy_path.exists():
+        return None
+    emb = np.load(npy_path).flatten().astype(np.float32)
+    norm = np.linalg.norm(emb)
+    if norm > 0:
+        emb = emb / norm
+    return emb
+
+
+def fuse_embeddings(clip_emb, face_emb):
+    if clip_emb is None and face_emb is None:
+        return None
+    if clip_emb is None:
+        clip_emb = np.zeros(CLIP_DIM, dtype=np.float32)
+    if face_emb is None:
+        face_emb = np.zeros(ARCFACE_DIM, dtype=np.float32)
+    fused = np.concatenate([clip_emb, face_emb])
+    norm = np.linalg.norm(fused)
+    if norm > 0:
+        fused = fused / norm
+    return fused
+
+
+def discover_profiles() -> List[ImageProfile]:
+    clip_dir = DIRS['embeddings_clip']
+    face_dir = DIRS['embeddings_face']
+    seen = {}
+    for emb_dir, emb_type in [(clip_dir, 'clip'), (face_dir, 'face')]:
+        if not emb_dir.exists():
+            print(f'  Warning: {emb_dir} not found')
+            continue
+        for npy_file in emb_dir.glob('*.npy'):
+            stem = npy_file.stem
+            parts = stem.rsplit('_', 1)
+            if len(parts) != 2:
+                continue
+            pid, plat = parts
+            key = (pid, plat)
+            if key not in seen:
+                seen[key] = {}
+            seen[key][emb_type] = npy_file
+
+    profiles = []
+    for (pid, plat), paths in seen.items():
+        clip_emb = load_and_normalize(paths['clip']) if 'clip' in paths else None
+        face_emb = load_and_normalize(paths['face']) if 'face' in paths else None
+        fused_emb = fuse_embeddings(clip_emb, face_emb)
+        if clip_emb is None and face_emb is None:
+            continue
+        profiles.append(ImageProfile(
+            profile_id=pid, platform=plat,
+            clip_emb=clip_emb, face_emb=face_emb, fused_emb=fused_emb,
+            has_clip=clip_emb is not None, has_face=face_emb is not None,
+        ))
+    profiles.sort(key=lambda p: (p.profile_id, p.platform))
+    return profiles
+
+print('Embedding loader functions defined')
+# CELL 8
+step_ts = time.time()
+profiles = discover_profiles()
+n_profiles = len(profiles)
+
+clip_count = sum(1 for p in profiles if p.has_clip)
+face_count = sum(1 for p in profiles if p.has_face)
+both_count = sum(1 for p in profiles if p.has_clip and p.has_face)
+platforms = set(p.platform for p in profiles)
+
+print(f'Profiles loaded: {n_profiles}')
+print(f'  With CLIP:    {clip_count}')
+print(f'  With ArcFace: {face_count}')
+print(f'  With both:    {both_count}')
+print(f'  Platforms:    {platforms}')
+log_stage('load_embeddings', step_ts)
+# CELL 10
+def cosine_similarity(a, b):
+    if a is None or b is None:
+        return 0.0
+    return float(max(-1.0, min(1.0, np.dot(a, b))))
+
+
+def l2_distance(a, b):
+    if a is None or b is None:
+        return 2.0
+    return float(np.linalg.norm(a - b))
+
+print('Similarity functions defined')
+# CELL 12
+def compute_pairwise_similarity(profiles):
+    n = len(profiles)
+    fused_matrix = np.zeros((n, FUSED_DIM), dtype=np.float32)
+    for i, p in enumerate(profiles):
+        if p.fused_emb is not None:
+            fused_matrix[i] = p.fused_emb
+    sim_matrix = fused_matrix @ fused_matrix.T
+    np.clip(sim_matrix, -1.0, 1.0, out=sim_matrix)
+    return sim_matrix
+
+print('Pairwise comparison function defined')
+# CELL 14
+step_ts = time.time()
+sim_matrix = compute_pairwise_similarity(profiles)
+
+upper_tri = sim_matrix[np.triu_indices(n_profiles, k=1)]
+print(f'Pairwise similarity computed: {n_profiles} x {n_profiles} = {n_profiles*n_profiles:,} pairs')
+print(f'  Mean:   {upper_tri.mean():.4f}')
+print(f'  Std:    {upper_tri.std():.4f}')
+print(f'  Min:    {upper_tri.min():.4f}')
+print(f'  Max:    {upper_tri.max():.4f}')
+print(f'  Median: {np.median(upper_tri):.4f}')
+log_stage('pairwise_similarity', step_ts)
+# CELL 16
+def build_pairwise_results(profiles, sim_matrix, top_k):
+    rows = []
+    n = len(profiles)
+    for i in range(n):
+        src = profiles[i]
+        sims = sim_matrix[i].copy()
+        sims[i] = -2.0
+        k = min(top_k, n - 1)
+        top_indices = np.argpartition(sims, -k)[-k:]
+        top_indices = top_indices[np.argsort(sims[top_indices])[::-1]]
+        for rank, j in enumerate(top_indices, start=1):
+            tgt = profiles[j]
+            rows.append({
+                'source_id': src.profile_id,
+                'source_platform': src.platform,
+                'rank': rank,
+                'target_id': tgt.profile_id,
+                'target_platform': tgt.platform,
+                'fused_cosine': round(float(sims[j]), 6),
+                'clip_cosine': round(cosine_similarity(src.clip_emb, tgt.clip_emb), 6),
+                'face_cosine': round(cosine_similarity(src.face_emb, tgt.face_emb), 6),
+                'clip_l2': round(l2_distance(src.clip_emb, tgt.clip_emb), 6),
+                'face_l2': round(l2_distance(src.face_emb, tgt.face_emb), 6),
+                'is_same_person': src.profile_id == tgt.profile_id,
+            })
+    return pd.DataFrame(rows)
+
+
+step_ts = time.time()
+DIRS['results'].mkdir(parents=True, exist_ok=True)
+
+pairwise_df = build_pairwise_results(profiles, sim_matrix, TOP_K)
+pairwise_out = DIRS['results'] / 'pairwise_top_matches.csv'
+pairwise_df.to_csv(pairwise_out, index=False)
+
+print(f'Saved: {pairwise_out}')
+print(f'  Total rows: {len(pairwise_df):,}')
+log_stage('save_pairwise', step_ts)
+
+print('\nSample Top-1 matches:')
+pairwise_df[pairwise_df['rank'] == 1].head(10)
+# CELL 18
+def select_candidates_from_matrix(sim_matrix, src_idx, k):
+    sims = sim_matrix[src_idx].copy()
+    sims[src_idx] = -2.0
+    k = min(k, len(sims) - 1)
+    top_indices = np.argpartition(sims, -k)[-k:]
+    top_indices = top_indices[np.argsort(sims[top_indices])[::-1]]
+    return top_indices.astype(np.int32), sims[top_indices]
+
+
+def build_features_for_candidates(src, candidate_indices, all_profiles):
+    n = len(candidate_indices)
+    X = np.zeros((n, 7), dtype=np.float64)
+    y = np.zeros(n, dtype=np.int8)
+    for i, tgt_idx in enumerate(candidate_indices):
+        tgt = all_profiles[int(tgt_idx)]
+        X[i] = [
+            cosine_similarity(src.clip_emb, tgt.clip_emb),
+            cosine_similarity(src.face_emb, tgt.face_emb),
+            cosine_similarity(src.fused_emb, tgt.fused_emb),
+            l2_distance(src.clip_emb, tgt.clip_emb),
+            l2_distance(src.face_emb, tgt.face_emb),
+            1.0 if (src.has_clip and tgt.has_clip) else 0.0,
+            1.0 if (src.has_face and tgt.has_face) else 0.0,
+        ]
+        y[i] = 1 if src.profile_id == tgt.profile_id else 0
+    return X, y
+
+print('Candidate selection & feature building defined')
+# CELL 20
+def build_balanced_train_set(profiles, sim_matrix, train_indices, k, rng):
+    X_list, y_list = [], []
+    for src_i in train_indices:
+        src = profiles[src_i]
+        cand_indices, _ = select_candidates_from_matrix(sim_matrix, src_i, k)
+        X_cand, y_cand = build_features_for_candidates(src, cand_indices, profiles)
+        pos_mask = y_cand == 1
+        neg_mask = y_cand == 0
+        if not pos_mask.any() or not neg_mask.any():
+            continue
+        pos_idx = np.where(pos_mask)[0]
+        best_pos = int(pos_idx[np.argmax(X_cand[pos_idx, 2])])
+        neg_idx = np.where(neg_mask)[0]
+        rand_neg = int(rng.choice(neg_idx))
+        X_list.append(X_cand[[best_pos, rand_neg]])
+        y_list.append(np.array([1, 0], dtype=np.int8))
+    if not X_list:
+        raise RuntimeError('No training samples')
+    return np.vstack(X_list).astype(np.float64), np.concatenate(y_list).astype(np.int8)
+
+print('Training function defined')
+# CELL 22
+# --- Train/Test Split (60/40) ---
+k_candidates = max(1, int(CANDIDATE_PCT * n_profiles))
+all_indices = np.arange(n_profiles)
+train_idx, test_idx = train_test_split(
+    all_indices, test_size=0.4, random_state=RANDOM_STATE, shuffle=True,
+)
+print(f'Train: {len(train_idx)}, Test: {len(test_idx)}')
+print(f'Candidate pool: top {CANDIDATE_PCT*100:.0f}% = {k_candidates} per profile')
+
+# --- Build balanced training set ---
+step_ts = time.time()
+rng = np.random.default_rng(RANDOM_STATE)
+X_train, y_train = build_balanced_train_set(
+    profiles, sim_matrix, train_idx, k_candidates, rng,
+)
+print(f'\nTraining samples: {len(X_train)} (pos={y_train.sum()}, neg={len(y_train)-y_train.sum()})')
+log_stage('build_trainset', step_ts)
+
+# --- Train Logistic Regression ---
+lr_ts = time.time()
+lr_model = make_pipeline(
+    StandardScaler(),
+    LogisticRegression(max_iter=2000, class_weight='balanced', random_state=RANDOM_STATE),
+)
+lr_model.fit(X_train, y_train)
+log_stage('train_logistic_regression', lr_ts)
+
+# --- Train Random Forest ---
+rf_ts = time.time()
+rf_model = RandomForestClassifier(
+    n_estimators=300, random_state=RANDOM_STATE, n_jobs=-1, class_weight='balanced',
+)
+rf_model.fit(X_train, y_train)
+log_stage('train_random_forest', rf_ts)
+
+print('\nBoth models trained!')
+# CELL 24
+def evaluate_top1(model, model_name, profiles, sim_matrix, test_indices, k):
+    rows = []
+    correct, total, cand_recall = 0, 0, 0
+    for src_i in test_indices:
+        src = profiles[src_i]
+        cand_indices, _ = select_candidates_from_matrix(sim_matrix, src_i, k)
+        X_cand, y_cand = build_features_for_candidates(src, cand_indices, profiles)
+        has_true = int((y_cand == 1).any())
+        cand_recall += has_true
+        if len(X_cand) == 0:
+            continue
+        probs = model.predict_proba(X_cand)[:, 1]
+        probs = np.nan_to_num(probs, nan=0.0, posinf=1.0, neginf=0.0)
+        best_local = int(np.argmax(probs))
+        best_tgt = profiles[int(cand_indices[best_local])]
+        is_correct = 1 if best_tgt.profile_id == src.profile_id else 0
+        correct += is_correct
+        total += 1
+        rows.append({
+            'model': model_name, 'source_id': src.profile_id,
+            'predicted_id': best_tgt.profile_id,
+            'is_correct_top1': is_correct,
+            'match_probability': round(float(probs[best_local]), 6),
+            'fused_cosine': round(float(X_cand[best_local, 2]), 6),
+            'true_in_topk': has_true,
+        })
+    acc = (correct / total) if total else 0.0
+    cr = (cand_recall / len(test_indices)) if len(test_indices) else 0.0
+    metrics = {'model': model_name, 'test_size': len(test_indices),
+               'top1_accuracy': round(acc, 6), 'candidate_recall_topk': round(cr, 6)}
+    return pd.DataFrame(rows), metrics
+
+print('Evaluation function defined')
+# CELL 26
+step_ts = time.time()
+
+lr_df, lr_metrics = evaluate_top1(
+    lr_model, 'LogisticRegression', profiles, sim_matrix, test_idx, k_candidates,
+)
+rf_df, rf_metrics = evaluate_top1(
+    rf_model, 'RandomForest', profiles, sim_matrix, test_idx, k_candidates,
+)
+log_stage('evaluation', step_ts)
+
+print()
+print('=' * 50)
+print('RESULTS')
+print('=' * 50)
+print(f'  LogisticRegression:')
+print(f'    Top-1 Accuracy:   {lr_metrics["top1_accuracy"]:.4f}')
+print(f'    Candidate Recall: {lr_metrics["candidate_recall_topk"]:.4f}')
+print(f'  RandomForest:')
+print(f'    Top-1 Accuracy:   {rf_metrics["top1_accuracy"]:.4f}')
+print(f'    Candidate Recall: {rf_metrics["candidate_recall_topk"]:.4f}')
+print('=' * 50)
+# CELL 28
+import joblib
+
+lr_out = DIRS['results'] / 'predictions_logistic_regression.csv'
+rf_out = DIRS['results'] / 'predictions_random_forest.csv'
+lr_df.to_csv(lr_out, index=False)
+rf_df.to_csv(rf_out, index=False)
+
+metrics_df = pd.DataFrame([lr_metrics, rf_metrics])
+metrics_out = DIRS['results'] / 'metrics_summary.csv'
+metrics_df.to_csv(metrics_out, index=False)
+
+model_out = DIRS['results'] / 'rf_model.joblib'
+joblib.dump(rf_model, model_out)
+
+print('All results saved:')
+print(f'  {pairwise_out}')
+print(f'  {lr_out}')
+print(f'  {rf_out}')
+print(f'  {metrics_out}')
+print(f'  {model_out}')
+# CELL 30
+def predict_similarity(profile_a_id, profile_b_id, platform_a='twitter', platform_b='twitter', model=None):
+    clip_a = load_and_normalize(DIRS['embeddings_clip'] / f'{profile_a_id}_{platform_a}.npy')
+    clip_b = load_and_normalize(DIRS['embeddings_clip'] / f'{profile_b_id}_{platform_b}.npy')
+    face_a = load_and_normalize(DIRS['embeddings_face'] / f'{profile_a_id}_{platform_a}.npy')
+    face_b = load_and_normalize(DIRS['embeddings_face'] / f'{profile_b_id}_{platform_b}.npy')
+    fused_a = fuse_embeddings(clip_a, face_a)
+    fused_b = fuse_embeddings(clip_b, face_b)
+
+    result = {
+        'profile_a': f'{profile_a_id} ({platform_a})',
+        'profile_b': f'{profile_b_id} ({platform_b})',
+        'clip_cosine': round(cosine_similarity(clip_a, clip_b), 6),
+        'face_cosine': round(cosine_similarity(face_a, face_b), 6),
+        'fused_cosine': round(cosine_similarity(fused_a, fused_b), 6),
+        'clip_l2': round(l2_distance(clip_a, clip_b), 6),
+        'face_l2': round(l2_distance(face_a, face_b), 6),
+    }
+    if model is not None:
+        features = np.array([[
+            result['clip_cosine'], result['face_cosine'], result['fused_cosine'],
+            result['clip_l2'], result['face_l2'],
+            1.0 if (clip_a is not None and clip_b is not None) else 0.0,
+            1.0 if (face_a is not None and face_b is not None) else 0.0,
+        ]])
+        prob = model.predict_proba(features)[0, 1]
+        result['match_probability'] = round(float(prob), 6)
+        result['is_same_person'] = bool(prob > 0.5)
+    else:
+        result['is_same_person'] = result['fused_cosine'] > 0.7
+    return result
+
+
+# ลองเทียบ 2 profiles (แก้ชื่อได้)
+result = predict_similarity('adamthede', 'bioanarchism', model=rf_model)
+print('Prediction result:')
+for k, v in result.items():
+    print(f'  {k}: {v}')
+# CELL 31

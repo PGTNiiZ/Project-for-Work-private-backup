@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.8447570845493477,
+  "name": "LR-semantic",
+  "source_summary": "metrics/model_LR-semantic.json",
+  "source_summary_sha256": "21418db32fac75e70b8fd5ec60f1231cf6d72e56ed5cd889efb0e06b76db1304",
+  "n_pairs": 351494,
+  "seed_count": 1,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.05185837499811896
+}

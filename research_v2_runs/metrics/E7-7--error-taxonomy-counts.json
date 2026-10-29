@@ -1,0 +1,107 @@
+{
+  "per_seed": [
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 41,
+      "FN_other_feature_patterns_in_candidates": 677,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 505,
+      "FP_total": 15,
+      "automatic_FN_total": 1160
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 706,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 535,
+      "FP_total": 14,
+      "automatic_FN_total": 1191
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 702,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 532,
+      "FP_total": 14,
+      "automatic_FN_total": 1187
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 692,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 521,
+      "FP_total": 15,
+      "automatic_FN_total": 1176
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 718,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 548,
+      "FP_total": 14,
+      "automatic_FN_total": 1203
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 700,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 529,
+      "FP_total": 15,
+      "automatic_FN_total": 1184
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 692,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 521,
+      "FP_total": 15,
+      "automatic_FN_total": 1176
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 713,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 535,
+      "FP_total": 14,
+      "automatic_FN_total": 1198
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 41,
+      "FN_other_feature_patterns_in_candidates": 663,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 491,
+      "FP_total": 15,
+      "automatic_FN_total": 1146
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 704,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 538,
+      "FP_total": 14,
+      "automatic_FN_total": 1189
+    }
+  ],
+  "limitations": "No manual attribution of impersonation, organization, or true label error; user_folder categories are operational labels only",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 1.9541002984624356e-05
+}

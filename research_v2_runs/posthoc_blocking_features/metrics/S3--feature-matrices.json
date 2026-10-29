@@ -1,0 +1,31 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S3",
+  "key": "feature-matrices",
+  "start": "2026-10-26T01:00:55.330642+00:00",
+  "config_sha256": "6da24a451849282630a7d20e95ea576fd1f8c0e6954f84bf911a4acbfabdb69e",
+  "test_access": false,
+  "status": "DONE",
+  "pairs": 702988,
+  "positives": 21931,
+  "positives_per_fold": [
+    5481,
+    5507,
+    5494,
+    5449
+  ],
+  "pairs_per_fold": [
+    179694,
+    187446,
+    167658,
+    168190
+  ],
+  "H23_adaptations": [
+    "bio_mentions constant empty (unavailable)",
+    "bio embedding = frozen MiniLM not MPNet",
+    "bio TF-IDF fit on train-dev folds only"
+  ],
+  "image_columns": "NOT built: historical-41 BLOCKED (no verifiable dev image linkage)",
+  "end": "2026-10-26T01:05:38.741860+00:00",
+  "runtime_seconds": 283.4324587910014
+}

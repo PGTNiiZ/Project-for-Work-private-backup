@@ -1,0 +1,8 @@
+{
+  "candidate_AP": 0.9529450265885865,
+  "summary_sha256": "1cacc7c390778650fe63b06e0997eacf8eea2e0c4fcb34dfce27ffc26aa625fa",
+  "name": "LR-fusion-without-bio",
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.04789912499836646
+}

@@ -1,0 +1,17 @@
+{
+  "training_rows": 16068,
+  "training_positives": 4017,
+  "training_negatives": 12051,
+  "train_negative_ratio_limit": 3,
+  "candidate_AP": 0.9500045865287047,
+  "fraction": 0.25,
+  "fold": 0,
+  "learner": "LR",
+  "n_training_entities": 2292,
+  "n_training_profiles": 5509,
+  "n_validation_pairs": 89847,
+  "prediction_sha256": "2eaf36d797398b832efe261059e6e67b1a700d34bc50a210902ecc86e0543c6e",
+  "no_hyperparameter_selection": true,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.04238783400069224
+}

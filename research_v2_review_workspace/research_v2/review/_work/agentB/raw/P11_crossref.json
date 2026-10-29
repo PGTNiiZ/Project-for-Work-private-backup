@@ -1,0 +1,420 @@
+{
+  "url": "https://api.crossref.org/works/10.14778/3538598.3538611",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            29
+          ]
+        ],
+        "date-time": "2026-07-29T00:33:05Z",
+        "timestamp": 1785285185298,
+        "version": "3.55.0"
+      },
+      "reference-count": 35,
+      "publisher": "Association for Computing Machinery (ACM)",
+      "issue": "9",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Proc. VLDB Endow."
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2022,
+            5
+          ]
+        ]
+      },
+      "abstract": "<jats:p>Entity Resolution is a core data integration task that relies on Blocking to scale to large datasets. Schema-agnostic blocking achieves very high recall, requires no domain knowledge and applies to data of any structuredness and schema heterogeneity. This comes at the cost of many irrelevant candidate pairs (i.e., comparisons), which can be significantly reduced by Meta-blocking techniques that leverage the entity co-occurrence patterns inside blocks: first, pairs of candidate entities are weighted in proportion to their matching likelihood, and then, pruning discards the pairs with the lowest scores. Supervised Meta-blocking goes beyond this approach by combining multiple scores per comparison into a feature vector that is fed to a binary classifier. By using probabilistic classifiers, Generalized Supervised Meta-blocking associates every pair of candidates with a score that can be used by any pruning algorithm. For higher effectiveness, new weighting schemes are examined as features. Through extensive experiments, we identify the best pruning algorithms, their optimal sets of features, as well as the minimum possible size of the training set.</jats:p>",
+      "DOI": "10.14778/3538598.3538611",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            27
+          ]
+        ],
+        "date-time": "2022-07-27T17:12:31Z",
+        "timestamp": 1658941951000
+      },
+      "page": "1902-1910",
+      "source": "Crossref",
+      "is-referenced-by-count": 12,
+      "title": [
+        "Generalized supervised meta-blocking"
+      ],
+      "prefix": "10.14778",
+      "volume": "15",
+      "author": [
+        {
+          "given": "Luca",
+          "family": "Gagliardelli",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "U. of Modena and Reggio Emilia, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "George",
+          "family": "Papadakis",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "U. of Athens &amp; PPC, Greece"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Giovanni",
+          "family": "Simonini",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "U. of Modena and Reggio Emilia, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sonia",
+          "family": "Bergamaschi",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "U. of Modena and Reggio Emilia, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Themis",
+          "family": "Palpanas",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Université Paris Cité &amp; IUF, France"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            27
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_2_1_1_1",
+          "unstructured": "N. Augsten R. Kwitt M. Lissandrini W. Mann T. Palpanas and G. Papadakis. 2021. New Weighting Schemes for Meta-blocking. Technical Report LIPADE-TR 5. Laboratoire d'Informatique PAris DEscartes (LIPADE). Available at http://lipade.mi.parisdescartes.fr/wp-content/uploads/2021/10/LipadeTR-5.pdf.  N. Augsten R. Kwitt M. Lissandrini W. Mann T. Palpanas and G. Papadakis. 2021. New Weighting Schemes for Meta-blocking. Technical Report LIPADE-TR 5. Laboratoire d'Informatique PAris DEscartes (LIPADE). Available at http://lipade.mi.parisdescartes.fr/wp-content/uploads/2021/10/LipadeTR-5.pdf."
+        },
+        {
+          "key": "e_1_2_1_2_1",
+          "article-title": "BLAST2: An Efficient Technique for Loose Schema Information Extraction from Heterogeneous Big Data Sources",
+          "volume": "12",
+          "author": "Beneventano Domenico",
+          "year": "2020",
+          "unstructured": "Domenico Beneventano , Sonia Bergamaschi , Luca Gagliardelli , and Giovanni Simonini . 2020 . BLAST2: An Efficient Technique for Loose Schema Information Extraction from Heterogeneous Big Data Sources . ACM J. Data Inf. Qual. 12 , 4 (2020), 18:1--18:22. Domenico Beneventano, Sonia Bergamaschi, Luca Gagliardelli, and Giovanni Simonini. 2020. BLAST2: An Efficient Technique for Loose Schema Information Extraction from Heterogeneous Big Data Sources. ACM J. Data Inf. Qual. 12, 4 (2020), 18:1--18:22.",
+          "journal-title": "ACM J. Data Inf. Qual."
+        },
+        {
+          "key": "e_1_2_1_3_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.is.2018.02.005"
+        },
+        {
+          "key": "e_1_2_1_4_1",
+          "volume-title": "Entity Resolution, and Duplicate Detection",
+          "author": "Christen Peter",
+          "unstructured": "Peter Christen . 2012. Data Matching - Concepts and Techniques for Record Linkage , Entity Resolution, and Duplicate Detection . Springer . Peter Christen. 2012. Data Matching - Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Springer."
+        },
+        {
+          "key": "e_1_2_1_5_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2011.127"
+        },
+        {
+          "key": "e_1_2_1_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3418896"
+        },
+        {
+          "key": "e_1_2_1_7_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Vassilis Christophides Vasilis Efthymiou and Kostas Stefanidis. 2015. Entity Resolution in the Web of Data. Morgan & Claypool.  Vassilis Christophides Vasilis Efthymiou and Kostas Stefanidis. 2015. Entity Resolution in the Web of Data. Morgan & Claypool.",
+          "DOI": "10.1007/978-3-031-79468-1"
+        },
+        {
+          "key": "e_1_2_1_8_1",
+          "unstructured": "Sanjib Das AnHai Doan Paul Suganthan G. C. Chaitanya Gokhale Pradap Konda Yash Govind and Derek Paulsen. [n.d.]. The Magellan Data Repository. https://sites.google.com/site/anhaidgroup/projects/data.  Sanjib Das AnHai Doan Paul Suganthan G. C. Chaitanya Gokhale Pradap Konda Yash Govind and Derek Paulsen. [n.d.]. The Magellan Data Repository. https://sites.google.com/site/anhaidgroup/projects/data."
+        },
+        {
+          "key": "e_1_2_1_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s10115-019-01347-0"
+        },
+        {
+          "key": "e_1_2_1_10_1",
+          "volume-title": "Big Data Integration",
+          "author": "Dong Xin Luna",
+          "unstructured": "Xin Luna Dong and Divesh Srivastava . 2015. Big Data Integration . Morgan & Claypool Publishers . Xin Luna Dong and Divesh Srivastava. 2015. Big Data Integration. Morgan & Claypool Publishers."
+        },
+        {
+          "key": "e_1_2_1_11_1",
+          "unstructured": "Vasilis Efthymiou George Papadakis Kostas Stefanidis and Vassilis Christophides. 2019. MinoanER: Schema-Agnostic Non-Iterative Massively Parallel Resolution of Web Entities. In EDBT. 373--384.  Vasilis Efthymiou George Papadakis Kostas Stefanidis and Vassilis Christophides. 2019. MinoanER: Schema-Agnostic Non-Iterative Massively Parallel Resolution of Web Entities. In EDBT. 373--384."
+        },
+        {
+          "key": "e_1_2_1_13_1",
+          "unstructured": "Luca Gagliardelli Giovanni Simonini Domenico Beneventano and Sonia Bergamaschi. 2019. SparkER: Scaling Entity Resolution in Spark. In EDBT. 602--605.  Luca Gagliardelli Giovanni Simonini Domenico Beneventano and Sonia Bergamaschi. 2019. SparkER: Scaling Entity Resolution in Spark. In EDBT. 602--605."
+        },
+        {
+          "key": "e_1_2_1_14_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5441/002/edbt.2020.76"
+        },
+        {
+          "key": "e_1_2_1_15_1",
+          "volume-title": "BEER: Blocking for Effective Entity Resolution. In SIGMOD. 2711--2715.",
+          "author": "Galhotra Sainyam",
+          "year": "2021",
+          "unstructured": "Sainyam Galhotra , Donatella Firmani , Barna Saha , and Divesh Srivastava . 2021 . BEER: Blocking for Effective Entity Resolution. In SIGMOD. 2711--2715. Sainyam Galhotra, Donatella Firmani, Barna Saha, and Divesh Srivastava. 2021. BEER: Blocking for Effective Entity Resolution. In SIGMOD. 2711--2715."
+        },
+        {
+          "key": "e_1_2_1_16_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s00778-021-00656-7"
+        },
+        {
+          "key": "e_1_2_1_17_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1656274.1656278"
+        },
+        {
+          "key": "e_1_2_1_18_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/1920841.1920904"
+        },
+        {
+          "key": "e_1_2_1_19_1",
+          "volume-title": "EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. arXiv preprint arXiv:2101.06126",
+          "author": "Obraczka Daniel",
+          "year": "2021",
+          "unstructured": "Daniel Obraczka , Jonathan Schuchart , and Erhard Rahm . 2021 . EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. arXiv preprint arXiv:2101.06126 (2021). Daniel Obraczka, Jonathan Schuchart, and Erhard Rahm. 2021. EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. arXiv preprint arXiv:2101.06126 (2021)."
+        },
+        {
+          "key": "e_1_2_1_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2856318.2856326"
+        },
+        {
+          "key": "e_1_2_1_21_1",
+          "first-page": "2665",
+          "article-title": "A blocking framework for entity resolution in highly heterogeneous information spaces",
+          "volume": "25",
+          "author": "Papadakis George",
+          "year": "2012",
+          "unstructured": "George Papadakis , Ekaterini Ioannou , Themis Palpanas , Claudia Niederée , and Wolfgang Nejdl . 2012 . A blocking framework for entity resolution in highly heterogeneous information spaces . TKDE 25 , 12 (2012), 2665 -- 2682 . George Papadakis, Ekaterini Ioannou, Themis Palpanas, Claudia Niederée, and Wolfgang Nejdl. 2012. A blocking framework for entity resolution in highly heterogeneous information spaces. TKDE 25, 12 (2012), 2665--2682.",
+          "journal-title": "TKDE"
+        },
+        {
+          "key": "e_1_2_1_22_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.2200/S01067ED1V01Y202012DTM064"
+        },
+        {
+          "key": "e_1_2_1_23_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2013.54"
+        },
+        {
+          "key": "e_1_2_1_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.is.2020.101565"
+        },
+        {
+          "key": "e_1_2_1_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2733085.2733098"
+        },
+        {
+          "key": "e_1_2_1_26_1",
+          "unstructured": "George Papadakis George Papastefanatos Themis Palpanas and Manolis Koubarakis. 2016. Scaling entity resolution to large heterogeneous data with enhanced meta-blocking.. In EDBT. 221--232.  George Papadakis George Papastefanatos Themis Palpanas and Manolis Koubarakis. 2016. Scaling entity resolution to large heterogeneous data with enhanced meta-blocking.. In EDBT. 221--232."
+        },
+        {
+          "key": "e_1_2_1_27_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3377455"
+        },
+        {
+          "key": "e_1_2_1_28_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2947618.2947624"
+        },
+        {
+          "key": "e_1_2_1_29_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2014.2359666"
+        },
+        {
+          "key": "e_1_2_1_30_1",
+          "volume-title": "Scikit-learn: Machine learning in Python. the Journal of machine Learning research 12",
+          "author": "Pedregosa Fabian",
+          "year": "2011",
+          "unstructured": "Fabian Pedregosa , Gaël Varoquaux , Alexandre Gramfort , Vincent Michel , Bertrand Thirion , Olivier Grisel , Mathieu Blondel , Peter Prettenhofer , Ron Weiss , Vincent Dubourg , 2011 . Scikit-learn: Machine learning in Python. the Journal of machine Learning research 12 (2011), 2825--2830. Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, et al. 2011. Scikit-learn: Machine learning in Python. the Journal of machine Learning research 12 (2011), 2825--2830."
+        },
+        {
+          "key": "e_1_2_1_31_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2994509.2994533"
+        },
+        {
+          "key": "e_1_2_1_32_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.is.2019.03.006"
+        },
+        {
+          "key": "e_1_2_1_33_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2018.2852763"
+        },
+        {
+          "key": "e_1_2_1_34_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3523210.3523226"
+        },
+        {
+          "key": "e_1_2_1_35_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2012.43"
+        },
+        {
+          "key": "e_1_2_1_36_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1088/1742-6596/887/1/012058"
+        }
+      ],
+      "container-title": [
+        "Proceedings of the VLDB Endowment"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.14778/3538598.3538611",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2022,
+            12,
+            28
+          ]
+        ],
+        "date-time": "2022-12-28T09:28:40Z",
+        "timestamp": 1672219720000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.14778/3538598.3538611"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            5
+          ]
+        ]
+      },
+      "references-count": 35,
+      "journal-issue": {
+        "issue": "9",
+        "published-print": {
+          "date-parts": [
+            [
+              2022,
+              5
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.14778/3538598.3538611"
+      ],
+      "URL": "https://doi.org/10.14778/3538598.3538611",
+      "relation": {},
+      "ISSN": [
+        "2150-8097"
+      ],
+      "issn-type": [
+        {
+          "value": "2150-8097",
+          "type": "print"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            5
+          ]
+        ]
+      }
+    }
+  }
+}

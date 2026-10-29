@@ -1,0 +1,2088 @@
+[
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "_clean_names",
+    "main_lines": [
+      67,
+      69
+    ],
+    "backup_lines": [
+      67,
+      69
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "_name_sim_arrays",
+    "main_lines": [
+      48,
+      64
+    ],
+    "backup_lines": [
+      48,
+      64
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "_nested_entity_bucket",
+    "main_lines": [
+      156,
+      163
+    ],
+    "backup_lines": [
+      156,
+      163
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "bucket",
+    "main_lines": [
+      36,
+      38
+    ],
+    "backup_lines": [
+      36,
+      38
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "build_cache",
+    "main_lines": [
+      72,
+      104
+    ],
+    "backup_lines": [
+      72,
+      104
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "build_nested_entity_split",
+    "main_lines": [
+      166,
+      221
+    ],
+    "backup_lines": [
+      166,
+      221
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "entity_keys_by_profile",
+    "main_lines": [
+      147,
+      153
+    ],
+    "backup_lines": [
+      147,
+      153
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "evaluate",
+    "main_lines": [
+      130,
+      140
+    ],
+    "backup_lines": [
+      130,
+      140
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "load_profiles",
+    "main_lines": [
+      41,
+      45
+    ],
+    "backup_lines": [
+      41,
+      45
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "nested_split_constants",
+    "main_lines": [
+      223,
+      247
+    ],
+    "backup_lines": [
+      223,
+      247
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "save_json",
+    "main_lines": [
+      143,
+      144
+    ],
+    "backup_lines": [
+      143,
+      144
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_lib.py",
+    "backup_path": "experiments/code/exp_lib.py",
+    "symbol": "split_constants",
+    "main_lines": [
+      107,
+      127
+    ],
+    "backup_lines": [
+      107,
+      127
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "GAConfig",
+    "main_lines": [
+      34,
+      58
+    ],
+    "backup_lines": [
+      28,
+      52
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "_config_or_default",
+    "main_lines": [
+      71,
+      72
+    ],
+    "backup_lines": [
+      65,
+      66
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "clip",
+    "main_lines": [
+      107,
+      113
+    ],
+    "backup_lines": [
+      100,
+      106
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "confusion_counts",
+    "main_lines": [
+      87,
+      93
+    ],
+    "backup_lines": [
+      81,
+      87
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "cost_from_counts",
+    "main_lines": [
+      96,
+      100
+    ],
+    "backup_lines": [
+      90,
+      93
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "decide_code",
+    "main_lines": [
+      75,
+      84
+    ],
+    "backup_lines": [
+      69,
+      78
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "default_config",
+    "main_lines": [
+      66,
+      68
+    ],
+    "backup_lines": [
+      60,
+      62
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "default_weights",
+    "main_lines": [
+      61,
+      63
+    ],
+    "backup_lines": [
+      55,
+      57
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "main",
+    "main_lines": [
+      159,
+      194
+    ],
+    "backup_lines": [
+      152,
+      187
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "mutate",
+    "main_lines": [
+      121,
+      127
+    ],
+    "backup_lines": [
+      114,
+      120
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "raw_cost",
+    "main_lines": [
+      103,
+      104
+    ],
+    "backup_lines": [
+      96,
+      97
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "run_ga",
+    "main_lines": [
+      130,
+      156
+    ],
+    "backup_lines": [
+      123,
+      149
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r1_ga_redecision.py",
+    "backup_path": "experiments/code/exp_r1_ga_redecision.py",
+    "symbol": "uniform_crossover",
+    "main_lines": [
+      116,
+      118
+    ],
+    "backup_lines": [
+      109,
+      111
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "FocalLoss",
+    "main_lines": [
+      270,
+      282
+    ],
+    "backup_lines": [
+      275,
+      287
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "IdentityMLP",
+    "main_lines": [
+      285,
+      298
+    ],
+    "backup_lines": [
+      290,
+      303
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "R2TrainingConfig",
+    "main_lines": [
+      703,
+      729
+    ],
+    "backup_lines": [
+      708,
+      734
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "_clean",
+    "main_lines": [
+      141,
+      143
+    ],
+    "backup_lines": [
+      146,
+      148
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "_preflight_r2_inputs",
+    "main_lines": [
+      791,
+      804
+    ],
+    "backup_lines": [
+      796,
+      809
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "_sha256_file",
+    "main_lines": [
+      771,
+      776
+    ],
+    "backup_lines": [
+      776,
+      781
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "_validate_feature_frame",
+    "main_lines": [
+      779,
+      788
+    ],
+    "backup_lines": [
+      784,
+      793
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "build_profile_texts",
+    "main_lines": [
+      78,
+      92
+    ],
+    "backup_lines": [
+      83,
+      97
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "build_r2_probabilities",
+    "main_lines": [
+      511,
+      580
+    ],
+    "backup_lines": [
+      516,
+      585
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "compute_bert_cos",
+    "main_lines": [
+      116,
+      137
+    ],
+    "backup_lines": [
+      121,
+      142
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "compute_features17",
+    "main_lines": [
+      146,
+      266
+    ],
+    "backup_lines": [
+      151,
+      271
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "decide_manual",
+    "main_lines": [
+      587,
+      591
+    ],
+    "backup_lines": [
+      592,
+      596
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "encode_profiles",
+    "main_lines": [
+      95,
+      113
+    ],
+    "backup_lines": [
+      100,
+      118
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "environment_snapshot",
+    "main_lines": [
+      753,
+      768
+    ],
+    "backup_lines": [
+      758,
+      773
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "fn_recovery",
+    "main_lines": [
+      647,
+      668
+    ],
+    "backup_lines": [
+      652,
+      673
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "log",
+    "main_lines": [
+      64,
+      68
+    ],
+    "backup_lines": [
+      69,
+      73
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "main",
+    "main_lines": [
+      671,
+      695
+    ],
+    "backup_lines": [
+      676,
+      700
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "make_loader",
+    "main_lines": [
+      352,
+      354
+    ],
+    "backup_lines": [
+      357,
+      359
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "predict_probs",
+    "main_lines": [
+      358,
+      365
+    ],
+    "backup_lines": [
+      363,
+      370
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "run_r2",
+    "main_lines": [
+      594,
+      609
+    ],
+    "backup_lines": [
+      599,
+      614
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "run_r3",
+    "main_lines": [
+      613,
+      643
+    ],
+    "backup_lines": [
+      618,
+      648
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "set_deterministic_seed",
+    "main_lines": [
+      732,
+      750
+    ],
+    "backup_lines": [
+      737,
+      755
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "set_seed",
+    "main_lines": [
+      71,
+      74
+    ],
+    "backup_lines": [
+      76,
+      79
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "train_mlp",
+    "main_lines": [
+      807,
+      864
+    ],
+    "backup_lines": [
+      812,
+      869
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "train_r2_probabilities",
+    "main_lines": [
+      867,
+      987
+    ],
+    "backup_lines": [
+      872,
+      992
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r2_bert_feature.py",
+    "backup_path": "experiments/code/exp_r2_bert_feature.py",
+    "symbol": "undersample_negatives",
+    "main_lines": [
+      341,
+      349
+    ],
+    "backup_lines": [
+      346,
+      354
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "bigrams",
+    "main_lines": [
+      75,
+      77
+    ],
+    "backup_lines": [
+      84,
+      86
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "bloom_packed",
+    "main_lines": [
+      80,
+      89
+    ],
+    "backup_lines": [
+      89,
+      98
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "build_probabilities_for_L",
+    "main_lines": [
+      180,
+      238
+    ],
+    "backup_lines": [
+      189,
+      247
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "build_profile_bloom",
+    "main_lines": [
+      92,
+      132
+    ],
+    "backup_lines": [
+      101,
+      141
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "compute_pair_bloom_features",
+    "main_lines": [
+      146,
+      177
+    ],
+    "backup_lines": [
+      155,
+      186
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "dice_chunked",
+    "main_lines": [
+      135,
+      143
+    ],
+    "backup_lines": [
+      144,
+      152
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "eval_ga",
+    "main_lines": [
+      252,
+      266
+    ],
+    "backup_lines": [
+      261,
+      275
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "eval_manual",
+    "main_lines": [
+      241,
+      249
+    ],
+    "backup_lines": [
+      250,
+      258
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "log",
+    "main_lines": [
+      68,
+      72
+    ],
+    "backup_lines": [
+      77,
+      81
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r4_bloom_privacy.py",
+    "backup_path": "experiments/code/exp_r4_bloom_privacy.py",
+    "symbol": "main",
+    "main_lines": [
+      269,
+      312
+    ],
+    "backup_lines": [
+      278,
+      324
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "BertERModel",
+    "main_lines": [
+      153,
+      184
+    ],
+    "backup_lines": [
+      159,
+      190
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "blocking_recovery_eval",
+    "main_lines": [
+      407,
+      421
+    ],
+    "backup_lines": [
+      416,
+      430
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "build_buckets",
+    "main_lines": [
+      393,
+      397
+    ],
+    "backup_lines": [
+      402,
+      406
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "build_profile_texts",
+    "main_lines": [
+      122,
+      137
+    ],
+    "backup_lines": [
+      128,
+      143
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "build_training_pairs",
+    "main_lines": [
+      230,
+      284
+    ],
+    "backup_lines": [
+      236,
+      293
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "clean_field",
+    "main_lines": [
+      117,
+      119
+    ],
+    "backup_lines": [
+      123,
+      125
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "compute_hash_codes",
+    "main_lines": [
+      383,
+      390
+    ],
+    "backup_lines": [
+      392,
+      399
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "cosine_contrastive_loss",
+    "main_lines": [
+      187,
+      193
+    ],
+    "backup_lines": [
+      193,
+      199
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "encode_all_profiles",
+    "main_lines": [
+      202,
+      226
+    ],
+    "backup_lines": [
+      208,
+      232
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "enumerate_bucket_pairs",
+    "main_lines": [
+      424,
+      443
+    ],
+    "backup_lines": [
+      433,
+      452
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "eval_ap",
+    "main_lines": [
+      296,
+      301
+    ],
+    "backup_lines": [
+      305,
+      310
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "log",
+    "main_lines": [
+      103,
+      107
+    ],
+    "backup_lines": [
+      109,
+      113
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "main",
+    "main_lines": [
+      472,
+      595
+    ],
+    "backup_lines": [
+      481,
+      604
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "neighbor_codes",
+    "main_lines": [
+      400,
+      404
+    ],
+    "backup_lines": [
+      409,
+      413
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "pairs_to_row_indices",
+    "main_lines": [
+      288,
+      292
+    ],
+    "backup_lines": [
+      297,
+      301
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "quantization_reg",
+    "main_lines": [
+      196,
+      197
+    ],
+    "backup_lines": [
+      202,
+      203
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "score_pairs_with_match_head",
+    "main_lines": [
+      447,
+      469
+    ],
+    "backup_lines": [
+      456,
+      478
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "set_seed",
+    "main_lines": [
+      110,
+      113
+    ],
+    "backup_lines": [
+      116,
+      119
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "tokenize_all_profiles",
+    "main_lines": [
+      140,
+      149
+    ],
+    "backup_lines": [
+      146,
+      155
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "exp_r6_bert_er.py",
+    "backup_path": "experiments/code/exp_r6_bert_er.py",
+    "symbol": "train_heads",
+    "main_lines": [
+      304,
+      379
+    ],
+    "backup_lines": [
+      313,
+      388
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "assert_unique_keys",
+    "main_lines": [
+      141,
+      143
+    ],
+    "backup_lines": [
+      143,
+      145
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "build_nested_constants_without_test",
+    "main_lines": [
+      242,
+      245
+    ],
+    "backup_lines": [
+      244,
+      247
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "build_summary",
+    "main_lines": [
+      521,
+      569
+    ],
+    "backup_lines": [
+      523,
+      571
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "class_counts",
+    "main_lines": [
+      265,
+      266
+    ],
+    "backup_lines": [
+      267,
+      268
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "delta_effect",
+    "main_lines": [
+      514,
+      518
+    ],
+    "backup_lines": [
+      516,
+      520
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "deterministic_sample_indices",
+    "main_lines": [
+      269,
+      276
+    ],
+    "backup_lines": [
+      271,
+      278
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "environment_snapshot",
+    "main_lines": [
+      101,
+      126
+    ],
+    "backup_lines": [
+      103,
+      128
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "json_default",
+    "main_lines": [
+      82,
+      91
+    ],
+    "backup_lines": [
+      84,
+      93
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "labels_for",
+    "main_lines": [
+      164,
+      178
+    ],
+    "backup_lines": [
+      166,
+      180
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "load_comparison_sources",
+    "main_lines": [
+      488,
+      511
+    ],
+    "backup_lines": [
+      490,
+      513
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "manual_decision",
+    "main_lines": [
+      258,
+      262
+    ],
+    "backup_lines": [
+      260,
+      264
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "metric_row",
+    "main_lines": [
+      471,
+      485
+    ],
+    "backup_lines": [
+      473,
+      487
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "metric_with_cost",
+    "main_lines": [
+      248,
+      255
+    ],
+    "backup_lines": [
+      250,
+      257
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "pair_key_digest",
+    "main_lines": [
+      156,
+      161
+    ],
+    "backup_lines": [
+      158,
+      163
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "parse_args",
+    "main_lines": [
+      849,
+      855
+    ],
+    "backup_lines": [
+      851,
+      857
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "probability_artifact_check",
+    "main_lines": [
+      357,
+      371
+    ],
+    "backup_lines": [
+      359,
+      373
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "require_columns",
+    "main_lines": [
+      135,
+      138
+    ],
+    "backup_lines": [
+      137,
+      140
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "run",
+    "main_lines": [
+      636,
+      846
+    ],
+    "backup_lines": [
+      638,
+      848
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "run_ga_trials",
+    "main_lines": [
+      374,
+      468
+    ],
+    "backup_lines": [
+      376,
+      470
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "set_seed",
+    "main_lines": [
+      129,
+      132
+    ],
+    "backup_lines": [
+      131,
+      134
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "sha256_bytes",
+    "main_lines": [
+      78,
+      79
+    ],
+    "backup_lines": [
+      80,
+      81
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "sha256_file",
+    "main_lines": [
+      70,
+      75
+    ],
+    "backup_lines": [
+      72,
+      77
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "train_gb_variant",
+    "main_lines": [
+      279,
+      354
+    ],
+    "backup_lines": [
+      281,
+      356
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "validate_inputs",
+    "main_lines": [
+      181,
+      239
+    ],
+    "backup_lines": [
+      183,
+      241
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "validate_ranges",
+    "main_lines": [
+      146,
+      153
+    ],
+    "backup_lines": [
+      148,
+      155
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "write_csv",
+    "main_lines": [
+      632,
+      633
+    ],
+    "backup_lines": [
+      634,
+      635
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "write_json",
+    "main_lines": [
+      94,
+      98
+    ],
+    "backup_lines": [
+      96,
+      100
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "run_gb_transformer_experiments.py",
+    "backup_path": "experiments/code/run_gb_transformer_experiments.py",
+    "symbol": "write_summary_markdown",
+    "main_lines": [
+      572,
+      629
+    ],
+    "backup_lines": [
+      574,
+      631
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "FeatureEngineer",
+    "main_lines": [
+      497,
+      630
+    ],
+    "backup_lines": [
+      491,
+      624
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "PairFeatureComputer",
+    "main_lines": [
+      314,
+      474
+    ],
+    "backup_lines": [
+      308,
+      468
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_build_row_cache",
+    "main_lines": [
+      282,
+      311
+    ],
+    "backup_lines": [
+      276,
+      305
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_extract_hashtags",
+    "main_lines": [
+      128,
+      131
+    ],
+    "backup_lines": [
+      122,
+      125
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_find_resume_offset",
+    "main_lines": [
+      192,
+      202
+    ],
+    "backup_lines": [
+      186,
+      196
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_get_rapidfuzz",
+    "main_lines": [
+      84,
+      93
+    ],
+    "backup_lines": [
+      78,
+      87
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_haversine_km",
+    "main_lines": [
+      141,
+      148
+    ],
+    "backup_lines": [
+      135,
+      142
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_jaccard",
+    "main_lines": [
+      134,
+      138
+    ],
+    "backup_lines": [
+      128,
+      132
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_load_profile_image_module",
+    "main_lines": [
+      67,
+      74
+    ],
+    "backup_lines": [
+      65,
+      68
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_normalize_picture_url",
+    "main_lines": [
+      151,
+      152
+    ],
+    "backup_lines": [
+      145,
+      146
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_parse_list_field",
+    "main_lines": [
+      106,
+      118
+    ],
+    "backup_lines": [
+      100,
+      112
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_parse_mentions",
+    "main_lines": [
+      121,
+      125
+    ],
+    "backup_lines": [
+      115,
+      119
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_picture_stem",
+    "main_lines": [
+      155,
+      158
+    ],
+    "backup_lines": [
+      149,
+      152
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_read_parquet_compat",
+    "main_lines": [
+      161,
+      170
+    ],
+    "backup_lines": [
+      155,
+      164
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_safe_str",
+    "main_lines": [
+      96,
+      99
+    ],
+    "backup_lines": [
+      90,
+      93
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_safe_str_lower",
+    "main_lines": [
+      102,
+      103
+    ],
+    "backup_lines": [
+      96,
+      97
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "_write_parquet_compat",
+    "main_lines": [
+      173,
+      184
+    ],
+    "backup_lines": [
+      167,
+      178
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "build_entity_split",
+    "main_lines": [
+      633,
+      658
+    ],
+    "backup_lines": [
+      627,
+      652
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "build_or_load_image_cache",
+    "main_lines": [
+      661,
+      670
+    ],
+    "backup_lines": [
+      655,
+      664
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "build_profile_lookup",
+    "main_lines": [
+      236,
+      242
+    ],
+    "backup_lines": [
+      230,
+      236
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "compute_sbert_embeddings",
+    "main_lines": [
+      477,
+      494
+    ],
+    "backup_lines": [
+      471,
+      488
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "ensure_output_dirs",
+    "main_lines": [
+      187,
+      189
+    ],
+    "backup_lines": [
+      181,
+      183
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "load_profile_cache",
+    "main_lines": [
+      251,
+      256
+    ],
+    "backup_lines": [
+      245,
+      250
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "load_split_artifacts",
+    "main_lines": [
+      221,
+      233
+    ],
+    "backup_lines": [
+      215,
+      227
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "main",
+    "main_lines": [
+      691,
+      833
+    ],
+    "backup_lines": [
+      685,
+      827
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "merge_feature_chunks",
+    "main_lines": [
+      259,
+      279
+    ],
+    "backup_lines": [
+      253,
+      273
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "parse_args",
+    "main_lines": [
+      673,
+      688
+    ],
+    "backup_lines": [
+      667,
+      682
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "save_profile_cache",
+    "main_lines": [
+      245,
+      248
+    ],
+    "backup_lines": [
+      239,
+      242
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage9_features_pipeline_chunked.py",
+    "backup_path": "src/identity_resolution/stages/features.py",
+    "symbol": "save_split_artifacts",
+    "main_lines": [
+      205,
+      218
+    ],
+    "backup_lines": [
+      199,
+      212
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "build_feature_engine",
+    "main_lines": [
+      76,
+      94
+    ],
+    "backup_lines": [
+      53,
+      71
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "build_lead_scores",
+    "main_lines": [
+      373,
+      403
+    ],
+    "backup_lines": [
+      308,
+      338
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "build_match_decisions",
+    "main_lines": [
+      117,
+      141
+    ],
+    "backup_lines": [
+      94,
+      107
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "build_review_queue",
+    "main_lines": [
+      160,
+      248
+    ],
+    "backup_lines": [
+      126,
+      214
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "build_unified_tables",
+    "main_lines": [
+      282,
+      370
+    ],
+    "backup_lines": [
+      217,
+      305
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "ensure_dirs",
+    "main_lines": [
+      30,
+      32
+    ],
+    "backup_lines": [
+      30,
+      32
+    ],
+    "ast_equal": false
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "heuristic_support_score",
+    "main_lines": [
+      144,
+      157
+    ],
+    "backup_lines": [
+      110,
+      123
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "load_exact_and_scores",
+    "main_lines": [
+      97,
+      114
+    ],
+    "backup_lines": [
+      74,
+      91
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "load_profiles",
+    "main_lines": [
+      58,
+      73
+    ],
+    "backup_lines": [
+      35,
+      50
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "main",
+    "main_lines": [
+      414,
+      493
+    ],
+    "backup_lines": [
+      349,
+      428
+    ],
+    "ast_equal": true
+  },
+  {
+    "main_path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "backup_path": "src/identity_resolution/workflows/crm.py",
+    "symbol": "parse_args",
+    "main_lines": [
+      406,
+      411
+    ],
+    "backup_lines": [
+      341,
+      346
+    ],
+    "ast_equal": true
+  }
+]

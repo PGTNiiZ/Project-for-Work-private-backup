@@ -1,0 +1,197 @@
+{
+  "PASS": 35,
+  "FAIL": 2,
+  "checks": [
+    {
+      "check": "report RESULTS_SUMMARY_TH.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "report THESIS_TABLES_TH.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "report HISTORICAL_COMPARISON_TH.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "report THREATS_TO_VALIDITY_TH.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "report EXECUTION_HANDOFF_TH.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact DEVIATIONS.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact GATE_RECORD.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact PREREGISTRATION_FREEZE.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact LABEL_SANITY.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact ENVIRONMENT.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "root artifact FINAL_CONFIGS.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "G4 committed before first scientific run",
+      "status": "PASS",
+      "detail": "932cf9569abb38dfd9c3aa55e258da299e5290e6"
+    },
+    {
+      "check": "FINAL_CONFIGS committed before final access",
+      "status": "PASS",
+      "detail": "81171fd998721c168ba2f8192264fef675993497"
+    },
+    {
+      "check": "final access matches exact frozen configurations",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "final declaration unchanged",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "frozen artifacts unchanged",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all DONE metrics trace by SHA256",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all scientific results EXPLORATORY",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "every run config hash matches",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "each run config committed before run timestamp",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "run configurations exist verbatim in their recorded commits",
+      "status": "PASS",
+      "detail": "mismatches=0"
+    },
+    {
+      "check": "raw input/thesis/v1/design/historical SHA256 unchanged",
+      "status": "PASS",
+      "detail": "870 protected files; mismatches=0"
+    },
+    {
+      "check": "additional raw datasets and images match pinned Git SHA256",
+      "status": "PASS",
+      "detail": "files=4265; no filenames output"
+    },
+    {
+      "check": "five primary contrasts CI/Holm/decision",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "equivalence decisions have TOST support",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "policy budgets exactly 2048 per seed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "six model searches at 200 configs each",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "every Tier1 DONE or explicit reason",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "independent frozen metric recomputation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no tuning after test opened",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "all post-final supporting fits use pre-final frozen hyperparameters",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "inference timing stages have five measured repetitions",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "tuned rule has exactly 200 configurations",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "public-output PII scan classified, zero profile-value hits",
+      "status": "FAIL",
+      "detail": "unclassified=1; terminal incident separately disclosed"
+    },
+    {
+      "check": "all committed additions confined to research_v2_runs",
+      "status": "FAIL",
+      "detail": ""
+    },
+    {
+      "check": "no private data/model/embedding/prediction committed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "push remains disabled",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "scientific_status": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "G0_G1": "DECLARED PASSED; REFERENCE NOT PROVIDED",
+  "G5": "NOT MET",
+  "protocol_deviations_disclosed": true,
+  "privacy_scope": "file-output scan only; terminal metadata incident remains",
+  "commit_worktree_branch": "research-v2-experiments"
+}

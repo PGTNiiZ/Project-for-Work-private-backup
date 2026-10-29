@@ -1,0 +1,131 @@
+
+## main@1e0a2db:exp_r1_ga_redecision.py
+14: # Keep these names for existing R2/R4/R6 scripts and the legacy command line.
+15: W_FP, W_FN, W_REV = 5.0, 1.0, 0.02
+16: POP, GENS, ELITE, SEED = 60, 40, 12, 42
+17: 
+18: STAGE18_MANUAL = np.array([0.98, 0.95, 0.90, 0.70])
+20: 
+21: @dataclass(frozen=True)
+22: class CostWeights:
+23:     """Business cost assigned to a false positive, false negative, and review."""
+24: 
+25:     fp: float = 5.0
+27:     review: float = 0.02
+28: 
+29:     def as_dict(self):
+30:         return {"W_FP": self.fp, "W_FN": self.fn, "W_REV": self.review}
+31: 
+35:     """Configuration for threshold optimisation; defaults reproduce legacy R1."""
+36: 
+37:     seed: int = 42
+38:     population_size: int = 60
+39:     generations: int = 40
+40:     elite_size: int = 12
+41:     mutation_probability: float = 0.30
+42:     mutation_sigma: float = 0.02
+43:     weights: CostWeights = field(default_factory=CostWeights)
+44: 
+45:     def validate(self):
+46:         if self.population_size < 2:
+47:             raise ValueError("population_size must be at least 2")
+48:         if not 1 <= self.elite_size < self.population_size:
+49:             raise ValueError("elite_size must be between 1 and population_size - 1")
+50:         if self.generations < 1:
+51:             raise ValueError("generations must be at least 1")
+52:         if not 0.0 <= self.mutation_probability <= 1.0:
+53:             raise ValueError("mutation_probability must be between 0 and 1")
+55:             raise ValueError("mutation_sigma must be non-negative")
+56:         if min(self.weights.fp, self.weights.fn, self.weights.review) < 0.0:
+57:             raise ValueError("cost weights must be non-negative")
+58:         return self
+59: 
+60: 
+61: def default_weights():
+62:     """Read legacy globals so their historical edit-and-rerun behaviour remains."""
+63:     return CostWeights(W_FP, W_FN, W_REV)
+64: 
+65: 
+66: def default_config():
+67:     return GAConfig(seed=SEED, population_size=POP, generations=GENS,
+68:                     elite_size=ELITE, weights=default_weights())
+69: 
+70: 
+71: def _config_or_default(config):
+72:     return (default_config() if config is None else config).validate()
+73: 
+74: 
+75: def decide_code(prob, nsim, g):
+76:     """Return NO_MATCH/REVIEW/MATCH codes using the four-gene decision rule."""
+77:     t_m, t_r, cp, cd = g
+85: 
+86: 
+87: def confusion_counts(d, actual):
+88:     """Count decisions on scored pairs; fixed split constants belong to exp_lib."""
+89:     return {
+94: 
+95: 
+96: def cost_from_counts(counts, weights=None):
+97:     """Compute ``W_FP*FP + W_FN*FN + W_REV*REVIEW``."""
+98:     weights = default_weights() if weights is None else weights
+101: 
+102: 
+103: def raw_cost(d, actual, weights=None):
+104:     return cost_from_counts(confusion_counts(d, actual), weights)
+105: 
+106: 
+107: def clip(g):
+108:     """Clip the genome to R1/R3 bounds while preserving both ordering constraints."""
+109:     t_m = min(max(g[0], 0.90), 0.999)
+114: 
+115: 
+116: def uniform_crossover(parent_a, parent_b, rng):
+117:     """Uniform crossover: each gene is copied from exactly one parent."""
+118:     return np.where(rng.random(4) < 0.5, parent_a, parent_b)
+119: 
+120: 
+121: def mutate(genome, rng, config=None):
+122:     """Apply legacy-order Gaussian mutation, then clip to a valid genome."""
+123:     cfg = _config_or_default(config)
+124:     # The draw order is intentionally normal then mask: it preserves seed-42.
+125:     delta = rng.normal(0, cfg.mutation_sigma, 4)
+126:     mask = rng.random(4) < cfg.mutation_probability
+128: 
+129: 
+130: def run_ga(prob, nsim, actual, const_fn_below=0, config=None, verbose=True):
+131:     """Optimise on the arrays supplied by the caller (validation data only)."""
+132:     cfg = _config_or_default(config)
+133:     rng = np.random.default_rng(cfg.seed)
+134: 
+135:     def cost(g):
+136:         return (raw_cost(decide_code(prob, nsim, g), actual, cfg.weights)
+137:                 + cfg.weights.fn * const_fn_below)
+138: 
+139:     pop = [clip(rng.uniform([0.90, 0.50, 0.50, 0.0], [0.999, 0.90, 1.0, 0.6]))
+140:            for _ in range(cfg.population_size)]
+141:     history = []
+142:     for gen in range(cfg.generations):
+143:         pop.sort(key=cost)
+144:         elite = pop[:cfg.elite_size]
+145:         children = []
+146:         while len(children) < cfg.population_size - cfg.elite_size:
+147:             a, b = elite[rng.integers(cfg.elite_size)], elite[rng.integers(cfg.elite_size)]
+148:             child = uniform_crossover(a, b, rng)
+149:             children.append(mutate(child, rng, cfg))
+150:         pop = elite + children
+151:         best_c = cost(pop[0])
+152:         history.append(dict(gen=gen, cost=float(best_c),
+153:                             genome=[round(float(x), 4) for x in pop[0]]))
+154:         if verbose and (gen % 5 == 0 or gen == cfg.generations - 1):
+155:             print(f"  gen {gen:2d}  val cost {best_c:12,.1f}  g={np.round(pop[0], 4)}")
+156:     return min(pop, key=cost), history
+157: 
+158: 
+159: def main():
+160:     """Retain the original one-off R1 command and legacy output locations."""
+161:     print("Loading cache ...")
+187:         for name, code in rules.items():
+188:             metric = evaluate(code, actual, consts[sp])
+189:             metric["cost"] = round(float(cost_from_counts(metric)), 1)
+190:             results["rules"][sp][name] = metric
+191: 

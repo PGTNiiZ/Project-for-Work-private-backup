@@ -1,0 +1,322 @@
+# CELL 2
+# --- 15.0 Setup: load data if not already in context (e.g. standalone run) ---
+import os, uuid
+import numpy as np
+import pandas as pd
+import networkx as nx
+
+OUTPUT_DIR = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+
+if 'df_clean' not in dir():
+    df_clean = pd.read_csv(f'{OUTPUT_DIR}/all_profiles_cleaned.csv')
+
+if 'profile_lookup' not in dir():
+    profile_lookup = df_clean.set_index('profile_id')
+
+if 'auto_merge' not in dir() or 'review_queue' not in dir():
+    predictions_df = pd.read_csv(f'{OUTPUT_DIR}/predictions.csv')
+    auto_merge   = predictions_df[predictions_df['decision'] == 'MATCH']
+    review_queue = predictions_df[predictions_df['decision'] == 'POSSIBLE_MATCH']
+
+# --- 15.1 Transitive Closure ---
+# รวม MATCH + POSSIBLE_MATCH เพื่อไม่ให้ตกหล่น profiles ที่ model มั่นใจระดับกลาง
+merge_pairs = pd.concat([auto_merge, review_queue], ignore_index=True)
+
+merge_graph = nx.Graph()
+for _, row in merge_pairs.iterrows():
+    merge_graph.add_edge(row['profile_id_a'], row['profile_id_b'],
+                         weight=row['probability'])
+
+# Connected components = clusters ของคนเดียวกัน
+clusters = list(nx.connected_components(merge_graph))
+cluster_sizes = [len(c) for c in clusters]
+
+# เก็บ profiles ที่ถูก merge
+matched_profiles = set()
+for cluster in clusters:
+    matched_profiles.update(cluster)
+
+print("📊 Step 15.1: Transitive Closure")
+print("=" * 60)
+print(f"  MATCH pairs         : {len(auto_merge):,}")
+print(f"  POSSIBLE_MATCH pairs: {len(review_queue):,}")
+print(f"  Total merge pairs   : {len(merge_pairs):,}")
+print(f"  Clusters found      : {len(clusters):,}")
+print(f"  Profiles in clusters: {len(matched_profiles):,}")
+if cluster_sizes:
+    print(f"  Cluster size dist   : min={min(cluster_sizes)}, max={max(cluster_sizes)}, "
+          f"mean={np.mean(cluster_sizes):.1f}")
+    for size in sorted(set(cluster_sizes)):
+        count = cluster_sizes.count(size)
+        print(f"    Size {size}: {count} clusters")
+print(f"\n✅ Step 15.1 เสร็จ")
+# CELL 4
+# --- 15.2 Profile Merging ---
+
+def merge_profiles(profile_ids: set, lookup: pd.DataFrame) -> dict:
+    """Merge multiple profiles into a unified customer profile"""
+    unified = {
+        'unified_customer_id': str(uuid.uuid4())[:8],
+        'source_profiles': list(profile_ids),
+        'n_platforms': 0,
+        'platforms': [],
+        'userNames': [],
+        'fullName': '',
+        'bio': '',
+        'location': '',
+        'externalUrls': [],
+    }
+    
+    platforms_seen = set()
+    bios = []
+    
+    for pid in profile_ids:
+        if pid not in lookup.index:
+            continue
+        row = lookup.loc[pid]
+        if isinstance(row, pd.DataFrame): row = row.iloc[0]
+        
+        p = str(row.get('platform', ''))
+        if p: platforms_seen.add(p)
+        
+        un = str(row.get('userName_clean', ''))
+        if un: unified['userNames'].append(f"[{p}] {un}")
+        
+        fn = str(row.get('fullName_clean', ''))
+        if fn and len(fn) > len(unified['fullName']):
+            unified['fullName'] = fn
+        
+        bio = str(row.get('bio_clean', ''))
+        if bio and bio not in bios: bios.append(bio)
+        
+        loc = str(row.get('location_clean', ''))
+        if loc and not unified['location']: unified['location'] = loc
+        
+        url = str(row.get('externalUrl_clean', ''))
+        if url and url not in unified['externalUrls']:
+            unified['externalUrls'].append(url)
+    
+    unified['platforms'] = sorted(platforms_seen)
+    unified['n_platforms'] = len(platforms_seen)
+    unified['bio'] = ' | '.join(bios[:3])  # max 3 bios
+    return unified
+
+# Merge all clusters
+unified_profiles = []
+for cluster in clusters:
+    unified = merge_profiles(cluster, profile_lookup)
+    unified_profiles.append(unified)
+
+unified_df = pd.DataFrame(unified_profiles)
+
+print("📊 Step 15.2: Profile Merging")
+print("=" * 60)
+print(f"  Unified profiles: {len(unified_df):,}")
+if len(unified_df) > 0:
+    print(f"\n  🔍 ตัวอย่าง (3 profiles):")
+    for _, u in unified_df.head(3).iterrows():
+        print(f"    ID: {u['unified_customer_id']}")
+        print(f"    Platforms: {u['platforms']}")
+        print(f"    Names: {u['userNames'][:3]}")
+        print(f"    Full Name: {u['fullName'][:50]}")
+        print(f"    ---")
+print(f"\n✅ Step 15.2 เสร็จ")
+# CELL 6
+# --- 15.3 Save ---
+# สร้าง profile mapping
+mapping_rows = []
+for _, u in unified_df.iterrows():
+    for pid in u['source_profiles']:
+        mapping_rows.append({'original_profile_id': pid,
+                            'unified_customer_id': u['unified_customer_id']})
+mapping_df = pd.DataFrame(mapping_rows)
+
+# Save
+unified_df.to_csv(os.path.join(OUTPUT_DIR, 'unified_profiles.csv'), index=False)
+mapping_df.to_csv(os.path.join(OUTPUT_DIR, 'profile_mapping.csv'), index=False)
+
+n_original = len(df_clean)
+n_unified = len(unified_df) + (n_original - len(matched_profiles))  # clusters + singletons
+
+print("=" * 60)
+print("📊 STAGE 15 SUMMARY — Unified Customer Profile")
+print("=" * 60)
+print(f"  Original profiles  : {n_original:,}")
+print(f"  Merged clusters    : {len(unified_df):,}")
+print(f"  Singletons         : {n_original - len(matched_profiles):,}")
+print(f"  Total customers    : {n_unified:,}")
+print(f"  Dedup ratio        : {(1 - n_unified/n_original)*100:.1f}% reduction")
+print(f"\n  💾 Saved: unified_profiles.csv, profile_mapping.csv")
+print(f"\n{'='*60}")
+print(f"✅ Stage 15 COMPLETE")
+print(f"{'='*60}")
+# CELL 9
+# --- 16.1-16.3 Scoring Components ---
+
+def compute_lead_score(row: pd.Series) -> dict:
+    """คำนวณ lead score จากหลายมิติ"""
+    scores = {}
+    
+    # 16.1: Profile completeness (0-100)
+    fields = ['fullName', 'bio', 'location', 'externalUrls']
+    filled = sum(1 for f in fields if str(row.get(f, '')) not in ['', '[]', 'nan'])
+    scores['completeness'] = (filled / len(fields)) * 100
+    
+    # 16.2: Cross-platform presence (0-100)
+    n_plat = row.get('n_platforms', 1)
+    scores['platform_presence'] = min(n_plat / 3.0 * 100, 100)  # max 3 platforms
+    
+    # 16.3: Engagement indicators (0-100)
+    eng = 0
+    bio = str(row.get('bio', ''))
+    if len(bio) > 20: eng += 30  # has bio content
+    urls = str(row.get('externalUrls', '[]'))
+    if urls != '[]' and len(urls) > 2: eng += 30  # has URL
+    names = str(row.get('userNames', '[]'))
+    if names.count('[') > 1: eng += 20  # multi-platform names
+    location = str(row.get('location', ''))
+    if location and location != 'nan': eng += 20
+    scores['engagement'] = min(eng, 100)
+    
+    # Weighted final score
+    scores['lead_score'] = (
+        scores['completeness'] * 0.3 +
+        scores['platform_presence'] * 0.4 +
+        scores['engagement'] * 0.3
+    )
+    
+    # Tier
+    if scores['lead_score'] >= 80: scores['tier'] = 'Hot'
+    elif scores['lead_score'] >= 50: scores['tier'] = 'Warm'
+    else: scores['tier'] = 'Cold'
+    
+    return scores
+
+# Apply scoring
+score_results = unified_df.apply(compute_lead_score, axis=1, result_type='expand')
+scored_df = pd.concat([unified_df, score_results], axis=1)
+
+print("📊 Step 16.1-16.3: Scoring Components")
+print("=" * 60)
+print(f"  Completeness  : mean={scored_df['completeness'].mean():.1f}")
+print(f"  Platform      : mean={scored_df['platform_presence'].mean():.1f}")
+print(f"  Engagement    : mean={scored_df['engagement'].mean():.1f}")
+print(f"  Lead Score    : mean={scored_df['lead_score'].mean():.1f}")
+print(f"\n✅ Step 16.1-16.3 เสร็จ")
+# CELL 11
+# --- 16.4 Final Score & Tier ---
+tier_counts = scored_df['tier'].value_counts()
+
+print("=" * 60)
+print("📊 STAGE 16 SUMMARY — Lead Scoring")
+print("=" * 60)
+print(f"  {'Tier':<8} {'Range':<12} {'Count':<10} {'%':<8}")
+print(f"  {'-'*38}")
+for tier in ['Hot', 'Warm', 'Cold']:
+    c = tier_counts.get(tier, 0)
+    print(f"  {tier:<8} {'80-100' if tier=='Hot' else '50-79' if tier=='Warm' else '0-49':<12} "
+          f"{c:<10} {c/len(scored_df)*100:.1f}%")
+
+scored_df.to_csv(os.path.join(OUTPUT_DIR, 'lead_scores.csv'), index=False)
+print(f"\n  💾 Saved: lead_scores.csv")
+print(f"\n{'='*60}")
+print(f"✅ Stage 16 COMPLETE")
+print(f"{'='*60}")
+# CELL 13
+# --- 17.1 Customer 360 JSON ---
+import json
+
+customer_360 = []
+for _, row in scored_df.iterrows():
+    customer = {
+        'unified_customer_id': row['unified_customer_id'],
+        'platforms': row['platforms'],
+        'userNames': row['userNames'],
+        'fullName': row['fullName'],
+        'bio': row['bio'][:200] if isinstance(row['bio'], str) else '',
+        'location': row['location'],
+        'externalUrls': row['externalUrls'],
+        'lead_score': round(row['lead_score'], 1),
+        'tier': row['tier'],
+        'n_platforms': row['n_platforms'],
+    }
+    customer_360.append(customer)
+
+with open(os.path.join(OUTPUT_DIR, 'customer_360.json'), 'w', encoding='utf-8') as f:
+    json.dump(customer_360, f, ensure_ascii=False, indent=2)
+
+print("📊 Step 17.1: Customer 360 JSON")
+print(f"  Exported {len(customer_360):,} customers")
+if customer_360:
+    print(f"  Sample: {json.dumps(customer_360[0], ensure_ascii=False, indent=2)[:300]}...")
+print(f"  💾 Saved: customer_360.json")
+# CELL 14
+# --- 17.2 CRM Flat File ---
+crm_df = scored_df[['unified_customer_id', 'fullName', 'platforms', 'n_platforms',
+                    'location', 'lead_score', 'tier']].copy()
+crm_df['platforms'] = crm_df['platforms'].apply(lambda x: ','.join(x) if isinstance(x, list) else str(x))
+crm_df.to_csv(os.path.join(OUTPUT_DIR, 'crm_export.csv'), index=False)
+
+print("📊 Step 17.2: CRM Flat File")
+print(f"  Columns: {list(crm_df.columns)}")
+print(f"  Shape: {crm_df.shape}")
+print(f"  💾 Saved: crm_export.csv")
+# CELL 15
+# --- 17.3-17.4 Pipeline Report & QA ---
+
+report = {
+    'pipeline': 'Identity Resolution & Lead Scoring v2',
+    'version': 'v2',
+    'raw_profiles': int(len(df_clean)),
+    'candidate_pairs': int(len(merge_pairs) + (len(predictions_df) - len(merge_pairs)) if 'predictions_df' in dir() else 0),
+    'unified_customers': len(unified_df),
+    'singletons': int(len(df_clean) - len(matched_profiles)),
+    'dedup_ratio': f"{(1 - len(unified_df)/len(df_clean))*100:.1f}%",
+    'decisions': {
+        'match': int(len(auto_merge)),
+        'possible_match': int(len(review_queue)),
+        'no_match': int(len(predictions_df) - len(auto_merge) - len(review_queue)) if 'predictions_df' in dir() else 0,
+    },
+    'model_metrics': metrics if 'metrics' in dir() else {},
+    'lead_scoring': {
+        'hot': int(tier_counts.get('Hot', 0)),
+        'warm': int(tier_counts.get('Warm', 0)),
+        'cold': int(tier_counts.get('Cold', 0)),
+    },
+    'files_generated': [
+        'candidate_pairs.csv', 'labeled_pairs.csv', 'feature_matrix.csv',
+        'model.pt', 'scaler.pkl', 'calibrator.pkl', 'feature_cols.pkl',
+        'predictions.csv', 'unified_profiles.csv', 'profile_mapping.csv',
+        'lead_scores.csv', 'customer_360.json', 'crm_export.csv',
+        'pipeline_report.json',
+    ],
+}
+
+with open(os.path.join(OUTPUT_DIR, 'pipeline_report.json'), 'w') as f:
+    json.dump(report, f, indent=2, default=str)
+
+# QA Checks
+print("=" * 60)
+print("📊 STAGE 17 — FINAL PIPELINE REPORT")
+print("=" * 60)
+print(f"  Raw profiles       : {report['raw_profiles']:,}")
+print(f"  Unified customers  : {report['unified_customers']:,}")
+print(f"  Singletons         : {report['singletons']:,}")
+print(f"  Dedup ratio        : {report['dedup_ratio']}")
+print(f"  Lead tiers         : Hot={report['lead_scoring']['hot']}, "
+      f"Warm={report['lead_scoring']['warm']}, Cold={report['lead_scoring']['cold']}")
+
+print(f"\n  ✅ QA Checks:")
+dup_ids = unified_df['unified_customer_id'].duplicated().sum()
+print(f"    Duplicate unified IDs  : {dup_ids} {'✅' if dup_ids==0 else '❌'}")
+
+out_of_range = ((scored_df['lead_score'] < 0) | (scored_df['lead_score'] > 100)).sum()
+print(f"    Lead scores 0-100      : {out_of_range} out of range {'✅' if out_of_range==0 else '❌'}")
+
+files_exist = all(os.path.exists(os.path.join(OUTPUT_DIR, f)) for f in report['files_generated'])
+print(f"    All files generated    : {'✅' if files_exist else '❌'}")
+
+print(f"\n  💾 Saved: pipeline_report.json")
+print(f"\n{'='*60}")
+print(f"🎉 PIPELINE COMPLETE — All 17 Stages Done!")
+print(f"{'='*60}")

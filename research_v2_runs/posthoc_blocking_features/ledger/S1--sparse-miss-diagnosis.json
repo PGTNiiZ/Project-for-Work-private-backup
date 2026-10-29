@@ -1,0 +1,15 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S1",
+  "key": "sparse-miss-diagnosis",
+  "config": {
+    "folds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "baseline": "sparse matched pairs from original frozen run"
+  },
+  "PLAN_sha256": "122343d4f0434c2ee63e6af097de01c81c24e7090b4ed3aab3d41b99d572e8c3"
+}

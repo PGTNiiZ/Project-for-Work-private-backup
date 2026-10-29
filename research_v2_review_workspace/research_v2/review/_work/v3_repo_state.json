@@ -1,0 +1,21 @@
+{
+  "main": {
+    "pinned_HEAD": "1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b",
+    "remote_heads": [
+      "50d95e98ea0ffd885aecc32547388a55c8b4affc\trefs/heads/docs/project-reorganization-plan",
+      "1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b\trefs/heads/main",
+      "08f4c5e454f11b5800403fcb2f60759d1aee33ef\trefs/heads/work/safe-20260309-173639"
+    ],
+    "remote_error": "",
+    "remote_drift": "NONE"
+  },
+  "backup": {
+    "pinned_HEAD": "903246c87eba069d4c07106695cbae072dbbb343",
+    "remote_heads": [
+      "903246c87eba069d4c07106695cbae072dbbb343\trefs/heads/main",
+      "ab93b36e215618fd9dea03651a97ee03aa790bc0\trefs/heads/transfer/2026-10-24-full"
+    ],
+    "remote_error": "",
+    "remote_drift": "NONE"
+  }
+}

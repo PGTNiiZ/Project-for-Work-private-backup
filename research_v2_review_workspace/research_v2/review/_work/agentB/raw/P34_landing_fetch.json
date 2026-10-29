@@ -1,0 +1,476 @@
+{
+  "url": "https://doi.org/10.32604/cmc.2025.073175",
+  "final_url": "https://www.techscience.com/cmc/v86n2/64808",
+  "status": 200,
+  "bytes": 77950,
+  "metadata": [
+    {
+      "name": "description",
+      "content": "User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. Over the past decade, the research community has developed a wide range of UIL methods, from structural embeddings to multimodal fusion architectures. However, corresponding adversarial and defensive approaches remain fragmented and comparatively understudied. In this survey, we provide a unified overview of both mapping and anti-mapping methods for UIL. We categorize representative mapping models by learning paradigm and data modality, and systematically compare them with emerging countermeasures including adversarial injection, structural perturbation, and identity obfuscation. To bridge these two threads, we introduce a modality-oriented taxonomy and a formal game-theoretic framing that casts cross-network mapping as a contest between mappers and anti-mappers. This framing allows us to construct a cross-modality dependency matrix, which reveals structural information as the most contested signal, identifies node injection as the most robust defensive strategy, and points to multimodal integration as a promising direction. Our survey underscores the need for balanced, privacy-preserving identity inference and provides a foundation for future research on the adversarial dynamics of social identity mapping and defense."
+    },
+    {
+      "name": "dc.identifier",
+      "content": "doi:10.32604/cmc.2025.073175"
+    },
+    {
+      "name": "og:description",
+      "content": "User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. ... | Find, read and cite all the research you need on Tech Science Press"
+    },
+    {
+      "name": "citation_title",
+      "content": "From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"
+    },
+    {
+      "name": "citation_author",
+      "content": "Shaojie Min"
+    },
+    {
+      "name": "citation_author",
+      "content": "Yaxiao Luo"
+    },
+    {
+      "name": "citation_author",
+      "content": "Kebing Liu"
+    },
+    {
+      "name": "citation_author",
+      "content": "Qingyuan Gong"
+    },
+    {
+      "name": "citation_author",
+      "content": "Yang Chen"
+    },
+    {
+      "name": "citation_publication_date",
+      "content": "2025/12/09"
+    },
+    {
+      "name": "citation_online_date",
+      "content": ""
+    },
+    {
+      "name": "citation_journal_title",
+      "content": "Computers, Materials & Continua"
+    },
+    {
+      "name": "citation_year",
+      "content": "2026"
+    },
+    {
+      "name": "citation_volume",
+      "content": "86"
+    },
+    {
+      "name": "citation_issue",
+      "content": "2"
+    },
+    {
+      "name": "citation_firstpage",
+      "content": "1"
+    },
+    {
+      "name": "citation_lastpage",
+      "content": "23"
+    },
+    {
+      "name": "citation_article_type",
+      "content": "REVIEW"
+    },
+    {
+      "name": "citation_fulltext_world_readable",
+      "content": ""
+    },
+    {
+      "name": "citation_pdf_url",
+      "content": "https://www.techscience.com/cmc/v86n2/64808/TSP_CMC_73175.pdf"
+    },
+    {
+      "name": "citation_publisher",
+      "content": "Tech Science Press"
+    },
+    {
+      "name": "citation_public_url",
+      "content": "https://www.techscience.com/cmc/v86n2/64808"
+    },
+    {
+      "name": "citation_abstract_html_url",
+      "content": "https://www.techscience.com/cmc/v86n2/64808"
+    },
+    {
+      "name": "citation_fulltext_html_url",
+      "content": "https://www.techscience.com/cmc/v86n2/64808.html"
+    },
+    {
+      "name": "citation_issn",
+      "content": "1546-2218"
+    },
+    {
+      "name": "citation_issn",
+      "content": "1546-2226"
+    },
+    {
+      "name": "citation_doi",
+      "content": "10.32604/cmc.2025.073175"
+    },
+    {
+      "name": "citation_journal_abbrev",
+      "content": "CMC"
+    },
+    {
+      "name": "citation_language",
+      "content": "en"
+    },
+    {
+      "name": "citation_date",
+      "content": "2025"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Connecting corresponding identities across communities;citation_article_type=conf-proc;citation_volume=3;citation_firstpage=354;citation_lastpage=7;citation_publication_date=2009;citation_publisher=AAAI Press;citation_author=R Zafarani;citation_author=H Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Inferring anchor links across multiple heterogeneous social networks;citation_article_type=conf-proc;citation_firstpage=179;citation_lastpage=88;citation_author=X Kong;citation_author=J Zhang;citation_author=PS Yu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=User identity linkage across online social networks: a review;citation_article_type=journal;citation_volume=18;citation_issue=2;citation_firstpage=5;citation_lastpage=17;citation_publication_date=2017;citation_doi=10.1145/3068777.3068781;citation_author=K Shu;citation_author=S Wang;citation_author=J Tang;citation_author=R Zafarani;citation_author=H Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Cyberspace endogenous safety and security;citation_article_type=journal;citation_volume=15;citation_firstpage=179;citation_lastpage=85;citation_publication_date=2022;citation_author=J Wu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Meta-path based multi-network collective link prediction;citation_article_type=conf-proc;citation_firstpage=1286;citation_lastpage=95;citation_author=J Zhang;citation_author=PS Yu;citation_author=ZH Zhou;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Cross-network embedding for multi-network alignment;citation_article_type=conf-proc;citation_firstpage=273;citation_lastpage=84;citation_author=X Chu;citation_author=X Fan;citation_author=D Yao;citation_author=Z Zhu;citation_author=J Huang;citation_author=J Bi;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial learning for weakly-supervised social network alignment;citation_article_type=conf-proc;citation_volume=33;citation_firstpage=996;citation_lastpage=1003;citation_publication_date=2019;citation_publisher=AAAI Press;citation_author=C Li;citation_author=S Wang;citation_author=Y Wang;citation_author=P Yu;citation_author=Y Liang;citation_author=Y Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Distribution distance minimization for unsupervised user identity linkage;citation_article_type=conf-proc;citation_firstpage=447;citation_lastpage=56;citation_author=C Li;citation_author=S Wang;citation_author=PS Yu;citation_author=L Zheng;citation_author=X Zhang;citation_author=Z Li;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=TOAK: a topology-oriented attack strategy for degrading user identity linkage in cross-network learning;citation_article_type=conf-proc;citation_firstpage=2208;citation_lastpage=18;citation_author=J Shao;citation_author=Y Wang;citation_author=F Guo;citation_author=B Shi;citation_author=H Shen;citation_author=X Cheng;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=An effective node injection approach for attacking social network alignment;citation_article_type=journal;citation_volume=20;citation_firstpage=589;citation_lastpage=604;citation_publication_date=2025;citation_doi=10.1109/tifs.2024.3515842;citation_author=S Jiang;citation_author=Y Qiu;citation_author=X Mo;citation_author=R Tang;citation_author=W Wang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=DeLink: an adversarial framework for defending against cross-site user identity linkage;citation_article_type=journal;citation_volume=18;citation_issue=2;citation_firstpage=1;citation_lastpage=34;citation_publication_date=2024;citation_doi=10.1145/3643828;citation_author=P Zhang;citation_author=Q Zhou;citation_author=T Lu;citation_author=H Gu;citation_author=N Gu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Cross-platform network user alignment interference methods based on obfuscation strategy;citation_article_type=conf-proc;citation_firstpage=2185;citation_lastpage=90;citation_publication_date=2024;citation_publisher=IEEE;citation_author=L Wang;citation_author=Y Liu;citation_author=X Guo;citation_author=Z Long;citation_author=C Yang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Predict anchor links across social networks via an embedding approach;citation_article_type=conf-proc;citation_volume=16;citation_firstpage=1823;citation_lastpage=9;citation_publication_date=2016;citation_publisher=AAAI Press;citation_author=T Man;citation_author=H Shen;citation_author=S Liu;citation_author=X Jin;citation_author=X Cheng;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Structural representation learning for user alignment across social networks;citation_article_type=journal;citation_volume=32;citation_issue=9;citation_firstpage=1824;citation_lastpage=37;citation_publication_date=2019;citation_doi=10.1109/tkde.2019.2911516;citation_author=L Liu;citation_author=X Li;citation_author=WK Cheung;citation_author=L Liao;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=NeXLink: node embedding framework for cross-network linkages across social networks;citation_article_type=conf-proc;citation_firstpage=61;citation_lastpage=75;citation_publication_date=2020;citation_publisher=Springer;citation_author=R Kaushal;citation_author=S Singh;citation_author=P Kumaraguru;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Deep multi-granularity graph embedding for user identity linkage across social networks;citation_article_type=journal;citation_volume=193;citation_firstpage=105301;citation_publication_date=2020;citation_doi=10.1016/j.knosys.2019.105301;citation_author=S Fu;citation_author=G Wang;citation_author=S Xia;citation_author=L Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Hierarchical multi-marginal optimal transport for network alignment;citation_article_type=conf-proc;citation_volume=38;citation_firstpage=16660;citation_lastpage=8;citation_publication_date=2024;citation_publisher=AAAI Press;citation_author=Z Zeng;citation_author=B Du;citation_author=S Zhang;citation_author=Y Xia;citation_author=Z Liu;citation_author=H Tong;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Balancing consistency and disparity in network alignment;citation_article_type=conf-proc;citation_firstpage=2212;citation_lastpage=22;citation_author=S Zhang;citation_author=H Tong;citation_author=L Jin;citation_author=Y Xia;citation_author=Y Guo;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Graph neural networks for user identity linkage;citation_article_type=other;citation_publication_date=arXiv.1903.02174. 2019;citation_author=W Zhang;citation_author=K Shu;citation_author=H Liu;citation_author=Y Wang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The earth mover’s distance as a metric for image retrieval;citation_article_type=journal;citation_volume=40;citation_issue=2;citation_firstpage=99;citation_lastpage=121;citation_publication_date=2000;citation_doi=10.1023/a:1026543900054;citation_author=Y Rubner;citation_author=C Tomasi;citation_author=LJ Guibas;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Multi-marginal optimal transport: theory and applications;citation_article_type=journal;citation_volume=49;citation_issue=6;citation_firstpage=1771;citation_lastpage=90;citation_publication_date=2015;citation_doi=10.1051/m2an/2015020;citation_author=B Pass;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=On the reliability of profile matching across large online social networks;citation_article_type=conf-proc;citation_firstpage=1799;citation_lastpage=808;citation_author=O Goga;citation_author=P Loiseau;citation_author=R Sommer;citation_author=R Teixeira;citation_author=KP Gummadi;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Connecting users across social media sites: a behavioral-modeling approach;citation_article_type=conf-proc;citation_firstpage=41;citation_lastpage=9;citation_author=R Zafarani;citation_author=H Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=StyleLink: user identity linkage across social media with stylometric representations;citation_article_type=conf-proc;citation_volume=19;citation_firstpage=2076;citation_lastpage=88;citation_publication_date=2025;citation_publisher=AAAI Press;citation_author=W Xu;citation_author=BC Fung;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=GradAlign+: empowering gradual network alignment using attribute augmentation;citation_article_type=conf-proc;citation_firstpage=4374;citation_lastpage=8;citation_author=JD Park;citation_author=C Tran;citation_author=WY Shin;citation_author=X Cao;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_article_type=book;citation_firstpage=162;citation_lastpage=71;citation_publication_date=2020;citation_doi=10.1007/978-3-030-66922-5_11;citation_publisher=Springer;citation_author=X Guo;citation_author=Y Liu;citation_author=X Meng;citation_author=L Liu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=MFLink: user identity linkage across online social networks via multimodal fusion and adversarial learning;citation_article_type=journal;citation_volume=8;citation_issue=5;citation_firstpage=3716;citation_lastpage=25;citation_publication_date=2024;citation_doi=10.1109/tetci.2024.3372374;citation_author=S Li;citation_author=D Lu;citation_author=Q Li;citation_author=X Wu;citation_author=S Li;citation_author=Z Wang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Partially shared adversarial learning for semi-supervised multi-platform user identity linkage;citation_article_type=conf-proc;citation_firstpage=249;citation_lastpage=58;citation_author=C Li;citation_author=S Wang;citation_author=H Wang;citation_author=Y Liang;citation_author=PS Yu;citation_author=Z Li;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Anchor link prediction for cross-network digital forensics from local and global perspectives;citation_article_type=journal;citation_volume=19;citation_firstpage=3620;citation_lastpage=35;citation_publication_date=2024;citation_doi=10.1109/tifs.2024.3364066;citation_author=H Wang;citation_author=W Yang;citation_author=D Man;citation_author=J Lv;citation_author=S Han;citation_author=J Tan;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Cross-network representation learning for anchor users on multiplex heterogeneous social network;citation_article_type=journal;citation_volume=118;citation_firstpage=108461;citation_publication_date=2022;citation_doi=10.1016/j.asoc.2022.108461;citation_author=A Amara;citation_author=MAH Taieb;citation_author=MB Aouicha;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial-enhanced hybrid graph network for user identity linkage;citation_article_type=conf-proc;citation_firstpage=1084;citation_lastpage=93;citation_author=X Chen;citation_author=X Song;citation_author=G Peng;citation_author=S Feng;citation_author=L Nie;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=CINA: curvature-based integrated network alignment with hypergraph;citation_article_type=conf-proc;citation_firstpage=2709;citation_lastpage=22;citation_publication_date=2024;citation_publisher=IEEE;citation_author=P Jiao;citation_author=Y Liu;citation_author=Y Wang;citation_author=G Zhang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=TDGIA: effective injection attacks on graph neural networks;citation_article_type=conf-proc;citation_firstpage=2461;citation_lastpage=71;citation_author=X Zou;citation_author=Q Zheng;citation_author=Y Dong;citation_author=X Guan;citation_author=E Kharlamov;citation_author=J Lu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial camouflage for node injection attack on graphs;citation_article_type=journal;citation_volume=649;citation_firstpage=119611;citation_publication_date=2023;citation_doi=10.1016/j.ins.2023.119611;citation_author=S Tao;citation_author=Q Cao;citation_author=H Shen;citation_author=Y Wu;citation_author=L Hou;citation_author=F Sun;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial attacks on graph neural networks via node injections: a hierarchical reinforcement learning approach;citation_article_type=conf-proc;citation_firstpage=673;citation_lastpage=83;citation_author=Y Sun;citation_author=S Wang;citation_author=X Tang;citation_author=TY Hsieh;citation_author=V Honavar;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Single node injection attack against graph neural networks;citation_article_type=conf-proc;citation_firstpage=1794;citation_lastpage=803;citation_author=S Tao;citation_author=Q Cao;citation_author=H Shen;citation_author=J Huang;citation_author=Y Wu;citation_author=X Cheng;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=An analysis of social network-based sybil defenses;citation_article_type=journal;citation_volume=40;citation_issue=4;citation_firstpage=363;citation_lastpage=74;citation_publication_date=2010;citation_doi=10.1145/1851275.1851226;citation_author=B Viswanath;citation_author=A Post;citation_author=KP Gummadi;citation_author=A Mislove;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Degrading the accuracy of interlayer link prediction: a method based on the analysis of node importance;citation_article_type=journal;citation_volume=36;citation_issue=10;citation_firstpage=2442004;citation_publication_date=2025;citation_doi=10.1142/s012918312442004x;citation_author=R Tang;citation_author=Z Yong;citation_author=Y Mei;citation_author=X Li;citation_author=J Li;citation_author=J Ding;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial attacks on neural networks for graph data;citation_article_type=conf-proc;citation_firstpage=2847;citation_lastpage=56;citation_author=D Zügner;citation_author=A Akbarnejad;citation_author=S Günnemann;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Fast gradient attack on network embedding;citation_article_type=other;citation_author=J Chen;citation_author=Y Wu;citation_author=X Xu;citation_author=Y Chen;citation_author=H Zheng;citation_author=Q Xuan;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial attacks on node embeddings via graph poisoning;citation_article_type=conf-proc;citation_firstpage=695;citation_lastpage=704;citation_publication_date=2019;citation_publisher=PMLR;citation_author=A Bojchevski;citation_author=S Günnemann;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Topology attack and defense for graph neural networks: an optimization perspective;citation_article_type=other;citation_author=K Xu;citation_author=H Chen;citation_author=S Liu;citation_author=PY Chen;citation_author=TW Weng;citation_author=M Hong;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Preserving privacy in social networks against neighborhood attacks;citation_article_type=conf-proc;citation_firstpage=506;citation_lastpage=15;citation_publication_date=2008;citation_publisher=IEEE;citation_author=B Zhou;citation_author=J Pei;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Sharing graphs using differentially private graph models;citation_article_type=conf-proc;citation_firstpage=81;citation_lastpage=98;citation_publication_date=2011;citation_publisher=ACM;citation_author=A Sala;citation_author=X Zhao;citation_author=C Wilson;citation_author=H Zheng;citation_author=BY Zhao;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Hiding individuals and communities in a social network;citation_article_type=journal;citation_volume=2;citation_issue=2;citation_firstpage=139;citation_lastpage=47;citation_publication_date=2018;citation_doi=10.1038/s41562-017-0290-3;citation_author=M Waniek;citation_author=TP Michalak;citation_author=MJ Wooldridge;citation_author=T Rahwan;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Adversarial stylometry: circumventing authorship recognition to preserve privacy and anonymity;citation_article_type=journal;citation_volume=15;citation_issue=3;citation_firstpage=1;citation_lastpage=22;citation_publication_date=2012;citation_doi=10.1145/2382448.2382450;citation_author=M Brennan;citation_author=S Afroz;citation_author=R Greenstadt;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=ALISON: fast and effective stylometric authorship obfuscation;citation_article_type=conf-proc;citation_volume=38;citation_firstpage=19315;citation_lastpage=22;citation_publication_date=2024;citation_publisher=AAAI Press;citation_author=E Xing;citation_author=S Venkatraman;citation_author=T Le;citation_author=D Lee;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=BERT: pre-training of deep bidirectional transformers for language understanding;citation_article_type=conf-proc;citation_firstpage=4171;citation_lastpage=86;citation_publication_date=2019;citation_publisher=ACL;citation_author=J Devlin;citation_author=MW Chang;citation_author=K Lee;citation_author=K Toutanova;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Text processing like humans do: visually attacking and shielding NLP systems;citation_article_type=other;citation_author=S Eger;citation_author=GG Şahin;citation_author=A Rücklé;citation_author=JU Lee;citation_author=C Schulz;citation_author=M Mesgar;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=TextBugger: generating adversarial text against real-world applications;citation_article_type=other;citation_author=J Li;citation_author=S Ji;citation_author=T Du;citation_author=B Li;citation_author=T Wang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Defending against user identity linkage attack across multiple online social networks;citation_article_type=conf-proc;citation_firstpage=375;citation_lastpage=6;citation_author=Y Shen;citation_author=F Wang;citation_author=H Jin;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A: author attribute anonymity by adversarial training of neural machine translation;citation_article_type=conf-proc;citation_firstpage=1633;citation_lastpage=50;citation_author=R Shetty;citation_author=B Schiele;citation_author=M Fritz;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Aligning users across social networks using network embedding;citation_article_type=conf-proc;citation_firstpage=1774;citation_lastpage=80;citation_publication_date=2016;citation_publisher=AAAI Press;citation_author=L Liu;citation_author=WK Cheung;citation_author=X Li;citation_author=L Liao;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Transferring heterogeneous links across location-based social networks;citation_article_type=conf-proc;citation_firstpage=303;citation_lastpage=12;citation_author=J Zhang;citation_author=X Kong;citation_author=PS Yu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Mapping users across networks by manifold alignment on hypergraph;citation_article_type=conf-proc;citation_firstpage=159;citation_lastpage=65;citation_publication_date=2014;citation_publisher=AAAI Press;citation_author=S Tan;citation_author=Z Guan;citation_author=D Cai;citation_author=X Qin;citation_author=J Bu;citation_author=C Chen;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A community sensing approach for user identity linkage;citation_article_type=conf-proc;citation_firstpage=191;citation_lastpage=202;citation_publication_date=2019;citation_publisher=Springer;citation_author=Z Wang;citation_author=T Hayashi;citation_author=Y Ohsawa;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Multi-level graph convolutional networks for cross-platform anchor link prediction;citation_article_type=conf-proc;citation_firstpage=1503;citation_lastpage=11;citation_author=H Chen;citation_author=H Yin;citation_author=X Sun;citation_author=T Chen;citation_author=B Gabrys;citation_author=K Musial;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Hyperbolic user identity linkage across social networks;citation_article_type=conf-proc;citation_firstpage=1;citation_lastpage=6;citation_publication_date=2020;citation_publisher=IEEE;citation_author=F Wang;citation_author=L Sun;citation_author=Z Zhang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Network structural perturbation against interlayer link prediction;citation_article_type=journal;citation_volume=250;citation_firstpage=109095;citation_publication_date=2022;citation_doi=10.1016/j.knosys.2022.109095;citation_author=R Tang;citation_author=S Jiang;citation_author=X Chen;citation_author=W Wang;citation_author=W Wang;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Integrated anchor and social link predictions across social networks;citation_article_type=conf-proc;citation_firstpage=2125;citation_lastpage=32;citation_publication_date=2015;citation_publisher=AAAI Press;citation_author=J Zhang;citation_author=SY Philip;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=ASNets: a benchmark dataset of aligned social networks for cross-platform user modeling;citation_article_type=conf-proc;citation_firstpage=1881;citation_lastpage=4;citation_author=X Cao;citation_author=Y Yu;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Attributed network alignment: problem definitions and fast solutions;citation_article_type=journal;citation_volume=31;citation_issue=9;citation_firstpage=1680;citation_lastpage=92;citation_publication_date=2018;citation_author=S Zhang;citation_author=H Tong;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=ComSoc: adaptive transfer of user behaviors over composite social network;citation_article_type=conf-proc;citation_firstpage=696;citation_lastpage=704;citation_author=E Zhong;citation_author=W Fan;citation_author=J Wang;citation_author=L Xiao;citation_author=Y Li;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_article_type=book;citation_publication_date=2006;citation_publisher=Harvard University Press;citation_author=MA Nowak;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Assessing the privacy risk of cross-platform identity linkage using eye movement biometrics;citation_article_type=conf-proc;citation_firstpage=1;citation_lastpage=9;citation_publication_date=2023;citation_publisher=IEEE;citation_author=S Aziz;citation_author=O Komogortsev;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Towards federated learning driving technology for privacy-preserving micro-expression recognition;citation_article_type=journal;citation_volume=30;citation_issue=5;citation_firstpage=2169;citation_lastpage=83;citation_publication_date=2025;citation_doi=10.26599/tst.2024.9010098;citation_author=M Wang;citation_author=L Zhou;citation_author=X Huang;citation_author=W Zheng;"
+    },
+    {
+      "name": "citation_keywords",
+      "content": "User identity linkage (UIL); cross-network mapping; adversarial attacks; privacy protection; online social networks"
+    },
+    {
+      "name": "citation_id",
+      "content": "64808"
+    },
+    {
+      "name": "citation_state",
+      "content": ""
+    },
+    {
+      "name": "DC.Contributor",
+      "content": "Shaojie Min"
+    },
+    {
+      "name": "DC.Creator",
+      "content": "Shaojie Min"
+    },
+    {
+      "name": "DC.Contributor",
+      "content": "Yaxiao Luo"
+    },
+    {
+      "name": "DC.Creator",
+      "content": "Yaxiao Luo"
+    },
+    {
+      "name": "DC.Contributor",
+      "content": "Kebing Liu"
+    },
+    {
+      "name": "DC.Creator",
+      "content": "Kebing Liu"
+    },
+    {
+      "name": "DC.Contributor",
+      "content": "Qingyuan Gong"
+    },
+    {
+      "name": "DC.Creator",
+      "content": "Qingyuan Gong"
+    },
+    {
+      "name": "DC.Contributor",
+      "content": "Yang Chen"
+    },
+    {
+      "name": "DC.Creator",
+      "content": "Yang Chen"
+    },
+    {
+      "name": "DC.Created",
+      "content": "2025-12-09"
+    },
+    {
+      "name": "DC.Date",
+      "content": "2025-12-09"
+    },
+    {
+      "name": "DC.Format",
+      "content": "text/html"
+    },
+    {
+      "name": "DC.Type",
+      "content": "text"
+    },
+    {
+      "name": "DC.Title",
+      "content": "From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"
+    },
+    {
+      "name": "DC.Description",
+      "content": "User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. ... | Find, read and cite all the research you need on Tech Science Press"
+    },
+    {
+      "name": "DC.Publisher",
+      "content": "Tech Science Press"
+    },
+    {
+      "name": "dc.subject",
+      "content": "REVIEW"
+    }
+  ]
+}

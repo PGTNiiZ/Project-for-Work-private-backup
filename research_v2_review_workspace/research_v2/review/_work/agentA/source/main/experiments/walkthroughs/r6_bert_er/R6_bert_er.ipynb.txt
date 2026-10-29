@@ -1,0 +1,35 @@
+# CELL 1
+from pathlib import Path
+import sys, json, inspect
+import pandas as pd
+from IPython.display import Markdown, display
+
+def find_root():
+    candidates = [Path.cwd().resolve(), *Path.cwd().resolve().parents,
+                  Path(r'D:/66070260-Year3_Term2/Project1/Code')]
+    for candidate in candidates:
+        if (candidate / 'exp_lib.py').exists(): return candidate
+    raise FileNotFoundError('Project root containing exp_lib.py was not found')
+
+ROOT = find_root(); EXP = ROOT / 'experiments'
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+
+def source(module, *names):
+    for name in names:
+        display(Markdown(f'### `{module.__name__}.{name}`'))
+        print(inspect.getsource(getattr(module, name)))
+
+def read_json(relative):
+    return json.loads((ROOT / relative).read_text(encoding='utf-8'))
+
+print('Project root:', ROOT)
+
+# CELL 3
+import exp_r6_bert_er as r6
+source(r6, 'BertERModel', 'cosine_contrastive_loss', 'encode_all_profiles')
+# CELL 5
+source(r6, 'build_training_pairs', 'train_heads', 'compute_hash_codes', 'build_buckets', 'blocking_recovery_eval')
+# CELL 7
+recovery=read_json('experiments/r6_blocking_recovery.json'); results=read_json('experiments/r6_results.json')
+print(json.dumps(recovery, ensure_ascii=False, indent=2))
+display(pd.DataFrame({'R6 manual':results['splits']['test'], 'R6 GA':results['ga_rules']['test']}).T)

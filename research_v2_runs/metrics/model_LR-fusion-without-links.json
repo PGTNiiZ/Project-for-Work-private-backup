@@ -1,0 +1,62 @@
+{
+  "name": "LR-fusion-without-links",
+  "exp_id": "E5-4",
+  "learner": "LR",
+  "feature": "fusion",
+  "params": {
+    "C": 0.6419155626253977,
+    "class_weight": null
+  },
+  "group": null,
+  "exclude_group": "links",
+  "seeds": [
+    42
+  ],
+  "seed_AP": [
+    0.9412323765172113
+  ],
+  "seed_AP_SD": 0.0,
+  "mean_score_AP": 0.9412323765172113,
+  "model_paths": [
+    "artifacts/model_LR-fusion-without-links_seed42.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_LR-fusion-without-links_seed42.pkl": "37e8497b838c1641aa7b8ecf7341dcb7ed8a18144b8aa5d89ec1a2070e16a87b"
+  },
+  "oof_path": "artifacts/oof_LR-fusion-without-links.npz",
+  "oof_sha256": "813fa3146c4ed0667e7d17c996e0974e3703a44f24811ad578367a64c9a8111d",
+  "operating_points": {
+    "validation_F1_threshold": 0.87,
+    "validation_F1": 0.9065562524500196,
+    "precision_target_threshold": 0.7202271223068237,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 5,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.9412323765172145,
+    "precision": 0.7873563218390804,
+    "recall": 0.9079996292176492,
+    "f1": 0.8433854233931724,
+    "tp": 19591,
+    "fp": 5291,
+    "tn": 324627,
+    "fn": 1985,
+    "automatic_fn": 1985,
+    "utility_fn": 1985,
+    "rejected_positive_fn": 1985,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9079996292176492,
+    "raw_cost": 12567.0,
+    "cost_per_pair": 0.03575309962616716,
+    "brier": 0.016429296990307252,
+    "ece15_equalmass": 0.03351571803627531
+  }
+}

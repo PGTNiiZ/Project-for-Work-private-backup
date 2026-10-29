@@ -1,0 +1,8 @@
+{
+  "candidate_AP": 0.9744091004462285,
+  "summary_sha256": "895addad4f4a6f353a8ffb6e43c3834941a1d3c3cd1c406b9f80c6293bfcc032",
+  "name": "GBDT-fusion-without-bio",
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.06308120799803874
+}

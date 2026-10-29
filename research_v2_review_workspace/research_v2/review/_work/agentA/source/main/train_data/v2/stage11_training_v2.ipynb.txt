@@ -1,0 +1,233 @@
+# CELL 1
+# ─── Config ───────────────────────────────────────────────────────────────
+OUTPUT_DIR      = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+FEATURES_CSV    = f'{OUTPUT_DIR}/feature_matrix.csv'
+FEAT_COLS_PKL   = f'{OUTPUT_DIR}/feature_cols.pkl'
+SCALER_PKL      = f'{OUTPUT_DIR}/scaler.pkl'
+MODEL_PT        = f'{OUTPUT_DIR}/model.pt'
+HISTORY_CSV     = f'{OUTPUT_DIR}/training_history.csv'
+RANDOM_SEED     = 42
+BATCH_SIZE      = 512
+TRAIN_NEG_RATIO = 3
+TRAIN_RATIO     = 0.70
+VAL_RATIO       = 0.15
+MAX_EPOCHS      = 50
+LR              = 1e-3
+PATIENCE        = 5
+# ──────────────────────────────────────────────────────────────────────────
+
+import os, pickle
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+from torch.utils.data import Dataset, DataLoader
+from sklearn.preprocessing import StandardScaler
+
+feature_matrix = pd.read_csv(FEATURES_CSV)
+with open(FEAT_COLS_PKL, 'rb') as f: feature_cols = pickle.load(f)
+with open(SCALER_PKL,    'rb') as f: scaler       = pickle.load(f)
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f'Device: {device} | Feature matrix: {feature_matrix.shape} | Features: {len(feature_cols)}')
+# CELL 3
+# --- 11.1 Rebuild DataLoaders ---
+# ใช้ seed เดิมกับ Stage 10 เพื่อ reproducibility
+
+unique_entities = feature_matrix['entity_id_a'].dropna().unique()
+rng = np.random.default_rng(RANDOM_SEED)
+shuffled = unique_entities.copy()
+rng.shuffle(shuffled)
+
+n       = len(shuffled)
+n_train = int(n * TRAIN_RATIO)
+n_val   = int(n * (TRAIN_RATIO + VAL_RATIO))
+
+train_entities = set(shuffled[:n_train])
+val_entities   = set(shuffled[n_train:n_val])
+test_entities  = set(shuffled[n_val:])
+
+train_df = feature_matrix[feature_matrix['entity_id_a'].isin(train_entities)]
+val_df   = feature_matrix[feature_matrix['entity_id_a'].isin(val_entities)]
+test_df  = feature_matrix[feature_matrix['entity_id_a'].isin(test_entities)]
+
+# Balance
+train_pos = train_df[train_df['label'] == 1]
+train_neg = train_df[train_df['label'] == 0]
+n_target  = len(train_pos) * TRAIN_NEG_RATIO
+if len(train_neg) > n_target:
+    train_neg = train_neg.sample(n=n_target, random_state=RANDOM_SEED)
+train_balanced = pd.concat([train_pos, train_neg]).sample(frac=1, random_state=RANDOM_SEED)
+
+X_train = scaler.transform(train_balanced[feature_cols].values)
+y_train = train_balanced['label'].values.astype(np.float32)
+X_val   = scaler.transform(val_df[feature_cols].values)
+y_val   = val_df['label'].values.astype(np.float32)
+X_test  = scaler.transform(test_df[feature_cols].values)
+y_test  = test_df['label'].values.astype(np.float32)
+
+class PairDataset(Dataset):
+    def __init__(self, X, y):
+        self.X = torch.FloatTensor(X)
+        self.y = torch.FloatTensor(y)
+    def __len__(self):          return len(self.y)
+    def __getitem__(self, i):   return self.X[i], self.y[i]
+
+train_loader = DataLoader(PairDataset(X_train, y_train), batch_size=BATCH_SIZE, shuffle=True)
+val_loader   = DataLoader(PairDataset(X_val,   y_val),   batch_size=BATCH_SIZE)
+test_loader  = DataLoader(PairDataset(X_test,  y_test),  batch_size=BATCH_SIZE)
+
+n_pos_b    = (y_train == 1).sum()
+n_neg_b    = (y_train == 0).sum()
+pos_weight = torch.tensor([n_neg_b / max(n_pos_b, 1)], dtype=torch.float32)
+print(f'Train: {len(X_train):,} | Val: {len(X_val):,} | Test: {len(X_test):,}')
+print(f'pos_weight: {pos_weight.item():.2f}')
+# CELL 5
+# --- 11.2 Model Architecture ---
+
+class FocalLoss(nn.Module):
+    """Focal Loss สำหรับ class imbalance — ลด weight ของ easy examples"""
+    def __init__(self, alpha=1.0, gamma=2.0):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+    def forward(self, logits, targets):
+        bce = nn.functional.binary_cross_entropy_with_logits(logits, targets, reduction='none')
+        pt  = torch.exp(-bce)
+        return (self.alpha * (1 - pt) ** self.gamma * bce).mean()
+
+class IdentityMLP(nn.Module):
+    """MLP สำหรับ Identity Resolution: Input → 256 → 128 → 64 → 1"""
+    def __init__(self, input_dim, hidden_dims=[256, 128, 64], dropout=0.3):
+        super().__init__()
+        layers = []
+        prev = input_dim
+        for h in hidden_dims:
+            layers.extend([nn.Linear(prev, h), nn.BatchNorm1d(h), nn.ReLU(), nn.Dropout(dropout)])
+            prev = h
+        layers.append(nn.Linear(prev, 1))
+        self.network = nn.Sequential(*layers)
+    def forward(self, x):
+        return self.network(x).squeeze(-1)
+
+input_dim      = len(feature_cols)
+model          = IdentityMLP(input_dim=input_dim).to(device)
+total_params   = sum(p.numel() for p in model.parameters())
+trainable      = sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+print('📊 Step 11.2: Model Architecture')
+print('=' * 60)
+print(f'  Device          : {device}')
+print(f'  Input dim       : {input_dim}')
+print(f'  Architecture    : {input_dim} → 256 → 128 → 64 → 1')
+print(f'  Total params    : {total_params:,}')
+print(f'  Trainable       : {trainable:,}')
+print(model)
+print(f'\n✅ Step 11.2 เสร็จ')
+# CELL 7
+# --- 11.3 Training Loop ---
+optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+criterion = FocalLoss(gamma=2.0)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=MAX_EPOCHS)
+
+best_val_loss    = float('inf')
+patience_counter = 0
+best_epoch       = 0
+history          = []
+
+print('📊 Step 11.3: Training Loop')
+print('=' * 60)
+print(f'  Epochs: {MAX_EPOCHS}, LR: {LR}, Patience: {PATIENCE}')
+print(f'  Loss: FocalLoss(gamma=2.0)')
+print('-' * 60)
+
+for epoch in range(MAX_EPOCHS):
+    # Train
+    model.train()
+    train_losses, train_correct, train_total = [], 0, 0
+    for X_batch, y_batch in train_loader:
+        X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+        optimizer.zero_grad()
+        logits = model(X_batch)
+        loss   = criterion(logits, y_batch)
+        loss.backward()
+        optimizer.step()
+        train_losses.append(loss.item())
+        preds         = (torch.sigmoid(logits) >= 0.5).float()
+        train_correct += (preds == y_batch).sum().item()
+        train_total   += len(y_batch)
+
+    # Validate
+    model.eval()
+    val_losses, val_correct, val_total = [], 0, 0
+    with torch.no_grad():
+        for X_batch, y_batch in val_loader:
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            logits = model(X_batch)
+            loss   = criterion(logits, y_batch)
+            val_losses.append(loss.item())
+            preds       = (torch.sigmoid(logits) >= 0.5).float()
+            val_correct += (preds == y_batch).sum().item()
+            val_total   += len(y_batch)
+
+    scheduler.step()
+
+    train_loss = np.mean(train_losses)
+    val_loss   = np.mean(val_losses)
+    train_acc  = train_correct / max(train_total, 1)
+    val_acc    = val_correct   / max(val_total, 1)
+
+    history.append({'epoch': epoch+1, 'train_loss': train_loss, 'val_loss': val_loss,
+                    'train_acc': train_acc, 'val_acc': val_acc})
+
+    if val_loss < best_val_loss:
+        best_val_loss    = val_loss
+        best_epoch       = epoch + 1
+        patience_counter = 0
+        torch.save(model.state_dict(), MODEL_PT)
+    else:
+        patience_counter += 1
+
+    marker = ' <- BEST' if patience_counter == 0 else ''
+    print(f'  Epoch {epoch+1:3d} | train_loss={train_loss:.4f} val_loss={val_loss:.4f} | '
+          f'train_acc={train_acc:.3f} val_acc={val_acc:.3f}{marker}')
+
+    if patience_counter >= PATIENCE:
+        print(f'\n  Early stopping at epoch {epoch+1} (patience={PATIENCE})')
+        break
+
+model.load_state_dict(torch.load(MODEL_PT, map_location=device, weights_only=True))
+
+history_df = pd.DataFrame(history)
+history_df.to_csv(HISTORY_CSV, index=False)
+
+print(f'\n  Best epoch: {best_epoch} (val_loss={best_val_loss:.4f})')
+print(f'  Saved: {MODEL_PT}, {HISTORY_CSV}')
+print(f'\n✅ Step 11.3 เสร็จ')
+# CELL 9
+# --- 11.4 Training Curves ---
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+
+ax1.plot(history_df['epoch'], history_df['train_loss'], 'b-', label='Train Loss')
+ax1.plot(history_df['epoch'], history_df['val_loss'],   'r-', label='Val Loss')
+ax1.axvline(x=best_epoch, color='g', linestyle='--', alpha=0.5, label=f'Best (epoch {best_epoch})')
+ax1.set_xlabel('Epoch'); ax1.set_ylabel('Loss'); ax1.set_title('Loss Curves')
+ax1.legend(); ax1.grid(True, alpha=0.3)
+
+ax2.plot(history_df['epoch'], history_df['train_acc'], 'b-', label='Train Acc')
+ax2.plot(history_df['epoch'], history_df['val_acc'],   'r-', label='Val Acc')
+ax2.axvline(x=best_epoch, color='g', linestyle='--', alpha=0.5, label=f'Best (epoch {best_epoch})')
+ax2.set_xlabel('Epoch'); ax2.set_ylabel('Accuracy'); ax2.set_title('Accuracy Curves')
+ax2.legend(); ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig(f'{OUTPUT_DIR}/training_curves_v2.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print(f'\n{"="*60}')
+print(f'✅ Stage 11 v2 COMPLETE — Model trained & saved')
+print(f'{"="*60}')

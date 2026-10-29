@@ -1,0 +1,151 @@
+{
+ "row": {
+  "id": "L1_rule_feature_aware_GA",
+  "layer": 1,
+  "stage": "decision_rule",
+  "name_th": "GA ที่ให้น้ำหนักกลุ่มหลักฐาน (7 ยีน)",
+  "model_job": "J_sparse_FLEX35_GBDT",
+  "rule": "feature_aware_GA",
+  "search_budget": "2048",
+  "deviations": [
+   "original 10 genes over probability/name/bio/url/location/social/image/style; social, image and style unavailable in F-LEX35 -> 7 genes (t_match, t_review, w_probability, w_name, w_bio, w_url, w_location)",
+   "group score = max of that group's Jaro-Winkler/TF-IDF/exact columns, availability = both_present",
+   "GA population 64, elites 12, uniform crossover, mutation p=0.4 sigma=0.05, 2048 evaluations (original pop 128 x 100 generations)"
+  ]
+ },
+ "classification": "POST-HOC EXPLORATORY (development reuse; no confirmatory claim)",
+ "result": {
+  "mean": {
+   "candidate_AP": 0.976315683665399,
+   "auto_recall": 0.8045829592578342,
+   "recall_perfect_review": 0.8847419947843188,
+   "auto_precision": 0.9935068362983688,
+   "false_merges": 123.0,
+   "review": 5493.0,
+   "review_positives": 1875.0,
+   "auto_tp": 18820.0,
+   "cost_2_1_0.1": 3491.3,
+   "cost_per_pair_2_1_0.1": 4.858902214318073e-05,
+   "cost_5_1_0.02": 3420.86,
+   "cost_per_pair_5_1_0.02": 4.760869655679009e-05
+  },
+  "sd": {
+   "candidate_AP": NaN,
+   "auto_recall": NaN,
+   "recall_perfect_review": NaN,
+   "auto_precision": NaN,
+   "false_merges": NaN,
+   "review": NaN,
+   "review_positives": NaN,
+   "auto_tp": NaN,
+   "cost_2_1_0.1": NaN,
+   "cost_per_pair_2_1_0.1": NaN,
+   "cost_5_1_0.02": NaN,
+   "cost_per_pair_5_1_0.02": NaN
+  },
+  "PC": 0.922406053610363,
+  "candidates": 351494,
+  "calibrator_choices": {
+   "platt": 4
+  },
+  "per_seed": {
+   "11": {
+    "candidate_AP": 0.976315683665399,
+    "auto_recall": 0.8045829592578342,
+    "recall_perfect_review": 0.8847419947843188,
+    "auto_precision": 0.9935068362983688,
+    "false_merges": 123,
+    "review": 5493,
+    "review_positives": 1875,
+    "auto_tp": 18820,
+    "cost_2_1_0.1": 3491.3,
+    "cost_per_pair_2_1_0.1": 4.858902214318073e-05,
+    "cost_5_1_0.02": 3420.86,
+    "cost_per_pair_5_1_0.02": 4.760869655679009e-05,
+    "folds": {
+     "0": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004734453401798915,
+       "isotonic": 0.004766959255384997
+      },
+      "rule": {
+       "type": "fa",
+       "genome": [
+        0.8738320331695314,
+        0.3837593144806217,
+        0.7481013182142446,
+        0.34925487985891174,
+        0.18595378205320695,
+        0.09228027270480527,
+        0.9843762245412855
+       ]
+      },
+      "rule_evaluations": 2048
+     },
+     "1": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004236734037468589,
+       "isotonic": 0.004251220473657672
+      },
+      "rule": {
+       "type": "fa",
+       "genome": [
+        0.8824416410934076,
+        0.31857435975561943,
+        0.9540313433816479,
+        0.28173330813149733,
+        0.1348943551519879,
+        0.1668394345124405,
+        0.7851513790327217
+       ]
+      },
+      "rule_evaluations": 2048
+     },
+     "2": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004292772183101645,
+       "isotonic": 0.004318711200833623
+      },
+      "rule": {
+       "type": "fa",
+       "genome": [
+        0.880484307421666,
+        0.17816185515394756,
+        0.8388711764238068,
+        0.14487256103384516,
+        0.04164158617656348,
+        0.0,
+        0.8895823809046042
+       ]
+      },
+      "rule_evaluations": 2048
+     },
+     "3": {
+      "calibrator": "platt",
+      "brier": {
+       "platt": 0.004652840758003201,
+       "isotonic": 0.00466279050283006
+      },
+      "rule": {
+       "type": "fa",
+       "genome": [
+        0.8553186859488486,
+        0.3631518218913596,
+        0.9085386199038619,
+        0.26432709874253324,
+        0.0,
+        0.3011477751944985,
+        0.5910571029977563
+       ]
+      },
+      "rule_evaluations": 2048
+     }
+    }
+   }
+  }
+ },
+ "runtime_seconds": 27.005226000008406
+}

@@ -1,0 +1,14 @@
+{
+  "category": "aggregate_statistics",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E3-2",
+  "key": "ensemble-summary-GBDT-lexical",
+  "parameters": {
+    "OOF_sha256": "318b6e993416d2d3b88ef02944edb5115f5aba441c08b01f595beb04b27e02a0",
+    "aggregation": "mean of every declared seed score",
+    "source_summary_sha256": "18afb007b7b2ce5872bb9c5a53acfdbfca2885b057ad872e646ac471f78be695"
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

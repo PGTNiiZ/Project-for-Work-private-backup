@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.856437333086781,
+  "name": "GBDT-semantic",
+  "source_summary": "metrics/model_GBDT-semantic.json",
+  "source_summary_sha256": "19fe494787efa3d48cabba1d2a949dbbeb26018c542761ed63ac56d946aea01d",
+  "n_pairs": 351494,
+  "seed_count": 5,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.047258667000278365
+}

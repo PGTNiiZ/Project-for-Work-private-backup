@@ -1,0 +1,57 @@
+{
+  "per_seed": [
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968132568514978,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12055707450444293
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970053475935828,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.1212406015037594
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970079076725796,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12101845522898155
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968023875506289,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12083048530416952
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9969976410036457,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12129186602870813
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9967969250480462,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.1209671907040328
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968023875506289,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12083048530416952
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970008568980291,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12243677375256323
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968227070535903,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12031784005468216
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970066281804576,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12043745727956254
+    }
+  ],
+  "caveat": "S2 removes every unlabeled negative; precision=1 is mechanical and not a demonstrated truth bound; no independent negative or positive label audit",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 7.792001269990578e-06
+}

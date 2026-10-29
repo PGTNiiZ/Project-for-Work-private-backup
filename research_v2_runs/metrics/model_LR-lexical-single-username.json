@@ -1,0 +1,62 @@
+{
+  "name": "LR-lexical-single-username",
+  "exp_id": "E5-5",
+  "learner": "LR",
+  "feature": "lexical",
+  "params": {
+    "C": 0.6471071313151987,
+    "class_weight": null
+  },
+  "group": "username",
+  "exclude_group": null,
+  "seeds": [
+    42
+  ],
+  "seed_AP": [
+    0.7680067976533502
+  ],
+  "seed_AP_SD": 0.0,
+  "mean_score_AP": 0.7680067976533502,
+  "model_paths": [
+    "artifacts/model_LR-lexical-single-username_seed42.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_LR-lexical-single-username_seed42.pkl": "5b80a325e75fb58e7a5effbef1ced1af067572ea058c686f05ee0078bf95d02a"
+  },
+  "oof_path": "artifacts/oof_LR-lexical-single-username.npz",
+  "oof_sha256": "bca0684383d59662353c3b22422bfdba131e2011b6f730c5e4dabfb3fce5aa00",
+  "operating_points": {
+    "validation_F1_threshold": 0.78,
+    "validation_F1": 0.7627861927950712,
+    "precision_target_threshold": 0.7700443267822266,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 5,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.7680067976533521,
+    "precision": 0.6227956482463375,
+    "recall": 0.7349369670003708,
+    "f1": 0.6742351765631313,
+    "tp": 15857,
+    "fp": 9604,
+    "tn": 320314,
+    "fn": 5719,
+    "automatic_fn": 5719,
+    "utility_fn": 5719,
+    "rejected_positive_fn": 5719,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.7349369670003708,
+    "raw_cost": 24927.0,
+    "cost_per_pair": 0.07091728450556767,
+    "brier": 0.039156887687481684,
+    "ece15_equalmass": 0.08317245215290643
+  }
+}

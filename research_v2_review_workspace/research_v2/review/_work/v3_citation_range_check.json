@@ -1,0 +1,98 @@
+{
+  "corrections": [
+    {
+      "path": "train_data/v2/stage7_blocking_v2.ipynb",
+      "old_end": 800,
+      "actual_lines": 574
+    },
+    {
+      "path": "pub_multi/doc/data_er_latest_th.md",
+      "old_end": 200,
+      "actual_lines": 33
+    },
+    {
+      "path": "pub_multi/res/classical_leaksafe_cmp.json",
+      "old_end": 100,
+      "actual_lines": 62
+    },
+    {
+      "path": "pub_multi/ref/strict_report.json",
+      "old_end": 88,
+      "actual_lines": 64
+    },
+    {
+      "path": "pub_multi/ref/full_report.json",
+      "old_end": 150,
+      "actual_lines": 93
+    },
+    {
+      "path": "pub_multi/ref/crm_report.json",
+      "old_end": 48,
+      "actual_lines": 40
+    },
+    {
+      "path": "experiments/r3_results.json",
+      "old_end": 180,
+      "actual_lines": 37
+    },
+    {
+      "path": "pub_multi/ref/strict_report.json",
+      "old_end": 88,
+      "actual_lines": 64
+    },
+    {
+      "path": "train_data/stage10_dataset.ipynb",
+      "old_end": 500,
+      "actual_lines": 460
+    },
+    {
+      "path": "pub_multi/ref/main_report.json",
+      "old_end": 260,
+      "actual_lines": 213
+    },
+    {
+      "path": "pub_multi/ref/crm_report.json",
+      "old_end": 48,
+      "actual_lines": 40
+    },
+    {
+      "path": "train_data/v2/stage7_blocking_v2.ipynb",
+      "old_end": 800,
+      "actual_lines": 574
+    },
+    {
+      "path": "pub_multi/doc/data_er_latest_th.md",
+      "old_end": 200,
+      "actual_lines": 33
+    }
+  ],
+  "source_lengths": {
+    "MAIN|1e0a2db|train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py": 583,
+    "MAIN|1e0a2db|train_data/stage10_dataset.ipynb": 460,
+    "MAIN|1e0a2db|pub_multi/ref/full_report.json": 93,
+    "MAIN|1e0a2db|train_data/v2/stage8_labeling_v2.ipynb": 508,
+    "MAIN|1e0a2db|pair_stats.json": 9,
+    "MAIN|1e0a2db|train_data/pair_stats.json": 9,
+    "MAIN|1e0a2db|train_data/v2/stage7_blocking_v2.ipynb": 574,
+    "MAIN|1e0a2db|train_data/stage7_14_full_candidate_pipeline/run_full_candidate_pipeline.py": 521,
+    "MAIN|1e0a2db|data/processed/pipeline_report.json": 36,
+    "MAIN|1e0a2db|train_data/stage7_13_multimodal_suite/README.md": 39,
+    "MAIN|1e0a2db|pub_multi/ref/main_report.json": 213,
+    "MAIN|1e0a2db|exp_lib.py": 248,
+    "MAIN|1e0a2db|experiments/r3_results.json": 37,
+    "MAIN|1e0a2db|train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py": 497,
+    "MAIN|1e0a2db|pub_multi/ref/crm_report.json": 40,
+    "MAIN|1e0a2db|pub_multi/ref/strict_report.json": 64,
+    "MAIN|1e0a2db|train_data/stage11_training.ipynb": 588,
+    "MAIN|1e0a2db|pub_multi/doc/data_er_latest_th.md": 33,
+    "MAIN|1e0a2db|train_data/stage7_13_multimodal_suite/run_multimodal_suite.py": 482,
+    "MAIN|1e0a2db|pub_multi/ref/img_stats_report.json": 213,
+    "MAIN|1e0a2db|pub_multi/ref/base_report.json": 213,
+    "MAIN|1e0a2db|pub_multi/ref/leak_safe_report.json": 250,
+    "MAIN|1e0a2db|pub_multi/doc/ch04_results_formal_th.md": 381,
+    "MAIN|1e0a2db|pub_multi/res/feat_imp.csv": 42,
+    "MAIN|1e0a2db|pub_multi/res/classical_leaksafe_cmp.json": 62,
+    "MAIN|1e0a2db|pub_multi/doc/model_compare.md": 28,
+    "MAIN|1e0a2db|analysis_decision_matrix/summary.json": 89
+  }
+}

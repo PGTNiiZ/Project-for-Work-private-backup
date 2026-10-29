@@ -1,0 +1,204 @@
+{
+  "rows": [
+    {
+      "stratum": "stratum_username_low",
+      "value": 0,
+      "n_pairs": 46393,
+      "positive_pairs": 4790,
+      "candidate_AP": 0.987677732869153,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_username_low",
+      "value": 1,
+      "n_pairs": 41309,
+      "positive_pairs": 620,
+      "candidate_AP": 0.902406022979707,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_both_names_low",
+      "value": 0,
+      "n_pairs": 66026,
+      "positive_pairs": 5348,
+      "candidate_AP": 0.982492126030667,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_both_names_low",
+      "value": 1,
+      "n_pairs": 21676,
+      "positive_pairs": 62,
+      "candidate_AP": 0.622115357856854,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_non_ascii_text",
+      "value": 0,
+      "n_pairs": 77516,
+      "positive_pairs": 4492,
+      "candidate_AP": 0.9797055838745783,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_non_ascii_text",
+      "value": 1,
+      "n_pairs": 10186,
+      "positive_pairs": 918,
+      "candidate_AP": 0.977209449890547,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 0,
+      "n_pairs": 54,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 1,
+      "n_pairs": 2317,
+      "positive_pairs": 73,
+      "candidate_AP": 0.8165926737113117,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 2,
+      "n_pairs": 22,
+      "positive_pairs": 1,
+      "candidate_AP": 0.5,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 3,
+      "n_pairs": 9158,
+      "positive_pairs": 681,
+      "candidate_AP": 0.9322233677939399,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 4,
+      "n_pairs": 59,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 5,
+      "n_pairs": 330,
+      "positive_pairs": 16,
+      "candidate_AP": 0.934044908285895,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 7,
+      "n_pairs": 10618,
+      "positive_pairs": 616,
+      "candidate_AP": 0.9619879322583348,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 16,
+      "n_pairs": 13,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 17,
+      "n_pairs": 239,
+      "positive_pairs": 20,
+      "candidate_AP": 0.9699227688787184,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 18,
+      "n_pairs": 19,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 19,
+      "n_pairs": 10224,
+      "positive_pairs": 925,
+      "candidate_AP": 0.9887682262629185,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 20,
+      "n_pairs": 131,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 21,
+      "n_pairs": 801,
+      "positive_pairs": 45,
+      "candidate_AP": 0.9805259529805486,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 22,
+      "n_pairs": 4,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 23,
+      "n_pairs": 53713,
+      "positive_pairs": 3030,
+      "candidate_AP": 0.9896365251036123,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        0,
+        1
+      ],
+      "n_pairs": 24444,
+      "positive_pairs": 1529,
+      "candidate_AP": 0.9788267962162072
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        0,
+        2
+      ],
+      "n_pairs": 39245,
+      "positive_pairs": 1935,
+      "candidate_AP": 0.973370319036772
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        1,
+        2
+      ],
+      "n_pairs": 24013,
+      "positive_pairs": 1946,
+      "candidate_AP": 0.9848635350483278
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 7.958002242958173e-06
+}

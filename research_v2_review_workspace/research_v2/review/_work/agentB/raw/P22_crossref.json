@@ -1,0 +1,183 @@
+{
+  "url": "https://api.crossref.org/works/10.1162/089976698300017197",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            25
+          ]
+        ],
+        "date-time": "2026-10-25T02:58:09Z",
+        "timestamp": 1792897089264,
+        "version": "4.5.0"
+      },
+      "reference-count": 3,
+      "publisher": "MIT Press",
+      "issue": "7",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "Neural Computation"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            1998,
+            10,
+            1
+          ]
+        ]
+      },
+      "abstract": "<jats:p>This article reviews five approximate statistical tests for determining whether one learning algorithm outperforms another on a particular learning task. These test sare compared experimentally to determine their probability of incorrectly detecting a difference when no difference exists (type I error). Two widely used statistical tests are shown to have high probability of type I error in certain situations and should never be used: a test for the difference of two proportions and a paired-differences t test based on taking several random train-test splits. A third test, a paired-differences t test based on 10-fold cross-validation, exhibits somewhat elevated probability of type I error. A fourth test, McNemar's test, is shown to have low type I error. The fifth test is a new test, 5 × 2 cv, based on five iterations of twofold cross-validation. Experiments show that this test also has acceptable type I error. The article also measures the power (ability to detect algorithm differences when they do exist) of these tests. The cross-validated t test is the most powerful. The 5×2 cv test is shown to be slightly more powerful than McNemar's test. The choice of the best test is determined by the computational cost of running the learning algorithm. For algorithms that can be executed only once, Mc-Nemar's test is the only test with acceptable type I error. For algorithms that can be executed 10 times, the 5 × 2 cv test is recommended, because it is slightly more powerful and because it directly measures variation due to the choice of training set.</jats:p>",
+      "DOI": "10.1162/089976698300017197",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2002,
+            7,
+            27
+          ]
+        ],
+        "date-time": "2002-07-27T07:55:01Z",
+        "timestamp": 1027756501000
+      },
+      "page": "1895-1923",
+      "source": "Crossref",
+      "is-referenced-by-count": 2991,
+      "title": [
+        "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms"
+      ],
+      "prefix": "10.1162",
+      "volume": "10",
+      "author": [
+        {
+          "given": "Thomas G.",
+          "family": "Dietterich",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Computer Science, Oregon State University, Corvallis, OR 97331, U.S.A."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "281",
+      "reference": [
+        {
+          "key": "p_2",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/BF00058655"
+        },
+        {
+          "key": "p_5",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/BF00993821"
+        },
+        {
+          "key": "p_8",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/BF00114162"
+        }
+      ],
+      "container-title": [
+        "Neural Computation"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://www.mitpressjournals.org/doi/pdf/10.1162/089976698300017197",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2021,
+            3,
+            12
+          ]
+        ],
+        "date-time": "2021-03-12T16:52:01Z",
+        "timestamp": 1615567921000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://direct.mit.edu/neco/article/10/7/1895-1923/6224"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            1998,
+            10,
+            1
+          ]
+        ]
+      },
+      "references-count": 3,
+      "journal-issue": {
+        "issue": "7",
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              10,
+              1
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1162/089976698300017197"
+      ],
+      "URL": "https://doi.org/10.1162/089976698300017197",
+      "relation": {},
+      "ISSN": [
+        "0899-7667",
+        "1530-888X"
+      ],
+      "issn-type": [
+        {
+          "value": "0899-7667",
+          "type": "print"
+        },
+        {
+          "value": "1530-888X",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            1998,
+            10,
+            1
+          ]
+        ]
+      }
+    }
+  }
+}

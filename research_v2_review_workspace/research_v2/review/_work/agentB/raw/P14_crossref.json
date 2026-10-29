@@ -1,0 +1,638 @@
+{
+  "url": "https://api.crossref.org/works/10.14778/3598581.3598594",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            24
+          ]
+        ],
+        "date-time": "2026-10-24T06:50:02Z",
+        "timestamp": 1792824602875,
+        "version": "4.5.0"
+      },
+      "reference-count": 67,
+      "publisher": "Association for Computing Machinery (ACM)",
+      "issue": "9",
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "Proc. VLDB Endow."
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            5
+          ]
+        ]
+      },
+      "abstract": "<jats:p>Many recent works on Entity Resolution (ER) leverage Deep Learning techniques involving language models to improve effectiveness. This is applied to both main steps of ER, i.e., blocking and matching. Several pre-trained embeddings have been tested, with the most popular ones being fastText and variants of the BERT model. However, there is no detailed analysis of their pros and cons. To cover this gap, we perform a thorough experimental analysis of 12 popular language models over 17 established benchmark datasets. First, we assess their vectorization overhead for converting all input entities into dense embeddings vectors. Second, we investigate their blocking performance, performing a detailed scalability analysis, and comparing them with the state-of-the-art deep learning-based blocking method. Third, we conclude with their relative performance for both supervised and unsupervised matching. Our experimental results provide novel insights into the strengths and weaknesses of the main language models, facilitating researchers and practitioners to select the most suitable ones in practice.</jats:p>",
+      "DOI": "10.14778/3598581.3598594",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2023,
+            7,
+            10
+          ]
+        ],
+        "date-time": "2023-07-10T22:19:06Z",
+        "timestamp": 1689027546000
+      },
+      "page": "2225-2238",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 59,
+      "title": [
+        "Pre-Trained Embeddings for Entity Resolution: An Experimental Analysis"
+      ],
+      "prefix": "10.14778",
+      "volume": "16",
+      "author": [
+        {
+          "given": "Alexandros",
+          "family": "Zeakis",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "National and Kapodistrian University of Athens &amp; Athena Research Center, Athens, Greece"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "George",
+          "family": "Papadakis",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "National and Kapodistrian University of Athens, Athens, Greece"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Dimitrios",
+          "family": "Skoutas",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Athena Research Center, Athens, Greece"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Manolis",
+          "family": "Koubarakis",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "National and Kapodistrian University of Athens, Athens, Greece"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2023,
+            7,
+            10
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_2_1_1_1",
+          "unstructured": "Dzmitry Bahdanau Kyunghyun Cho and Yoshua Bengio. 2015. Neural Machine Translation by Jointly Learning to Align and Translate. In ICLR. Dzmitry Bahdanau Kyunghyun Cho and Yoshua Bengio. 2015. Neural Machine Translation by Jointly Learning to Align and Translate. In ICLR."
+        },
+        {
+          "key": "e_1_2_1_2_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1162/tacl_a_00051"
+        },
+        {
+          "key": "e_1_2_1_3_1",
+          "unstructured": "Ursin Brunner and Kurt Stockinger. 2020. Entity Matching with Transformer Architectures - A Step Forward in Data Integration. In EDBT. 463--473. Ursin Brunner and Kurt Stockinger. 2020. Entity Matching with Transformer Architectures - A Step Forward in Data Integration. In EDBT. 463--473."
+        },
+        {
+          "key": "e_1_2_1_4_1",
+          "volume-title": "SemEval-2017 Task 1: Semantic Textual Similarity - Multilingual and Cross-lingual Focused Evaluation. CoRR abs/1708.00055",
+          "author": "Cer Daniel M.",
+          "year": "2017",
+          "unstructured": "Daniel M. Cer , Mona T. Diab , Eneko Agirre , Iñigo Lopez-Gazpio , and Lucia Specia . 2017. SemEval-2017 Task 1: Semantic Textual Similarity - Multilingual and Cross-lingual Focused Evaluation. CoRR abs/1708.00055 ( 2017 ). Daniel M. Cer, Mona T. Diab, Eneko Agirre, Iñigo Lopez-Gazpio, and Lucia Specia. 2017. SemEval-2017 Task 1: Semantic Textual Similarity - Multilingual and Cross-lingual Focused Evaluation. CoRR abs/1708.00055 (2017)."
+        },
+        {
+          "key": "e_1_2_1_5_1",
+          "volume-title": "GNEM: A Generic One-to-Set Neural Entity Matching Framework. In WWW. 1686--1694.",
+          "author": "Chen Runjin",
+          "year": "2020",
+          "unstructured": "Runjin Chen , Yanyan Shen , and Dongxiang Zhang . 2020 . GNEM: A Generic One-to-Set Neural Entity Matching Framework. In WWW. 1686--1694. Runjin Chen, Yanyan Shen, and Dongxiang Zhang. 2020. GNEM: A Generic One-to-Set Neural Entity Matching Framework. In WWW. 1686--1694."
+        },
+        {
+          "key": "e_1_2_1_6_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Peter Christen. 2008. Febrl -: an open source data cleaning deduplication and record linkage system with a graphical user interface. In SIGKDD. 1065--1068. Peter Christen. 2008. Febrl -: an open source data cleaning deduplication and record linkage system with a graphical user interface. In SIGKDD. 1065--1068.",
+          "DOI": "10.1145/1401890.1402020"
+        },
+        {
+          "key": "e_1_2_1_7_1",
+          "volume-title": "Entity Resolution, and Duplicate Detection",
+          "author": "Christen Peter",
+          "unstructured": "Peter Christen . 2012. Data Matching - Concepts and Techniques for Record Linkage , Entity Resolution, and Duplicate Detection . Springer . Peter Christen. 2012. Data Matching - Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Springer."
+        },
+        {
+          "key": "e_1_2_1_8_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2011.127"
+        },
+        {
+          "key": "e_1_2_1_9_1",
+          "volume-title": "An Overview of End-to-End Entity Resolution for Big Data. ACM Comput. Surv. 53, 6",
+          "author": "Christophides Vassilis",
+          "year": "2021",
+          "unstructured": "Vassilis Christophides , Vasilis Efthymiou , Themis Palpanas , George Papadakis , and Kostas Stefanidis . 2021. An Overview of End-to-End Entity Resolution for Big Data. ACM Comput. Surv. 53, 6 ( 2021 ), 127:1--127:42. Vassilis Christophides, Vasilis Efthymiou, Themis Palpanas, George Papadakis, and Kostas Stefanidis. 2021. An Overview of End-to-End Entity Resolution for Big Data. ACM Comput. Surv. 53, 6 (2021), 127:1--127:42."
+        },
+        {
+          "key": "e_1_2_1_10_1",
+          "volume-title": "Entity Resolution in the Web of Data",
+          "author": "Christophides Vassilis",
+          "unstructured": "Vassilis Christophides , Vasilis Efthymiou , and Kostas Stefanidis . 2015. Entity Resolution in the Web of Data . Morgan & Claypool Publishers . Vassilis Christophides, Vasilis Efthymiou, and Kostas Stefanidis. 2015. Entity Resolution in the Web of Data. Morgan & Claypool Publishers."
+        },
+        {
+          "key": "e_1_2_1_11_1",
+          "volume-title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In NAACL-HLT. 4171--4186.",
+          "author": "Devlin Jacob",
+          "year": "2019",
+          "unstructured": "Jacob Devlin , Ming-Wei Chang , Kenton Lee , and Kristina Toutanova . 2019 . BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In NAACL-HLT. 4171--4186. Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. In NAACL-HLT. 4171--4186."
+        },
+        {
+          "key": "e_1_2_1_12_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2536222.2536253"
+        },
+        {
+          "key": "e_1_2_1_13_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3236187.3236198"
+        },
+        {
+          "key": "e_1_2_1_14_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Cheng Fu Xianpei Han Jiaming He and Le Sun. 2020. Hierarchical Matching Network for Heterogeneous Entity Resolution. In IJCAI. 3665--3671. Cheng Fu Xianpei Han Jiaming He and Le Sun. 2020. Hierarchical Matching Network for Heterogeneous Entity Resolution. In IJCAI. 3665--3671.",
+          "DOI": "10.24963/ijcai.2020/507"
+        },
+        {
+          "key": "e_1_2_1_15_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2367502.2367564"
+        },
+        {
+          "key": "e_1_2_1_16_1",
+          "unstructured": "Geoffrey Hinton Oriol Vinyals Jeff Dean etal 2015. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531 2 7 (2015). Geoffrey Hinton Oriol Vinyals Jeff Dean et al. 2015. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531 2 7 (2015)."
+        },
+        {
+          "key": "e_1_2_1_17_1",
+          "volume-title": "EMNLP (Findings of ACL",
+          "author": "Jiao Xiaoqi",
+          "unstructured": "Xiaoqi Jiao , Yichun Yin , Lifeng Shang , Xin Jiang , Xiao Chen , Linlin Li , Fang Wang , and Qun Liu . 2020. TinyBERT: Distilling BERT for Natural Language Understanding . In EMNLP (Findings of ACL , Vol. EMNLP 2020). 4163-- 4174 . Xiaoqi Jiao, Yichun Yin, Lifeng Shang, Xin Jiang, Xiao Chen, Linlin Li, Fang Wang, and Qun Liu. 2020. TinyBERT: Distilling BERT for Natural Language Understanding. In EMNLP (Findings of ACL, Vol. EMNLP 2020). 4163--4174."
+        },
+        {
+          "key": "e_1_2_1_18_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Jungo Kasai Kun Qian Sairam Gurajada Yunyao Li and Lucian Popa. 2019. Low-resource Deep Entity Resolution with Transfer and Active Learning. In ACL. 5851--5861. Jungo Kasai Kun Qian Sairam Gurajada Yunyao Li and Lucian Popa. 2019. Low-resource Deep Entity Resolution with Transfer and Active Learning. In ACL. 5851--5861.",
+          "DOI": "10.18653/v1/P19-1586"
+        },
+        {
+          "key": "e_1_2_1_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.is.2012.11.008"
+        },
+        {
+          "key": "e_1_2_1_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/1920841.1920904"
+        },
+        {
+          "key": "e_1_2_1_21_1",
+          "unstructured": "Simon Lacoste-Julien Konstantina Palla Alex Davies Gjergji Kasneci Thore Graepel and Zoubin Ghahramani. 2013. SIGMa: simple greedy matching for aligning large knowledge bases. In KDD. 572--580. Simon Lacoste-Julien Konstantina Palla Alex Davies Gjergji Kasneci Thore Graepel and Zoubin Ghahramani. 2013. SIGMa: simple greedy matching for aligning large knowledge bases. In KDD. 572--580."
+        },
+        {
+          "key": "e_1_2_1_22_1",
+          "volume-title": "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations. In ICLR.",
+          "author": "Lan Zhenzhong",
+          "year": "2020",
+          "unstructured": "Zhenzhong Lan , Mingda Chen , Sebastian Goodman , Kevin Gimpel , Piyush Sharma , and Radu Soricut . 2020 . ALBERT: A Lite BERT for Self-supervised Learning of Language Representations. In ICLR. Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020. ALBERT: A Lite BERT for Self-supervised Learning of Language Representations. In ICLR."
+        },
+        {
+          "key": "e_1_2_1_23_1",
+          "volume-title": "Muhammad Asif Ali, and Yi Wang",
+          "author": "Li Bing",
+          "year": "2020",
+          "unstructured": "Bing Li , Wei Wang , Yifang Sun , Linhan Zhang , Muhammad Asif Ali, and Yi Wang . 2020 . GraphER: Token- Centric Entity Resolution with Graph Convolutional Neural Networks. In IAAI. 8172--8179. Bing Li, Wei Wang, Yifang Sun, Linhan Zhang, Muhammad Asif Ali, and Yi Wang. 2020. GraphER: Token-Centric Entity Resolution with Graph Convolutional Neural Networks. In IAAI. 8172--8179."
+        },
+        {
+          "key": "e_1_2_1_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2019.2909204"
+        },
+        {
+          "key": "e_1_2_1_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3421424.3421431"
+        },
+        {
+          "key": "e_1_2_1_26_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3421424.3421431"
+        },
+        {
+          "key": "e_1_2_1_27_1",
+          "volume-title": "A Survey on Contextual Embeddings. CoRR abs/2003.07278",
+          "author": "Liu Qi",
+          "year": "2020",
+          "unstructured": "Qi Liu , Matt J. Kusner , and Phil Blunsom . 2020. A Survey on Contextual Embeddings. CoRR abs/2003.07278 ( 2020 ). https://arxiv.org/abs/2003.07278 Qi Liu, Matt J. Kusner, and Phil Blunsom. 2020. A Survey on Contextual Embeddings. CoRR abs/2003.07278 (2020). https://arxiv.org/abs/2003.07278"
+        },
+        {
+          "key": "e_1_2_1_28_1",
+          "volume-title": "Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692",
+          "author": "Liu Yinhan",
+          "year": "2019",
+          "unstructured": "Yinhan Liu , Myle Ott , Naman Goyal , Jingfei Du , Mandar Joshi , Danqi Chen , Omer Levy , Mike Lewis , Luke Zettlemoyer , and Veselin Stoyanov . 2019 . Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692 (2019). Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692 (2019)."
+        },
+        {
+          "key": "e_1_2_1_29_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TPAMI.2018.2889473"
+        },
+        {
+          "key": "e_1_2_1_30_1",
+          "volume-title": "Introduction to information retrieval",
+          "author": "Manning Christopher D.",
+          "unstructured": "Christopher D. Manning , Prabhakar Raghavan , and Hinrich Schutze . 2008. Introduction to information retrieval . Cambridge University Press . Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schutze. 2008. Introduction to information retrieval. Cambridge University Press."
+        },
+        {
+          "key": "e_1_2_1_31_1",
+          "volume-title": "Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781",
+          "author": "Mikolov Tomas",
+          "year": "2013",
+          "unstructured": "Tomas Mikolov , Kai Chen , Greg Corrado , and Jeffrey Dean . 2013. Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781 ( 2013 ). Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781 (2013)."
+        },
+        {
+          "key": "e_1_2_1_32_1",
+          "unstructured": "Tomás Mikolov Ilya Sutskever Kai Chen Gregory S. Corrado and Jeffrey Dean. 2013. Distributed Representations of Words and Phrases and their Compositionality. In NIPS. 3111--3119. Tomás Mikolov Ilya Sutskever Kai Chen Gregory S. Corrado and Jeffrey Dean. 2013. Distributed Representations of Words and Phrases and their Compositionality. In NIPS. 3111--3119."
+        },
+        {
+          "key": "e_1_2_1_33_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Sidharth Mudgal Han Li Theodoros Rekatsinas AnHai Doan Youngchoon Park Ganesh Krishnan Rohit Deep Esteban Arcaute and Vijay Raghavendra. 2018. Deep Learning for Entity Matching: A Design Space Exploration. In SIGMOD. 19--34. Sidharth Mudgal Han Li Theodoros Rekatsinas AnHai Doan Youngchoon Park Ganesh Krishnan Rohit Deep Esteban Arcaute and Vijay Raghavendra. 2018. Deep Learning for Entity Matching: A Design Space Exploration. In SIGMOD. 19--34.",
+          "DOI": "10.1145/3183713.3196926"
+        },
+        {
+          "key": "e_1_2_1_34_1",
+          "volume-title": "Ji Ma, Vincent Y. Zhao, Yi Luan, Keith B. Hall, Ming-Wei Chang, and Yinfei Yang.",
+          "author": "Ni Jianmo",
+          "year": "2022",
+          "unstructured": "Jianmo Ni , Chen Qu , Jing Lu , Zhuyun Dai , Gustavo Hernandez Abrego , Ji Ma, Vincent Y. Zhao, Yi Luan, Keith B. Hall, Ming-Wei Chang, and Yinfei Yang. 2022 . Large Dual Encoders Are Generalizable Retrievers. In EMNLP. 9844--9855. Jianmo Ni, Chen Qu, Jing Lu, Zhuyun Dai, Gustavo Hernandez Abrego, Ji Ma, Vincent Y. Zhao, Yi Luan, Keith B. Hall, Ming-Wei Chang, and Yinfei Yang. 2022. Large Dual Encoders Are Generalizable Retrievers. In EMNLP. 9844--9855."
+        },
+        {
+          "key": "e_1_2_1_35_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Hao Nie Xianpei Han Ben He Le Sun Bo Chen Wei Zhang Suhui Wu and Hao Kong. 2019. Deep Sequence-to-Sequence Entity Matching for Heterogeneous Entity Resolution. In CIKM. 629--638. Hao Nie Xianpei Han Ben He Le Sun Bo Chen Wei Zhang Suhui Wu and Hao Kong. 2019. Deep Sequence-to-Sequence Entity Matching for Heterogeneous Entity Resolution. In CIKM. 629--638.",
+          "DOI": "10.1145/3357384.3358018"
+        },
+        {
+          "key": "e_1_2_1_36_1",
+          "volume-title": "EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. CoRR abs/2101.06126",
+          "author": "Obraczka Daniel",
+          "year": "2021",
+          "unstructured": "Daniel Obraczka , Jonathan Schuchart , and Erhard Rahm . 2021 . EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. CoRR abs/2101.06126 (2021). Daniel Obraczka, Jonathan Schuchart, and Erhard Rahm. 2021. EAGER: Embedding-Assisted Entity Resolution for Knowledge Graphs. CoRR abs/2101.06126 (2021)."
+        },
+        {
+          "key": "e_1_2_1_37_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3529337.3529356"
+        },
+        {
+          "key": "e_1_2_1_38_1",
+          "volume-title": "Pevarello Marco, Francesco Guerra, and Maurizio Vincini.",
+          "author": "Paganelli Matteo",
+          "year": "2021",
+          "unstructured": "Matteo Paganelli , Francesco Del Buono , Pevarello Marco, Francesco Guerra, and Maurizio Vincini. 2021 . Automated machine learning for entity matching tasks. In EDBT. 325--330. Matteo Paganelli, Francesco Del Buono, Pevarello Marco, Francesco Guerra, and Maurizio Vincini. 2021. Automated machine learning for entity matching tasks. In EDBT. 325--330."
+        },
+        {
+          "key": "e_1_2_1_39_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5281/zenodo.6950980"
+        },
+        {
+          "key": "e_1_2_1_40_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2856318.2856326"
+        },
+        {
+          "key": "e_1_2_1_41_1",
+          "first-page": "462",
+          "article-title": "Bipartite Graph Matching Algorithms for Clean-Clean Entity Resolution",
+          "volume": "2",
+          "author": "Papadakis George",
+          "year": "2022",
+          "unstructured": "George Papadakis , Vasilis Efthymiou , Emmanouil Thanos , and Oktie Hassanzadeh . 2022 . Bipartite Graph Matching Algorithms for Clean-Clean Entity Resolution : An Empirical Evaluation. In EDBT. 2 : 462 -- 462 :474. George Papadakis, Vasilis Efthymiou, Emmanouil Thanos, and Oktie Hassanzadeh. 2022. Bipartite Graph Matching Algorithms for Clean-Clean Entity Resolution: An Empirical Evaluation. In EDBT. 2:462--2:474.",
+          "journal-title": "An Empirical Evaluation. In EDBT."
+        },
+        {
+          "key": "e_1_2_1_42_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "George Papadakis Ekaterini Ioannou Claudia Niederée and Peter Fankhauser. 2011. Efficient entity resolution for large heterogeneous information spaces. In WSDM. 535--544. George Papadakis Ekaterini Ioannou Claudia Niederée and Peter Fankhauser. 2011. Efficient entity resolution for large heterogeneous information spaces. In WSDM. 535--544.",
+          "DOI": "10.1145/1935826.1935903"
+        },
+        {
+          "key": "e_1_2_1_43_1",
+          "volume-title": "The Four Generations of Entity Resolution",
+          "author": "Papadakis George",
+          "unstructured": "George Papadakis , Ekaterini Ioannou , Emanouil Thanos , and Themis Palpanas . 2021. The Four Generations of Entity Resolution . Morgan & Claypool Publishers . George Papadakis, Ekaterini Ioannou, Emanouil Thanos, and Themis Palpanas. 2021. The Four Generations of Entity Resolution. Morgan & Claypool Publishers."
+        },
+        {
+          "key": "e_1_2_1_44_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3377455"
+        },
+        {
+          "key": "e_1_2_1_45_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2947618.2947624"
+        },
+        {
+          "key": "e_1_2_1_46_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3467861.3467878"
+        },
+        {
+          "key": "e_1_2_1_47_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3115/v1/D14-1162"
+        },
+        {
+          "key": "e_1_2_1_48_1",
+          "volume-title": "Embeddings in Natural Language Processing: Theory and Advances in Vector Representations of Meaning",
+          "author": "Pilehvar Mohammad Taher",
+          "unstructured": "Mohammad Taher Pilehvar and José Camacho-Collados . 2020. Embeddings in Natural Language Processing: Theory and Advances in Vector Representations of Meaning . Morgan & Claypool Publishers . Mohammad Taher Pilehvar and José Camacho-Collados. 2020. Embeddings in Natural Language Processing: Theory and Advances in Vector Representations of Meaning. Morgan & Claypool Publishers."
+        },
+        {
+          "key": "e_1_2_1_49_1",
+          "first-page": "1",
+          "article-title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+          "volume": "21",
+          "author": "Raffel Colin",
+          "year": "2020",
+          "unstructured": "Colin Raffel , Noam Shazeer , Adam Roberts , Katherine Lee , Sharan Narang , Michael Matena , Yanqi Zhou , Wei Li , and Peter J. Liu . 2020 . Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer . Journal of Machine Learning Research 21 , 140 (2020), 1 -- 67 . Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer. Journal of Machine Learning Research 21, 140 (2020), 1--67.",
+          "journal-title": "Journal of Machine Learning Research"
+        },
+        {
+          "key": "e_1_2_1_50_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In EMNLP-IJCNLP. 3980--3990. Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In EMNLP-IJCNLP. 3980--3990.",
+          "DOI": "10.18653/v1/D19-1410"
+        },
+        {
+          "key": "e_1_2_1_51_1",
+          "volume-title": "Antoine Chassang, Carlo Gatta, and Yoshua Bengio.",
+          "author": "Romero Adriana",
+          "year": "2014",
+          "unstructured": "Adriana Romero , Nicolas Ballas , Samira Ebrahimi Kahou , Antoine Chassang, Carlo Gatta, and Yoshua Bengio. 2014 . Fitnets : Hints for thin deep nets. arXiv preprint arXiv:1412.6550 (2014). Adriana Romero, Nicolas Ballas, Samira Ebrahimi Kahou, Antoine Chassang, Carlo Gatta, and Yoshua Bengio. 2014. Fitnets: Hints for thin deep nets. arXiv preprint arXiv:1412.6550 (2014)."
+        },
+        {
+          "key": "e_1_2_1_52_1",
+          "volume-title": "a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108",
+          "author": "Sanh Victor",
+          "year": "2019",
+          "unstructured": "Victor Sanh , Lysandre Debut , Julien Chaumond , and Thomas Wolf . 2019. DistilBERT , a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108 ( 2019 ). Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter. arXiv preprint arXiv:1910.01108 (2019)."
+        },
+        {
+          "key": "e_1_2_1_53_1",
+          "first-page": "16857",
+          "article-title": "Mpnet: Masked and permuted pre-training for language understanding",
+          "volume": "33",
+          "author": "Song Kaitao",
+          "year": "2020",
+          "unstructured": "Kaitao Song , Xu Tan , Tao Qin , Jianfeng Lu , and Tie-Yan Liu . 2020 . Mpnet: Masked and permuted pre-training for language understanding . Advances in Neural Information Processing Systems 33 (2020), 16857 -- 16867 . Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2020. Mpnet: Masked and permuted pre-training for language understanding. Advances in Neural Information Processing Systems 33 (2020), 16857--16867.",
+          "journal-title": "Advances in Neural Information Processing Systems"
+        },
+        {
+          "key": "e_1_2_1_54_1",
+          "volume-title": "Mobilebert: Task-agnostic compression of bert by progressive knowledge transfer.",
+          "author": "Sun Zhiqing",
+          "year": "2019",
+          "unstructured": "Zhiqing Sun , Hongkun Yu , Xiaodan Song , Renjie Liu , Yiming Yang , and Denny Zhou . 2019 . Mobilebert: Task-agnostic compression of bert by progressive knowledge transfer. (2019). Zhiqing Sun, Hongkun Yu, Xiaodan Song, Renjie Liu, Yiming Yang, and Denny Zhou. 2019. Mobilebert: Task-agnostic compression of bert by progressive knowledge transfer. (2019)."
+        },
+        {
+          "key": "e_1_2_1_55_1",
+          "volume-title": "Sequence to sequence learning with neural networks. Advances in neural information processing systems 27",
+          "author": "Sutskever Ilya",
+          "year": "2014",
+          "unstructured": "Ilya Sutskever , Oriol Vinyals , and Quoc V Le. 2014. Sequence to sequence learning with neural networks. Advances in neural information processing systems 27 ( 2014 ). Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014. Sequence to sequence learning with neural networks. Advances in neural information processing systems 27 (2014)."
+        },
+        {
+          "key": "e_1_2_1_56_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3476249.3476294"
+        },
+        {
+          "key": "e_1_2_1_57_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3554821.3554896"
+        },
+        {
+          "key": "e_1_2_1_58_1",
+          "volume-title": "Attention is all you need. Advances in neural information processing systems 30",
+          "author": "Vaswani Ashish",
+          "year": "2017",
+          "unstructured": "Ashish Vaswani , Noam Shazeer , Niki Parmar , Jakob Uszkoreit , Llion Jones , Aidan N Gomez , Łukasz Kaiser , and Illia Polosukhin . 2017. Attention is all you need. Advances in neural information processing systems 30 ( 2017 ). Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. Advances in neural information processing systems 30 (2017)."
+        },
+        {
+          "key": "e_1_2_1_59_1",
+          "volume-title": "GLUE: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461",
+          "author": "Wang Alex",
+          "year": "2018",
+          "unstructured": "Alex Wang , Amanpreet Singh , Julian Michael , Felix Hill , Omer Levy , and Samuel R Bowman . 2018 . GLUE: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461 (2018). Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R Bowman. 2018. GLUE: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461 (2018)."
+        },
+        {
+          "key": "e_1_2_1_60_1",
+          "first-page": "5776",
+          "article-title": "Minilm: Deep self-attention distillation for task-agnostic compression of pre-trained transformers",
+          "volume": "33",
+          "author": "Wang Wenhui",
+          "year": "2020",
+          "unstructured": "Wenhui Wang , Furu Wei , Li Dong , Hangbo Bao , Nan Yang , and Ming Zhou . 2020 . Minilm: Deep self-attention distillation for task-agnostic compression of pre-trained transformers . Advances in Neural Information Processing Systems 33 (2020), 5776 -- 5788 . Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan Yang, and Ming Zhou. 2020. Minilm: Deep self-attention distillation for task-agnostic compression of pre-trained transformers. Advances in Neural Information Processing Systems 33 (2020), 5776--5788.",
+          "journal-title": "Advances in Neural Information Processing Systems"
+        },
+        {
+          "key": "e_1_2_1_61_1",
+          "volume-title": "Xin Luna Dong, and Shuiwang Ji",
+          "author": "Wang Zhengyang",
+          "year": "2020",
+          "unstructured": "Zhengyang Wang , Bunyamin Sisman , Hao Wei , Xin Luna Dong, and Shuiwang Ji . 2020 . CorDEL: A Contrastive Deep Learning Approach for Entity Linkage. In ICDM. 1322--1327. Zhengyang Wang, Bunyamin Sisman, Hao Wei, Xin Luna Dong, and Shuiwang Ji. 2020. CorDEL: A Contrastive Deep Learning Approach for Entity Linkage. In ICDM. 1322--1327."
+        },
+        {
+          "key": "e_1_2_1_62_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3318464.3389743"
+        },
+        {
+          "key": "e_1_2_1_63_1",
+          "volume-title": "Xlnet: Generalized autoregressive pretraining for language understanding. Advances in neural information processing systems 32",
+          "author": "Yang Zhilin",
+          "year": "2019",
+          "unstructured": "Zhilin Yang , Zihang Dai , Yiming Yang , Jaime Carbonell , Russ R Salakhutdinov , and Quoc V Le . 2019 . Xlnet: Generalized autoregressive pretraining for language understanding. Advances in neural information processing systems 32 (2019). Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R Salakhutdinov, and Quoc V Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. Advances in neural information processing systems 32 (2019)."
+        },
+        {
+          "key": "e_1_2_1_64_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Zijun Yao Chengjiang Li Tiansi Dong Xin Lv Jifan Yu Lei Hou Juanzi Li Yichi Zhang and Zelin Dai. 2021. Interpretable and Low-Resource Entity Matching via Decoupling Feature Learning from Decision Making. In ACL/IJCNLP. 2770--2781. Zijun Yao Chengjiang Li Tiansi Dong Xin Lv Jifan Yu Lei Hou Juanzi Li Yichi Zhang and Zelin Dai. 2021. Interpretable and Low-Resource Entity Matching via Decoupling Feature Learning from Decision Making. In ACL/IJCNLP. 2770--2781.",
+          "DOI": "10.18653/v1/2021.acl-long.215"
+        },
+        {
+          "key": "e_1_2_1_65_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.48550/arXiv.2304.12329"
+        },
+        {
+          "key": "e_1_2_1_66_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Dongxiang Zhang Yuyang Nie Sai Wu Yanyan Shen and Kian-Lee Tan. 2020. Multi-Context Attention for Entity Matching. In WWW. 2634--2640. Dongxiang Zhang Yuyang Nie Sai Wu Yanyan Shen and Kian-Lee Tan. 2020. Multi-Context Attention for Entity Matching. In WWW. 2634--2640.",
+          "DOI": "10.1145/3366423.3380017"
+        },
+        {
+          "key": "e_1_2_1_67_1",
+          "volume-title": "Christos Faloutsos, and David Page.",
+          "author": "Zhang Wei",
+          "year": "2020",
+          "unstructured": "Wei Zhang , Hao Wei , Bunyamin Sisman , Xin Luna Dong , Christos Faloutsos, and David Page. 2020 . AutoBlock: A Hands-off Blocking Framework for Entity Matching. In WSDM. 744--752. Wei Zhang, Hao Wei, Bunyamin Sisman, Xin Luna Dong, Christos Faloutsos, and David Page. 2020. AutoBlock: A Hands-off Blocking Framework for Entity Matching. In WSDM. 744--752."
+        }
+      ],
+      "container-title": [
+        "Proceedings of the VLDB Endowment"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.14778/3598581.3598594",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2024,
+            10,
+            23
+          ]
+        ],
+        "date-time": "2024-10-23T22:48:30Z",
+        "timestamp": 1729723710000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.14778/3598581.3598594"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2023,
+            5
+          ]
+        ]
+      },
+      "references-count": 67,
+      "journal-issue": {
+        "issue": "9",
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              5
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.14778/3598581.3598594"
+      ],
+      "URL": "https://doi.org/10.14778/3598581.3598594",
+      "relation": {},
+      "ISSN": [
+        "2150-8097"
+      ],
+      "issn-type": [
+        {
+          "value": "2150-8097",
+          "type": "print"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            5
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2023-07-10",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

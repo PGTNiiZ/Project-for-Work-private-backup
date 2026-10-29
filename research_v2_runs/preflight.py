@@ -27,8 +27,9 @@ def ground_truth(frame):
     return np.array(pairs,dtype=np.int32).reshape(-1,2)
 
 def prepare_frame(raw):
-    keys=raw['user_folder'].map(norm)
-    valid=keys.ne('') & pd.to_numeric(raw['profile_id'],errors='coerce').notna()
+    # Identity tokens are identifiers, not text features: preserve exact case/bytes.
+    keys=raw['user_folder'].astype(str)
+    valid=keys.map(norm).ne('') & pd.to_numeric(raw['profile_id'],errors='coerce').notna()
     frame=pd.DataFrame({k:raw.loc[valid,v].map(norm).to_numpy() for k,v in FIELDS.items()})
     frame['entity']=pd.factorize(keys[valid],sort=True)[0].astype(np.int32)
     counts=frame.groupby('entity').size()

@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-semantic",
+  "exp_id": "E4-2",
+  "learner": "GBDT",
+  "feature": "semantic",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 100,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.0038770815835233174
+  },
+  "group": null,
+  "exclude_group": null,
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.855932577729301,
+    0.855831522412842,
+    0.8563740038476557,
+    0.8557216841330709,
+    0.8557579649889812
+  ],
+  "seed_AP_SD": 0.00026439906848620777,
+  "mean_score_AP": 0.856437333086781,
+  "model_paths": [
+    "artifacts/model_GBDT-semantic_seed11.pkl",
+    "artifacts/model_GBDT-semantic_seed23.pkl",
+    "artifacts/model_GBDT-semantic_seed42.pkl",
+    "artifacts/model_GBDT-semantic_seed71.pkl",
+    "artifacts/model_GBDT-semantic_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-semantic_seed11.pkl": "e7e0796114724ca82820fc6f0707766201be8426954986e6b96b6aede6a4b78f",
+    "artifacts/model_GBDT-semantic_seed23.pkl": "8ed52aa7780a364d2bb29677f96625167674022821747bce3eb3176450e59b6c",
+    "artifacts/model_GBDT-semantic_seed42.pkl": "e7d5946a5d4c57208e2f0e9e8ac5ce49014e2d66caf54d6f65851f8ba899976d",
+    "artifacts/model_GBDT-semantic_seed71.pkl": "c73df3590878a09785832a5f85def565e30ba5f6b82df7a7d74d536343366879",
+    "artifacts/model_GBDT-semantic_seed101.pkl": "ba6748255f5a3298f49b31bb385421a7c5b153e8f15a76fcfa5e8f81aaf5b712"
+  },
+  "oof_path": "artifacts/oof_GBDT-semantic.npz",
+  "oof_sha256": "605f33d9552e9fc48a9ca2541061f57ba49fc9fff2334e021465255ab004ab51",
+  "operating_points": {
+    "validation_F1_threshold": 0.79,
+    "validation_F1": 0.8308107687115449,
+    "precision_target_threshold": 0.6925040692761075,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.8564373330867844,
+    "precision": 0.8125951293759512,
+    "recall": 0.7918057100482017,
+    "f1": 0.8020657276995304,
+    "tp": 17084,
+    "fp": 3940,
+    "tn": 325978,
+    "fn": 4492,
+    "automatic_fn": 4492,
+    "utility_fn": 4492,
+    "rejected_positive_fn": 4492,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.7918057100482017,
+    "raw_cost": 12372.0,
+    "cost_per_pair": 0.035198324864720305,
+    "brier": 0.02280982409474917,
+    "ece15_equalmass": 0.05047096937826541
+  }
+}

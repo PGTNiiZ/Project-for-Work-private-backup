@@ -1,0 +1,38 @@
+PASS report RESULTS_SUMMARY_TH.md 
+PASS report THESIS_TABLES_TH.md 
+PASS report HISTORICAL_COMPARISON_TH.md 
+PASS report THREATS_TO_VALIDITY_TH.md 
+PASS report EXECUTION_HANDOFF_TH.md 
+PASS root artifact DEVIATIONS.md 
+PASS root artifact GATE_RECORD.md 
+PASS root artifact PREREGISTRATION_FREEZE.md 
+PASS root artifact LABEL_SANITY.md 
+PASS root artifact ENVIRONMENT.md 
+PASS root artifact FINAL_CONFIGS.md 
+PASS G4 committed before first scientific run 932cf9569abb38dfd9c3aa55e258da299e5290e6
+PASS FINAL_CONFIGS committed before final access 81171fd998721c168ba2f8192264fef675993497
+PASS final access matches exact frozen configurations 
+PASS final declaration unchanged 
+PASS frozen artifacts unchanged 
+PASS all DONE metrics trace by SHA256 
+PASS all scientific results EXPLORATORY 
+PASS every run config hash matches 
+PASS each run config committed before run timestamp 
+PASS run configurations exist verbatim in their recorded commits mismatches=0
+PASS raw input/thesis/v1/design/historical SHA256 unchanged 870 protected files; mismatches=0
+PASS additional raw datasets and images match pinned Git SHA256 files=4265; no filenames output
+PASS five primary contrasts CI/Holm/decision 
+PASS equivalence decisions have TOST support 
+PASS policy budgets exactly 2048 per seed 
+PASS six model searches at 200 configs each 
+PASS every Tier1 DONE or explicit reason 
+PASS independent frozen metric recomputation 
+PASS no tuning after test opened 
+PASS all post-final supporting fits use pre-final frozen hyperparameters 
+PASS inference timing stages have five measured repetitions 
+PASS tuned rule has exactly 200 configurations 
+FAIL public-output PII scan classified, zero profile-value hits unclassified=1; terminal incident separately disclosed
+FAIL all committed additions confined to research_v2_runs 
+PASS no private data/model/embedding/prediction committed 
+PASS push remains disabled 
+PASS=35 FAIL=2 EXPLORATORY; G5 NOT MET; terminal privacy incident disclosed

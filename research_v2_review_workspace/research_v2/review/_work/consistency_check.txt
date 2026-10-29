@@ -1,0 +1,186 @@
+PASS review/REPOSITORY_RESEARCH_INVENTORY.md exists and non-empty
+PASS review/HISTORICAL_EXPERIMENT_AUDIT.md exists and non-empty
+PASS review/REPOSITORY_COMPARISON.md exists and non-empty
+PASS review/LITERATURE_VS_IMPLEMENTATION.md exists and non-empty
+PASS review/LITERATURE_VERIFICATION_REPORT.md exists and non-empty
+PASS review/RESEARCH_GAP_VALIDATION.md exists and non-empty
+PASS review/HYPOTHESIS_COVERAGE_REVIEW.md exists and non-empty
+PASS review/EXPERIMENT_REDUNDANCY_REVIEW.md exists and non-empty
+PASS review/TRAINING_DECISION_REPORT.md exists and non-empty
+PASS review/METHODOLOGICAL_RISKS.md exists and non-empty
+PASS review/BLOCKER_REGISTER.csv exists and non-empty
+PASS review/ID_CHANGELOG.md exists and non-empty
+PASS review/FINAL_HANDOFF_TH.md exists and non-empty
+PASS literature/PAPER_EVIDENCE_MATRIX.csv begins with 'Changes vs v1'
+PASS literature/REFERENCES.bib begins with 'Changes vs v1'
+PASS design/EXPERIMENTAL_MASTER_PLAN_TH.md begins with 'Changes vs v1'
+PASS design/HYPOTHESIS_EXPERIMENT_MATRIX.csv begins with 'Changes vs v1'
+PASS design/RESEARCH_QUESTIONS_AND_HYPOTHESES.md begins with 'Changes vs v1'
+PASS design/TRAINING_REQUIREMENTS.md begins with 'Changes vs v1'
+PASS design/EXPERIMENT_DEPENDENCY_GRAPH.md begins with 'Changes vs v1'
+PASS history/HISTORICAL_EXPERIMENT_MAPPING.md begins with 'Changes vs v1'
+PASS history/REUSABLE_COMPONENTS.md begins with 'Changes vs v1'
+PASS literature/LITERATURE_REVIEW_TH.md begins with 'Changes vs v1'
+PASS literature/RESEARCH_GAPS_TH.md begins with 'Changes vs v1'
+PASS design/RESEARCH_GATES.md begins with 'Changes vs v1'
+PASS design/EVALUATION_AND_STATISTICS.md begins with 'Changes vs v1'
+PASS design/COMPUTE_AND_COST_PLAN.md begins with 'Changes vs v1'
+PASS _input_v1/EXPERIMENT_DEPENDENCY_GRAPH.md unchanged
+PASS _input_v1/EVALUATION_AND_STATISTICS.md unchanged
+PASS _input_v1/HYPOTHESIS_EXPERIMENT_MATRIX.csv unchanged
+PASS _input_v1/HANDOFF_REPORT_TH.md unchanged
+PASS _input_v1/REFERENCES.bib unchanged
+PASS _input_v1/EXPERIMENTAL_MASTER_PLAN_TH.md unchanged
+PASS _input_v1/DUPLICATE_MAP.csv unchanged
+PASS _input_v1/REUSABLE_COMPONENTS.md unchanged
+PASS _input_v1/HISTORICAL_EXPERIMENT_MAPPING.md unchanged
+PASS _input_v1/LITERATURE_REVIEW_TH.md unchanged
+PASS _input_v1/RESEARCH_GAPS_TH.md unchanged
+PASS _input_v1/TRAINING_REQUIREMENTS.md unchanged
+PASS _input_v1/COMPUTE_AND_COST_PLAN.md unchanged
+PASS _input_v1/PAPER_EVIDENCE_MATRIX.csv unchanged
+PASS _input_v1/RESEARCH_GATES.md unchanged
+PASS _input_v1/RESEARCH_QUESTIONS_AND_HYPOTHESES.md unchanged
+PASS matrix IDs unique (49 rows)
+PASS literature/PAPER_EVIDENCE_MATRIX.csv parses (49 rows)
+PASS review/BLOCKER_REGISTER.csv parses (13 rows)
+PASS design/EXPERIMENTAL_MASTER_PLAN_TH.md: every matrix ID mentioned (missing=[])
+PASS design/EXPERIMENTAL_MASTER_PLAN_TH.md: no unknown IDs (extra=[])
+PASS design/EXPERIMENT_DEPENDENCY_GRAPH.md: every matrix ID mentioned (missing=[])
+PASS design/EXPERIMENT_DEPENDENCY_GRAPH.md: no unknown IDs (extra=[])
+PASS design/TRAINING_REQUIREMENTS.md: every matrix ID mentioned (missing=[])
+PASS design/TRAINING_REQUIREMENTS.md: no unknown IDs (extra=[])
+PASS H1 has ESSENTIAL experiment with baseline+metric: ['E3-2', 'E5-5', 'E7-1']
+PASS H2 has ESSENTIAL experiment with baseline+metric: ['E2-3', 'E3-2', 'E7-2']
+PASS H3 has ESSENTIAL experiment with baseline+metric: ['E1-4', 'E3-2', 'E5-3']
+PASS H4 has ESSENTIAL experiment with baseline+metric: ['E6-7', 'E6-2', 'E6-3', 'E6-4', 'E6-5', 'E7-2']
+PASS H5 has ESSENTIAL experiment with baseline+metric: ['E1-1', 'E1-3', 'E1-4', 'E1-5', 'E7-1', 'E7-2']
+PASS P01 linked to experiment/gap or excluded
+PASS P02 linked to experiment/gap or excluded
+PASS P03 linked to experiment/gap or excluded
+PASS P04 linked to experiment/gap or excluded
+PASS P05 linked to experiment/gap or excluded
+PASS P06 linked to experiment/gap or excluded
+PASS P07 linked to experiment/gap or excluded
+PASS P08 linked to experiment/gap or excluded
+PASS P09 linked to experiment/gap or excluded
+PASS P10 linked to experiment/gap or excluded
+PASS P11 linked to experiment/gap or excluded
+PASS P12 linked to experiment/gap or excluded
+PASS P13 linked to experiment/gap or excluded
+PASS P14 linked to experiment/gap or excluded
+PASS P15 linked to experiment/gap or excluded
+PASS P16 linked to experiment/gap or excluded
+PASS P17 linked to experiment/gap or excluded
+PASS P18 linked to experiment/gap or excluded
+PASS P19 linked to experiment/gap or excluded
+PASS P20 linked to experiment/gap or excluded
+PASS P21 linked to experiment/gap or excluded
+PASS P22 linked to experiment/gap or excluded
+PASS P23 linked to experiment/gap or excluded
+PASS P24 linked to experiment/gap or excluded
+PASS P25 linked to experiment/gap or excluded
+PASS P26 linked to experiment/gap or excluded
+PASS P27 linked to experiment/gap or excluded
+PASS P28 linked to experiment/gap or excluded
+PASS P29 linked to experiment/gap or excluded
+PASS P30 linked to experiment/gap or excluded
+PASS P31 linked to experiment/gap or excluded
+PASS P32 linked to experiment/gap or excluded
+PASS P33 linked to experiment/gap or excluded
+PASS P34 linked to experiment/gap or excluded
+PASS P35 linked to experiment/gap or excluded
+PASS P36 linked to experiment/gap or excluded
+PASS P37 linked to experiment/gap or excluded
+PASS P38 linked to experiment/gap or excluded
+PASS P39 linked to experiment/gap or excluded
+PASS P40 linked to experiment/gap or excluded
+PASS P41 linked to experiment/gap or excluded
+PASS P42 linked to experiment/gap or excluded
+PASS P43 linked to experiment/gap or excluded
+PASS P44 linked to experiment/gap or excluded
+PASS P45 linked to experiment/gap or excluded
+PASS P46 linked to experiment/gap or excluded
+PASS P47 linked to experiment/gap or excluded
+PASS P48 linked to experiment/gap or excluded
+PASS P49 linked to experiment/gap or excluded
+PASS matrix motivating_papers all exist in paper matrix (unknown=[])
+COUNTS MVP {"n_variants": 49, "n_training_jobs": 217, "n_tuning_fits": 2400, "n_validation_evals": 82894, "n_test_evals": 19, "policy_objective_evals": 82025, "model_rule_validation_evals": 869, "distinct": 21, "diagnostics": 4}
+COUNTS MVP+SUPPORTING {"n_variants": 61, "n_training_jobs": 414, "n_tuning_fits": 4800, "n_validation_evals": 104008, "n_test_evals": 21, "policy_objective_evals": 102508, "model_rule_validation_evals": 1500, "distinct": 31, "diagnostics": 4}
+COUNTS ALL {"n_variants": 92, "n_training_jobs": 669, "n_tuning_fits": 5600, "n_validation_evals": 104254, "n_test_evals": 21, "policy_objective_evals": 102513, "model_rule_validation_evals": 1741, "distinct": 46, "diagnostics": 5}
+GPU training jobs 30
+PRIVACY SCAN: 56 distinct hits (review each)
+  HIT handle @article -> literature/REFERENCES.bib,review/FINAL_HANDOFF_TH.md
+  HIT handle @book -> literature/REFERENCES.bib,review/FINAL_HANDOFF_TH.md
+  HIT handle @inproceedings -> literature/REFERENCES.bib,review/FINAL_HANDOFF_TH.md
+  HIT url https://api.crossref.org/works/10.1007/978-3-319-57454-7_49,PPRL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1007/978-3-642-31164-2,Textbook,"Similarity -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1007/s10994-021-05964-1,Evaluation -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1007/s11222-017-9746-6,Evaluation -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1016/j.datak.2026.102575,Core -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1016/j.eswa.2025.129026,UIL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1016/j.is.2012.11.005,PPRL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1016/j.is.2023.102307,Core -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1080/01621459.1969.10501049,Foundational -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/ACCESS.2024.3500374,Core -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/icbk.2018.00042,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/icde60146.2024.00265,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/isi65680.2025.11201172,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/tit.1970.1054406,Reject -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1109/tkde.2010.234,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1111/j.1467-9868.2007.00593.x,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/1102351.1102430,Calibration,Calibration -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/1401890.1401920,Incomplete -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/2382577.2382579,Leakage -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/2487575.2487648,Foundational -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/2588555.2588576,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/2783258.2788601,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/3068777.3068781,Foundational -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/3183713.3196926,DL-based -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/3340531.3411931,PPRL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/3377455,Blocking -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1145/3458723,Dataset -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1162/089976698300017197,Statistical -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1186/1471-2105-7-91,Selection -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1186/1472-6947-9-41,PPRL,Bloom -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1371/journal.pone.0118432,Imbalanced -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/1920841.1920904,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/2350229.2350276,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/3421424.3421431,Core -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/3476249.3476294,DL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/3538598.3538611,Blocking,As -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/3583140.3583163,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.14778/3598581.3598594,Embeddings -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.1609/aaai.v35i15.17562,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.18653/v1/d19-1410,Sentence -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.24963/ijcai.2022/552,Core -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.32604/cmc.2025.073175,Survey -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.crossref.org/works/10.5220/0005176000050013,PPRL -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.datacite.org/dois/10.48786/edbt.2025.42,LLM-based -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.datacite.org/dois/10.5441/002/edbt.2020.58,Transformer -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://api.openalex.org/works?filter=title.search:The%20Foundations%20of%20Cost-Sensitive%20Learning,Cost-sensitive -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://github.com/vishalshar/Dataset-LinkSocial} -> literature/REFERENCES.bib
+  HIT url https://jmlr.org/papers/v13/bergstra12a.html,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://jmlr.org/papers/v13/bergstra12a.html} -> literature/REFERENCES.bib
+  HIT url https://papers.nips.cc/paper_files/paper/2011/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://papers.nips.cc/paper_files/paper/2011/hash/86e8f7ab32cfd12577bc2619bc635690-Abstract.html}, -> literature/REFERENCES.bib
+  HIT url https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html,New -> literature/PAPER_EVIDENCE_MATRIX.csv
+  HIT url https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html}, -> literature/REFERENCES.bib
+PASS review/FINAL_HANDOFF_TH.md preserves NO-GO
+PASS design/RESEARCH_GATES.md preserves NO-GO
+PASS design/EXPERIMENTAL_MASTER_PLAN_TH.md preserves NO-GO
+COMPUTE lines with time estimates lacking inline ASSUMPTION tag: 21 (doc-level banner applies)
+PASS K1 status present in handoff
+PASS K2 status present in handoff
+PASS K3 status present in handoff
+PASS K4 status present in handoff
+PASS K5 status present in handoff
+PASS K6 status present in handoff
+PASS EXPERIMENT_DEPENDENCY_GRAPH.md: no '500 configs'
+PASS EVALUATION_AND_STATISTICS.md: no '500 configs'
+PASS EXPERIMENTAL_MASTER_PLAN_TH.md: no '500 configs'
+PASS TRAINING_REQUIREMENTS.md: no '500 configs'
+PASS COMPUTE_AND_COST_PLAN.md: no '500 configs'
+PASS RESEARCH_GATES.md: no '500 configs'
+PASS RESEARCH_QUESTIONS_AND_HYPOTHESES.md: no '500 configs'
+SUMMARY: 0 FAIL

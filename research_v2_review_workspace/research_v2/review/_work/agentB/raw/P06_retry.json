@@ -1,0 +1,531 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=Entity%20Matching%20with%20Transformer%20Architectures%20-%20A%20Step%20Forward%20in%20Data%20Integration&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 4239555,
+      "items": [
+        {
+          "institution": [
+            {
+              "name": "Research Square"
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                19
+              ]
+            ],
+            "date-time": "2025-12-19T06:28:50Z",
+            "timestamp": 1766125730037,
+            "version": "3.48.0"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                4
+              ]
+            ]
+          },
+          "group-title": "In Review",
+          "reference-count": 10,
+          "publisher": "Springer Science and Business Media LLC",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    8,
+                    4
+                  ]
+                ],
+                "date-time": "2025-08-04T00:00:00Z",
+                "timestamp": 1754265600000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "accepted": {
+            "date-parts": [
+              [
+                2025,
+                7,
+                26
+              ]
+            ]
+          },
+          "abstract": "<title>Abstract</title>\n                <p>\n                  <bold>Background:</bold>\n                  The integration of diverse genomic data modalities presents significant computational challenges due to heterogeneous feature spaces, varying scales, and complex inter-modal relationships. Traditional machine learning approaches often fail to capture the nuanced attention patterns required for effective multi-modal genomic analysis.\n                  <bold>Methods:</bold>\n                  We introduce a novel ultra-advanced multi-modal transformer architecture validated on real The Cancer Genome Atlas (TCGA) clinical data, integrating 270 genomic features across four modalities: DNA methylation, copy number alterations, fragmentomics, and mutation profiles. Our approach combines TabTransformer and Perceiver IO frameworks with custom attention mechanisms, modality-specific encoders, cross-modal attention layers, and ensemble fusion strategies.\n                  <bold>Results:</bold>\n                  Clinical validation on authentic real TCGA patient data (n=4,913 samples, 8 cancer types) demonstrated breakthrough performance with 95.33% accuracy, 95.1% precision, 95.0% recall, and 95.05% F1-score. SHAP explainability analysis revealed cancer-type-specific genomic signatures with inference time &lt;50ms suitable for clinical deployment.\n                  <bold>Conclusions:</bold>\n                  Multi-modal transformers represent a significant advancement in genomic data integration, offering superior performance and interpretability for complex biological analyses. This methodology establishes a validated foundation for next-generation precision medicine applications.\n                </p>",
+          "DOI": "10.21203/rs.3.rs-7222835/v1",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                4
+              ]
+            ],
+            "date-time": "2025-08-04T08:03:14Z",
+            "timestamp": 1754294594000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Multi-Modal Transformer Architectures for Genomic Data Integration: Breakthrough Clinical Validation on Real TCGA Data"
+          ],
+          "prefix": "10.21203",
+          "author": [
+            {
+              "given": "R. Craig",
+              "family": "Stillwell",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "crossref",
+              "first-page": "1113",
+              "DOI": "10.1038/ng.2764",
+              "article-title": "The Cancer Genome Atlas [1] Pan-Cancer analysis project",
+              "volume": "45",
+              "author": "Weinstein JN",
+              "year": "2013",
+              "unstructured": "Weinstein, J. N. et al. The Cancer Genome Atlas [1] Pan-Cancer analysis project. Nat. Genet. 45, 1113–1120 (2013).",
+              "journal-title": "Nat. Genet."
+            },
+            {
+              "key": "ref2",
+              "article-title": "Attention is all you need",
+              "volume": "30",
+              "author": "Vaswani A",
+              "year": "2017",
+              "unstructured": "Vaswani, A. et al. Attention is all you need. Adv. Neural. Inf. Process. Syst. 30 (2017).",
+              "journal-title": "Adv. Neural. Inf. Process. Syst."
+            },
+            {
+              "key": "ref3",
+              "article-title": "A unified approach to interpreting model predictions",
+              "volume": "30",
+              "author": "Lundberg SM",
+              "year": "2017",
+              "unstructured": "Lundberg, S. M. & Lee, S. I. A unified approach to interpreting model predictions. Adv. Neural. Inf. Process. Syst. 30 (2017).",
+              "journal-title": "Adv. Neural. Inf. Process. Syst."
+            },
+            {
+              "year": "2020",
+              "author": "Huang X",
+              "key": "ref4",
+              "unstructured": "Huang, X. et al. TabTransformer [4] [2]: Tabular Data Modeling Using Contextual Embeddings. arXiv preprint arXiv:2012.06678 (2020)."
+            },
+            {
+              "year": "2021",
+              "author": "Jaegle A",
+              "key": "ref5",
+              "unstructured": "Jaegle, A. et al. Perceiver [5]: General Perception with Iterative Attention. International Conference on Machine Learning (2021)."
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "crossref",
+              "first-page": "1724",
+              "DOI": "10.1016/j.ajpath.2016.02.023",
+              "article-title": "Genomic and Epigenomic Alterations in Cancer",
+              "volume": "186",
+              "author": "Chakravarthi BV",
+              "year": "2016",
+              "unstructured": "Chakravarthi, B. V., Nepal, S. & Varambally, S. Genomic and Epigenomic Alterations in Cancer. Am. J. Pathol. 186, 1724–1735 (2016).",
+              "journal-title": "Am. J. Pathol."
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "crossref",
+              "first-page": "385",
+              "DOI": "10.1038/s41586-019-1272-6",
+              "article-title": "Genome-wide cell-free DNA fragmentation in patients with cancer",
+              "volume": "570",
+              "author": "Cristiano S",
+              "year": "2019",
+              "unstructured": "Cristiano, S. et al. Genome-wide cell-free DNA fragmentation in patients with cancer. Nature 570, 385–389 (2019).",
+              "journal-title": "Nature"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "crossref",
+              "first-page": "57",
+              "DOI": "10.1038/nature11247",
+              "article-title": "An integrated encyclopedia of DNA elements in the human genome",
+              "volume": "489",
+              "author": "ENCODE Project Consortium",
+              "year": "2012",
+              "unstructured": "ENCODE Project Consortium. An integrated encyclopedia of DNA elements in the human genome. Nature 489, 57–74 (2012).",
+              "journal-title": "Nature"
+            },
+            {
+              "year": "2016",
+              "author": "Chen T",
+              "key": "ref9",
+              "unstructured": "Chen, T. & Guestrin, C. XGBoost [9]: A scalable tree boosting system. Proceedings of the 22nd ACM SIGKDD (2016)."
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "crossref",
+              "first-page": "44",
+              "DOI": "10.1038/s41591-018-0300-7",
+              "article-title": "High-performance medicine: the convergence of human and artificial intelligence",
+              "volume": "25",
+              "author": "Topol EJ",
+              "year": "2019",
+              "unstructured": "Topol, E. J. High-performance medicine: the convergence of human and artificial intelligence. Nat. Med. 25, 44–56 (2019).",
+              "journal-title": "Nat. Med."
+            }
+          ],
+          "link": [
+            {
+              "URL": "https://www.researchsquare.com/article/rs-7222835/v1",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://www.researchsquare.com/article/rs-7222835/v1.html",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                12,
+                19
+              ]
+            ],
+            "date-time": "2025-12-19T06:24:55Z",
+            "timestamp": 1766125495000
+          },
+          "score": 30.709494,
+          "resource": {
+            "primary": {
+              "URL": "https://www.researchsquare.com/article/rs-7222835/v1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                4
+              ]
+            ]
+          },
+          "references-count": 10,
+          "URL": "https://doi.org/10.21203/rs.3.rs-7222835/v1",
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                4
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                27
+              ]
+            ],
+            "date-time": "2025-10-27T12:24:41Z",
+            "timestamp": 1761567881905,
+            "version": "build-2065373602"
+          },
+          "reference-count": 0,
+          "publisher": "SCITEPRESS - Science and Technology Publications",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "DOI": "10.5220/0013711700004000",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                27
+              ]
+            ],
+            "date-time": "2025-10-27T10:53:54Z",
+            "timestamp": 1761562434000
+          },
+          "page": "40-51",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Comparative Analysis of Entity Matching Approaches for Product Taxonomy Integration"
+          ],
+          "prefix": "10.5220",
+          "author": [
+            {
+              "given": "Michel",
+              "family": "Hagenah",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Institute for Artificial Intelligence, University of Bremen, Am Fallturm 1, 28359 Bremen, Germany"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Michaela",
+              "family": "Kümpel",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Institute for Artificial Intelligence, University of Bremen, Am Fallturm 1, 28359 Bremen, Germany"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "3171",
+          "event": {
+            "name": "17th International Conference on Knowledge Engineering and Ontology Development",
+            "location": "Marbella, Spain",
+            "start": {
+              "date-parts": [
+                [
+                  2025,
+                  10,
+                  22
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2025,
+                  10,
+                  24
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "Proceedings of the 17th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management"
+          ],
+          "original-title": [
+            "Comparative Analysis of Entity Matching Approaches for Product Taxonomy Integration"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                27
+              ]
+            ],
+            "date-time": "2025-10-27T11:10:50Z",
+            "timestamp": 1761563450000
+          },
+          "score": 27.552998,
+          "resource": {
+            "primary": {
+              "URL": "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0013711700004000"
+            }
+          },
+          "subtitle": [
+            ""
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.5220/0013711700004000",
+          "published": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          }
+        },
+        {
+          "institution": [
+            {
+              "name": "San Jose State University",
+              "acronym": [
+                "SJSU",
+                "SJSU"
+              ],
+              "place": [
+                "San Jose, CA, USA"
+              ],
+              "department": [
+                "Computer Science"
+              ]
+            }
+          ],
+          "indexed": {
+            "date-parts": [
+              [
+                2022,
+                4,
+                2
+              ]
+            ],
+            "date-time": "2022-04-02T15:06:49Z",
+            "timestamp": 1648912009003
+          },
+          "reference-count": 0,
+          "publisher": "San Jose State University Library",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "DOI": "10.31979/etd.jez2-jkmx",
+          "type": "dissertation",
+          "created": {
+            "date-parts": [
+              [
+                2019,
+                4,
+                18
+              ]
+            ],
+            "date-time": "2019-04-18T18:18:18Z",
+            "timestamp": 1555611498000
+          },
+          "approved": {
+            "date-parts": [
+              [
+                2015,
+                10,
+                1
+              ]
+            ]
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "LOAD BALANCING FOR BIG DATA ENTITY MATCHING USING BLOCK SPLIT"
+          ],
+          "prefix": "10.31979",
+          "author": [
+            {
+              "given": "Akhilesh",
+              "family": "Kondra",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "San Jose State University"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "16862",
+          "link": [
+            {
+              "URL": "https://scholarworks.sjsu.edu/cgi/viewcontent.cgi?article=1457&amp;context=etd_projects&amp;unstamped=1",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2019,
+                4,
+                18
+              ]
+            ],
+            "date-time": "2019-04-18T18:18:40Z",
+            "timestamp": 1555611520000
+          },
+          "score": 26.655806,
+          "degree": [
+            "Master of Science (MS)"
+          ],
+          "resource": {
+            "primary": {
+              "URL": "https://scholarworks.sjsu.edu/etd_projects/457"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                null
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.31979/etd.jez2-jkmx"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

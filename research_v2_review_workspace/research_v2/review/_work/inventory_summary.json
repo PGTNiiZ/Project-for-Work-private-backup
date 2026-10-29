@@ -1,0 +1,14 @@
+{
+  "main": {
+    "refs": 3,
+    "entries": 19610,
+    "unique_blobs": 14651,
+    "hashed_blobs": 14650
+  },
+  "backup": {
+    "refs": 2,
+    "entries": 6478,
+    "unique_blobs": 5767,
+    "hashed_blobs": 5766
+  }
+}

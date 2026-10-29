@@ -1,0 +1,361 @@
+{
+  "url": "https://api.crossref.org/works/10.1145/1401890.1401920",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            24
+          ]
+        ],
+        "date-time": "2026-10-24T08:22:43Z",
+        "timestamp": 1792830163427,
+        "version": "4.5.0"
+      },
+      "publisher-location": "New York, NY, USA",
+      "reference-count": 26,
+      "publisher": "ACM",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2008,
+                8,
+                24
+              ]
+            ],
+            "date-time": "2008-08-24T00:00:00Z",
+            "timestamp": 1219536000000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2008,
+            8,
+            24
+          ]
+        ]
+      },
+      "DOI": "10.1145/1401890.1401920",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2008,
+            8,
+            27
+          ]
+        ],
+        "date-time": "2008-08-27T07:56:41Z",
+        "timestamp": 1219823801000
+      },
+      "page": "213-220",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 723,
+      "title": [
+        "Learning classifiers from only positive and unlabeled data"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "given": "Charles",
+          "family": "Elkan",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "University of California, San Diego, La Jolla, CA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Keith",
+          "family": "Noto",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of California, San Diego, La Jolla, CA, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2008,
+            8,
+            24
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_3_2_1_1_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/nar/gkg095"
+        },
+        {
+          "key": "e_1_3_2_1_2_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-540-74976-9_9"
+        },
+        {
+          "key": "e_1_3_2_1_3_1",
+          "series-title": "Lecture Notes in Computer Science",
+          "doi-asserted-by": "crossref",
+          "first-page": "112",
+          "DOI": "10.1007/3-540-49730-7_9",
+          "volume-title": "Proceedings of the 9th International Conference on Algorithmic Learning Theory (ALT'98)",
+          "author": "Denis F.",
+          "year": "1998"
+        },
+        {
+          "key": "e_1_3_2_1_4_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.tcs.2005.09.007"
+        },
+        {
+          "key": "e_1_3_2_1_5_1",
+          "first-page": "1927",
+          "volume-title": "Proceedings of the Conference on Information Processing and Management of Uncertainty in Knowledge-Based Systems (IPMU 2002",
+          "author": "Denis F.",
+          "year": "2002"
+        },
+        {
+          "key": "e_1_3_2_1_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2006.16"
+        },
+        {
+          "key": "e_1_3_2_1_7_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "M. Galperin. The Molecular Biology Database Collection: 2008 update. Nucleic Acids Research 36(Database issue):D2 2008.  M. Galperin. The Molecular Biology Database Collection: 2008 update. Nucleic Acids Research 36(Database issue):D2 2008.",
+          "DOI": "10.1093/nar/gkm1037"
+        },
+        {
+          "key": "e_1_3_2_1_8_1",
+          "volume-title": "Proceedings of the Twentieth International Conference on Machine Learning (ICML 2003",
+          "author": "Lee W. S.",
+          "year": "2003"
+        },
+        {
+          "key": "e_1_3_2_1_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s10994-007-5018-6"
+        },
+        {
+          "key": "e_1_3_2_1_10_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "R. J. A. Little and D. B. Rubin. Statistical Analysis with Missing Data. John Wiley & Sons Inc. second edition 2002.   R. J. A. Little and D. B. Rubin. Statistical Analysis with Missing Data. John Wiley & Sons Inc. second edition 2002.",
+          "DOI": "10.1002/9781119013563"
+        },
+        {
+          "key": "e_1_3_2_1_11_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5555/951949.952139"
+        },
+        {
+          "key": "e_1_3_2_1_12_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/11527503_15"
+        },
+        {
+          "key": "e_1_3_2_1_13_1",
+          "first-page": "139",
+          "article-title": "One-class SVMs for document classification",
+          "volume": "2",
+          "author": "Manevitz L. M.",
+          "year": "2001",
+          "journal-title": "Journal of Machine Learning Research"
+        },
+        {
+          "key": "e_1_3_2_1_14_1",
+          "first-page": "61",
+          "volume-title": "A",
+          "author": "Platt J. C.",
+          "year": "1999"
+        },
+        {
+          "key": "e_1_3_2_1_15_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/nar/gkj001"
+        },
+        {
+          "key": "e_1_3_2_1_16_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1162/089976601750264965"
+        },
+        {
+          "key": "e_1_3_2_1_17_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1014052.1014085"
+        },
+        {
+          "key": "e_1_3_2_1_18_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1281192.1281263"
+        },
+        {
+          "key": "e_1_3_2_1_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1023/B:MACH.0000008084.60811.49"
+        },
+        {
+          "key": "e_1_3_2_1_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1093/bioinformatics/btl441"
+        },
+        {
+          "key": "e_1_3_2_1_21_1",
+          "volume-title": "Biometrics",
+          "author": "Ward G.",
+          "year": "2008"
+        },
+        {
+          "key": "e_1_3_2_1_22_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1321440.1321449"
+        },
+        {
+          "key": "e_1_3_2_1_23_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s10994-005-1122-7"
+        },
+        {
+          "key": "e_1_3_2_1_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2004.1264823"
+        },
+        {
+          "key": "e_1_3_2_1_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/775047.775151"
+        },
+        {
+          "key": "e_1_3_2_1_26_1",
+          "first-page": "83",
+          "volume-title": "Proceedings of the 5th Annual UK Workshop on Computational Intelligence (UKCI)",
+          "author": "Zhang D.",
+          "year": "2005"
+        }
+      ],
+      "event": {
+        "name": "KDD08: The 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+        "location": "Las Vegas Nevada USA",
+        "acronym": "KDD08",
+        "sponsor": [
+          "SIGMOD ACM Special Interest Group on Management of Data",
+          "SIGKDD ACM Special Interest Group on Knowledge Discovery in Data",
+          "ACM Association for Computing Machinery"
+        ]
+      },
+      "container-title": [
+        "Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/1401890.1401920",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/1401890.1401920",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            18
+          ]
+        ],
+        "date-time": "2025-06-18T09:56:40Z",
+        "timestamp": 1750240600000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/1401890.1401920"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2008,
+            8,
+            24
+          ]
+        ]
+      },
+      "references-count": 26,
+      "alternative-id": [
+        "10.1145/1401890.1401920",
+        "10.1145/1401890"
+      ],
+      "URL": "https://doi.org/10.1145/1401890.1401920",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2008,
+            8,
+            24
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2008-08-24",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

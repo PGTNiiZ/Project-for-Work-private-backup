@@ -1,0 +1,17 @@
+# CELL 5
+import pandas as pd
+
+# วิธีที่ 1: โหลดจาก CSV ที่สร้างไว้แล้ว
+df = pd.read_csv("../data/combined_profiles.csv")
+
+# # วิธีที่ 2: ใช้ function จาก script
+# from load_dataset import load_all_profiles
+# df = load_all_profiles()
+
+# ดูข้อมูล
+print(df.shape)
+print(df.columns)
+print(df.head())
+# CELL 6
+df
+# CELL 8

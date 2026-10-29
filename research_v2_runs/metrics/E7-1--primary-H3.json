@@ -1,0 +1,37 @@
+{
+  "delta": 0.000250677741948091,
+  "ci95": [
+    -0.0014103613139898412,
+    0.0010388380200451628
+  ],
+  "ci90": [
+    -0.0009542414590319625,
+    0.0009450339486782144
+  ],
+  "p": 0.6551344865513449,
+  "tost_p_lower": 9.999000099990002e-05,
+  "tost_p_upper": 9.999000099990002e-05,
+  "tost_p": 9.999000099990002e-05,
+  "bootstrap_B": 10000,
+  "effective_B": 10000,
+  "undefined_B": 0,
+  "seed": 4242,
+  "kind": "ap",
+  "se_soi": 0.01,
+  "equivalent": true,
+  "equivalence_method": "approximate centered paired bootstrap TOST with 90% percentile CI cross-check",
+  "p_method": "two-sided centered paired bootstrap with +1 correction",
+  "seed_delta_SD": 0.0006626217350301979,
+  "seed_deltas": [
+    0.0006658034984533545,
+    0.0004791201614686713,
+    -0.0008539168607155645,
+    0.0008056975209056461,
+    0.0003592306102537801
+  ],
+  "population": "same B_star candidate set in locked test fold",
+  "n_pairs": 87702,
+  "n_entities": 3059,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 4.131098333000409
+}

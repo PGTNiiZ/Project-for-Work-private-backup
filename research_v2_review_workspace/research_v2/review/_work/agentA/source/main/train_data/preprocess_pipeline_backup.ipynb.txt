@@ -1,0 +1,897 @@
+# CELL 2
+import os
+import json
+import re
+import ast
+import pandas as pd
+import numpy as np
+import unicodedata
+import emoji
+import math
+import html
+from ftfy import fix_text
+from typing import Dict, Tuple
+from urllib.parse import urlparse
+from datetime import datetime
+
+
+# =================================================
+# ===========
+# CONFIG — แก้ path ตรงนี้ที่เดียว
+# ============================================================
+BASE_PATH   = "../data/data/Dataset-LinkSocial"  # โฟลเดอร์ dataset ต้นทาง
+OUTPUT_DIR  = "../data"                 # โฟลเดอร์ output
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+print(f"✅ Config loaded")
+print(f"   BASE_PATH  = {os.path.abspath(BASE_PATH)}")
+print(f"   OUTPUT_DIR = {os.path.abspath(OUTPUT_DIR)}")
+# CELL 5
+def load_all_profiles(base_path: str) -> pd.DataFrame:
+    """
+    โหลด profiles ทั้งหมดจาก 3 โฟลเดอร์ profile.data
+
+    Returns:
+        pd.DataFrame ที่มี column: userName, fullName, bio, location,
+        externalUrl, pictureURL, platform, source_folder, user_folder
+    """
+    all_profiles = []
+    profile_folders = ["1.profile.data", "2.profile.data", "3.profile.data"]
+
+    for folder in profile_folders:
+        folder_path = os.path.join(base_path, folder)
+
+        if not os.path.exists(folder_path):
+            print(f"⚠️  Folder {folder_path} not found, skipping...")
+            continue
+
+        print(f"📂 Loading from {folder}...")
+
+        # รวบรวม user_paths ทั้งหมด
+        # 2.profile.data มีโครงสร้าง 3 ชั้น: folder/pair_folder/user_folder/
+        # 1 & 3 มีโครงสร้าง 2 ชั้น: folder/user_folder/
+        user_paths = []
+
+        for entry in os.listdir(folder_path):
+            entry_path = os.path.join(folder_path, entry)
+            if not os.path.isdir(entry_path):
+                continue
+
+            # ตรวจสอบว่าเป็น pair folder (เช่น Google_Insta) หรือ user folder
+            sub_entries = os.listdir(entry_path)
+            has_json = any(f.endswith('.json') for f in sub_entries)
+
+            if has_json:
+                # โครงสร้าง 2 ชั้น: entry คือ user_folder ที่มี JSON อยู่ข้างใน
+                user_paths.append((entry, entry_path))
+            else:
+                # โครงสร้าง 3 ชั้น: entry คือ pair folder → ต้องวนลูปอีกชั้น
+                for user_folder in sub_entries:
+                    user_path = os.path.join(entry_path, user_folder)
+                    if os.path.isdir(user_path):
+                        user_paths.append((user_folder, user_path))
+
+        print(f"   Found {len(user_paths)} user folders")
+
+        for user_folder_name, user_path in user_paths:
+            for file in os.listdir(user_path):
+                if file.endswith('.json'):
+                    # ข้าม metadata files ที่ไม่ใช่ profile
+                    if file in ('filename.json', 'score_file.json'):
+                        continue
+
+                    file_path = os.path.join(user_path, file)
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                            data['source_folder'] = folder
+                            data['user_folder'] = user_folder_name
+
+                            # ระบุ platform จากชื่อไฟล์
+                            if 'twitter' in file.lower():
+                                data['platform'] = 'twitter'
+                            elif 'instagram' in file.lower():
+                                data['platform'] = 'instagram'
+                            elif 'google' in file.lower():
+                                data['platform'] = 'googleplus'
+                            else:
+                                data['platform'] = 'unknown'
+
+                            all_profiles.append(data)
+                    except Exception as e:
+                        print(f"❌ Error reading {file_path}: {e}")
+
+    df = pd.DataFrame(all_profiles)
+
+    print(f"\n{'='*50}")
+    print(f"📦 Step 2.1 Summary")
+    print(f"{'='*50}")
+    print(f"Total JSON files loaded: {len(df)}")
+
+    return df
+
+# === โหลดไฟล์ทั้งหมด ===
+df_raw = load_all_profiles(BASE_PATH)
+# ---- สร้าง df_raw จาก cleaned_social_data.csv (ใช้แทน JSON ที่ไม่มีอยู่) ----
+import csv as _csv_module
+_social_csv = 'Project-for-Work/data/data/Dataset-LinkSocial/data/cleaned_social_data.csv'
+_labels_csv = 'ground_truth_labels.csv'
+_df_labels = pd.read_csv(_labels_csv)
+_folder_map = pd.Series(_df_labels['user_folder'].values, index=_df_labels['index'].values)
+df_raw = pd.read_csv(_social_csv)
+df_raw['user_folder'] = df_raw.index.map(_folder_map).fillna('')
+df_raw['outputProfileName'] = df_raw['user_folder']
+df_raw['platform'] = 'unknown'
+df_raw['source_folder'] = 'unknown'
+df_raw['bigrams'] = ''
+print(f"✅ df_raw loaded: {df_raw.shape}")
+print(f"Columns: {list(df_raw.columns)}")
+
+# CELL 7
+# === แสดงผล DataFrame ===
+print(f"{'='*50}")
+print(f"📊 Step 2.2: DataFrame Summary")
+print(f"{'='*50}")
+print(f"Total profiles : {len(df_raw)}")
+print(f"Total columns  : {len(df_raw.columns)}")
+print(f"Columns        : {list(df_raw.columns)}")
+
+print(f"\n📈 Platform distribution:")
+
+print(df_raw['platform'].value_counts().to_string())
+
+print(f"\n📂 Source folder distribution:")
+print(df_raw['source_folder'].value_counts().to_string())
+
+print(f"\n📋 DataFrame Info:")
+df_raw.info()
+
+print(f"\n🔍 Sample data (first 5 rows):")
+df_raw.head()
+
+# CELL 9
+# === แสดงผล DataFrame ===
+print(f"{'='*50}")
+print(f"📊 Step 2.2: DataFrame Summary")
+print(f"{'='*50}")
+print(f"Total profiles : {len(df_raw)}")
+print(f"Total columns  : {len(df_raw.columns)}")
+print(f"Columns        : {list(df_raw.columns)}")
+
+print(f"\n📈 Platform distribution:")
+print(df_raw['platform'].value_counts().to_string())
+
+print(f"\n📂 Source folder distribution:")
+print(df_raw['source_folder'].value_counts().to_string())
+
+print(f"\n📋 DataFrame Info:")
+df_raw.info()
+
+print(f"\n🔍 Sample data (first 5 rows):")
+df_raw.head()
+
+# CELL 12
+import csv as _csv_module
+output_dir = 'Project-for-Work/data/data/Dataset-LinkSocial/data'
+os.makedirs(output_dir, exist_ok=True)
+raw_csv_path = os.path.join(output_dir, 'combined_profiles.csv')
+
+need_to_save = True
+if os.path.exists(raw_csv_path):
+    try:
+        df_existing = pd.read_csv(raw_csv_path, low_memory=False)
+        if len(df_existing) == len(df_raw):
+            print(f"✅ ไฟล์ CSV ครบแล้ว ({len(df_raw)} แถว) ไม่ต้องบันทึกใหม่")
+            need_to_save = False
+    except Exception as e:
+        print(f"⚠️ ไฟล์เดิมอ่านไม่ได้: {e}")
+
+if need_to_save:
+    df_raw.to_csv(raw_csv_path, index=False, encoding='utf-8', quoting=_csv_module.QUOTE_ALL)
+    print(f"✅ บันทึก {len(df_raw)} แถว → {raw_csv_path}")
+print(raw_csv_path)
+
+# CELL 14
+file_path = 'Project-for-Work/data/data/Dataset-LinkSocial/data/cleaned_social_data.csv'
+print(file_path)
+df = pd.read_csv(file_path)
+# เพิ่ม columns ที่จำเป็นจาก labels
+_df_labels2 = pd.read_csv('ground_truth_labels.csv')
+_folder_map2 = pd.Series(_df_labels2['user_folder'].values, index=_df_labels2['index'].values)
+df['user_folder'] = df.index.map(_folder_map2).fillna('')
+df['outputProfileName'] = df['user_folder']
+df['platform'] = 'unknown'
+df['source_folder'] = 'unknown'
+print(df.shape)
+df.head()
+
+# CELL 17
+df_clean = df.copy()
+
+
+# CELL 19
+
+# --- ก่อนทำ: ดู NaN ทั้งหมด ---
+text_columns = ['userName', 'fullName', 'bio', 'location', 'externalUrl', 'pictureURL', 'platform']
+
+print("NaN Count — Before:")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        nan_count = df_clean[col].isna().sum()
+        total = len(df_clean)
+        pct = nan_count / total * 100
+        print(f"  {col:15s}: {nan_count:>5} NaN ({pct:5.1f}%)")
+    else:
+        print(f"  {col:15s}: column ไม่มีใน DataFrame")
+# CELL 20
+# --- ทำ NaN Handling ---
+
+# Text fields: NaN → empty string
+for col in text_columns:
+    if col in df_clean.columns:
+        df_clean[col] = df_clean[col].fillna('')
+
+# outputProfileName: ถ้าไม่มีให้ใช้ user_folder แทน
+if 'outputProfileName' in df_clean.columns:
+    df_clean['outputProfileName'] = df_clean['outputProfileName'].fillna(df_clean['user_folder'])
+else:
+    df_clean['outputProfileName'] = df_clean['user_folder']
+
+# --- หลังทำ: ดู NaN อีกที ---
+print("📊 NaN Count — หลังทำ (After):")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        nan_count = df_clean[col].isna().sum()
+        print(f"  {col:15s}: {nan_count:>5} NaN")
+
+# ดูจำนวน empty string ด้วย
+print(f"\n📊 Empty String Count (หลัง fillna):")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        empty_count = (df_clean[col] == '').sum()
+        total = len(df_clean)
+        pct = empty_count / total * 100
+        print(f"  {col:15s}: {empty_count:>5} empty ({pct:5.1f}%)")
+
+print(f"\n✅ Step 3.2 NaN Handling เสร็จ")
+# CELL 21
+# 1. กำหนดรายชื่อคอลัมน์ที่ต้องการ (ตามที่คุณเลือกมา 6 คอลัมน์)
+cols_to_combine = ['userName', 'fullName', 'bio', 'location', 'externalUrl', 'pictureURL', 'platform']
+
+# 2. สร้าง DataFrame ใหม่โดยเลือกเฉพาะคอลัมน์เหล่านี้
+# ใช้ .copy() เพื่อป้องกัน Warning เวลาเราไปแก้ไขข้อมูลในตัวแปรใหม่นี้
+df_already = df_clean[cols_to_combine].copy()
+
+df_already.head()
+
+# CELL 23
+output_path = 'Project-for-Work/data/data/Dataset-LinkSocial/data/cleaned_social_data.csv'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+df_already.to_csv(output_path, index=False, encoding='utf-8-sig')
+print(f"✅ Saved cleaned_social_data.csv ({len(df_already)} rows)")
+
+# CELL 24
+df_already.count()
+# CELL 26
+df_nomalized = df_already.copy()
+# CELL 28
+def remove_emojis(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    emoji_pattern = re.compile(
+        "["
+        "\U0001F600-\U0001F64F"
+        "\U0001F300-\U0001F5FF"
+        "\U0001F680-\U0001F6FF"
+        "\U0001F1E0-\U0001F1FF"
+        "\U00002702-\U000027B0"
+        "\U000024C2-\U0001F251"
+        "\U0001f926-\U0001f937"
+        "\U00010000-\U0010ffff"
+        "]+",
+        flags=re.UNICODE
+    )
+    return emoji_pattern.sub('', text)
+# CELL 29
+
+def clean_username(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    text = text.strip().lower()
+    text = re.sub(r'^@+', '', text)
+    text = remove_emojis(text)
+    text = re.sub(r'[^a-z0-9._\-]', '', text)
+    text = re.sub(r'\.{2,}', '.', text)
+    text = re.sub(r'_{2,}', '_', text)
+    text = re.sub(r'-{2,}', '-', text)
+    text = text.strip('._-')
+    return text
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'userName'] = df_nomalized['userName'].apply(clean_username)
+
+
+# CELL 30
+df_nomalized.head(5)
+# CELL 32
+comparison_df = pd.DataFrame()
+
+comparison_df['Original_username'] = df_already['userName']
+comparison_df['Cleaned_username'] = df_nomalized['userName']
+
+
+comparison_df.head(30)
+# CELL 34
+def clean_fullname(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    text = text.strip().lower()
+    text = remove_emojis(text)
+    text = re.sub(r'\b(mr|mrs|ms|dr|prof)\.?\s*', '', text)
+    text = re.sub(r'[^a-z0-9\s]', '', text)
+    text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
+    return text
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'fullName'] = df_nomalized['fullName'].apply(clean_fullname)
+# CELL 35
+df_nomalized 
+# CELL 36
+comparison_df = pd.DataFrame()
+
+comparison_df['Original_fullName'] = df_already['fullName']
+comparison_df['Cleaned_fullName'] = df_nomalized['fullName']
+comparison_df.head()
+# CELL 38
+
+# === Regex patterns (compile ครั้งเดียว) ===
+URL_RE = re.compile(r'https?://\S+|www\.\S+', re.IGNORECASE)
+MENTION_RE = re.compile(r'@(\w+)')
+HASHTAG_RE = re.compile(r'#(\w+)')
+NOISY_SEP_RE = re.compile(r'[|•·►▸▹▻>>>★☆✦✧~≡]{1,}')
+MULTISPACE_RE = re.compile(r'\s+')
+def safe_str(value) -> str:
+    """Convert any value to safe string"""
+    if value is None:
+        return ''
+    if isinstance(value, float) and math.isnan(value):
+        return ''
+    s = str(value).strip()
+    if s.lower() == 'none':
+        return ''
+    return s
+def extract_urls(text: str) -> list:
+    """ดึง URL ทั้งหมดออกจาก text"""
+    return URL_RE.findall(text)
+def extract_mentions(text: str) -> list:
+    """ดึง @mention ทั้งหมดออกจาก text (ไม่รวม @)"""
+    return MENTION_RE.findall(text)
+def clean_single_url(url: str) -> str:
+    """Clean URL: ลบ protocol, www., trailing /"""
+    text = url.strip().lower()
+    text = re.sub(r'^https?://', '', text)
+    text = re.sub(r'^www\.', '', text)
+    text = text.rstrip('/')
+    return text
+def clean_bio(text) -> str:
+    """ทำความสะอาด bio text — ได้ข้อความสะอาดกลับมา"""
+    # 1. แปลงค่าว่างเป็น "" และ trim
+    text = safe_str(text)
+    if not text:
+        return ''
+    # 2. แก้ broken unicode (ftfy)
+    text = fix_text(text)
+    # 3. แปลง HTML entities (&amp; → &, &lt; → <)
+    text = html.unescape(text)
+    # 4. ยุบช่องว่าง/newline หลายอัน → space เดียว
+    text = MULTISPACE_RE.sub(' ', text).strip()
+    # 5. lowercase
+    text = text.lower()
+    # 6. ลบ URL (แยกเก็บใน column อื่น)
+    text = URL_RE.sub(' ', text)
+    # 7. ลบ @mention (แยกเก็บใน column อื่น)
+    text = MENTION_RE.sub(' ', text)
+    # 8. #hashtag → ลบ # เก็บคำ
+    text = HASHTAG_RE.sub(r'\1', text)
+    # 9. emoji → ข้อความ (🚀 → rocket)
+    text = emoji.demojize(text, delimiters=(' ', ' '))
+    # 10. ลบตัวคั่นรก ๆ
+    text = NOISY_SEP_RE.sub(' ', text)
+    # 11. ยุบช่องว่างอีกรอบ + trim
+    text = MULTISPACE_RE.sub(' ', text).strip()
+    return text if len(text) >= 3 else ''
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'bio'] = df_nomalized['bio'].apply(clean_bio)
+# CELL 39
+df_nomalized
+# CELL 40
+
+
+df_nomalized['bio_urls'] = df_already['bio'].apply(
+    lambda x: ' | '.join(clean_single_url(u) for u in extract_urls(safe_str(x))) if pd.notna(x) else ''
+)
+df_nomalized['bio_url_count'] = df_nomalized['bio_urls'].apply(
+    lambda x: len(x.split(' | ')) if x else 0
+)
+df_nomalized['bio_mentions'] = df_already['bio'].apply(
+    lambda x: ' | '.join(m.lower() for m in extract_mentions(safe_str(x))) if pd.notna(x) else ''
+)
+df_nomalized['bio_mentions_count'] = df_nomalized['bio_mentions'].apply(
+    lambda x: len(x.split(' | ')) if x else 0
+)
+
+# === แสดงผล ===
+comparison_df = pd.DataFrame()
+comparison_df['Original_bio'] = df_already['bio']
+comparison_df['bio_clean'] = df_nomalized['bio']
+comparison_df['bio_urls'] = df_nomalized['bio_urls']
+comparison_df['bio_url_count'] = df_nomalized['bio_url_count']
+comparison_df['bio_mentions'] = df_nomalized['bio_mentions']
+comparison_df['bio_mentions_count'] = df_nomalized['bio_mentions_count']
+comparison_df[comparison_df['bio_clean'] != ''].head(30)
+
+# CELL 41
+df_nomalized
+# CELL 42
+# === แสดงผลลัพธ์ ===
+print("📊 Step 3.5: Clean Bio (Advanced) — ผลลัพธ์")
+print("=" * 60)
+
+total = len(df_nomalized)
+non_empty_orig = (df_already['bio'].apply(safe_str).str.len() > 0).sum()
+non_empty_clean = (df_nomalized['bio'].str.len() > 0).sum()
+has_urls = (df_nomalized['bio_urls'].str.len() > 0).sum()
+has_mentions = (df_nomalized['bio_mentions'].str.len() > 0).sum()
+
+print(f"  Total profiles          : {total}")
+print(f"  Non-empty bio (raw)     : {non_empty_orig} ({non_empty_orig/total*100:.1f}%)")
+print(f"  Non-empty bio (clean)   : {non_empty_clean} ({non_empty_clean/total*100:.1f}%)")
+print(f"  มี URL ใน bio           : {has_urls}")
+print(f"  มี @mention ใน bio      : {has_mentions}")
+
+
+# สถิติความยาว
+bio_lengths = df_nomalized['bio'].str.len()
+print(f"📏 สถิติความยาว bio_clean:")
+print(f"  Mean   : {bio_lengths.mean():.1f} chars")
+print(f"  Median : {bio_lengths.median():.1f} chars")
+print(f"  Max    : {bio_lengths.max()} chars")
+print(f"  Empty  : {(bio_lengths == 0).sum()} profiles")
+
+print(f"\n✅ Step 3.5 เสร็จ — เพิ่ม columns: bio_clean, bio_urls, bio_url_count, bio_mentions, bio_mentions_count")
+
+# CELL 45
+
+# ฟังก์ชันแปลง DMS
+def parse_dms_to_decimal(dms_str):
+    try:
+        dms_str = dms_str.replace("°", " ").replace("'", " ").replace('"', " ").replace("”", " ").replace("’", " ")
+        parts = re.findall(r'([NSWE]?)[\s]*([+-]?\d+)[\s]+(\d+)[\s]+(\d+)', dms_str)
+        if len(parts) != 2:
+            return None, None
+        lat_dir, lat_deg, lat_min, lat_sec = parts[0]
+        lon_dir, lon_deg, lon_min, lon_sec = parts[1]
+        lat = int(lat_deg) + int(lat_min)/60 + int(lat_sec)/3600
+        lon = int(lon_deg) + int(lon_min)/60 + int(lon_sec)/3600
+        if lat_dir.upper() == 'S':
+            lat = -lat
+        if lon_dir.upper() == 'W':
+            lon = -lon
+        return lat, lon
+    except:
+        return None, None
+
+# ฟังก์ชัน full cleaning/classification
+def clean_location_full(text):
+    result = {
+        "location_raw": text,
+        "location_clean": "",
+        "location_type": "unknown",
+        "location_valid": 0,
+        "latitude": None,
+        "longitude": None
+    }
+
+    if pd.isna(text) or not isinstance(text, str) or text.strip() == "":
+        return result
+    
+    t = text.strip()
+    t = remove_emojis(t)
+    t = re.sub(r'\s+', ' ', t)
+    t = re.sub(r'^(iphone:|üt:)\s*', '', t, flags=re.I)
+
+    # Decimal coordinates
+    match = re.match(r'([+-]?\d+\.\d+),\s*([+-]?\d+\.\d+)', t)
+    if match:
+        lat, lon = float(match.group(1)), float(match.group(2))
+        result.update({
+            "location_clean": f"{lat},{lon}",
+            "location_type": "coordinates",
+            "location_valid": 1,
+            "latitude": lat,
+            "longitude": lon
+        })
+        return result
+
+    # DMS coordinates
+    lat, lon = parse_dms_to_decimal(t)
+    if lat is not None and lon is not None:
+        result.update({
+            "location_clean": f"{lat},{lon}",
+            "location_type": "coordinates_dms",
+            "location_valid": 1,
+            "latitude": lat,
+            "longitude": lon
+        })
+        return result
+
+    # IP address
+    if re.match(r'^(\d{1,3}\.){3}\d{1,3}$', t):
+        result.update({"location_type": "ip_address"})
+        return result
+
+    # Text location fallback
+    clean_text = re.sub(r'[^\w\s,.-]', '', t.lower())
+    result.update({
+        "location_clean": clean_text,
+        "location_type": "text_location",
+        "location_valid": 1
+    })
+    return result
+
+
+
+
+# ------------------------
+# # Apply กับ df_nomalized แต่ไม่ทับ column location
+# df_nomalized = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+# df_nomalized['location'] = df_nomalized['location'].apply(clean_location_full)
+# ------------------------
+# # Apply full location pipeline
+location_pipeline_df = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+
+# ------------------------
+# # เก็บค่า location ลง df_nomalized โดยตรง
+# df_nomalized['location_raw'] = location_pipeline_df['location_raw']
+
+df_nomalized['location'] = location_pipeline_df['location_clean']
+df_nomalized['location_type'] = location_pipeline_df['location_type']
+df_nomalized['location_valid'] = location_pipeline_df['location_valid']
+df_nomalized['latitude'] = location_pipeline_df['latitude']
+df_nomalized['longitude'] = location_pipeline_df['longitude']
+
+
+
+# CELL 46
+df_nomalized.head(30)
+# CELL 48
+# ------------------------
+# Apply full location pipeline
+location_pipeline_df = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+
+# ------------------------
+# Filter เฉพาะ location ที่มีตัวเลข
+mask_has_digit = df_nomalized['location'].str.contains(r'\d', na=False)
+
+# ------------------------
+# สร้าง comparison table เฉพาะ location ที่มีตัวเลข
+comparison_df_numbers = pd.DataFrame({
+    'Original_location': df_already.loc[mask_has_digit, 'location'],
+    'Location_raw': location_pipeline_df.loc[mask_has_digit, 'location_raw'],
+    'Location_clean': location_pipeline_df.loc[mask_has_digit, 'location_clean'],
+    'Location_type': location_pipeline_df.loc[mask_has_digit, 'location_type'],
+    'Location_valid': location_pipeline_df.loc[mask_has_digit, 'location_valid'],
+    'Latitude': location_pipeline_df.loc[mask_has_digit, 'latitude'],
+    'Longitude': location_pipeline_df.loc[mask_has_digit, 'longitude']
+})
+
+# แสดงผล
+pd.set_option('display.max_rows', 1000)
+pd.set_option('display.max_colwidth', 200)
+comparison_df_numbers.head(50)
+# CELL 50
+def safe_str(value) -> str:
+    """Convert any value to safe string"""
+    if value is None:
+        return ''
+    if isinstance(value, float) and math.isnan(value):
+        return ''
+    s = str(value).strip()
+    if s.lower() in {'none', 'nan', 'null'}:
+        return ''
+    return s
+
+def parse_url_list(value) -> list:
+    """
+    แปลง externalUrl ให้เป็น list ของ URL เสมอ
+    รองรับ:
+    - URL เดี่ยว: 'https://abc.com'
+    - list-string: "['https://a.com', 'http://b.com']"
+    - list จริง: ['https://a.com', 'http://b.com']
+    """
+    if isinstance(value, list):
+        return [safe_str(x) for x in value if safe_str(x)]
+
+    s = safe_str(value)
+    if not s:
+        return []
+
+    # กรณีเป็น string ที่เก็บ list ไว้
+    if s.startswith('[') and s.endswith(']'):
+        try:
+            parsed = ast.literal_eval(s)
+            if isinstance(parsed, list):
+                return [safe_str(x) for x in parsed if safe_str(x)]
+        except Exception:
+            pass
+
+    # กรณี URL เดี่ยว
+    return [s]
+
+def normalize_url(url: str) -> str:
+    """
+    clean URL ให้เหลือรูปแบบมาตรฐาน:
+    - lowercase
+    - ลบ protocol
+    - ลบ www.
+    - ลบ trailing slash
+    - ลบ fragment (#...)
+    """
+    u = safe_str(url).lower()
+    if not u:
+        return ''
+
+    # เติม scheme ชั่วคราว ถ้าไม่มี เพื่อให้ urlparse ทำงานถูก
+    if not re.match(r'^[a-z]+://', u):
+        u_for_parse = 'http://' + u
+    else:
+        u_for_parse = u
+
+    parsed = urlparse(u_for_parse)
+
+    domain = parsed.netloc.lower()
+    path = parsed.path.rstrip('/')
+    query = parsed.query
+
+    # ลบ www.
+    domain = re.sub(r'^www\.', '', domain)
+
+    cleaned = domain + path
+    if query:
+        cleaned += '?' + query
+
+    return cleaned.strip()
+
+def extract_domain(cleaned_url: str) -> str:
+    """
+    ดึง domain จาก cleaned url
+    เช่น:
+    linkedin.com/in/aaron -> linkedin.com
+    thailand.go.th -> thailand.go.th
+    """
+    s = safe_str(cleaned_url)
+    if not s:
+        return ''
+    return s.split('/')[0]
+
+def clean_external_url_field(value):
+    """
+    คืนค่า 3 อย่าง:
+    - cleaned_urls
+    - domains
+    - url_count
+    """
+    url_list = parse_url_list(value)
+    cleaned_urls = [normalize_url(u) for u in url_list if normalize_url(u)]
+    domains = [extract_domain(u) for u in cleaned_urls if extract_domain(u)]
+    return cleaned_urls, domains, len(cleaned_urls)
+
+def squash_single_or_list(items):
+    """
+    ถ้ามี 1 ค่า -> คืน string
+    ถ้ามีหลายค่า -> คืน list
+    ถ้าไม่มี -> คืน ''
+    """
+    if not items:
+        return ''
+    if len(items) == 1:
+        return items[0]
+    return items
+    
+# df_nomalized.loc[:, 'externalUrl'] = df_nomalized['externalUrl'].apply(normalize_url)
+# CELL 51
+
+result = df_nomalized['externalUrl'].apply(clean_external_url_field)
+
+df_nomalized['externalUrl_clean_list'] = result.apply(lambda x: x[0])    # เก็บเป็น list จริง
+df_nomalized['external_domain_list'] = result.apply(lambda x: x[1])      # เก็บเป็น list จริง
+df_nomalized['url_count'] = result.apply(lambda x: x[2])
+
+# version สำหรับแสดงผลอ่านง่าย
+df_nomalized['externalUrl_clean'] = df_nomalized['externalUrl_clean_list'].apply(squash_single_or_list)
+df_nomalized['external_domain'] = df_nomalized['external_domain_list'].apply(squash_single_or_list)
+
+
+# # ============================================================
+# # Summary Stats
+# # ============================================================
+# total_profiles = len(df_nomalized)
+# non_empty_raw = df_nomalized['externalUrl'].apply(lambda x: safe_str(x) != '').sum()
+# non_empty_clean = (df_nomalized['url_count'] > 0).sum()
+# multi_url_profiles = (df_nomalized['url_count'] > 1).sum()
+# single_url_profiles = (df_nomalized['url_count'] == 1).sum()
+# empty_profiles = (df_nomalized['url_count'] == 0).sum()
+
+# url_count_series = df_nomalized['url_count']
+
+# print("📊 Step X.X: Clean External URL — Summary")
+# print("=" * 60)
+# print(f"  Total profiles              : {total_profiles}")
+# print(f"  Non-empty externalUrl (raw) : {non_empty_raw} ({non_empty_raw/total_profiles*100:.1f}%)")
+# print(f"  Non-empty after clean       : {non_empty_clean} ({non_empty_clean/total_profiles*100:.1f}%)")
+# print(f"  Single URL profiles         : {single_url_profiles}")
+# print(f"  Multi-URL profiles          : {multi_url_profiles}")
+# print(f"  Empty externalUrl           : {empty_profiles}")
+# print()
+# print("📏 สถิติ url_count:")
+# print(f"  Mean   : {url_count_series.mean():.2f}")
+# print(f"  Median : {url_count_series.median():.1f}")
+# print(f"  Max    : {url_count_series.max()}")   # max ของ external_url
+# print(f"  Min    : {url_count_series.min()}")
+# print()
+
+# # ============================================================
+# # ความยาวข้อความ externalUrl ดิบ (optional)
+# # ============================================================
+# raw_len = df_nomalized['externalUrl'].apply(lambda x: len(safe_str(x)))
+# print("📏 สถิติความยาว externalUrl (raw text length):")
+# print(f"  Mean   : {raw_len.mean():.1f} chars")
+# print(f"  Median : {raw_len.median():.1f} chars")
+# print(f"  Max    : {raw_len.max()} chars")
+# print(f"  Min    : {raw_len.min()} chars")
+# print()
+
+# # ============================================================
+# # ดูตัวอย่างข้อมูล
+# # ============================================================
+# preview = pd.DataFrame({
+#     'Original_externalUrl': df_nomalized['externalUrl'],
+#     'externalUrl_clean': df_nomalized['externalUrl_clean'],
+#     'external_domain': df_nomalized['external_domain'],
+#     'url_count': df_nomalized['url_count']
+# })
+
+# print("🔍 Sample cleaned externalUrl:")
+# display(preview.head())
+# CELL 52
+df_nomalized
+# CELL 53
+
+# 2) สร้าง DataFrame สำหรับเปรียบเทียบ
+# -----------------------------
+comparison_df = pd.DataFrame({
+    'Original_externalUrl': df_already['externalUrl'],
+    'externalUrl_clean': df_nomalized['externalUrl_clean'],
+    'external_domain': df_nomalized['external_domain'],
+    'url_count': df_nomalized['url_count']
+})
+
+comparison_df
+# # -----------------------------
+# # 3) ตั้งค่าให้แสดงผลเต็ม
+# # -----------------------------
+pd.set_option('display.max_colwidth', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+
+# -----------------------------
+# 4) ดูแถวที่ต้องการ
+# -----------------------------
+row = comparison_df.iloc[1]
+print(row.to_string())
+# CELL 55
+
+# สั่งให้ Pandas แสดงข้อความในคอลัมน์แบบเต็ม ไม่ต้องย่อ
+pd.set_option('display.max_colwidth', None)
+
+# ลองรันการแสดงผลอีกครั้ง
+row = comparison_df.iloc[1]
+
+print(row) # แสดงทุกคอลัมน์ในแถวนั้นแบบเต็มๆ
+# CELL 57
+def normalize_text(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ''
+    text = text.strip().lower()
+    text = unicodedata.normalize('NFKD', text)
+    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'\s+', '_', text.strip())
+    return text
+
+# --- Create Profile ID ---
+df_clean['profile_id'] = df_clean['outputProfileName'].apply(normalize_text)
+
+# === แสดงผลลัพธ์ ===
+print("📊 Step 3.8: Create Profile ID — ผลลัพธ์")
+print("=" * 60)
+
+# สถิติ
+total = len(df_clean)
+unique_ids = df_clean['profile_id'].nunique()
+non_empty = (df_clean['profile_id'].str.len() > 0).sum()
+print(f"  Total profiles     : {total}")
+print(f"  Unique profile IDs : {unique_ids}")
+print(f"  Non-empty IDs      : {non_empty} ({non_empty/total*100:.1f}%)")
+
+# ดูว่ามี profile_id ที่ซ้ำข้ามแพลตฟอร์มกี่คน (= ground truth)
+cross_platform = df_clean.groupby('profile_id')['platform'].nunique()
+multi_platform = cross_platform[cross_platform > 1]
+print(f"  Cross-platform IDs : {len(multi_platform)} (มีข้อมูลมากกว่า 1 platform)")
+
+# ตัวอย่าง profile_id
+print(f"\n🔍 ตัวอย่าง outputProfileName → profile_id (10 rows):")
+print("-" * 60)
+sample = df_clean[['outputProfileName', 'profile_id', 'platform']].drop_duplicates('profile_id').head(10)
+for _, row in sample.iterrows():
+    print(f"  [{row['platform']:10s}] '{row['outputProfileName']}' → '{row['profile_id']}'")
+
+# ตัวอย่าง cross-platform match
+if len(multi_platform) > 0:
+    print(f"\n🔗 ตัวอย่าง Cross-Platform Match (คนเดียวกันหลาย platform):")
+    print("-" * 60)
+    sample_ids = multi_platform.head(3).index.tolist()
+    for pid in sample_ids:
+        rows = df_clean[df_clean['profile_id'] == pid][['platform', 'userName', 'fullName']]
+        print(f"  profile_id = '{pid}':")
+        for _, r in rows.iterrows():
+            print(f"    📱 {r['platform']:10s} | @{r['userName']} | {r['fullName']}")
+        print()
+
+print(f"✅ Step 3.8 เสร็จ — เพิ่ม column: profile_id")
+# CELL 59
+
+# CELL 61
+df_nomalized
+
+# CELL 62
+print("=" * 60)
+print("📊 STAGE 3 SUMMARY — Data Cleaning & Standardization")
+print("=" * 60)
+
+print(f"\n  DataFrame shape: {df_clean.shape}")
+print(f"  Columns เพิ่มใหม่: userName_clean, fullName_clean, bio_clean, location_clean, externalUrl_clean, profile_id")
+
+print(f"\n  {'Column':<22s} {'Non-Empty':>10s} {'Pct':>8s}  Bar")
+print(f"  {'-'*22} {'-'*10} {'-'*8}  {'-'*20}")
+
+check_cols = [
+    ('userName_clean',    'Username (norm)'),
+    ('fullName_clean',    'FullName (norm)'),
+    ('bio_clean',         'Bio (clean)'),
+    ('location_clean',    'Location (clean)'),
+    ('externalUrl_clean', 'ExtURL (clean)'),
+    ('pictureURL',        'Picture URL'),
+    ('profile_id',        'Profile ID'),
+]
+
+for col, label in check_cols:
+    if col in df_clean.columns:
+        non_empty = (df_clean[col].str.len() > 0).sum()
+        total = len(df_clean)
+        pct = non_empty / total * 100
+        bar = chr(9608) * int(pct / 5) + chr(9617) * (20 - int(pct / 5))
+        print(f"  {label:<22s} {non_empty:>10,}  {pct:>6.1f}%  {bar}")
+
+print(f"\n  Per-Platform Distribution:")
+for platform in df_clean['platform'].unique():
+    count = (df_clean['platform'] == platform).sum()
+    print(f"    📱 {platform:12s}: {count:>6,} profiles")
+
+print(f"\n{'='*60}")
+print(f"✅ Stage 3 COMPLETE — df_clean พร้อมใช้งานใน Stage ถัดไป")
+print(f"{'='*60}")

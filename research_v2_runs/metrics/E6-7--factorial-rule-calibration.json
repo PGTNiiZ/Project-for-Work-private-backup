@@ -1,0 +1,6 @@
+{
+  "artifact_sha256": "8c061e23df4e8530451d1c4fe61bfbc4c298dd7bd457b21b91369f64cb74eed4",
+  "test_access": false,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.09998070900110179
+}

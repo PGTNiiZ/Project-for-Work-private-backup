@@ -1,0 +1,480 @@
+# CELL 2
+# === Load df_clean จาก Stage 6 (ถ้ายังไม่ได้อยู่ใน memory) ===
+import os
+import itertools
+import numpy as np
+import pandas as pd
+import networkx as nx
+from collections import defaultdict
+from typing import List, Dict, Tuple, Optional
+
+# rapidfuzz: fast string similarity
+try:
+    from rapidfuzz import fuzz
+    HAS_RAPIDFUZZ = True
+    print("✅ rapidfuzz loaded")
+except ImportError:
+    HAS_RAPIDFUZZ = False
+    print("⚠️  rapidfuzz ไม่ได้ติดตั้ง — pip install rapidfuzz")
+    print("   จะใช้ SequenceMatcher เป็น fallback")
+    from difflib import SequenceMatcher
+
+# === Config ===
+OUTPUT_DIR = "/Users/tm/Documents/GitHub/Project-for-Work/data/processed"
+BLOCKING_MAX_BLOCK_SIZE = 500     # cap block size
+GRAPH_SIM_THRESHOLD = 0.5         # threshold สำหรับสร้าง edge
+GRAPH_PRUNE_THRESHOLD = 0.3       # ตัด edge ที่ weight ต่ำกว่านี้
+RANDOM_SEED = 42
+
+# === โหลด df_clean ===
+cleaned_csv_path = os.path.join(OUTPUT_DIR, "all_profiles_cleaned.csv")
+if 'df_clean' not in dir() or df_clean is None:
+    df_clean = pd.read_csv(cleaned_csv_path)
+    print(f"📂 Loaded df_clean from CSV: {len(df_clean)} profiles")
+else:
+    print(f"📂 df_clean already in memory: {len(df_clean)} profiles")
+
+print(f"   Columns: {list(df_clean.columns)}")
+print(f"   Platforms: {df_clean['platform'].value_counts().to_dict()}")
+# CELL 4
+# --- 7.1 สร้าง Blocking Keys ---
+import re
+
+# Key 1: name_prefix3 (3 ตัวอักษรแรกของ userName_clean)
+df_clean['name_prefix3'] = df_clean['userName_clean'].astype(str).str[:3].str.strip()
+
+# Key 2: fullname_prefix3 (3 ตัวอักษรแรกของ fullName_clean)
+df_clean['fullname_prefix3'] = df_clean['fullName_clean'].astype(str).str[:3].str.strip()
+
+# Key 3: url_domain (domain จาก externalUrl_clean) — used in exact match + unique-domain blocking
+def extract_domain(url: str) -> str:
+    if pd.isna(url) or not isinstance(url, str) or len(url.strip()) == 0:
+        return ''
+    domain = url.split('/')[0]
+    return domain.strip()
+
+df_clean['url_domain'] = df_clean['externalUrl_clean'].apply(extract_domain)
+
+# Key 4: username_stripped_prefix4
+# ตัด leading digits/underscores แล้วเอา 4 ตัวแรก — ช่วยจับคู่ "1caseycolette" ↔ "caseycolettebyrddavis"
+def stripped_prefix4(s: str) -> str:
+    s = re.sub(r'^[\d_]+', '', str(s) if s and str(s) != 'nan' else '')
+    return s[:4].strip()
+
+df_clean['username_stripped_prefix4'] = df_clean['userName_clean'].apply(stripped_prefix4)
+
+# Key 5: fullname_first4 — 4 ตัวแรกของ word แรกใน fullName_clean
+# ช่วยจับคู่ profiles ที่ username ต่างกันแต่ชื่อจริงตรงกัน
+def fullname_first4(s: str) -> str:
+    tokens = str(s).split() if s and str(s) != 'nan' else []
+    return tokens[0][:4].lower() if tokens and len(tokens[0]) >= 3 else ''
+
+df_clean['fullname_first4'] = df_clean['fullName_clean'].apply(fullname_first4)
+
+# === แสดงผลลัพธ์ ===
+print("📊 Step 7.1: Blocking Keys Created")
+print("=" * 60)
+
+for key_col in ['name_prefix3', 'fullname_prefix3', 'url_domain', 'username_stripped_prefix4', 'fullname_first4']:
+    non_empty = (df_clean[key_col].astype(str).str.len() > 0).sum()
+    unique_vals = df_clean[key_col][df_clean[key_col].astype(str).str.len() > 0].nunique()
+    print(f"\n  {key_col}:")
+    print(f"    Non-empty : {non_empty:,} ({non_empty/len(df_clean)*100:.1f}%)")
+    print(f"    Unique    : {unique_vals:,} keys")
+
+print(f"\n✅ Step 7.1 เสร็จ — blocking keys: name_prefix3, fullname_prefix3, url_domain, username_stripped_prefix4, fullname_first4")
+# CELL 6
+# --- 7.2 Exact Match Shortcut ---
+
+def find_exact_matches(df: pd.DataFrame, match_col: str) -> pd.DataFrame:
+    """
+    หา pairs ที่ match_col ตรงกัน 100% ข้ามแพลตฟอร์ม
+    
+    Returns:
+        DataFrame: (profile_id_a, platform_a, profile_id_b, platform_b, match_col, match_type)
+    """
+    # กรองเฉพาะ rows ที่มีค่า
+    df_valid = df[df[match_col].str.len() > 0].copy()
+    
+    # Self-join บน match_col
+    pairs = []
+    grouped = df_valid.groupby(match_col)
+    
+    for val, group in grouped:
+        if len(group) < 2:
+            continue
+        # เก็บเฉพาะ cross-platform pairs
+        platforms = group['platform'].unique()
+        if len(platforms) < 2:
+            continue
+        
+        for i, row_a in group.iterrows():
+            for j, row_b in group.iterrows():
+                if i >= j:  # ไม่ซ้ำ
+                    continue
+                if row_a['platform'] == row_b['platform']:
+                    continue  # ข้าม same platform
+                
+                pairs.append({
+                    'profile_id_a': row_a['profile_id'],
+                    'platform_a': row_a['platform'],
+                    'userName_a': row_a['userName_clean'],
+                    'profile_id_b': row_b['profile_id'],
+                    'platform_b': row_b['platform'],
+                    'userName_b': row_b['userName_clean'],
+                    'matched_value': val,
+                    'match_type': f'exact_{match_col}',
+                })
+    
+    return pd.DataFrame(pairs)
+
+# === หา exact matches ===
+print("🔍 Step 7.2: Exact Match Shortcut")
+print("=" * 60)
+
+# Match by externalUrl_clean
+url_matches = find_exact_matches(df_clean, 'externalUrl_clean')
+print(f"  🔗 externalUrl exact match : {len(url_matches)} pairs")
+
+# Match by userName_clean
+username_matches = find_exact_matches(df_clean, 'userName_clean')
+print(f"  👤 userName exact match    : {len(username_matches)} pairs")
+
+# Combine & dedup
+exact_matches = pd.concat([url_matches, username_matches], ignore_index=True)
+exact_matches = exact_matches.drop_duplicates(subset=['profile_id_a', 'profile_id_b'])
+print(f"\n  📦 Total exact matches (deduped): {len(exact_matches)} pairs")
+
+# แสดงตัวอย่าง
+if len(exact_matches) > 0:
+    print(f"\n  🔍 ตัวอย่าง exact matches (5 คู่แรก):")
+    print("-" * 60)
+    for _, row in exact_matches.head(5).iterrows():
+        print(f"    [{row['platform_a']}] {row['userName_a']} ↔ [{row['platform_b']}] {row['userName_b']}")
+        print(f"      matched on: {row['match_type']} = '{row['matched_value'][:40]}'")
+
+print(f"\n✅ Step 7.2 เสร็จ — exact_matches: {len(exact_matches)} pairs (ไม่ต้องเข้า ML)")
+# CELL 8
+# --- 7.3 Multi-Key Blocking ---
+
+def block_by_key(df: pd.DataFrame, 
+                 blocking_key: str, 
+                 id_col: str = 'profile_id',
+                 max_block_size: int = BLOCKING_MAX_BLOCK_SIZE) -> Dict[str, List]:
+    """
+    Standard blocking: จัดกลุ่ม profiles ที่มี blocking_key เดียวกัน
+    """
+    blocks = defaultdict(list)
+    
+    for idx, row in df.iterrows():
+        key_val = str(row.get(blocking_key, '')).strip()
+        if key_val and key_val != 'nan' and len(key_val) > 0:
+            blocks[key_val].append({
+                'idx': idx,
+                'profile_id': row[id_col],
+                'platform': row['platform'],
+            })
+    
+    # Filter: ต้องมีมากกว่า 1 คน และมากกว่า 1 platform ใน block
+    filtered = {}
+    for key, members in blocks.items():
+        if len(members) < 2:
+            continue
+        platforms = set(m['platform'] for m in members)
+        if len(platforms) < 2:
+            continue  # block ที่มีแค่ platform เดียว ไม่สร้าง cross-platform pair
+        
+        # Cap block size
+        if len(members) > max_block_size:
+            rng = np.random.default_rng(RANDOM_SEED)
+            members = list(rng.choice(members, size=max_block_size, replace=False))
+        filtered[key] = members
+    
+    return filtered
+
+
+def generate_cross_platform_pairs(blocks: Dict) -> pd.DataFrame:
+    """
+    สร้าง candidate pairs เฉพาะ cross-platform จาก blocks
+    """
+    candidates = []
+    for block_key, members in blocks.items():
+        for a, b in itertools.combinations(members, 2):
+            if a['platform'] != b['platform']:  # cross-platform เท่านั้น
+                candidates.append({
+                    'profile_id_a': a['profile_id'],
+                    'platform_a': a['platform'],
+                    'profile_id_b': b['profile_id'],
+                    'platform_b': b['platform'],
+                    'block_key': block_key,
+                })
+    return pd.DataFrame(candidates)
+
+
+# === รัน Multi-Key Blocking ===
+print("📊 Step 7.3: Multi-Key Blocking")
+print("=" * 60)
+
+# สำหรับ url_domain: ใช้เฉพาะ domain ที่ unique (≤5 profiles) เพื่อหลีกเลี่ยง generic domains
+# เช่น about.me (5049 profiles), facebook.com (496) ไม่ใช้เป็น blocking key
+domain_counts = df_clean['url_domain'].value_counts()
+unique_domains = set(domain_counts[domain_counts <= 5].index)
+df_clean['url_domain_unique'] = df_clean['url_domain'].apply(
+    lambda d: d if d in unique_domains and d and d != 'nan' else ''
+)
+print(f"  url_domain unique (≤5 profiles): {len(unique_domains):,} domains usable for blocking")
+
+blocking_keys = ['name_prefix3', 'fullname_prefix3', 'username_stripped_prefix4', 
+                 'fullname_first4', 'url_domain_unique']
+all_candidates = []
+
+for key in blocking_keys:
+    blocks = block_by_key(df_clean, key)
+    cands = generate_cross_platform_pairs(blocks)
+    print(f"\n  🔑 Blocking key: {key}")
+    print(f"     Blocks created    : {len(blocks):,}")
+    print(f"     Candidate pairs   : {len(cands):,}")
+    all_candidates.append(cands)
+
+# Union candidates จากทุก key
+raw_candidate_pairs = pd.concat(all_candidates, ignore_index=True)
+before_dedup = len(raw_candidate_pairs)
+raw_candidate_pairs = raw_candidate_pairs.drop_duplicates(subset=['profile_id_a', 'profile_id_b'])
+after_dedup = len(raw_candidate_pairs)
+
+# คำนวณ reduction ratio
+n = len(df_clean)
+max_possible_pairs = n * (n - 1) // 2
+reduction = (1 - after_dedup / max_possible_pairs) * 100
+
+print(f"\n  📦 Summary:")
+print(f"     Before dedup      : {before_dedup:,}")
+print(f"     After dedup       : {after_dedup:,}")
+print(f"     Max possible pairs: {max_possible_pairs:,}")
+print(f"     Reduction ratio   : {reduction:.2f}% pairs eliminated by blocking")
+
+print(f"\n✅ Step 7.3 เสร็จ — raw_candidate_pairs: {len(raw_candidate_pairs):,} pairs")
+# CELL 10
+# --- 7.4 Similarity Graph Construction ---
+
+def compute_edge_weight(row_a: pd.Series, row_b: pd.Series) -> float:
+    """
+    คำนวณ lightweight similarity score สำหรับ edge weight
+    ใช้ string similarity บน userName + fullName
+    
+    Returns:
+        float: similarity score [0, 1]
+    """
+    scores = []
+    
+    # fullName similarity (Weighted Ratio — ดีกับ name entity)
+    name_a = str(row_a.get('fullName_clean', ''))
+    name_b = str(row_b.get('fullName_clean', ''))
+    if name_a and name_b and len(name_a) > 0 and len(name_b) > 0:
+        if HAS_RAPIDFUZZ:
+            scores.append(fuzz.WRatio(name_a, name_b) / 100.0)
+        else:
+            scores.append(SequenceMatcher(None, name_a, name_b).ratio())
+    
+    # userName similarity (Token Sort)
+    user_a = str(row_a.get('userName_clean', ''))
+    user_b = str(row_b.get('userName_clean', ''))
+    if user_a and user_b and len(user_a) > 0 and len(user_b) > 0:
+        if HAS_RAPIDFUZZ:
+            scores.append(fuzz.token_sort_ratio(user_a, user_b) / 100.0)
+        else:
+            scores.append(SequenceMatcher(None, user_a, user_b).ratio())
+    
+    # externalUrl exact match (binary boost)
+    url_a = str(row_a.get('externalUrl_clean', ''))
+    url_b = str(row_b.get('externalUrl_clean', ''))
+    if url_a and url_b and len(url_a) > 0 and len(url_b) > 0:
+        scores.append(1.0 if url_a == url_b else 0.0)
+    
+    return float(np.mean(scores)) if scores else 0.0
+
+
+# === สร้าง Graph ===
+print("📊 Step 7.4: Similarity Graph Construction")
+print("=" * 60)
+print(f"  Threshold สำหรับสร้าง edge: {GRAPH_SIM_THRESHOLD}")
+print(f"  จำนวน candidate pairs: {len(raw_candidate_pairs):,}")
+print(f"  กำลังคำนวณ similarity... (อาจใช้เวลาสักครู่)")
+
+# Index สำหรับ lookup ที่เร็ว
+profile_index = df_clean.set_index('profile_id')
+
+G = nx.Graph()
+edges_added = 0
+edges_skipped = 0
+weight_distribution = []
+
+# ใช้ batch processing ถ้า pairs เยอะ
+total_pairs = len(raw_candidate_pairs)
+report_interval = max(total_pairs // 10, 1)
+
+for i, (_, pair) in enumerate(raw_candidate_pairs.iterrows()):
+    id_a = pair['profile_id_a']
+    id_b = pair['profile_id_b']
+    
+    if id_a not in profile_index.index or id_b not in profile_index.index:
+        edges_skipped += 1
+        continue
+    
+    row_a = profile_index.loc[id_a]
+    row_b = profile_index.loc[id_b]
+    
+    # Handle duplicate profile_ids (take first)
+    if isinstance(row_a, pd.DataFrame):
+        row_a = row_a.iloc[0]
+    if isinstance(row_b, pd.DataFrame):
+        row_b = row_b.iloc[0]
+    
+    weight = compute_edge_weight(row_a, row_b)
+    weight_distribution.append(weight)
+    
+    if weight >= GRAPH_SIM_THRESHOLD:
+        G.add_edge(id_a, id_b, weight=weight)
+        edges_added += 1
+    
+    # Progress report
+    if (i + 1) % report_interval == 0:
+        print(f"    Progress: {i+1:,}/{total_pairs:,} ({(i+1)/total_pairs*100:.0f}%) — edges: {edges_added:,}")
+
+# === สรุป ===
+print(f"\n  📈 Graph Statistics:")
+print(f"     Nodes              : {G.number_of_nodes():,}")
+print(f"     Edges (≥ threshold) : {G.number_of_edges():,}")
+print(f"     Edges skipped       : {edges_skipped:,}")
+
+if weight_distribution:
+    print(f"\n  📏 Weight Distribution:")
+    print(f"     Mean   : {np.mean(weight_distribution):.3f}")
+    print(f"     Median : {np.median(weight_distribution):.3f}")
+    print(f"     Min    : {np.min(weight_distribution):.3f}")
+    print(f"     Max    : {np.max(weight_distribution):.3f}")
+    print(f"     >0.5   : {sum(1 for w in weight_distribution if w >= 0.5):,} ({sum(1 for w in weight_distribution if w >= 0.5)/len(weight_distribution)*100:.1f}%)")
+    print(f"     >0.7   : {sum(1 for w in weight_distribution if w >= 0.7):,} ({sum(1 for w in weight_distribution if w >= 0.7)/len(weight_distribution)*100:.1f}%)")
+    print(f"     >0.9   : {sum(1 for w in weight_distribution if w >= 0.9):,} ({sum(1 for w in weight_distribution if w >= 0.9)/len(weight_distribution)*100:.1f}%)")
+
+print(f"\n✅ Step 7.4 เสร็จ — Graph: {G.number_of_nodes():,} nodes, {G.number_of_edges():,} edges")
+# CELL 12
+# --- 7.5 Edge Pruning ---
+
+print("📊 Step 7.5: Edge Pruning")
+print("=" * 60)
+print(f"  Prune threshold: {GRAPH_PRUNE_THRESHOLD}")
+print(f"  Edges before pruning: {G.number_of_edges():,}")
+
+# ตัด edge ที่ weight ต่ำ
+edges_to_remove = [
+    (u, v) for u, v, data in G.edges(data=True)
+    if data.get('weight', 0) < GRAPH_PRUNE_THRESHOLD
+]
+G.remove_edges_from(edges_to_remove)
+
+print(f"  Edges removed        : {len(edges_to_remove):,}")
+print(f"  Edges after pruning  : {G.number_of_edges():,}")
+
+# Extract final candidate pairs จาก graph
+final_pairs = []
+for u, v, data in G.edges(data=True):
+    final_pairs.append({
+        'profile_id_a': u,
+        'profile_id_b': v,
+        'sim_score': data.get('weight', 0.0),
+    })
+
+candidate_pairs = pd.DataFrame(final_pairs)
+
+if len(candidate_pairs) > 0:
+    # เรียงตาม sim_score (สูงสุดก่อน)
+    candidate_pairs = candidate_pairs.sort_values('sim_score', ascending=False).reset_index(drop=True)
+    
+    print(f"\n  🔍 ตัวอย่าง candidate pairs (Top 10):")
+    print("-" * 60)
+    for _, row in candidate_pairs.head(10).iterrows():
+        id_a = row['profile_id_a']
+        id_b = row['profile_id_b']
+        
+        # ดึงข้อมูล profile
+        if id_a in profile_index.index and id_b in profile_index.index:
+            r_a = profile_index.loc[id_a]
+            r_b = profile_index.loc[id_b]
+            if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+            if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+            print(f"    sim={row['sim_score']:.3f} | [{r_a.get('platform','')}] {id_a} ↔ [{r_b.get('platform','')}] {id_b}")
+
+    print(f"\n  📏 Similarity Score Distribution (final):")
+    print(f"     Mean   : {candidate_pairs['sim_score'].mean():.3f}")
+    print(f"     Median : {candidate_pairs['sim_score'].median():.3f}")
+    print(f"     Min    : {candidate_pairs['sim_score'].min():.3f}")
+    print(f"     Max    : {candidate_pairs['sim_score'].max():.3f}")
+else:
+    print(f"\n  ⚠️ ไม่มี candidate pairs หลัง pruning — ลองลด threshold")
+
+print(f"\n✅ Step 7.5 เสร็จ — candidate_pairs: {len(candidate_pairs):,} pairs")
+# CELL 14
+# --- 7.6 Stage 7 Summary & Save ---
+
+print("=" * 60)
+print("📊 STAGE 7 SUMMARY — Candidate Generation & Blocking")
+print("=" * 60)
+
+print(f"\n  📥 Input:")
+print(f"     df_clean            : {len(df_clean):,} profiles")
+print(f"     Max possible pairs  : {len(df_clean) * (len(df_clean)-1) // 2:,}")
+
+print(f"\n  🔑 Blocking:")
+print(f"     Blocking keys       : {blocking_keys}")
+print(f"     Raw candidates      : {len(raw_candidate_pairs):,} pairs")
+
+print(f"\n  📍 Exact Matches (ไม่ต้องเข้า ML):")
+print(f"     URL exact match     : {len(url_matches):,} pairs")
+print(f"     Username exact match : {len(username_matches):,} pairs")
+print(f"     Total (deduped)     : {len(exact_matches):,} pairs")
+
+print(f"\n  📊 Graph (after pruning):")
+print(f"     Nodes               : {G.number_of_nodes():,}")
+print(f"     Edges               : {G.number_of_edges():,}")
+
+# === รวม exact_matches เข้า candidate_pairs (sim_score=1.0) ===
+# exact_matches ที่ไม่ได้อยู่ใน graph จะถูก add เข้าไปด้วยคะแนน 1.0
+cand_set = set(zip(candidate_pairs['profile_id_a'], candidate_pairs['profile_id_b'])) | \
+           set(zip(candidate_pairs['profile_id_b'], candidate_pairs['profile_id_a']))
+
+exact_not_in_cands = exact_matches[
+    ~exact_matches.apply(lambda r: (r['profile_id_a'], r['profile_id_b']) in cand_set or
+                                    (r['profile_id_b'], r['profile_id_a']) in cand_set, axis=1)
+]
+
+if len(exact_not_in_cands) > 0:
+    extra = exact_not_in_cands[['profile_id_a', 'profile_id_b']].copy()
+    extra['sim_score'] = 1.0
+    candidate_pairs = pd.concat([candidate_pairs, extra], ignore_index=True)
+    print(f"\n  ➕ Exact matches merged into candidate_pairs: +{len(extra):,}")
+
+candidate_pairs = candidate_pairs.sort_values('sim_score', ascending=False).reset_index(drop=True)
+
+print(f"\n  📤 Output:")
+print(f"     Final candidate pairs : {len(candidate_pairs):,} pairs")
+
+# === บันทึกไฟล์ ===
+cp_path = os.path.join(OUTPUT_DIR, 'candidate_pairs.csv')
+candidate_pairs.to_csv(cp_path, index=False)
+print(f"\n  💾 Saved: candidate_pairs.csv ({len(candidate_pairs):,} rows)")
+
+em_path = os.path.join(OUTPUT_DIR, 'exact_matches.csv')
+exact_matches.to_csv(em_path, index=False)
+print(f"  💾 Saved: exact_matches.csv ({len(exact_matches):,} rows)")
+
+df_clean_path = os.path.join(OUTPUT_DIR, 'all_profiles_with_blocking_keys.csv')
+df_clean.to_csv(df_clean_path, index=False)
+print(f"  💾 Saved: all_profiles_with_blocking_keys.csv ({len(df_clean):,} rows)")
+
+reduction_pct = (1 - len(candidate_pairs) / (len(df_clean) * (len(df_clean)-1) // 2)) * 100 if len(df_clean) > 1 else 0
+print(f"\n  📉 Search space reduction: {reduction_pct:.4f}%")
+
+print(f"\n{'='*60}")
+print(f"✅ Stage 7 COMPLETE — candidate_pairs พร้อมใช้งานใน Stage ถัดไป")
+print(f"{'='*60}")

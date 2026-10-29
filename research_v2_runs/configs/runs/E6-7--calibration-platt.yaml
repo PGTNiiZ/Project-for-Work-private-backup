@@ -1,0 +1,16 @@
+{
+  "category": "calibration_fit",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E6-7",
+  "key": "calibration-platt",
+  "parameters": {
+    "Platt_C": 1.0,
+    "calibration_scope": "leave-one-development-fold-out",
+    "input_model": "GBDT-fusion",
+    "input_oof_sha256": "aeed5b7a7120ce25d22413ae067fe7136d77303706fdfb25c6ce719dec08e6c5",
+    "method": "platt"
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

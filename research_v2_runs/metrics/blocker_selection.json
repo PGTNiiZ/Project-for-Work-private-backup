@@ -1,0 +1,15 @@
+{
+  "k_star": 50,
+  "best_lexical": "sparse",
+  "hybrid": "hybrid_rrf",
+  "B_star": "sparse",
+  "matched_PC": {
+    "B0": 0.8866658116369543,
+    "sparse": 0.922406053610363,
+    "dense": 0.6027959471591637,
+    "hybrid_union": 0.6032662135009191,
+    "hybrid_rrf": 0.9202684793296567
+  },
+  "selection_population": "pooled development folds only",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

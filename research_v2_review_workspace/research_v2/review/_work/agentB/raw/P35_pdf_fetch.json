@@ -1,0 +1,4 @@
+{
+  "url": "https://www.scitepress.org/Papers/2015/51760/51760.pdf",
+  "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+}

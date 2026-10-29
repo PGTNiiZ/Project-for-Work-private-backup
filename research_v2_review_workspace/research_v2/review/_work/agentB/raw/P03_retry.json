@@ -1,0 +1,767 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=Connecting%20users%20across%20social%20media%20sites%3A%20a%20behavioral-modeling%20approach&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8234548,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                3
+              ]
+            ],
+            "date-time": "2026-10-03T23:28:11Z",
+            "timestamp": 1791070091710,
+            "version": "4.1.0"
+          },
+          "publisher-location": "New York, NY, USA",
+          "reference-count": 20,
+          "publisher": "ACM",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2013,
+                    8,
+                    11
+                  ]
+                ],
+                "date-time": "2013-08-11T00:00:00Z",
+                "timestamp": 1376179200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2013,
+                8,
+                11
+              ]
+            ]
+          },
+          "DOI": "10.1145/2487575.2487648",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2013,
+                8,
+                13
+              ]
+            ],
+            "date-time": "2013-08-13T12:31:21Z",
+            "timestamp": 1376397081000
+          },
+          "page": "41-49",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 307,
+          "title": [
+            "Connecting users across social media sites"
+          ],
+          "prefix": "10.1145",
+          "author": [
+            {
+              "given": "Reza",
+              "family": "Zafarani",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Arizona State University, Tempe, AZ, USA"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Huan",
+              "family": "Liu",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Arizona State University, Tempe, AZ, USA"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2013,
+                8,
+                11
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_2_1_1_1",
+              "volume-title": "Serial Sharers: Detecting Split Identities of Web Authors. In SIGIR PAN workshop",
+              "author": "Amitay E.",
+              "year": "2007",
+              "unstructured": "E. Amitay , S. Yogev , and E. Yom-Tov . Serial Sharers: Detecting Split Identities of Web Authors. In SIGIR PAN workshop , 2007 . E. Amitay, S. Yogev, and E. Yom-Tov. Serial Sharers: Detecting Split Identities of Web Authors. In SIGIR PAN workshop, 2007."
+            },
+            {
+              "key": "e_1_3_2_1_2_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1242572.1242598"
+            },
+            {
+              "key": "e_1_3_2_1_3_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1526709.1526784"
+            },
+            {
+              "key": "e_1_3_2_1_4_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3115/981863.981904"
+            },
+            {
+              "key": "e_1_3_2_1_5_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TIT.2005.844059"
+            },
+            {
+              "key": "e_1_3_2_1_6_1",
+              "volume-title": "Elements of Information Theory",
+              "author": "Cover T.M.",
+              "year": "2006",
+              "unstructured": "T.M. Cover and J.A. Thomas . Elements of Information Theory . Wiley-interscience , 2006 . T.M. Cover and J.A. Thomas. Elements of Information Theory. Wiley-interscience, 2006."
+            },
+            {
+              "key": "e_1_3_2_1_7_1",
+              "volume-title": "An Introduction to Modern Literary Arabic",
+              "author": "Cowan D.",
+              "year": "1958",
+              "unstructured": "D. Cowan . An Introduction to Modern Literary Arabic , volume 240 . Cambridge University Press , 1958 . D. Cowan. An Introduction to Modern Literary Arabic, volume 240. Cambridge University Press, 1958."
+            },
+            {
+              "key": "e_1_3_2_1_8_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/604264.604272"
+            },
+            {
+              "key": "e_1_3_2_1_9_1",
+              "unstructured": "C. Doctorow. Preliminary Analysis of LinkedIn User Passwords. http://bit.ly/L5AHo3.  C. Doctorow. Preliminary Analysis of LinkedIn User Passwords. http://bit.ly/L5AHo3."
+            },
+            {
+              "key": "e_1_3_2_1_10_1",
+              "volume-title": "Statistical Identification of Language. CR Lab",
+              "author": "Dunning T.",
+              "year": "1994",
+              "unstructured": "T. Dunning . Statistical Identification of Language. CR Lab , New Mexico State University , 1994 . T. Dunning. Statistical Identification of Language. CR Lab, New Mexico State University, 1994."
+            },
+            {
+              "issue": "2",
+              "key": "e_1_3_2_1_11_1",
+              "first-page": "123",
+              "article-title": "Word Stress",
+              "volume": "33",
+              "author": "Ferguson C.A.",
+              "year": "1957",
+              "unstructured": "C.A. Ferguson . Word Stress in Persian. Language , 33 ( 2 ): 123 -- 135 , 1957 . C.A. Ferguson. Word Stress in Persian. Language, 33(2):123--135, 1957.",
+              "journal-title": "Persian. Language"
+            },
+            {
+              "key": "e_1_3_2_1_12_1",
+              "first-page": "1204",
+              "volume-title": "AAAI",
+              "author": "Kumar S.",
+              "year": "2011",
+              "unstructured": "S. Kumar , R. Zafarani , and H. Liu . Understanding User Migration Patterns in Social Media . In AAAI , pages 1204 -- 1209 , 2011 . S. Kumar, R. Zafarani, and H. Liu. Understanding User Migration Patterns in Social Media. In AAAI, pages 1204--1209, 2011."
+            },
+            {
+              "key": "e_1_3_2_1_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/18.61115"
+            },
+            {
+              "key": "e_1_3_2_1_14_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SP.2008.33"
+            },
+            {
+              "key": "e_1_3_2_1_15_1",
+              "first-page": "1",
+              "volume-title": "PETS",
+              "author": "Perito Daniele",
+              "year": "2011",
+              "unstructured": "Daniele Perito , Claude Castelluccia , Mohamed Kaafar , and Pere Manils . How unique and traceable are usernames ? In PETS , pages 1 -- 17 , 2011 . Daniele Perito, Claude Castelluccia, Mohamed Kaafar, and Pere Manils. How unique and traceable are usernames? In PETS, pages 1--17, 2011."
+            },
+            {
+              "key": "e_1_3_2_1_16_1",
+              "unstructured": "N. Perlroth. Verifying Ages Online is a Daunting Task Even for Experts. http://nyti.ms/Tf16Gs.  N. Perlroth. Verifying Ages Online is a Daunting Task Even for Experts. http://nyti.ms/Tf16Gs."
+            },
+            {
+              "key": "e_1_3_2_1_17_1",
+              "unstructured": "Wikipedia. Keyboard Layouts. http://bit.ly/kXso.  Wikipedia. Keyboard Layouts. http://bit.ly/kXso."
+            },
+            {
+              "key": "e_1_3_2_1_18_1",
+              "volume-title": "The Memorability and Security of Passwords-Some Empirical Results",
+              "author": "Yan J.",
+              "year": "2000",
+              "unstructured": "J. Yan , A. Blackwell , R. Anderson , and A. Grant . The Memorability and Security of Passwords-Some Empirical Results . U. of Cambridge Tech. Rep ., 2000 . J. Yan, A. Blackwell, R. Anderson, and A. Grant. The Memorability and Security of Passwords-Some Empirical Results. U. of Cambridge Tech. Rep., 2000."
+            },
+            {
+              "key": "e_1_3_2_1_19_1",
+              "first-page": "354",
+              "volume-title": "ICWSM",
+              "author": "Zafarani R.",
+              "year": "2009",
+              "unstructured": "R. Zafarani and H. Liu . Connecting Corresponding Identities across Communities . In ICWSM , pages 354 -- 357 , 2009 . R. Zafarani and H. Liu. Connecting Corresponding Identities across Communities. In ICWSM, pages 354--357, 2009."
+            },
+            {
+              "key": "e_1_3_2_1_20_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/asi.v57:3"
+            }
+          ],
+          "event": {
+            "name": "KDD' 13: The 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+            "location": "Chicago Illinois USA",
+            "acronym": "KDD' 13",
+            "sponsor": [
+              "SIGMOD ACM Special Interest Group on Management of Data",
+              "SIGKDD ACM Special Interest Group on Knowledge Discovery in Data"
+            ]
+          },
+          "container-title": [
+            "Proceedings of the 19th ACM SIGKDD international conference on Knowledge discovery and data mining"
+          ],
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/2487575.2487648",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/2487575.2487648",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                18
+              ]
+            ],
+            "date-time": "2025-06-18T08:48:44Z",
+            "timestamp": 1750236524000
+          },
+          "score": 53.964283,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/2487575.2487648"
+            }
+          },
+          "subtitle": [
+            "a behavioral-modeling approach"
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2013,
+                8,
+                11
+              ]
+            ]
+          },
+          "references-count": 20,
+          "alternative-id": [
+            "10.1145/2487575.2487648",
+            "10.1145/2487575"
+          ],
+          "URL": "https://doi.org/10.1145/2487575.2487648",
+          "published": {
+            "date-parts": [
+              [
+                2013,
+                8,
+                11
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2013-08-11",
+              "order": 2,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2022,
+                4,
+                21
+              ]
+            ],
+            "date-time": "2022-04-21T14:50:44Z",
+            "timestamp": 1650552644197
+          },
+          "publisher-location": "Paris, France",
+          "reference-count": 0,
+          "publisher": "Atlantis Press",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2015
+              ]
+            ]
+          },
+          "DOI": "10.2991/ic3me-15.2015.245",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2015,
+                9,
+                9
+              ]
+            ],
+            "date-time": "2015-09-09T17:19:23Z",
+            "timestamp": 1441819163000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 4,
+          "title": [
+            "Connecting Chinese Users Across Social Media Sites"
+          ],
+          "prefix": "10.2991",
+          "author": [
+            {
+              "given": "Yanan",
+              "family": "Li",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Junxing",
+              "family": "Zhu",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Zhongcheng",
+              "family": "Zhou",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Bin",
+              "family": "Zhou",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Xiaobo",
+              "family": "Wu",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "1574",
+          "event": {
+            "name": "3rd International Conference on Material, Mechanical and Manufacturing Engineering (IC3ME 2015)",
+            "location": "Guangzhou, China",
+            "acronym": "ic3me-15",
+            "start": {
+              "date-parts": [
+                [
+                  2015,
+                  6,
+                  27
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2015,
+                  6,
+                  28
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "Proceedings of the 3rd International Conference on Material, Mechanical and Manufacturing Engineering"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2015,
+                9,
+                9
+              ]
+            ],
+            "date-time": "2015-09-09T17:20:32Z",
+            "timestamp": 1441819232000
+          },
+          "score": 38.741566,
+          "resource": {
+            "primary": {
+              "URL": "http://www.atlantis-press.com/php/paper-details.php?id=25837855"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2015
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "25837855"
+          ],
+          "URL": "https://doi.org/10.2991/ic3me-15.2015.245",
+          "published": {
+            "date-parts": [
+              [
+                2015
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                9,
+                27
+              ]
+            ],
+            "date-time": "2025-09-27T13:52:05Z",
+            "timestamp": 1758981125139
+          },
+          "publisher-location": "Cham",
+          "reference-count": 12,
+          "publisher": "Springer International Publishing",
+          "isbn-type": [
+            {
+              "type": "print",
+              "value": "9783319111155"
+            },
+            {
+              "type": "electronic",
+              "value": "9783319111162"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2014
+              ]
+            ]
+          },
+          "DOI": "10.1007/978-3-319-11116-2_5",
+          "type": "book-chapter",
+          "created": {
+            "date-parts": [
+              [
+                2014,
+                8,
+                14
+              ]
+            ],
+            "date-time": "2014-08-14T17:04:18Z",
+            "timestamp": 1408035858000
+          },
+          "page": "48-55",
+          "source": "Crossref",
+          "is-referenced-by-count": 7,
+          "title": [
+            "Identifying Users Based on Behavioral-Modeling across Social Media Sites"
+          ],
+          "prefix": "10.1007",
+          "author": [
+            {
+              "given": "Yuanping",
+              "family": "Nie",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Jiuming",
+              "family": "Huang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Aiping",
+              "family": "Li",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Bin",
+              "family": "Zhou",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "reference": [
+            {
+              "key": "5_CR1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zafarani, R., Liu, H.: Connecting users across social media sites: a behavioral-modeling approach. In: Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM (2013)",
+              "DOI": "10.1145/2487575.2487648"
+            },
+            {
+              "key": "5_CR2",
+              "unstructured": "Ahmed, A., Xing, E.P.: Staying informed: supervised and semi-supervised multi-view topical analysis of ideological perspective. In: EMNLP, pp. 1140–1150 (2010)"
+            },
+            {
+              "key": "5_CR3",
+              "unstructured": "Amitay, E., Yogev, S., Yom-Tov, E.: Serial Sharers: Detecting Split Identities of Web Authors. In: SIGIR PAN Workshop (2007)"
+            },
+            {
+              "issue": "4",
+              "key": "5_CR4",
+              "doi-asserted-by": "publisher",
+              "first-page": "1523",
+              "DOI": "10.1109/TIT.2005.844059",
+              "volume": "51",
+              "author": "R. Cilibrasi",
+              "year": "2005",
+              "unstructured": "Cilibrasi, R., Vitanyi, P.M.B.: Clustering by Compression. IEEE Transactions on Information Theory 51(4), 1523–1545 (2005)",
+              "journal-title": "IEEE Transactions on Information Theory"
+            },
+            {
+              "key": "5_CR5",
+              "unstructured": "Albakour, M.-D., Macdonald, C., Ounis, I.: Identifying Local Events by Using Microblogs as Social Sensors. In: OAIR 2013, May 22-24 (2013)"
+            },
+            {
+              "issue": "3",
+              "key": "5_CR6",
+              "doi-asserted-by": "publisher",
+              "first-page": "378",
+              "DOI": "10.1002/asi.20316",
+              "volume": "57",
+              "author": "R. Zheng",
+              "year": "2006",
+              "unstructured": "Zheng, R., Li, J., Chen, H., Huang, Z.: A Framework for Authorship Identification of Online Messages: Writing-style Features and Classification Techniques. JASIST 57(3), 378–393 (2006)",
+              "journal-title": "JASIST"
+            },
+            {
+              "issue": "4",
+              "key": "5_CR7",
+              "doi-asserted-by": "publisher",
+              "first-page": "55",
+              "DOI": "10.1145/604264.604272",
+              "volume": "30",
+              "author": "O. Vel De",
+              "year": "2001",
+              "unstructured": "De Vel, O., Anderson, A., Corney, M., Mohay, G.: Mining E-mail Content for Author Identification forensics. ACM Sigmod Record 30(4), 55–64 (2001)",
+              "journal-title": "ACM Sigmod Record"
+            },
+            {
+              "key": "5_CR8",
+              "unstructured": "Albakour, M.D., Macdonald, C., Ounis, I., Pnevmatikakis, A., Soldatos, J.: SMART: An open source framework for searching the physical world. In: OSIR at SIGIR 2012 (2012)"
+            },
+            {
+              "key": "5_CR9",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bache, K., Newman, D., Smyth, P.: Text-based measures of document diversity. In: Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM (2013)",
+              "DOI": "10.1145/2487575.2487672"
+            },
+            {
+              "key": "5_CR10",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Tang, J., Zhang, M., Mei, Q.: One theme in all views: modeling consensus topics in multiple contexts. In: Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM (2013)",
+              "DOI": "10.1145/2487575.2487682"
+            },
+            {
+              "key": "5_CR11",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Becker, H., et al.: Identifying content for planned events across social media sites. In: Proceedings of the Fifth ACM International Conference on Web Search and Data Mining. ACM (2012)",
+              "DOI": "10.1145/2124295.2124360"
+            },
+            {
+              "key": "5_CR12",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Sakaki, T., Okazaki, M., Matsuo, Y.: Earthquake shakes Twitter users: Real-time event detection by social sensors. In: Proceedings of the 19th International World Wide Web Conference, WWW 2010 (2010)",
+              "DOI": "10.1145/1772690.1772777"
+            }
+          ],
+          "container-title": [
+            "Lecture Notes in Computer Science",
+            "Web Technologies and Applications"
+          ],
+          "link": [
+            {
+              "URL": "http://link.springer.com/content/pdf/10.1007/978-3-319-11116-2_5",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2019,
+                5,
+                27
+              ]
+            ],
+            "date-time": "2019-05-27T12:14:23Z",
+            "timestamp": 1558959263000
+          },
+          "score": 38.701633,
+          "resource": {
+            "primary": {
+              "URL": "http://link.springer.com/10.1007/978-3-319-11116-2_5"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2014
+              ]
+            ]
+          },
+          "ISBN": [
+            "9783319111155",
+            "9783319111162"
+          ],
+          "references-count": 12,
+          "URL": "https://doi.org/10.1007/978-3-319-11116-2_5",
+          "ISSN": [
+            "0302-9743",
+            "1611-3349"
+          ],
+          "issn-type": [
+            {
+              "type": "print",
+              "value": "0302-9743"
+            },
+            {
+              "type": "electronic",
+              "value": "1611-3349"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2014
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

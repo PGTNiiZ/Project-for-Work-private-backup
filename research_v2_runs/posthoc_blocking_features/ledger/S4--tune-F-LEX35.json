@@ -1,0 +1,39 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S4",
+  "key": "tune-F-LEX35",
+  "config": {
+    "feature": "F-LEX35",
+    "configs": 200,
+    "sampler": "TPE seed42",
+    "objective": "mean AP over four held development folds",
+    "space": {
+      "implementation": "sklearn.HistGradientBoostingClassifier",
+      "learning_rate": [
+        0.03,
+        0.1
+      ],
+      "max_leaf_nodes": [
+        15,
+        31,
+        63
+      ],
+      "max_iter": [
+        50,
+        100,
+        150
+      ],
+      "min_samples_leaf": [
+        20,
+        50
+      ],
+      "l2_regularization_log": [
+        1e-06,
+        10
+      ],
+      "early_stopping": false,
+      "train_negative_ratio": 3
+    }
+  },
+  "PLAN_sha256": "122343d4f0434c2ee63e6af097de01c81c24e7090b4ed3aab3d41b99d572e8c3"
+}

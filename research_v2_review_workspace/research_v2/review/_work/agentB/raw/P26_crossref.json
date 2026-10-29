@@ -1,0 +1,186 @@
+{
+  "url": "https://api.crossref.org/works/10.1145/1102351.1102430",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            24
+          ]
+        ],
+        "date-time": "2026-10-24T16:05:19Z",
+        "timestamp": 1792857919262,
+        "version": "4.5.0"
+      },
+      "publisher-location": "New York, New York, USA",
+      "reference-count": 0,
+      "publisher": "ACM Press",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2005,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2005-01-01T00:00:00Z",
+            "timestamp": 1104537600000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2005
+          ]
+        ]
+      },
+      "DOI": "10.1145/1102351.1102430",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2006,
+            2,
+            6
+          ]
+        ],
+        "date-time": "2006-02-06T10:52:40Z",
+        "timestamp": 1139223160000
+      },
+      "page": "625-632",
+      "source": "Crossref",
+      "is-referenced-by-count": 1343,
+      "title": [
+        "Predicting good probabilities with supervised learning"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "given": "Alexandru",
+          "family": "Niculescu-Mizil",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Rich",
+          "family": "Caruana",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "event": {
+        "name": "the 22nd international conference",
+        "location": "Bonn, Germany",
+        "acronym": "ICML '05",
+        "number": "22",
+        "sponsor": [
+          "undetermined"
+        ],
+        "start": {
+          "date-parts": [
+            [
+              2005,
+              8,
+              7
+            ]
+          ]
+        },
+        "end": {
+          "date-parts": [
+            [
+              2005,
+              8,
+              11
+            ]
+          ]
+        }
+      },
+      "container-title": [
+        "Proceedings of the 22nd international conference on Machine learning  - ICML '05"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/1102351.1102430",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://dl.acm.org/ft_gateway.cfm?id=1102430&amp;ftid=339471&amp;dwn=1",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            18
+          ]
+        ],
+        "date-time": "2025-06-18T12:07:55Z",
+        "timestamp": 1750248475000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "http://portal.acm.org/citation.cfm?doid=1102351.1102430"
+        }
+      },
+      "subtitle": [],
+      "proceedings-subject": "Machine learning",
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2005
+          ]
+        ]
+      },
+      "references-count": 0,
+      "URL": "https://doi.org/10.1145/1102351.1102430",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2005
+          ]
+        ]
+      }
+    }
+  }
+}

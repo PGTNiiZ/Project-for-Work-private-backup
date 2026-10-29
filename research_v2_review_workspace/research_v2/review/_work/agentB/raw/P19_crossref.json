@@ -1,0 +1,1040 @@
+{
+  "url": "https://api.crossref.org/works?query.title=F%2A%3A%20an%20interpretable%20transformation%20of%20the%20F-measure&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 554779,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                16
+              ]
+            ],
+            "date-time": "2026-10-16T04:32:34Z",
+            "timestamp": 1792125154524,
+            "version": "4.4.0"
+          },
+          "reference-count": 20,
+          "publisher": "Springer Science and Business Media LLC",
+          "issue": "3",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    3,
+                    1
+                  ]
+                ],
+                "date-time": "2021-03-01T00:00:00Z",
+                "timestamp": 1614556800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2021,
+                    3,
+                    15
+                  ]
+                ],
+                "date-time": "2021-03-15T00:00:00Z",
+                "timestamp": 1615766400000
+              },
+              "content-version": "vor",
+              "delay-in-days": 14,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "Mach Learn"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2021,
+                3
+              ]
+            ]
+          },
+          "abstract": "<jats:title>Abstract</jats:title><jats:p>The F-measure, also known as the F1-score, is widely used to assess the performance of classification algorithms. However, some researchers find it lacking in intuitive interpretation, questioning the appropriateness of combining two aspects of performance as conceptually distinct as precision and recall, and also questioning whether the harmonic mean is the best way to combine them. To ease this concern, we describe a simple transformation of the F-measure, which we call <jats:inline-formula><jats:alternatives><jats:tex-math>$$F^*$$</jats:tex-math><mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\">\n                  <mml:msup>\n                    <mml:mi>F</mml:mi>\n                    <mml:mo>∗</mml:mo>\n                  </mml:msup>\n                </mml:math></jats:alternatives></jats:inline-formula> (F-star), which has an immediate practical interpretation.</jats:p>",
+          "DOI": "10.1007/s10994-021-05964-1",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2021,
+                3,
+                15
+              ]
+            ],
+            "date-time": "2021-03-15T15:03:40Z",
+            "timestamp": 1615820620000
+          },
+          "page": "451-456",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 218,
+          "title": [
+            "F*: an interpretable transformation of the F-measure"
+          ],
+          "prefix": "10.1007",
+          "volume": "110",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-4649-5622",
+              "authenticated-orcid": false,
+              "given": "David J.",
+              "family": "Hand",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-3435-2015",
+              "authenticated-orcid": false,
+              "given": "Peter",
+              "family": "Christen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-6503-0302",
+              "authenticated-orcid": false,
+              "given": "Nishadi",
+              "family": "Kirielle",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2021,
+                3,
+                15
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "5964_CR1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/9781119146841",
+              "volume-title": "Fraud analytics using descriptive, predictive, and social network techniques: A guide to data science for fraud detection",
+              "author": "B Baesens",
+              "year": "2015",
+              "unstructured": "Baesens, B., Van Vlasselaer, V., & Verbeke, W. (2015). Fraud analytics using descriptive, predictive, and social network techniques: A guide to data science for fraud detection. New York: Wiley."
+            },
+            {
+              "key": "5964_CR2",
+              "unstructured": "Boyd, K., Eng, K. H., & Page, C. D. (2013). Area under the precision–recall curve: Point estimates and confidence intervals. In Joint European conference on machine learning and knowledge discovery in databases, Prague (pp. 451–466)."
+            },
+            {
+              "issue": "1",
+              "key": "5964_CR3",
+              "doi-asserted-by": "publisher",
+              "first-page": "6",
+              "DOI": "10.1186/s12864-019-6413-7",
+              "volume": "21",
+              "author": "D Chicco",
+              "year": "2020",
+              "unstructured": "Chicco, D., & Jurman, G. (2020). The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation. BMC Genomics, 21(1), 6.",
+              "journal-title": "BMC Genomics"
+            },
+            {
+              "key": "5964_CR4",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Davis, J., & Goadrich, M. (2006). The relationship between precision–recall and ROC curves. In International conference on machine learning, Pittsburgh (pp. 233–240).",
+              "DOI": "10.1145/1143844.1143874"
+            },
+            {
+              "issue": "Jan",
+              "key": "5964_CR5",
+              "first-page": "1",
+              "volume": "7",
+              "author": "J Demšar",
+              "year": "2006",
+              "unstructured": "Demšar, J. (2006). Statistical comparisons of classifiers over multiple data sets. Journal of Machine Learning Research, 7(Jan), 1–30.",
+              "journal-title": "Journal of Machine Learning Research"
+            },
+            {
+              "key": "5964_CR6",
+              "volume-title": "An introduction to numerical taxonomy",
+              "author": "G Dunn",
+              "year": "1982",
+              "unstructured": "Dunn, G., & Everitt, B. (1982). An introduction to numerical taxonomy. Cambridge: Cambridge University Press."
+            },
+            {
+              "issue": "1",
+              "key": "5964_CR7",
+              "doi-asserted-by": "publisher",
+              "first-page": "27",
+              "DOI": "10.1016/j.patrec.2008.08.010",
+              "volume": "30",
+              "author": "C Ferri",
+              "year": "2009",
+              "unstructured": "Ferri, C., Hernández-Orallo, J., & Modroiu, R. (2009). An experimental comparison of performance measures for classification. Pattern Recognition Letters, 30(1), 27–38.",
+              "journal-title": "Pattern Recognition Letters"
+            },
+            {
+              "key": "5964_CR8",
+              "unstructured": "Flach, P., & Kull, M. (2015). Precision–recall–gain curves: PR analysis done right. In Advances in Neural Information Processing Systems, Montreal (Vol. 28, pp. 838–846). Neural Information Processing Systems Foundation."
+            },
+            {
+              "key": "5964_CR9",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Goutte, C., & Gaussier, E. (2005). A probabilistic interpretation of precision, recall and F-score, with implication for evaluation. In European conference on information retrieval (pp. 345–359). Santiago de Compostela.",
+              "DOI": "10.1007/978-3-540-31865-1_25"
+            },
+            {
+              "issue": "1",
+              "key": "5964_CR10",
+              "doi-asserted-by": "publisher",
+              "first-page": "103",
+              "DOI": "10.1007/s10994-009-5119-5",
+              "volume": "77",
+              "author": "DJ Hand",
+              "year": "2009",
+              "unstructured": "Hand, D. J. (2009). Measuring classifier performance: A coherent alternative to the area under the ROC curve. Machine Learning, 77(1), 103–123.",
+              "journal-title": "Machine Learning"
+            },
+            {
+              "issue": "3",
+              "key": "5964_CR11",
+              "doi-asserted-by": "publisher",
+              "first-page": "400",
+              "DOI": "10.1111/j.1751-5823.2012.00183.x",
+              "volume": "80",
+              "author": "DJ Hand",
+              "year": "2012",
+              "unstructured": "Hand, D. J. (2012). Assessing the performance of classification methods. International Statistical Review, 80(3), 400–414.",
+              "journal-title": "International Statistical Review"
+            },
+            {
+              "key": "5964_CR12",
+              "doi-asserted-by": "publisher",
+              "first-page": "41",
+              "DOI": "10.1016/j.patrec.2013.12.011",
+              "volume": "40",
+              "author": "DJ Hand",
+              "year": "2014",
+              "unstructured": "Hand, D. J., & Anagnostopoulos, C. (2014). A better Beta for the H-measure of classification performance. Pattern Recognition Letters, 40, 41–46.",
+              "journal-title": "Pattern Recognition Letters"
+            },
+            {
+              "issue": "3",
+              "key": "5964_CR13",
+              "doi-asserted-by": "publisher",
+              "first-page": "539",
+              "DOI": "10.1007/s11222-017-9746-6",
+              "volume": "28",
+              "author": "DJ Hand",
+              "year": "2018",
+              "unstructured": "Hand, D. J., & Christen, P. (2018). A note on using the F-measure for evaluating record linkage algorithms. Statistics and Computing, 28(3), 539–547.",
+              "journal-title": "Statistics and Computing"
+            },
+            {
+              "key": "5964_CR14",
+              "first-page": "223",
+              "volume": "44",
+              "author": "P Jaccard",
+              "year": "1908",
+              "unstructured": "Jaccard, P. (1908). Nouvelles recherches sur la distribution florale. Bulletin de la Société Vaudoise des Sciences Naturelles, 44, 223–270.",
+              "journal-title": "Bulletin de la Société Vaudoise des Sciences Naturelles"
+            },
+            {
+              "key": "5964_CR15",
+              "unstructured": "Lichman M. (2013). UCI Machine learning repository. Retrieved November 3, 2020, from https://archive.ics.uci.edu/ml."
+            },
+            {
+              "issue": "Oct",
+              "key": "5964_CR16",
+              "first-page": "2825",
+              "volume": "12",
+              "author": "F Pedregosa",
+              "year": "2011",
+              "unstructured": "Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., et al. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12(Oct), 2825–2830.",
+              "journal-title": "Journal of Machine Learning Research"
+            },
+            {
+              "issue": "1",
+              "key": "5964_CR17",
+              "first-page": "37",
+              "volume": "2",
+              "author": "DMW Powers",
+              "year": "2011",
+              "unstructured": "Powers, D. M. W. (2011). Evaluation: From precision, recall and F-measure to ROC, informedness, markedness and correlation. International Journal of Machine Learning Technology, 2(1), 37–63.",
+              "journal-title": "International Journal of Machine Learning Technology"
+            },
+            {
+              "issue": "4",
+              "key": "5964_CR18",
+              "doi-asserted-by": "publisher",
+              "first-page": "427",
+              "DOI": "10.1016/j.ipm.2009.03.002",
+              "volume": "45",
+              "author": "M Sokolova",
+              "year": "2009",
+              "unstructured": "Sokolova, M., & Lapalme, G. (2009). A systematic analysis of performance measures for classification tasks. Information Processing and Management, 45(4), 427–437.",
+              "journal-title": "Information Processing and Management"
+            },
+            {
+              "key": "5964_CR19",
+              "unstructured": "Stack Exchange. (2013). https://stats.stackexchange.com/questions/49226/how-to-interpret-fmeasure-values."
+            },
+            {
+              "key": "5964_CR20",
+              "volume-title": "Information retrieval",
+              "author": "CJ Van Rijsbergen",
+              "year": "1979",
+              "unstructured": "Van Rijsbergen, C. J. (1979). Information retrieval. London: Butterworth and Co."
+            }
+          ],
+          "container-title": [
+            "Machine Learning"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "http://link.springer.com/content/pdf/10.1007/s10994-021-05964-1.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "http://link.springer.com/article/10.1007/s10994-021-05964-1/fulltext.html",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "http://link.springer.com/content/pdf/10.1007/s10994-021-05964-1.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2021,
+                3,
+                23
+              ]
+            ],
+            "date-time": "2021-03-23T17:10:15Z",
+            "timestamp": 1616519415000
+          },
+          "score": 24.977543,
+          "resource": {
+            "primary": {
+              "URL": "http://link.springer.com/10.1007/s10994-021-05964-1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2021,
+                3
+              ]
+            ]
+          },
+          "references-count": 20,
+          "journal-issue": {
+            "issue": "3",
+            "published-print": {
+              "date-parts": [
+                [
+                  2021,
+                  3
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "5964"
+          ],
+          "URL": "https://doi.org/10.1007/s10994-021-05964-1",
+          "ISSN": [
+            "0885-6125",
+            "1573-0565"
+          ],
+          "issn-type": [
+            {
+              "value": "0885-6125",
+              "type": "print"
+            },
+            {
+              "value": "1573-0565",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2021,
+                3
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "12 August 2020",
+              "order": 1,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "1 November 2020",
+              "order": 2,
+              "name": "revised",
+              "label": "Revised",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "5 November 2020",
+              "order": 3,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "15 March 2021",
+              "order": 4,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                7,
+                30
+              ]
+            ],
+            "date-time": "2025-07-30T11:39:30Z",
+            "timestamp": 1753875570552,
+            "version": "3.41.2"
+          },
+          "reference-count": 21,
+          "publisher": "Informa UK Limited",
+          "issue": "1",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    5,
+                    7
+                  ]
+                ],
+                "date-time": "2024-05-07T00:00:00Z",
+                "timestamp": 1715040000000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100000272",
+              "name": "National Institute for Health and Care Research",
+              "doi-asserted-by": "crossref",
+              "award": [
+                "CL-2022-07-002"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "CL-2022-07-002"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100000272",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "www.tandfonline.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Mathematics in Medical and Life Sciences"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                31
+              ]
+            ]
+          },
+          "DOI": "10.1080/29937574.2024.2326685",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                7
+              ]
+            ],
+            "date-time": "2024-05-07T17:06:22Z",
+            "timestamp": 1715101582000
+          },
+          "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "F*, an interpretable transformation of the F measure, equates to the critical success index"
+          ],
+          "prefix": "10.1080",
+          "volume": "1",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-9588-2944",
+              "authenticated-orcid": false,
+              "given": "Gashirai K.",
+              "family": "Mbizvo",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Pharmacology and Therapeutics, Institute of Systems, Molecular and Integrative Biology, University of Liverpool, Liverpool, United Kingdom"
+                },
+                {
+                  "name": "Liverpool Centre for Cardiovascular Science, University of Liverpool and Liverpool Heart &amp; Chest Hospital, Liverpool, United Kingdom"
+                },
+                {
+                  "name": "Cognitive Function Clinic, The Walton Centre NHS Foundation Trust, Liverpool, United Kingdom"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-0128-8010",
+              "authenticated-orcid": false,
+              "given": "Andrew J.",
+              "family": "Larner",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Cognitive Function Clinic, The Walton Centre NHS Foundation Trust, Liverpool, United Kingdom"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "301",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                7
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_6_2_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-031-47194-0"
+            },
+            {
+              "key": "e_1_3_6_3_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.48550/arXiv.1503.06410"
+            },
+            {
+              "key": "e_1_3_6_4_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.2307/1932409"
+            },
+            {
+              "issue": "4",
+              "key": "e_1_3_6_5_1",
+              "first-page": "1",
+              "article-title": "A method of establishing groups of equal amplitude in plant sociology based on similarity of species and its application to analyses of the vegetation on Danish commons",
+              "volume": "5",
+              "author": "Sørensen T.",
+              "year": "1948",
+              "unstructured": "Sørensen T. A method of establishing groups of equal amplitude in plant sociology based on similarity of species and its application to analyses of the vegetation on Danish commons. Kongelige Danske Videnskabernes Selskab. 1948;5(4):1–34.",
+              "journal-title": "Kongelige Danske Videnskabernes Selskab"
+            },
+            {
+              "key": "e_1_3_6_6_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1108/eb026584"
+            },
+            {
+              "key": "e_1_3_6_7_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10994-021-05964-1"
+            },
+            {
+              "key": "e_1_3_6_8_1",
+              "first-page": "166",
+              "article-title": "Finley’s tornado predictions",
+              "volume": "1",
+              "author": "Gilbert GK.",
+              "year": "1884",
+              "unstructured": "Gilbert GK. Finley’s tornado predictions. Am Meteorol J. 1884;1:166–172.",
+              "journal-title": "Am Meteorol J"
+            },
+            {
+              "key": "e_1_3_6_9_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/j.1469-8137.1912.tb05611.x"
+            },
+            {
+              "key": "e_1_3_6_10_1",
+              "volume-title": "Note on the accuracy of forecasts concerning the rain problem",
+              "author": "Palmer WC",
+              "year": "1949",
+              "unstructured": "Palmer WC, Allen RA. Note on the accuracy of forecasts concerning the rain problem. Washington (DC): U.S. Weather Bureau manuscript; 1949."
+            },
+            {
+              "key": "e_1_3_6_11_1",
+              "volume-title": "An elementary mathematical theory of classification and prediction",
+              "author": "Tanimoto TT.",
+              "year": "1958",
+              "unstructured": "Tanimoto TT. An elementary mathematical theory of classification and prediction. Internal IBM Technical Report; 17 Nov 1958; Available from: http://dalkescientific.com/tanimoto.pdf"
+            },
+            {
+              "key": "e_1_3_6_12_1",
+              "first-page": "312",
+              "volume-title": "Preprints, 9th Conference on Severe Local Storms",
+              "author": "Donaldson RJ",
+              "year": "1975",
+              "unstructured": "Donaldson RJ, Dyer RM, Kraus MJ. An objective evaluator of techniques for predicting severe weather events. In: Preprints, 9th Conference on Severe Local Storms; Norman, Oklahoma; 1975. p. 312–326."
+            },
+            {
+              "key": "e_1_3_6_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1175/1520-0434(1990)005<0570:TCSIAA>2.0.CO;2"
+            },
+            {
+              "key": "e_1_3_6_14_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/met.1532"
+            },
+            {
+              "key": "e_1_3_6_15_1",
+              "first-page": "223",
+              "article-title": "Nouvelles recherches sur la distribution florale",
+              "volume": "44",
+              "author": "Jaccard P.",
+              "year": "1908",
+              "unstructured": "Jaccard P. Nouvelles recherches sur la distribution florale. Bull Soc Vaudoise Sci Nat. 1908;44:223–270.",
+              "journal-title": "Bull Soc Vaudoise Sci Nat"
+            },
+            {
+              "key": "e_1_3_6_16_1",
+              "first-page": "547",
+              "article-title": "Étude comparative de la distribution florale dans une portion des Alpes et des Jura",
+              "volume": "37",
+              "author": "Jaccard P.",
+              "year": "1901",
+              "unstructured": "Jaccard P. Étude comparative de la distribution florale dans une portion des Alpes et des Jura. Bull Soc Vaudoise Sci Nat. 1901;37:547–579.",
+              "journal-title": "Bull Soc Vaudoise Sci Nat"
+            },
+            {
+              "key": "e_1_3_6_17_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/pnp.719"
+            },
+            {
+              "key": "e_1_3_6_18_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/epi.17537"
+            },
+            {
+              "key": "e_1_3_6_19_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.7861/clinmed.Let.22.1.2"
+            },
+            {
+              "key": "e_1_3_6_20_1",
+              "article-title": "Re: realistic expectations are key to realising the benefits of polygenic scores",
+              "author": "Mbizvo GK",
+              "unstructured": "Mbizvo GK, Larner AJ. Re: realistic expectations are key to realising the benefits of polygenic scores. BMJ. [cited 2022 Mar 11]. Available from: https://www.bmj.com/content/380/bmj-2022-073149/rapid-responses",
+              "journal-title": "BMJ"
+            },
+            {
+              "key": "e_1_3_6_21_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.eplepsyres.2023.107275"
+            },
+            {
+              "key": "e_1_3_6_22_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1101/2023.12.03.23299335"
+            }
+          ],
+          "container-title": [
+            "Mathematics in Medical and Life Sciences"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://www.tandfonline.com/doi/pdf/10.1080/29937574.2024.2326685",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                13
+              ]
+            ],
+            "date-time": "2025-01-13T09:24:57Z",
+            "timestamp": 1736760297000
+          },
+          "score": 20.11333,
+          "resource": {
+            "primary": {
+              "URL": "https://www.tandfonline.com/doi/full/10.1080/29937574.2024.2326685"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                7
+              ]
+            ]
+          },
+          "references-count": 21,
+          "journal-issue": {
+            "issue": "1",
+            "published-print": {
+              "date-parts": [
+                [
+                  2024,
+                  12,
+                  31
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "10.1080/29937574.2024.2326685"
+          ],
+          "URL": "https://doi.org/10.1080/29937574.2024.2326685",
+          "ISSN": [
+            "2993-7574"
+          ],
+          "issn-type": [
+            {
+              "type": "electronic",
+              "value": "2993-7574"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                7
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+              "order": 1,
+              "name": "peerreview_statement",
+              "label": "Peer Review Statement"
+            },
+            {
+              "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=tmls20",
+              "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=tmls20",
+              "order": 2,
+              "name": "aims_and_scope_url",
+              "label": "Aim & Scope"
+            },
+            {
+              "value": "2024-02-12",
+              "order": 0,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2024-02-27",
+              "order": 1,
+              "name": "revised",
+              "label": "Revised",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2024-02-27",
+              "order": 2,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2024-05-07",
+              "order": 3,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ],
+          "article-number": "2326685"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                2,
+                21
+              ]
+            ],
+            "date-time": "2025-02-21T01:31:43Z",
+            "timestamp": 1740101503137,
+            "version": "3.37.3"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                7
+              ]
+            ]
+          },
+          "group-title": "Medicine and Pharmacology",
+          "reference-count": 0,
+          "publisher": "MDPI AG",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    9,
+                    7
+                  ]
+                ],
+                "date-time": "2023-09-07T00:00:00Z",
+                "timestamp": 1694044800000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "accepted": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                5
+              ]
+            ]
+          },
+          "abstract": "<jats:p>Recently a measure termed F* was described, as an interpretable transformation of the F measure, also known as the Dice coefficient.  Using elementary mathematical methods, it is shown that F* is in fact identical to a previously described measure, monotonically related to the F measure, and variously termed in previous publications, dating from the late 19th to the late 20th century, as the ratio of verification, the Jaccard similarity measure or index, the threat score, the Tanimoto index, and the critical success index.  The origins of these different terms in different disciplines (weather forecasting, ecology, machine learning) may explain the repeated independent redescription of this measure.</jats:p>",
+          "DOI": "10.20944/preprints202309.0556.v1",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                8
+              ]
+            ],
+            "date-time": "2023-09-08T00:20:35Z",
+            "timestamp": 1694132435000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 2,
+          "title": [
+            "F*, an interpretable transformation of the F measure, equates to the critical success index"
+          ],
+          "prefix": "10.20944",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-9588-2944",
+              "authenticated-orcid": false,
+              "given": "Gashirai K.",
+              "family": "Mbizvo",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Andrew J.",
+              "family": "Larner",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "1968",
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                5,
+                20
+              ]
+            ],
+            "date-time": "2024-05-20T06:33:14Z",
+            "timestamp": 1716186794000
+          },
+          "score": 20.070131,
+          "resource": {
+            "primary": {
+              "URL": "https://www.preprints.org/manuscript/202309.0556/v1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                7
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.20944/preprints202309.0556.v1",
+          "relation": {
+            "is-preprint-of": [
+              {
+                "id-type": "doi",
+                "id": "10.1080/29937574.2024.2326685",
+                "asserted-by": "subject"
+              }
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                9,
+                7
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

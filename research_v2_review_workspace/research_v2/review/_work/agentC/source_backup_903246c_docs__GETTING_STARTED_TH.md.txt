@@ -1,0 +1,48 @@
+
+## backup@903246c:docs/GETTING_STARTED_TH.md
+29: |---|---|---|---|
+30: | Notebook รุ่นแรก | พัฒนาขั้นตอน Stage 7–17 แบบ exploratory | ลบแล้วหลังเก็บ artifacts | ไม่ใช่ execution path ปัจจุบัน |
+31: | Main/production | prepare → pairs → features → train → evaluate → predict → resolve | `src/identity_resolution/` | canonical source |
+32: | Research R0–R6 | ทดลอง representation และ decision rule แบบควบคุม | `experiments/code/` | ใช้ตอบคำถามงานวิจัย ไม่ได้แทน production ทั้งสาย |
+33: 
+41: - Input หลัก: `data_for_project/normalized_profiles_with_profile_id.csv`
+42: - Ground truth: `user_folder` เดียวกันหมายถึงเป็นคนเดียวกัน
+43: - Cleaning: `src/identity_resolution/stages/prepare.py`
+44: - ข้อมูลภาพ: `src/identity_resolution/imaging/`
+45: 
+46: ### 2. สร้างคู่และ features สำหรับ train
+47: 
+48: - Pair builder: `src/identity_resolution/stages/pairs.py`
+49: - Feature pipeline: `src/identity_resolution/stages/features.py`
+50: - Output หลักอยู่ใต้ `train_data/stage9_pipeline_chunked/`
+51: 
+55: ### 3. Train และประเมิน model
+56: 
+57: - Neural reference: `src/identity_resolution/stages/train_neural.py`
+58: - Multimodal training: `src/identity_resolution/stages/train_multimodal.py`
+59: - Canonical evaluation: `src/identity_resolution/stages/evaluate.py`
+60: - Evaluation notebook: `notebooks/05_evaluate.ipynb`
+61: - Run ที่ production pipeline โหลดอยู่:
+64: ### 4. รันกับ candidate จริงทั้งระบบ
+65: 
+66: - Canonical candidate generation + scoring:
+67:   `src/identity_resolution/workflows/full_candidate.py`
+68: - Canonical CRM entity merge + lead score:
+69:   `src/identity_resolution/workflows/crm.py`
+70: - Production code ปัจจุบันใช้ `MATCH >= 0.98`, `REVIEW >= 0.95`
+71: 
+117: 
+118: 1. ไฟล์นี้ เพื่อเข้าใจภาพรวม
+119: 2. `docs/ARCHITECTURE_TH.md` เพื่อดู stage และ dependency
+120: 3. `src/identity_resolution/stages/` ไล่ตั้งแต่ prepare ถึง evaluate
+121: 4. `src/identity_resolution/workflows/full_candidate.py`
+122:    เพื่อดู candidate → score → decision
+123: 5. `src/identity_resolution/workflows/crm.py`
+124:    เพื่อดู decision → entity → CRM
+125: 6. `experiments/REPORT_R0_R5.md` เพื่อดูว่าทดลองอะไรและสรุปอะไรได้
+154: เมื่อเอกสารให้ข้อมูลไม่ตรงกัน ให้เชื่อตามลำดับนี้:
+155: 
+156: 1. `src/identity_resolution/` สำหรับ production workflows และ core rules
+157: 2. `src/identity_resolution/settings.py` สำหรับ path/config ของ production run
+158: 3. JSON report ที่สร้างจาก run นั้น
+159: 4. `experiments/REPORT_R0_R5.md` สำหรับสาย R-series

@@ -1,0 +1,577 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "rows": [
+    {
+      "fold": 0,
+      "method": "sparse",
+      "multiplier": 1.0,
+      "budget": 89847,
+      "candidates": 89847,
+      "ground_truth": 5841,
+      "found": 5383,
+      "runtime_seconds": null,
+      "recovered_of_sparse1x_misses": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0,
+        "e": 0,
+        "f": 0
+      }
+    },
+    {
+      "fold": 0,
+      "method": "multipass",
+      "multiplier": 1.0,
+      "budget": 89847,
+      "candidates": 89847,
+      "ground_truth": 5841,
+      "found": 5467,
+      "runtime_seconds": 6.040893582998251,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 61,
+        "c": 19,
+        "d": 16,
+        "e": 0,
+        "f": 75
+      },
+      "pool": 50,
+      "available_unique": 905629,
+      "pool_budget": 89847,
+      "shortfall": 0
+    },
+    {
+      "fold": 0,
+      "method": "sparse",
+      "multiplier": 1.5,
+      "budget": 134771,
+      "candidates": 134771,
+      "ground_truth": 5841,
+      "found": 5433,
+      "runtime_seconds": 4.982765583998116,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 19,
+        "c": 11,
+        "d": 2,
+        "e": 0,
+        "f": 15
+      }
+    },
+    {
+      "fold": 0,
+      "method": "multipass",
+      "multiplier": 1.5,
+      "budget": 134771,
+      "candidates": 134771,
+      "ground_truth": 5841,
+      "found": 5475,
+      "runtime_seconds": 6.178576958998747,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 61,
+        "c": 19,
+        "d": 16,
+        "e": 0,
+        "f": 78
+      },
+      "pool": 50,
+      "available_unique": 905629,
+      "pool_budget": 134771,
+      "shortfall": 0
+    },
+    {
+      "fold": 0,
+      "method": "sparse",
+      "multiplier": 2.0,
+      "budget": 179694,
+      "candidates": 179694,
+      "ground_truth": 5841,
+      "found": 5461,
+      "runtime_seconds": 5.024237375000666,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 29,
+        "c": 16,
+        "d": 2,
+        "e": 0,
+        "f": 28
+      }
+    },
+    {
+      "fold": 0,
+      "method": "multipass",
+      "multiplier": 2.0,
+      "budget": 179694,
+      "candidates": 179694,
+      "ground_truth": 5841,
+      "found": 5481,
+      "runtime_seconds": 5.8380638340022415,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 62,
+        "c": 20,
+        "d": 16,
+        "e": 0,
+        "f": 81
+      },
+      "pool": 50,
+      "available_unique": 905629,
+      "pool_budget": 179694,
+      "shortfall": 0
+    },
+    {
+      "fold": 1,
+      "method": "sparse",
+      "multiplier": 1.0,
+      "budget": 93723,
+      "candidates": 93723,
+      "ground_truth": 5858,
+      "found": 5428,
+      "runtime_seconds": null,
+      "recovered_of_sparse1x_misses": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0,
+        "e": 0,
+        "f": 0
+      }
+    },
+    {
+      "fold": 1,
+      "method": "multipass",
+      "multiplier": 1.0,
+      "budget": 93723,
+      "candidates": 93723,
+      "ground_truth": 5858,
+      "found": 5478,
+      "runtime_seconds": 5.092838124997797,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 47,
+        "c": 17,
+        "d": 7,
+        "e": 0,
+        "f": 83
+      },
+      "pool": 50,
+      "available_unique": 916741,
+      "pool_budget": 93723,
+      "shortfall": 0
+    },
+    {
+      "fold": 1,
+      "method": "sparse",
+      "multiplier": 1.5,
+      "budget": 140585,
+      "candidates": 140585,
+      "ground_truth": 5858,
+      "found": 5472,
+      "runtime_seconds": 5.341545208000753,
+      "recovered_of_sparse1x_misses": {
+        "a": 1,
+        "b": 16,
+        "c": 1,
+        "d": 1,
+        "e": 0,
+        "f": 25
+      }
+    },
+    {
+      "fold": 1,
+      "method": "multipass",
+      "multiplier": 1.5,
+      "budget": 140585,
+      "candidates": 140585,
+      "ground_truth": 5858,
+      "found": 5494,
+      "runtime_seconds": 5.1563034579958185,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 48,
+        "c": 17,
+        "d": 7,
+        "e": 0,
+        "f": 94
+      },
+      "pool": 50,
+      "available_unique": 916741,
+      "pool_budget": 140585,
+      "shortfall": 0
+    },
+    {
+      "fold": 1,
+      "method": "sparse",
+      "multiplier": 2.0,
+      "budget": 187446,
+      "candidates": 187446,
+      "ground_truth": 5858,
+      "found": 5508,
+      "runtime_seconds": 5.06941412499873,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 24,
+        "c": 5,
+        "d": 1,
+        "e": 0,
+        "f": 47
+      }
+    },
+    {
+      "fold": 1,
+      "method": "multipass",
+      "multiplier": 2.0,
+      "budget": 187446,
+      "candidates": 187446,
+      "ground_truth": 5858,
+      "found": 5507,
+      "runtime_seconds": 5.4159424169993144,
+      "recovered_of_sparse1x_misses": {
+        "a": 4,
+        "b": 48,
+        "c": 18,
+        "d": 7,
+        "e": 0,
+        "f": 105
+      },
+      "pool": 50,
+      "available_unique": 916741,
+      "pool_budget": 187446,
+      "shortfall": 0
+    },
+    {
+      "fold": 2,
+      "method": "sparse",
+      "multiplier": 1.0,
+      "budget": 83829,
+      "candidates": 83829,
+      "ground_truth": 5842,
+      "found": 5388,
+      "runtime_seconds": null,
+      "recovered_of_sparse1x_misses": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0,
+        "e": 0,
+        "f": 0
+      }
+    },
+    {
+      "fold": 2,
+      "method": "multipass",
+      "multiplier": 1.0,
+      "budget": 83829,
+      "candidates": 83829,
+      "ground_truth": 5842,
+      "found": 5480,
+      "runtime_seconds": 5.178714166999271,
+      "recovered_of_sparse1x_misses": {
+        "a": 8,
+        "b": 75,
+        "c": 12,
+        "d": 14,
+        "e": 0,
+        "f": 74
+      },
+      "pool": 50,
+      "available_unique": 909967,
+      "pool_budget": 83829,
+      "shortfall": 0
+    },
+    {
+      "fold": 2,
+      "method": "sparse",
+      "multiplier": 1.5,
+      "budget": 125744,
+      "candidates": 125744,
+      "ground_truth": 5842,
+      "found": 5434,
+      "runtime_seconds": 4.951369625006919,
+      "recovered_of_sparse1x_misses": {
+        "a": 2,
+        "b": 17,
+        "c": 3,
+        "d": 2,
+        "e": 0,
+        "f": 22
+      }
+    },
+    {
+      "fold": 2,
+      "method": "multipass",
+      "multiplier": 1.5,
+      "budget": 125744,
+      "candidates": 125744,
+      "ground_truth": 5842,
+      "found": 5487,
+      "runtime_seconds": 5.077695624997432,
+      "recovered_of_sparse1x_misses": {
+        "a": 8,
+        "b": 75,
+        "c": 12,
+        "d": 14,
+        "e": 0,
+        "f": 76
+      },
+      "pool": 50,
+      "available_unique": 909967,
+      "pool_budget": 125744,
+      "shortfall": 0
+    },
+    {
+      "fold": 2,
+      "method": "sparse",
+      "multiplier": 2.0,
+      "budget": 167658,
+      "candidates": 167658,
+      "ground_truth": 5842,
+      "found": 5470,
+      "runtime_seconds": 4.928700832999311,
+      "recovered_of_sparse1x_misses": {
+        "a": 5,
+        "b": 33,
+        "c": 5,
+        "d": 3,
+        "e": 0,
+        "f": 36
+      }
+    },
+    {
+      "fold": 2,
+      "method": "multipass",
+      "multiplier": 2.0,
+      "budget": 167658,
+      "candidates": 167658,
+      "ground_truth": 5842,
+      "found": 5494,
+      "runtime_seconds": 4.74894020800275,
+      "recovered_of_sparse1x_misses": {
+        "a": 8,
+        "b": 76,
+        "c": 12,
+        "d": 14,
+        "e": 0,
+        "f": 80
+      },
+      "pool": 50,
+      "available_unique": 909967,
+      "pool_budget": 167658,
+      "shortfall": 0
+    },
+    {
+      "fold": 3,
+      "method": "sparse",
+      "multiplier": 1.0,
+      "budget": 84095,
+      "candidates": 84095,
+      "ground_truth": 5850,
+      "found": 5377,
+      "runtime_seconds": null,
+      "recovered_of_sparse1x_misses": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0,
+        "e": 0,
+        "f": 0
+      }
+    },
+    {
+      "fold": 3,
+      "method": "multipass",
+      "multiplier": 1.0,
+      "budget": 84095,
+      "candidates": 84095,
+      "ground_truth": 5850,
+      "found": 5435,
+      "runtime_seconds": 5.138400499992713,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 68,
+        "c": 18,
+        "d": 10,
+        "e": 0,
+        "f": 68
+      },
+      "pool": 50,
+      "available_unique": 894815,
+      "pool_budget": 84095,
+      "shortfall": 0
+    },
+    {
+      "fold": 3,
+      "method": "sparse",
+      "multiplier": 1.5,
+      "budget": 126143,
+      "candidates": 126143,
+      "ground_truth": 5850,
+      "found": 5418,
+      "runtime_seconds": 5.295759749998979,
+      "recovered_of_sparse1x_misses": {
+        "a": 1,
+        "b": 19,
+        "c": 5,
+        "d": 0,
+        "e": 0,
+        "f": 16
+      }
+    },
+    {
+      "fold": 3,
+      "method": "multipass",
+      "multiplier": 1.5,
+      "budget": 126143,
+      "candidates": 126143,
+      "ground_truth": 5850,
+      "found": 5447,
+      "runtime_seconds": 5.2027009169978555,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 68,
+        "c": 18,
+        "d": 10,
+        "e": 0,
+        "f": 75
+      },
+      "pool": 50,
+      "available_unique": 894815,
+      "pool_budget": 126143,
+      "shortfall": 0
+    },
+    {
+      "fold": 3,
+      "method": "sparse",
+      "multiplier": 2.0,
+      "budget": 168190,
+      "candidates": 168190,
+      "ground_truth": 5850,
+      "found": 5457,
+      "runtime_seconds": 5.239091374998679,
+      "recovered_of_sparse1x_misses": {
+        "a": 2,
+        "b": 30,
+        "c": 11,
+        "d": 0,
+        "e": 0,
+        "f": 37
+      }
+    },
+    {
+      "fold": 3,
+      "method": "multipass",
+      "multiplier": 2.0,
+      "budget": 168190,
+      "candidates": 168190,
+      "ground_truth": 5850,
+      "found": 5449,
+      "runtime_seconds": 5.4460532079974655,
+      "recovered_of_sparse1x_misses": {
+        "a": 3,
+        "b": 68,
+        "c": 18,
+        "d": 10,
+        "e": 0,
+        "f": 76
+      },
+      "pool": 50,
+      "available_unique": 894815,
+      "pool_budget": 168190,
+      "shortfall": 0
+    }
+  ],
+  "pooled": {
+    "sparse@1.0x": {
+      "found": 21576,
+      "ground_truth": 23391,
+      "PC": 0.922406053610363,
+      "candidates": 351494,
+      "runtime_seconds": 0,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "d": 0,
+        "e": 0,
+        "f": 0
+      }
+    },
+    "sparse@1.5x": {
+      "found": 21757,
+      "ground_truth": 23391,
+      "PC": 0.9301440725065196,
+      "candidates": 527243,
+      "runtime_seconds": 20.571440167004766,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 7,
+        "b": 71,
+        "c": 20,
+        "d": 5,
+        "e": 0,
+        "f": 78
+      }
+    },
+    "sparse@2.0x": {
+      "found": 21896,
+      "ground_truth": 23391,
+      "PC": 0.9360865290068829,
+      "candidates": 702988,
+      "runtime_seconds": 20.261443707997387,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 13,
+        "b": 116,
+        "c": 37,
+        "d": 6,
+        "e": 0,
+        "f": 148
+      }
+    },
+    "multipass@1.0x": {
+      "found": 21860,
+      "ground_truth": 23391,
+      "PC": 0.9345474755247745,
+      "candidates": 351494,
+      "runtime_seconds": 21.450846374988032,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 19,
+        "b": 251,
+        "c": 66,
+        "d": 47,
+        "e": 0,
+        "f": 300
+      }
+    },
+    "multipass@1.5x": {
+      "found": 21903,
+      "ground_truth": 23391,
+      "PC": 0.9363857894061819,
+      "candidates": 527243,
+      "runtime_seconds": 21.615276958989853,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 19,
+        "b": 252,
+        "c": 66,
+        "d": 47,
+        "e": 0,
+        "f": 323
+      }
+    },
+    "multipass@2.0x": {
+      "found": 21931,
+      "ground_truth": 23391,
+      "PC": 0.9375828310033774,
+      "candidates": 702988,
+      "runtime_seconds": 21.44899966700177,
+      "recovered_of_sparse1x_misses_by_cause": {
+        "a": 19,
+        "b": 254,
+        "c": 68,
+        "d": 47,
+        "e": 0,
+        "f": 342
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+
+## backup@903246c:docs/ARCHITECTURE_TH.md
+3: ## Source of truth
+4: 
+5: โค้ดระบบหลักมีที่เดียวคือ `src/identity_resolution/`:
+6: 
+7: ```text
+8: src/identity_resolution/
+9: ├── cli.py                 # CLI เดียว: identity-ml
+10: ├── settings.py            # paths และ production defaults กลาง
+11: ├── core/                  # pure domain logic
+12: │   ├── decisioning.py     # MATCH / REVIEW / NO_MATCH
+13: │   ├── entities.py        # entity graph / canonical values
+14: │   ├── pairs.py           # unordered pair identity
+15: │   └── text.py            # shared normalization
+17: │   ├── prepare.py         # 1. raw profiles → cleaned profiles
+18: │   ├── pairs.py           # 2. profiles → labeled pairs
+19: │   ├── features.py        # 3. pairs → feature matrices
+20: │   ├── train_base.py      # shared feature/model implementation
+21: │   ├── train_multimodal.py# 4. train/select production model
+22: │   ├── train_neural.py    # optional neural reference
+23: │   └── evaluate.py        # 5. evaluation report
+24: ├── imaging/               # image ingestion and image feature adapters
+25: └── workflows/
+26:     ├── full_candidate.py  # 6. predict full candidate set
+33: flowchart LR
+34:     A[1 prepare] --> B[2 pairs]
+35:     B --> C[3 features]
+36:     C --> D[4 train]
+37:     D --> E[5 evaluate]
+38:     E --> F[6 predict]
+44: | prepare | LinkSocial JSON | cleaned profiles | `identity-ml prepare` |
+45: | pairs | normalized profiles | labeled pair parquet | `identity-ml pairs` |
+46: | features | profiles + pairs + images | split feature matrices | `identity-ml features` |
+47: | train | train/val/test features | model, calibrator, reports | `identity-ml train` |
+48: | evaluate | scored evaluation table | metrics JSON | `identity-ml evaluate` |
+49: | predict | profiles + selected model | exact/candidate scores + decisions | `identity-ml predict` |
+71: - paths และ selected production run ต้องมาจาก `settings.py`
+72: - `experiments/` ใช้สำหรับ R0–R6 เท่านั้น ไม่ใช่ implementation ของ production
+73: - `pub_multi/` เป็น publication tooling; source snapshots สร้างใหม่จาก `src/` ได้
+74: - output ใหญ่ยังเก็บที่ `data/`, `train_data/` และ `artifacts/`; โฟลเดอร์เหล่านี้ไม่ใช่ source code
+75: 
+76: ## Model ที่ production เลือกอยู่
+77: 
+78: `settings.PATHS.production_model_run` ชี้ไปที่
+79: `train_data/stage7_13_multimodal_suite/runs/image_context_r075_h20_s42` ซึ่งเป็น
+80: multimodal image-context run ปัจจุบัน ส่วน decision policy ใช้ threshold
+81: `MATCH >= 0.98` และ `REVIEW >= 0.95`
+90: - `presentation/` — presentation assets
+91: - `archive/` — historical material
+92: - `train_data/`, `image_process/` — data/model artifacts ที่คง path เดิมไว้
+93: 
+94: รายการ code เก่าที่ลบแล้วและสิ่งที่เก็บไว้อยู่ใน `docs/REMOVAL_CANDIDATES.md`

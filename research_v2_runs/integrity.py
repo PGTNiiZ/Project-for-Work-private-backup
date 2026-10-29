@@ -16,8 +16,17 @@ def sha256(path):
 
 def require_committed(path):
     path = Path(path).resolve()
-    root = Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=path.parent,text=True).strip())
-    rel = path.relative_to(root).as_posix()
+    source_root = Path(__file__).resolve().parent.parent
+    isolated = source_root/'research_v2_runs/work/git_execution'
+    if (isolated/'.git').exists() and path.is_relative_to(source_root):
+        root = isolated
+        rel = path.relative_to(source_root).as_posix()
+        branch = subprocess.check_output(['git','branch','--show-current'],cwd=root,text=True).strip()
+        if branch != 'research-v2-experiments':
+            raise PermissionError('isolated execution branch changed')
+    else:
+        root = Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=path.parent,text=True).strip())
+        rel = path.relative_to(root).as_posix()
     try:
         content = subprocess.check_output(['git','show',f'HEAD:{rel}'],cwd=root,stderr=subprocess.DEVNULL)
     except subprocess.CalledProcessError as exc:

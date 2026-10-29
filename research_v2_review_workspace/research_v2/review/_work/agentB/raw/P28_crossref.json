@@ -1,0 +1,2162 @@
+{
+  "url": "https://api.crossref.org/works?query.title=DECTUIL%3A%20Cross-social%20network%20user%20identity%20linkage%20via%20dynamic%20embedding%20and%20clustering%20model%20driven%20by%20three-way%20decision&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 10732759,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                20
+              ]
+            ],
+            "date-time": "2026-10-20T16:26:23Z",
+            "timestamp": 1792513583651,
+            "version": "4.5.0"
+          },
+          "reference-count": 55,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-017"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-012"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2026-01-01T00:00:00Z",
+                "timestamp": 1767225600000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-004"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100013315",
+              "name": "Science and Technology Service Network Plan",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "KFJ-STS-QYZD-2021-21-001"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "KFJ-STS-QYZD-2021-21-001"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100013315",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100012166",
+              "name": "National Key Research and Development Program of China",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2023YFB3308601"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2023YFB3308601"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100012166",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100012166",
+              "name": "National Key Research and Development Program of China",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2022YFB3104700"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2022YFB3104700"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100012166",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100001809",
+              "name": "National Natural Science Foundation of China",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "62402395,62376198"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "62402395,62376198"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100001809",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100001809",
+              "name": "National Natural Science Foundation of China",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2023-JB00-00020-GX"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2023-JB00-00020-GX"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100001809",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/100012542",
+              "name": "Sichuan Province Science and Technology Support Program",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2023YFS0424"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2023YFS0424"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/100012542",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100012406",
+              "name": "Organization Department of Sichuan Provincial Party Committee",
+              "doi-asserted-by": "publisher",
+              "id": [
+                {
+                  "id": "10.13039/501100012406",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100002367",
+              "name": "Chinese Academy of Sciences",
+              "doi-asserted-by": "publisher",
+              "id": [
+                {
+                  "id": "10.13039/501100002367",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Expert Systems with Applications"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                1
+              ]
+            ]
+          },
+          "DOI": "10.1016/j.eswa.2025.129026",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                7,
+                17
+              ]
+            ],
+            "date-time": "2025-07-17T16:04:53Z",
+            "timestamp": 1752768293000
+          },
+          "page": "129026",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 1,
+          "special_numbering": "PB",
+          "title": [
+            "DECTUIL: Cross-social network user identity linkage via dynamic embedding and clustering model driven by three-way decision"
+          ],
+          "prefix": "10.1016",
+          "volume": "296",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0005-4063-1469",
+              "authenticated-orcid": false,
+              "given": "Yongqiang",
+              "family": "Peng",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-8201-9631",
+              "authenticated-orcid": false,
+              "given": "Xiaoliang",
+              "family": "Chen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-6588-1468",
+              "authenticated-orcid": false,
+              "given": "Duoqian",
+              "family": "Miao",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-9781-5078",
+              "authenticated-orcid": false,
+              "given": "Hongyun",
+              "family": "Zhang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5087-8178",
+              "authenticated-orcid": false,
+              "given": "Xiaolin",
+              "family": "Qin",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0000-6946-4901",
+              "authenticated-orcid": false,
+              "given": "Shangyi",
+              "family": "Du",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-2936-1400",
+              "authenticated-orcid": false,
+              "given": "Peng",
+              "family": "Lu",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0001",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.asoc.2022.108461",
+              "article-title": "Cross-network representation learning for anchor users on multiplex heterogeneous social network",
+              "volume": "118",
+              "author": "Amara",
+              "year": "2022",
+              "journal-title": "Applied Soft Computing"
+            },
+            {
+              "issue": "10",
+              "key": "10.1016/j.eswa.2025.129026_bib0002",
+              "doi-asserted-by": "crossref",
+              "first-page": "411",
+              "DOI": "10.1049/ell2.12478",
+              "article-title": "Sentiment analysis by using Naíve-Bayes classifierwith stacked CARU",
+              "volume": "58",
+              "author": "Chan",
+              "year": "2022",
+              "journal-title": "Electronics Letters"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0003",
+              "series-title": "Neural information processing: 27th international conference, ICONIP 2020, Bangkok, Thailand, November 18–22, 2020, proceedings, Part V 27",
+              "first-page": "685",
+              "article-title": "Variable-depth convolutional neural network for text classification",
+              "author": "Chan",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0004",
+              "series-title": "2021 IEEE 4th international conference on computer and communication engineering technology (CCET)",
+              "first-page": "106",
+              "article-title": "Chebyshev pooling: An alternative layer for the pooling of CNNs-based classifier",
+              "author": "Chan",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0005",
+              "article-title": "User identity linkage in social media using linguistic and social interaction features",
+              "author": "Chatzakou",
+              "year": "2023",
+              "journal-title": "CoRR"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0006",
+              "doi-asserted-by": "crossref",
+              "first-page": "527",
+              "DOI": "10.1016/j.ins.2022.02.023",
+              "article-title": "MAUIL: multilevel attribute embedding for semisupervised user identity linkage",
+              "volume": "593",
+              "author": "Chen",
+              "year": "2022",
+              "journal-title": "Information Sciences"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0007",
+              "series-title": "ECAI 2020 - 24th European conference on artificial intelligence, 29 August-8 September 2020, Santiago de Compostela, Spain, August 29 - September 8, 2020 - including 10th conference on prestigious applications of artificial intelligence (PAIS 2020)",
+              "first-page": "1754",
+              "article-title": "A novel framework with information fusion and neighborhood enhancement for user identity linkage",
+              "volume": "vol. 325",
+              "author": "Chen",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0008",
+              "series-title": "Proceedings of the 2017 ACM on conference on information and knowledge management, CIKM 2017, Singapore, November 06–10, 2017",
+              "first-page": "517",
+              "article-title": "Exploiting spatio-temporal user behaviors for user linkage",
+              "author": "Chen",
+              "year": "2017"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0009",
+              "series-title": "34th IEEE International conference on data engineering, ICDE 2018, Paris, France, April 16–19, 2018",
+              "first-page": "1085",
+              "article-title": "Effective and efficient user account linkage across location based social networks",
+              "author": "Chen",
+              "year": "2018"
+            },
+            {
+              "issue": "Part E",
+              "key": "10.1016/j.eswa.2025.129026_bib0010",
+              "article-title": "E-commerce bookstore user alignment model based on multidimensional feature joint representation and implicit behavior compensation",
+              "volume": "238",
+              "author": "Duan",
+              "year": "2024",
+              "journal-title": "Expert Systems With Applications"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0011",
+              "series-title": "The world wide web conference, WWW 2019, San Francisco, CA, USA, May 13–17, 2019",
+              "first-page": "459",
+              "article-title": "DPlink: User identity linkage via deep neural network from heterogeneous mobility data",
+              "author": "Feng",
+              "year": "2019"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0012",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.knosys.2019.105301",
+              "article-title": "Deep multi-granularity graph embedding for user identity linkage across social networks",
+              "volume": "193",
+              "author": "Fu",
+              "year": "2020",
+              "journal-title": "Knowledge-Based Systems"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0013",
+              "doi-asserted-by": "crossref",
+              "first-page": "131",
+              "DOI": "10.1016/j.ins.2020.06.058",
+              "article-title": "Callback2Vec: Callback-aware hierarchical embedding for mobile application",
+              "volume": "542",
+              "author": "Guo",
+              "year": "2021",
+              "journal-title": "Information Sciences."
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0014",
+              "series-title": "Database systems for advanced applications - 26th international conference, DASFAA 2021, Taipei, Taiwan, April 11–14, 2021, proceedings, Part II",
+              "first-page": "675",
+              "article-title": "A semi-supervised framework with efficient feature extraction and network alignment for user identity linkage",
+              "volume": "vol. 12682",
+              "author": "Hu",
+              "year": "2021"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.eswa.2025.129026_bib0015",
+              "doi-asserted-by": "crossref",
+              "first-page": "8341",
+              "DOI": "10.1109/TMC.2023.3345312",
+              "article-title": "EgoMUIL: Enhancing spatio-temporal user identity linkage in location-based social networks with ego-mo hypergraph",
+              "volume": "23",
+              "author": "Huang",
+              "year": "2024",
+              "journal-title": "IEEE Transactions on Mobile Computing"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0016",
+              "doi-asserted-by": "crossref",
+              "first-page": "107",
+              "DOI": "10.1186/s13677-024-00659-z",
+              "article-title": "Topic and knowledge-enhanced modeling for edge-enabled IoT user identity linkage across social networks",
+              "volume": "13",
+              "author": "Huang",
+              "year": "2024",
+              "journal-title": "Journal of Cloud Computing"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0017",
+              "doi-asserted-by": "crossref",
+              "first-page": "172",
+              "DOI": "10.3390/e25010172",
+              "article-title": "A semantic-enhancement-based social network user-alignment algorithm",
+              "volume": "25",
+              "author": "Huang",
+              "year": "2023",
+              "journal-title": "Entropy"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0018",
+              "series-title": "36th IEEE International conference on data engineering, ICDE 2020, Dallas, TX, USA, April 20–24, 2020",
+              "first-page": "85",
+              "article-title": "Adaptive network alignment with unsupervised and multi-order convolutional networks",
+              "author": "Huynh",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0019",
+              "doi-asserted-by": "crossref",
+              "first-page": "185",
+              "DOI": "10.1016/j.ins.2017.04.030",
+              "article-title": "Three-way decision approaches to conflict analysis using decision-theoretic rough set theory",
+              "volume": "406",
+              "author": "Lang",
+              "year": "2017",
+              "journal-title": "Information Science"
+            },
+            {
+              "issue": "10",
+              "key": "10.1016/j.eswa.2025.129026_bib0020",
+              "doi-asserted-by": "crossref",
+              "first-page": "10166",
+              "DOI": "10.1109/TKDE.2023.3250245",
+              "article-title": "Semi-supervised variational user identity linkage via noise-aware self-learning",
+              "volume": "35",
+              "author": "Li",
+              "year": "2023",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0021",
+              "series-title": "Web engineering - 23rd international conference, ICWE 2023, Alicante, Spain, June 6–9, 2023, proceedings",
+              "first-page": "158",
+              "article-title": "User identity linkage via graph convolutional network across location-based social networks",
+              "volume": "vol. 13893",
+              "author": "Li",
+              "year": "2023"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.eswa.2025.129026_bib0022",
+              "doi-asserted-by": "crossref",
+              "first-page": "3716",
+              "DOI": "10.1109/TETCI.2024.3372374",
+              "article-title": "MFLink: User identity linkage across online social networks via multimodal fusion and adversarial learning",
+              "volume": "8",
+              "author": "Li",
+              "year": "2024",
+              "journal-title": "IEEE Transactions on Emerging Topics in Computational Intelligence"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0023",
+              "doi-asserted-by": "crossref",
+              "first-page": "40",
+              "DOI": "10.1186/s13636-023-00303-9",
+              "article-title": "Speech emotion recognition based on graph-LSTM neural network",
+              "volume": "2023",
+              "author": "Li",
+              "year": "2023",
+              "journal-title": "EURASIP Journal on Audio, Speech, and Music Processing"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0024",
+              "series-title": "Proceedings of the 30th ACM international conference on information and knowledge management, virtual event",
+              "first-page": "1008",
+              "article-title": "Unsupervised large-scale social network alignment via cross network embedding",
+              "author": "Liang",
+              "year": "2021"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.eswa.2025.129026_bib0025",
+              "first-page": "1824",
+              "article-title": "Structural representation learning for user alignment across social networks",
+              "volume": "32",
+              "author": "Liu",
+              "year": "2020",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0026",
+              "doi-asserted-by": "crossref",
+              "first-page": "99",
+              "DOI": "10.1007/s44196-023-00277-8",
+              "article-title": "Structural analysis of the evolution mechanism of online public opinion and its development stages based on machine learning and social network analysis",
+              "volume": "16",
+              "author": "Liu",
+              "year": "2023",
+              "journal-title": "International Journal of Computational Intelligence Systems"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0027",
+              "series-title": "Machine learning and knowledge discovery in databases: Applied data science and demo track - European conference, ECML PKDD 2023, Turin, Italy, September 18–22, 2023, proceedings, Part VI",
+              "first-page": "122",
+              "article-title": "DegUIL: Degree-aware graph neural networks for long-tailed user identity linkage",
+              "volume": "vol. 14174",
+              "author": "Long",
+              "year": "2023"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0028",
+              "article-title": "DegUIL: Degree-aware graph neural networks for long-tailed user identity linkage",
+              "author": "Long",
+              "year": "2023",
+              "journal-title": "CoRR"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.eswa.2025.129026_bib0029",
+              "doi-asserted-by": "crossref",
+              "first-page": "4594",
+              "DOI": "10.1109/TMC.2022.3157292",
+              "article-title": "CP-Link: Exploiting continuous spatio-temporal check-in patterns for user identity linkage",
+              "volume": "22",
+              "author": "Ma",
+              "year": "2023",
+              "journal-title": "IEEE Transactions on Mobile Computing"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0030",
+              "series-title": "Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining",
+              "first-page": "1775",
+              "article-title": "User identity linkage by latent user space modelling",
+              "author": "Mu",
+              "year": "2016"
+            },
+            {
+              "issue": "6",
+              "key": "10.1016/j.eswa.2025.129026_bib0031",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1007/s11704-019-8235-9",
+              "article-title": "Matching user identities across social networks with limited profile data",
+              "volume": "14",
+              "author": "Nurgaliev",
+              "year": "2020",
+              "journal-title": "Frontiers of Computer Science"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0032",
+              "series-title": "Proceedings of the 31st ACM international conference on information & knowledge management, Atlanta",
+              "first-page": "4374",
+              "article-title": "GradAlign+: Empowering gradual network alignment using attribute augmentation",
+              "author": "Park",
+              "year": "2022"
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.eswa.2025.129026_bib0033",
+              "doi-asserted-by": "crossref",
+              "first-page": "7455",
+              "DOI": "10.1007/s10489-022-03916-3",
+              "article-title": "A multiscale convolutional gragh network using only structural information for entity alignment",
+              "volume": "53",
+              "author": "Qi",
+              "year": "2023",
+              "journal-title": "Appl. Intell."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.eswa.2025.129026_bib0034",
+              "doi-asserted-by": "crossref",
+              "first-page": "1364",
+              "DOI": "10.1007/s11036-019-01456-8",
+              "article-title": "A two-stagse approach for social identity linkage based on an enhanced weighted graph model",
+              "volume": "25",
+              "author": "Qin",
+              "year": "2020",
+              "journal-title": "Mobile Networks and Applications"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0035",
+              "doi-asserted-by": "crossref",
+              "first-page": "56",
+              "DOI": "10.1007/s13278-020-00673-4",
+              "article-title": "Hiding your face is not enough: user identity linkage with image recognition",
+              "volume": "10",
+              "author": "Ranaldi",
+              "year": "2020",
+              "journal-title": "Social Network Analysis and Mining"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0036",
+              "series-title": "Proceedings of the 31st ACM international conference on information & knowledge management",
+              "first-page": "1685",
+              "article-title": "Cross-network social user embedding with hybrid differential privacy guarantees",
+              "author": "Ren",
+              "year": "2022"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0037",
+              "doi-asserted-by": "crossref",
+              "first-page": "171241",
+              "DOI": "10.1109/ACCESS.2024.3500374",
+              "article-title": "User identity linkage on social networks: a review of modern techniques and applications",
+              "volume": "12",
+              "author": "Senette",
+              "year": "2024",
+              "journal-title": "IEEE Access"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0038",
+              "series-title": "CIKM ’21: The 30th ACM international conference on information and knowledge management, virtual event, Queensland, Australia, November 1–5, 2021",
+              "first-page": "3413",
+              "article-title": "Locate who you are: Matching geo-location to text for user identity linkage",
+              "author": "Shao",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0039",
+              "doi-asserted-by": "crossref",
+              "first-page": "174",
+              "DOI": "10.1016/j.neucom.2022.10.027",
+              "article-title": "AsyLink: user identity linkage from text to geo-location via sparse labeled data",
+              "volume": "515",
+              "author": "Shao",
+              "year": "2023",
+              "journal-title": "Neurocomputing"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0040",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.4018/IJITWE.304050",
+              "article-title": "Social network analysis for precise friend suggestion for twitter by associating multiple networks using ML",
+              "volume": "17",
+              "author": "Singh",
+              "year": "2022",
+              "journal-title": "International Journal of Information Technology and Web Engineering"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.eswa.2025.129026_bib0041",
+              "doi-asserted-by": "crossref",
+              "first-page": "191",
+              "DOI": "10.1016/0304-3975(92)90143-4",
+              "article-title": "Approximate string matching with q-grams and maximal matches",
+              "volume": "92",
+              "author": "Ukkonen",
+              "year": "1992",
+              "journal-title": "Theoretical Computer Science"
+            },
+            {
+              "issue": "20",
+              "key": "10.1016/j.eswa.2025.129026_bib0042",
+              "first-page": "10",
+              "article-title": "Graph attention networks",
+              "volume": "1050",
+              "author": "Velickovic",
+              "year": "2017",
+              "journal-title": "stat"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0043",
+              "series-title": "IEEE global communications conference, GLOBECOM 2020, virtual event, Taiwan, December 7–11, 2020",
+              "first-page": "1",
+              "article-title": "Hyperbolic user identity linkage across social networks",
+              "author": "Wang",
+              "year": "2020"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.eswa.2025.129026_bib0044",
+              "doi-asserted-by": "crossref",
+              "first-page": "1731",
+              "DOI": "10.1007/s11280-021-00882-7",
+              "article-title": "EEUPL: towards effective and efficient user profile linkage across multiple social platforms",
+              "volume": "24",
+              "author": "Wang",
+              "year": "2021",
+              "journal-title": "World Wide Web"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0045",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.eswa.2023.120258",
+              "article-title": "A heterogeneous e-commerce user alignment model based on data enhancement and data representation",
+              "volume": "228",
+              "author": "Wei",
+              "year": "2023",
+              "journal-title": "Expert Systems With Applications"
+            },
+            {
+              "issue": "24",
+              "key": "10.1016/j.eswa.2025.129026_bib0046",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.3390/app122412709",
+              "article-title": "JARUA: Joint embedding of attributes and relations for user alignment across social networks",
+              "volume": "12",
+              "author": "Yang",
+              "year": "2022",
+              "journal-title": "Applied Sciences"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0047",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.knosys.2022.109939",
+              "article-title": "Anchor link prediction across social networks based on multiple consistency",
+              "volume": "257",
+              "author": "Yang",
+              "year": "2022",
+              "journal-title": "Knowledge-Based Systems"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0048",
+              "series-title": "13th international conference on computer and automation engineering, ICCAE 2021, Melbourne, Australia, March 20–22, 2021",
+              "first-page": "36",
+              "article-title": "User naming conventions mapping learning for social network alignment",
+              "author": "Yuan",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0049",
+              "series-title": "IEEE international conference on systems, man, and cybernetics, SMC 2018, Miyazaki, Japan, October 7–10, 2018",
+              "first-page": "415",
+              "article-title": "Autoencoder and its various variants",
+              "author": "Zhai",
+              "year": "2018"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0050",
+              "series-title": "Proceedings of the 27th ACM SIGKDD conference on knowledge discovery & data mining",
+              "first-page": "2212",
+              "article-title": "Balancing consistency and disparity in network alignment",
+              "author": "Zhang",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0051",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.asoc.2025.112757",
+              "article-title": "Three-way multi-label classification: A review, a framework, and new challenges",
+              "volume": "171",
+              "author": "Zhang",
+              "year": "2025",
+              "journal-title": "Applied Soft Computing"
+            },
+            {
+              "key": "10.1016/j.eswa.2025.129026_bib0052",
+              "series-title": "Proceedings of the ACM web conference",
+              "first-page": "887",
+              "article-title": "Cross-domain recommendation via user interest alignment",
+              "author": "Zhao",
+              "year": "2023"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.eswa.2025.129026_bib0053",
+              "doi-asserted-by": "crossref",
+              "first-page": "3900",
+              "DOI": "10.1109/TNNLS.2022.3201102",
+              "article-title": "JORA: weakly supervised user identity linkage via jointly learning to represent and align",
+              "volume": "35",
+              "author": "Zheng",
+              "year": "2024",
+              "journal-title": "IEEE Transactions on Neural Networks and Learning Systems"
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.eswa.2025.129026_bib0054",
+              "doi-asserted-by": "crossref",
+              "first-page": "4221",
+              "DOI": "10.1007/s10115-024-02088-5",
+              "article-title": "MMUIL: Enhancing multi-platform user identity linkage with multi-information",
+              "volume": "66",
+              "author": "Zhou",
+              "year": "2024",
+              "journal-title": "Knowledge and Information Systems"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.eswa.2025.129026_bib0055",
+              "doi-asserted-by": "crossref",
+              "first-page": "50:1",
+              "DOI": "10.1145/3477050",
+              "article-title": "Unsupervised adversarial network alignment with reinforcement learning",
+              "volume": "16",
+              "author": "Zhou",
+              "year": "2022",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data"
+            }
+          ],
+          "container-title": [
+            "Expert Systems with Applications"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0957417425026430?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0957417425026430?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                6
+              ]
+            ],
+            "date-time": "2026-03-06T00:20:58Z",
+            "timestamp": 1772756458000
+          },
+          "score": 85.12113,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425026430"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                1
+              ]
+            ]
+          },
+          "references-count": 55,
+          "alternative-id": [
+            "S0957417425026430"
+          ],
+          "URL": "https://doi.org/10.1016/j.eswa.2025.129026",
+          "ISSN": [
+            "0957-4174"
+          ],
+          "issn-type": [
+            {
+              "value": "0957-4174",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                1
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "DECTUIL: Cross-social network user identity linkage via dynamic embedding and clustering model driven by three-way decision",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Expert Systems with Applications",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.eswa.2025.129026",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "value": "© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "129026"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                21
+              ]
+            ],
+            "date-time": "2026-10-21T02:30:35Z",
+            "timestamp": 1792549835535,
+            "version": "4.5.0"
+          },
+          "reference-count": 34,
+          "publisher": "Springer Science and Business Media LLC",
+          "issue": "6",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2018,
+                    4,
+                    23
+                  ]
+                ],
+                "date-time": "2018-04-23T00:00:00Z",
+                "timestamp": 1524441600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "http://www.springer.com/tdm"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "World Wide Web"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2019,
+                11
+              ]
+            ]
+          },
+          "DOI": "10.1007/s11280-018-0572-3",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2018,
+                4,
+                23
+              ]
+            ],
+            "date-time": "2018-04-23T07:48:34Z",
+            "timestamp": 1524469714000
+          },
+          "page": "2611-2632",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 49,
+          "title": [
+            "User identity linkage across social networks via linked heterogeneous network embedding"
+          ],
+          "prefix": "10.1007",
+          "volume": "22",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0003-4605-3151",
+              "authenticated-orcid": false,
+              "given": "Yaqing",
+              "family": "Wang",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Chunyan",
+              "family": "Feng",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Ling",
+              "family": "Chen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Hongzhi",
+              "family": "Yin",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Caili",
+              "family": "Guo",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Yunfei",
+              "family": "Chu",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2018,
+                4,
+                23
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "572_CR1",
+              "first-page": "993",
+              "volume": "3",
+              "author": "DM Blei",
+              "year": "2003",
+              "unstructured": "Blei, D.M., Ng, A.Y., Jordan, M.I.: Latent dirichlet allocation. J. Mach. Learn. Res. 3, 993–1022 (2003)",
+              "journal-title": "J. Mach. Learn. Res."
+            },
+            {
+              "key": "572_CR2",
+              "unstructured": "Cai, H., Zheng, V.W., Chang, K.C.C.: A comprehensive survey of graph embedding: Problems, techniques and applications. arXiv: 1709.07604 (2017)"
+            },
+            {
+              "key": "572_CR3",
+              "doi-asserted-by": "publisher",
+              "first-page": "459",
+              "DOI": "10.1007/978-3-319-46128-1_29",
+              "volume-title": "Machine Learning and Knowledge Discovery in Databases",
+              "author": "Xuezhi Cao",
+              "year": "2016",
+              "unstructured": "Cao, X., Yu, Y.: Bass: a bootstrapping approach for aligning heterogenous social networks. In: ECML PKDD, pp. 459–475 (2016)"
+            },
+            {
+              "key": "572_CR4",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Cao, X., Yu, Y.: Joint user modeling across aligned heterogeneous sites. In: Recsys, pp. 83–90 (2016)",
+              "DOI": "10.1145/2959100.2959155"
+            },
+            {
+              "key": "572_CR5",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Chen, W., Yin, H., Wang, W., Zhao, L., Hua, W., Zhou, X.: Exploiting spatio-temporal user behaviors for user linkage. In: CIKM, pp. 517–526 (2017)",
+              "DOI": "10.1145/3132847.3132898"
+            },
+            {
+              "key": "572_CR6",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Dong, Y., Tang, J., Wu, S., Tian, J., Chawla, N.V., Rao, J., Cao, H.: Link prediction and recommendation across heterogeneous social networks. In: ICDM, pp. 181–190 (2012)",
+              "DOI": "10.1109/ICDM.2012.140"
+            },
+            {
+              "key": "572_CR7",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Kong, X., Zhang, J., Yu, P.S.: Inferring anchor links across multiple heterogeneous social networks. In: CIKM, pp. 179–188 (2013)",
+              "DOI": "10.1145/2505515.2505531"
+            },
+            {
+              "issue": "5",
+              "key": "572_CR8",
+              "doi-asserted-by": "publisher",
+              "first-page": "377",
+              "DOI": "10.14778/2732269.2732274",
+              "volume": "7",
+              "author": "Nitish Korula",
+              "year": "2014",
+              "unstructured": "Korula, N., Lattanzi, S.: An efficient reconciliation algorithm for social networks. pp. 377–388 (2014)",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "key": "572_CR9",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Liu, S., Wang, S., Zhu, F., Zhang, J., Krishnan, R.: Hydra: large-scale social identity linkage via heterogeneous behavior modeling. In: ACM SIGMOD, pp. 51–62 (2014)",
+              "DOI": "10.1145/2588555.2588559"
+            },
+            {
+              "key": "572_CR10",
+              "unstructured": "Liu, L., Cheung, W. K., Li, X., Liao, L.: Aligning users across social networks using network embedding. In: IJCAI, pp. 1774–1780 (2016)"
+            },
+            {
+              "key": "572_CR11",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Malhotra, A., Totti, L., Meira, Jr, W., Kumaraguru, P., Almeida, V.: Studying user footprints in different online social networks. In: ASONAM, pp. 1065–1070 (2012)",
+              "DOI": "10.1109/ASONAM.2012.184"
+            },
+            {
+              "key": "572_CR12",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Man, T., Shen, H., Huang, J., Cheng, X.: Context-adaptive matrix factorization for multi-context recommendation. In: CIKM, pp. 901–910 (2015)",
+              "DOI": "10.1145/2806416.2806503"
+            },
+            {
+              "key": "572_CR13",
+              "unstructured": "Man, T., Shen, H., Liu, S., Jin, X., Cheng, X.: Predict anchor links across social networks via an embedding approach. In: IJCAI, vol. 16, pp. 1823–1829 (2016)"
+            },
+            {
+              "key": "572_CR14",
+              "unstructured": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G.S., Dean, J.: Distributed representations of words and phrases and their compositionality. In: Advances in Neural Information Processing Systems, pp. 3111–3119 (2013)"
+            },
+            {
+              "key": "572_CR15",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Mu, X., Zhu, F., Lim, E.P., Xiao, J., Wang, J., Zhou, Z.H.: User identity linkage by latent user space modelling. In: KDD, pp. 1775–1784 (2016)",
+              "DOI": "10.1145/2939672.2939849"
+            },
+            {
+              "key": "572_CR16",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Narayanan, A., Shmatikov, V.: De-anonymizing social networks. In: ISSP, pp. 173–187 (2009)",
+              "DOI": "10.1109/SP.2009.22"
+            },
+            {
+              "key": "572_CR17",
+              "doi-asserted-by": "publisher",
+              "first-page": "107",
+              "DOI": "10.1016/j.neucom.2015.10.147",
+              "volume": "210",
+              "author": "Y Nie",
+              "year": "2016",
+              "unstructured": "Nie, Y., Jia, Y., Li, S., Zhu, X., Li, A., Zhou, B.: Identifying users across social networks based on dynamic core interests. Neurocomputing 210, 107–115 (2016)",
+              "journal-title": "Neurocomputing"
+            },
+            {
+              "key": "572_CR18",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Phan, M.C., Sun, A., Tay, Y.: Cross-device user linking: url, session, visiting time, and device-log embedding. In: SIGIR, pp. 933–936 (2017)",
+              "DOI": "10.1145/3077136.3080682"
+            },
+            {
+              "key": "572_CR19",
+              "unstructured": "Recht, B., Re, C., Wright, S., Niu, F.: Hogwild: a lock-free approach to parallelizing stochastic gradient descent. In: NIPS, pp. 693–701 (2011)"
+            },
+            {
+              "key": "572_CR20",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Riederer, C., Kim, Y., Chaintreau, A., Korula, N., Lattanzi, S.: Linking users across domains with location data: theory and validation. In: WWW, pp. 707–719 (2016)",
+              "DOI": "10.1145/2872427.2883002"
+            },
+            {
+              "issue": "2",
+              "key": "572_CR21",
+              "doi-asserted-by": "publisher",
+              "first-page": "5",
+              "DOI": "10.1145/3068777.3068781",
+              "volume": "18",
+              "author": "K Shu",
+              "year": "2017",
+              "unstructured": "Shu, K., Wang, S., Tang, J., Zafarani, R., Liu, H.: User identity linkage across online social networks: a review. ACM SIGKDD Explorations Newsletter 18(2), 5–17 (2017)",
+              "journal-title": "ACM SIGKDD Explorations Newsletter"
+            },
+            {
+              "key": "572_CR22",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Tan, S., Guan, Z., Cai, D., Qin, X., Bu, J., Chen, C.: Mapping users across networks by manifold alignment on hypergraph. In: AAAI, vol. 14, pp. 159–165 (2014)",
+              "DOI": "10.1609/aaai.v28i1.8720"
+            },
+            {
+              "key": "572_CR23",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Tang, J., Qu, M., Mei, Q.: Pte: predictive text embedding through large-scale heterogeneous text networks. In: KDD, pp. 1165–1174 (2015)",
+              "DOI": "10.1145/2783258.2783307"
+            },
+            {
+              "key": "572_CR24",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Tang, J., Qu, M., Wang, M., Zhang, M., Yan, J., Mei, Q.: Line: large-scale information network embedding. In: WWW, pp. 1067–1077 (2015)",
+              "DOI": "10.1145/2736277.2741093"
+            },
+            {
+              "key": "572_CR25",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Xie, M., Yin, H., Wang, H., Xu, F., Chen, W., Wang, S.: Learning graph-based Poi embedding for location-based recommendation. In: CIKM, pp. 15–24 (2016)",
+              "DOI": "10.1145/2983323.2983711"
+            },
+            {
+              "key": "572_CR26",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Yan, M., Sang, J., Mei, T., Xu, C.: Friend transfer: cold-start friend recommendation with cross-platform transfer learning of social knowledge. In: ICME, pp. 1–6 (2013)",
+              "DOI": "10.1109/ICME.2013.6607510"
+            },
+            {
+              "issue": "8",
+              "key": "572_CR27",
+              "first-page": "1248",
+              "volume": "17",
+              "author": "M Yan",
+              "year": "2015",
+              "unstructured": "Yan, M., Sang, J., Xu, C., Hossain, M.S.: Youtube video promotion by cross-network association:@ britney to advertise gangnam style. TMM 17(8), 1248–1261 (2015)",
+              "journal-title": "TMM"
+            },
+            {
+              "issue": "4",
+              "key": "572_CR28",
+              "doi-asserted-by": "publisher",
+              "first-page": "53",
+              "DOI": "10.1145/2957755",
+              "volume": "12",
+              "author": "M Yan",
+              "year": "2016",
+              "unstructured": "Yan, M., Sang, J., Xu, C., Hossain, M.S.: A unified video recommendation by cross-network user modeling. TOMM 12(4), 53 (2016)",
+              "journal-title": "TOMM"
+            },
+            {
+              "key": "572_CR29",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Yang, D., Xiao, Y., Tong, H., Cui, W., Wang, W.: Towards topic following in heterogeneous information networks. In: ASONAM, pp. 363–366 (2015)",
+              "DOI": "10.1145/2808797.2809417"
+            },
+            {
+              "key": "572_CR30",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zafarani, R., Liu, H.: Connecting corresponding identities across communities. pp 354–357 (2009)",
+              "DOI": "10.1609/icwsm.v3i1.13993"
+            },
+            {
+              "key": "572_CR31",
+              "unstructured": "Zhang, J., Philip, S. Y.: Integrated anchor and social link predictions across social networks. In: IJCAI, pp. 2125–2132 (2015)"
+            },
+            {
+              "key": "572_CR32",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhang, J., Kong, X., Philip, S.Y.: Predicting social links for new users across aligned heterogeneous social networks. In: ICDM, pp. 1289–1294 (2013)",
+              "DOI": "10.1109/ICDM.2013.134"
+            },
+            {
+              "key": "572_CR33",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhang, J., Kong, X., Yu, P. S.: Transferring heterogeneous links across location-based social networks. In: WSDM, pp. 303–312 (2014)",
+              "DOI": "10.1145/2556195.2559894"
+            },
+            {
+              "key": "572_CR34",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhang, J., Yu, P.S., Zhou, Z.H.: Meta-path based multi-network collective link prediction. In: KDD, pp. 1286–1295 (2014)",
+              "DOI": "10.1145/2623330.2623645"
+            }
+          ],
+          "container-title": [
+            "World Wide Web"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "http://link.springer.com/content/pdf/10.1007/s11280-018-0572-3.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "http://link.springer.com/article/10.1007/s11280-018-0572-3/fulltext.html",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "http://link.springer.com/content/pdf/10.1007/s11280-018-0572-3.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                7,
+                3
+              ]
+            ],
+            "date-time": "2025-07-03T21:22:24Z",
+            "timestamp": 1751577744000
+          },
+          "score": 45.25441,
+          "resource": {
+            "primary": {
+              "URL": "http://link.springer.com/10.1007/s11280-018-0572-3"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2018,
+                4,
+                23
+              ]
+            ]
+          },
+          "references-count": 34,
+          "journal-issue": {
+            "issue": "6",
+            "published-print": {
+              "date-parts": [
+                [
+                  2019,
+                  11
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "572"
+          ],
+          "URL": "https://doi.org/10.1007/s11280-018-0572-3",
+          "ISSN": [
+            "1386-145X",
+            "1573-1413"
+          ],
+          "issn-type": [
+            {
+              "value": "1386-145X",
+              "type": "print"
+            },
+            {
+              "value": "1573-1413",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2018,
+                4,
+                23
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "30 November 2017",
+              "order": 1,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "27 February 2018",
+              "order": 2,
+              "name": "revised",
+              "label": "Revised",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "11 April 2018",
+              "order": 3,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "23 April 2018",
+              "order": 4,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                16
+              ]
+            ],
+            "date-time": "2025-10-16T06:59:34Z",
+            "timestamp": 1760597974273,
+            "version": "3.40.3"
+          },
+          "publisher-location": "Cham",
+          "reference-count": 13,
+          "publisher": "Springer International Publishing",
+          "isbn-type": [
+            {
+              "type": "print",
+              "value": "9783030553036"
+            },
+            {
+              "type": "electronic",
+              "value": "9783030553043"
+            }
+          ],
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2020-01-01T00:00:00Z",
+                "timestamp": 1577836800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "http://www.springer.com/tdm"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2020,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2020-01-01T00:00:00Z",
+                "timestamp": 1577836800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://www.springer.com/tdm"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "DOI": "10.1007/978-3-030-55304-3_32",
+          "type": "book-chapter",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                8,
+                7
+              ]
+            ],
+            "date-time": "2020-08-07T12:04:03Z",
+            "timestamp": 1596801843000
+          },
+          "page": "621-630",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 3,
+          "title": [
+            "User Identity Linkage Across Social Networks via Community Preserving Network Embedding"
+          ],
+          "prefix": "10.1007",
+          "author": [
+            {
+              "given": "Xiaoyu",
+              "family": "Guo",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Yan",
+              "family": "Liu",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Lian",
+              "family": "Liu",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Guangsheng",
+              "family": "Zhang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Jing",
+              "family": "Chen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Yuan",
+              "family": "Zhao",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2020,
+                8,
+                6
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "32_CR1",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhang, J., Yu, P., Zhou, Z.: Meta-path based multi-network collective link prediction. In: The 20th International Conference on Knowledge Discovery and Data, pp. 1286–1295. ACM (2014)",
+              "DOI": "10.1145/2623330.2623645"
+            },
+            {
+              "key": "32_CR2",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Shu, K., Wang, S., Tang, J., Zafarani, R., Liu, H.: User identity linkage across online social networks: a review. In: SIGKDD Explorations Newsletter, pp. 5–17. ACM (2017)",
+              "DOI": "10.1145/3068777.3068781"
+            },
+            {
+              "key": "32_CR3",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Liu, J., Zhang, F., Song, X., Song, Y., Lin, C., Hon, H.: What’s in a name? An unsupervised approach to link users across communities. In: The 6th International Conference on Web Search Data Mining, pp. 495–504. ACM (2013)",
+              "DOI": "10.1145/2433396.2433457"
+            },
+            {
+              "key": "32_CR4",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zafarani, R., Liu, H.: Connecting users across social media sites: a behavioral-modeling approach. In: The 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 41–49. ACM (2013)",
+              "DOI": "10.1145/2487575.2487648"
+            },
+            {
+              "key": "32_CR5",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, C., Zhao, Z., Wang, Y., Qin, D., Luo, X., Qin, T.: DeepMatching: a structural seed identification framework for social network alignment. In: The 38th International Conference on Distributed Computing Systems, pp. 600–610. IEEE (2018)",
+              "DOI": "10.1109/ICDCS.2018.00065"
+            },
+            {
+              "key": "32_CR6",
+              "unstructured": "Man, T., Shen, H., Liu, S., Jin, X., Cheng, X.: Predict anchor links across social networks via an embedding approach. In: The 25th International Joint Conference on Artificial Intelligence, pp. 1823–1829. IJCAI (2016)"
+            },
+            {
+              "key": "32_CR7",
+              "unstructured": "Liu, L., Cheung, W., Li, X., Liao, L.: Aligning users across social networks using network embedding. In: The 25th International Joint Conference on Artificial Intelligence, pp. 1774–1780. IJCAI (2016)"
+            },
+            {
+              "key": "32_CR8",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhou, F., Liu, L., Zhang, K., Trajcevski, G., Wu J., Zhong, T.: DeepLink: a deep learning approach for user identity linkage. In: INFOCOM, pp. 1313–1321. IEEE (2018)",
+              "DOI": "10.1109/INFOCOM.2018.8486231"
+            },
+            {
+              "issue": "12",
+              "key": "32_CR9",
+              "doi-asserted-by": "publisher",
+              "first-page": "7821",
+              "DOI": "10.1073/pnas.122653799",
+              "volume": "99",
+              "author": "M Girvan",
+              "year": "2002",
+              "unstructured": "Girvan, M., Newman, M.: Community structure in social and biological networks. Proc. Natl. Acad. Sci. U.S.A. 99(12), 7821–7826 (2002)",
+              "journal-title": "Proc. Natl. Acad. Sci. U.S.A."
+            },
+            {
+              "key": "32_CR10",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bayati, M., Gerritsen, M., Gleich, D., Saberi, A., Wang, Y.: Algorithms for large, sparse network alignment problems. In: ICDM, pp. 705–710. IEEE (2009)",
+              "DOI": "10.1109/ICDM.2009.135"
+            },
+            {
+              "key": "32_CR11",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, X., Cui, P., Wang, J., Pei, J., Zhu, W., Yang, S.: Community preserving network embedding. In: The 31st AAAI, pp. 203–209. AAAI (2017)",
+              "DOI": "10.1609/aaai.v31i1.10488"
+            },
+            {
+              "issue": "23",
+              "key": "32_CR12",
+              "doi-asserted-by": "publisher",
+              "first-page": "8577",
+              "DOI": "10.1073/pnas.0601602103",
+              "volume": "103",
+              "author": "M Newman",
+              "year": "2006",
+              "unstructured": "Newman, M.: Modularity and community structure in networks. Proc. Natl. Acad. Sci. 103(23), 8577–8582 (2006)",
+              "journal-title": "Proc. Natl. Acad. Sci."
+            },
+            {
+              "key": "32_CR13",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Iofciu, T., Fankhauser, P., Abel, F., Bischoff, K.: Identifying users across social tagging systems. In: 5th International AAAI Conference on Weblogs and Social Media, pp. 522–525. ACM (2011)",
+              "DOI": "10.1609/icwsm.v5i1.14153"
+            }
+          ],
+          "container-title": [
+            "Lecture Notes in Computer Science",
+            "Information Security and Privacy"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-3-030-55304-3_32",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2022,
+                11,
+                6
+              ]
+            ],
+            "date-time": "2022-11-06T01:18:41Z",
+            "timestamp": 1667697521000
+          },
+          "score": 45.24983,
+          "resource": {
+            "primary": {
+              "URL": "https://link.springer.com/10.1007/978-3-030-55304-3_32"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "ISBN": [
+            "9783030553036",
+            "9783030553043"
+          ],
+          "references-count": 13,
+          "URL": "https://doi.org/10.1007/978-3-030-55304-3_32",
+          "ISSN": [
+            "0302-9743",
+            "1611-3349"
+          ],
+          "issn-type": [
+            {
+              "type": "print",
+              "value": "0302-9743"
+            },
+            {
+              "type": "electronic",
+              "value": "1611-3349"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "6 August 2020",
+              "order": 1,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ChapterHistory",
+                "label": "Chapter History"
+              }
+            },
+            {
+              "value": "ACISP",
+              "order": 1,
+              "name": "conference_acronym",
+              "label": "Conference Acronym",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Australasian Conference on Information Security and Privacy",
+              "order": 2,
+              "name": "conference_name",
+              "label": "Conference Name",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Perth, WA",
+              "order": 3,
+              "name": "conference_city",
+              "label": "Conference City",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Australia",
+              "order": 4,
+              "name": "conference_country",
+              "label": "Conference Country",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "2020",
+              "order": 5,
+              "name": "conference_year",
+              "label": "Conference Year",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "30 November 2020",
+              "order": 7,
+              "name": "conference_start_date",
+              "label": "Conference Start Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "2 December 2020",
+              "order": 8,
+              "name": "conference_end_date",
+              "label": "Conference End Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "25",
+              "order": 9,
+              "name": "conference_number",
+              "label": "Conference Number",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "acisp2020",
+              "order": 10,
+              "name": "conference_id",
+              "label": "Conference ID",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "http://nsclab.org/acisp2020/",
+              "order": 11,
+              "name": "conference_url",
+              "label": "Conference URL",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Double-blind",
+              "order": 1,
+              "name": "type",
+              "label": "Type",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "easychair",
+              "order": 2,
+              "name": "conference_management_system",
+              "label": "Conference Management System",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "151",
+              "order": 3,
+              "name": "number_of_submissions_sent_for_review",
+              "label": "Number of Submissions Sent for Review",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "31",
+              "order": 4,
+              "name": "number_of_full_papers_accepted",
+              "label": "Number of Full Papers Accepted",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "5",
+              "order": 5,
+              "name": "number_of_short_papers_accepted",
+              "label": "Number of Short Papers Accepted",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "21% - The value is computed by the equation \"Number of Full Papers Accepted / Number of Submissions Sent for Review * 100\" and then rounded to a whole number.",
+              "order": 6,
+              "name": "acceptance_rate_of_full_papers",
+              "label": "Acceptance Rate of Full Papers",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "3,7",
+              "order": 7,
+              "name": "average_number_of_reviews_per_paper",
+              "label": "Average Number of Reviews per Paper",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "4",
+              "order": 8,
+              "name": "average_number_of_papers_per_reviewer",
+              "label": "Average Number of Papers per Reviewer",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "Yes",
+              "order": 9,
+              "name": "external_reviewers_involved",
+              "label": "External Reviewers Involved",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            },
+            {
+              "value": "The conference was held virtually due to COVID-19 pandemic.",
+              "order": 10,
+              "name": "additional_info_on_review_process",
+              "label": "Additional Info on Review Process",
+              "group": {
+                "name": "ConfEventPeerReviewInformation",
+                "label": "Peer Review Information (provided by the conference organizers)"
+              }
+            }
+          ]
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

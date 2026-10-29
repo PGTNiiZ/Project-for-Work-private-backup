@@ -1,0 +1,599 @@
+[
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.8253232152894885,
+        "FN": 2454,
+        "FP": 32,
+        "REVIEW": 502,
+        "TP": 5873,
+        "U": 2568.2,
+        "precision": 0.9945808636748518,
+        "recall": 0.705296024978984
+      },
+      "B1": {
+        "F1": 0.8914883991469009,
+        "FN": 1567,
+        "FP": 112,
+        "REVIEW": 659,
+        "TP": 6897,
+        "U": 1856.9,
+        "precision": 0.984020545013554,
+        "recall": 0.8148629489603024
+      },
+      "B2": {
+        "F1": 0.8891414816795935,
+        "FN": 1575,
+        "FP": 83,
+        "REVIEW": 914,
+        "TP": 6649,
+        "U": 1832.4,
+        "precision": 0.98767082590612,
+        "recall": 0.8084873540856031
+      },
+      "B3": {
+        "F1": 0.8895730156605541,
+        "FN": 1567,
+        "FP": 83,
+        "REVIEW": 939,
+        "TP": 6646,
+        "U": 1826.9,
+        "precision": 0.9876653291722396,
+        "recall": 0.8092049190308048
+      },
+      "GB17_B0": {
+        "F1": 0.8205467372134039,
+        "FN": 2377,
+        "FP": 65,
+        "REVIEW": 884,
+        "TP": 5583,
+        "U": 2595.4,
+        "precision": 0.9884915014164306,
+        "recall": 0.7013819095477387
+      }
+    },
+    "git_blob_sha256": "c6c23600adbe05f6946ccbd6f13fa9cdf1d39185f91dec65d327325b1de8a66d",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "2f066d449aeff13a477ac37bcc72591df50fff7ccc9397bebc875fa063305783",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.8253232152894885,
+        "FN": 2454,
+        "FP": 32,
+        "REVIEW": 502,
+        "TP": 5873,
+        "U": 2568.2,
+        "precision": 0.9945808636748518,
+        "recall": 0.705296024978984
+      },
+      "B1": {
+        "F1": 0.8914883991469009,
+        "FN": 1567,
+        "FP": 112,
+        "REVIEW": 659,
+        "TP": 6897,
+        "U": 1856.9,
+        "precision": 0.984020545013554,
+        "recall": 0.8148629489603024
+      },
+      "B2": {
+        "F1": 0.8891414816795935,
+        "FN": 1575,
+        "FP": 83,
+        "REVIEW": 914,
+        "TP": 6649,
+        "U": 1832.4,
+        "precision": 0.98767082590612,
+        "recall": 0.8084873540856031
+      },
+      "B3": {
+        "F1": 0.8895730156605541,
+        "FN": 1567,
+        "FP": 83,
+        "REVIEW": 939,
+        "TP": 6646,
+        "U": 1826.9,
+        "precision": 0.9876653291722396,
+        "recall": 0.8092049190308048
+      },
+      "GB17_B0": {
+        "F1": 0.8205467372134039,
+        "FN": 2377,
+        "FP": 65,
+        "REVIEW": 884,
+        "TP": 5583,
+        "U": 2595.4,
+        "precision": 0.9884915014164306,
+        "recall": 0.7013819095477387
+      }
+    },
+    "git_blob_sha256": "c6c23600adbe05f6946ccbd6f13fa9cdf1d39185f91dec65d327325b1de8a66d",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "2f066d449aeff13a477ac37bcc72591df50fff7ccc9397bebc875fa063305783",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/process_label_access_audit.json",
+    "line_count": 194,
+    "json_key_selection": {
+      "pre_final_label_value_materializations": 0,
+      "final_evaluation_label_value_materializations": 5
+    },
+    "git_blob_sha256": "f14dd9481b6a4db199565d3347d36378aced1c01daecc814dd94817935aeaa23",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/prediction_immutability.json",
+    "line_count": 5,
+    "json_key_selection": {
+      "match": true
+    },
+    "git_blob_sha256": "37d2c12b88aac0cd2057a8af82b23618a32b8414f8286dc30ae9fdcdc141f4b2",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.8560195926785253,
+        "FN": 2089,
+        "FP": 145,
+        "REVIEW": 4,
+        "TP": 6641,
+        "U": 2379.4,
+        "precision": 0.9786324786324786,
+        "recall": 0.7607101947308132
+      },
+      "B1": {
+        "F1": 0.8884286477819346,
+        "FN": 1523,
+        "FP": 147,
+        "REVIEW": 968,
+        "TP": 6649,
+        "U": 1913.8,
+        "precision": 0.9783696291936433,
+        "recall": 0.8136319138521781
+      },
+      "B2": {
+        "F1": 0.8893091105558183,
+        "FN": 1523,
+        "FP": 116,
+        "REVIEW": 1062,
+        "TP": 6584,
+        "U": 1861.2,
+        "precision": 0.9826865671641791,
+        "recall": 0.8121376588133712
+      },
+      "B3": {
+        "F1": 0.8893091105558183,
+        "FN": 1523,
+        "FP": 116,
+        "REVIEW": 1062,
+        "TP": 6584,
+        "U": 1861.2,
+        "precision": 0.9826865671641791,
+        "recall": 0.8121376588133712
+      },
+      "GB17_B0": {
+        "F1": 0.8580120362409894,
+        "FN": 2060,
+        "FP": 87,
+        "REVIEW": 215,
+        "TP": 6487,
+        "U": 2255.5,
+        "precision": 0.9867660480681473,
+        "recall": 0.758979758979759
+      }
+    },
+    "git_blob_sha256": "a98317339252d0da152a181bf31530762d4766402b347ef78b8d8d2cd902fa19",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "fea8888a97bf305797996e99b50a20d35bcc780aa54c1f197662244d3af3bb0e",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.8560195926785253,
+        "FN": 2089,
+        "FP": 145,
+        "REVIEW": 4,
+        "TP": 6641,
+        "U": 2379.4,
+        "precision": 0.9786324786324786,
+        "recall": 0.7607101947308132
+      },
+      "B1": {
+        "F1": 0.8884286477819346,
+        "FN": 1523,
+        "FP": 147,
+        "REVIEW": 968,
+        "TP": 6649,
+        "U": 1913.8,
+        "precision": 0.9783696291936433,
+        "recall": 0.8136319138521781
+      },
+      "B2": {
+        "F1": 0.8893091105558183,
+        "FN": 1523,
+        "FP": 116,
+        "REVIEW": 1062,
+        "TP": 6584,
+        "U": 1861.2,
+        "precision": 0.9826865671641791,
+        "recall": 0.8121376588133712
+      },
+      "B3": {
+        "F1": 0.8893091105558183,
+        "FN": 1523,
+        "FP": 116,
+        "REVIEW": 1062,
+        "TP": 6584,
+        "U": 1861.2,
+        "precision": 0.9826865671641791,
+        "recall": 0.8121376588133712
+      },
+      "GB17_B0": {
+        "F1": 0.8580120362409894,
+        "FN": 2060,
+        "FP": 87,
+        "REVIEW": 215,
+        "TP": 6487,
+        "U": 2255.5,
+        "precision": 0.9867660480681473,
+        "recall": 0.758979758979759
+      }
+    },
+    "git_blob_sha256": "a98317339252d0da152a181bf31530762d4766402b347ef78b8d8d2cd902fa19",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "fea8888a97bf305797996e99b50a20d35bcc780aa54c1f197662244d3af3bb0e",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/process_label_access_audit.json",
+    "line_count": 309,
+    "json_key_selection": {
+      "pre_final_label_value_materializations": 0,
+      "final_evaluation_label_value_materializations": 10
+    },
+    "git_blob_sha256": "c1cfce14b9abff674325574dfc00a473cbd8f066eaf1aec22e977804dee6ff1a",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/prediction_immutability.json",
+    "line_count": 5,
+    "json_key_selection": {
+      "match": true
+    },
+    "git_blob_sha256": "b8f9bdf6367f1c84b3a820076bf12baed2c93c0bc3ae510eb032d2259a9321a9",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.871551616527275,
+        "FN": 1971,
+        "FP": 87,
+        "REVIEW": 0,
+        "TP": 6982,
+        "U": 2145.0,
+        "precision": 0.9876927429622294,
+        "recall": 0.7798503294984921
+      },
+      "B1": {
+        "F1": 0.8931951905858275,
+        "FN": 1583,
+        "FP": 87,
+        "REVIEW": 660,
+        "TP": 6983,
+        "U": 1823.0,
+        "precision": 0.9876944837340877,
+        "recall": 0.8151996264300724
+      },
+      "B2": {
+        "F1": 0.8919962037329959,
+        "FN": 1583,
+        "FP": 124,
+        "REVIEW": 555,
+        "TP": 7049,
+        "U": 1886.5,
+        "precision": 0.9827129513453228,
+        "recall": 0.8166126042632067
+      },
+      "B3": {
+        "F1": 0.8919962037329959,
+        "FN": 1583,
+        "FP": 124,
+        "REVIEW": 556,
+        "TP": 7049,
+        "U": 1886.6,
+        "precision": 0.9827129513453228,
+        "recall": 0.8166126042632067
+      },
+      "GB17_B0": {
+        "F1": 0.8697494702729651,
+        "FN": 1975,
+        "FP": 115,
+        "REVIEW": 0,
+        "TP": 6978,
+        "U": 2205.0,
+        "precision": 0.983786832087974,
+        "recall": 0.7794035518820507
+      }
+    },
+    "git_blob_sha256": "e6fd5c1ad4bc103745a3bc1350bba73904cd5fcbdcacf8dd2176a93975298fb6",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "baff1a7e5b39edf53a3c00e0d5495d63fe62f6c0785d2c3c96f48834d35053c7",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/summary.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "B0": {
+        "F1": 0.871551616527275,
+        "FN": 1971,
+        "FP": 87,
+        "REVIEW": 0,
+        "TP": 6982,
+        "U": 2145.0,
+        "precision": 0.9876927429622294,
+        "recall": 0.7798503294984921
+      },
+      "B1": {
+        "F1": 0.8931951905858275,
+        "FN": 1583,
+        "FP": 87,
+        "REVIEW": 660,
+        "TP": 6983,
+        "U": 1823.0,
+        "precision": 0.9876944837340877,
+        "recall": 0.8151996264300724
+      },
+      "B2": {
+        "F1": 0.8919962037329959,
+        "FN": 1583,
+        "FP": 124,
+        "REVIEW": 555,
+        "TP": 7049,
+        "U": 1886.5,
+        "precision": 0.9827129513453228,
+        "recall": 0.8166126042632067
+      },
+      "B3": {
+        "F1": 0.8919962037329959,
+        "FN": 1583,
+        "FP": 124,
+        "REVIEW": 556,
+        "TP": 7049,
+        "U": 1886.6,
+        "precision": 0.9827129513453228,
+        "recall": 0.8166126042632067
+      },
+      "GB17_B0": {
+        "F1": 0.8697494702729651,
+        "FN": 1975,
+        "FP": 115,
+        "REVIEW": 0,
+        "TP": 6978,
+        "U": 2205.0,
+        "precision": 0.983786832087974,
+        "recall": 0.7794035518820507
+      }
+    },
+    "git_blob_sha256": "e6fd5c1ad4bc103745a3bc1350bba73904cd5fcbdcacf8dd2176a93975298fb6",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/fairness.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "passed": true,
+      "policy_class_equal": true,
+      "bounds_equal": true,
+      "budget": 12000,
+      "objective": "2*FP+FN+0.1*REVIEW"
+    },
+    "git_blob_sha256": "baff1a7e5b39edf53a3c00e0d5495d63fe62f6c0785d2c3c96f48834d35053c7",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/label_access_audit.json",
+    "line_count": 1,
+    "json_key_selection": {
+      "event_count": 5,
+      "allowed_values": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "phase_values": [
+        "FINAL_EVALUATION"
+      ]
+    },
+    "git_blob_sha256": "73d89cac71b7d373702062468926eed1aa02d5c7262f44dd4d7e6082e92032fb",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/process_label_access_audit.json",
+    "line_count": 424,
+    "json_key_selection": {
+      "pre_final_label_value_materializations": 0,
+      "final_evaluation_label_value_materializations": 15
+    },
+    "git_blob_sha256": "d2f85ab6552e8792198d268b13574aff29cb66cbeb72e46bc925d8ca7779bb38",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  },
+  {
+    "source": "backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/prediction_immutability.json",
+    "line_count": 5,
+    "json_key_selection": {
+      "match": true
+    },
+    "git_blob_sha256": "1ca56d4ac113a4c77f6b040d41f359e100670ef714918edb176bec05d68c4a20",
+    "status": "RESULT_ARTIFACT_FOUND; values transcribed only, NOT INDEPENDENTLY_VERIFIED"
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "url": "https://doi.org/10.5220/0005176000050013",
+  "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>"
+}

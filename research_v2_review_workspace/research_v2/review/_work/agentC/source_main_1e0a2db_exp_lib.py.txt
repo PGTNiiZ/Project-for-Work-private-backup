@@ -1,0 +1,55 @@
+
+## main@1e0a2db:exp_lib.py
+24: CACHE = EXP / "scored_pairs_enriched.parquet"
+25: 
+26: TOTAL_POS_FULL = 29247      # คู่จริงทั้งหมดจาก ground truth (user_folder)
+27: TEST_PCT = 30               # hash % 100 < 30 -> test
+28: NSIM_MIN_SCORE = 0.5        # ต่ำกว่านี้ decision เป็น NO_MATCH เสมอ (t_r >= 0.5) ไม่ต้องคำนวณ name_sim
+29: 
+30: # รหัส decision แบบ int ให้ GA เร็ว
+87:     keys = folder.where(folder != "", "pid:" + folder.index.astype(str))
+88:     prof_split = keys.map(bucket)
+89:     sa = dec["profile_id_a"].map(prof_split)
+90:     sb = dec["profile_id_b"].map(prof_split)
+91:     dec["split"] = np.where(sa == sb, sa, "drop")
+92: 
+93:     # name_sim เฉพาะคู่ scored ที่ score >= NSIM_MIN_SCORE
+94:     need = (dec["decision_source"] != "AUTO_EXACT") & (dec["score"] >= NSIM_MIN_SCORE)
+95:     idx = dec.index[need]
+96:     ua = _clean_names(prof["userName"].reindex(dec.loc[idx, "profile_id_a"]))
+123:         consts[sp] = dict(
+124:             tp_exact=tp_exact, fp_exact=fp_exact, fn_blocking=fn_block,
+125:             total_pos=int((sc.actual == 1).sum()) + tp_exact + fn_block,
+126:             n_scored=len(sc))
+127:     return consts
+128: 
+129: 
+130: def evaluate(decision_code, actual, consts):
+131:     """harness กลาง — decision_code: array int (0/1/2) ของ scored pairs, consts: dict ของ split นั้น"""
+132:     fp = int(((decision_code == MATCH) & (actual == 0)).sum()) + consts["fp_exact"]
+135:     rev = int((decision_code == REVIEW).sum())
+136:     prec = tp / (tp + fp) if tp + fp else 0.0
+137:     rec = tp / consts["total_pos"] if consts["total_pos"] else 0.0
+138:     f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0.0
+139:     return dict(TP=tp, FP=fp, FN=fn, REVIEW=rev,
+164: 
+165: 
+166: def build_nested_entity_split(cache: pd.DataFrame, seed: int = 42,
+167:                               entity_keys: pd.Series | None = None) -> tuple[pd.DataFrame, dict]:
+168:     """Create entity-disjoint model, calibration, GA-validation, and test pair roles."""
+191:     outer_test = out["split"].to_numpy() == "test"
+192:     split[outer_test] = "test"
+193:     same_dev_role = (out["split"].to_numpy() == "val") & (a_role.to_numpy() == b_role.to_numpy())
+194:     split[same_dev_role] = a_role.to_numpy()[same_dev_role]
+195:     out["experiment_split"] = split
+196: 
+221:     return out, manifest
+222: 
+223: def nested_split_constants(cache: pd.DataFrame, seed: int = 42) -> dict:
+224:     """Compute exact-tier and blocking constants for an assigned nested split."""
+225:     if "experiment_split" not in cache:
+242:             "fp_exact": int((exact["actual"] == 0).sum()),
+243:             "fn_blocking": fn_blocking,
+244:             "total_pos": int((scored["actual"] == 1).sum()) + tp_exact + fn_blocking,
+245:             "n_scored": int(len(scored)),
+246:         }

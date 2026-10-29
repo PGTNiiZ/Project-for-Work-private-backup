@@ -1,0 +1,1673 @@
+Heterogeneity in Entity Matching: A Survey and Experimental Analysis
+Report GitHub Issue
+×
+Title:
+Content selection saved. Describe the issue below:
+Description:
+Submit without GitHub
+Submit in GitHub
+arXiv is now an independent nonprofit!
+Learn more
+×
+Back to arXiv
+License: CC BY 4.0
+arXiv:2508.08076v1 [cs.DB] 11 Aug 2025
+Heterogeneity in Entity Matching: A Survey and Experimental Analysis
+Mohammad Hossein Moslemi
+†
+†
+thanks:
+University of Western Ontario, Canada.
+†
+†
+thanks:
+mohammad.moslemi@uwo.ca
+Amir Mousavi
+†
+†
+thanks:
+University of Texas at San Antonio, USA.
+seyedamir.mousavi@my.utsa.edu
+Behshid Behkamal
+1
+1
+footnotemark:
+1
+†
+†
+thanks:
+behshid.behkamal@uwo.ca
+Mostafa Milani
+1
+1
+footnotemark:
+1
+†
+†
+thanks:
+mostafa.milani@uwo.ca
+Abstract
+Entity matching (EM) is a fundamental task in data integration and analytics, essential for identifying records that refer to the same real-world entity across diverse sources. In practice, datasets often differ widely in structure, format, schema, and semantics, creating substantial challenges for EM. We refer to this setting as
+Heterogeneous EM (HEM)
+.
+This survey offers a unified perspective on HEM by introducing a taxonomy, grounded in prior work, that distinguishes two primary categories—
+representation
+and
+semantic heterogeneity
+—and their subtypes. The taxonomy provides a systematic lens for understanding how variations in data form and meaning shape the complexity of matching tasks. We then connect this framework to the
+FAIR principles
+—
+Findability
+,
+Accessibility
+,
+Interoperability
+, and
+Reusability
+—demonstrating how they both reveal the challenges of HEM and suggest strategies for mitigating them.
+Building on this foundation, we critically review recent EM methods, examining their ability to address different heterogeneity types, and conduct targeted experiments on state-of-the-art models to evaluate their robustness and adaptability under semantic heterogeneity. Our analysis uncovers persistent limitations in current approaches and points to promising directions for future research, including multimodal matching, human-in-the-loop workflows, deeper integration with large language models and knowledge graphs, and fairness-aware evaluation in heterogeneous settings.
+†
+†
+This is a preprint. The final version may be available via the publisher upon acceptance.
+Keywords:
+Entity Matching, Entity Resolution, Data Heterogeneity
+1
+Introduction
+Entity Matching (EM) has long been a fundamental component of data integration, cleaning, and analytics pipelines. Although recent advances—especially in deep learning and AI—have accelerated progress
+[
+11
+,
+16
+,
+41
+]
+, EM systems continue to struggle in real-world deployments. High-performing models trained on clean, benchmark datasets struggle to generalize when exposed to messy, noisy, and heterogeneous data found in practice. These failures are not incidental; they stem from a pervasive and under-addressed challenge:
+data heterogeneity
+. Differences in formats (e.g., dates, units), schemas (e.g., attribute names, nesting), terminology (e.g., synonyms, language), and data quality (e.g., missing or inconsistent values) introduce mismatches in structure, semantics, and quality between development and deployment settings. Such heterogeneity undermines blocking, feature extraction, and similarity computation, leading to degraded performance across the entire EM pipeline. Even recent deep learning-based methods, which perform well on standard benchmarks, suffer sharp drops in accuracy when applied across domains with varying schema or semantics
+[
+50
+,
+39
+]
+.
+While heterogeneity in data is well-recognized across many domains—including information retrieval
+[
+69
+]
+, geospatial systems
+[
+27
+]
+, the Internet of Things
+[
+2
+]
+, and big data analytics
+[
+6
+]
+—it poses particularly acute and evolving challenges in EM. Historically, heterogeneity in EM has been handled under themes such as schema matching
+[
+63
+]
+,
+duplicate record detection
+[
+20
+]
+, and semantic integration
+[
+14
+]
+,
+typically focusing on specific dimensions like attribute alignment mismatches or lexical variation. However, the modern data landscape—characterized by large-scale, semi-structured and unstructured sources from the web, data lakes, IoT devices, and enterprise systems—introduces more complex and compounded forms of heterogeneity. These include variation in data formats (e.g., JSON, XML, relational), schemas, semantics, language, granularity, and data quality. In this context, mismatches in data models and semantic assumptions severely complicate schema alignment, feature extraction, and record linkage
+[
+5
+]
+. These challenges call for EM methods that are explicitly robust to heterogeneity, and for a systematic understanding of the many forms that heterogeneity can now take in practice.
+To address this challenge, we argue that categorizing and systematically studying data heterogeneity is essential for advancing the design, evaluation, and deployment of EM systems. A principled taxonomy of heterogeneity is useful for organizing prior work and also enables several concrete benefits in the design and assessment of EM systems. First, it guides the development of
+targeted model architectures
+, allowing practitioners to align method design with the expected types of heterogeneity. Prior work has demonstrated that different model families excel under specific types of heterogeneity—for example, transformer-based architectures have shown robustness to semantic variation such as synonyms and abbreviations
+[
+17
+,
+9
+,
+73
+]
+, while graph-based methods are effective at capturing structural mismatches across schemas
+[
+87
+,
+78
+,
+72
+,
+36
+]
+. Building on this foundation, our paper provides new experimental evidence supporting the need for heterogeneity-aware modeling.
+Second, such a taxonomy enables
+component-level stress testing
+, in which researchers can evaluate how EM methods respond to controlled semantic or structural mismatch at different stages of the pipeline—from blocking to similarity computation to final classification. Third, it supports the construction of
+heterogeneity-aware benchmarks
+and perturbation-based evaluation frameworks. Finally, an explicit understanding of heterogeneity contributes to
+uncertainty quantification
+and
+robustness analysis
+, which are increasingly critical for deploying EM systems in high-stakes domains such as healthcare, scientific data integration, and finance.
+This paper presents a survey of recent methods in entity matching, with a specific focus on how they address the challenges introduced by data heterogeneity. Unlike prior surveys that cover traditional EM techniques
+[
+63
+]
+, deep learning approaches
+[
+3
+,
+41
+,
+38
+]
+, blocking strategies
+[
+56
+]
+, or benchmarking frameworks
+[
+35
+,
+28
+,
+79
+]
+, our work takes a fundamentally different perspective by placing
+heterogeneity
+at the center of analysis. We develop a hierarchical taxonomy that characterizes common forms of representation and semantic heterogeneity in EM, and we use this taxonomy to organize and critique recent EM models. Complementing the survey, we conduct targeted experiments that evaluate the robustness of state-of-the-art models under controlled semantic heterogeneity conditions. To our knowledge, this is the first work to both systematically classify heterogeneity types in EM and empirically analyze how these variations affect model behavior. Our goal is to establish heterogeneity as a first-class concern in EM research and to provide a foundation for more robust, generalizable, and transparent EM systems.
+One of the most significant recent shifts in the EM landscape is the increasing influence of large language models (LLMs) and generative AI. These models offer new capabilities that are particularly relevant for addressing semantic heterogeneity, a core challenge in modern EM. Pretrained models such as BERT and GPT have demonstrated strong abilities to capture lexical and contextual variation through transfer learning, reducing the need for hand-crafted features or schema-specific engineering
+[
+39
+]
+. More recently, prompting and instruction tuning have enabled the use of foundation models for zero- or few-shot entity resolution
+[
+19
+]
+, making it possible to generalize across domains without extensive retraining. These trends suggest that foundation models are poised to play a growing role in heterogeneity-aware EM—a theme we revisit in detail later in the survey.
+The study of heterogeneity in EM also has significant implications for data governance and interoperability, particularly in the context of the
+FAIR
+principles for scientific data management—ensuring that data is Findable, Accessible, Interoperable, and Reusable
+[
+84
+]
+. Heterogeneity presents direct challenges to achieving FAIR compliance, especially when integrating records across fragmented, inconsistent, or mismatched sources. Conversely, EM methods that are explicitly designed to handle such heterogeneity can act as critical enablers of FAIRification by enhancing schema alignment, disambiguation, and record linkage. Throughout this paper, we emphasize the mutual relationship between EM and FAIR, and show how heterogeneity-aware EM systems contribute to building more trustworthy, transparent, and reusable data infrastructures.
+Our paper makes the following contributions:
+•
+We introduce a hierarchical taxonomy of data heterogeneity in EM, distinguishing between
+representation heterogeneity
+(e.g., format, schema) and
+semantic heterogeneity
+(e.g., language, granularity, quality). This taxonomy serves as a conceptual tool for analyzing where and how EM systems break down in heterogeneous settings.
+•
+We systematically survey and categorize recent EM methods through the lens of this taxonomy, revealing how different model classes—rule-based, neural, and graph-based—address (or fail to address) specific forms of heterogeneity, and identifying patterns and gaps in current research.
+•
+We develop and release a benchmark for evaluating semantic heterogeneity in EM, which we use to stress-test state-of-the-art models under controlled variations. Our experiments expose failure modes, highlight robustness differences between architectures, and demonstrate that existing benchmarks often mask these limitations.
+•
+We synthesize the insights from both the survey and experiments into practical recommendations for designing heterogeneity-aware EM systems, and we outline directions for future research, including evaluation protocols, benchmark design, and architectural innovations.
+The rest of the paper is organized as follows. In Section
+2
+, we introduce our taxonomy of data heterogeneity in EM. Section
+3
+surveys recent EM methods and analyzes their capabilities and limitations with respect to different types of heterogeneity. Section
+4
+discusses the relationship between EM and the FAIR data principles, highlighting how heterogeneity-aware EM methods can support FAIRification. Section
+5
+presents our experimental framework and results. Section
+6
+concludes by outlining future directions, including the role of large language models in handling heterogeneity.
+2
+A Framework for Classifying HEM
+To systematically analyze heterogeneity in HEM, we categorize it into two main types:
+representation heterogeneity
+and
+semantic heterogeneity
+. Representation heterogeneity refers to differences in how data is structured or encoded across sources—for example, variations in modalities (text vs. images), file formats (JSON vs. XML), or schema organization
+[
+63
+,
+44
+]
+. In contrast, semantic heterogeneity arises when data carries different meanings or interpretations despite structural alignment, often due to differences in terminology, context, granularity, or data quality. This distinction builds on foundational work in data integration
+[
+63
+,
+4
+,
+44
+]
+and offers a practical framework for identifying and addressing the diverse sources of variation that affect EM pipelines. Figure
+1
+presents our taxonomy, which organizes both categories into subtypes commonly observed in real-world EM scenarios. We elaborate on each category in the sections that follow.
+{forest}
+Figure 1
+:
+Taxonomy of heterogeneity in entity matching (HEM), including representation- and semantic-level variation.
+2.1
+Representation Heterogeneity
+Representation heterogeneity encompasses the structural and syntactic differences that occur when datasets use different modalities, formats, or schema designs to describe entities. These differences can disrupt every stage of the EM pipeline—from feature extraction to similarity computation—by introducing incompatibilities in how records are organized or encoded. For example, one dataset might store product data as nested JSON objects, while another uses flat CSV files. Even when datasets describe the same entities, format mismatches and inconsistent attribute organization can hinder alignment. Addressing representation heterogeneity typically requires schema matching, format normalization, or modality-specific processing techniques. We break this category into three subtypes:
+•
+Multimodality:
+Datasets may include diverse data types—such as text, images, and videos—for describing entities. For instance, e-commerce records may pair textual descriptions with product photos. Aligning entities across modalities requires models that can jointly embed or compare representations across heterogeneous data sources.
+•
+Format Heterogeneity:
+Data may be stored in different syntactic formats, such as JSON, XML, or CSV for text, or JPEG vs. PNG for images
+[
+53
+]
+. Although the semantics may be consistent, structural variation can hinder parsing and alignment.
+•
+Structural (Schema) Heterogeneity:
+This refers to differences in attribute naming, hierarchy, and table structure
+[
+44
+]
+. For example, one dataset may use “price” while another uses “cost”, or may nest address fields differently. Schema matching and ontology-based alignment are common approaches for addressing this form
+[
+13
+]
+.
+While we survey methods for format and structural heterogeneity in Section
+3
+, we give multimodality more attention here due to its unique modeling challenges. Multimodal EM typically involves two steps: (1) multimodal entity recognition, identifying entities across modalities, and (2) multimodal linking, associating those entities to a shared identity.
+Several recent works explore solutions in this space. Yu et al.
+[
+88
+]
+introduced a multimodal transformer for aligning visual and textual data in social media. Moon et al.
+[
+46
+]
+and Adjali et al.
+[
+1
+]
+enhance entity disambiguation using image-text pairs. Gan et al.
+[
+25
+]
+proposed the M3EL dataset for benchmarking visual-textual matching. Recent architectural advances include MIMIC
+[
+80
+]
+, which models multi-grained interactions, and MAF
+[
+86
+]
+, which enables cross-modal alignment through flexible attention mechanisms. Together, these works show the promise of multimodal transformers and contrastive objectives in handling complex cross-modal EM tasks.
+2.2
+Semantic Heterogeneity
+Semantic heterogeneity arises when data shares structure or format but diverges in meaning or interpretation. This is a core challenge in EM because it undermines similarity measures and alignment logic. We group common sources of semantic heterogeneity as follows:
+•
+Language and Terminology Differences:
+Different datasets may use alternate terms or languages for the same concept. For instance, “mobile phone” vs. “cellular device” or “prix” (French) vs. “price”. Techniques such as synonym expansion, translation, and vocabulary alignment help address this
+[
+21
+,
+63
+]
+.
+•
+Contextual Variability:
+The same term may have different meanings depending on context (e.g., “apple” as fruit vs. company). Handling this requires context-aware models such as BERT
+[
+12
+]
+or ELMo
+[
+60
+]
+, which embed tokens based on usage.
+•
+Granularity and Resolution:
+Datasets may differ in how detailed their records are. One might record locations at the country level, another at the neighborhood level. Aggregation/disaggregation techniques and ontology alignment are common remedies
+[
+30
+]
+.
+•
+Temporal Variability:
+Semantics can shift over time or differ due to timing. For example, product prices or job roles may change, making record alignment time-sensitive
+[
+15
+,
+70
+]
+. EM systems must consider temporal validity or versioning.
+•
+Data Quality:
+Incomplete, noisy, or inconsistent records introduce semantic ambiguity. Typos, outdated values, or missing fields disrupt both training and inference. Addressing this often involves data cleaning, imputation, or robust training methods
+[
+64
+,
+61
+]
+.
+Early database work recognized these challenges in federated systems
+[
+67
+]
+, and Semantic Web research later addressed ontology alignment
+[
+21
+]
+. Today, modern EM methods incorporate contextual modeling, domain adaptation, and knowledge resources to address semantic heterogeneity—topics we explore in depth in Section
+3
+.
+3
+Review of HEM and Related Research Areas
+To systematically review existing EM methods in relation to heterogeneity, we adopted a multi-step process. We first identified a set of key research areas that are central to managing heterogeneity in EM. These include
+schema matching and structural heterogeneity
+,
+representation learning and semantic embeddings
+,
+deep learning and graph neural networks
+,
+knowledge bases
+,
+transfer learning and domain adaptation
+,
+active learning
+,
+data lakes
+, and
+LLMs
+. These topics were selected not only for their relevance to HEM but also for their prominence in recent EM research. We then collected and reviewed articles published since 2019 that address EM in the context of any of these areas. Our selection focused on peer-reviewed papers from leading venues in data management, artificial intelligence, and machine learning. We excluded theses, posters, and articles that did not explicitly engage with heterogeneity. From an initial pool of 122 articles, we identified 31 core studies that directly address HEM, with particular emphasis on semantic heterogeneity and its intersections with structural and format heterogeneity, given their frequent overlap in practical EM settings.
+3.1
+Schema Matching and Structural Heterogeneity
+Schema matching is a longstanding focus in data integration and is widely used in EM to address format and structural heterogeneity
+[
+63
+]
+. Recent research has expanded this view, introducing new benchmarks and algorithms to better handle heterogeneous schemas in modern EM settings.
+One such contribution is
+Machamp
+[
+79
+]
+, which introduces a benchmark for Generalized Entity Matching (GEM). Unlike earlier EM benchmarks that assume structured data with aligned schemas, Machamp includes tasks involving structured, semi-structured (e.g., JSON), and unstructured (e.g., text) data. It covers seven real-world scenarios that reflect schema mismatches, such as matching relational with semi-structured or textual data. By repurposing and transforming existing datasets, Machamp evaluates model robustness under schema and semantic variation. Experiments reveal substantial performance drops for deep models like BERT and DITTO in heterogeneous settings, underscoring the need for more schema-agnostic techniques.
+Addressing this need,
+HERA
+[
+42
+]
+proposes a different paradigm for entity resolution. Instead of first aligning schemas, HERA operates directly on heterogeneous records, reducing information loss from premature schema integration. It uses a novel compare-and-merge process to iteratively build “super records,” combining both instance-based and schema-based similarity signals. An indexing structure supports efficient candidate generation and similarity computation. Empirical results show that HERA significantly outperforms state-of-the-art methods, particularly when schema heterogeneity is high and schema mapping is lossy.
+GraphER
+[
+36
+]
+also avoids explicit schema alignment by adopting a token-centric model built on Graph Convolutional Networks (GCNs). It constructs an Entity Record Graph (ER-Graph) that encodes relationships between records, attributes, and tokens. Through a two-layer GCN, GraphER jointly learns structural and semantic token embeddings, enabling fine-grained token-level comparisons without fixed attribute alignment. Evaluations on standard benchmarks show that GraphER consistently outperforms baseline models, especially in cases with diverse or sparse schemas.
+3.2
+Representation Learning and Semantic Embeddings
+Representation learning has become foundational to modern EM, especially with the rise of deep neural models. Unlike static feature extraction, representation learning automatically identifies latent patterns that are most predictive for matching, enabling comparisons across diverse formats, schemas, and domains. Among these techniques, semantic embeddings—such as Word2Vec, GloVe, and BERT—encode the contextual meaning of tokens, attributes, and records. This makes them especially effective for resolving semantic heterogeneity, such as synonymy, polysemy, and language variation. Most recent EM systems use some form of learned representations to handle heterogeneity in both structure and meaning.
+A leading example is
+DITTO
+[
+40
+]
+, which fine-tunes Transformer-based models such as BERT and RoBERTa for EM tasks. Framing EM as a sequence-pair classification problem, DITTO uses contextual embeddings to capture language structure and relational cues. Its performance is further improved by (1) domain knowledge injection to highlight key tokens, (2) TF-IDF summarization to handle long records, and (3) data augmentation to enhance robustness. These design choices reduce dependency on large labeled datasets and allow the model to generalize across schemas without requiring attribute alignment.
+Extending this line of work,
+HierGAT
+[
+87
+]
+introduces a Hierarchical Graph Attention Transformer that models entities, attributes, and tokens through a layered graph structure. It uses a combination of self-attention and graph attention to learn multi-level contextual embeddings. The model addresses challenges like polysemous terms, attribute salience, and noisy input by capturing both semantic and relational dependencies. HierGAT demonstrates strong performance on “dirty” datasets, showing robustness to data quality issues.
+Beyond direct EM methods, several systems advance representation learning for heterogeneous data integration.
+Termite
+[
+22
+]
+learns a shared embedding space over structured and unstructured data, embedding rows, columns, and text snippets into a unified latent space. Its Termite-Join operator enables cross-format querying without schema alignment. Similarly,
+EmbDI
+[
+10
+]
+constructs embeddings using a tripartite graph over tokens, attributes, and tuples. Through random walks, it generates a corpus for training embeddings that encode both structural and semantic relationships, supporting robust matching even with noisy or sparse input.
+Several recent models explicitly target multi-task and contrastive representation learning for EM.
+Unicorn
+[
+77
+]
+trains a unified Transformer encoder jointly across EM, schema matching, entity linking, and ontology alignment, transferring knowledge across tasks.
+Sudowoodo
+[
+82
+]
+adopts a contrastive self-supervised pretext task to learn record embeddings without labels, which are later fine-tuned for EM and other integration tasks. Both works emphasize generalizability across domains and low-resource settings, offering pathways to reduce manual supervision in EM.
+Complementing these architectures,
+[
+89
+]
+provide an empirical comparison of twelve off-the-shelf embeddings, including FastText, SBERT, and various BERT variants, across blocking and matching tasks. Surprisingly, they find that cosine similarity over frozen embeddings often rivals fine-tuned deep models, depending on dataset properties. These insights help practitioners select efficient and effective embedding strategies for heterogeneous matching scenarios.
+EM Transformer
+[
+9
+]
+evaluates four transformer architectures—BERT, RoBERTa, XLNet, and DistilBERT—on noisy and textual EM datasets. Framed as sequence-pair classification, the models outperform classical baselines like DeepMatcher and Magellan. Their ability to handle long, unstructured records and adapt through fine-tuning underscores the strength of transformers for managing both schema and semantic heterogeneity in modern EM.
+3.3
+Deep Learning and Graph Neural Networks
+Deep learning methods, including Graph Neural Networks (GNNs), have become central to recent advances in EM, offering scalable ways to handle complex heterogeneity. As summarized in surveys
+[
+3
+,
+41
+,
+38
+]
+, these methods automatically learn relevant features across diverse modalities and data structures, reducing the need for manual feature engineering. Transformer-based models capture semantic and structural patterns in text, tables, and mixed data, while attention mechanisms enable fine-grained schema alignment. GNNs further extend this by modeling relational dependencies between records, attributes, and entities, directly addressing structural and relational heterogeneity.
+R-SupCon
+[
+58
+]
+introduces a supervised contrastive pretraining strategy for transformers. The model pulls together records referring to the same product and pushes apart unrelated ones. To handle missing product IDs, it employs a source-aware sampling strategy. After contrastive training, the encoder is fine-tuned with labeled pairs, achieving state-of-the-art F1 scores on several e-commerce datasets. This approach exemplifies deep metric learning applied to EM.
+EMBA
+[
+92
+]
+presents a multi-task BERT-based architecture that predicts both record matches and shared entity IDs. It incorporates an attention-over-attention layer to emphasize token interactions critical to each task, improving both classification and resolution performance.
+Seq2SeqMatcher
+[
+51
+]
+treats EM as a token-level sequence-to-sequence problem. Its align-compare-aggregate neural architecture handles schema and format heterogeneity by resolving attribute mismatches and managing noisy data.
+Graph-based models have shown particular promise for heterogeneous settings.
+LinKG
+[
+91
+]
+offers a scalable framework for linking heterogeneous entity graphs. It combines LSTM-based encoding for textual data, locality-sensitive hashing for scalability, and heterogeneous graph attention networks to resolve ambiguous links. Its deployment in Microsoft Academic Search highlights its practical effectiveness.
+HierMatcher
+[
+24
+]
+introduces a hierarchical network that models entities at token, attribute, and entity levels. It combines cross-attribute token alignment, attribute-aware attention, and entity-level aggregation, addressing heterogeneity due to non-aligned attributes and noisy or missing data.
+RELATER
+[
+34
+]
+applies graph-based reasoning to handle dynamic relationships and temporal heterogeneity. It propagates positive evidence and applies temporal constraints as negative signals, refining clusters in datasets with evolving attributes. While it does not explicitly use GNNs, its reasoning mechanisms align with GNN principles.
+ED-GNN
+[
+78
+]
+directly applies GNNs—such as GraphSAGE, R-GCN, and MAGNN—for medical entity disambiguation. It targets terminology and context variation through relational modeling, showing strong performance in domain-specific EM.
+GTA
+[
+17
+]
+combines graph contrastive learning with Transformers. It constructs hybrid graphs for dual-level matching and multi-granularity interaction, achieving high accuracy by jointly leveraging semantic embeddings and relational structure.
+3.4
+Leveraging Knowledge Bases
+Knowledge bases (KBs) play a critical role in addressing semantic and structural heterogeneity in EM by providing external context and structured representations of entities, relationships, and concepts. Structured KBs such as DBpedia, Wikidata, and domain-specific ontologies help resolve terminology mismatches, schema inconsistencies, and ambiguities in meaning. These sources encode synonymy, polysemy, and hierarchical relationships, enabling more precise alignment of records across heterogeneous datasets. When incorporated into EM pipelines, KBs can support both attribute-level and entity-level matching, enhancing robustness in high-variability settings. Additionally, unstructured or semi-structured sources—such as textual corpora and web data—complement structured KBs by offering further semantic signals useful for disambiguation and contextual matching.
+Most work in this space focuses on applying EM techniques within or between knowledge graphs, with less attention given to how external KBs can broadly support EM tasks. Below, we summarize several notable contributions that integrate KBs with EM systems to handle diverse forms of heterogeneity.
+CrossKG
+[
+75
+]
+tackles the problem of entity alignment across different knowledge graphs. It introduces an embedding-based model that maps entities into a shared latent space by generating attribute character embeddings. The method uses transitivity-based enrichment over attribute triples to improve semantic alignment. Experimental results show significant gains in cross-graph alignment accuracy, illustrating its effectiveness in resolving semantic inconsistencies and supporting integration across heterogeneous knowledge graphs.
+Ontological Graph Keys (
+OGKs
+)
+[
+43
+]
+extend conventional graph key techniques to support ontological subgraph matching. Unlike syntactic key matching, OGKs leverage external ontologies to detect semantically equivalent but syntactically divergent entities. The authors also introduce scalable algorithms, including a budgeted Chase procedure to efficiently manage computation costs. This approach addresses semantic heterogeneity and attribute-level inconsistencies, making it well-suited for complex EM scenarios.
+Bornemann et al.
+[
+7
+]
+examine a more nuanced form of semantic heterogeneity by exploring role alignment in temporal knowledge bases. Their framework models entities with dynamic roles—e.g., “Joe Biden” as both President and Commander-in-Chief—using time-stamped constraints to infer equivalence over time. This allows EM systems to incorporate temporal reasoning when resolving evolving entity states.
+CollectiveEA
+[
+90
+]
+proposes a collective entity alignment framework that incorporates structural, semantic, and string-based similarity features. It treats entity alignment as a stable matching problem and solves it using the deferred acceptance algorithm. The model is tested on both cross-lingual and monolingual benchmarks, showing strong results and demonstrating its ability to address both structural and semantic heterogeneity in knowledge-graph-based EM.
+3.5
+Transfer Learning and Domain Adaptation
+Transfer learning and domain adaptation have become powerful tools for tackling HEM, particularly in scenarios with limited labeled data or significant domain shifts. Transfer learning enables models to reuse knowledge learned from large, general-purpose datasets by fine-tuning them on smaller, domain-specific EM tasks. This helps in aligning terminology, language, and semantic patterns across datasets. Domain adaptation complements this by explicitly addressing discrepancies between source and target domains—such as differences in data schemas, vocabulary, or structure—using techniques like adversarial training, domain-specific embeddings, and distribution alignment. Together, these methods reduce the need for task-specific supervision while improving generalization across heterogeneous sources.
+Auto-EM
+[
+93
+]
+introduces a transfer learning framework for EM by leveraging deep models pre-trained on large-scale knowledge bases. It uses a hierarchical neural network to pre-train entity-specific models (e.g., for locations, organizations) using rich synonyms and contextual information. These models can be fine-tuned or directly applied to new tasks, reducing reliance on labeled data. Auto-EM effectively aligns semantically similar entities and adapts across entity types, demonstrating strong performance on diverse EM benchmarks.
+AdaMEL
+[
+33
+]
+presents a deep transfer learning method for multi-source entity linkage. It employs attribute-level self-attention to capture the importance of individual features, while domain adaptation mechanisms allow generalization across different distributions. The model supports integrating labeled data from multiple domains, enhancing accuracy and robustness. AdaMEL effectively addresses both semantic heterogeneity (e.g., terminology shifts) and representation heterogeneity (e.g., format or attribute variation).
+DAME
+[
+74
+]
+tackles domain shift by modeling EM as a mixture-of-experts framework. Each domain expert specializes in a particular source, and a shared global model aggregates their knowledge. DAME uses adversarial training and attention mechanisms to bridge domains and performs well even in zero-shot settings. It demonstrates robustness to schema and terminology differences, outperforming models like Ditto and DeepMatcher across benchmarks.
+PromptEM
+[
+81
+]
+adopts a prompt-based approach, framing each record pair as a fill-in-the-blank question for a pre-trained language model. With only a handful of labeled examples, it uses self-training to bootstrap performance under domain shift. PromptEM is particularly well-suited for low-resource settings, where labeled data is scarce or new domains are introduced frequently.
+DADER
+[
+76
+]
+presents a modular domain adaptation framework for EM consisting of: (1) a Feature Extractor for vectorizing entity pairs, (2) a Matcher for predicting links, and (3) a Feature Aligner to minimize distributional gaps between domains. The aligner can be implemented using discrepancy-based methods (e.g., Maximum Mean Discrepancy), adversarial techniques (e.g., Gradient Reversal), or reconstruction-based approaches (e.g., autoencoders). DADER shows consistent improvements in both in-domain and cross-domain settings by learning domain-invariant representations that address both semantic and structural heterogeneity.
+3.6
+Active Learning and Interactive Methods
+Active learning is particularly relevant to HEM due to the increased need for labeled data in complex, heterogeneous environments. Unlike standard EM settings where modest supervision often suffices, HEM demands targeted labeling to handle diversity in schemas, formats, and semantics. Active learning addresses this by selecting the most informative or uncertain record pairs—using strategies like uncertainty sampling or committee-based selection—to maximize model performance with minimal annotation cost.
+Interactive methods complement this by incorporating user feedback into the matching loop. Users can validate matches, correct errors, or guide the system on ambiguous cases. This interactivity helps overcome context-dependent or domain-specific heterogeneity, while also allowing systems to adapt dynamically to evolving schemas and datasets. Together, active learning and interaction provide scalable and human-in-the-loop strategies for robust EM under heterogeneity.
+ALMSER
+[
+62
+]
+introduces a graph-based active learning framework for multi-source EM. It constructs correspondence graphs to identify informative record pairs and uses graph propagation to augment training data. ALMSER improves matching performance across multiple sources, effectively addressing structural and terminological heterogeneity.
+DIAL
+[
+32
+]
+proposes a scalable active learning strategy using an Index-By-Committee framework. It jointly optimizes blocking recall and matching precision, using pre-trained transformers to compute semantic embeddings. DIAL scales to large Cartesian product spaces and shows strong results on multilingual datasets, tackling both semantic and format heterogeneity.
+[
+23
+]
+frame EM as a progressive labeling process, where an oracle (human or system) labels record pairs on demand. Their algorithms optimize recall under a fixed query budget, creating an adaptive feedback loop. Extending this,
+[
+68
+]
+develop a system for querying EM results on specific data subsets without executing a full pipeline. The system dynamically constructs and updates indices to enable low-latency, user-driven exploration.
+Beyond active learning,
+DAEM
+[
+31
+]
+combines adversarial active learning with dynamic blocking. It fills missing textual values using a neural model, selects informative samples for annotation, and uses adversarial examples to improve robustness. DAEM adapts well to heterogeneous schemas and noisy data.
+CollaborER
+[
+26
+]
+introduces a self-supervised framework that generates pseudo-labels and trains matchers collaboratively. It integrates graph and sentence-level features, outperforming existing unsupervised baselines and rivaling supervised models—while addressing both semantic and structural heterogeneity.
+ALWUS
+[
+8
+]
+focuses on unstructured datasets, applying uncertainty sampling to select training pairs. It incorporates NLP features like soft TF-IDF and supports various classifiers, including SVMs and deep networks. ALWUS yields strong performance with limited supervision, particularly on noisy, text-heavy datasets.
+Finally,
+JedAI 2.0
+[
+57
+]
+offers an end-to-end, interactive entity resolution platform. Its GUI allows users to configure workflows, visualize matches, and refine matching strategies. JedAI supports schema-free and loosely structured data, improving usability and performance for HEM in practical scenarios.
+3.7
+LLMs
+LLMs are increasingly prominent in entity matching (EM), offering strong capabilities for handling heterogeneity. Their ability to generalize across tasks and domains makes them highly adaptable to diverse data types and formats. With zero-shot and few-shot learning, LLMs can operate effectively in low-supervision settings—a critical advantage in HEM scenarios where labeled data is often limited. LLMs leverage pre-trained knowledge to align records across differing schemas and semantic contexts, enabling robust performance on complex matching tasks.
+Beyond text, LLMs can reason over multimodal data by integrating heterogeneous input types such as structured tables, numerical fields, and free-text. Retrieval-augmented methods allow dynamic access to external knowledge sources, helping the model adapt to domain-specific vocabulary or evolving context. LLMs can also synthesize training data or provide natural language explanations for match decisions, enhancing both performance and interpretability. These characteristics make them particularly suited for the diverse challenges of heterogeneity in EM.
+Recent work explores a range of LLM-based EM strategies.
+MatchGPT
+[
+59
+]
+examines ChatGPT (gpt3.5-turbo-0301) in zero-shot and in-context settings. It finds that ChatGPT can perform competitively with minimal supervision, particularly when guided by well-designed prompts and matching rules.
+BoostER
+[
+37
+]
+improves the cost-efficiency of LLM-driven EM by selecting questions that minimize uncertainty, using entropy-based heuristics to balance label quality and API cost.
+FT-LLM
+[
+71
+]
+investigates the fine-tuning of LLMs for EM, showing that structured explanations and example selection significantly enhance in-domain performance, especially for smaller models. However, generalization to new domains remains a challenge.
+COMEM
+[
+83
+]
+proposes a three-pronged framework that leverages LLMs for matching, comparing, and selecting. The “selecting” strategy, which integrates global record context, is particularly effective in complex HEM tasks that require consistency across large datasets.
+Complementing these efforts,
+[
+54
+]
+analyze the internal behavior of BERT-based matchers, studying attention stability, token influence, and sensitivity to input order. Their goal is interpretability rather than performance.
+[
+55
+]
+extend this work by evaluating additional datasets and perturbations, revealing how domain shift, sequence length, and training data size affect transformer-based EM.
+Collectively, these studies highlight the versatility of LLMs in EM, and their promise for addressing the multifaceted challenges of HEM—particularly through prompt engineering, adaptation, and integration with external knowledge sources.
+4
+Entity Matching and the FAIR Principles
+The FAIR principles promote data practices that make information
+Findable
+,
+Accessible
+,
+Interoperable
+, and
+Reusable
+[
+85
+]
+. These guidelines are now widely embraced across scientific and industrial domains to support data sharing, reproducibility, and integration. Central to this vision is the need to link and reuse datasets across organizational and technological boundaries—a task often complicated by the pervasive heterogeneity of real-world data.
+As we have shown, HEM refers to the challenges EM systems face when dealing with representation and semantic differences across datasets. These same heterogeneities pose barriers to FAIRification. Conversely, robust EM techniques—particularly those designed to handle heterogeneity—are essential to realizing FAIR goals. In this section, we unpack this dual relationship: how FAIR principles guide EM under heterogeneity, and how HEM complicates the path to FAIR compliance.
+•
+Findability.
+Findability requires that datasets and metadata be reliably indexed and retrievable by humans and machines, using persistent identifiers and rich, structured metadata. In heterogeneous settings, EM contributes by resolving duplicated or fragmented records and standardizing identifiers across formats. For example, provenance-aware EM pipelines help maintain traceability across sources, a key requirement for persistent findability. However, representation heterogeneity—such as nested JSON in one source versus flat tables in another—can obscure metadata extraction and record indexing. Semantic heterogeneity further complicates discovery when entities are described using inconsistent or ambiguous terms, reducing the effectiveness of search-based retrieval and downstream matching.
+•
+Accessibility.
+Accessibility ensures that data and metadata are retrievable under well-defined protocols, with clear licensing and machine-readable formats. From an EM perspective, accessibility is improved when schemas are consistently documented and attributes are harmonized—tasks that often depend on schema matching and terminology alignment. Methods such as
+GraphER
+[
+36
+]
+and DITTO
+[
+40
+]
+, which handle schema-free or loosely structured inputs, enable flexible access across diverse data representations. Yet, these same structural mismatches hinder accessibility by creating barriers to uniform interpretation, especially when schemas are undocumented or inconsistently applied. Semantic variation adds a second layer of difficulty: identical concepts labeled differently across sources challenge even well-designed APIs and access protocols.
+•
+Interoperability.
+Interoperability aims to ensure that systems and datasets can be combined and understood in a unified manner, relying on shared vocabularies, ontologies, and data models. HEM directly obstructs this goal. For instance, schema heterogeneity requires EM systems to align fields with differing structures or granularity. Ontology-aware methods, such as
+OGKs
+[
+43
+]
+, explicitly target this challenge by using external knowledge to reconcile semantic mismatches. However, full interoperability remains difficult when context-dependent meanings or evolving domain terms cannot be resolved via static vocabularies. EM methods must incorporate contextual embeddings and hierarchical alignment—e.g., as in
+HierGAT
+[
+87
+]
+—to approximate interoperability in the presence of complex heterogeneity.
+•
+Reusability.
+Reusability focuses on enabling future applications of data through clear documentation, quality assurance, and contextual information. High-quality entity matching improves reusability by resolving duplicate records, enriching metadata, and standardizing semantics. For example, contrastive learning-based approaches such as
+Sudowoodo
+[
+82
+]
+enhance latent semantic clustering, making entities easier to reuse across datasets. Nevertheless, HEM undermines reusability when records are noisy, incomplete, or inconsistently annotated. Poor attribute-level matching or unresolved ambiguities in entity identity can propagate downstream, reducing the trustworthiness and utility of integrated datasets. Improving reusability thus requires EM methods to be robust not only to heterogeneity but also to noise and uncertainty.
+FAIR principles provide a valuable lens for diagnosing the challenges of heterogeneity in entity matching. At the same time, HEM-aware EM systems—especially those that use schema-agnostic architectures, semantic embeddings, and provenance tracking—can actively contribute to building FAIR-compliant data infrastructures. Closing this loop between EM and FAIRification is essential for creating transparent, reusable, and trustworthy data systems.
+5
+Experimental Analysis
+This section evaluates recent EM methods under different forms of
+semantic heterogeneity
+, including synonym variation (Sections
+5.2.1
+and
+5.2.2
+), data granularity differences (Section
+5.2.3
+), and dirty or noisy data (Section
+5.2.4
+). These experiments target three key types of semantic heterogeneity: terminology and language, granularity and resolution, and data quality. Results are summarized in Section
+5.2
+. While prior work has studied EM under noise (e.g.,
+[
+40
+]
+), this is the first focused evaluation across these semantic dimensions using recent models.
+5.1
+Experimental Setting
+We first describe the setup and infrastructure used in our experiments. Additional implementation details are available in our repository
+[
+47
+]
+.
+5.1.1
+Datasets and Preparation
+We use six widely studied datasets—
+Abt-Buy
+,
+Company
+,
+Fodor-Zagat
+,
+WDC
+,
+Walmart-Amz
+, and
+iTunes-Amz
+—summarized in Table
+1
+. These datasets span diverse characteristics: small to large sizes (from hundreds to hundreds of thousands of records), structured and textual attributes, and hierarchical fields (e.g., “category” and “brand” in
+Walmart-Amz
+). This diversity allows us to apply all experimental perturbations described in the following sections. Including additional datasets or both clean and noisy variants would expand the study without altering the core findings.
+Dataset
+#Rec (tr/te)
+#Attr.
+#Pairs (tr/te)
+%Pos (tr/te)
+WDC
+24,107 + 4,500
+5
+8,839 + 500
+37% + 11%
+Company
+90,129 + 22,503
+1
+22,560 + 5,640
+25% + 25%
+Abt-Buy
+7,659 + 1,916
+3
+822 + 206
+11% + 11%
+Fodor-Zagat
+757 + 189
+6
+88 + 22
+12% + 12%
+Walmart-Amz
+8,193 + 2,049
+5
+769 + 193
+9% + 9%
+iTunes-Amz
+430 + 109
+8
+105 + 27
+24% + 25%
+Table 1
+:
+Dataset characteristics.
+We prepare the selected datasets by injecting different types of semantic heterogeneity in a controlled manner. Our goal is to evaluate two key properties of EM models:
+robustness
+and
+generalizability
+.
+To test robustness, we introduce heterogeneity into the training data while keeping the test data unchanged. This simulates scenarios where models are trained on heterogeneous datasets. For generalizability, we inject heterogeneity into the test data while using unaltered training data, mimicking deployment in new environments. We consider three heterogeneity types: (1) terminology and language, (2) granularity and resolution, and (3) data quality. We describe each data perturbation below.
+•
+Synonym Injection:
+To simulate semantic heterogeneity from terminology variation, we replace words in textual attributes with contextually appropriate synonyms. This is applied to datasets with rich textual content—
+Abt-Buy
+,
+Company
+, and
+WDC
+. We first extract words from the textual attributes, removing stopwords, numeric tokens, and non-alphabetic terms. We use the KeyBERT library
+[
+29
+]
+to extract candidate keywords, filtering out product names and domain-specific terms.
+To generate synonyms, we compare WordNet
+[
+45
+]
+, BERT
+[
+12
+]
+, and LLMs such as GPT-4 and Gemini against a small manually labeled test set. GPT-4 outperforms all others in contextual accuracy, so we adopt it to generate synonyms. Using a prompt-based approach, we ask GPT-4 to replace words with their most appropriate synonyms based on sentence context. These replacements are applied randomly to a specified proportion of candidate words. At 100% synonym ratio, we modify approximately 440k/3.9M tokens in
+WDC
+, 257k/616k in
+Abt-Buy
+, and 84M/237M in
+Company
+(test/train).
+•
+Hierarchical Data Distortion:
+To simulate granularity-based semantic heterogeneity, we modify hierarchical attributes such as time and location. For location, we alter granularity by replacing “city” values with “state” or “country” (or vice versa). For time, we convert between formats such as “hours” and “days.” These changes introduce controlled distortions in a subset of attributes, varying the level of aggregation.
+We quantify information loss using entropy, computed as the sum of individual column entropies across independent attributes, following standard information theory
+[
+66
+]
+. Datasets with suitable hierarchies—
+iTunes-Amz
+,
+Walmart-Amz
+, and
+Fodor-Zagat
+—are selected for these experiments. The number of affected test/train cells is approximately 450/1.7k for
+iTunes-Amz
+, 550/2.2k for
+Fodor-Zagat
+, and 6.1k/24.5k for
+Walmart-Amz
+.
+•
+Dirty Data Injection:
+To simulate data quality heterogeneity, we introduce missing values, attribute noise, and label noise. For missing values, we follow three standard patterns. In the
+Missing Completely at Random (MCAR)
+setting, values are removed uniformly without any dependency on the data. In the
+Missing at Random (MAR)
+setting, missingness is conditioned on observed attributes—for example, price values might be removed only for products in specific categories. In the
+Missing Not at Random (MNAR)
+setting, missingness depends on the unobserved value itself, such as selectively removing high prices.
+For attribute noise, values are replaced with unrelated random values. Label noise is introduced by flipping match labels for a subset of record pairs based on a fixed noise ratio. Further injection details, including which attributes are affected under each condition, are documented in our repository
+[
+47
+]
+.
+For missing values and attribute noise, we use
+Fodor-Zagat
+( 1k/ 4k test/train cells),
+Walmart-Amz
+( 9k/ 40k), and
+iTunes-Amz
+( 800/ 3.4k). Label noise is introduced separately by flipping a percentage of match labels.
+5.1.2
+Entity Matching Models Evaluated
+We evaluate four EM models in our experiments: DeepMatcher, DITTO, EM Transformer, and HierGAT. This selection balances practical considerations and architectural diversity. While earlier sections review a broad landscape of EM methods, pilot experiments showed that many recent models exhibit similar performance trends. Including all of them would add complexity without significantly altering conclusions. Thus, we focus on models that are actively maintained, run on modern libraries, and install without legacy dependencies—criteria that many older systems no longer meet.
+The selected models span distinct design paradigms. DeepMatcher
+[
+50
+]
+is a widely-used baseline with a relatively simple architecture that continues to perform well, especially when sufficient labeled data is available. It combines hybrid attention over tokenized inputs, pre-trained word embeddings, and optional metadata to compute similarity scores. The remaining three methods—DITTO, EM Transformer, and HierGAT —introduce architectural innovations aimed at better handling heterogeneous EM (HEM). DITTO leverages input augmentation and a Transformer encoder, EM Transformer blends rule-based and learned matching strategies, and HierGAT uses graph-based contextual modeling. Together, these models offer a diverse and representative set of approaches for evaluating robustness under data heterogeneity.
+5.2
+Experimental Results
+We report matching accuracy using the Area Under the Receiver Operating Characteristic Curve (AUC), which captures how well a model distinguishes between matched and non-matched record pairs. AUC summarizes performance across all classification thresholds and is well-suited to settings where models produce continuous similarity scores. A higher AUC reflects better ranking ability and overall discrimination performance, independent of a fixed classification cutoff. We analyze AUC trends as different forms of semantic heterogeneity are introduced.
+(a)
+Abt-Buy
+(b)
+Company
+(c)
+WDC
+Product
+(d)
+Abt-Buy
+(e)
+Company
+(f)
+WDC
+Figure 2
+:
+Impact of synonym injection in test data across EM methods and datasets. Second-row figures provide detailed views of high-performing methods from the first-row figures.
+5.2.1
+Language & Terminology Heterogeneity with Synonyms
+Figure
+2
+shows how injecting synonyms into the test data affects model performance across different datasets and synonym replacement rates. The second row of plots zooms in on the top-performing methods from the first row.
+In the
+Abt-Buy
+dataset (Figure
+2(a)
+), all models show a marked performance decline as the synonym ratio increases. DeepMatcher performs the worst, with both a low starting AUC and the steepest drop. This is due to its reliance on static embeddings, which lack contextual sensitivity. EM Transformer performs moderately better but falls behind DITTO and HierGAT. As shown in Figure
+2(d)
+, DITTO maintains robustness through BERT-based fine-tuning, while HierGAT benefits from its hierarchical graph attention, capturing both local and global context.
+In the
+Company
+dataset (Figure
+2(b)
+), initial AUC scores are slightly higher, and the performance drop from synonym injection is more gradual. HierGAT performs the worst in this setting, while DeepMatcher and DITTO lead. Figure
+2(e)
+suggests that DeepMatcher benefits from the dataset’s well-structured attributes (e.g., “name”, “address”), where static embeddings suffice. DITTO remains strong due to its semantic generalization, whereas HierGAT’s attention mechanisms are less useful in strictly structured data.
+For the
+WDC
+dataset (Figure
+2(c)
+), AUC remains largely stable across all models, regardless of the synonym ratio. DeepMatcher again shows the weakest performance, followed by DITTO. EM Transformer and HierGAT are the most resilient. As illustrated in Figure
+2(f)
+, the minimal impact is likely due to redundancy in attributes such as “title”, “brand”, and “price”, which give models alternative signals. DITTO ’s performance is relatively lower here, likely because the structure of the dataset reduces the advantage of contextual embeddings. EM Transformer and HierGAT are more effective due to their modeling of attribute interactions and hierarchy.
+Takeaways:
+Synonym injection reduces EM performance across all models, but the severity varies by dataset. DITTO and HierGAT are generally the most robust, especially in unstructured or complex settings. DeepMatcher struggles due to its use of static embeddings but performs relatively well in highly structured datasets. These results underscore the importance of aligning model choice with dataset characteristics when dealing with semantic heterogeneity.
+(a)
+HierGAT
+(b)
+DeepMatcher
+(c)
+DITTO
+(d)
+EM Transformer
+Figure 3
+:
+Random word vs. synonym replacement in
+Abt-Buy
+(a)
+HierGAT
+(b)
+DeepMatcher
+(c)
+DITTO
+(d)
+EM Transformer
+Figure 4
+:
+Random word vs. synonym replacement in
+WDC
+5.2.2
+Synonyms vs Random Words
+This experiment evaluates whether EM models can effectively leverage semantic relationships, such as synonymy. We compare their performance in two scenarios: one where words are replaced with contextually appropriate synonyms, and another where words are replaced with random, unrelated terms. If a model cannot exploit semantic relationships, its performance should degrade similarly in both settings.
+Figures
+3
+and
+4
+show AUC curves for
+Abt-Buy
+and
+WDC
+under increasing replacement rates. As expected, AUC drops in both settings as the noise increases. However, synonym replacements consistently lead to better performance than random ones, showing that most models can use semantic signals. This gap becomes more pronounced at higher replacement rates, highlighting the role of semantic understanding in robustness.
+DITTO demonstrates strong performance across both datasets (Figures
+3(c)
+and
+4(c)
+), maintaining a large gap between synonym and random replacements. Its fine-tuned BERT-based embeddings capture semantic relationships effectively. HierGAT and EM Transformer also show sensitivity to synonym injection (Figures
+3(a)
+,
+4(d)
+), though their performance is somewhat dataset-dependent. In contrast, DeepMatcher exhibits nearly overlapping performance curves for synonym and random replacements (Figures
+3(b)
+,
+4(b)
+), indicating its static embeddings fail to encode semantic similarity. Similarly, EM Transformer struggles in
+Abt-Buy
+(Figure
+3(d)
+) but performs better in
+WDC
+, reflecting its reliance on dataset structure.
+Takeaways:
+DITTO is most effective at leveraging semantic relationships, followed by HierGAT and EM Transformer. DeepMatcher shows little benefit from synonym-aware training, due to its static embedding design.
+5.2.3
+Granularity & Resolution Heterogeneity with Hierarchical Distortion
+Figure
+5
+reports the impact of hierarchical distortion on model performance across datasets. Distortion is applied to the test data, simulating mismatches in data granularity or resolution. While distortion rate indicates how many values are changed, it does not fully capture semantic loss. We therefore also report entropy values to quantify information loss, based on column-level entropy from information theory
+[
+66
+]
+.
+In general, entropy decreases with higher distortion as attribute values become more coarse. However, in Figure
+5(a)
+, entropy increases slightly at low distortion levels (27.0 to 27.8 between 0% and 10%), due to frequent values being replaced with less common but more general alternatives. This reflects a corner case unique to the
+Fodor-Zagat
+dataset.
+The relationship between distortion and entropy is non-linear, depending on hierarchy structure and attribute distributions. All models show performance degradation as distortion increases. DeepMatcher is the most sensitive, experiencing steep declines. DITTO and other transformer-based methods show greater robustness. This may be attributed to BERT’s capacity to link generalized or distorted values to their more specific counterparts via contextual embeddings, while static embeddings in DeepMatcher fail to compensate for resolution loss.
+Takeaways:
+All models degrade under resolution heterogeneity, but transformer-based models such as DITTO are more resilient. Static embedding methods like DeepMatcher are more susceptible to hierarchical distortions.
+(a)
+Fodor-Zagat
+(b)
+Walmart-Amz
+(c)
+iTunes-Amz
+Figure 5
+:
+Performance vs hierarchical data distortion (information loss) when changing test data.
+Figure
+6
+mirrors the previous experiment in Figure
+5
+, but applies hierarchical distortion to the
+training
+data while keeping the test data unchanged. The AUC trends show that performance remains relatively stable across all models, particularly for advanced methods like DITTO and EM Transformer, which exhibit minimal decline despite the degraded training data.
+The contrast with Figure
+5
+is notable. When the test data is distorted, critical features used for matching are obfuscated, leading to significant performance drops—often to the point where even human annotators would struggle. In contrast, when only the training data is distorted, robust models can still infer which attributes are most informative and learn effective representations. This allows them to generalize well to clean test data.
+Takeaways:
+Granularity-related (hierarchical) heterogeneity can significantly degrade EM performance, particularly when it affects the test data. However, models like DITTO and EM Transformer demonstrate strong resilience when trained on distorted data, effectively identifying key features and mitigating training noise. These results highlight that generalizing to distorted test data is more challenging than learning from heterogeneous training data, emphasizing the importance of robust architectures for handling real-world granularity shifts.
+(a)
+Fodor-Zagat
+(b)
+iTunes-Amz
+Figure 6
+:
+Performance vs hierarchical data distortion (information loss) when changing training data.
+(a)
+MCAR
+(b)
+MAR
+(c)
+MNAR
+Figure 7
+:
+Missing data in
+Fodor-Zagat
+: the test data is dirty, and the training data is unchanged.
+(a)
+Fodor-Zagat
+(b)
+Walmart-Amz
+(c)
+iTunes-Amz
+Figure 8
+:
+Label noise: the training data is dirty, and the test data is unchanged.
+5.2.4
+Heterogeneity Caused by Data Quality Differences
+We now evaluate the robustness of EM methods under semantic heterogeneity caused by data quality issues, such as missing values, attribute noise, and label noise.
+Figure
+7
+shows results from injecting missing values into
+Fodor-Zagat
+’s test data, using standard missingness patterns: MCAR (completely at random), MAR (conditional on observed features), and MNAR (dependent on unobserved values). Similar trends were observed for
+iTunes-Amz
+and
+Walmart-Amz
+(figures omitted). As expected, model performance degrades as missingness increases. DeepMatcher shows the steepest decline, highlighting its vulnerability to incomplete input. In contrast, DITTO and HierGAT remain more stable, leveraging contextual and structural cues to compensate for missing information.
+To assess sensitivity to noisy labels, we flipped a fraction of labels in the training set and measured performance on clean test data (Figure
+8
+). As label noise increases, AUC declines across all models, but to varying degrees. In
+Fodor-Zagat
+, performance remains stable up to 10% noise before dropping sharply—especially for EM Transformer and HierGAT. In
+Walmart-Amz
+, all models degrade quickly, with DeepMatcher most affected. On
+iTunes-Amz
+, DITTO and HierGAT show stronger resilience, whereas EM Transformer and DeepMatcher degrade rapidly.
+These differences reflect architectural tradeoffs. DITTO ’s BERT-based architecture enables robust contextualization, helping it filter noise. HierGAT’s graph-attention mechanisms capture structural dependencies, though its sensitivity varies with schema complexity. EM Transformer performs moderately well but lacks specialized noise-handling mechanisms. DeepMatcher, as a simpler model with static embeddings, fails to adapt to noisy conditions.
+Next, we introduced attribute noise into test data (Figure
+9
+) by randomly modifying one attribute per row. As with label noise, AUC drops with increased corruption. Robustness again varies by model and dataset. In
+Fodor-Zagat
+, DITTO maintains high accuracy due to its contextual embeddings, while HierGAT and EM Transformer show moderate resilience. DeepMatcher suffers steep declines.
+In
+Walmart-Amz
+, which contains more diverse and complex attributes, all models are more vulnerable. DeepMatcher and EM Transformer degrade the most, while DITTO and HierGAT perform comparatively better. On
+iTunes-Amz
+, performance holds up at low noise levels, but degrades with higher corruption. Once again, DeepMatcher exhibits the most significant drop, while DITTO remains consistently strong.
+Takeaways:
+These experiments highlight the importance of model architecture in handling data quality heterogeneity. DITTO and HierGAT demonstrate strong resilience to missing and noisy data, thanks to their use of transformers and graph attention. Simpler models like DeepMatcher show limited robustness, especially on complex datasets like
+Walmart-Amz
+. Importantly, test-time noise (heterogeneity at deployment) has a more severe impact than training-time corruption, underscoring the challenge of generalizability in real-world heterogeneous environments. To build effective EM pipelines, models must not only be robust to noise but also generalize to unseen, imperfect data.
+(a)
+Fodor-Zagat
+(b)
+Walmart-Amz
+(c)
+iTunes-Amz
+Figure 9
+:
+Attribute noise: the test data is dirty, and the training data is unchanged.
+5.3
+Key Findings, Limitations, and Implications
+Our experiments offer several insights into the impact of heterogeneity on EM models and practical strategies for improving robustness and generalizability.
+First, all forms of semantic heterogeneity—including language and terminology differences, granularity mismatches, and data quality issues—pose substantial challenges to entity matching. While advanced models like DITTO and HierGAT demonstrate greater resilience due to their use of contextualized embeddings and attention mechanisms, simpler architectures like DeepMatcher are highly sensitive to such variations, suffering steep performance declines in noisy or semantically inconsistent settings. This underscores the importance of using models that can capture deeper semantic and structural relationships.
+Second, test-time heterogeneity has a more severe effect on performance than heterogeneity during training. Most models can adapt to noisy training data by learning stable features, but generalizing to unseen heterogeneity during deployment remains difficult. This highlights the need for designing methods that prioritize transferability and robustness to distribution shifts across deployment environments.
+Third, model performance varies significantly by dataset. Complex or noisy datasets such as
+Walmart-Amz
+induce larger performance drops than simpler ones like
+iTunes-Amz
+. Tailoring methods to the characteristics of the data—e.g., attribute richness, schema complexity, or error patterns—can improve outcomes and guide model selection.
+Fourth, techniques like domain adaptation, retrieval-augmented matching, and external knowledge integration show promise for managing heterogeneity in evolving or dynamic environments. Fine-tuning pre-trained models or integrating external context can boost robustness, while mechanisms like adaptive attention and robust loss functions can mitigate the effects of label or attribute noise.
+Fifth, interactive and user-in-the-loop methods remain valuable in practical settings. When heterogeneity leads to ambiguity or context-specific variation, human input can resolve edge cases that automated systems may misclassify. Coupling robust models with feedback mechanisms can significantly improve EM in real-world deployments.
+Our analysis focuses primarily on
+semantic heterogeneity
+. This decision stems from the observation that semantic variations are often the most subtle and challenging to detect, yet they are underexplored in empirical EM research. However, we acknowledge that this choice limits our coverage of representation heterogeneity (e.g., multimodal or schema format differences), which also plays a critical role in many EM scenarios. Future work should expand these experiments to cover diverse forms of representation heterogeneity, especially as multimodal and semi-structured data become more common.
+Addressing HEM effectively requires a combination of deep semantic modeling, dataset-specific adaptation, generalization-focused learning strategies, and human-in-the-loop capabilities. Our findings serve as a guide for developing EM systems that are both resilient to heterogeneity and adaptable to real-world variability.
+6
+Conclusion and Future Research
+This paper addresses the challenge of data heterogeneity in EM. We proposed a taxonomy of heterogeneity, surveyed recent methods with a focus on semantic variation, analyzed their relationship to the FAIR principles, and conducted extensive experiments that evaluate model robustness and generalizability. Our results show that heterogeneity remains a major barrier to reliable EM, even for state-of-the-art models.
+Several key directions can guide future work on HEM:
+•
+EM in Data Lakes.
+Data lakes present a unique challenge for HEM due to their scale, diversity, and lack of predefined schema. Future research should address schema discovery, metadata integration, and multimodal entity matching by developing scalable algorithms that operate across unstructured and semi-structured formats. Methods must also accommodate evolving and hierarchical attributes while leveraging adaptive indexing and parallelism for large-scale deployments.
+•
+LLMs.
+LLMs offer strong potential for handling heterogeneity, particularly semantic variation. They enable few-shot or zero-shot EM and support alignment across modalities. However, challenges remain. Effective prompt engineering, robustness to domain shifts, and stable fine-tuning in low-resource settings are all open research problems. Future work should explore multimodal LLMs and retrieval-augmented architectures for EM, as well as continual adaptation to evolving data.
+•
+Knowledge Graphs (KGs).
+KGs help resolve semantic and structural inconsistencies by providing external context and mapping synonymous or ambiguous terms to canonical representations. Integrating KGs with EM models can improve explainability and performance, particularly in multilingual and cross-domain settings. Dynamic or domain-specific KGs can further aid in adapting to temporal and contextual shifts in data.
+•
+Human-in-the-Loop (HITL) and Explainability.
+Automated methods alone often fail in cases of context-sensitive or ambiguous matches. HITL systems allow users to provide guidance and resolve difficult cases. Future systems should incorporate interactive feedback loops and explanation tools that help users understand model predictions—especially in domains like healthcare and finance where accuracy and interpretability are critical.
+•
+Privacy and Security.
+Heterogeneous data often spans sensitive domains. EM systems must therefore support privacy-preserving mechanisms, such as differential privacy adapted for mixed data types, federated learning for decentralized matching, and secure multi-party computation. These techniques must balance utility and protection across structured, unstructured, and multimodal datasets.
+•
+Fairness and Inclusivity.
+Recent work has begun to address fairness in EM, exploring how biases emerge when datasets differ in completeness or representation across subgroups
+[
+65
+,
+48
+,
+52
+,
+18
+,
+49
+]
+. These studies have introduced fairness-aware models and evaluation protocols, laying a foundation for equitable EM. Yet, gaps remain: most approaches focus on static bias mitigation, neglecting fairness under evolving data, cross-domain heterogeneity, and intersectional subgroups. Future work should create EM systems that
+continuously
+monitor and adapt fairness, use causal reasoning to trace bias origins, and leverage user feedback to balance equity with accuracy. Techniques such as adversarial debiasing, dynamic re-weighting, and knowledge-driven disambiguation can move fairness-aware EM beyond isolated benchmarks toward robust, real-world deployment.
+•
+Evaluation and Benchmarking.
+Progress in HEM requires robust, diverse benchmarks. Current datasets insufficiently capture real-world complexity. New benchmarks should reflect multimodal, cross-lingual, and domain-specific scenarios. Evaluation protocols must move beyond traditional metrics to include fairness, explainability, and scalability. Synthetic data generation can help simulate heterogeneity scenarios systematically for deeper analysis.
+Advancing EM in heterogeneous environments will require methods that are semantically aware, scalable, fair, privacy-conscious, and explainable. Addressing these challenges is essential for building trustworthy EM systems that are effective across real-world applications.
+References
+[1]
+Omar Adjali, Romaric Besançon, Olivier Ferret, Hervé Le Borgne, and Brigitte Grau.
+Building a multimodal entity linking dataset from tweets.
+In
+Proceedings of the 12th International Conference on Language Resources and Evaluation (LREC)
+, 2020.
+[2]
+Luigi Atzori, Antonio Iera, and Giacomo Morabito.
+The internet of things: A survey.
+Computer Networks
+, 54(15):2787–2805, 2010.
+[3]
+Nils Barlaug and Jon Atle Gulla.
+Neural networks for entity matching: A survey.
+ACM Transactions on Knowledge Discovery from Data (TKDD)
+, 15(5):1–25, 2021.
+[4]
+Carlo Batini, Maurizio Lenzerini, and Shamkant B. Navathe.
+A comparative analysis of methodologies for database schema integration.
+ACM computing surveys (CSUR)
+, 18(4):323–364, 1986.
+[5]
+Philip A Bernstein and Laura M Haas.
+Data management for heterogeneous data sources.
+Proceedings of the VLDB Endowment
+, 4(12):1241–1242, 2011.
+[6]
+Karla Vasconcelos Borges, Cristiano Bentes, Marcos Antonio Goncalves Santana, Hegel Santiago Malcher, Jayme Garcia de Souza Viterbo, and Thais Nogueira Teixeira.
+A survey on the adaptation of web data extraction and alignment solutions for big data.
+Journal of Information and Data Management
+, 4(3):233–251, 2013.
+[7]
+Leon Bornemann, Tobias Bleifuß, Dmitri V Kalashnikov, Fatemeh Nargesian, Felix Naumann, and Divesh Srivastava.
+Matching roles from temporal data: Why joe biden is not only president, but also commander-in-chief.
+Proceedings of the ACM on Management of Data
+, 1(1):1–26, 2023.
+[8]
+Ursin Brunner and Kurt Stockinger.
+Entity matching on unstructured data: an active learning approach.
+In
+2019 6th Swiss Conference on Data Science (SDS)
+, pages 97–102. IEEE, 2019.
+[9]
+Ursin Brunner and Kurt Stockinger.
+Entity matching with transformer architectures-a step forward in data integration.
+In
+23rd International Conference on Extending Database Technology, Copenhagen, 30 March-2 April 2020
+, pages 463–473. OpenProceedings, 2020.
+[10]
+Riccardo Cappuzzo, Paolo Papotti, and Saravanan Thirumuruganathan.
+Creating embeddings of heterogeneous relational datasets for data integration tasks.
+In
+Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data
+, SIGMOD ’20, page 1335–1349, New York, NY, USA, 2020. Association for Computing Machinery.
+[11]
+Vassilis Christophides, Vasilis Efthymiou, and George Papadakis.
+Entity resolution in the web of data.
+ACM Computing Surveys (CSUR)
+, 53(1):1–42, 2020.
+[12]
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+Bert: Pre-training of deep bidirectional transformers for language understanding.
+NAACL-HLT
+, pages 4171–4186, 2019.
+[13]
+AnHai Doan, Alon Halevy, and Zachary Ives.
+Principles of data integration
+.
+Elsevier, 2012.
+[14]
+AnHai Doan and Alon Y. Halevy.
+Semantic‐integration research in the database community: A brief survey.
+AI Magazine
+, 26(1):83–95, 2005.
+[15]
+AnHai Doan, Jayant Madhavan, Pedro Domingos, and Alon Halevy.
+Learning to map between ontologies on the semantic web.
+In
+Proceedings of the 11th international conference on World Wide Web
+, pages 662–673, 2002.
+[16]
+Xin Luna Dong and Divesh Srivastava.
+Big data integration.
+Foundations and Trends® in Databases
+, 5(1):1–198, 2015.
+[17]
+Wenzhou Dou, Derong Shen, Tiezheng Nie, Yue Kou, Chenchen Sun, Hang Cui, and Ge Yu.
+Empowering transformer with hybrid matching knowledge for entity matching.
+In
+International Conference on Database Systems for Advanced Applications
+, pages 52–67. Springer, 2022.
+[18]
+Vasilis Efthymiou, Kostas Stefanidis, Evaggelia Pitoura, and Vassilis Christophides.
+Fairer: Entity resolution with fairness constraints.
+In
+Proceedings of the 30th ACM International Conference on Information & Knowledge Management
+, pages 3004–3008, 2021.
+[19]
+Yanai Elazar, Daniel Moghadam, Himanshu Gupta, Daniela Gerz, Sharon Shoham, and Jonathan Berant.
+Prompting language models for entity matching.
+In
+Findings of the Association for Computational Linguistics: EMNLP 2023
+, pages 1882–1896, 2023.
+[20]
+Ahmed K. Elmagarmid, Panagiotis G. Ipeirotis, and Vassilios S. Verykios.
+Duplicate record detection: A survey.
+IEEE Transactions on Knowledge and Data Engineering
+, 19(1):1–16, 2007.
+[21]
+Jérôme Euzenat and Pavel Shvaiko.
+Ontology Matching
+.
+Springer, Berlin, Heidelberg, 2nd edition, 2013.
+[22]
+Raul Castro Fernandez and Samuel Madden.
+Termite: a system for tunneling through heterogeneous data.
+In
+Proceedings of the Second International Workshop on Exploiting Artificial Intelligence Techniques for Data Management
+, pages 1–8, 2019.
+[23]
+Donatella Firmani, Barna Saha, and Divesh Srivastava.
+Online entity resolution using an oracle.
+Proc. VLDB Endow.
+, 9(5):384–395, January 2016.
+[24]
+Cheng Fu, Xianpei Han, Jiaming He, and Le Sun.
+Hierarchical matching network for heterogeneous entity resolution.
+In
+Proceedings of the Twenty-Ninth International Conference on International Joint Conferences on Artificial Intelligence
+, pages 3665–3671, 2021.
+[25]
+Jingru Gan, Jinchang Luo, Haiwei Wang, Shuhui Wang, Wei He, and Qingming Huang.
+Multimodal entity linking: a new dataset and a baseline.
+In
+Proceedings of the 29th ACM International Conference on Multimedia
+, pages 993–1001, 2021.
+[26]
+Congcong Ge, Pengfei Wang, Lu Chen, Xiaoze Liu, Baihua Zheng, and Yunjun Gao.
+Collaborem: A self-supervised entity matching framework using multi-features collaboration.
+IEEE Transactions on Knowledge and Data Engineering
+, 35(12):12139–12152, 2021.
+[27]
+Michael F. Goodchild.
+Citizens as sensors: the world of volunteered geography.
+GeoJournal
+, 69(4):211–221, 2007.
+[28]
+Yash Govind, Pradap Konda, Paul Suganthan GC, Philip Martinkus, Palaniappan Nagarajan, Han Li, Aravind Soundararajan, Sidharth Mudgal, Jeff R Ballard, Haojun Zhang, et al.
+Entity matching meets data science: A progress report from the magellan project.
+In
+Proceedings of the 2019 International Conference on Management of Data
+, pages 389–403, 2019.
+[29]
+Maarten Grootendorst.
+Keybert: Minimal keyword extraction with bert.
+https://github.com/MaartenGr/KeyBERT
+, 2020.
+Accessed: [Date].
+[30]
+Alon Y Halevy.
+Answering queries using views: A survey.
+The VLDB Journal
+, 10:270–294, 2001.
+[31]
+Jiacheng Huang, Wei Hu, Zhifeng Bao, Qijin Chen, and Yuzhong Qu.
+Deep entity matching with adversarial active learning.
+The VLDB Journal
+, 32(1):229–255, 2023.
+[32]
+Arjit Jain, Sunita Sarawagi, and Prithviraj Sen.
+Deep indexed active learning for matching heterogeneous entity representations.
+Proc. VLDB Endow.
+, 15(1):31–45, September 2021.
+[33]
+Di Jin, Bunyamin Sisman, Hao Wei, Xin Luna Dong, and Danai Koutra.
+Deep transfer learning for multi-source entity linkage via domain adaptation.
+Proceedings of the VLDB Endowment
+, 15(3):465–477, 2021.
+[34]
+Nishadi Kirielle, Peter Christen, and Thilina Ranbaduge.
+Unsupervised graph-based entity resolution for complex entities.
+ACM Transactions on Knowledge Discovery from Data
+, 17(1):1–30, 2023.
+[35]
+Hannes Köpcke and Erhard Rahm.
+Frameworks for entity matching: A comparison.
+Data & Knowledge Engineering
+, 69(2):197–210, 2010.
+[36]
+Bing Li, Wei Wang, Yifang Sun, Linhan Zhang, Muhammad Asif Ali, and Yi Wang.
+Grapher: Token-centric entity resolution with graph convolutional neural networks.
+In
+Proceedings of the AAAI Conference on Artificial Intelligence
+, volume 34, pages 8172–8179, 2020.
+[37]
+Huahang Li, Shuangyin Li, Fei Hao, Chen Jason Zhang, Yuanfeng Song, and Lei Chen.
+Booster: Leveraging large language models for enhancing entity resolution.
+page 1043–1046, 2024.
+[38]
+Jing Li, Aixin Sun, Jianglei Han, and Chenliang Li.
+A survey on deep learning for named entity recognition.
+IEEE transactions on knowledge and data engineering
+, 34(1):50–70, 2020.
+[39]
+Yaliang Li and Jian Yao.
+Ditto: Deep learning for entity matching with domain transfer.
+In
+Proceedings of the 2020 International Conference on Knowledge Discovery and Data Mining (KDD ’20)
+, pages 2672–2680, 2020.
+[40]
+Yuliang Li, Jinfeng Li, Yoshihiko Suhara, AnHai Doan, and Wang-Chiew Tan.
+Deep entity matching with pre-trained language models.
+arXiv preprint arXiv:2004.00584
+, 2020.
+[41]
+Yuliang Li, Jinfeng Li, Yoshihiko Suhara, Jin Wang, Wataru Hirota, and Wang-Chiew Tan.
+Deep entity matching: Challenges and opportunities.
+Journal of Data and Information Quality (JDIQ)
+, 13(1):1–17, 2021.
+[42]
+Yiming Lin, Hongzhi Wang, Jianzhong Li, and Hong Gao.
+Efficient entity resolution on heterogeneous records.
+IEEE Transactions on Knowledge and Data Engineering
+, 32(5):912–926, 2019.
+[43]
+Hanchao Ma, Morteza Alipourlangouri, Yinghui Wu, Fei Chiang, and Jiaxing Pi.
+Ontology-based entity matching in attributed graphs.
+Proceedings of the VLDB Endowment
+, 12(10):1195–1207, 2019.
+[44]
+Jayant Madhavan, Philip A Bernstein, and Erhard Rahm.
+Generic schema matching with cupid.
+In
+vldb
+, volume 1, pages 49–58, 2001.
+[45]
+George A. Miller.
+Wordnet: A lexical database for english.
+Communications of the ACM
+, 38(11):39–41, 1995.
+[46]
+Seungwhan Moon, Leonardo Neves, and Vitor Carvalho.
+Multimodal named entity disambiguation for noisy social media posts.
+In
+Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics
+, 2018.
+[47]
+Mohammad Hossein Moslemi.
+Heterogeneity in entity matching: Survey and experiments.
+https://github.com/mhmoslemi2338/Heterogeneity_EM_Survey
+, 2025.
+Accessed: 2025-01-14.
+[48]
+Mohammad Hossein Moslemi, Harini Balamurugan, and Mostafa Milani.
+Evaluating blocking biases in entity matching.
+arXiv preprint arXiv:2409.16410
+, 2024.
+[49]
+Mohammad Hossein Moslemi and Mostafa Milani.
+Threshold-independent fair matching through score calibration.
+In
+Proceedings of the Conference on Governance, Understanding and Integration of Data for Effective and Responsible AI
+, pages 40–44, 2024.
+[50]
+Sidharth Mudgal, Han Li, Theodoros Rekatsinas, Anhai Doan, Yuliang Park, Venkatesh Raghavendra, and Werner Nutt.
+Deepmatcher: A deep learning approach to entity matching.
+In
+Proceedings of the 2018 International Conference on Management of Data (SIGMOD ’18)
+, pages 1581–1596, 2018.
+[51]
+Hao Nie, Xianpei Han, Ben He, Le Sun, Bo Chen, Wei Zhang, Suhui Wu, and Hao Kong.
+Deep sequence-to-sequence entity matching for heterogeneous entity resolution.
+In
+Proceedings of the 28th ACM International Conference on Information and Knowledge Management
+, pages 629–638, 2019.
+[52]
+Soudeh Nilforoushan, Qianfan Wu, and Mostafa Milani.
+Entity matching with auc-based fairness.
+In
+2022 IEEE International Conference on Big Data (Big Data)
+, pages 5068–5075. IEEE, 2022.
+[53]
+Natalya Fridman Noy, Mark A Musen, et al.
+Algorithm and tool for automated ontology merging and alignment.
+In
+Proceedings of the 17th National Conference on Artificial Intelligence (AAAI-00). Available as SMI technical report SMI-2000-0831
+, volume 115. sn, 2000.
+[54]
+Matteo Paganelli, Francesco Del Buono, Andrea Baraldi, and Francesco Guerra.
+Analyzing how bert performs entity matching.
+Proc. VLDB Endow.
+, 15(8):1726–1738, April 2022.
+[55]
+Matteo Paganelli, Donato Tiano, and Francesco Guerra.
+A multi-facet analysis of bert-based entity matching models.
+The VLDB Journal
+, 33(4):1039–1064, November 2023.
+[56]
+George Papadakis, Dimitrios Skoutas, Efstathios Thanos, and Themis Palpanas.
+Blocking and filtering techniques for entity resolution: A survey.
+ACM Computing Surveys (CSUR)
+, 53(2):1–42, 2020.
+[57]
+George Papadakis, Leonidas Tsekouras, Emmanouil Thanos, George Giannakopoulos, Themis Palpanas, and Manolis Koubarakis.
+The return of jedai: End-to-end entity resolution for structured and semi-structured data.
+Proceedings of the VLDB Endowment
+, 11(12):1950–1953, 2018.
+[58]
+Ralph Peeters and Christian Bizer.
+Supervised contrastive learning for product matching.
+In
+Companion Proceedings of the Web Conference 2022
+, pages 248–251, 2022.
+[59]
+Ralph Peeters, Aaron Steiner, and Christian Bizer.
+Using chatgpt for entity matching.
+In
+EDBT
+, 2025.
+[60]
+Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer.
+Deep contextualized word representations.
+In Marilyn Walker, Heng Ji, and Amanda Stent, editors,
+Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)
+, pages 2227–2237, New Orleans, Louisiana, June 2018. Association for Computational Linguistics.
+[61]
+Alireza Pirhadi, Mohammad Hossein Moslemi, Alexander Cloninger, Mostafa Milani, and Babak Salimi.
+Otclean: Data cleaning for conditional independence violations using optimal transport.
+Proceedings of the ACM on Management of Data
+, 2(3):1–26, 2024.
+[62]
+Anna Primpeli and Christian Bizer.
+Graph-boosted active learning for multi-source entity resolution.
+In
+The Semantic Web–ISWC 2021: 20th International Semantic Web Conference, ISWC 2021, Virtual Event, October 24–28, 2021, Proceedings 20
+, pages 182–199. Springer, 2021.
+[63]
+Erhard Rahm and Philip A Bernstein.
+A survey of approaches to automatic schema matching.
+The VLDB Journal
+, 10(4):334–350, 2001.
+[64]
+Erhard Rahm, Hong Hai Do, et al.
+Data cleaning: Problems and current approaches.
+IEEE Data Eng. Bull.
+, 23(4):3–13, 2000.
+[65]
+Nima Shahbazi, Nikola Danevski, Fatemeh Nargesian, Abolfazl Asudeh, and Divesh Srivastava.
+Through the fairness lens: Experimental analysis and evaluation of entity matching.
+arXiv preprint arXiv:2307.02726
+, 2023.
+[66]
+C. E. Shannon.
+A mathematical theory of communication.
+The Bell System Technical Journal
+, 27(3):379–423, 1948.
+[67]
+Amit Sheth and James A Larson.
+Federated database systems for managing distributed, heterogeneous, and autonomous databases.
+ACM Computing Surveys (CSUR)
+, 22(3):183–236, 1990.
+[68]
+Giovanni Simonini, Luca Zecchini, Sonia Bergamaschi, and Felix Naumann.
+Entity resolution on-demand.
+Proc. VLDB Endow.
+, 15(7):1506–1518, March 2022.
+[69]
+Amit Singhal.
+Modern information retrieval: A brief overview.
+IEEE Data Engineering Bulletin
+, 24(4):35–43, 2001.
+[70]
+Richard Thomas Snodgrass.
+Developing time-oriented database applications in SQL
+.
+Morgan Kaufmann Publishers Inc., 1999.
+[71]
+Aaron Steiner, Ralph Peeters, and Christian Bizer.
+Fine-tuning large language models for entity matching.
+arXiv preprint arXiv:2405.16884
+, 2024.
+[72]
+Yuan Sui, Fanyang Bu, Yingting Hu, Liang Zhang, and Wei Yan.
+Trigger-gnn: a trigger-based graph neural network for nested named entity recognition.
+In
+2022 International Joint Conference on Neural Networks (IJCNN)
+, pages 01–08. IEEE, 2022.
+[73]
+Selvamanickam Thirumuruganathan, Nan Tang, Yuyu Chen, and Wei Yang.
+Er: Transformer-based entity resolution.
+In
+Proceedings of the 2021 International Conference on Data Engineering (ICDE ’21)
+, pages 1210–1221, 2021.
+[74]
+Mohamed Trabelsi, Jeff Heflin, and Jin Cao.
+Dame: Domain adaptation for matching entities.
+In
+Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining
+, pages 1016–1024, 2022.
+[75]
+Bayu Distiawan Trisedya, Jianzhong Qi, and Rui Zhang.
+Entity alignment between knowledge graphs using attribute embeddings.
+In
+Proceedings of the AAAI conference on artificial intelligence
+, volume 33, pages 297–304, 2019.
+[76]
+Jianhong Tu, Ju Fan, Nan Tang, Peng Wang, Chengliang Chai, Guoliang Li, Ruixue Fan, and Xiaoyong Du.
+Domain adaptation for deep entity resolution.
+In
+Proceedings of the 2022 International Conference on Management of Data
+, pages 443–457, 2022.
+[77]
+Jianhong Tu, Ju Fan, Nan Tang, Peng Wang, Guoliang Li, Xiaoyong Du, Xiaofeng Jia, and Song Gao.
+Unicorn: A unified multi-tasking model for supporting matching tasks in data integration.
+Proc. ACM Manag. Data
+, 1(1), May 2023.
+[78]
+Alina Vretinaris, Chuan Lei, Vasilis Efthymiou, Xiao Qin, and Fatma Özcan.
+Medical entity disambiguation using graph neural networks.
+In
+Proceedings of the 2021 international conference on management of data
+, pages 2310–2318, 2021.
+[79]
+Jin Wang, Yuliang Li, and Wataru Hirota.
+Machamp: A generalized entity matching benchmark.
+In
+Proceedings of the 30th ACM International Conference on Information & Knowledge Management
+, pages 4633–4642, 2021.
+[80]
+Peng Wang, Jiangheng Wu, and Xiaohang Chen.
+Multimodal entity linking with gated hierarchical fusion and contrastive training.
+In
+Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval
+, pages 938–948, 2022.
+[81]
+Pengfei Wang, Xiaocan Zeng, Lu Chen, Fan Ye, Yuren Mao, Junhao Zhu, and Yunjun Gao.
+Promptem: prompt-tuning for low-resource generalized entity matching.
+Proc. VLDB Endow.
+, 16(2):369–378, October 2022.
+[82]
+Runhui Wang, Yuliang Li, and Jin Wang.
+Sudowoodo: Contrastive self-supervised learning for multi-purpose data integration and preparation.
+In
+2023 IEEE 39th International Conference on Data Engineering (ICDE)
+, pages 1502–1515, Los Alamitos, CA, USA, April 2023. IEEE Computer Society.
+[83]
+Tianshu Wang, Xiaoyang Chen, Hongyu Lin, et al.
+Match, compare, or select? an investigation of large language models for entity matching.
+In
+ACL
+, 2024.
+[84]
+Mark D. Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E. Bourne, et al.
+The fair guiding principles for scientific data management and stewardship.
+Scientific Data
+, 3:160018, 2016.
+[85]
+Mark D Wilkinson, Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten, Luiz Bonino da Silva Santos, Philip E Bourne, et al.
+The fair guiding principles for scientific data management and stewardship.
+Scientific data
+, 3(1):1–9, 2016.
+[86]
+Bo Xu, Shizhou Huang, Chaofeng Sha, and Hongya Wang.
+Maf: a general matching and alignment framework for multimodal named entity recognition.
+In
+Proceedings of the fifteenth ACM international conference on web search and data mining
+, pages 1215–1223, 2022.
+[87]
+Dezhong Yao, Yuhong Gu, Gao Cong, Hai Jin, and Xinqiao Lv.
+Entity resolution with hierarchical graph attention networks.
+In
+Proceedings of the 2022 International Conference on Management of Data
+, pages 429–442, 2022.
+[88]
+Jianfei Yu, Jing Jiang, Li Yang, and Rui Xia.
+Improving multimodal named entity recognition via entity span detection with unified multimodal transformer.
+In
+Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics
+, pages 5640–5650, 2020.
+[89]
+Alexandros Zeakis, George Papadakis, Dimitrios Skoutas, and Manolis Koubarakis.
+Pre-trained embeddings for entity resolution: An experimental analysis.
+Proc. VLDB Endow.
+, 16(9):2225–2238, May 2023.
+[90]
+Weixin Zeng, Xiang Zhao, Jiuyang Tang, and Xuemin Lin.
+Collective entity alignment via adaptive features.
+In
+2020 IEEE 36th international conference on data engineering (ICDE)
+, pages 1870–1873. IEEE, 2020.
+[91]
+Fanjin Zhang, Xiao Liu, Jie Tang, Yuxiao Dong, Peiran Yao, Jie Zhang, Xiaotao Gu, Yan Wang, Bin Shao, Rui Li, and Kuansan Wang.
+Oag: Toward linking large-scale heterogeneous entity graphs.
+In
+Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining
+, KDD ’19, page 2585–2595, New York, NY, USA, 2019. Association for Computing Machinery.
+[92]
+Jing Zhang, Huan Sun, and Joyce C Ho.
+Emba: Entity matching using multi-task learning of bert with attention-over-attention.
+In
+EDBT
+, pages 281–293, 2024.
+[93]
+Chen Zhao and Yeye He.
+Auto-em: End-to-end fuzzy entity-matching using pre-trained deep models and transfer learning.
+In
+The World Wide Web Conference
+, pages 2413–2424, 2019.
+Experimental support, please
+view the build logs
+for errors. Generated by
+L
+A
+T
+E
+xml
+.
+Instructions for reporting errors
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below:
+Click the "Report Issue"
+(
+)
+button, located in the page header.
+Tip:
+You can select the relevant text first, to include it in your report.
+Our team has already identified
+the following issues
+. We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all.
+Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a
+list of packages that need conversion
+, and welcome
+developer contributions
+.
+We gratefully acknowledge support from
+        our
+major funders
+,
+member institutions
+,
+,
+        and all contributors.
+Major funding support from

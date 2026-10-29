@@ -1,0 +1,310 @@
+Efficient Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage | Springer Nature Link
+Skip to main content
+Advertisement
+Log in
+Efficient Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage
+Conference paper
+First Online:
+23 April 2017
+pp 628–640
+Cite this conference paper
+Save conference paper
+View saved research
+Advances in Knowledge Discovery and Data Mining
+(PAKDD 2017)
+Peter Christen
+19
+,
+Rainer Schnell
+20
+,
+Dinusha Vatsalan
+19
+&
+…
+Thilina Ranbaduge
+19
+Show authors
+Part of the book series:
+Lecture Notes in Computer Science
+((LNAI,volume 10234))
+Included in the following conference series:
+Pacific-Asia Conference on Knowledge Discovery and Data Mining
+4504
+Accesses
+63
+Citations
+3
+Altmetric
+Abstract
+Privacy-preserving record linkage (PPRL) is the process of identifying records that represent the same entity across databases held by different organizations without revealing any sensitive information about these entities. A popular technique used in PPRL is Bloom filter encoding, which has shown to be an efficient and effective way to encode sensitive information into bit vectors while still enabling approximate matching of attribute values. However, the encoded values in Bloom filters are vulnerable to cryptanalysis attacks. Under specific conditions, these attacks are successful in that some frequent sensitive attribute values can be re-identified. In this paper we propose and evaluate on real databases a novel efficient attack on Bloom filters. Our approach is based on the construction principle of Bloom filters of hashing elements of sets into bit positions. The attack is independent of the encoding function and its parameters used, it can correctly re-identify sensitive attribute values even when various recently proposed hardening techniques have been applied, and it runs in a few seconds instead of hours.
+The authors would like to thank the Isaac Newton Institute for Mathematical Sciences, Cambridge, for support and hospitality during the programme
+Data Linkage and Anonymisation
+where this work was conducted (EPSRC grant EP/K032208/1). Peter Christen was also supported by a grant from the Simons Foundation. The work was also partially funded by the Australian Research Council (DP130101801).
+This is a preview of subscription content,
+log in via an institution
+to check access.
+Access this chapter
+Log in via an institution
+Subscribe and save
+Springer+
+from €37.37 /Month
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+View plans
+Buy Now
+Chapter
+EUR 29.95
+Price includes VAT (Thailand)
+Available as PDF
+Read on any device
+Instant download
+Own it forever
+Buy Chapter
+eBook
+EUR 85.59
+Price includes VAT (Thailand)
+Available as EPUB and PDF
+Read on any device
+Instant download
+Own it forever
+Buy eBook
+Softcover Book
+EUR 99.99
+Price excludes VAT (Thailand)
+Compact, lightweight edition
+Free shipping worldwide -
+view details
+Buy Softcover Book
+Tax calculation will be finalised at checkout
+Purchases are for personal use only
+Institutional subscriptions
+Similar content being viewed by others
+Pattern-Mining Based Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage
+Chapter
+© 2018
+Reference Values Based Hardening for Bloom Filters Based Privacy-Preserving Record Linkage
+Chapter
+© 2019
+Privacy-preserving record linkage using autoencoders
+Article
+Open access
+16 December 2022
+Explore related subjects
+Discover the latest articles, books and news in related subjects, suggested using machine learning.
+Data Privacy
+Optical Data Storage
+Privacy
+Information Storage and Retrieval
+Cryptology
+Data and Information Security
+Privacy-Preserving Record Linkage in Health Data Integration
+References
+Bloom, B.: Space/time trade-offs in hash coding with allowable errors. Commun. ACM
+13
+(7), 422–426 (1970)
+Article
+MATH
+Google Scholar
+Boyd, J.H., Randall, S.M., Ferrante, A.M.: Application of privacy-preserving techniques in operational record linkage centres. In: Gkoulalas-Divanis, A., Loukides, G. (eds.) Medical Data Privacy Handbook, pp. 267–287. Springer, Cham (2015). doi:
+10.1007/978-3-319-23633-9_11
+Chapter
+Google Scholar
+Ceglar, A., Roddick, J.F.: Association mining. ACM CSUR
+3
+(2), 5 (2006)
+Article
+Google Scholar
+Christen, P.: Data Matching – Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Springer, Heidelberg (2012)
+Google Scholar
+Durham, E.A., Kantarcioglu, M., Xue, Y., Toth, C., Kuzu, M., Malin, B.: Composite Bloom filters for secure record linkage. IEEE TKDE
+26
+(12), 2956–2968 (2014)
+Google Scholar
+Fu, Z., Christen, P., Zhou, J.: A graph matching method for historical census household linkage. In: Tseng, V.S., Ho, T.B., Zhou, Z.-H., Chen, A.L.P., Kao, H.-Y. (eds.) PAKDD 2014. LNCS (LNAI), vol. 8443, pp. 485–496. Springer, Cham (2014). doi:
+10.1007/978-3-319-06608-0_40
+Chapter
+Google Scholar
+Kroll, M., Steinmetzer, S.: Who is 1011011111
+\(\ldots \)
+1110110010? Automated cryptanalysis of Bloom filter encryptions of databases with several personal identifiers. In: Fred, A., Gamboa, H., Elias, D. (eds.) BIOSTEC 2015. CCIS, vol. 574, pp. 341–356. Springer, Cham (2015). doi:
+10.1007/978-3-319-27707-3_21
+Chapter
+Google Scholar
+Kuzu, M., Kantarcioglu, M., Durham, E., Malin, B.: A constraint satisfaction cryptanalysis of Bloom filters in private record linkage. In: Fischer-Hübner, S., Hopper, N. (eds.) PETS 2011. LNCS, vol. 6794, pp. 226–245. Springer, Heidelberg (2011). doi:
+10.1007/978-3-642-22263-4_13
+Chapter
+Google Scholar
+Kuzu, M., Kantarcioglu, M., Durham, E., Toth, C., Malin, B.: A practical approach to achieve private medical record linkage in light of public resources. JAMIA
+20
+(2), 285–292 (2013)
+Google Scholar
+Niedermeyer, F., Steinmetzer, S., Kroll, M., Schnell, R.: Cryptanalysis of basic Bloom filters used for privacy preserving record linkage. JPC
+6
+(2), 59–79 (2014)
+Google Scholar
+Ranbaduge, T., Vatsalan, D., Christen, P., Verykios, V.: Hashing-based distributed multi-party blocking for privacy-preserving record linkage. In: Bailey, J., Khan, L., Washio, T., Dobbie, G., Huang, J.Z., Wang, R. (eds.) PAKDD 2016. LNCS (LNAI), vol. 9652, pp. 415–427. Springer, Cham (2016). doi:
+10.1007/978-3-319-31750-2_33
+Chapter
+Google Scholar
+Randall, S., Ferrante, A., Boyd, J., Bauer, J., Semmens, J.: Privacy-preserving record linkage on large real world datasets. JBI
+50
+, 205–212 (2014)
+Google Scholar
+Schnell, R., Bachteler, T., Reiher, J.: Privacy-preserving record linkage using Bloom filters. BMC Med. Inform. Decis. Mak.
+9
+(1), 41 (2009)
+Article
+Google Scholar
+Schnell, R., Bachteler, T., Reiher, J.: A novel error-tolerant anonymous linking code. In: Working Paper, German Record Linkage Center (2011)
+Google Scholar
+Schnell, R., Borgs, C.: Randomized response and balanced Bloom filters for privacy preserving record linkage. In: ICDMW DINA, pp. 218–224 (2016). doi:
+10.1109/ICDMW.2016.0038
+Vatsalan, D., Christen, P.: Scalable privacy-preserving record linkage for multiple databases. In: ACM CIKM, Shanghai (2014)
+Google Scholar
+Vatsalan, D., Christen, P.: Privacy-preserving matching of similar patients. JBI
+59
+, 285–298 (2016)
+Google Scholar
+Vatsalan, D., Christen, P., Verykios, V.: A taxonomy of privacy-preserving record linkage techniques. IS
+38
+(6), 946–969 (2013)
+Google Scholar
+Download references
+Author information
+Authors and Affiliations
+Research School of Computer Science, The Australian National University, Canberra, Australia
+Peter Christen, Dinusha Vatsalan & Thilina Ranbaduge
+Methodology Research Group, University Duisburg-Essen, Duisburg, Germany
+Rainer Schnell
+Authors
+Peter Christen
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Rainer Schnell
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Dinusha Vatsalan
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Thilina Ranbaduge
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Corresponding author
+Correspondence to
+Peter Christen
+.
+Editor information
+Editors and Affiliations
+Kangwon National University, Chuncheon, Korea (Republic of)
+Jinho Kim
+Seoul National University, Seoul, Korea (Republic of)
+Kyuseok Shim
+University of Technology Sydney, Sydney, New South Wales, Australia
+Longbing Cao
+KAIST, Daejeon, Korea (Republic of)
+Jae-Gil Lee
+University of New South Wales, Sydney, New South Wales, Australia
+Xuemin Lin
+Kangwon National University, Chuncheon, Korea (Republic of)
+Yang-Sae Moon
+Rights and permissions
+Reprints and permissions
+Copyright information
+© 2017 Springer International Publishing AG
+About this paper
+Cite this paper
+Christen, P., Schnell, R., Vatsalan, D., Ranbaduge, T. (2017).  Efficient Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage.
+
+                     In: Kim, J., Shim, K., Cao, L., Lee, JG., Lin, X., Moon, YS. (eds) Advances in Knowledge Discovery and Data Mining. PAKDD 2017. Lecture Notes in Computer Science(), vol 10234. Springer, Cham. https://doi.org/10.1007/978-3-319-57454-7_49
+Download citation
+.RIS
+.ENW
+.BIB
+DOI
+:
+https://doi.org/10.1007/978-3-319-57454-7_49
+Published
+:
+23 April 2017
+Publisher Name
+:
+Springer, Cham
+Print ISBN
+:
+978-3-319-57453-0
+Online ISBN
+:
+978-3-319-57454-7
+eBook Packages
+:
+Computer Science
+Computer Science (R0)
+Springer Nature Proceedings Computer Science
+Share this paper
+Anyone you share the following link with will be able to read this content:
+Get shareable link
+Sorry, a shareable link is not currently available for this article.
+Copy shareable link to clipboard
+Provided by the Springer Nature SharedIt content-sharing initiative
+Keywords
+Privacy
+Re-identification
+Frequency analysis
+Data linkage
+Entity resolution
+Data matching
+Publish with us
+Policies and ethics
+Profiles
+Rainer Schnell
+View author profile
+Access this chapter
+Log in via an institution
+Subscribe and save
+Springer+
+from €37.37 /Month
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+View plans
+Buy Now
+Chapter
+EUR 29.95
+Price includes VAT (Thailand)
+Available as PDF
+Read on any device
+Instant download
+Own it forever
+Buy Chapter
+eBook
+EUR 85.59
+Price includes VAT (Thailand)
+Available as EPUB and PDF
+Read on any device
+Instant download
+Own it forever
+Buy eBook
+Softcover Book
+EUR 99.99
+Price excludes VAT (Thailand)
+Compact, lightweight edition
+Free shipping worldwide -
+view details
+Buy Softcover Book
+Tax calculation will be finalised at checkout
+Purchases are for personal use only
+Institutional subscriptions
+Footer Navigation
+180.183.56.190
+Not affiliated
+© 2026 Springer Nature

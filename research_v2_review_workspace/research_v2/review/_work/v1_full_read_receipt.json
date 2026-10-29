@@ -1,0 +1,107 @@
+[
+  {
+    "document": "COMPUTE_AND_COST_PLAN.md",
+    "bytes": 8806,
+    "lines": 92,
+    "sha256": "c1e0c7c17dafdfdcfc05dd46b2f1bdc3a1f51cee7da1c4baa8c2032b4eade215",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "EVALUATION_AND_STATISTICS.md",
+    "bytes": 12432,
+    "lines": 127,
+    "sha256": "bedf4758c24e407a0ff020a47edc9bf547dd55f2bbf67bac52a4f1a88f5ff68f",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "EXPERIMENTAL_MASTER_PLAN_TH.md",
+    "bytes": 32936,
+    "lines": 260,
+    "sha256": "deeb0587d492d2f8e6e6c730b821266cc804984dd86693f94af3a8c5d837bd28",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "EXPERIMENT_DEPENDENCY_GRAPH.md",
+    "bytes": 5419,
+    "lines": 107,
+    "sha256": "57773dc21b06ddbfebcb68babaa0bc9465ef1e4e70565b0742bb3797eaaff298",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "HANDOFF_REPORT_TH.md",
+    "bytes": 7152,
+    "lines": 81,
+    "sha256": "9d4d98e47841788f062721b8acabb4d2040e42b21b65352f369c4def3323422a",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "HISTORICAL_EXPERIMENT_MAPPING.md",
+    "bytes": 10459,
+    "lines": 93,
+    "sha256": "eae7bb64398c4ebe625592e318ccb2ef3590a2c994d931b12761038c18178769",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "HYPOTHESIS_EXPERIMENT_MATRIX.csv",
+    "bytes": 9839,
+    "lines": 49,
+    "sha256": "383903cdab70df656a7aca30eb5fbcf01e73c420f02110bc4d16d98846c62ac1",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "LITERATURE_REVIEW_TH.md",
+    "bytes": 31810,
+    "lines": 165,
+    "sha256": "90185d5492bd81123cbcde4a492cc537fa45e42a8e9d35020ef5c5ce0adfbfc9",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "PAPER_EVIDENCE_MATRIX.csv",
+    "bytes": 13569,
+    "lines": 36,
+    "sha256": "eca505e0b14f4bf901fe47f0600d9e83b98a39361a6690b8e58ad405d7f7691f",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "REFERENCES.bib",
+    "bytes": 14246,
+    "lines": 364,
+    "sha256": "0b1973e85642528154cd7974ccc7620a1ddb83e3150b9a8d5af9320cd764a0e1",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "RESEARCH_GAPS_TH.md",
+    "bytes": 10728,
+    "lines": 65,
+    "sha256": "16ad6e84844e66a33e54690f298b346d3b56dcda489da08ca765bbf6d53e3183",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "RESEARCH_GATES.md",
+    "bytes": 8519,
+    "lines": 98,
+    "sha256": "162e51792308bb82ff55eae73d1a6c8822f5ebdf9b05f899f60fd0e21bb56568",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "RESEARCH_QUESTIONS_AND_HYPOTHESES.md",
+    "bytes": 15588,
+    "lines": 115,
+    "sha256": "8c03274d4d074957d28199244326ade84739c084fe1ed94cc77082ac83f69583",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "REUSABLE_COMPONENTS.md",
+    "bytes": 5337,
+    "lines": 52,
+    "sha256": "e29fb0b9760e6c2a2f6c604b66f1700ce5b59213219cd1cc72930eeea04703be",
+    "read_scope": "FULL"
+  },
+  {
+    "document": "TRAINING_REQUIREMENTS.md",
+    "bytes": 7791,
+    "lines": 77,
+    "sha256": "fee1c66821987f2388d32cbc9673743690001e47fa8849d1e4c51df2f7419823",
+    "read_scope": "FULL"
+  }
+]

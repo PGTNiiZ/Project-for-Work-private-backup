@@ -1,0 +1,750 @@
+{
+  "url": "https://api.crossref.org/works/10.1145/3068777.3068781",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            21
+          ]
+        ],
+        "date-time": "2026-10-21T02:30:02Z",
+        "timestamp": 1792549802600,
+        "version": "4.5.0"
+      },
+      "reference-count": 80,
+      "publisher": "Association for Computing Machinery (ACM)",
+      "issue": "2",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2017,
+                3,
+                22
+              ]
+            ],
+            "date-time": "2017-03-22T00:00:00Z",
+            "timestamp": 1490140800000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "SIGKDD Explor. Newsl."
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            22
+          ]
+        ]
+      },
+      "abstract": "<jats:p>The increasing popularity and diversity of social media sites has encouraged more and more people to participate on multiple online social networks to enjoy their services. Each user may create a user identity, which can includes profile, content, or network information, to represent his or her unique public figure in every social network. Thus, a fundamental question arises -- can we link user identities across online social networks? User identity linkage across online social networks is an emerging task in social media and has attracted increasing attention in recent years. Advancements in user identity linkage could potentially impact various domains such as recommendation and link prediction. Due to the unique characteristics of social network data, this problem faces tremendous challenges. To tackle these challenges, recent approaches generally consist of (1) extracting features and (2) constructing predictive models from a variety of perspectives. In this paper, we review key achievements of user identity linkage across online social networks including stateof- the-art algorithms, evaluation metrics, and representative datasets. We also discuss related research areas, open problems, and future research directions for user identity linkage across online social networks.</jats:p>",
+      "DOI": "10.1145/3068777.3068781",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            23
+          ]
+        ],
+        "date-time": "2017-03-23T16:19:44Z",
+        "timestamp": 1490285984000
+      },
+      "page": "5-17",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 242,
+      "title": [
+        "User Identity Linkage across Online Social Networks"
+      ],
+      "prefix": "10.1145",
+      "volume": "18",
+      "author": [
+        {
+          "given": "Kai",
+          "family": "Shu",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Arizona State University, Tempe, AZ"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Suhang",
+          "family": "Wang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Arizona State University, Tempe, AZ"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jiliang",
+          "family": "Tang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Michigan State University, East Lansing, MI"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Reza",
+          "family": "Zafarani",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Syracuse University, Syracuse, NY"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Huan",
+          "family": "Liu",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Arizona State University, Tempe, AZ"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            22
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_2_1_1_1",
+          "volume-title": "SDM06: workshop on link analysis, counter-terrorism and security",
+          "author": "Hasan Mohammad Al",
+          "year": "2006",
+          "unstructured": "Mohammad Al Hasan , Vineet Chaoji , Saeed Salem , and Mohammed Zaki . Link prediction using supervised learning . In SDM06: workshop on link analysis, counter-terrorism and security , 2006 . Mohammad Al Hasan, Vineet Chaoji, Saeed Salem, and Mohammed Zaki. Link prediction using supervised learning. In SDM06: workshop on link analysis, counter-terrorism and security, 2006."
+        },
+        {
+          "key": "e_1_2_1_2_1",
+          "volume-title": "Social network data analytics.",
+          "author": "Hasan Mohammad Al",
+          "year": "2011",
+          "unstructured": "Mohammad Al Hasan and Mohammed J Zaki . A survey of link prediction in social networks . In Social network data analytics. 2011 . Mohammad Al Hasan and Mohammed J Zaki. A survey of link prediction in social networks. In Social network data analytics. 2011."
+        },
+        {
+          "key": "e_1_2_1_3_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1242572.1242598"
+        },
+        {
+          "key": "e_1_2_1_4_1",
+          "volume-title": "Emergence of scaling in random networks. science",
+          "author": "Barabási Albert-László",
+          "year": "1999",
+          "unstructured": "Albert-László Barabási and Réka Albert . Emergence of scaling in random networks. science , 1999 . Albert-László Barabási and Réka Albert. Emergence of scaling in random networks. science, 1999."
+        },
+        {
+          "key": "e_1_2_1_5_1",
+          "volume-title": "ACM (SNA-KDD)",
+          "author": "Bartunov Sergey",
+          "year": "2012",
+          "unstructured": "Sergey Bartunov , Anton Korshunov , Seung-Taek Park , Wonho Ryu , and Hyungdong Lee . Joint link-attribute user identity resolution in online social networks . In ACM (SNA-KDD) , 2012 . Sergey Bartunov, Anton Korshunov, Seung-Taek Park, Wonho Ryu, and Hyungdong Lee. Joint link-attribute user identity resolution in online social networks. In ACM (SNA-KDD), 2012."
+        },
+        {
+          "key": "e_1_2_1_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDM.2009.135"
+        },
+        {
+          "key": "e_1_2_1_7_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s00778-008-0098-x"
+        },
+        {
+          "key": "e_1_2_1_8_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-07881-6_29"
+        },
+        {
+          "key": "e_1_2_1_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/956750.956759"
+        },
+        {
+          "key": "e_1_2_1_10_1",
+          "volume-title": "Communications of the IIMA",
+          "author": "Brizan David Guy",
+          "year": "2015",
+          "unstructured": "David Guy Brizan and Abdullah Uz Tansel . A. survey of entity resolution and record linkage methodologies . Communications of the IIMA , 2015 . David Guy Brizan and Abdullah Uz Tansel. A. survey of entity resolution and record linkage methodologies. Communications of the IIMA, 2015."
+        },
+        {
+          "key": "e_1_2_1_11_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-642-33486-3_30"
+        },
+        {
+          "key": "e_1_2_1_12_1",
+          "volume-title": "Recommender Systems Handbook.",
+          "author": "Cantador Iván",
+          "year": "2015",
+          "unstructured": "Iván Cantador , Ignacio Fernández-Tobás , Shlomo Berkovsky , and Paolo Cremonesi . Cross-domain recommender systems . In Recommender Systems Handbook. 2015 . Iván Cantador, Ignacio Fernández-Tobás, Shlomo Berkovsky, and Paolo Cremonesi. Cross-domain recommender systems. In Recommender Systems Handbook. 2015."
+        },
+        {
+          "key": "e_1_2_1_13_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.ins.2008.08.022"
+        },
+        {
+          "key": "e_1_2_1_14_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1137/1.9781611972740.43"
+        },
+        {
+          "key": "e_1_2_1_15_1",
+          "doi-asserted-by": "crossref",
+          "DOI": "10.1007/978-3-642-31164-2",
+          "volume-title": "Data matching: concepts and techniques for record linkage, entity resolution, and duplicate detection",
+          "author": "Christen Peter",
+          "year": "2012",
+          "unstructured": "Peter Christen . Data matching: concepts and techniques for record linkage, entity resolution, and duplicate detection . Springer Science & Business Media , 2012 . Peter Christen. Data matching: concepts and techniques for record linkage, entity resolution, and duplicate detection. Springer Science & Business Media, 2012."
+        },
+        {
+          "key": "e_1_2_1_16_1",
+          "volume-title": "A comparison of string metrics for matching names and records",
+          "author": "Cohen William",
+          "year": "2003",
+          "unstructured": "William Cohen , Pradeep Ravikumar , and Stephen Fienberg . A comparison of string metrics for matching names and records . 2003 . William Cohen, Pradeep Ravikumar, and Stephen Fienberg. A comparison of string metrics for matching names and records. 2003."
+        },
+        {
+          "key": "e_1_2_1_17_1",
+          "volume-title": "International journal of pattern recognition and artificial intelligence",
+          "author": "Conte Donatello",
+          "year": "2004",
+          "unstructured": "Donatello Conte , Pasquale Foggia , Carlo Sansone, and Mario Vento. Thirty years of graph matching in pattern recognition . International journal of pattern recognition and artificial intelligence , 2004 . Donatello Conte, Pasquale Foggia, Carlo Sansone, and Mario Vento. Thirty years of graph matching in pattern recognition. International journal of pattern recognition and artificial intelligence, 2004."
+        },
+        {
+          "key": "e_1_2_1_18_1",
+          "volume-title": "ICME",
+          "author": "Deng Zhengyu",
+          "year": "2013",
+          "unstructured": "Zhengyu Deng , Jitao Sang , and Changsheng Xu . Personalized video recommendation based on crossplatform user modeling . In ICME , 2013 . Zhengyu Deng, Jitao Sang, and Changsheng Xu. Personalized video recommendation based on crossplatform user modeling. In ICME, 2013."
+        },
+        {
+          "key": "e_1_2_1_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDE.2002.994694"
+        },
+        {
+          "key": "e_1_2_1_20_1",
+          "first-page": "290",
+          "article-title": "On random graphs i",
+          "volume": "6",
+          "author": "P.",
+          "year": "1959",
+          "unstructured": "P. ERDdS and A. R&WI . On random graphs i . Publ. Math. Debrecen , 6 : 290 -- 297 , 1959 . P. ERDdS and A. R&WI. On random graphs i. Publ. Math. Debrecen, 6:290--297, 1959.",
+          "journal-title": "Publ. Math. Debrecen"
+        },
+        {
+          "key": "e_1_2_1_21_1",
+          "volume-title": "Journal of the American Statistical Association",
+          "author": "Ivan",
+          "year": "1969",
+          "unstructured": "Ivan P. Fellegi and Alan B. Sunter. A theory for record linkage . Journal of the American Statistical Association , 1969 . Ivan P. Fellegi and Alan B. Sunter. A theory for record linkage. Journal of the American Statistical Association, 1969."
+        },
+        {
+          "key": "e_1_2_1_22_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2367502.2367564"
+        },
+        {
+          "key": "e_1_2_1_23_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2488388.2488428"
+        },
+        {
+          "key": "e_1_2_1_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2783258.2788601"
+        },
+        {
+          "key": "e_1_2_1_25_1",
+          "volume-title": "Large-scale correlation of accounts across social networks",
+          "author": "Goga Oana",
+          "year": "2013",
+          "unstructured": "Oana Goga , Daniele Perito , Howard Lei , Renata Teixeira , and Robin Sommer . Large-scale correlation of accounts across social networks . 2013 . Oana Goga, Daniele Perito, Howard Lei, Renata Teixeira, and Robin Sommer. Large-scale correlation of accounts across social networks. 2013."
+        },
+        {
+          "key": "e_1_2_1_26_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1023/A:1010920819831"
+        },
+        {
+          "key": "e_1_2_1_27_1",
+          "volume-title": "ICWSM",
+          "author": "Iofciu Tereza",
+          "year": "2011",
+          "unstructured": "Tereza Iofciu , Peter Fankhauser , Fabian Abel , and Kerstin Bischoff . Identifying users across social tagging systems . In ICWSM , 2011 . Tereza Iofciu, Peter Fankhauser, Fabian Abel, and Kerstin Bischoff. Identifying users across social tagging systems. In ICWSM, 2011."
+        },
+        {
+          "key": "e_1_2_1_28_1",
+          "volume-title": "Finding nemo: searching and resolving identities of users across online social networks. arXiv preprint arXiv:1212.6147",
+          "author": "Jain Paridhi",
+          "year": "2012",
+          "unstructured": "Paridhi Jain and Ponnurangam Kumaraguru . Finding nemo: searching and resolving identities of users across online social networks. arXiv preprint arXiv:1212.6147 , 2012 . Paridhi Jain and Ponnurangam Kumaraguru. Finding nemo: searching and resolving identities of users across online social networks. arXiv preprint arXiv:1212.6147, 2012."
+        },
+        {
+          "key": "e_1_2_1_29_1",
+          "volume-title": "A new graph-based method for pairwise global network alignment. BMC bioinformatics",
+          "author": "Klau Gunnar W",
+          "year": "2009",
+          "unstructured": "Gunnar W Klau . A new graph-based method for pairwise global network alignment. BMC bioinformatics , 2009 . Gunnar W Klau. A new graph-based method for pairwise global network alignment. BMC bioinformatics, 2009."
+        },
+        {
+          "key": "e_1_2_1_30_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2505515.2505531"
+        },
+        {
+          "key": "e_1_2_1_31_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.datak.2009.10.003"
+        },
+        {
+          "key": "e_1_2_1_32_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2732269.2732274"
+        },
+        {
+          "key": "e_1_2_1_33_1",
+          "volume-title": "AAAI",
+          "author": "Kumar Shamanth",
+          "year": "2011",
+          "unstructured": "Shamanth Kumar , Reza Zafarani , and Huan Liu . Understanding user migration patterns in social media . In AAAI , 2011 . Shamanth Kumar, Reza Zafarani, and Huan Liu. Understanding user migration patterns in social media. In AAAI, 2011."
+        },
+        {
+          "key": "e_1_2_1_34_1",
+          "volume-title": "What your friends tell others about you: Low cost linkability of social network profiles",
+          "author": "Labitzke Sebastian",
+          "year": "2011",
+          "unstructured": "Sebastian Labitzke , Irina Taranu , and Hannes Hartenstein . What your friends tell others about you: Low cost linkability of social network profiles . 2011 . Sebastian Labitzke, Irina Taranu, and Hannes Hartenstein. What your friends tell others about you: Low cost linkability of social network profiles. 2011."
+        },
+        {
+          "key": "e_1_2_1_35_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1536414.1536474"
+        },
+        {
+          "key": "e_1_2_1_36_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2623330.2623657"
+        },
+        {
+          "key": "e_1_2_1_37_1",
+          "volume-title": "The linkprediction problem for social networks. Journal of the American society for information science and technology",
+          "author": "Liben-Nowell David",
+          "year": "2007",
+          "unstructured": "David Liben-Nowell and Jon Kleinberg . The linkprediction problem for social networks. Journal of the American society for information science and technology , 2007 . David Liben-Nowell and Jon Kleinberg. The linkprediction problem for social networks. Journal of the American society for information science and technology, 2007."
+        },
+        {
+          "key": "e_1_2_1_38_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2433396.2433457"
+        },
+        {
+          "key": "e_1_2_1_39_1",
+          "volume-title": "IJCAI",
+          "author": "Liu Li",
+          "year": "2016",
+          "unstructured": "Li Liu , Cheung K. William , Xin Li , and Lejian Liao . Aligning users across social networks using network embedding . In IJCAI , 2016 . Li Liu, Cheung K. William, Xin Li, and Lejian Liao. Aligning users across social networks using network embedding. In IJCAI, 2016."
+        },
+        {
+          "key": "e_1_2_1_40_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2588555.2588559"
+        },
+        {
+          "key": "e_1_2_1_41_1",
+          "volume-title": "Item recommendation for emerging online businesses",
+          "author": "Lu Chun-Ta",
+          "year": "2016",
+          "unstructured": "Chun-Ta Lu , Sihong Xie , Weixiang Shao , Lifang He , and Philip S Yu . Item recommendation for emerging online businesses . 2016 . Chun-Ta Lu, Sihong Xie, Weixiang Shao, Lifang He, and Philip S Yu. Item recommendation for emerging online businesses. 2016."
+        },
+        {
+          "key": "e_1_2_1_42_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ASONAM.2012.184"
+        },
+        {
+          "key": "e_1_2_1_43_1",
+          "volume-title": "IJCAI",
+          "author": "Man Tong",
+          "year": "2016",
+          "unstructured": "Tong Man , Huawei Shen , Shenghua Liu , Xiaolong Jin , and Xueqi Cheng . Predict anchor links across social networks via an embedding approach . In IJCAI , 2016 . Tong Man, Huawei Shen, Shenghua Liu, Xiaolong Jin, and Xueqi Cheng. Predict anchor links across social networks via an embedding approach. In IJCAI, 2016."
+        },
+        {
+          "key": "e_1_2_1_44_1",
+          "volume-title": "Venkata Vamsikrishna Meduri, and Subbarao Kambhampati. Tweeting the mind and instagramming the heart: Exploring differentiated content sharing on social media. arXiv preprint arXiv:1603.02718",
+          "author": "Manikonda Lydia",
+          "year": "2016",
+          "unstructured": "Lydia Manikonda , Venkata Vamsikrishna Meduri, and Subbarao Kambhampati. Tweeting the mind and instagramming the heart: Exploring differentiated content sharing on social media. arXiv preprint arXiv:1603.02718 , 2016 . Lydia Manikonda, Venkata Vamsikrishna Meduri, and Subbarao Kambhampati. Tweeting the mind and instagramming the heart: Exploring differentiated content sharing on social media. arXiv preprint arXiv:1603.02718, 2016."
+        },
+        {
+          "key": "e_1_2_1_45_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5555/876875.879024"
+        },
+        {
+          "key": "e_1_2_1_46_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1651587.1651604"
+        },
+        {
+          "key": "e_1_2_1_47_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2939672.2939849"
+        },
+        {
+          "key": "e_1_2_1_48_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/SP.2009.22"
+        },
+        {
+          "key": "e_1_2_1_49_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1743546.1743558"
+        },
+        {
+          "key": "e_1_2_1_50_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.neucom.2015.10.147"
+        },
+        {
+          "key": "e_1_2_1_51_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/SocialCom.2013.53"
+        },
+        {
+          "key": "e_1_2_1_52_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5555/2032162.2032163"
+        },
+        {
+          "key": "e_1_2_1_53_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2872427.2883002"
+        },
+        {
+          "key": "e_1_2_1_54_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2661829.2661985"
+        },
+        {
+          "key": "e_1_2_1_55_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1073/pnas.0806627105"
+        },
+        {
+          "key": "e_1_2_1_56_1",
+          "volume-title": "AAAI",
+          "author": "Tan Shulong",
+          "year": "2014",
+          "unstructured": "Shulong Tan , Ziyu Guan , Deng Cai , Xuzhen Qin , Jiajun Bu , and Chun Chen . Mapping users across networks by manifold alignment on hypergraph . In AAAI , 2014 . Shulong Tan, Ziyu Guan, Deng Cai, Xuzhen Qin, Jiajun Bu, and Chun Chen. Mapping users across networks by manifold alignment on hypergraph. In AAAI, 2014."
+        },
+        {
+          "key": "e_1_2_1_57_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2736277.2741093"
+        },
+        {
+          "key": "e_1_2_1_58_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2641190.2641195"
+        },
+        {
+          "key": "e_1_2_1_59_1",
+          "volume-title": "CIDR",
+          "author": "Thor Andreas",
+          "year": "2007",
+          "unstructured": "Andreas Thor and Erhard Rahm . Moma-a mappingbased object matching system . In CIDR , 2007 . Andreas Thor and Erhard Rahm. Moma-a mappingbased object matching system. In CIDR, 2007."
+        },
+        {
+          "key": "e_1_2_1_60_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/NDT.2009.5272173"
+        },
+        {
+          "key": "e_1_2_1_61_1",
+          "volume-title": "Collective dynamics of small-worldnetworks. nature",
+          "author": "Watts Duncan J",
+          "year": "1998",
+          "unstructured": "Duncan J Watts and Steven H Strogatz . Collective dynamics of small-worldnetworks. nature , 1998 . Duncan J Watts and Steven H Strogatz. Collective dynamics of small-worldnetworks. nature, 1998."
+        },
+        {
+          "key": "e_1_2_1_62_1",
+          "volume-title": "ICME",
+          "author": "Yan Ming",
+          "year": "2013",
+          "unstructured": "Ming Yan , Jitao Sang , Tao Mei , and Changsheng Xu . Friend transfer: cold-start friend recommendation with cross-platform transfer learning of social knowledge . In ICME , 2013 . Ming Yan, Jitao Sang, Tao Mei, and Changsheng Xu. Friend transfer: cold-start friend recommendation with cross-platform transfer learning of social knowledge. In ICME, 2013."
+        },
+        {
+          "key": "e_1_2_1_63_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1081870.1081925"
+        },
+        {
+          "key": "e_1_2_1_64_1",
+          "volume-title": "ICWSM",
+          "author": "Zafarani Reza",
+          "year": "2009",
+          "unstructured": "Reza Zafarani and Huan Liu . Connecting corresponding identities across communities . ICWSM , 2009 . Reza Zafarani and Huan Liu. Connecting corresponding identities across communities. ICWSM, 2009."
+        },
+        {
+          "key": "e_1_2_1_65_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2487575.2487648"
+        },
+        {
+          "key": "e_1_2_1_66_1",
+          "first-page": "209",
+          "volume-title": "Data Mining, 2004. ICDM'04. Fourth IEEE International Conference on",
+          "author": "Sun Pei",
+          "year": "2004",
+          "unstructured": "Pei Sun and Sanjay Chawla . On local spatial outliers . In Data Mining, 2004. ICDM'04. Fourth IEEE International Conference on , pages 209 -- 216 . IEEE, 2004 Reza Zafarani and Huan Liu. Finding friends on a new site using minimum information. In SDM , 2014.. Pei Sun and Sanjay Chawla. On local spatial outliers. In Data Mining, 2004. ICDM'04. Fourth IEEE International Conference on, pages 209--216. IEEE, 2004Reza Zafarani and Huan Liu. Finding friends on a new site using minimum information. In SDM, 2014.."
+        },
+        {
+          "key": "e_1_2_1_67_1",
+          "volume-title": "ICWSM. Citeseer",
+          "author": "Zafarani Reza",
+          "year": "2014",
+          "unstructured": "Reza Zafarani and Huan Liu . Users joining multiple sites: Distributions and patterns . In ICWSM. Citeseer , 2014 . Reza Zafarani and Huan Liu. Users joining multiple sites: Distributions and patterns. In ICWSM. Citeseer, 2014."
+        },
+        {
+          "key": "e_1_2_1_68_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.inffus.2015.07.002"
+        },
+        {
+          "key": "e_1_2_1_69_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2747880"
+        },
+        {
+          "key": "e_1_2_1_70_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-12844-3_17"
+        },
+        {
+          "key": "e_1_2_1_71_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-662-45558-6_11"
+        },
+        {
+          "key": "e_1_2_1_72_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2872427.2883038"
+        },
+        {
+          "key": "e_1_2_1_73_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2623330.2623645"
+        },
+        {
+          "key": "e_1_2_1_74_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDM.2015.114"
+        },
+        {
+          "key": "e_1_2_1_75_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2939672.2939766"
+        },
+        {
+          "key": "e_1_2_1_76_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2783258.2783268"
+        },
+        {
+          "key": "e_1_2_1_77_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-31753-3_32"
+        },
+        {
+          "key": "e_1_2_1_78_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2015.2485222"
+        },
+        {
+          "key": "e_1_2_1_79_1",
+          "volume-title": "Introduction to semi-supervised learning. Synthesis lectures on artificial intelligence and machine learning",
+          "author": "Zhu Xiaojin",
+          "year": "2009",
+          "unstructured": "Xiaojin Zhu and Andrew B Goldberg . Introduction to semi-supervised learning. Synthesis lectures on artificial intelligence and machine learning , 2009 . Xiaojin Zhu and Andrew B Goldberg. Introduction to semi-supervised learning. Synthesis lectures on artificial intelligence and machine learning, 2009."
+        },
+        {
+          "key": "e_1_2_1_80_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5555/2670030"
+        }
+      ],
+      "container-title": [
+        "ACM SIGKDD Explorations Newsletter"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/3068777.3068781",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/3068777.3068781",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            6,
+            18
+          ]
+        ],
+        "date-time": "2025-06-18T03:03:44Z",
+        "timestamp": 1750215824000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/3068777.3068781"
+        }
+      },
+      "subtitle": [
+        "A Review"
+      ],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            22
+          ]
+        ]
+      },
+      "references-count": 80,
+      "journal-issue": {
+        "issue": "2",
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3,
+              22
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1145/3068777.3068781"
+      ],
+      "URL": "https://doi.org/10.1145/3068777.3068781",
+      "relation": {},
+      "ISSN": [
+        "1931-0145",
+        "1931-0153"
+      ],
+      "issn-type": [
+        {
+          "value": "1931-0145",
+          "type": "print"
+        },
+        {
+          "value": "1931-0153",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2017,
+            3,
+            22
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2017-03-22",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

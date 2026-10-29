@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-fusion",
+  "exp_id": "E5-3",
+  "learner": "GBDT",
+  "feature": "fusion",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.28297338396242927
+  },
+  "group": null,
+  "exclude_group": null,
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.9771019724631039,
+    0.9773537068711273,
+    0.9773091140729399,
+    0.9767711447479094,
+    0.9772718416729134
+  ],
+  "seed_AP_SD": 0.00023813305915111404,
+  "mean_score_AP": 0.9777767725778833,
+  "model_paths": [
+    "artifacts/model_GBDT-fusion_seed11.pkl",
+    "artifacts/model_GBDT-fusion_seed23.pkl",
+    "artifacts/model_GBDT-fusion_seed42.pkl",
+    "artifacts/model_GBDT-fusion_seed71.pkl",
+    "artifacts/model_GBDT-fusion_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-fusion_seed11.pkl": "fb74eee6a61e92f8b7530d5ed6c640654cce7ecdc2009f89951c32ffba9493fe",
+    "artifacts/model_GBDT-fusion_seed23.pkl": "354ad388062fce3888ffe3525e04a7065a478c69f407e7074406e95444a93fab",
+    "artifacts/model_GBDT-fusion_seed42.pkl": "46c06b5ba66a1ae972ae6e980102ed24172ac8e228680754a77c4634737a5ec7",
+    "artifacts/model_GBDT-fusion_seed71.pkl": "de7385d19dcd10fa39dca78be9dc4c15c6953403b2ab3102a5e6efd9869bf3aa",
+    "artifacts/model_GBDT-fusion_seed101.pkl": "362a495b19bfe851d74b9bac059792e22bc9a58987a402aa49b1aeb4c8333f66"
+  },
+  "oof_path": "artifacts/oof_GBDT-fusion.npz",
+  "oof_sha256": "aeed5b7a7120ce25d22413ae067fe7136d77303706fdfb25c6ce719dec08e6c5",
+  "operating_points": {
+    "validation_F1_threshold": 0.89,
+    "validation_F1": 0.9516347318185056,
+    "precision_target_threshold": 0.5631449851209881,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.9777767725778818,
+    "precision": 0.8803899033754735,
+    "recall": 0.9586114200964034,
+    "f1": 0.9178370942332867,
+    "tp": 20683,
+    "fp": 2810,
+    "tn": 327108,
+    "fn": 893,
+    "automatic_fn": 893,
+    "utility_fn": 893,
+    "rejected_positive_fn": 893,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9586114200964034,
+    "raw_cost": 6513.0,
+    "cost_per_pair": 0.018529477032324874,
+    "brier": 0.008319325037209903,
+    "ece15_equalmass": 0.01610717292680164
+  }
+}

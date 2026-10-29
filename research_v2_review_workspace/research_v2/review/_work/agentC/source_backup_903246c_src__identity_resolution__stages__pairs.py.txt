@@ -1,0 +1,307 @@
+
+## backup@903246c:src/identity_resolution/stages/pairs.py
+1: """
+2: Stage 8: Pair Construction & Label Building
+3: 
+4: สร้าง labeled_pairs.parquet สำหรับ train ML model
+5: 
+6: 3 ประเภท pairs:
+7:   (1) Positive pairs   — profiles ที่ user_folder เดียวกัน คนละ platform → label=1
+8:   (2) Random negatives — profiles ที่ user_folder ต่างกัน สุ่มจับคู่     → label=0
+9:   (3) Hard negatives   — profiles ที่ชื่อ/username คล้ายกันแต่คนละคน    → label=0
+10: 
+11: Input  : nomalized_profiles.csv (มี profile_id + platform + user_folder)
+12: Output : labeled_pairs.parquet, pair_stats.json
+13: 
+14: Feature Summary (ตามที่อธิบายในเมสเสจก่อนหน้า):
+48: 
+49: ROOT = Path(__file__).resolve().parents[3]
+50: PAIR_OUTPUT = ROOT / "train_data" / "labeled_pairs.parquet"
+51: STATS_OUTPUT = ROOT / "artifacts" / "pair_building" / "pair_stats.json"
+52: 
+54: 
+55: RANDOM_SEED = 42
+56: NEG_TO_POS_RATIO = 5  # random negatives = 5x positive pairs
+57: HARD_NEG_RATIO = 2  # hard negatives = 2x positive pairs
+58: HARD_NEG_THRESHOLD = 0.65  # Jaro-Winkler threshold สำหรับ hard negative candidate
+59: CROSS_PLATFORM_ONLY = True  # positive pairs ข้าม platform เท่านั้น (ไม่จับ same platform)
+60: 
+61: # สำหรับ SBERT (comment out ถ้าไม่ต้องการใช้)
+65: # ─── utilities ───────────────────────────────────────────────────────────────
+66: 
+67: def _safe_str(val) -> str:
+68:     if val is None or (isinstance(val, float) and math.isnan(val)):
+69:         return ""
+71: 
+72: 
+73: def _name_similarity(a: str, b: str) -> float:
+74:     """Jaro-Winkler similarity ระหว่าง 2 strings"""
+75:     if not a or not b:
+81: 
+82: class PairBuilder:
+83:     """สร้าง labeled pairs จาก DataFrame ที่มี profile_id + user_folder + platform"""
+84: 
+85:     def __init__(self, df: pd.DataFrame, seed: int = RANDOM_SEED):
+86:         self.df = df.copy().reset_index(drop=True)
+87:         self.seed = seed
+92:         self._build_indexes()
+93: 
+94:     def _build_indexes(self):
+95:         """สร้าง lookup tables สำหรับ fast access"""
+96: 
+98:         for i, row in self.df.iterrows():
+99:             key = (
+100:                 str(row["user_folder"])
+101:                 if pd.notna(row.get("user_folder"))
+102:                 else str(row["profile_id"])
+103:             )
+121: 
+122:     # ──────────────────────────────────────────────────────────
+123:     # (1) POSITIVE PAIRS
+124:     # ──────────────────────────────────────────────────────────
+125: 
+126:     def generate_positive_pairs(self) -> pd.DataFrame:
+127:         """สร้าง positive pairs: profiles ที่ user_folder เดียวกัน คนละ platform"""
+128:         pairs = []
+129:         skipped_same_platform = 0
+149:                         "platform_a": plat_a,
+150:                         "platform_b": plat_b,
+151:                         "label": 1,
+152:                         "pair_type": "positive",
+153:                     }
+154:                 )
+156:         df_pos = pd.DataFrame(pairs)
+157:         print(
+158:             f"[PairBuilder] Positive pairs: {len(df_pos)}"
+159:             f"  (skipped same-platform: {skipped_same_platform})"
+160:         )
+162: 
+163:     # ──────────────────────────────────────────────────────────
+164:     # (2) RANDOM NEGATIVE PAIRS
+165:     # ──────────────────────────────────────────────────────────
+166: 
+167:     def generate_random_negatives(
+168:         self,
+169:         n_positive: int,
+170:         ratio: float = NEG_TO_POS_RATIO,
+171:         positive_pid_set: set = None,
+172:     ) -> pd.DataFrame:
+173:         """สุ่ม pairs ที่ entity ต่างกัน"""
+174:         n_target = int(n_positive * ratio)
+175:         all_ids = self.df["profile_id"].tolist()
+176: 
+177:         pid_to_folder = {
+178:             int(self.df.loc[i, "profile_id"]): str(self.df.loc[i, "user_folder"])
+179:             for i in range(len(self.df))
+180:             if pd.notna(self.df.loc[i, "user_folder"])
+181:         }
+182:         pid_to_plat = {
+187:         }
+188: 
+189:         positive_set = positive_pid_set or set()
+190:         generated = set()
+191:         pairs = []
+205: 
+206:             key = (min(pid_a, pid_b), max(pid_a, pid_b))
+207:             if key in generated or key in positive_set:
+208:                 continue
+209: 
+220:                     "platform_a": pid_to_plat.get(pid_a, ""),
+221:                     "platform_b": pid_to_plat.get(pid_b, ""),
+222:                     "label": 0,
+223:                     "pair_type": "random_negative",
+224:                 }
+225:             )
+227:         df_neg = pd.DataFrame(pairs)
+228:         print(
+229:             f"[PairBuilder] Random negatives: {len(df_neg)}"
+230:             f"  (target={n_target}, attempts={attempts})"
+231:         )
+233: 
+234:     # ──────────────────────────────────────────────────────────
+235:     # (3) HARD NEGATIVE PAIRS
+236:     # ──────────────────────────────────────────────────────────
+237: 
+238:     def generate_hard_negatives(
+239:         self,
+240:         n_positive: int,
+241:         ratio: float = HARD_NEG_RATIO,
+242:         threshold: float = HARD_NEG_THRESHOLD,
+243:         positive_pid_set: set = None,
+244:         random_neg_set: set = None,
+245:     ) -> pd.DataFrame:
+246:         """Hard negatives = profiles ที่เหมือนแต่คนละ entity"""
+247:         n_target = int(n_positive * ratio)
+248:         existing = (positive_pid_set or set()) | (random_neg_set or set())
+249: 
+250:         self.df["_name_prefix3"] = (
+259: 
+260:         pid_to_folder = {
+261:             int(r["profile_id"]): str(r["user_folder"])
+262:             for _, r in self.df.iterrows()
+263:             if pd.notna(r.get("user_folder"))
+264:         }
+265:         pid_to_plat = {
+307:                     "platform_a": pid_to_plat.get(pid_a, ""),
+308:                     "platform_b": pid_to_plat.get(pid_b, ""),
+309:                     "label": 0,
+310:                     "pair_type": "hard_negative",
+311:                 }
+312:             )
+317:         df_hard = pd.DataFrame(pairs)
+318:         print(
+319:             f"[PairBuilder] Hard negatives: {len(df_hard)}"
+320:             f"  (target={n_target}, candidates={len(candidates)})"
+321:         )
+326:     # ──────────────────────────────────────────────────────────
+327: 
+328:     def build(
+329:         self,
+330:         neg_ratio: float = NEG_TO_POS_RATIO,
+332:         hard_threshold: float = HARD_NEG_THRESHOLD,
+333:     ) -> pd.DataFrame:
+334:         """สร้าง labeled_pairs ครบทั้ง 3 ประเภท แล้ว concat + shuffle"""
+335:         print("\n" + "=" * 55)
+336:         print("Stage 8: Pair Construction & Label Building")
+337:         print("=" * 55)
+338: 
+339:         print("\n[1/3] Generating positive pairs ...")
+340:         df_pos = self.generate_positive_pairs()
+341: 
+342:         pos_set = {
+346:         }
+347: 
+348:         print("\n[2/3] Generating random negatives ...")
+349:         df_rand = self.generate_random_negatives(
+350:             n_positive=len(df_pos),
+351:             ratio=neg_ratio,
+352:             positive_pid_set=pos_set,
+353:         )
+354: 
+359:         }
+360: 
+361:         print("\n[3/3] Generating hard negatives ...")
+362:         df_hard = self.generate_hard_negatives(
+363:             n_positive=len(df_pos),
+364:             ratio=hard_neg_ratio,
+365:             threshold=hard_threshold,
+366:             positive_pid_set=pos_set,
+367:             random_neg_set=rand_set,
+368:         )
+369: 
+370:         df_all = pd.concat([df_pos, df_rand, df_hard], ignore_index=True)
+371:         df_all = df_all.sample(frac=1, random_state=self.seed).reset_index(drop=True)
+372: 
+373:         print("\n" + "─" * 45)
+374:         print("Label distribution:")
+375:         print(f"  Positive (label=1):  {(df_all['label'] == 1).sum():>7,}")
+376:         print(f"  Negative (label=0):  {(df_all['label'] == 0).sum():>7,}")
+377:         print(f"  Total pairs:         {len(df_all):>7,}")
+378:         print(
+379:             f"  Pos/Neg ratio:       1 : {(df_all['label'] == 0).sum() / max((df_all['label'] == 1).sum(), 1):.1f}"
+380:         )
+381:         print()
+384:             print(f"  {ptype:<20} {cnt:>7,}")
+385:         print()
+386:         print("Platform pair distribution (positive):")
+387:         pos_only = df_all[df_all["label"] == 1].copy()
+388:         pos_only["plat_pair"] = pos_only.apply(
+389:             lambda r: " x ".join(sorted([r["platform_a"], r["platform_b"]])), axis=1
+397: # ─── quality checks ──────────────────────────────────────────────────────────
+398: 
+399: def run_quality_checks(labeled_pairs: pd.DataFrame, df_profiles: pd.DataFrame) -> dict:
+400:     """ตรวจสอบคุณภาพของ labeled_pairs ก่อน save"""
+401:     print("\n" + "=" * 45)
+402:     print("Quality Checks")
+405:     results = {}
+406: 
+407:     pair_keys = labeled_pairs.apply(
+408:         lambda r: (
+409:             min(int(r["profile_id_a"]), int(r["profile_id_b"])),
+416:     print(f"  [{'PASS' if n_dupes == 0 else 'FAIL'}] No duplicate pairs: {n_dupes} duplicates found")
+417: 
+418:     self_pairs = (labeled_pairs["profile_id_a"] == labeled_pairs["profile_id_b"]).sum()
+419:     results["no_self_pairs"] = self_pairs == 0
+420:     print(f"  [{'PASS' if self_pairs == 0 else 'FAIL'}] No self-pairs: {self_pairs}")
+421: 
+422:     pos_keys = set(pair_keys[labeled_pairs["label"] == 1])
+423:     neg_keys = set(pair_keys[labeled_pairs["label"] == 0])
+424:     overlap = len(pos_keys & neg_keys)
+425:     results["no_pos_neg_overlap"] = overlap == 0
+428:     valid_pids = set(df_profiles["profile_id"].astype(int).tolist())
+429:     all_pair_pids = (
+430:         set(labeled_pairs["profile_id_a"].astype(int))
+431:         | set(labeled_pairs["profile_id_b"].astype(int))
+432:     )
+433:     orphan = all_pair_pids - valid_pids
+437:     )
+438: 
+439:     n_pos = (labeled_pairs["label"] == 1).sum()
+440:     n_neg = (labeled_pairs["label"] == 0).sum()
+441:     ratio = n_neg / max(n_pos, 1)
+442:     results["class_ratio"] = round(ratio, 2)
+444: 
+445:     print(
+446:         f"  [INFO] Hard negatives generated: "
+447:         f"{(labeled_pairs['pair_type'] == 'hard_negative').sum():,}"
+448:     )
+449: 
+459: # ─── main ─────────────────────────────────────────────────────────────────────
+460: 
+461: def main() -> None:
+462:     argparse.ArgumentParser(description="Stage 2: build labeled profile pairs").parse_args()
+463:     import pickle
+464: 
+483: 
+484:     df = pd.read_csv(CSV_PATH)
+485:     entity_col = "user_folder"
+486:     if "profile_id" not in df.columns:
+487:         df["profile_id"] = range(len(df))
+488:     print(f"Loaded: {CSV_PATH}  shape={df.shape}")
+489: 
+490:     df["user_folder"] = df["user_folder"].fillna(df["profile_id"].astype(str))
+491: 
+492:     print(f"Profiles: {len(df):,}  |  Entities: {df['user_folder'].nunique():,}")
+493:     print(f"Platforms: {df['platform'].value_counts().to_dict()}")
+494: 
+495:     builder = PairBuilder(df, seed=RANDOM_SEED)
+496: 
+497:     labeled_pairs = builder.build(
+498:         neg_ratio=NEG_TO_POS_RATIO,
+499:         hard_neg_ratio=HARD_NEG_RATIO,
+501:     )
+502: 
+503:     qa_results = run_quality_checks(labeled_pairs, df)
+504: 
+505:     PAIR_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+506:     labeled_pairs.to_parquet(PAIR_OUTPUT, index=False)
+507: 
+508:     stats = {
+509:         "total_pairs": int(len(labeled_pairs)),
+510:         "positive_pairs": int((labeled_pairs["label"] == 1).sum()),
+511:         "negative_pairs": int((labeled_pairs["label"] == 0).sum()),
+512:         "random_negatives": int(
+513:             (labeled_pairs["pair_type"] == "random_negative").sum()
+514:         ),
+515:         "hard_negatives": int(
+516:             (labeled_pairs["pair_type"] == "hard_negative").sum()
+517:         ),
+518:         "class_ratio": round(
+519:             (labeled_pairs["label"] == 0).sum()
+520:             / max((labeled_pairs["label"] == 1).sum(), 1),
+521:             2,
+522:         ),
+530:         },
+531:     }
+532:     def _json_default(o):
+533:         # Convert numpy scalar types (and other non-serializable objects) to plain Python
+534:         if hasattr(o, "item"):
+544: 
+545:     print("\n✅ Stage 8 Complete!")
+546:     print(f"   {PAIR_OUTPUT}  ({len(labeled_pairs):,} pairs)")
+547:     print(f"   {STATS_OUTPUT}")
+548:     print(f"\n   Positive : {stats['positive_pairs']:,}")
+549:     print(f"   Random-  : {stats['random_negatives']:,}")
+550:     print(f"   Hard-    : {stats['hard_negatives']:,}")
+551:     print(f"   Ratio    : 1 : {stats['class_ratio']}")
+552: 

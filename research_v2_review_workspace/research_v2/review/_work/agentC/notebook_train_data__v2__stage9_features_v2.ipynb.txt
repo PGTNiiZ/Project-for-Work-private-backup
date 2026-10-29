@@ -1,0 +1,87 @@
+# main@1e0a2db:train_data/v2/stage9_features_v2.ipynb — code cells ONLY; outputs intentionally excluded
+CELL 1
+cell_source_L5; raw_JSON_L[66]: FEATURES_CSV   = f'{OUTPUT_DIR}/feature_matrix.csv'
+cell_source_L6; raw_JSON_L[67]: FEAT_COLS_PKL  = f'{OUTPUT_DIR}/feature_cols.pkl'
+cell_source_L7; raw_JSON_L[68]: TFIDF_MAX_FEAT = 5000
+cell_source_L8; raw_JSON_L[69]: # ──────────────────────────────────────────────────────────────────────────
+cell_source_L9; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L11; raw_JSON_L[72]: import numpy as np
+cell_source_L12; raw_JSON_L[73]: import pandas as pd
+cell_source_L13; raw_JSON_L[74]: from sklearn.feature_extraction.text import TfidfVectorizer
+cell_source_L14; raw_JSON_L[75]: from sklearn.metrics.pairwise import cosine_similarity as sk_cosine
+cell_source_L15; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+CELL 3
+cell_source_L35; raw_JSON_L[204]: for i, (_, pair) in enumerate(labeled_pairs.iterrows()):
+cell_source_L36; raw_JSON_L[205]:     row = {
+cell_source_L37; raw_JSON_L[206]:         'profile_id_a': pair['profile_id_a'],
+cell_source_L38; raw_JSON_L[207]:         'profile_id_b': pair['profile_id_b'],
+cell_source_L39; raw_JSON_L[208]:         'entity_id_a':  pair.get('entity_id_a', ''),
+cell_source_L40; raw_JSON_L[209]:         'label':        pair['label'],
+cell_source_L41; raw_JSON_L[210]:     }
+cell_source_L42; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L43; raw_JSON_L[212, 383, 468]:     id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+cell_source_L44; raw_JSON_L[213, 384, 469]:     if id_a in profile_lookup.index and id_b in profile_lookup.index:
+cell_source_L45; raw_JSON_L[214, 385, 470]:         r_a = profile_lookup.loc[id_a]
+cell_source_L46; raw_JSON_L[215, 386, 471]:         r_b = profile_lookup.loc[id_b]
+cell_source_L47; raw_JSON_L[216, 387, 472]:         if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+cell_source_L48; raw_JSON_L[217, 388, 473]:         if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+cell_source_L49; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L50; raw_JSON_L[219, 226]:         for col, prefix in text_fields:
+cell_source_L65; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L66; raw_JSON_L[235]: feature_df = pd.DataFrame(feature_rows)
+cell_source_L67; raw_JSON_L[236]: feat_cols  = [c for c in feature_df.columns if c not in ['profile_id_a','profile_id_b','entity_id_a','label']]
+cell_source_L68; raw_JSON_L[237]: print(f'\n  Features created: {len(feat_cols)} → {feat_cols}')
+cell_source_L69; raw_JSON_L[238]: print(f'\n✅ Step 9.1 เสร็จ — {len(feat_cols)} string similarity features')
+CELL 5
+cell_source_L4; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L5; raw_JSON_L[298]: all_bios    = df_clean['bio_clean'].fillna('').tolist()
+cell_source_L6; raw_JSON_L[299]: tfidf       = TfidfVectorizer(max_features=TFIDF_MAX_FEAT, stop_words='english', min_df=2)
+cell_source_L7; raw_JSON_L[300]: tfidf_matrix = tfidf.fit_transform(all_bios)
+cell_source_L8; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L9; raw_JSON_L[302]: bio_keys    = df_clean['profile_id'].tolist()
+cell_source_L10; raw_JSON_L[303]: key_to_idx  = {k: i for i, k in enumerate(bio_keys)}
+cell_source_L11; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L12; raw_JSON_L[305]: tfidf_scores = []
+cell_source_L13; raw_JSON_L[306, 382, 467]: for _, pair in labeled_pairs.iterrows():
+cell_source_L14; raw_JSON_L[307]:     idx_a = key_to_idx.get(pair['profile_id_a'])
+cell_source_L15; raw_JSON_L[308]:     idx_b = key_to_idx.get(pair['profile_id_b'])
+cell_source_L16; raw_JSON_L[309]:     if idx_a is not None and idx_b is not None:
+cell_source_L17; raw_JSON_L[310]:         sim = sk_cosine(tfidf_matrix[idx_a:idx_a+1], tfidf_matrix[idx_b:idx_b+1])[0][0]
+cell_source_L18; raw_JSON_L[311]:         tfidf_scores.append(float(sim))
+cell_source_L19; raw_JSON_L[184, 225, 312, 397, 479]:     else:
+cell_source_L20; raw_JSON_L[313]:         tfidf_scores.append(0.0)
+cell_source_L21; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L22; raw_JSON_L[315]: feature_df['bio_tfidf_cosine'] = tfidf_scores
+cell_source_L23; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L24; raw_JSON_L[317]: print(f'  TF-IDF vocabulary size : {len(tfidf.vocabulary_):,}')
+cell_source_L25; raw_JSON_L[318]: print(f'  Mean cosine similarity : {np.mean(tfidf_scores):.4f}')
+cell_source_L26; raw_JSON_L[319]: print(f'  Positive pairs mean    : {feature_df[feature_df["label"]==1]["bio_tfidf_cosine"].mean():.4f}')
+cell_source_L27; raw_JSON_L[320]: print(f'  Negative pairs mean    : {feature_df[feature_df["label"]==0]["bio_tfidf_cosine"].mean():.4f}')
+cell_source_L28; raw_JSON_L[321]: print(f'\n✅ Step 9.2 เสร็จ — เพิ่ม column: bio_tfidf_cosine')
+CELL 7
+cell_source_L7; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L8; raw_JSON_L[306, 382, 467]: for _, pair in labeled_pairs.iterrows():
+cell_source_L9; raw_JSON_L[212, 383, 468]:     id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+cell_source_L10; raw_JSON_L[213, 384, 469]:     if id_a in profile_lookup.index and id_b in profile_lookup.index:
+cell_source_L11; raw_JSON_L[214, 385, 470]:         r_a = profile_lookup.loc[id_a]
+cell_source_L12; raw_JSON_L[215, 386, 471]:         r_b = profile_lookup.loc[id_b]
+cell_source_L13; raw_JSON_L[216, 387, 472]:         if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+cell_source_L14; raw_JSON_L[217, 388, 473]:         if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+cell_source_L15; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L16; raw_JSON_L[390]:         u_a = str(r_a.get('externalUrl_clean', '') or '')
+CELL 9
+cell_source_L7; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L8; raw_JSON_L[306, 382, 467]: for _, pair in labeled_pairs.iterrows():
+cell_source_L9; raw_JSON_L[212, 383, 468]:     id_a, id_b = pair['profile_id_a'], pair['profile_id_b']
+cell_source_L10; raw_JSON_L[213, 384, 469]:     if id_a in profile_lookup.index and id_b in profile_lookup.index:
+cell_source_L11; raw_JSON_L[214, 385, 470]:         r_a = profile_lookup.loc[id_a]
+cell_source_L12; raw_JSON_L[215, 386, 471]:         r_b = profile_lookup.loc[id_b]
+cell_source_L13; raw_JSON_L[216, 387, 472]:         if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+cell_source_L14; raw_JSON_L[217, 388, 473]:         if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+cell_source_L15; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 
+cell_source_L16; raw_JSON_L[475]:         same_plat.append(1.0 if r_a.get('platform', '') == r_b.get('platform', '') else 0.0)
+CELL 11
+cell_source_L1; raw_JSON_L[572]: # --- 9.5 Combine & Save ---
+cell_source_L2; raw_JSON_L[573]: meta_cols    = ['profile_id_a', 'profile_id_b', 'entity_id_a', 'label']
+cell_source_L3; raw_JSON_L[574]: feature_cols = [c for c in feature_df.columns if c not in meta_cols]
+cell_source_L4; raw_JSON_L[18, 20, 23, 28, 70, 76, 83, 162, 164, 171, 173, 186, 189, 192, 200, 203, 211, 218, 230, 234, 288, 297, 301, 304, 314, 316, 369, 378, 381, 389, 394, 400, 403, 454, 463, 466, 474, 482, 485, 548, 561, 564, 575, 584, 589, 592, 596]: 

@@ -1,0 +1,94 @@
+
+## backup@903246c:src/identity_resolution/stages/features.py
+13: import numpy as np
+14: import pandas as pd
+15: from sklearn.feature_extraction.text import TfidfVectorizer
+16: from sklearn.model_selection import train_test_split
+17: 
+33: DOWNLOADED_IMAGES_DIR = IMAGES_DIR / "downloaded_images"
+34: SBERT_EMBEDDINGS_PATH = ARTIFACTS_DIR / "sbert_embeddings.npy"
+35: TFIDF_VECTORIZER_PATH = ARTIFACTS_DIR / "tfidf_vectorizer.pkl"
+36: FEATURE_COLS_PATH = ARTIFACTS_DIR / "feature_cols.pkl"
+37: SPLIT_ARTIFACTS = {
+232:     src_records = []
+233:     for idx, row in enumerate(src.to_dict("records")):
+234:         source_idx = row.get("_source_idx", idx)
+235:         src_records.append(_build_row_cache(row, int(source_idx)))
+236:     return {str(row["profile_id"]): row for row in src_records}
+237: 
+238: 
+282:     return {
+283:         **row,
+284:         "__idx": int(source_idx),
+285:         "_domains": set(_parse_list_field(row.get("external_domain", ""))) - GENERIC_EXTERNAL_DOMAINS,
+286:         "_urls": set(_parse_list_field(row.get("externalUrl_clean", ""))),
+308: class PairFeatureComputer:
+309:     @staticmethod
+310:     def feat_B1_text(record_a: dict, record_b: dict, tfidf_matrix=None, idx_a: int | None = None, idx_b: int | None = None) -> dict:
+311:         JW, Lev, fuzz = _get_rapidfuzz()
+312:         feats = {}
+320:             feats[f"{field}_exact"] = float(a == b and a != "")
+321: 
+322:         if tfidf_matrix is not None and idx_a is not None and idx_b is not None:
+323:             try:
+324:                 cosine = tfidf_matrix[idx_a].multiply(tfidf_matrix[idx_b]).sum()
+325:                 feats["bio_tfidf_cosine"] = float(cosine)
+326:             except Exception:
+327:                 feats["bio_tfidf_cosine"] = 0.0
+328:         else:
+329:             feats["bio_tfidf_cosine"] = 0.0
+330:         return feats
+331: 
+502:         self.sbert_embeddings = sbert_embeddings
+503:         self.image_cache = image_cache or {}
+504:         self.tfidf_vectorizer: Optional[TfidfVectorizer] = None
+505: 
+506:         if "B1" in self.feature_groups and train_bios is not None:
+507:             print("[FE] Fitting TF-IDF on train bios only ...")
+508:             self.tfidf_vectorizer = TfidfVectorizer(
+509:                 max_features=5000,
+510:                 ngram_range=(1, 2),
+512:                 sublinear_tf=True,
+513:             )
+514:             self.tfidf_vectorizer.fit(train_bios.fillna("").astype(str).tolist())
+515:             print(f"[FE] TF-IDF vocab size: {len(self.tfidf_vectorizer.vocabulary_)}")
+516: 
+517:     def compute_pairs_chunked(
+533:             profile_lookup = build_profile_lookup(src)
+534: 
+535:         tfidf_mat = None
+536:         if "B1" in self.feature_groups and self.tfidf_vectorizer is not None:
+537:             tfidf_mat = self.tfidf_vectorizer.transform(src["bio"].fillna("").astype(str).tolist())
+538: 
+539:         total_available = len(labeled_pairs)
+577:                     continue
+578: 
+579:                 idx_a = int(record_a["__idx"])
+580:                 idx_b = int(record_b["__idx"])
+581:                 feats = {
+582:                     "profile_id_a": pid_a,
+586:                 }
+587:                 if "B1" in self.feature_groups:
+588:                     feats.update(PairFeatureComputer.feat_B1_text(record_a, record_b, tfidf_mat, idx_a, idx_b))
+589:                 if "A1" in self.feature_groups:
+590:                     feats.update(PairFeatureComputer.feat_A1_url(record_a, record_b))
+625: 
+626: 
+627: def build_entity_split(df: pd.DataFrame, pairs: pd.DataFrame, random_seed: int = 42):
+628:     entity_col = "user_folder" if "user_folder" in df.columns else "profile_id"
+629:     profile_id_series = df["profile_id"].map(lambda x: str(x))
+641:         entity_set = set(entities)
+642:         subset = df[df["_entity_key"].isin(entity_set)].copy()
+643:         subset["_source_idx"] = subset.index.astype(int)
+644:         subset = subset.reset_index(drop=True)
+645:         pid_set = set(subset["profile_id"].tolist())
+646:         pair_subset = pairs[pairs["profile_id_a"].isin(pid_set) & pairs["profile_id_b"].isin(pid_set)].copy()
+647:         return subset.drop(columns=["_entity_key"]), pair_subset
+648: 
+649:     train_df, train_pairs = profile_subset(train_entities)
+812:         raise RuntimeError("No feature rows were produced.")
+813:     feature_cols = fe.get_feature_cols(feature_source)
+814:     with TFIDF_VECTORIZER_PATH.open("wb") as fh:
+815:         pickle.dump(fe.tfidf_vectorizer, fh)
+816:     with FEATURE_COLS_PATH.open("wb") as fh:
+817:         pickle.dump(feature_cols, fh)

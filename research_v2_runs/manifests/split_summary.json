@@ -1,0 +1,40 @@
+{
+  "split_sha256": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc",
+  "raw_sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "sealed_test_sha256": "181b9ac497898f2ec726031303cee787d39672062a541f58709b470118e6b56a",
+  "folds": [
+    {
+      "fold": 0,
+      "entities": 3060,
+      "profiles": 7356,
+      "ground_truth_pairs": 5841
+    },
+    {
+      "fold": 1,
+      "entities": 3059,
+      "profiles": 7365,
+      "ground_truth_pairs": 5858
+    },
+    {
+      "fold": 2,
+      "entities": 3060,
+      "profiles": 7358,
+      "ground_truth_pairs": 5842
+    },
+    {
+      "fold": 3,
+      "entities": 3059,
+      "profiles": 7362,
+      "ground_truth_pairs": 5850
+    },
+    {
+      "fold": 4,
+      "entities": 3059,
+      "profiles": 7363,
+      "ground_truth_pairs": 5852
+    }
+  ],
+  "entity_overlap": 0,
+  "component_overlap": 0,
+  "test_is_exploratory": true
+}

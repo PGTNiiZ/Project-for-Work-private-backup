@@ -1,0 +1,353 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          3
+        ]
+      ],
+      "date-time": "2026-10-03T21:54:42Z",
+      "timestamp": 1791064482820,
+      "version": "4.1.0"
+    },
+    "reference-count": 30,
+    "publisher": "Association for Computing Machinery (ACM)",
+    "issue": "11",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Proc. VLDB Endow."
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    },
+    "abstract": "<jats:p>A central problem in data integration and data cleansing is to find entities in different data sources that describe the same real-world object. Many existing methods for identifying such entities rely on explicit linkage rules which specify the conditions that entities must fulfill in order to be considered to describe the same real-world object. In this paper, we present the GenLink algorithm for learning expressive linkage rules from a set of existing reference links using genetic programming. The algorithm is capable of generating linkage rules which select discriminative properties for comparison, apply chains of data transformations to normalize property values, choose appropriate distance measures and thresholds and combine the results of multiple comparisons using non-linear aggregation functions. Our experiments show that the GenLink algorithm outperforms the state-of-the-art genetic programming approach to learning linkage rules recently presented by Carvalho et. al. and is capable of learning linkage rules which achieve a similar accuracy as human written rules for the same problem.</jats:p>",
+    "DOI": "10.14778/2350229.2350276",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2014,
+          6,
+          24
+        ]
+      ],
+      "date-time": "2014-06-24T12:17:57Z",
+      "timestamp": 1403612277000
+    },
+    "page": "1638-1649",
+    "source": "Crossref",
+    "is-referenced-by-count": 62,
+    "title": [
+      "Learning expressive linkage rules using genetic programming"
+    ],
+    "prefix": "10.14778",
+    "volume": "5",
+    "author": [
+      {
+        "given": "Robert",
+        "family": "Isele",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Web-based Systems Group, Freie Universität Berlin, Garystr, Berlin, Germany"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Christian",
+        "family": "Bizer",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Web-based Systems Group, Freie Universität Berlin, Garystr., Berlin, Germany"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_2_1_1_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1807167.1807252"
+      },
+      {
+        "key": "e_1_2_1_2_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/956750.956759"
+      },
+      {
+        "key": "e_1_2_1_4_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.4018/jswis.2009040101"
+      },
+      {
+        "key": "e_1_2_1_5_1",
+        "unstructured": "D. Brickley and L. Miller. FOAF Vocabulary Specification. http://xmlns.com/foaf/0.1/ 2005.  D. Brickley and L. Miller. FOAF Vocabulary Specification. http://xmlns.com/foaf/0.1/ 2005."
+      },
+      {
+        "key": "e_1_2_1_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1363686.1364118"
+      },
+      {
+        "key": "e_1_2_1_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1023/A:1022627411411"
+      },
+      {
+        "key": "e_1_2_1_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/645511.657085"
+      },
+      {
+        "key": "e_1_2_1_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/1141753.1141760"
+      },
+      {
+        "key": "e_1_2_1_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TKDE.2010.234"
+      },
+      {
+        "key": "e_1_2_1_11_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/876875.879014"
+      },
+      {
+        "key": "e_1_2_1_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TKDE.2007.9"
+      },
+      {
+        "key": "e_1_2_1_13_1",
+        "first-page": "85",
+        "volume-title": "6th International Workshop on Ontology Matching.",
+        "author": "Euzenat J.",
+        "year": "2011",
+        "unstructured": "J. Euzenat Results of the ontology alignment evaluation initiative 2011 . In 6th International Workshop on Ontology Matching. , pages 85 -- 113 , 2011 . J. Euzenat et al. Results of the ontology alignment evaluation initiative 2011. In 6th International Workshop on Ontology Matching., pages 85--113, 2011."
+      },
+      {
+        "key": "e_1_2_1_14_1",
+        "volume-title": "Ontology Matching",
+        "author": "Euzenat J.",
+        "year": "2007",
+        "unstructured": "J. Euzenat and P. Shvaiko . Ontology Matching . Springer-Verlag , Heidelberg (DE), 2007 . J. Euzenat and P. Shvaiko. Ontology Matching. Springer-Verlag, Heidelberg (DE), 2007."
+      },
+      {
+        "key": "e_1_2_1_15_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.1969.10501049"
+      },
+      {
+        "key": "e_1_2_1_17_1",
+        "volume-title": "Adaptation in natural and artificial systems",
+        "author": "Holland J.",
+        "year": "1975",
+        "unstructured": "J. Holland . Adaptation in natural and artificial systems . The University of Michigan Press , 1975 . J. Holland. Adaptation in natural and artificial systems. The University of Michigan Press, 1975."
+      },
+      {
+        "key": "e_1_2_1_18_1",
+        "first-page": "158",
+        "volume-title": "5th International Workshop on Ontology Matching",
+        "author": "Hu W.",
+        "year": "2010",
+        "unstructured": "W. Hu , J. Chen , G. Cheng , and Y. Qu . ObjectCoref &amp; Falcon-AO: Results for OAEI 2010 . In 5th International Workshop on Ontology Matching , pages 158 -- 165 , 2010 . W. Hu, J. Chen, G. Cheng, and Y. Qu. ObjectCoref &amp; Falcon-AO: Results for OAEI 2010. In 5th International Workshop on Ontology Matching, pages 158--165, 2010."
+      },
+      {
+        "key": "e_1_2_1_19_1",
+        "first-page": "13",
+        "volume-title": "6th International Workshop on Ontology Matching",
+        "author": "Isele R.",
+        "year": "2011",
+        "unstructured": "R. Isele and C. Bizer . Learning linkage rules using genetic programming . In 6th International Workshop on Ontology Matching , pages 13 -- 24 , 2011 . R. Isele and C. Bizer. Learning linkage rules using genetic programming. In 6th International Workshop on Ontology Matching, pages 13--24, 2011."
+      },
+      {
+        "key": "e_1_2_1_20_1",
+        "first-page": "85",
+        "volume-title": "1st International Workshop on Consuming Linked Data",
+        "author": "Isele R.",
+        "year": "2010",
+        "unstructured": "R. Isele , A. Jentzsch , and C. Bizer . Silk Server - adding missing links while consuming linked data . In 1st International Workshop on Consuming Linked Data , pages 85 -- 96 , 2010 . R. Isele, A. Jentzsch, and C. Bizer. Silk Server - adding missing links while consuming linked data. In 1st International Workshop on Consuming Linked Data, pages 85--96, 2010."
+      },
+      {
+        "key": "e_1_2_1_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-3-642-31753-8_34"
+      },
+      {
+        "key": "e_1_2_1_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.datak.2009.10.003"
+      },
+      {
+        "key": "e_1_2_1_23_1",
+        "volume-title": "Genetic programming IV: Routine human-competitive machine intelligence",
+        "author": "Koza J.",
+        "year": "2005",
+        "unstructured": "J. Koza , M. Keane , M. Streeter , W. Mydlowec , J. Yu , and G. Lanza . Genetic programming IV: Routine human-competitive machine intelligence . Springer Verlag , 2005 . J. Koza, M. Keane, M. Streeter, W. Mydlowec, J. Yu, and G. Lanza. Genetic programming IV: Routine human-competitive machine intelligence. Springer Verlag, 2005."
+      },
+      {
+        "key": "e_1_2_1_24_1",
+        "volume-title": "Genetic programming - on the programming of computers by means of natural selection",
+        "author": "Koza J. R.",
+        "year": "1993",
+        "unstructured": "J. R. Koza . Genetic programming - on the programming of computers by means of natural selection . MIT Press , 1993 . J. R. Koza. Genetic programming - on the programming of computers by means of natural selection. MIT Press, 1993."
+      },
+      {
+        "key": "e_1_2_1_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0005-2795(75)90109-9"
+      },
+      {
+        "key": "e_1_2_1_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1162/evco.1995.3.2.199"
+      },
+      {
+        "key": "e_1_2_1_27_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/775047.775087"
+      },
+      {
+        "key": "e_1_2_1_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0306-4379(01)00042-4"
+      },
+      {
+        "key": "e_1_2_1_29_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/775047.775099"
+      },
+      {
+        "key": "e_1_2_1_30_1",
+        "first-page": "194",
+        "volume-title": "5th International Workshop on Ontology Matching",
+        "author": "Wang Z.",
+        "year": "2010",
+        "unstructured": "Z. Wang , X. Zhang , L. Hou , Y. Zhao , J. Li , Y. Qi , and J. Tang . RiMOM results for OAEI 2010 . In 5th International Workshop on Ontology Matching , pages 194 -- 201 , 2010 . Z. Wang, X. Zhang, L. Hou, Y. Zhao, J. Li, Y. Qi, and J. Tang. RiMOM results for OAEI 2010. In 5th International Workshop on Ontology Matching, pages 194--201, 2010."
+      },
+      {
+        "key": "e_1_2_1_31_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/9781118150504.ch20"
+      },
+      {
+        "key": "e_1_2_1_32_1",
+        "volume-title": "Series RRS2002/05",
+        "author": "Winkler W. E.",
+        "year": "2002",
+        "unstructured": "W. E. Winkler . Methods for record linkage and bayesian networks. Technical report , Series RRS2002/05 , U. S. Bureau of the Census , 2002 . W. E. Winkler. Methods for record linkage and bayesian networks. Technical report, Series RRS2002/05, U. S. Bureau of the Census, 2002."
+      }
+    ],
+    "container-title": [
+      "Proceedings of the VLDB Endowment"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.14778/2350229.2350276",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          28
+        ]
+      ],
+      "date-time": "2022-12-28T11:31:24Z",
+      "timestamp": 1672227084000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.14778/2350229.2350276"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    },
+    "references-count": 30,
+    "journal-issue": {
+      "issue": "11",
+      "published-print": {
+        "date-parts": [
+          [
+            2012,
+            7
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.14778/2350229.2350276"
+    ],
+    "URL": "https://doi.org/10.14778/2350229.2350276",
+    "relation": {},
+    "ISSN": [
+      "2150-8097"
+    ],
+    "issn-type": [
+      {
+        "value": "2150-8097",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2012,
+          7
+        ]
+      ]
+    }
+  }
+}

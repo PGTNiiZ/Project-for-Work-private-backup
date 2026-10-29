@@ -1,0 +1,152 @@
+[
+  {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "data_for_project/merged_profiles.csv",
+    "sha256": "a758408b8e94b9802e8522989a17aa019ba68c2e668e17bf8df6d7fe75349d05",
+    "row_count": 36807,
+    "platform_counts": {
+      "googleplus": 11890,
+      "twitter": 13960,
+      "instagram": 10957
+    },
+    "missing_or_null_user_folder_rows": 3,
+    "all_rows": {
+      "distinct_groups": 15298,
+      "group_size_histogram": {
+        "1": 1526,
+        "2": 6039,
+        "3": 7729,
+        "4": 4
+      },
+      "cross_platform_positive_pairs": 29246,
+      "max_group_size": 4,
+      "missing_key_group_rows": 3,
+      "cross_platform_pairs_nonmissing_keys": 29243
+    },
+    "eligible_nonempty_profile_id_rows": 0,
+    "eligible_profile_id": null
+  },
+  {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "data_for_project/normalized_profiles_with_profile_id.csv",
+    "sha256": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+    "row_count": 36807,
+    "platform_counts": {
+      "googleplus": 11890,
+      "twitter": 13960,
+      "instagram": 10957
+    },
+    "missing_or_null_user_folder_rows": 3,
+    "all_rows": {
+      "distinct_groups": 15298,
+      "group_size_histogram": {
+        "1": 1526,
+        "2": 6039,
+        "3": 7729,
+        "4": 4
+      },
+      "cross_platform_positive_pairs": 29246,
+      "max_group_size": 4,
+      "missing_key_group_rows": 3,
+      "cross_platform_pairs_nonmissing_keys": 29243
+    },
+    "eligible_nonempty_profile_id_rows": 36804,
+    "eligible_profile_id": {
+      "distinct_groups": 15297,
+      "group_size_histogram": {
+        "1": 1526,
+        "2": 6039,
+        "3": 7728,
+        "4": 4
+      },
+      "cross_platform_positive_pairs": 29243,
+      "max_group_size": 4,
+      "missing_key_group_rows": 0,
+      "cross_platform_pairs_nonmissing_keys": 29243
+    }
+  },
+  {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "data_for_project/nomalized_profiles.csv",
+    "sha256": "fb63bd6641c15edb9c71566c98746d0bac220e61a95072748e4ef9b8da4e234c",
+    "row_count": 36807,
+    "platform_counts": {
+      "googleplus": 11890,
+      "twitter": 13960,
+      "instagram": 10957
+    },
+    "missing_or_null_user_folder_rows": 14251,
+    "all_rows": {
+      "distinct_groups": 14363,
+      "group_size_histogram": {
+        "1": 6264,
+        "2": 8084,
+        "3": 12,
+        "4": 1,
+        "84": 1,
+        "14251": 1
+      },
+      "cross_platform_positive_pairs": 4088409,
+      "max_group_size": 14251,
+      "missing_key_group_rows": 14251,
+      "cross_platform_pairs_nonmissing_keys": 8185
+    },
+    "eligible_nonempty_profile_id_rows": 36807,
+    "eligible_profile_id": {
+      "distinct_groups": 14363,
+      "group_size_histogram": {
+        "1": 6264,
+        "2": 8084,
+        "3": 12,
+        "4": 1,
+        "84": 1,
+        "14251": 1
+      },
+      "cross_platform_positive_pairs": 4088409,
+      "max_group_size": 14251,
+      "missing_key_group_rows": 14251,
+      "cross_platform_pairs_nonmissing_keys": 8185
+    }
+  },
+  {
+    "repo": "MAIN",
+    "commit": "1e0a2db",
+    "path": "data/processed/all_profiles_cleaned.csv",
+    "sha256": "7746d1be2354fd5e5e379aad83ca87c058ece8554d1810016dca416039262a2e",
+    "row_count": 24729,
+    "platform_counts": {
+      "googleplus": 8302,
+      "twitter": 8535,
+      "instagram": 7892
+    },
+    "missing_or_null_user_folder_rows": 3,
+    "all_rows": {
+      "distinct_groups": 9259,
+      "group_size_histogram": {
+        "1": 1526,
+        "3": 7729,
+        "4": 4
+      },
+      "cross_platform_positive_pairs": 23207,
+      "max_group_size": 4,
+      "missing_key_group_rows": 3,
+      "cross_platform_pairs_nonmissing_keys": 23204
+    },
+    "eligible_nonempty_profile_id_rows": 24729,
+    "eligible_profile_id": {
+      "distinct_groups": 9259,
+      "group_size_histogram": {
+        "1": 1526,
+        "3": 7729,
+        "4": 4
+      },
+      "cross_platform_positive_pairs": 23207,
+      "max_group_size": 4,
+      "missing_key_group_rows": 3,
+      "cross_platform_pairs_nonmissing_keys": 23204
+    }
+  }
+]

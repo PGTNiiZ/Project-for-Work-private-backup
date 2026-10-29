@@ -1,0 +1,2 @@
+ab93b36e 2026-10-24 Full private workspace snapshot for machine transfer
+903246c8 2026-10-06 Back up current project source and reviewer revision

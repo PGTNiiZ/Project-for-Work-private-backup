@@ -27,3 +27,14 @@ def test_canonical_labels_atomic_split_and_endpoint_routing():
     assert all(frame.iloc[a].fold==frame.iloc[b].fold for a,b in routed)
     assert len(routed)+dropped==2
     assert set(frame.columns).isdisjoint({'user_folder','userName','profile_id'})
+
+
+def test_identity_tokens_remain_case_sensitive_and_are_never_text_normalized():
+    from preflight import prepare_frame
+    rows=[]
+    for entity in ['SYNTHETIC_ID','synthetic_id']:
+        for platform in ['SYNTHETIC_A','SYNTHETIC_B']:
+            rows.append(dict(profile_id=str(len(rows)),user_folder=entity,userName='SYNTHETIC',fullName='',bio='',location='',externalUrl_clean='',external_domain='',platform=platform))
+    frame,summary=prepare_frame(pd.DataFrame(rows))
+    assert summary['distinct_entities']==2
+    assert summary['cross_platform_positive_pairs']==2

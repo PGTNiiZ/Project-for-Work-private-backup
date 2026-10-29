@@ -1,0 +1,824 @@
+{
+  "url": "https://api.crossref.org/works/10.1109/ACCESS.2024.3500374",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            23
+          ]
+        ],
+        "date-time": "2026-10-23T22:40:48Z",
+        "timestamp": 1792795248215,
+        "version": "4.5.0"
+      },
+      "reference-count": 110,
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2024,
+                1,
+                1
+              ]
+            ],
+            "date-time": "2024-01-01T00:00:00Z",
+            "timestamp": 1704067200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://creativecommons.org/licenses/by/4.0/legalcode"
+        }
+      ],
+      "funder": [
+        {
+          "name": "Project SEcurity and RIghts In the CyberSpace through the National Recovery and Resilience Plan-Ministero dell’Università e della Ricerca Program",
+          "id": [
+            {
+              "id": "https://ror.org/0341vw408",
+              "id-type": "ROR",
+              "asserted-by": "crossref"
+            }
+          ]
+        },
+        {
+          "name": "European Commission-Next GEneration EUrope",
+          "award": [
+            "PE00000014"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "PE00000014"
+              ]
+            }
+          ],
+          "id": [
+            {
+              "id": "https://ror.org/00k4n6c32",
+              "id-type": "ROR",
+              "asserted-by": "crossref"
+            }
+          ]
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "IEEE Access"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2024
+          ]
+        ]
+      },
+      "DOI": "10.1109/access.2024.3500374",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2024,
+            11,
+            18
+          ]
+        ],
+        "date-time": "2024-11-18T13:58:20Z",
+        "timestamp": 1731938300000
+      },
+      "page": "171241-171268",
+      "source": "Crossref",
+      "is-referenced-by-count": 14,
+      "title": [
+        "User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications"
+      ],
+      "prefix": "10.1109",
+      "volume": "12",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-4411-7134",
+          "authenticated-orcid": false,
+          "given": "Caterina",
+          "family": "Senette",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Institute of Informatics and Telematics, National Research Council of Italy (IIT-CNR), Pisa, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4453-5352",
+          "authenticated-orcid": false,
+          "given": "Marco",
+          "family": "Siino",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Dipartimento di Ingegneria Elettrica Elettronica e Informatica, University of Catania, Catania, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8228-7807",
+          "authenticated-orcid": false,
+          "given": "Maurizio",
+          "family": "Tesconi",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institute of Informatics and Telematics, National Research Council of Italy (IIT-CNR), Pisa, Italy"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "263",
+      "reference": [
+        {
+          "key": "ref1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2588555.2588559"
+        },
+        {
+          "key": "ref2",
+          "first-page": "1",
+          "article-title": "Joint link-attribute user identity resolution in online social networks",
+          "volume-title": "Proc. 6th SNA-KDD Workshop",
+          "author": "Bartunov"
+        },
+        {
+          "key": "ref3",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2732269.2732274"
+        },
+        {
+          "key": "ref4",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-12844-3_17"
+        },
+        {
+          "key": "ref5",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2505515.2505531"
+        },
+        {
+          "key": "ref6",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.ins.2008.08.022"
+        },
+        {
+          "key": "ref7",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICME.2013.6607513"
+        },
+        {
+          "key": "ref8",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1609/aaai.v25i1.8089"
+        },
+        {
+          "key": "ref9",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1609/icwsm.v3i1.13993"
+        },
+        {
+          "key": "ref10",
+          "doi-asserted-by": "crossref",
+          "DOI": "10.1016/j.dss.2022.113819",
+          "article-title": "Coordinated inauthentic behavior and information spreading on Twitter",
+          "volume": "160",
+          "author": "Cinelli",
+          "year": "2022",
+          "journal-title": "Decis. Support Syst."
+        },
+        {
+          "key": "ref11",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3068777.3068781"
+        },
+        {
+          "key": "ref12",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s42979-021-00815-1"
+        },
+        {
+          "key": "ref13",
+          "article-title": "A systematic review on user identity linkage across online social networks",
+          "author": "Kaushal",
+          "year": "2020"
+        },
+        {
+          "key": "ref14",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-66922-5_11"
+        },
+        {
+          "key": "ref15",
+          "first-page": "474",
+          "article-title": "Dual-neighborhood attention network for user identity linkage",
+          "volume-title": "Proc. 14th Int. AAAI Conf. Web Social Media (ICWSM)",
+          "author": "Qiao"
+        },
+        {
+          "key": "ref16",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDE.2017.144"
+        },
+        {
+          "key": "ref17",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3077136.3080834"
+        },
+        {
+          "key": "ref18",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.48550/arXiv.1310.4546"
+        },
+        {
+          "key": "ref19",
+          "article-title": "Efficient estimation of word representations in vector space",
+          "author": "Mikolov",
+          "year": "2013",
+          "journal-title": "arXiv:1301.3781"
+        },
+        {
+          "key": "ref20",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.4108/eai.22-6-2021.170240"
+        },
+        {
+          "key": "ref21",
+          "first-page": "684",
+          "article-title": "Deep neural networks for user identity linkage",
+          "volume-title": "Proc. SIAM Int. Conf. Data Mining (SDM)",
+          "author": "Xu"
+        },
+        {
+          "key": "ref22",
+          "first-page": "1938",
+          "article-title": "Combining structured and unstructured data for social network-based user identity linkage",
+          "volume-title": "Proc. 27th Int. Conf. Comput. Linguistics (COLING)",
+          "author": "Zhang"
+        },
+        {
+          "key": "ref23",
+          "article-title": "Cross-network user identification via graph embedding",
+          "volume": "140",
+          "author": "Zhang",
+          "year": "2020",
+          "journal-title": "Expert Syst. Appl."
+        },
+        {
+          "key": "ref24",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2017.2784430"
+        },
+        {
+          "issue": "1",
+          "key": "ref25",
+          "article-title": "CoLink: An unsupervised framework for user identity linkage",
+          "volume-title": "Proc. AAAI Conf. Artif. Intell.",
+          "volume": "32",
+          "author": "Zhong"
+        },
+        {
+          "key": "ref26",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s11036-019-01456-8"
+        },
+        {
+          "key": "ref27",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDE48307.2020.00015"
+        },
+        {
+          "key": "ref28",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDM.2018.00182"
+        },
+        {
+          "key": "ref29",
+          "first-page": "1754",
+          "article-title": "A novel framework with information fusion and neighborhood enhancement for user identity linkage",
+          "volume-title": "Proc. ECAI",
+          "author": "Chen"
+        },
+        {
+          "key": "ref30",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-02925-8_24"
+        },
+        {
+          "key": "ref31",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.knosys.2018.03.022"
+        },
+        {
+          "key": "ref32",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.knosys.2022.109939"
+        },
+        {
+          "key": "ref33",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2939672.2939849"
+        },
+        {
+          "key": "ref34",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TSC.2023.3288872"
+        },
+        {
+          "key": "ref35",
+          "first-page": "193",
+          "article-title": "DSANE: A dual structure-aware network embedding approach for user identity linkage",
+          "volume-title": "Proc. IEEE 8th Int. Conf. Big Data Analytics (ICBDA)",
+          "author": "Xiong"
+        },
+        {
+          "key": "ref36",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TNNLS.2022.3201102"
+        },
+        {
+          "key": "ref37",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-642-22263-4_1"
+        },
+        {
+          "key": "ref38",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICCAE51876.2021.9426147"
+        },
+        {
+          "key": "ref39",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-62005-9_10"
+        },
+        {
+          "key": "ref40",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s13278-020-00673-4"
+        },
+        {
+          "key": "ref41",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ASONAM49781.2020.9381445"
+        },
+        {
+          "key": "ref42",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.procs.2016.05.541"
+        },
+        {
+          "key": "ref43",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICICAS48597.2019.00025"
+        },
+        {
+          "key": "ref44",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/INFOCOM.2019.8737542"
+        },
+        {
+          "key": "ref45",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3308558.3313424"
+        },
+        {
+          "key": "ref46",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3132847.3132898"
+        },
+        {
+          "key": "ref47",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ISPA-BDCloud-SocialCom-SustainCom51426.2020.00189"
+        },
+        {
+          "key": "ref48",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDE.2018.00101"
+        },
+        {
+          "key": "ref49",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/BigData.2018.8622581"
+        },
+        {
+          "key": "ref50",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-31753-3_32"
+        },
+        {
+          "key": "ref51",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s11704-019-8235-9"
+        },
+        {
+          "key": "ref52",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-07881-6_29"
+        },
+        {
+          "key": "ref53",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-45763-5_12"
+        },
+        {
+          "key": "ref54",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3459637.3482134"
+        },
+        {
+          "key": "ref55",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3394231.3397920"
+        },
+        {
+          "key": "ref56",
+          "article-title": "Graph neural networks for user identity linkage",
+          "author": "Zhang",
+          "year": "2019",
+          "journal-title": "arXiv:1903.02174"
+        },
+        {
+          "key": "ref57",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-38965-9_5"
+        },
+        {
+          "key": "ref58",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.knosys.2019.105301"
+        },
+        {
+          "key": "ref59",
+          "first-page": "1823",
+          "article-title": "Predict anchor links across social networks via an embedding approach",
+          "volume-title": "Proc. IJCAI",
+          "volume": "16",
+          "author": "Man"
+        },
+        {
+          "key": "ref60",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/GLOBECOM42002.2020.9322242"
+        },
+        {
+          "key": "ref61",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2623330.2623645"
+        },
+        {
+          "key": "ref62",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-39878-1_18"
+        },
+        {
+          "key": "ref63",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1609/aaai.v33i01.3301996"
+        },
+        {
+          "key": "ref64",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.asoc.2022.108461"
+        },
+        {
+          "key": "ref65",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2015.2397434"
+        },
+        {
+          "key": "ref66",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/BigData47090.2019.9006430"
+        },
+        {
+          "key": "ref67",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-73197-7_46"
+        },
+        {
+          "key": "ref68",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/s11280-018-0572-3"
+        },
+        {
+          "key": "ref69",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.24963/ijcai.2018/537"
+        },
+        {
+          "key": "ref70",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3390/e21030254"
+        },
+        {
+          "key": "ref71",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDM.2015.114"
+        },
+        {
+          "key": "ref72",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/IJCNN.2018.8489332"
+        },
+        {
+          "key": "ref73",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/INFOCOM.2018.8486231"
+        },
+        {
+          "issue": "6",
+          "key": "ref74",
+          "first-page": "1402",
+          "article-title": "Bounded structure and social influence: A theoretical model of social network change",
+          "volume": "104",
+          "author": "Friedkin",
+          "year": "1998",
+          "journal-title": "Amer. J. Sociol."
+        },
+        {
+          "key": "ref75",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2623330.2623732"
+        },
+        {
+          "key": "ref76",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TETCI.2024.3372374"
+        },
+        {
+          "key": "ref77",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.eswa.2019.112883"
+        },
+        {
+          "key": "ref78",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2556195.2559894"
+        },
+        {
+          "key": "ref79",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TMC.2022.3157292"
+        },
+        {
+          "key": "ref80",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1137/1.9781611975321.22"
+        },
+        {
+          "key": "ref81",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2872427.2883002"
+        },
+        {
+          "key": "ref82",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/0005-2795(75)90109-9"
+        },
+        {
+          "key": "ref83",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1017/cbo9780511809071"
+        },
+        {
+          "key": "ref84",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2939672.2939766"
+        },
+        {
+          "key": "ref85",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2339530.2339641"
+        },
+        {
+          "key": "ref86",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/1592665.1592675"
+        },
+        {
+          "key": "ref87",
+          "article-title": "Snap datasets: Stanford large network dataset collection",
+          "author": "Leskovec",
+          "year": "2014"
+        },
+        {
+          "key": "ref88",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2783258.2783268"
+        },
+        {
+          "key": "ref89",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICME.2013.6607510"
+        },
+        {
+          "key": "ref90",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICBK.2018.00042"
+        },
+        {
+          "key": "ref91",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ISI.2017.8004884"
+        },
+        {
+          "key": "ref92",
+          "first-page": "1774",
+          "article-title": "Aligning users across social networks using network embedding",
+          "volume-title": "Proc. 25th Int. Joint Conf. Artif. Intell.",
+          "author": "Liu"
+        },
+        {
+          "key": "ref93",
+          "first-page": "2125",
+          "article-title": "Integrated anchor and social link predictions across social networks",
+          "volume-title": "Proc. 24th Int. Joint Conf. Artif. Intell.",
+          "author": "Zhang"
+        },
+        {
+          "key": "ref94",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-642-33486-3_30"
+        },
+        {
+          "key": "ref95",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-030-59706-1"
+        },
+        {
+          "key": "ref96",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2994620.2994629"
+        },
+        {
+          "key": "ref97",
+          "article-title": "User identities across social networks: Quantifying linkability and nudging users to control linkability",
+          "author": "Chandok",
+          "year": "2017"
+        },
+        {
+          "key": "ref98",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3110025.3110046"
+        },
+        {
+          "key": "ref99",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/2567948.2577208"
+        },
+        {
+          "key": "ref100",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.48550/ARXIV.1706.03762"
+        },
+        {
+          "key": "ref101",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.48550/arXiv.1810.04805"
+        },
+        {
+          "key": "ref102",
+          "volume-title": "Language Models Are Unsupervised Multitask Learners",
+          "author": "Radford",
+          "year": "2019"
+        },
+        {
+          "key": "ref103",
+          "article-title": "Language models are few-shot learners",
+          "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+          "volume": "33",
+          "author": "Brown"
+        },
+        {
+          "key": "ref104",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1007/978-3-319-31750-2_39"
+        },
+        {
+          "key": "ref105",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2022.3148485"
+        },
+        {
+          "key": "ref106",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3131782"
+        },
+        {
+          "key": "ref107",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.18653/v1/2022.deelio-1.10"
+        },
+        {
+          "key": "ref108",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.18653/v1/2023.emnlp-main.214"
+        },
+        {
+          "key": "ref109",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.inffus.2023.102202"
+        },
+        {
+          "key": "ref110",
+          "article-title": "A systematic survey of prompt engineering in large language models: Techniques and applications",
+          "author": "Sahoo",
+          "year": "2024",
+          "journal-title": "arXiv:2402.07927"
+        }
+      ],
+      "container-title": [
+        "IEEE Access"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "http://xplorestaging.ieee.org/ielx8/6287639/10380310/10755098.pdf?arnumber=10755098",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2024,
+            11,
+            27
+          ]
+        ],
+        "date-time": "2024-11-27T12:37:07Z",
+        "timestamp": 1732711027000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://ieeexplore.ieee.org/document/10755098/"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2024
+          ]
+        ]
+      },
+      "references-count": 110,
+      "URL": "https://doi.org/10.1109/access.2024.3500374",
+      "relation": {},
+      "ISSN": [
+        "2169-3536"
+      ],
+      "issn-type": [
+        {
+          "value": "2169-3536",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2024
+          ]
+        ]
+      }
+    }
+  }
+}

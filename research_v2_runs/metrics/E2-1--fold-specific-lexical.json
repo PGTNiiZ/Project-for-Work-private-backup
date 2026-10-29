@@ -1,0 +1,9 @@
+{
+  "n_pairs": 351494,
+  "positive_pairs": 21576,
+  "n_lexical_features": 35,
+  "n_semantic_features": 6,
+  "test_profile_access": false,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 95.14182291699944
+}

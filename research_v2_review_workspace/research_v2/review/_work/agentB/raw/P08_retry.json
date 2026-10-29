@@ -1,0 +1,2706 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=Heterogeneity%20in%20Entity%20Matching%3A%20A%20Survey%20and%20Experimental%20Analysis&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 9210877,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                12
+              ]
+            ],
+            "date-time": "2026-10-12T23:05:29Z",
+            "timestamp": 1791846329195,
+            "version": "4.3.4"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "group-title": "SSRN",
+          "reference-count": 93,
+          "publisher": "Elsevier BV",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "DOI": "10.2139/ssrn.5412909",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                28
+              ]
+            ],
+            "date-time": "2025-08-28T14:27:43Z",
+            "timestamp": 1756391263000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 1,
+          "title": [
+            "Heterogeneity in Entity Matching: A Survey and Experimental Analysis"
+          ],
+          "prefix": "10.2139",
+          "author": [
+            {
+              "given": "Mohammad Hossein",
+              "family": "Moslemi",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Amir",
+              "family": "Mousavi",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Behshid",
+              "family": "Behkamal",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Mostafa",
+              "family": "Milani",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "issue": "1",
+              "key": "ref1",
+              "first-page": "1",
+              "article-title": "Entity resolution in the web of data",
+              "volume": "53",
+              "author": "V Christophides",
+              "year": "2020",
+              "journal-title": "ACM Computing Surveys (CSUR)"
+            },
+            {
+              "issue": "1",
+              "key": "ref2",
+              "first-page": "1",
+              "article-title": "Big data integration",
+              "volume": "5",
+              "author": "X L Dong",
+              "year": "2015",
+              "journal-title": "Foundations and Trends� in Databases"
+            },
+            {
+              "issue": "1",
+              "key": "ref3",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3431816",
+              "article-title": "Deep entity matching: Challenges and opportunities",
+              "volume": "13",
+              "author": "Y Li",
+              "year": "2021",
+              "journal-title": "Journal of Data and Information Quality (JDIQ)"
+            },
+            {
+              "key": "ref4",
+              "first-page": "1581",
+              "article-title": "Deepmatcher: A deep learning approach to entity matching",
+              "author": "S Mudgal",
+              "year": "2018",
+              "journal-title": "Proceedings of the 2018 International Conference on Management of Data (SIGMOD '18)"
+            },
+            {
+              "key": "ref5",
+              "first-page": "2672",
+              "article-title": "Ditto: Deep learning for entity matching with domain transfer",
+              "author": "Y Li",
+              "year": "2020",
+              "journal-title": "Proceedings of the 2020 International Conference on Knowledge Discovery and Data Mining (KDD '20)"
+            },
+            {
+              "issue": "4",
+              "key": "ref6",
+              "first-page": "35",
+              "article-title": "Modern information retrieval: A brief overview",
+              "volume": "24",
+              "author": "A Singhal",
+              "year": "2001",
+              "journal-title": "IEEE Data Engineering Bulletin"
+            },
+            {
+              "issue": "4",
+              "key": "ref7",
+              "doi-asserted-by": "crossref",
+              "first-page": "211",
+              "DOI": "10.1007/s10708-007-9111-y",
+              "article-title": "Citizens as sensors: the world of volunteered geography",
+              "volume": "69",
+              "author": "M F Goodchild",
+              "year": "2007",
+              "journal-title": "GeoJournal"
+            },
+            {
+              "issue": "15",
+              "key": "ref8",
+              "doi-asserted-by": "crossref",
+              "first-page": "2787",
+              "DOI": "10.1016/j.comnet.2010.05.010",
+              "article-title": "The internet of things: A survey",
+              "volume": "54",
+              "author": "L Atzori",
+              "year": "2010",
+              "journal-title": "Computer Networks"
+            },
+            {
+              "issue": "3",
+              "key": "ref9",
+              "first-page": "233",
+              "article-title": "A survey on the adaptation of web data extraction and alignment solutions for big data",
+              "volume": "4",
+              "author": "K V Borges",
+              "year": "2013",
+              "journal-title": "Journal of Information and Data Management"
+            },
+            {
+              "issue": "4",
+              "key": "ref10",
+              "doi-asserted-by": "crossref",
+              "first-page": "334",
+              "DOI": "10.1007/s007780100057",
+              "article-title": "A survey of approaches to automatic schema matching",
+              "volume": "10",
+              "author": "E Rahm",
+              "year": "2001",
+              "journal-title": "The VLDB Journal"
+            },
+            {
+              "issue": "1",
+              "key": "ref11",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1109/TKDE.2007.250581",
+              "article-title": "Duplicate record detection: A survey",
+              "volume": "19",
+              "author": "A K Elmagarmid",
+              "year": "2007",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "ref12",
+              "first-page": "83",
+              "volume": "26",
+              "author": "A Doan",
+              "year": "2005",
+              "journal-title": "Semantic-integration research in the database community: A brief survey"
+            },
+            {
+              "key": "ref13",
+              "first-page": "1241",
+              "article-title": "Data management for heterogeneous data sources",
+              "volume": "4",
+              "author": "P A Bernstein",
+              "year": "2011",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "crossref",
+              "first-page": "52",
+              "DOI": "10.1007/978-3-031-00129-1_4",
+              "article-title": "Empowering transformer with hybrid matching knowledge for entity matching",
+              "author": "W Dou",
+              "year": "2022",
+              "journal-title": "International Conference on Database Systems for Advanced Applications"
+            },
+            {
+              "key": "ref15",
+              "first-page": "463",
+              "article-title": "Entity matching with transformer architectures-a step forward in data integration",
+              "author": "U Brunner",
+              "year": "2020",
+              "journal-title": "23rd International Conference on Extending Database Technology"
+            },
+            {
+              "key": "ref16",
+              "first-page": "1210",
+              "article-title": "Transformerbased entity resolution",
+              "author": "S Thirumuruganathan",
+              "year": "2021",
+              "journal-title": "Proceedings of the 2021 International Conference on Data Engineering (ICDE '21)"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "crossref",
+              "first-page": "429",
+              "DOI": "10.1145/3514221.3517872",
+              "article-title": "Entity resolution with hierarchical graph attention networks",
+              "author": "D Yao",
+              "year": "2022",
+              "journal-title": "Proceedings of the 2022 International Conference on Management of Data"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "crossref",
+              "first-page": "2310",
+              "DOI": "10.1145/3448016.3457328",
+              "article-title": "Medical entity disambiguation using graph neural networks",
+              "author": "A Vretinaris",
+              "year": "2021",
+              "journal-title": "Proceedings of the 2021 international conference on management of data"
+            },
+            {
+              "key": "ref19",
+              "first-page": "1",
+              "article-title": "Trigger-gnn: a trigger-based graph neural network for nested named entity recognition",
+              "author": "Y Sui",
+              "year": "2022",
+              "journal-title": "2022 International Joint Conference on Neural Networks (IJCNN)"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "crossref",
+              "first-page": "8172",
+              "DOI": "10.1609/aaai.v34i05.6330",
+              "article-title": "Grapher: Tokencentric entity resolution with graph convolutional neural networks",
+              "volume": "34",
+              "author": "B Li",
+              "year": "2020",
+              "journal-title": "Proceedings of the AAAI Conference on Artificial Intelligence"
+            },
+            {
+              "issue": "5",
+              "key": "ref21",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3442200",
+              "article-title": "Neural networks for entity matching: A survey",
+              "volume": "15",
+              "author": "N Barlaug",
+              "year": "2021",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data (TKDD)"
+            },
+            {
+              "issue": "1",
+              "key": "ref22",
+              "doi-asserted-by": "crossref",
+              "first-page": "50",
+              "DOI": "10.1109/TKDE.2020.2981314",
+              "article-title": "A survey on deep learning for named entity recognition",
+              "volume": "34",
+              "author": "J Li",
+              "year": "2020",
+              "journal-title": "IEEE transactions on knowledge and data engineering"
+            },
+            {
+              "issue": "2",
+              "key": "ref23",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3377455",
+              "article-title": "Blocking and filtering techniques for entity resolution: A survey",
+              "volume": "53",
+              "author": "G Papadakis",
+              "year": "2020",
+              "journal-title": "ACM Computing Surveys (CSUR)"
+            },
+            {
+              "issue": "2",
+              "key": "ref24",
+              "doi-asserted-by": "crossref",
+              "first-page": "197",
+              "DOI": "10.1016/j.datak.2009.10.003",
+              "article-title": "Frameworks for entity matching: A comparison",
+              "volume": "69",
+              "author": "H K�pcke",
+              "year": "2010",
+              "journal-title": "Data & Knowledge Engineering"
+            },
+            {
+              "key": "ref25",
+              "first-page": "389",
+              "author": "Y Govind",
+              "year": "2019",
+              "journal-title": "Entity matching meets data science: A progress report from the magellan project"
+            },
+            {
+              "key": "ref26",
+              "first-page": "4633",
+              "article-title": "Machamp: A generalized entity matching benchmark",
+              "author": "J Wang",
+              "year": "2021",
+              "journal-title": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management"
+            },
+            {
+              "key": "ref27",
+              "first-page": "1882",
+              "article-title": "Prompting language models for entity matching",
+              "author": "Y Elazar",
+              "year": "2023",
+              "journal-title": "Findings of the Association for Computational Linguistics: EMNLP 2023"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1038/sdata.2016.18",
+              "article-title": "The fair guiding principles for scientific data management and stewardship",
+              "volume": "3",
+              "author": "M D Wilkinson",
+              "year": "2016",
+              "journal-title": "Scientific Data"
+            },
+            {
+              "key": "ref29",
+              "first-page": "49",
+              "volume": "1",
+              "author": "J Madhavan",
+              "year": "2001",
+              "journal-title": "Generic schema matching with cupid"
+            },
+            {
+              "issue": "4",
+              "key": "ref30",
+              "doi-asserted-by": "crossref",
+              "first-page": "323",
+              "DOI": "10.1145/27633.27634",
+              "article-title": "A comparative analysis of methodologies for database schema integration",
+              "volume": "18",
+              "author": "C Batini",
+              "year": "1986",
+              "journal-title": "ACM computing surveys (CSUR)"
+            },
+            {
+              "key": "ref31",
+              "article-title": "Algorithm and tool for automated ontology merging and alignment",
+              "volume": "115",
+              "author": "N F Noy",
+              "year": "2000",
+              "journal-title": "Proceedings of the 17th National Conference on Artificial Intelligence (AAAI-00). Available as SMI technical report"
+            },
+            {
+              "key": "ref32",
+              "author": "A Doan",
+              "year": "2012",
+              "journal-title": "Principles of data integration"
+            },
+            {
+              "key": "ref33",
+              "first-page": "5640",
+              "article-title": "Improving multimodal named entity recognition via entity span detection with unified multimodal transformer",
+              "author": "J Yu",
+              "year": "2020",
+              "journal-title": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.18653/v1/P18-1186",
+              "article-title": "Multimodal named entity disambiguation for noisy social media posts",
+              "author": "S Moon",
+              "year": "2018",
+              "journal-title": "Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics"
+            },
+            {
+              "key": "ref35",
+              "article-title": "Building a multimodal entity linking dataset from tweets",
+              "author": "O Adjali",
+              "year": "2020",
+              "journal-title": "Proceedings of the 12th International Conference on Language Resources and Evaluation (LREC)"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "crossref",
+              "first-page": "993",
+              "DOI": "10.1145/3474085.3475400",
+              "article-title": "Multimodal entity linking: a new dataset and a baseline",
+              "author": "J Gan",
+              "year": "2021",
+              "journal-title": "Proceedings of the 29th ACM International Conference on Multimedia"
+            },
+            {
+              "key": "ref37",
+              "first-page": "938",
+              "article-title": "Multimodal entity linking with gated hierarchical fusion and contrastive training",
+              "author": "P Wang",
+              "year": "2022",
+              "journal-title": "Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval"
+            },
+            {
+              "key": "ref38",
+              "doi-asserted-by": "crossref",
+              "first-page": "1215",
+              "DOI": "10.1145/3488560.3498475",
+              "article-title": "Maf: a general matching and alignment framework for multimodal named entity recognition",
+              "author": "B Xu",
+              "year": "2022",
+              "journal-title": "Proceedings of the fifteenth ACM international conference on web search and data mining"
+            },
+            {
+              "key": "ref39",
+              "author": "J Euzenat",
+              "year": "2013"
+            },
+            {
+              "key": "ref40",
+              "first-page": "4171",
+              "author": "J Devlin",
+              "year": "2019",
+              "journal-title": "Pre-training of deep bidirectional transformers for language understanding"
+            },
+            {
+              "key": "ref41",
+              "first-page": "2227",
+              "volume": "1",
+              "author": "M E Peters",
+              "year": "2018",
+              "journal-title": "Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+            },
+            {
+              "key": "ref42",
+              "doi-asserted-by": "crossref",
+              "first-page": "270",
+              "DOI": "10.1007/s007780100054",
+              "article-title": "Answering queries using views: A survey",
+              "volume": "10",
+              "author": "A Y Halevy",
+              "year": "2001",
+              "journal-title": "The VLDB Journal"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "crossref",
+              "first-page": "662",
+              "DOI": "10.1145/511446.511532",
+              "article-title": "Learning to map between ontologies on the semantic web",
+              "author": "A Doan",
+              "year": "2002",
+              "journal-title": "Proceedings of the 11th international conference on World Wide Web"
+            },
+            {
+              "key": "ref44",
+              "author": "R T Snodgrass",
+              "year": "1999",
+              "journal-title": "Developing time-oriented database applications in SQL"
+            },
+            {
+              "issue": "4",
+              "key": "ref45",
+              "first-page": "3",
+              "article-title": "Data cleaning: Problems and current approaches",
+              "volume": "23",
+              "author": "E Rahm",
+              "year": "2000",
+              "journal-title": "IEEE Data Eng. Bull"
+            },
+            {
+              "issue": "3",
+              "key": "ref46",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3654963",
+              "article-title": "Otclean: Data cleaning for conditional independence violations using optimal transport",
+              "volume": "2",
+              "author": "A Pirhadi",
+              "year": "2024",
+              "journal-title": "Proceedings of the ACM on Management of Data"
+            },
+            {
+              "issue": "3",
+              "key": "ref47",
+              "doi-asserted-by": "crossref",
+              "first-page": "183",
+              "DOI": "10.1145/96602.96604",
+              "article-title": "Federated database systems for managing distributed, heterogeneous, and autonomous databases",
+              "volume": "22",
+              "author": "A Sheth",
+              "year": "1990",
+              "journal-title": "ACM Computing Surveys (CSUR)"
+            },
+            {
+              "issue": "5",
+              "key": "ref48",
+              "doi-asserted-by": "crossref",
+              "first-page": "912",
+              "DOI": "10.1109/TKDE.2019.2898191",
+              "article-title": "Efficient entity resolution on heterogeneous records",
+              "volume": "32",
+              "author": "Y Lin",
+              "year": "2019",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "ref49",
+              "author": "Y Li",
+              "year": "2020",
+              "journal-title": "Deep entity matching with pre-trained language models"
+            },
+            {
+              "key": "ref50",
+              "first-page": "1",
+              "article-title": "Termite: a system for tunneling through heterogeneous data",
+              "author": "R C Fernandez",
+              "year": "2019",
+              "journal-title": "Proceedings of the Second International Workshop on Exploiting Artificial Intelligence Techniques for Data Management"
+            },
+            {
+              "key": "ref51",
+              "doi-asserted-by": "crossref",
+              "first-page": "1335",
+              "DOI": "10.1145/3318464.3389742",
+              "article-title": "Creating embeddings of heterogeneous relational datasets for data integration tasks",
+              "author": "R Cappuzzo",
+              "year": "2020",
+              "journal-title": "Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data, SIGMOD '20, Association for Computing Machinery"
+            },
+            {
+              "issue": "1",
+              "key": "ref52",
+              "article-title": "Unicorn: A unified multi-tasking model for supporting matching tasks in data integration",
+              "volume": "1",
+              "author": "J Tu",
+              "year": "2023",
+              "journal-title": "Proc. ACM Manag. Data"
+            },
+            {
+              "key": "ref53",
+              "doi-asserted-by": "crossref",
+              "first-page": "1502",
+              "DOI": "10.1109/ICDE55515.2023.00391",
+              "article-title": "Contrastive self-supervised learning for multi-purpose data integration and preparation",
+              "author": "R Wang",
+              "year": "2023",
+              "journal-title": "2023 IEEE 39th International Conference on Data Engineering (ICDE)"
+            },
+            {
+              "key": "ref54",
+              "doi-asserted-by": "crossref",
+              "first-page": "2225",
+              "DOI": "10.14778/3598581.3598594",
+              "article-title": "Pre-trained embeddings for entity resolution: An experimental analysis",
+              "volume": "16",
+              "author": "A Zeakis",
+              "year": "2023",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "key": "ref55",
+              "first-page": "248",
+              "article-title": "Supervised contrastive learning for product matching",
+              "author": "R Peeters",
+              "year": "2022",
+              "journal-title": "Companion Proceedings of the Web Conference"
+            },
+            {
+              "key": "ref56",
+              "first-page": "281",
+              "author": "J Zhang",
+              "year": "2024",
+              "journal-title": "Entity matching using multi-task learning of bert with attention-over-attention"
+            },
+            {
+              "key": "ref57",
+              "first-page": "629",
+              "article-title": "Deep sequence-to-sequence entity matching for heterogeneous entity resolution",
+              "author": "H Nie",
+              "year": "2019",
+              "journal-title": "Proceedings of the 28th ACM International Conference on Information and Knowledge Management"
+            },
+            {
+              "key": "ref58",
+              "doi-asserted-by": "crossref",
+              "first-page": "2585",
+              "DOI": "10.1145/3292500.3330785",
+              "article-title": "Toward linking large-scale heterogeneous entity graphs",
+              "author": "F Zhang",
+              "year": "2019",
+              "journal-title": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, KDD '19"
+            },
+            {
+              "key": "ref59",
+              "first-page": "3665",
+              "article-title": "Hierarchical matching network for heterogeneous entity resolution",
+              "author": "C Fu",
+              "year": "2021",
+              "journal-title": "Proceedings of the Twenty-Ninth International Conference on International Joint Conferences on Artificial Intelligence"
+            },
+            {
+              "issue": "1",
+              "key": "ref60",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3533016",
+              "article-title": "Unsupervised graph-based entity resolution for complex entities",
+              "volume": "17",
+              "author": "N Kirielle",
+              "year": "2023",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data"
+            },
+            {
+              "key": "ref61",
+              "doi-asserted-by": "crossref",
+              "first-page": "297",
+              "DOI": "10.1609/aaai.v33i01.3301297",
+              "article-title": "Entity alignment between knowledge graphs using attribute embeddings",
+              "volume": "33",
+              "author": "B D Trisedya",
+              "year": "2019",
+              "journal-title": "Proceedings of the AAAI conference on artificial intelligence"
+            },
+            {
+              "issue": "10",
+              "key": "ref62",
+              "doi-asserted-by": "crossref",
+              "first-page": "1195",
+              "DOI": "10.14778/3339490.3339501",
+              "article-title": "Ontology-based entity matching in attributed graphs",
+              "volume": "12",
+              "author": "H Ma",
+              "year": "2019",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "issue": "1",
+              "key": "ref63",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3588919",
+              "article-title": "Matching roles from temporal data: Why joe biden is not only president, but also commander-in-chief",
+              "volume": "1",
+              "author": "L Bornemann",
+              "year": "2023",
+              "journal-title": "Proceedings of the ACM on Management of Data"
+            },
+            {
+              "key": "ref64",
+              "doi-asserted-by": "crossref",
+              "first-page": "1870",
+              "DOI": "10.1109/ICDE48307.2020.00191",
+              "article-title": "Collective entity alignment via adaptive features",
+              "author": "W Zeng",
+              "year": "2020",
+              "journal-title": "2020 IEEE 36th international conference on data engineering (ICDE)"
+            },
+            {
+              "key": "ref65",
+              "doi-asserted-by": "crossref",
+              "first-page": "2413",
+              "DOI": "10.1145/3308558.3313578",
+              "article-title": "Auto-em: End-to-end fuzzy entity-matching using pretrained deep models and transfer learning",
+              "author": "C Zhao",
+              "year": "2019",
+              "journal-title": "The World Wide Web Conference"
+            },
+            {
+              "issue": "3",
+              "key": "ref66",
+              "doi-asserted-by": "crossref",
+              "first-page": "465",
+              "DOI": "10.14778/3494124.3494131",
+              "article-title": "Deep transfer learning for multi-source entity linkage via domain adaptation",
+              "volume": "15",
+              "author": "D Jin",
+              "year": "2021",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "key": "ref67",
+              "doi-asserted-by": "crossref",
+              "first-page": "1016",
+              "DOI": "10.1145/3488560.3498486",
+              "article-title": "Dame: Domain adaptation for matching entities",
+              "author": "M Trabelsi",
+              "year": "2022",
+              "journal-title": "Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining"
+            },
+            {
+              "key": "ref68",
+              "doi-asserted-by": "crossref",
+              "first-page": "369",
+              "DOI": "10.14778/3565816.3565836",
+              "article-title": "Promptem: prompt-tuning for low-resource generalized entity matching",
+              "volume": "16",
+              "author": "P Wang",
+              "year": "2022",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "key": "ref69",
+              "doi-asserted-by": "crossref",
+              "first-page": "443",
+              "DOI": "10.1145/3514221.3517870",
+              "article-title": "Domain adaptation for deep entity resolution",
+              "author": "J Tu",
+              "year": "2022",
+              "journal-title": "Proceedings of the 2022 International Conference on Management of Data"
+            },
+            {
+              "key": "ref70",
+              "doi-asserted-by": "crossref",
+              "first-page": "182",
+              "DOI": "10.1007/978-3-030-88361-4_11",
+              "article-title": "Graph-boosted active learning for multi-source entity resolution",
+              "volume": "20",
+              "author": "A Primpeli",
+              "year": "2021",
+              "journal-title": "The Semantic Web-ISWC 2021: 20th International Semantic Web Conference, ISWC 2021, Virtual Event"
+            },
+            {
+              "key": "ref71",
+              "doi-asserted-by": "crossref",
+              "first-page": "31",
+              "DOI": "10.14778/3485450.3485455",
+              "article-title": "Deep indexed active learning for matching heterogeneous entity representations",
+              "volume": "15",
+              "author": "A Jain",
+              "year": "2021",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "key": "ref72",
+              "doi-asserted-by": "crossref",
+              "first-page": "384",
+              "DOI": "10.14778/2876473.2876474",
+              "article-title": "Online entity resolution using an oracle",
+              "volume": "9",
+              "author": "D Firmani",
+              "year": "2016",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "key": "ref73",
+              "doi-asserted-by": "crossref",
+              "first-page": "1506",
+              "DOI": "10.14778/3523210.3523226",
+              "article-title": "Entity resolution on-demand",
+              "volume": "15",
+              "author": "G Simonini",
+              "year": "2022",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "issue": "1",
+              "key": "ref74",
+              "doi-asserted-by": "crossref",
+              "first-page": "229",
+              "DOI": "10.1007/s00778-022-00745-1",
+              "article-title": "Deep entity matching with adversarial active learning",
+              "volume": "32",
+              "author": "J Huang",
+              "year": "2023",
+              "journal-title": "The VLDB Journal"
+            },
+            {
+              "issue": "12",
+              "key": "ref75",
+              "doi-asserted-by": "crossref",
+              "first-page": "12139",
+              "DOI": "10.1109/TKDE.2021.3134806",
+              "article-title": "Collaborem: A self-supervised entity matching framework using multi-features collaboration",
+              "volume": "35",
+              "author": "C Ge",
+              "year": "2021",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "ref76",
+              "doi-asserted-by": "crossref",
+              "first-page": "97",
+              "DOI": "10.1109/SDS.2019.00006",
+              "article-title": "Entity matching on unstructured data: an active learning approach",
+              "author": "U Brunner",
+              "year": "2019",
+              "journal-title": "2019 6th Swiss Conference on Data Science (SDS)"
+            },
+            {
+              "issue": "12",
+              "key": "ref77",
+              "doi-asserted-by": "crossref",
+              "first-page": "1950",
+              "DOI": "10.14778/3229863.3236232",
+              "article-title": "The return of jedai: End-to-end entity resolution for structured and semi-structured data",
+              "volume": "11",
+              "author": "G Papadakis",
+              "year": "2018",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "key": "ref78",
+              "author": "R Peeters",
+              "year": "2025",
+              "journal-title": "Using chatgpt for entity matching"
+            },
+            {
+              "key": "ref79",
+              "first-page": "1043",
+              "author": "H Li",
+              "year": "2024",
+              "journal-title": "Leveraging large language models for enhancing entity resolution"
+            },
+            {
+              "key": "ref80",
+              "author": "A Steiner",
+              "year": "2024",
+              "journal-title": "Fine-tuning large language models for entity matching"
+            },
+            {
+              "key": "ref81",
+              "author": "T Wang",
+              "year": "2024",
+              "journal-title": "Match, compare, or select? an investigation of large language models for entity matching"
+            },
+            {
+              "key": "ref82",
+              "doi-asserted-by": "crossref",
+              "first-page": "1726",
+              "DOI": "10.14778/3529337.3529356",
+              "article-title": "Analyzing how bert performs entity matching",
+              "volume": "15",
+              "author": "M Paganelli",
+              "year": "2022",
+              "journal-title": "Proc. VLDB Endow"
+            },
+            {
+              "issue": "4",
+              "key": "ref83",
+              "doi-asserted-by": "crossref",
+              "first-page": "1039",
+              "DOI": "10.1007/s00778-023-00824-x",
+              "article-title": "A multi-facet analysis of bert-based entity matching models",
+              "volume": "33",
+              "author": "M Paganelli",
+              "year": "2023",
+              "journal-title": "The VLDB Journal"
+            },
+            {
+              "issue": "1",
+              "key": "ref84",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1038/sdata.2016.18",
+              "article-title": "The fair guiding principles for scientific data management and stewardship",
+              "volume": "3",
+              "author": "M D Wilkinson",
+              "year": "2016",
+              "journal-title": "Scientific data"
+            },
+            {
+              "key": "ref85",
+              "first-page": "2025",
+              "author": "M H Moslemi",
+              "year": "2025",
+              "journal-title": "Heterogeneity in entity matching: Survey and experiments"
+            },
+            {
+              "key": "ref86",
+              "author": "M Grootendorst",
+              "year": "2020",
+              "journal-title": "Keybert: Minimal keyword extraction with bert"
+            },
+            {
+              "issue": "11",
+              "key": "ref87",
+              "doi-asserted-by": "crossref",
+              "first-page": "39",
+              "DOI": "10.1145/219717.219748",
+              "article-title": "Wordnet: A lexical database for english",
+              "volume": "38",
+              "author": "G A Miller",
+              "year": "1995",
+              "journal-title": "Communications of the ACM"
+            },
+            {
+              "issue": "3",
+              "key": "ref88",
+              "first-page": "379",
+              "article-title": "A mathematical theory of communication, The Bell System Technical",
+              "volume": "27",
+              "author": "C E Shannon",
+              "year": "1948",
+              "journal-title": "Journal"
+            },
+            {
+              "key": "ref89",
+              "author": "N Shahbazi",
+              "year": "2023",
+              "journal-title": "Through the fairness lens: Experimental analysis and evaluation of entity matching"
+            },
+            {
+              "key": "ref90",
+              "author": "M H Moslemi",
+              "year": "2024",
+              "journal-title": "Evaluating blocking biases in entity matching"
+            },
+            {
+              "key": "ref91",
+              "doi-asserted-by": "crossref",
+              "first-page": "5068",
+              "DOI": "10.1109/BigData55660.2022.10020293",
+              "article-title": "Entity matching with auc-based fairness",
+              "author": "S Nilforoushan",
+              "year": "2022",
+              "journal-title": "2022 IEEE International Conference on Big Data (Big Data)"
+            },
+            {
+              "key": "ref92",
+              "first-page": "3004",
+              "article-title": "Entity resolution with fairness constraints",
+              "author": "V Efthymiou",
+              "year": "2021",
+              "journal-title": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management"
+            },
+            {
+              "key": "ref93",
+              "doi-asserted-by": "crossref",
+              "first-page": "40",
+              "DOI": "10.1145/3665601.3669845",
+              "article-title": "Threshold-independent fair matching through score calibration",
+              "author": "M H Moslemi",
+              "year": "2024",
+              "journal-title": "Proceedings of the Conference on Governance, Understanding and Integration of Data for Effective and Responsible AI"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                9,
+                5
+              ]
+            ],
+            "date-time": "2025-09-05T10:43:33Z",
+            "timestamp": 1757069013000
+          },
+          "score": 43.313107,
+          "resource": {
+            "primary": {
+              "URL": "https://www.ssrn.com/abstract=5412909"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "references-count": 93,
+          "URL": "https://doi.org/10.2139/ssrn.5412909",
+          "published": {
+            "date-parts": [
+              [
+                2025
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                30
+              ]
+            ],
+            "date-time": "2026-09-30T04:35:30Z",
+            "timestamp": 1790742930863,
+            "version": "4.1.0"
+          },
+          "reference-count": 149,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    7,
+                    1
+                  ]
+                ],
+                "date-time": "2026-07-01T00:00:00Z",
+                "timestamp": 1782864000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    7,
+                    1
+                  ]
+                ],
+                "date-time": "2026-07-01T00:00:00Z",
+                "timestamp": 1782864000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    2,
+                    6
+                  ]
+                ],
+                "date-time": "2026-02-06T00:00:00Z",
+                "timestamp": 1770336000000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100000038",
+              "name": "Natural Sciences and Engineering Research Council of Canada",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "DGECR-2021-00447"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "DGECR-2021-00447"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100000038",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100000038",
+              "name": "Natural Sciences and Engineering Research Council of Canada",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "RGPIN-2021-04120"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "RGPIN-2021-04120"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100000038",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Data &amp; Knowledge Engineering"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                7
+              ]
+            ]
+          },
+          "DOI": "10.1016/j.datak.2026.102575",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                2,
+                5
+              ]
+            ],
+            "date-time": "2026-02-05T17:13:48Z",
+            "timestamp": 1770311628000
+          },
+          "page": "102575",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 6,
+          "special_numbering": "C",
+          "title": [
+            "Heterogeneity in entity matching: A survey and experimental analysis"
+          ],
+          "prefix": "10.1016",
+          "volume": "164",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0002-0278-4665",
+              "authenticated-orcid": false,
+              "given": "Mohammad Hossein",
+              "family": "Moslemi",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Amir",
+              "family": "Mousavi",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Behshid",
+              "family": "Behkamal",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Mostafa",
+              "family": "Milani",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "10.1016/j.datak.2026.102575_b1",
+              "series-title": "Principles of Data Integration",
+              "author": "Doan",
+              "year": "2012"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b2",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1109/TKDE.2007.250581",
+              "article-title": "Duplicate record detection: A survey",
+              "volume": "19",
+              "author": "Elmagarmid",
+              "year": "2007",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b3",
+              "first-page": "1",
+              "article-title": "Entity resolution in the web of data",
+              "volume": "53",
+              "author": "Christophides",
+              "year": "2020",
+              "journal-title": "ACM Comput. Surv."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b4",
+              "first-page": "1",
+              "article-title": "Big data integration",
+              "volume": "5",
+              "author": "Dong",
+              "year": "2015",
+              "journal-title": "Found. Trends® Databases"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b5",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3431816",
+              "article-title": "Deep entity matching: Challenges and opportunities",
+              "volume": "13",
+              "author": "Li",
+              "year": "2021",
+              "journal-title": "J. Data Inf. Qual. (JDIQ)"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b6",
+              "unstructured": "S. Mudgal, H. Li, T. Rekatsinas, A. Doan, Y. Park, V. Raghavendra, W. Nutt, Deepmatcher: A deep learning approach to entity matching, in: Proceedings of the 2018 International Conference on Management of Data, (SIGMOD ’18), 2018, pp. 1581–1596."
+            },
+            {
+              "issue": "13",
+              "key": "10.1016/j.datak.2026.102575_b7",
+              "doi-asserted-by": "crossref",
+              "first-page": "1581",
+              "DOI": "10.14778/3007263.3007314",
+              "article-title": "Magellan: toward building entity matching management systems over data science stacks",
+              "volume": "9",
+              "author": "Konda",
+              "year": "2016",
+              "journal-title": "Proc. VLDB Endow.",
+              "ISSN": "https://id.crossref.org/issn/2150-8097",
+              "issn-type": "print"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b8",
+              "unstructured": "Y. Li, J. Yao, Ditto: Deep learning for entity matching with domain transfer, in: Proceedings of the 2020 International Conference on Knowledge Discovery and Data Mining, (KDD ’20), 2020, pp. 2672–2680."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b9",
+              "unstructured": "S. Gao, Y. Li, J. Wang, Q. Lin, A. Nandi, T. Kraska, M.J. Franklin, Gembench: Benchmarking generalization for entity matching, in: Proceedings of the 2023 ACM SIGMOD International Conference on Management of Data, 2023, pp. 2323–2336."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b10",
+              "first-page": "35",
+              "article-title": "Modern information retrieval: A brief overview",
+              "volume": "24",
+              "author": "Singhal",
+              "year": "2001",
+              "journal-title": "IEEE Data Eng. Bull."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b11",
+              "doi-asserted-by": "crossref",
+              "first-page": "211",
+              "DOI": "10.1007/s10708-007-9111-y",
+              "article-title": "Citizens as sensors: the world of volunteered geography",
+              "volume": "69",
+              "author": "Goodchild",
+              "year": "2007",
+              "journal-title": "GeoJournal"
+            },
+            {
+              "issue": "15",
+              "key": "10.1016/j.datak.2026.102575_b12",
+              "doi-asserted-by": "crossref",
+              "first-page": "2787",
+              "DOI": "10.1016/j.comnet.2010.05.010",
+              "article-title": "The internet of things: A survey",
+              "volume": "54",
+              "author": "Atzori",
+              "year": "2010",
+              "journal-title": "Comput. Netw."
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b13",
+              "first-page": "233",
+              "article-title": "A survey on the adaptation of web data extraction and alignment solutions for big data",
+              "volume": "4",
+              "author": "Borges",
+              "year": "2013",
+              "journal-title": "J. Inf. Data Manag."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b14",
+              "doi-asserted-by": "crossref",
+              "first-page": "334",
+              "DOI": "10.1007/s007780100057",
+              "article-title": "A survey of approaches to automatic schema matching",
+              "volume": "10",
+              "author": "Rahm",
+              "year": "2001",
+              "journal-title": "VLDB J."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b15",
+              "first-page": "83",
+              "article-title": "Semantic-integration research in the database community: A brief survey",
+              "volume": "26",
+              "author": "Doan",
+              "year": "2005",
+              "journal-title": "AI Mag."
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.datak.2026.102575_b16",
+              "first-page": "1241",
+              "article-title": "Data management for heterogeneous data sources",
+              "volume": "4",
+              "author": "Bernstein",
+              "year": "2011",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b17",
+              "series-title": "International Conference on Database Systems for Advanced Applications",
+              "first-page": "52",
+              "article-title": "Empowering transformer with hybrid matching knowledge for entity matching",
+              "author": "Dou",
+              "year": "2022"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b18",
+              "unstructured": "U. Brunner, K. Stockinger, Entity matching with transformer architectures-a step forward in data integration, in: 23rd International Conference on Extending Database Technology, Copenhagen, 30 March-2 2020, OpenProceedings, 2020, pp. 463–473."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b19",
+              "unstructured": "S. Thirumuruganathan, N. Tang, Y. Chen, W. Yang, Er: Transformer-based entity resolution, in: Proceedings of the 2021 International Conference on Data Engineering, (ICDE ’21), 2021, pp. 1210–1221."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b20",
+              "doi-asserted-by": "crossref",
+              "unstructured": "D. Yao, Y. Gu, G. Cong, H. Jin, X. Lv, Entity resolution with hierarchical graph attention networks, in: Proceedings of the 2022 International Conference on Management of Data, 2022, pp. 429–442.",
+              "DOI": "10.1145/3514221.3517872"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b21",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Vretinaris, C. Lei, V. Efthymiou, X. Qin, F. Özcan, Medical entity disambiguation using graph neural networks, in: Proceedings of the 2021 International Conference on Management of Data, 2021, pp. 2310–2318.",
+              "DOI": "10.1145/3448016.3457328"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b22",
+              "series-title": "2022 International Joint Conference on Neural Networks",
+              "first-page": "01",
+              "article-title": "Trigger-gnn: a trigger-based graph neural network for nested named entity recognition",
+              "author": "Sui",
+              "year": "2022"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b23",
+              "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+              "first-page": "8172",
+              "article-title": "Grapher: Token-centric entity resolution with graph convolutional neural networks",
+              "volume": "vol. 34",
+              "author": "Li",
+              "year": "2020"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.datak.2026.102575_b24",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3442200",
+              "article-title": "Neural networks for entity matching: A survey",
+              "volume": "15",
+              "author": "Barlaug",
+              "year": "2021",
+              "journal-title": "ACM Trans. Knowl. Discov. from Data (TKDD)"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b25",
+              "doi-asserted-by": "crossref",
+              "first-page": "50",
+              "DOI": "10.1109/TKDE.2020.2981314",
+              "article-title": "A survey on deep learning for named entity recognition",
+              "volume": "34",
+              "author": "Li",
+              "year": "2020",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.datak.2026.102575_b26",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3377455",
+              "article-title": "Blocking and filtering techniques for entity resolution: A survey",
+              "volume": "53",
+              "author": "Papadakis",
+              "year": "2020",
+              "journal-title": "ACM Comput. Surv."
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.datak.2026.102575_b27",
+              "doi-asserted-by": "crossref",
+              "first-page": "197",
+              "DOI": "10.1016/j.datak.2009.10.003",
+              "article-title": "Frameworks for entity matching: A comparison",
+              "volume": "69",
+              "author": "Köpcke",
+              "year": "2010",
+              "journal-title": "Data Knowl. Eng."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b28",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Y. Govind, P. Konda, P. Suganthan GC, P. Martinkus, P. Nagarajan, H. Li, A. Soundararajan, S. Mudgal, J.R. Ballard, H. Zhang, et al., Entity matching meets data science: A progress report from the magellan project, in: Proceedings of the 2019 International Conference on Management of Data, 2019, pp. 389–403.",
+              "DOI": "10.1145/3299869.3314042"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b29",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Wang, Y. Li, W. Hirota, Machamp: A generalized entity matching benchmark, in: Proceedings of the 30th ACM International Conference on Information & Knowledge Management, 2021, pp. 4633–4642.",
+              "DOI": "10.1145/3459637.3482008"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b30",
+              "series-title": "Findings of the Association for Computational Linguistics: EMNLP",
+              "first-page": "1882",
+              "article-title": "Prompting language models for entity matching",
+              "volume": "vol. 2023",
+              "author": "Elazar",
+              "year": "2023"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b31",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1038/sdata.2016.18",
+              "article-title": "The fair guiding principles for scientific data management and stewardship",
+              "volume": "3",
+              "author": "Wilkinson",
+              "year": "2016",
+              "journal-title": "Sci. Data"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b32",
+              "series-title": "Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection",
+              "author": "Christen",
+              "year": "2012"
+            },
+            {
+              "issue": "1–2",
+              "key": "10.1016/j.datak.2026.102575_b33",
+              "doi-asserted-by": "crossref",
+              "first-page": "484",
+              "DOI": "10.14778/1920841.1920904",
+              "article-title": "Evaluation of entity resolution approaches on real-world match problems",
+              "volume": "3",
+              "author": "Köpcke",
+              "year": "2010",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.datak.2026.102575_b34",
+              "doi-asserted-by": "crossref",
+              "first-page": "443",
+              "DOI": "10.1109/TKDE.2014.2327028",
+              "article-title": "Entity linking with a knowledge base: Issues, techniques, and solutions",
+              "volume": "27",
+              "author": "Shen",
+              "year": "2015",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b35",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Z. Sun, W. Hu, C. Li, Cross-lingual entity alignment via joint attribute-preserving embedding, in: International Semantic Web Conference, (ISWC), 2017, pp. 628–644.",
+              "DOI": "10.1007/978-3-319-68288-4_37"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b36",
+              "series-title": "Vldb",
+              "first-page": "49",
+              "article-title": "Generic schema matching with cupid",
+              "volume": "vol. 1",
+              "author": "Madhavan",
+              "year": "2001"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b37",
+              "doi-asserted-by": "crossref",
+              "first-page": "323",
+              "DOI": "10.1145/27633.27634",
+              "article-title": "A comparative analysis of methodologies for database schema integration",
+              "volume": "18",
+              "author": "Batini",
+              "year": "1986",
+              "journal-title": "ACM Comput. Surv."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b38",
+              "doi-asserted-by": "crossref",
+              "first-page": "334",
+              "DOI": "10.1007/s007780100057",
+              "article-title": "A survey of approaches to automatic schema matching",
+              "volume": "10",
+              "author": "Rahm",
+              "year": "2001",
+              "journal-title": "VLDB J."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b39",
+              "first-page": "83",
+              "article-title": "Semantic-integration research in the database community: A brief survey",
+              "volume": "26",
+              "author": "Doan",
+              "year": "2005",
+              "journal-title": "AI Mag."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b40",
+              "series-title": "Ontology Matching",
+              "author": "Euzenat",
+              "year": "2013"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b41",
+              "doi-asserted-by": "crossref",
+              "first-page": "183",
+              "DOI": "10.1145/96602.96604",
+              "article-title": "Federated database systems for managing distributed, heterogeneous, and autonomous databases",
+              "volume": "22",
+              "author": "Sheth",
+              "year": "1990",
+              "journal-title": "ACM Comput. Surv. (CSUR)"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b42",
+              "series-title": "Proceedings of the Web Conference 2021",
+              "first-page": "2752",
+              "article-title": "Mm-bert: Multimodal bert pretraining for improved product matching",
+              "author": "Khan",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b43",
+              "unstructured": "Y. Liu, S. Yan, J. Qin, et al., Deepfashion2: A versatile benchmark for detection, pose estimation, segmentation and re-identification of clothing, in: IEEE/CVF Conference on Computer Vision and Pattern Recognition, (CVPR), 2020, pp. 5337–5345."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b44",
+              "series-title": "Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining",
+              "first-page": "1192",
+              "article-title": "Layoutlm: Pre-training of text and layout for document image understanding",
+              "author": "Xu",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b45",
+              "doi-asserted-by": "crossref",
+              "unstructured": "S. Moon, L. Neves, V. Carvalho, Multimodal named entity disambiguation for noisy social media posts, in: Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, 2018.",
+              "DOI": "10.18653/v1/P18-1186"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b46",
+              "series-title": "European Conference on Computer Vision",
+              "first-page": "104",
+              "article-title": "Uniter: Learning universal image-text representations",
+              "author": "Chen",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b47",
+              "unstructured": "N.F. Noy, M.A. Musen, et al., Algorithm and tool for automated ontology merging and alignment, in: Proceedings of the 17th National Conference on Artificial Intelligence, (AAAI-00), 2000, Available as SMI technical report SMI-2000-0831, 115, sn."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b48",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Yu, J. Jiang, L. Yang, R. Xia, Improving multimodal named entity recognition via entity span detection with unified multimodal transformer, in: Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2020, pp. 5640–5650.",
+              "DOI": "10.18653/v1/2020.acl-main.306"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b49",
+              "doi-asserted-by": "crossref",
+              "unstructured": "O. Adjali, R. Besançon, O. Ferret, H. Le Borgne, B. Grau, Building a multimodal entity linking dataset from tweets, in: Proceedings of the 12th International Conference on Language Resources and Evaluation, (LREC), 2020.",
+              "DOI": "10.1007/978-3-030-45439-5_31"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b50",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Gan, J. Luo, H. Wang, S. Wang, W. He, Q. Huang, Multimodal entity linking: a new dataset and a baseline, in: Proceedings of the 29th ACM International Conference on Multimedia, 2021, pp. 993–1001.",
+              "DOI": "10.1145/3474085.3475400"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b51",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Wang, J. Wu, X. Chen, Multimodal entity linking with gated hierarchical fusion and contrastive training, in: Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval, 2022, pp. 938–948.",
+              "DOI": "10.1145/3477495.3531867"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b52",
+              "doi-asserted-by": "crossref",
+              "unstructured": "B. Xu, S. Huang, C. Sha, H. Wang, Maf: a general matching and alignment framework for multimodal named entity recognition, in: Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining, 2022, pp. 1215–1223.",
+              "DOI": "10.1145/3488560.3498475"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b53",
+              "series-title": "Bert: Pre-Training of Deep Bidirectional Transformers for Language Understanding",
+              "first-page": "4171",
+              "author": "Devlin",
+              "year": "2019"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b54",
+              "series-title": "Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers)",
+              "first-page": "2227",
+              "article-title": "Deep contextualized word representations",
+              "author": "Peters",
+              "year": "2018"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b55",
+              "doi-asserted-by": "crossref",
+              "first-page": "270",
+              "DOI": "10.1007/s007780100054",
+              "article-title": "Answering queries using views: A survey",
+              "volume": "10",
+              "author": "Halevy",
+              "year": "2001",
+              "journal-title": "VLDB J."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b56",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Doan, J. Madhavan, P. Domingos, A. Halevy, Learning to map between ontologies on the semantic web, in: Proceedings of the 11th International Conference on World Wide Web, 2002, pp. 662–673.",
+              "DOI": "10.1145/511446.511532"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b57",
+              "series-title": "Developing Time-Oriented Database Applications in SQL",
+              "author": "Snodgrass",
+              "year": "1999"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b58",
+              "first-page": "3",
+              "article-title": "Data cleaning: Problems and current approaches",
+              "volume": "23",
+              "author": "Rahm",
+              "year": "2000",
+              "journal-title": "IEEE Data Eng. Bull."
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b59",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3654963",
+              "article-title": "Otclean: Data cleaning for conditional independence violations using optimal transport",
+              "volume": "2",
+              "author": "Pirhadi",
+              "year": "2024",
+              "journal-title": "Proc. the ACM Manag. Data"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.datak.2026.102575_b60",
+              "doi-asserted-by": "crossref",
+              "first-page": "912",
+              "DOI": "10.1109/TKDE.2019.2898191",
+              "article-title": "Efficient entity resolution on heterogeneous records",
+              "volume": "32",
+              "author": "Lin",
+              "year": "2019",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b61",
+              "series-title": "Proc. ACM Manag. Data",
+              "article-title": "Unicorn: A unified multi-tasking model for supporting matching tasks in data integration",
+              "volume": "vol. 1",
+              "author": "Tu",
+              "year": "2023"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b62",
+              "series-title": "2023 IEEE 39th International Conference on Data Engineering",
+              "first-page": "1502",
+              "article-title": "Sudowoodo: Contrastive self-supervised learning for multi-purpose data integration and preparation",
+              "author": "Wang",
+              "year": "2023"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.datak.2026.102575_b63",
+              "doi-asserted-by": "crossref",
+              "first-page": "2225",
+              "DOI": "10.14778/3598581.3598594",
+              "article-title": "Pre-trained embeddings for entity resolution: An experimental analysis",
+              "volume": "16",
+              "author": "Zeakis",
+              "year": "2023",
+              "journal-title": "Proc. VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b64",
+              "doi-asserted-by": "crossref",
+              "unstructured": "H. Nie, X. Han, B. He, L. Sun, B. Chen, W. Zhang, S. Wu, H. Kong, Deep sequence-to-sequence entity matching for heterogeneous entity resolution, in: Proceedings of the 28th ACM International Conference on Information and Knowledge Management, 2019, pp. 629–638.",
+              "DOI": "10.1145/3357384.3358018"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b65",
+              "series-title": "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, KDD ’19",
+              "first-page": "2585",
+              "article-title": "Oag: Toward linking large-scale heterogeneous entity graphs",
+              "author": "Zhang",
+              "year": "2019"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b66",
+              "doi-asserted-by": "crossref",
+              "unstructured": "C. Fu, X. Han, J. He, L. Sun, Hierarchical matching network for heterogeneous entity resolution, in: Proceedings of the Twenty-Ninth International Conference on International Joint Conferences on Artificial Intelligence, 2021, pp. 3665–3671.",
+              "DOI": "10.24963/ijcai.2020/507"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b67",
+              "doi-asserted-by": "crossref",
+              "unstructured": "R. Peeters, C. Bizer, Supervised contrastive learning for product matching, in: Companion Proceedings of the Web Conference, vol. 2022, 2022, pp. 248–251.",
+              "DOI": "10.1145/3487553.3524254"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b68",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3533016",
+              "article-title": "Unsupervised graph-based entity resolution for complex entities",
+              "volume": "17",
+              "author": "Kirielle",
+              "year": "2023",
+              "journal-title": "ACM Trans. Knowl. Discov. from Data"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b69",
+              "series-title": "EDBT",
+              "first-page": "281",
+              "article-title": "Emba: Entity matching using multi-task learning of bert with attention-over-attention",
+              "author": "Zhang",
+              "year": "2024"
+            },
+            {
+              "issue": "10",
+              "key": "10.1016/j.datak.2026.102575_b70",
+              "doi-asserted-by": "crossref",
+              "first-page": "1195",
+              "DOI": "10.14778/3339490.3339501",
+              "article-title": "Ontology-based entity matching in attributed graphs",
+              "volume": "12",
+              "author": "Ma",
+              "year": "2019",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b71",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/3588919",
+              "article-title": "Matching roles from temporal data: Why joe biden is not only president, but also commander-in-chief",
+              "volume": "1",
+              "author": "Bornemann",
+              "year": "2023",
+              "journal-title": "Proc. the ACM Manag. Data"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b72",
+              "doi-asserted-by": "crossref",
+              "unstructured": "E. Jiménez-Ruiz, B.C. Grau, Logmap: Logic-based and scalable ontology matching, in: Proceedings of the 10th International Semantic Web Conference, (ISWC), 2011, pp. 273–288.",
+              "DOI": "10.1007/978-3-642-25073-6_18"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b73",
+              "first-page": "357",
+              "article-title": "Large-scale ontology matching: The agreementmakerlight system",
+              "volume": "7",
+              "author": "Jiménez-Ruiz",
+              "year": "2016",
+              "journal-title": "Semant. Web"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b74",
+              "first-page": "545",
+              "article-title": "Paris: Probabilistic alignment of relations, instances, and schema",
+              "volume": "23",
+              "author": "Suchanek",
+              "year": "2014",
+              "journal-title": "VLDB J."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b75",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Chen, Y. Tian, K. Chang, S. Skiena, C. Yang, Multilingual knowledge graph embeddings for cross-lingual entity alignment, in: Proceedings of the 26th International Joint Conference on Artificial Intelligence, (IJCAI), 2017, pp. 1511–1517.",
+              "DOI": "10.24963/ijcai.2017/209"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b76",
+              "unstructured": "Z. Sun, Q. Chen, M. Chen, Y. Yang, C. Zaniolo, Bootea: Bootstrap entity alignment with knowledge graph embedding, in: Proceedings of the 32nd AAAI Conference on Artificial Intelligence, (AAAI), 2018, pp. 222–229."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b77",
+              "unstructured": "Y. Wu, X. Liu, Y. Feng, Z. Wang, D. Zhao, R. Yan, Relation-aware dual graph convolutional networks for entity alignment, in: Proceedings of the 33rd AAAI Conference on Artificial Intelligence, (AAAI), 2019, pp. 5978–5985."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b78",
+              "doi-asserted-by": "crossref",
+              "unstructured": "B.D. Trisedya, J. Qi, R. Zhang, Entity alignment between knowledge graphs using attribute embeddings, in: Proceedings of the AAAI Conference on Artificial Intelligence, vol. 33, 2019, pp. 297–304.",
+              "DOI": "10.1609/aaai.v33i01.3301297"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b79",
+              "unstructured": "H. Mao, J. Chen, X. Zhang, J. Lu, C. Chen, Rrea: Relation-aware embedding for entity alignment, in: Proceedings of the 34th AAAI Conference on Artificial Intelligence, (AAAI), 2020, pp. 10204–10212."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b80",
+              "unstructured": "X. Hao, Y. Liu, L. Hou, J. Li, Y. Liu, Y. Dong, Multike: Multi-view knowledge graph embedding for entity alignment, in: Proceedings of the 29th International Joint Conference on Artificial Intelligence, (IJCAI), 2020, pp. 3486–3492."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b81",
+              "series-title": "2020 IEEE 36th International Conference on Data Engineering",
+              "first-page": "1870",
+              "article-title": "Collective entity alignment via adaptive features",
+              "author": "Zeng",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b82",
+              "series-title": "Web data commons, WDC product corpus",
+              "year": "2024"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b83",
+              "unstructured": "Y. Deng, J. Li, C. Jia, Q. Liu, L. Hou, J. Li, Matchgpt: A benchmark for large language models on entity matching, in: Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, (EMNLP), 2024."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b84",
+              "unstructured": "J. Wang, Y. Li, Y. Li, S. Krishnan, T. Kraska, M.J. Franklin, Autoblock: A hands-free blocking framework for entity matching, in: Proceedings of the 33rd International Conference on Data Engineering, (ICDE), 2017, pp. 1260–1271."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b85",
+              "doi-asserted-by": "crossref",
+              "first-page": "311",
+              "DOI": "10.1016/0024-3841(78)90006-2",
+              "article-title": "Resolving pronoun reference",
+              "volume": "44",
+              "author": "Hobbs",
+              "year": "1978",
+              "journal-title": "Lingua"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b86",
+              "unstructured": "W.M. Soon, H.T. Ng, D.C.Y. Lim, A machine learning approach to coreference resolution of noun phrases, in: Proceedings of the 38th Annual Meeting of the Association for Computational Linguistics, (ACL), 2001, pp. 285–292."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b87",
+              "doi-asserted-by": "crossref",
+              "unstructured": "K. Lee, L. He, M. Lewis, L. Zettlemoyer, End-to-end neural coreference resolution, in: Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, (EMNLP), 2017, pp. 188–197.",
+              "DOI": "10.18653/v1/D17-1018"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b88",
+              "doi-asserted-by": "crossref",
+              "first-page": "64",
+              "DOI": "10.1162/tacl_a_00300",
+              "article-title": "Spanbert: Improving pre-training by representing and predicting spans",
+              "volume": "8",
+              "author": "Joshi",
+              "year": "2020",
+              "journal-title": "Trans. Assoc. Comput. Linguist."
+            },
+            {
+              "issue": "6",
+              "key": "10.1016/j.datak.2026.102575_b89",
+              "article-title": "Layoutcoref: Coreference resolution in visually rich documents",
+              "volume": "60",
+              "author": "Kümmerer",
+              "year": "2023",
+              "journal-title": "Inf. Process. Manage."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b90",
+              "unstructured": "O. Agarwal, R. Anubhai, M. Diab, Weakly supervised coreference resolution in web documents, in: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics, (ACL), 2021, pp. 5823–5834."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b91",
+              "doi-asserted-by": "crossref",
+              "unstructured": "C. Zhao, Y. He, Auto-em: End-to-end fuzzy entity-matching using pre-trained deep models and transfer learning, in: The World Wide Web Conference, 2019, pp. 2413–2424.",
+              "DOI": "10.1145/3308558.3313578"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b92",
+              "doi-asserted-by": "crossref",
+              "first-page": "465",
+              "DOI": "10.14778/3494124.3494131",
+              "article-title": "Deep transfer learning for multi-source entity linkage via domain adaptation",
+              "volume": "15",
+              "author": "Jin",
+              "year": "2021",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b93",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Trabelsi, J. Heflin, J. Cao, Dame: Domain adaptation for matching entities, in: Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining, 2022, pp. 1016–1024.",
+              "DOI": "10.1145/3488560.3498486"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.datak.2026.102575_b94",
+              "doi-asserted-by": "crossref",
+              "first-page": "369",
+              "DOI": "10.14778/3565816.3565836",
+              "article-title": "Promptem: prompt-tuning for low-resource generalized entity matching",
+              "volume": "16",
+              "author": "Wang",
+              "year": "2022",
+              "journal-title": "Proc. VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b95",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Tu, J. Fan, N. Tang, P. Wang, C. Chai, G. Li, R. Fan, X. Du, Domain adaptation for deep entity resolution, in: Proceedings of the 2022 International Conference on Management of Data, 2022, pp. 443–457.",
+              "DOI": "10.1145/3514221.3517870"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b96",
+              "series-title": "The Semantic Web–ISWC 2021: 20th International Semantic Web Conference, ISWC 2021, Virtual Event, October (2021) 24–28, Proceedings 20",
+              "first-page": "182",
+              "article-title": "Graph-boosted active learning for multi-source entity resolution",
+              "author": "Primpeli",
+              "year": "2021"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b97",
+              "series-title": "Proc. VLDB Endow.",
+              "first-page": "31",
+              "article-title": "Deep indexed active learning for matching heterogeneous entity representations",
+              "volume": "vol. 15",
+              "author": "Jain",
+              "year": "2021"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.datak.2026.102575_b98",
+              "doi-asserted-by": "crossref",
+              "first-page": "384",
+              "DOI": "10.14778/2876473.2876474",
+              "article-title": "Online entity resolution using an oracle",
+              "volume": "9",
+              "author": "Firmani",
+              "year": "2016",
+              "journal-title": "Proc. VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b99",
+              "doi-asserted-by": "crossref",
+              "unstructured": "G. Simonini, L. Zecchini, S. Bergamaschi, F. Naumann, Entity resolution on-demand, in: Proc. VLDB Endow., vol. 15, (7) 2022, pp. 1506–1518.",
+              "DOI": "10.14778/3523210.3523226"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b100",
+              "doi-asserted-by": "crossref",
+              "first-page": "229",
+              "DOI": "10.1007/s00778-022-00745-1",
+              "article-title": "Deep entity matching with adversarial active learning",
+              "volume": "32",
+              "author": "Huang",
+              "year": "2023",
+              "journal-title": "VLDB J."
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.datak.2026.102575_b101",
+              "doi-asserted-by": "crossref",
+              "first-page": "1950",
+              "DOI": "10.14778/3229863.3236232",
+              "article-title": "The return of jedai: End-to-end entity resolution for structured and semi-structured data",
+              "volume": "11",
+              "author": "Papadakis",
+              "year": "2018",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.datak.2026.102575_b102",
+              "doi-asserted-by": "crossref",
+              "first-page": "12139",
+              "DOI": "10.1109/TKDE.2021.3134806",
+              "article-title": "Collaborem: A self-supervised entity matching framework using multi-features collaboration",
+              "volume": "35",
+              "author": "Ge",
+              "year": "2021",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.datak.2026.102575_b103",
+              "doi-asserted-by": "crossref",
+              "first-page": "1316",
+              "DOI": "10.1109/TKDE.2014.2359666",
+              "article-title": "Progressive duplicate detection",
+              "volume": "27",
+              "author": "Papenbrock",
+              "year": "2015",
+              "journal-title": "IEEE Trans. Knowl. Data Eng."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b104",
+              "series-title": "Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data, SIGMOD ’15",
+              "first-page": "1215",
+              "article-title": "Bigdansing: A system for big data cleansing",
+              "author": "Khayyat",
+              "year": "2015"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b105",
+              "first-page": "151",
+              "article-title": "Pay-as-you-go configuration of entity resolution",
+              "volume": "24",
+              "author": "Maskat",
+              "year": "2015",
+              "journal-title": "Trans. Large-Scale Data- Knowledge-Centered Syst."
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.datak.2026.102575_b106",
+              "doi-asserted-by": "crossref",
+              "first-page": "1922",
+              "DOI": "10.14778/3229863.3236225",
+              "article-title": "A demonstration of PERC: Probabilistic entity resolution with crowd errors",
+              "volume": "11",
+              "author": "Ke",
+              "year": "2018",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b107",
+              "series-title": "Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data, SIGMOD ’20",
+              "first-page": "1335",
+              "article-title": "Creating embeddings of heterogeneous relational datasets for data integration tasks",
+              "author": "Cappuzzo",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b108",
+              "unstructured": "J. Gao, D. Li, T. Kisla, X.L. Dong, Contrastive co-training for bootstrapping entity matching, in: Proceedings of the VLDB 2021 Workshop on Data Integration and Applications, (DIA), 2021."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b109",
+              "series-title": "Proceedings of the 2022 IEEE 38th International Conference on Data Engineering",
+              "first-page": "1581",
+              "article-title": "Cline: Contrastive learning with identity noise for entity matching",
+              "author": "Pei",
+              "year": "2022"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b110",
+              "doi-asserted-by": "crossref",
+              "unstructured": "S.E. Whang, D. Menestrina, G. Koutrika, M. Theobald, H. Garcia-Molina, Entity resolution with evolving rules, in: Proceedings of the VLDB Endowment, vol. 3, 2010, pp. 1326–1337.",
+              "DOI": "10.14778/1920841.1921004"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b111",
+              "article-title": "Evolutionary algorithms for record linkage and entity resolution: A review",
+              "volume": "85",
+              "author": "Zhao",
+              "year": "2019",
+              "journal-title": "Appl. Soft Comput."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b112",
+              "series-title": "2014 9th International Conference on Wireless Communications and Signal Processing",
+              "first-page": "801",
+              "article-title": "Ergp: A combined entity resolution approach with genetic programming",
+              "author": "Sun",
+              "year": "2014"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b113",
+              "series-title": "Proceedings of the 15th International Conference on Web Information Systems Engineering",
+              "first-page": "58",
+              "article-title": "An ontology-based approach for product entity resolution",
+              "author": "Vermaas",
+              "year": "2014"
+            },
+            {
+              "issue": "11",
+              "key": "10.1016/j.datak.2026.102575_b114",
+              "first-page": "2763",
+              "article-title": "Deeperflow: Robust, explainable, and modular deep entity resolution",
+              "volume": "15",
+              "author": "Gong",
+              "year": "2022",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b115",
+              "unstructured": "S. Thirumuruganathan, S. Joty, N. Li, M. Ouzzani, N. Tang, G. Das, Deepblocker: Learning to block with deep neural networks, in: Proceedings of the 2020 IEEE 36th International Conference on Data Engineering, (ICDE), 2020, pp. 1577–1580."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b116",
+              "unstructured": "S. Mudgal, H. Li, T. Rekatsinas, A. Doan, Y. Park, S. Krishnan, R. Deep, et al., Hera: Schema-guided deep entity resolution, in: Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data, 2020, pp. 1145–1160."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b117",
+              "series-title": "EDBT",
+              "article-title": "Using chatgpt for entity matching",
+              "author": "Peeters",
+              "year": "2025"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b118",
+              "series-title": "Booster: Leveraging Large Language Models for Enhancing Entity Resolution",
+              "first-page": "1043",
+              "author": "Li",
+              "year": "2024"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b119",
+              "series-title": "Proceedings of the 2025 IEEE 41st International Conference on Data Engineering Workshops",
+              "first-page": "9",
+              "article-title": "Fine-tuning large language models for entity matching",
+              "author": "Steiner",
+              "year": "2025"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b120",
+              "series-title": "ACL",
+              "article-title": "Match, compare, or select? an investigation of large language models for entity matching",
+              "author": "Wang",
+              "year": "2024"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.datak.2026.102575_b121",
+              "doi-asserted-by": "crossref",
+              "first-page": "1726",
+              "DOI": "10.14778/3529337.3529356",
+              "article-title": "Analyzing how bert performs entity matching",
+              "volume": "15",
+              "author": "Paganelli",
+              "year": "2022",
+              "journal-title": "Proc. VLDB Endow."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.datak.2026.102575_b122",
+              "doi-asserted-by": "crossref",
+              "first-page": "1039",
+              "DOI": "10.1007/s00778-023-00824-x",
+              "article-title": "A multi-facet analysis of bert-based entity matching models",
+              "volume": "33",
+              "author": "Paganelli",
+              "year": "2023",
+              "journal-title": "VLDB J."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b123",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1038/sdata.2016.18",
+              "article-title": "The fair guiding principles for scientific data management and stewardship",
+              "volume": "3",
+              "author": "Wilkinson",
+              "year": "2016",
+              "journal-title": "Sci. Data"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b124",
+              "series-title": "Heterogeneity in entity matching: Survey and experiments",
+              "author": "Moslemi",
+              "year": "2025"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b125",
+              "series-title": "Keybert: Minimal keyword extraction with bert",
+              "author": "Grootendorst",
+              "year": "2020"
+            },
+            {
+              "issue": "11",
+              "key": "10.1016/j.datak.2026.102575_b126",
+              "doi-asserted-by": "crossref",
+              "first-page": "39",
+              "DOI": "10.1145/219717.219748",
+              "article-title": "Wordnet: A lexical database for english",
+              "volume": "38",
+              "author": "Miller",
+              "year": "1995",
+              "journal-title": "Commun. ACM"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.datak.2026.102575_b127",
+              "doi-asserted-by": "crossref",
+              "first-page": "379",
+              "DOI": "10.1002/j.1538-7305.1948.tb01338.x",
+              "article-title": "A mathematical theory of communication",
+              "volume": "27",
+              "author": "Shannon",
+              "year": "1948",
+              "journal-title": "Bell Syst. Tech. J."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b128",
+              "unstructured": "E. Peukert, E. Rahm, Hiermatcher: Hierarchical entity matching, in: Proceedings of the 2020 International Conference on Very Large Data Bases, (VLDB ’20), 2020, pp. 3456–3467."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b129",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Z. Miao, Y. Li, X. Wang, Rotom: A meta-learned data augmentation framework for entity matching, data cleaning, text classification, and beyond, in: Proceedings of the 2021 International Conference on Management of Data, 2021, pp. 1303–1316.",
+              "DOI": "10.1145/3448016.3457258"
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.datak.2026.102575_b130",
+              "first-page": "3205",
+              "article-title": "Dataset discovery in data lakes",
+              "volume": "13",
+              "author": "Bogatu",
+              "year": "2020",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b131",
+              "article-title": "Towards an advanced entity resolution in data lakes",
+              "author": "Bouabdelli",
+              "year": "2025",
+              "journal-title": "J. Big Data"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b132",
+              "first-page": "44",
+              "article-title": "Managing and integrating data lakes: challenges and techniques",
+              "volume": "79",
+              "author": "Fernández",
+              "year": "2018",
+              "journal-title": "Inf. Syst."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b133",
+              "unstructured": "T. Yu, R. Zhang, O. Polozov, C. Meek, Y. Sun, Turl: Table understanding through representation learning, in: Proceedings of the 57th Conference on Empirical Methods in Natural Language Processing, (EMNLP), 2020."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b134",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Herzig, P. Nowak, T. Müller, F. Piccinno, J. Eisenschlos, Tapas: Weakly supervised table parsing via pre-training, in: Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, (ACL), 2020.",
+              "DOI": "10.18653/v1/2020.acl-main.398"
+            },
+            {
+              "issue": "13",
+              "key": "10.1016/j.datak.2026.102575_b135",
+              "first-page": "1585",
+              "article-title": "Regularizing EM via human-in-the-loop feedback",
+              "volume": "7",
+              "author": "Altowim",
+              "year": "2014",
+              "journal-title": "Proc. the VLDB Endow."
+            },
+            {
+              "issue": "11",
+              "key": "10.1016/j.datak.2026.102575_b136",
+              "first-page": "1",
+              "article-title": "Interactive entity resolution: A survey",
+              "volume": "55",
+              "author": "Bellogín",
+              "year": "2023",
+              "journal-title": "ACM Comput. Surv."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b137",
+              "series-title": "ICDE",
+              "article-title": "Explainable entity matching with transformations",
+              "author": "Meduri",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b138",
+              "article-title": "Explainable entity resolution: A survey",
+              "author": "Esmaili",
+              "year": "2021",
+              "journal-title": "J. Web Semant."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b139",
+              "series-title": "KDD",
+              "article-title": "Active learning for scalable entity resolution",
+              "author": "Qian",
+              "year": "2020"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.datak.2026.102575_b140",
+              "first-page": "1",
+              "article-title": "Privacy-preserving record linkage: A comprehensive survey",
+              "volume": "49",
+              "author": "Vatsalan",
+              "year": "2017",
+              "journal-title": "ACM Comput. Surv."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b141",
+              "series-title": "Data Matching: Concepts and Techniques",
+              "author": "Christen",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b142",
+              "series-title": "CIKM",
+              "article-title": "Federated ER: A cross-organization matching framework",
+              "author": "Karapiperis",
+              "year": "2020"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b143",
+              "article-title": "Differentially private entity resolution",
+              "author": "Ranbaduge",
+              "year": "2022",
+              "journal-title": "Inf. Syst."
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b144",
+              "series-title": "Through the fairness lens: Experimental analysis and evaluation of entity matching",
+              "author": "Shahbazi",
+              "year": "2023"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b145",
+              "series-title": "Evaluating blocking biases in entity matching",
+              "author": "Moslemi",
+              "year": "2024"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b146",
+              "series-title": "2022 IEEE International Conference on Big Data (Big Data)",
+              "first-page": "5068",
+              "article-title": "Entity matching with auc-based fairness",
+              "author": "Nilforoushan",
+              "year": "2022"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b147",
+              "doi-asserted-by": "crossref",
+              "unstructured": "V. Efthymiou, K. Stefanidis, E. Pitoura, V. Christophides, Fairer: Entity resolution with fairness constraints, in: Proceedings of the 30th ACM International Conference on Information & Knowledge Management, 2021, pp. 3004–3008.",
+              "DOI": "10.1145/3459637.3482105"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b148",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M.H. Moslemi, M. Milani, Threshold-independent fair matching through score calibration, in: Proceedings of the Conference on Governance, Understanding and Integration of Data for Effective and Responsible AI, 2024, pp. 40–44.",
+              "DOI": "10.1145/3665601.3669845"
+            },
+            {
+              "key": "10.1016/j.datak.2026.102575_b149",
+              "series-title": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+              "first-page": "558",
+              "article-title": "Adaptive temporal entity resolution on dynamic databases",
+              "author": "Christen",
+              "year": "2013"
+            }
+          ],
+          "container-title": [
+            "Data &amp; Knowledge Engineering"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0169023X26000224?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0169023X26000224?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                12
+              ]
+            ],
+            "date-time": "2026-06-12T00:47:19Z",
+            "timestamp": 1781225239000
+          },
+          "score": 36.858356,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0169023X26000224"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                7
+              ]
+            ]
+          },
+          "references-count": 149,
+          "alternative-id": [
+            "S0169023X26000224"
+          ],
+          "URL": "https://doi.org/10.1016/j.datak.2026.102575",
+          "ISSN": [
+            "0169-023X"
+          ],
+          "issn-type": [
+            {
+              "value": "0169-023X",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                7
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Heterogeneity in entity matching: A survey and experimental analysis",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Data & Knowledge Engineering",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.datak.2026.102575",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "value": "© 2026 The Authors. Published by Elsevier B.V.",
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "102575"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                26
+              ]
+            ],
+            "date-time": "2026-05-26T09:03:50Z",
+            "timestamp": 1779786230569,
+            "version": "3.53.1"
+          },
+          "reference-count": 0,
+          "publisher": "SCITEPRESS - Science and Technology Publications",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "DOI": "10.5220/0015052500004018",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                26
+              ]
+            ],
+            "date-time": "2026-05-26T08:14:57Z",
+            "timestamp": 1779783297000
+          },
+          "page": "401-408",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Contrastive Learning for Cross-Modal Entity Matching: An Experimental Study"
+          ],
+          "prefix": "10.5220",
+          "author": [
+            {
+              "given": "Paulo",
+              "family": "Lima",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Instituto de Informática (INF), Universidade Federal de Goiás (UFG), Goiânia, GO, Brazil"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Leonardo",
+              "family": "Ribeiro",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Instituto de Informática (INF), Universidade Federal de Goiás (UFG), Goiânia, GO, Brazil"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "3171",
+          "event": {
+            "name": "28th International Conference on Enterprise Information Systems",
+            "location": "Benidorm, Spain",
+            "start": {
+              "date-parts": [
+                [
+                  2026,
+                  5,
+                  22
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2026,
+                  5,
+                  24
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "Proceedings of the 28th International Conference on Enterprise Information Systems"
+          ],
+          "original-title": [
+            "Contrastive Learning for Cross-Modal Entity Matching: An Experimental Study"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                26
+              ]
+            ],
+            "date-time": "2026-05-26T08:14:58Z",
+            "timestamp": 1779783298000
+          },
+          "score": 26.922102,
+          "resource": {
+            "primary": {
+              "URL": "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0015052500004018"
+            }
+          },
+          "subtitle": [
+            ""
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.5220/0015052500004018",
+          "published": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "parents": {
+    "GBDT-lexical": {
+      "path": "metrics/selection_GBDT-lexical.json",
+      "sha256": "dd4699f5938c16fbc627a5d11bd3d56bb59b424bb56bc4728c9ee85781cbb231",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      }
+    },
+    "GBDT-fusion": {
+      "path": "metrics/selection_GBDT-fusion.json",
+      "sha256": "5254c616061b8f41bcc7eb260fd3a290782ef7dfe962b3873f8c1e8c633cc2e7",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      }
+    },
+    "LR-lexical": {
+      "path": "metrics/selection_LR-lexical.json",
+      "sha256": "7ecf82d404f203bef0dc48cb44761c614e3e7be161e8ef109313c563416309c9",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      }
+    },
+    "LR-fusion": {
+      "path": "metrics/selection_LR-fusion.json",
+      "sha256": "b9018b54d6dd769ee3a87cf575ce9187f89bb7bca884e86ca8d98747edc9609b",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      }
+    }
+  },
+  "groups": [
+    "username",
+    "fullname",
+    "bio",
+    "location",
+    "links"
+  ],
+  "gbdt_seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "lr_seeds": [
+    42
+  ],
+  "learning_curve_fractions": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "learning_curve_seed": 42,
+  "learning_curve_folds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "scope": "development OOF only; no additional final evaluations or hyperparameter selection",
+  "single_attribute_LR": "supporting within E5-5; cannot change primary GBDT best-single-group selection",
+  "rule_learning_curve": "NOT RUN: main weights use full development label-informed selection; avoid unequal information-budget sample-efficiency claim",
+  "ablation": "drop every lexical AND semantic feature belonging to excluded attribute"
+}

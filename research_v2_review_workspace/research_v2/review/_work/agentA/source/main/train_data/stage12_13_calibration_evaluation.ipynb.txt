@@ -1,0 +1,286 @@
+# CELL 0
+import os, pickle, json
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from torch.utils.data import Dataset, DataLoader
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+
+OUTPUT_DIR  = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+RANDOM_SEED = 42
+BATCH_SIZE  = 512
+TRAIN_NEG_RATIO = 3
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# โหลด artifacts
+feature_matrix = pd.read_csv('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/feature_matrix.csv')
+with open('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/feature_cols.pkl', 'rb') as _f: feature_cols = pickle.load(_f)
+with open('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/scaler.pkl', 'rb') as _f: scaler = pickle.load(_f)
+
+# Entity-aware split (same seed as stage 10)
+entities = feature_matrix['entity_id_a'].dropna().unique()
+train_ent, test_ent = train_test_split(entities, test_size=0.30, random_state=RANDOM_SEED)
+val_ent, test_ent   = train_test_split(test_ent,  test_size=0.50, random_state=RANDOM_SEED)
+train_df = feature_matrix[feature_matrix['entity_id_a'].isin(train_ent)]
+val_df   = feature_matrix[feature_matrix['entity_id_a'].isin(val_ent)]
+test_df  = feature_matrix[feature_matrix['entity_id_a'].isin(test_ent)]
+train_pos = train_df[train_df['label']==1]
+train_neg = train_df[train_df['label']==0].sample(n=min(len(train_pos)*TRAIN_NEG_RATIO, len(train_df[train_df['label']==0])), random_state=RANDOM_SEED)
+train_balanced = pd.concat([train_pos, train_neg]).sample(frac=1, random_state=RANDOM_SEED)
+X_val  = scaler.transform(val_df[feature_cols].values)
+y_val  = val_df['label'].values.astype(np.float32)
+X_test = scaler.transform(test_df[feature_cols].values)
+y_test = test_df['label'].values.astype(np.float32)
+
+class PairDataset(Dataset):
+    def __init__(self, X, y): self.X=torch.FloatTensor(X); self.y=torch.FloatTensor(y)
+    def __len__(self): return len(self.y)
+    def __getitem__(self, i): return self.X[i], self.y[i]
+
+val_loader  = DataLoader(PairDataset(X_val,  y_val),  batch_size=BATCH_SIZE)
+test_loader = DataLoader(PairDataset(X_test, y_test), batch_size=BATCH_SIZE)
+
+# โหลด model
+class IdentityMLP(nn.Module):
+    def __init__(self, input_dim):
+        super().__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_dim,256), nn.BatchNorm1d(256), nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(256,128), nn.BatchNorm1d(128), nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(128,64),  nn.BatchNorm1d(64),  nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(64,1)
+        )
+    def forward(self, x): return self.network(x).squeeze(-1)
+
+model = IdentityMLP(len(feature_cols)).to(device)
+model.load_state_dict(torch.load('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/model.pt', map_location=device))
+model.eval()
+print(f'Model loaded | val: {len(X_val):,} | test: {len(X_test):,}')
+
+# CELL 3
+# --- 12.1 Collect Raw Probabilities ---
+from sklearn.isotonic import IsotonicRegression
+
+model.eval()
+val_probs_raw, val_labels_all = [], []
+
+with torch.no_grad():
+    for X_batch, y_batch in val_loader:
+        X_batch = X_batch.to(device)
+        logits = model(X_batch)
+        probs = torch.sigmoid(logits).cpu().numpy()
+        val_probs_raw.extend(probs)
+        val_labels_all.extend(y_batch.numpy())
+
+val_probs_raw = np.array(val_probs_raw)
+val_labels_all = np.array(val_labels_all)
+
+print("📊 Step 12.1: Raw Probabilities (Validation Set)")
+print("=" * 60)
+print(f"  Samples     : {len(val_probs_raw):,}")
+print(f"  Prob mean   : {val_probs_raw.mean():.4f}")
+print(f"  Prob std    : {val_probs_raw.std():.4f}")
+print(f"  Pos prob    : {val_probs_raw[val_labels_all==1].mean():.4f}")
+print(f"  Neg prob    : {val_probs_raw[val_labels_all==0].mean():.4f}")
+print(f"\n✅ Step 12.1 เสร็จ")
+# CELL 5
+# --- 12.2 Fit Calibrator ---
+calibrator = IsotonicRegression(out_of_bounds='clip')
+calibrator.fit(val_probs_raw, val_labels_all)
+val_probs_cal = calibrator.predict(val_probs_raw)
+
+# Save
+cal_path = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed/calibrator.pkl'
+with open(cal_path, 'wb') as f:
+    pickle.dump(calibrator, f)
+
+print("📊 Step 12.2: Calibrator Fitted")
+print("=" * 60)
+print(f"  Method       : Isotonic Regression")
+print(f"  Before cal   : mean={val_probs_raw.mean():.4f}")
+print(f"  After cal    : mean={val_probs_cal.mean():.4f}")
+print(f"  💾 Saved: calibrator.pkl")
+print(f"\n✅ Step 12.2 เสร็จ")
+# CELL 7
+# --- 12.3 Calibration Quality ---
+from sklearn.metrics import brier_score_loss
+
+def expected_calibration_error(probs, labels, n_bins=10):
+    bin_edges = np.linspace(0, 1, n_bins + 1)
+    ece = 0.0
+    for i in range(n_bins):
+        mask = (probs >= bin_edges[i]) & (probs < bin_edges[i+1])
+        if mask.sum() > 0:
+            avg_conf = probs[mask].mean()
+            avg_acc = labels[mask].mean()
+            ece += mask.sum() / len(probs) * abs(avg_conf - avg_acc)
+    return ece
+
+ece_before = expected_calibration_error(val_probs_raw, val_labels_all)
+ece_after = expected_calibration_error(val_probs_cal, val_labels_all)
+brier_before = brier_score_loss(val_labels_all, val_probs_raw)
+brier_after = brier_score_loss(val_labels_all, val_probs_cal)
+
+print("=" * 60)
+print("📊 STAGE 12 SUMMARY — Calibration")
+print("=" * 60)
+print(f"  {'Metric':<20} {'Before':<12} {'After':<12} {'Change':<12}")
+print(f"  {'-'*56}")
+print(f"  {'ECE':<20} {ece_before:<12.4f} {ece_after:<12.4f} {ece_after-ece_before:+.4f}")
+print(f"  {'Brier Score':<20} {brier_before:<12.4f} {brier_after:<12.4f} {brier_after-brier_before:+.4f}")
+
+# Reliability diagram
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+for ax, probs, title in [(ax1, val_probs_raw, 'Before'), (ax2, val_probs_cal, 'After')]:
+    n_bins = 10
+    bin_edges = np.linspace(0, 1, n_bins + 1)
+    bin_centers, bin_accs = [], []
+    for i in range(n_bins):
+        mask = (probs >= bin_edges[i]) & (probs < bin_edges[i+1])
+        if mask.sum() > 0:
+            bin_centers.append(probs[mask].mean())
+            bin_accs.append(val_labels_all[mask].mean())
+    ax.plot([0,1], [0,1], 'k--', alpha=0.5, label='Perfect')
+    ax.plot(bin_centers, bin_accs, 'bo-', label='Model')
+    ax.set_xlabel('Predicted Probability'); ax.set_ylabel('Actual Probability')
+    ax.set_title(f'Reliability Diagram ({title} Calibration)'); ax.legend(); ax.grid(True, alpha=0.3)
+plt.tight_layout(); plt.show()
+
+print(f"\n{'='*60}")
+print(f"✅ Stage 12 COMPLETE")
+print(f"{'='*60}")
+# CELL 10
+# --- 13.1 Threshold Selection ---
+from sklearn.metrics import f1_score, precision_score, recall_score
+
+thresholds = np.arange(0.01, 1.00, 0.01)
+f1_scores = []
+
+for t in thresholds:
+    preds = (val_probs_cal >= t).astype(int)
+    f1 = f1_score(val_labels_all, preds, zero_division=0)
+    f1_scores.append(f1)
+
+best_idx = np.argmax(f1_scores)
+optimal_threshold = thresholds[best_idx]
+best_f1 = f1_scores[best_idx]
+
+print("📊 Step 13.1: Threshold Selection (Validation Set)")
+print("=" * 60)
+print(f"  Optimal threshold : {optimal_threshold:.2f}")
+print(f"  Best F1 score     : {best_f1:.4f}")
+
+# Plot F1 vs threshold
+plt.figure(figsize=(10, 5))
+plt.plot(thresholds, f1_scores, 'b-')
+plt.axvline(x=optimal_threshold, color='r', linestyle='--', label=f'Optimal={optimal_threshold:.2f}')
+plt.xlabel('Threshold'); plt.ylabel('F1 Score'); plt.title('F1 vs Threshold (Validation Set)')
+plt.legend(); plt.grid(True, alpha=0.3); plt.show()
+print(f"\n✅ Step 13.1 เสร็จ")
+# CELL 12
+# --- 13.2 3-Level Threshold ---
+THRESHOLD_HIGH = 0.90  # MATCH
+THRESHOLD_MID  = 0.70  # POSSIBLE_MATCH
+
+def get_decision(prob):
+    if prob >= THRESHOLD_HIGH: return 'MATCH'
+    elif prob >= THRESHOLD_MID: return 'POSSIBLE_MATCH'
+    else: return 'NO_MATCH'
+
+# Apply to val set
+val_decisions = [get_decision(p) for p in val_probs_cal]
+from collections import Counter
+decision_counts = Counter(val_decisions)
+
+print("📊 Step 13.2: 3-Level Threshold")
+print("=" * 60)
+print(f"  {'Level':<18} {'Range':<18} {'Action':<18} {'Count':<10}")
+print(f"  {'-'*64}")
+print(f"  {'MATCH':<18} {'≥ 90%':<18} {'Auto-merge':<18} {decision_counts.get('MATCH',0):<10}")
+print(f"  {'POSSIBLE_MATCH':<18} {'70-89%':<18} {'Human review':<18} {decision_counts.get('POSSIBLE_MATCH',0):<10}")
+print(f"  {'NO_MATCH':<18} {'< 70%':<18} {'Keep separate':<18} {decision_counts.get('NO_MATCH',0):<10}")
+print(f"\n✅ Step 13.2 เสร็จ")
+# CELL 14
+# --- 13.3 Final Evaluation (Test Set) ---
+from sklearn.metrics import (classification_report, confusion_matrix,
+                             roc_auc_score, average_precision_score,
+                             roc_curve, precision_recall_curve)
+import json
+
+# Predict on test set
+model.eval()
+test_probs_raw, test_labels_all = [], []
+with torch.no_grad():
+    for X_batch, y_batch in test_loader:
+        X_batch = X_batch.to(device)
+        logits = model(X_batch)
+        probs = torch.sigmoid(logits).cpu().numpy()
+        test_probs_raw.extend(probs)
+        test_labels_all.extend(y_batch.numpy())
+
+test_probs_raw = np.array(test_probs_raw)
+test_labels_all = np.array(test_labels_all)
+
+# Calibrate
+test_probs_cal = calibrator.predict(test_probs_raw)
+
+# Metrics
+test_preds = (test_probs_cal >= optimal_threshold).astype(int)
+roc_auc = roc_auc_score(test_labels_all, test_probs_cal)
+avg_prec = average_precision_score(test_labels_all, test_probs_cal)
+
+print("=" * 60)
+print("📊 STAGE 13 — FINAL EVALUATION (TEST SET)")
+print("=" * 60)
+print(f"  Threshold    : {optimal_threshold:.2f}")
+print(f"  Samples      : {len(test_labels_all):,}")
+print(f"  ROC-AUC      : {roc_auc:.4f}")
+print(f"  Avg Precision: {avg_prec:.4f}")
+print(f"\n{classification_report(test_labels_all, test_preds, target_names=['NO_MATCH','MATCH'])}")
+
+# Confusion Matrix
+cm = confusion_matrix(test_labels_all, test_preds)
+print(f"  Confusion Matrix:")
+print(f"    TN={cm[0][0]:,}  FP={cm[0][1]:,}")
+print(f"    FN={cm[1][0]:,}  TP={cm[1][1]:,}")
+
+# 3-Level breakdown
+test_decisions = [get_decision(p) for p in test_probs_cal]
+test_decision_counts = Counter(test_decisions)
+print(f"\n  3-Level Decision Distribution (Test):")
+for level in ['MATCH', 'POSSIBLE_MATCH', 'NO_MATCH']:
+    print(f"    {level:<18}: {test_decision_counts.get(level,0):,}")
+
+# ROC + PR curves
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
+fpr, tpr, _ = roc_curve(test_labels_all, test_probs_cal)
+ax1.plot(fpr, tpr, 'b-', label=f'AUC={roc_auc:.3f}')
+ax1.plot([0,1],[0,1],'k--',alpha=0.3); ax1.set_xlabel('FPR'); ax1.set_ylabel('TPR')
+ax1.set_title('ROC Curve (Test Set)'); ax1.legend(); ax1.grid(True, alpha=0.3)
+
+prec_arr, rec_arr, _ = precision_recall_curve(test_labels_all, test_probs_cal)
+ax2.plot(rec_arr, prec_arr, 'r-', label=f'AP={avg_prec:.3f}')
+ax2.set_xlabel('Recall'); ax2.set_ylabel('Precision')
+ax2.set_title('PR Curve (Test Set)'); ax2.legend(); ax2.grid(True, alpha=0.3)
+plt.tight_layout(); plt.show()
+
+# Save metrics
+metrics = {
+    'threshold': float(optimal_threshold),
+    'roc_auc': float(roc_auc), 'avg_precision': float(avg_prec),
+    'precision': float(precision_score(test_labels_all, test_preds)),
+    'recall': float(recall_score(test_labels_all, test_preds)),
+    'f1': float(f1_score(test_labels_all, test_preds)),
+}
+with open('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/test_metrics.json', 'w') as f:
+    json.dump(metrics, f, indent=2)
+
+print(f"\n  💾 Saved: test_metrics.json")
+print(f"\n{'='*60}")
+print(f"✅ Stage 13 COMPLETE — Final evaluation done")
+print(f"{'='*60}")

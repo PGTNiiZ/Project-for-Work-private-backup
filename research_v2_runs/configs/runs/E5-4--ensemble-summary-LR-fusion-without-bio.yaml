@@ -1,0 +1,14 @@
+{
+  "category": "aggregate_statistics",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E5-4",
+  "key": "ensemble-summary-LR-fusion-without-bio",
+  "parameters": {
+    "aggregation": "all frozen seeds",
+    "oof_sha256": "713d4f1dbb5bc1ed9855e377da759a3f0ee5109414413ab41d445124120bbc93",
+    "summary_sha256": "1cacc7c390778650fe63b06e0997eacf8eea2e0c4fcb34dfce27ffc26aa625fa"
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

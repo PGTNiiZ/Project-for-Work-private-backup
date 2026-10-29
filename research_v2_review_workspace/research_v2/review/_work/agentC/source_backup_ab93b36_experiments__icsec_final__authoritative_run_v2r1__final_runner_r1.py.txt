@@ -1,0 +1,156 @@
+
+## backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/final_runner_r1.py
+1: """Integrity-repaired final runner for v2r1.
+2: 
+3: Scientific behavior (features, GB config, sampling, calibration, policies,
+4: bounds, budgets, seeds, metric formulas) is inherited UNCHANGED from the
+5: frozen v2 implementation. Only integrity mechanics differ:
+6: 
+7: 1. Sealed-label artifacts are validated pre-final WITHOUT materializing the
+8:    ``actual`` column (hash + parquet schema/row-count + pair-key-only read).
+9: 2. Sealed-test predictions are canonicalized and SHA-256 hashed into a
+10:    PRE-LABEL FREEZE MANIFEST before any label access; FINAL_EVALUATION
+11:    refuses to start without it and re-verifies the hash afterwards.
+12: 3. The process-wide SealedLabelGuard provides the runtime access audit; no
+13:    audit count is hard-coded.
+14: """
+27: )
+28: from experiments.icsec_final.authoritative_run_v2.final_runner import (
+29:     FINAL_BUDGET, FinalRunnerError, FinalSealedEvaluationRunner,
+30: )
+31: from experiments.icsec_final.authoritative_run_v2.provenance import sha256_file
+33: from .sealed_guard import GUARD, sealed_artifact_metadata, sealed_pair_keys
+34: 
+35: LABEL_COLUMNS = {"pair_key", "actual"}
+36: 
+37: 
+38: def validate_input_artifacts_label_free(metadata_path: str | Path) -> dict[str, Any]:
+39:     """v2r1 replacement for v2 ``validate_input_artifacts``.
+40: 
+41:     Identical checks, EXCEPT the sealed-test artifact is inspected without
+42:     loading label values: SHA-256, parquet schema, row count, and a
+43:     pair-key-only read for the overlap check.
+44:     """
+45:     metadata = json.loads(Path(metadata_path).read_text(encoding="utf-8"))
+46:     artifacts = metadata["artifacts"]
+47:     for name, value in artifacts.items():
+49:         if _sha256(path) != value["sha256"]:
+50:             raise ArtifactProducerError(f"artifact hash differs: {name}")
+51:     development = pd.read_parquet(artifacts["development"]["path"])
+52:     blocking = pd.read_parquet(artifacts["blocking_miss"]["path"])
+53:     sealed_meta = sealed_artifact_metadata(artifacts["sealed_test"]["path"])
+54:     if set(development.columns) != {"pair_key", "actual", "role"} or not set(development.role).issubset(DEVELOPMENT_ROLES):
+55:         raise ArtifactProducerError("development artifact has invalid role/scope")
+56:     if set(sealed_meta["columns"]) != LABEL_COLUMNS:
+57:         raise ArtifactProducerError("sealed artifact has invalid role/scope")
+58:     if sealed_meta["row_count"] != artifacts["sealed_test"].get("row_count", sealed_meta["row_count"]):
+59:         raise ArtifactProducerError("sealed artifact row count differs from manifest")
+60:     if set(blocking.columns) != {"pair_key", "pair_type"} or (not blocking.empty and set(blocking.pair_type) != {"BLOCKING_MISS"}):
+61:         raise ArtifactProducerError("blocking-miss artifact has invalid scope")
+62:     keys = sealed_pair_keys(artifacts["sealed_test"]["path"])
+63:     if keys.duplicated().any():
+64:         raise ArtifactProducerError("duplicate sealed-label pair key")
+65:     if set(development.pair_key) & set(keys):
+66:         raise ArtifactProducerError("development and sealed artifact pair overlap")
+71: 
+72: 
+73: def build_real_fixture_label_free(metadata_path: str | Path, routed_workflow: pd.DataFrame,
+74:                                   features17: pd.DataFrame, bert: pd.DataFrame) -> dict[str, Any]:
+75:     """v2r1 fixture builder — identical output to v2 ``build_real_fixture``
+76:     but validated via the label-free path."""
+77:     metadata = validate_input_artifacts_label_free(metadata_path)
+78:     artifacts = metadata["artifacts"]
+79:     development = pd.read_parquet(artifacts["development"]["path"])
+80:     del development  # scope check done in validation; roles read lazily later
+81:     routes = pd.read_parquet(artifacts["blocking_miss_routes"]["path"])
+82:     rows = routed_workflow[["pair_key", "pair_type", "role"]].copy()
+83:     if not routes.empty:
+93:     return {"NOT_MANUSCRIPT_EVIDENCE": True, "rows": rows, "features17": combined[feature_columns].reset_index(drop=True),
+94:             "bert": combined[["bert_cos"]].reset_index(drop=True), "scored_pair_keys": combined.pair_key.tolist(),
+95:             "roles": {role: {f"role:{role}"} for role in ("TRAIN", "CALIBRATION", "POLICY_VALIDATION", "SEALED_TEST")},
+96:             "development_label_paths": development_paths,
+97:             "sealed_label_path": artifacts["sealed_test"]["path"], "blocking_miss_path": artifacts["blocking_miss"]["path"],
+98:             "input_artifact_manifest": str(Path(metadata_path).resolve()),
+99:             "legacy_name_sim_reachable": False}
+101: 
+102: class IntegrityRepairedRunner(FinalSealedEvaluationRunner):
+103:     """v2 runner with pre-label prediction freeze and guard-driven audit."""
+104: 
+105:     PREDICTION_RELPATH = Path("sealed_predictions") / "predictions.parquet"
+106:     FREEZE_MANIFEST = "pre_label_prediction_freeze.json"
+107: 
+108:     # ---- lifecycle phases exposed to the guard ---------------------------
+109:     def train_and_calibrate(self) -> None:
+110:         GUARD.set_phase("TRAINING")
+111:         super().train_and_calibrate()
+112: 
+113:     def select_policies(self) -> None:
+114:         GUARD.set_phase("POLICY_SELECTION")
+115:         super().select_policies()
+116: 
+117:     def _prediction_path(self) -> Path:
+118:         return self.output / self.PREDICTION_RELPATH
+119: 
+120:     def generate_sealed_predictions(self) -> None:
+121:         GUARD.set_phase("PREDICTION_GENERATION")
+122:         super().generate_sealed_predictions()
+123:         # Canonicalize: deterministic row order for a stable hash.
+124:         path = self._prediction_path()
+125:         frame = pd.read_parquet(path).sort_values(["model_policy", "pair_key"], kind="mergesort").reset_index(drop=True)
+126:         frame.to_parquet(path, index=False)
+127:         manifest = {
+128:             "phase": "PRE_LABEL_PREDICTION_FREEZE",
+129:             "prediction_artifact": str(path.relative_to(self.output)),
+130:             "prediction_sha256": sha256_file(path),
+133:             "model_identifiers": sorted(self.models),
+134:             "policy_identifiers": sorted({"GB17_B0", *self.policies}),
+135:             "pre_test_freeze_hashes": self.freeze_hashes,
+136:             "generated_at": time.time(),
+137:         }
+138:         (self.output / self.FREEZE_MANIFEST).write_text(
+139:             json.dumps(manifest, indent=2, sort_keys=True, default=str) + "\n", encoding="utf-8")
+140:         # Verify the manifest round-trips and matches on-disk bytes.
+141:         recorded = json.loads((self.output / self.FREEZE_MANIFEST).read_text(encoding="utf-8"))
+142:         if recorded["prediction_sha256"] != sha256_file(path):
+143:             raise FinalRunnerError("pre-label prediction freeze verification failed")
+144:         self.prediction_freeze = recorded
+145:         self.phase = "sealed_predictions_frozen"
+146: 
+147:     def final_evaluate(self) -> None:
+148:         manifest_path = self.output / self.FREEZE_MANIFEST
+149:         if not manifest_path.is_file():
+150:             raise FinalRunnerError("final evaluation refused: predictions were not pre-label hashed")
+151:         recorded = json.loads(manifest_path.read_text(encoding="utf-8"))
+152:         path = self._prediction_path()
+153:         if sha256_file(path) != recorded["prediction_sha256"]:
+154:             raise FinalRunnerError("prediction artifact changed after pre-label freeze")
+155:         self._pre_label_prediction_sha = recorded["prediction_sha256"]
+156:         GUARD.set_phase("FINAL_EVALUATION")
+157:         try:
+160:             GUARD.set_phase("POST_EVALUATION")
+161:         post_sha = sha256_file(path)
+162:         if post_sha != self._pre_label_prediction_sha:
+163:             raise FinalRunnerError("prediction pre/post label-access hash mismatch")
+164:         current_keys = hashlib.sha256(json.dumps(sorted(set(pd.read_parquet(path).pair_key)), sort_keys=True).encode()).hexdigest()
+165:         if current_keys != recorded["pair_key_hash"]:
+166:             raise FinalRunnerError("prediction safe pair keys changed")
+167:         self.prediction_immutability = {
+168:             "pre_label_sha256": self._pre_label_prediction_sha,
+169:             "post_evaluation_sha256": post_sha,
+170:             "match": True,
+173:             json.dumps(self.prediction_immutability, indent=2) + "\n", encoding="utf-8")
+174: 
+175:     def run(self) -> dict[str, Any]:
+176:         result = super().run()
+177:         report = GUARD.report()
+178:         (self.output / "process_label_access_audit.json").write_text(
+179:             json.dumps(report, indent=2, default=str) + "\n", encoding="utf-8")
+180:         pre_final = report["pre_final_label_value_materializations"]
+181:         if pre_final != 0:
+182:             raise FinalRunnerError(f"pre-final sealed label value materializations: {pre_final}")
+183:         result["PRE-FINAL SEALED LABEL VALUE MATERIALIZATIONS"] = pre_final
+184:         result["FINAL_EVALUATION LABEL VALUE MATERIALIZATIONS"] = report["final_evaluation_label_value_materializations"]
+185:         result["prediction_immutability"] = self.prediction_immutability
+186:         result.pop("PRE-FINAL TEST LABEL READS", None)
+187:         # Re-run capture so the two new integrity artifacts enter SHA256SUMS.
+188:         self.capture_provenance()

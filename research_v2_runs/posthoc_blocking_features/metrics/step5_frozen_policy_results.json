@@ -1,0 +1,665 @@
+{
+  "total_positives": 23391,
+  "candidate_positives": 21931,
+  "positives_by_cause": {
+    "a": 397,
+    "b": 16393,
+    "c": 679,
+    "d": 129,
+    "e": 0,
+    "f": 4333
+  },
+  "sets": {
+    "F-LEX35": [
+      {
+        "seed": 11,
+        "oof_AP": 0.9708907705592781,
+        "auto_tp": 18907,
+        "auto_fp": 163,
+        "review_pos": 2194,
+        "review_pairs": 8837,
+        "end_to_end_auto_recall": 0.8083023385062631,
+        "recall_after_perfect_review": 0.9020990979436535,
+        "precision": 0.9914525432616675,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 348,
+            "review": 39
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14866,
+            "review": 1324
+          },
+          "c": {
+            "n": 679,
+            "auto": 461,
+            "review": 145
+          },
+          "d": {
+            "n": 129,
+            "auto": 69,
+            "review": 60
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3163,
+            "review": 626
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "oof_AP": 0.9703992008262486,
+        "auto_tp": 18940,
+        "auto_fp": 162,
+        "review_pos": 2150,
+        "review_pairs": 8611,
+        "end_to_end_auto_recall": 0.8097131375315292,
+        "recall_after_perfect_review": 0.9016288316018982,
+        "precision": 0.9915192126478902,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 350,
+            "review": 36
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14881,
+            "review": 1294
+          },
+          "c": {
+            "n": 679,
+            "auto": 464,
+            "review": 143
+          },
+          "d": {
+            "n": 129,
+            "auto": 69,
+            "review": 60
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3176,
+            "review": 617
+          }
+        }
+      },
+      {
+        "seed": 42,
+        "oof_AP": 0.9704572945158284,
+        "auto_tp": 18816,
+        "auto_fp": 148,
+        "review_pos": 2277,
+        "review_pairs": 9042,
+        "end_to_end_auto_recall": 0.8044119533153777,
+        "recall_after_perfect_review": 0.9017570860587405,
+        "precision": 0.9921957392955073,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 351,
+            "review": 37
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14802,
+            "review": 1381
+          },
+          "c": {
+            "n": 679,
+            "auto": 450,
+            "review": 158
+          },
+          "d": {
+            "n": 129,
+            "auto": 73,
+            "review": 56
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3140,
+            "review": 645
+          }
+        }
+      },
+      {
+        "seed": 71,
+        "oof_AP": 0.9704192284751327,
+        "auto_tp": 18986,
+        "auto_fp": 191,
+        "review_pos": 2119,
+        "review_pairs": 8804,
+        "end_to_end_auto_recall": 0.811679705869779,
+        "recall_after_perfect_review": 0.9022701038861101,
+        "precision": 0.9900401522657349,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 355,
+            "review": 31
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14928,
+            "review": 1259
+          },
+          "c": {
+            "n": 679,
+            "auto": 465,
+            "review": 141
+          },
+          "d": {
+            "n": 129,
+            "auto": 59,
+            "review": 70
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3179,
+            "review": 618
+          }
+        }
+      },
+      {
+        "seed": 101,
+        "oof_AP": 0.970917342434332,
+        "auto_tp": 18930,
+        "auto_fp": 134,
+        "review_pos": 2148,
+        "review_pairs": 8593,
+        "end_to_end_auto_recall": 0.809285622675388,
+        "recall_after_perfect_review": 0.9011158137745287,
+        "precision": 0.9929710449013848,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 347,
+            "review": 40
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14879,
+            "review": 1298
+          },
+          "c": {
+            "n": 679,
+            "auto": 454,
+            "review": 150
+          },
+          "d": {
+            "n": 129,
+            "auto": 93,
+            "review": 36
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3157,
+            "review": 624
+          }
+        }
+      }
+    ],
+    "H23": [
+      {
+        "seed": 11,
+        "oof_AP": 0.963124424948444,
+        "auto_tp": 18392,
+        "auto_fp": 91,
+        "review_pos": 2415,
+        "review_pairs": 7782,
+        "end_to_end_auto_recall": 0.7862853234149887,
+        "recall_after_perfect_review": 0.8895301611731008,
+        "precision": 0.9950765568360115,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 347,
+            "review": 40
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14385,
+            "review": 1732
+          },
+          "c": {
+            "n": 679,
+            "auto": 446,
+            "review": 127
+          },
+          "d": {
+            "n": 129,
+            "auto": 112,
+            "review": 11
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3102,
+            "review": 505
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "oof_AP": 0.9632805876000634,
+        "auto_tp": 18342,
+        "auto_fp": 75,
+        "review_pos": 2445,
+        "review_pairs": 7717,
+        "end_to_end_auto_recall": 0.7841477491342824,
+        "recall_after_perfect_review": 0.8886751314608182,
+        "precision": 0.9959276755171852,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 340,
+            "review": 42
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14385,
+            "review": 1715
+          },
+          "c": {
+            "n": 679,
+            "auto": 431,
+            "review": 144
+          },
+          "d": {
+            "n": 129,
+            "auto": 103,
+            "review": 20
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3083,
+            "review": 524
+          }
+        }
+      },
+      {
+        "seed": 42,
+        "oof_AP": 0.9631936176419654,
+        "auto_tp": 18413,
+        "auto_fp": 92,
+        "review_pos": 2379,
+        "review_pairs": 7682,
+        "end_to_end_auto_recall": 0.7871831046128853,
+        "recall_after_perfect_review": 0.8888888888888888,
+        "precision": 0.9950283707106188,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 350,
+            "review": 36
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14419,
+            "review": 1674
+          },
+          "c": {
+            "n": 679,
+            "auto": 452,
+            "review": 127
+          },
+          "d": {
+            "n": 129,
+            "auto": 96,
+            "review": 27
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3096,
+            "review": 515
+          }
+        }
+      },
+      {
+        "seed": 71,
+        "oof_AP": 0.9632685060456933,
+        "auto_tp": 18316,
+        "auto_fp": 79,
+        "review_pos": 2481,
+        "review_pairs": 7772,
+        "end_to_end_auto_recall": 0.7830362105083152,
+        "recall_after_perfect_review": 0.8891026463169596,
+        "precision": 0.9957053547159554,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 347,
+            "review": 38
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14289,
+            "review": 1803
+          },
+          "c": {
+            "n": 679,
+            "auto": 448,
+            "review": 126
+          },
+          "d": {
+            "n": 129,
+            "auto": 119,
+            "review": 4
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3113,
+            "review": 510
+          }
+        }
+      },
+      {
+        "seed": 101,
+        "oof_AP": 0.96308930321521,
+        "auto_tp": 18269,
+        "auto_fp": 74,
+        "review_pos": 2509,
+        "review_pairs": 7665,
+        "end_to_end_auto_recall": 0.7810268906844513,
+        "recall_after_perfect_review": 0.8882903680902912,
+        "precision": 0.9959657635065148,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 343,
+            "review": 44
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14290,
+            "review": 1801
+          },
+          "c": {
+            "n": 679,
+            "auto": 439,
+            "review": 134
+          },
+          "d": {
+            "n": 129,
+            "auto": 104,
+            "review": 19
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3093,
+            "review": 511
+          }
+        }
+      }
+    ],
+    "H23+LEX35": [
+      {
+        "seed": 11,
+        "oof_AP": 0.9771312738274054,
+        "auto_tp": 19151,
+        "auto_fp": 98,
+        "review_pos": 2058,
+        "review_pairs": 7517,
+        "end_to_end_auto_recall": 0.8187337009961096,
+        "recall_after_perfect_review": 0.906716258389979,
+        "precision": 0.994908826432542,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 360,
+            "review": 27
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14970,
+            "review": 1261
+          },
+          "c": {
+            "n": 679,
+            "auto": 476,
+            "review": 133
+          },
+          "d": {
+            "n": 129,
+            "auto": 118,
+            "review": 10
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3227,
+            "review": 627
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "oof_AP": 0.9769852312119616,
+        "auto_tp": 19206,
+        "auto_fp": 122,
+        "review_pos": 1994,
+        "review_pairs": 7447,
+        "end_to_end_auto_recall": 0.8210850327048865,
+        "recall_after_perfect_review": 0.9063314950194519,
+        "precision": 0.9936879139072847,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 353,
+            "review": 35
+          },
+          "b": {
+            "n": 16393,
+            "auto": 15038,
+            "review": 1184
+          },
+          "c": {
+            "n": 679,
+            "auto": 464,
+            "review": 149
+          },
+          "d": {
+            "n": 129,
+            "auto": 105,
+            "review": 22
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3246,
+            "review": 604
+          }
+        }
+      },
+      {
+        "seed": 42,
+        "oof_AP": 0.9770901423426299,
+        "auto_tp": 19059,
+        "auto_fp": 101,
+        "review_pos": 2164,
+        "review_pairs": 7931,
+        "end_to_end_auto_recall": 0.8148005643196101,
+        "recall_after_perfect_review": 0.9073147791885768,
+        "precision": 0.9947286012526096,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 356,
+            "review": 31
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14934,
+            "review": 1309
+          },
+          "c": {
+            "n": 679,
+            "auto": 465,
+            "review": 144
+          },
+          "d": {
+            "n": 129,
+            "auto": 96,
+            "review": 32
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3208,
+            "review": 648
+          }
+        }
+      },
+      {
+        "seed": 71,
+        "oof_AP": 0.9767712753198156,
+        "auto_tp": 19234,
+        "auto_fp": 117,
+        "review_pos": 1963,
+        "review_pairs": 7601,
+        "end_to_end_auto_recall": 0.822282074302082,
+        "recall_after_perfect_review": 0.9062032405626096,
+        "precision": 0.993953800837166,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 361,
+            "review": 27
+          },
+          "b": {
+            "n": 16393,
+            "auto": 15027,
+            "review": 1189
+          },
+          "c": {
+            "n": 679,
+            "auto": 476,
+            "review": 133
+          },
+          "d": {
+            "n": 129,
+            "auto": 116,
+            "review": 12
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3254,
+            "review": 602
+          }
+        }
+      },
+      {
+        "seed": 101,
+        "oof_AP": 0.9769669895916464,
+        "auto_tp": 19104,
+        "auto_fp": 91,
+        "review_pos": 2098,
+        "review_pairs": 7532,
+        "end_to_end_auto_recall": 0.8167243811722458,
+        "recall_after_perfect_review": 0.9064169979906802,
+        "precision": 0.9952591820786664,
+        "by_cause": {
+          "a": {
+            "n": 397,
+            "auto": 356,
+            "review": 30
+          },
+          "b": {
+            "n": 16393,
+            "auto": 14933,
+            "review": 1290
+          },
+          "c": {
+            "n": 679,
+            "auto": 465,
+            "review": 145
+          },
+          "d": {
+            "n": 129,
+            "auto": 117,
+            "review": 11
+          },
+          "e": {
+            "n": 0,
+            "auto": 0,
+            "review": 0
+          },
+          "f": {
+            "n": 4333,
+            "auto": 3233,
+            "review": 622
+          }
+        }
+      }
+    ]
+  }
+}

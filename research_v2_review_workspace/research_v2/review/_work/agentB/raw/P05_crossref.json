@@ -1,0 +1,608 @@
+{
+  "url": "https://api.crossref.org/works/10.1145/3183713.3196926",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            24
+          ]
+        ],
+        "date-time": "2026-10-24T06:50:04Z",
+        "timestamp": 1792824604581,
+        "version": "4.5.0"
+      },
+      "publisher-location": "New York, NY, USA",
+      "reference-count": 49,
+      "publisher": "ACM",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2018,
+                5,
+                27
+              ]
+            ],
+            "date-time": "2018-05-27T00:00:00Z",
+            "timestamp": 1527379200000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "dl.acm.org"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [],
+      "published-print": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            27
+          ]
+        ]
+      },
+      "DOI": "10.1145/3183713.3196926",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            25
+          ]
+        ],
+        "date-time": "2018-05-25T12:39:28Z",
+        "timestamp": 1527251968000
+      },
+      "page": "19-34",
+      "update-policy": "https://doi.org/10.1145/crossmark-policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 477,
+      "title": [
+        "Deep Learning for Entity Matching"
+      ],
+      "prefix": "10.1145",
+      "author": [
+        {
+          "given": "Sidharth",
+          "family": "Mudgal",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "University of Wisconsin-Madison, Madison, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Han",
+          "family": "Li",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Wisconsin-Madison, Madison, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Theodoros",
+          "family": "Rekatsinas",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Wisconsin-Madison, Madison, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "AnHai",
+          "family": "Doan",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Wisconsin-Madison, Madison, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Youngchoon",
+          "family": "Park",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Johnson Controls, Milwaukee, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ganesh",
+          "family": "Krishnan",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "@WalmartLabs, Mountain View, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Rohit",
+          "family": "Deep",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "@WalmartLabs, Mountain View, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Esteban",
+          "family": "Arcaute",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Facebook, Menlo Park, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Vijay",
+          "family": "Raghavendra",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "@WalmartLabs, Mountain View, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "320",
+      "published-online": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            27
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_3_2_1_1_1",
+          "unstructured": "Sanjeev Arora Yingyu Liang and Tengyu Ma. 2017. A simple but tough-to-beat baseline for sentence embeddings. ICLR. Sanjeev Arora Yingyu Liang and Tengyu Ma. 2017. A simple but tough-to-beat baseline for sentence embeddings. ICLR."
+        },
+        {
+          "key": "e_1_3_2_1_2_1",
+          "unstructured": "Dzmitry Bahdanau Kyunghyun Cho and Yoshua Bengio. 2015. Neural machine translation by jointly learning to align and translate. ICLR. Dzmitry Bahdanau Kyunghyun Cho and Yoshua Bengio. 2015. Neural machine translation by jointly learning to align and translate. ICLR."
+        },
+        {
+          "key": "e_1_3_2_1_3_1",
+          "volume-title": "et almbox",
+          "author": "Bahdanau Dzmitry",
+          "year": "2016",
+          "unstructured": "Dzmitry Bahdanau , Jan Chorowski , Dmitriy Serdyuk , et almbox .. 2016 . End-to-end attention-based large vocabulary speech recognition. IEEE ICASSP. Dzmitry Bahdanau, Jan Chorowski, Dmitriy Serdyuk, et almbox.. 2016. End-to-end attention-based large vocabulary speech recognition. IEEE ICASSP."
+        },
+        {
+          "key": "e_1_3_2_1_4_1",
+          "volume-title": "A Neural Probabilistic Language Model. JMLR (March",
+          "author": "Bengio Yoshua",
+          "year": "2003",
+          "unstructured": "Yoshua Bengio , Réjean Ducharme , Pascal Vincent , and Christian Janvin . 2003. A Neural Probabilistic Language Model. JMLR (March . 2003 ), 1137--1155. Yoshua Bengio, Réjean Ducharme, Pascal Vincent, and Christian Janvin. 2003. A Neural Probabilistic Language Model. JMLR (March. 2003), 1137--1155."
+        },
+        {
+          "key": "e_1_3_2_1_5_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/956750.956759"
+        },
+        {
+          "key": "e_1_3_2_1_6_1",
+          "volume-title": "et almbox",
+          "author": "Bojanowski Piotr",
+          "year": "2016",
+          "unstructured": "Piotr Bojanowski , Edouard Grave , Armand Joulin , et almbox .. 2016 . Enriching Word Vectors with Subword Information. CoRR Vol . abs/1607.04606 (2016). Piotr Bojanowski, Edouard Grave, Armand Joulin, et almbox.. 2016. Enriching Word Vectors with Subword Information. CoRR Vol. abs/1607.04606 (2016)."
+        },
+        {
+          "key": "e_1_3_2_1_7_1",
+          "volume-title": "et almbox",
+          "author": "Chen Qian",
+          "year": "2017",
+          "unstructured": "Qian Chen , Xiaodan Zhu , Zhen-Hua Ling , et almbox .. 2017 . Recurrent neural network-based sentence encoder with gated attention for natural language inference. CoRR Vol . abs/1708.01353 (2017). Qian Chen, Xiaodan Zhu, Zhen-Hua Ling, et almbox.. 2017. Recurrent neural network-based sentence encoder with gated attention for natural language inference. CoRR Vol. abs/1708.01353 (2017)."
+        },
+        {
+          "key": "e_1_3_2_1_8_1",
+          "volume-title": "mbox",
+          "author": "Kyunghyun Cho",
+          "year": "2014",
+          "unstructured": "Kyunghyun Cho et al mbox .. 2014 . Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation. EMNLP. Kyunghyun Cho et almbox.. 2014. Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation. EMNLP."
+        },
+        {
+          "key": "e_1_3_2_1_9_1",
+          "volume-title": "Data Matching",
+          "author": "Christen Peter",
+          "unstructured": "Peter Christen . 2012. Data Matching . Springer . Peter Christen. 2012. Data Matching. Springer."
+        },
+        {
+          "key": "e_1_3_2_1_10_1",
+          "volume-title": "mbox",
+          "author": "Kevin Clark",
+          "year": "2016",
+          "unstructured": "Kevin Clark et al mbox .. 2016 . Improving coreference resolution by learning entity-level distributed representations. CoRR Vol . abs/1606.01323 (2016). Kevin Clark et almbox.. 2016. Improving coreference resolution by learning entity-level distributed representations. CoRR Vol. abs/1606.01323 (2016)."
+        },
+        {
+          "key": "e_1_3_2_1_11_1",
+          "volume-title": "TensorLog: A Differentiable Deductive Database. CoRR",
+          "author": "Cohen William W.",
+          "year": "2016",
+          "unstructured": "William W. Cohen . 2016. TensorLog: A Differentiable Deductive Database. CoRR Vol. abs/ 1605 .06523 ( 2016 ). William W. Cohen. 2016. TensorLog: A Differentiable Deductive Database. CoRR Vol. abs/1605.06523 (2016)."
+        },
+        {
+          "key": "e_1_3_2_1_12_1",
+          "unstructured": "Ronan Collobert et almbox.. 2011 a. Natural language processing (almost) from scratch. JMLR. Ronan Collobert et almbox.. 2011 a. Natural language processing (almost) from scratch. JMLR."
+        },
+        {
+          "key": "e_1_3_2_1_13_1",
+          "volume-title": "NIPS Workshop.",
+          "author": "Collobert R.",
+          "unstructured": "R. Collobert , K. Kavukcuoglu , and C. Farabet . 2011 b. Torch7: A Matlab-like Environment for Machine Learning BigLearn , NIPS Workshop. R. Collobert, K. Kavukcuoglu, and C. Farabet. 2011 b. Torch7: A Matlab-like Environment for Machine Learning BigLearn, NIPS Workshop."
+        },
+        {
+          "key": "e_1_3_2_1_14_1",
+          "volume-title": "Recognizing Textual Entailment",
+          "author": "Dagan Ido",
+          "unstructured": "Ido Dagan , Dan Roth , Fabio Zanzotto , and Graeme Hirst . 2012. Recognizing Textual Entailment . Morgan &Claypool Publishers . Ido Dagan, Dan Roth, Fabio Zanzotto, and Graeme Hirst. 2012. Recognizing Textual Entailment. Morgan &Claypool Publishers."
+        },
+        {
+          "key": "e_1_3_2_1_15_1",
+          "unstructured": "Sanjib Das et almbox.. {n. d.}. The Magellan Data Repository. https://sites.google.com/site/anhaidgroup/useful-stuff/data. (.{n. d.}). Sanjib Das et almbox.. {n. d.}. The Magellan Data Repository. https://sites.google.com/site/anhaidgroup/useful-stuff/data. (.{n. d.})."
+        },
+        {
+          "key": "e_1_3_2_1_16_1",
+          "volume-title": "et almbox",
+          "author": "Dhingra Bhuwan",
+          "year": "2017",
+          "unstructured": "Bhuwan Dhingra , Hanxiao Liu , et almbox .. 2017 . A Comparative Study of Word Embeddings for Reading Comprehension. CoRR Vol . abs/1703.00993 (2017). Bhuwan Dhingra, Hanxiao Liu, et almbox.. 2017. A Comparative Study of Word Embeddings for Reading Comprehension. CoRR Vol. abs/1703.00993 (2017)."
+        },
+        {
+          "key": "e_1_3_2_1_17_1",
+          "unstructured": "Jens Dittrich. 2017. Deep Learning (m)eats Databases. VLDB Keynote. Jens Dittrich. 2017. Deep Learning (m)eats Databases. VLDB Keynote."
+        },
+        {
+          "key": "e_1_3_2_1_18_1",
+          "volume-title": "et almbox",
+          "author": "Ebraheem Muhammad",
+          "year": "2017",
+          "unstructured": "Muhammad Ebraheem , Saravanan Thirumuruganathan , et almbox .. 2017 . DeepER--Deep Entity Resolution. CoRR Vol . abs/1710.00597 (2017). Muhammad Ebraheem, Saravanan Thirumuruganathan, et almbox.. 2017. DeepER--Deep Entity Resolution. CoRR Vol. abs/1710.00597 (2017)."
+        },
+        {
+          "key": "e_1_3_2_1_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2007.9"
+        },
+        {
+          "key": "e_1_3_2_1_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3132847.3133156"
+        },
+        {
+          "key": "e_1_3_2_1_21_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2947618.2947624"
+        },
+        {
+          "key": "e_1_3_2_1_22_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Ankur P Parikh Oscar T\"ackström Dipanjan Das and Jakob Uszkoreit. 2016. A decomposable attention model for natural language inference. EMNLP. Ankur P Parikh Oscar T\"ackström Dipanjan Das and Jakob Uszkoreit. 2016. A decomposable attention model for natural language inference. EMNLP.",
+          "DOI": "10.18653/v1/D16-1244"
+        },
+        {
+          "key": "e_1_3_2_1_23_1",
+          "volume-title": "Glove: Global vectors for word representation. EMNLP.",
+          "author": "Pennington Jeffrey",
+          "year": "2014",
+          "unstructured": "Jeffrey Pennington , Richard Socher , and Christopher Manning . 2014 . Glove: Global vectors for word representation. EMNLP. Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. Glove: Global vectors for word representation. EMNLP."
+        },
+        {
+          "key": "e_1_3_2_1_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/3157794.3157797"
+        },
+        {
+          "key": "e_1_3_2_1_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.neunet.2014.09.003"
+        },
+        {
+          "key": "e_1_3_2_1_26_1",
+          "unstructured": "Ziad Sehili Lars Kolb Christian Borgs Rainer Schnell and Erhard Rahm. 2015. Privacy Preserving Record Linkage with PPJoin. BTW. Ziad Sehili Lars Kolb Christian Borgs Rainer Schnell and Erhard Rahm. 2015. Privacy Preserving Record Linkage with PPJoin. BTW."
+        },
+        {
+          "key": "e_1_3_2_1_27_1",
+          "volume-title": "et almbox",
+          "author": "Shaham Uri",
+          "year": "2016",
+          "unstructured": "Uri Shaham , Xiuyuan Cheng , Omer Dror , et almbox .. 2016 . A Deep Learning Approach to Unsupervised Ensemble Learning. ICML. Uri Shaham, Xiuyuan Cheng, Omer Dror, et almbox.. 2016. A Deep Learning Approach to Unsupervised Ensemble Learning. ICML."
+        },
+        {
+          "key": "e_1_3_2_1_28_1",
+          "volume-title": "mbox",
+          "author": "Tao Shen",
+          "year": "2017",
+          "unstructured": "Tao Shen et al mbox .. 2017 . DiSAN: Directional Self-Attention Network for RNN/CNN-free Language Understanding. CoRR Vol . abs/1709.04696 (2017). Tao Shen et almbox.. 2017. DiSAN: Directional Self-Attention Network for RNN/CNN-free Language Understanding. CoRR Vol. abs/1709.04696 (2017)."
+        },
+        {
+          "key": "e_1_3_2_1_29_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/TKDE.2014.2327028"
+        },
+        {
+          "key": "e_1_3_2_1_30_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3035918.3058739"
+        },
+        {
+          "key": "e_1_3_2_1_31_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/ICDM.2006.65"
+        },
+        {
+          "key": "e_1_3_2_1_32_1",
+          "unstructured": "Richard Socher et almbox.. 2013 a. Parsing with compositional vector grammars. ACL. Richard Socher et almbox.. 2013 a. Parsing with compositional vector grammars. ACL."
+        },
+        {
+          "key": "e_1_3_2_1_33_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Richard Socher et almbox.. 2013 b. Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank. EMNLP. Richard Socher et almbox.. 2013 b. Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank. EMNLP.",
+          "DOI": "10.18653/v1/D13-1170"
+        },
+        {
+          "key": "e_1_3_2_1_34_1",
+          "volume-title": "mbox",
+          "author": "Srivastava Rupesh Kumar",
+          "year": "2015",
+          "unstructured": "Rupesh Kumar Srivastava mbox .. 2015 . Highway networks. ICML. Rupesh Kumar Srivastava et almbox.. 2015. Highway networks. ICML."
+        },
+        {
+          "key": "e_1_3_2_1_35_1",
+          "volume-title": "et almbox",
+          "author": "Stonebraker Michael",
+          "year": "2013",
+          "unstructured": "Michael Stonebraker , Daniel Bruckner , Ihab F. Ilyas , et almbox .. 2013 . Data Curation at Scale : The Data Tamer System. CIDR. Michael Stonebraker, Daniel Bruckner, Ihab F. Ilyas, et almbox.. 2013. Data Curation at Scale: The Data Tamer System. CIDR."
+        },
+        {
+          "key": "e_1_3_2_1_36_1",
+          "volume-title": "mbox",
+          "author": "Hendrik Strobelt",
+          "year": "2016",
+          "unstructured": "Hendrik Strobelt et al mbox .. 2016 . Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks. CoRR abs/1606.07461 (2016). Hendrik Strobelt et almbox.. 2016. Visual Analysis of Hidden State Dynamics in Recurrent Neural Networks. CoRR abs/1606.07461 (2016)."
+        },
+        {
+          "key": "e_1_3_2_1_37_1",
+          "volume-title": "et almbox",
+          "author": "Sun Yaming",
+          "year": "2015",
+          "unstructured": "Yaming Sun , Lei Lin , Duyu Tang , et almbox .. 2015 . Modeling Mention, Context and Entity with Neural Networks for Entity Disambiguation. IJCAI. Yaming Sun, Lei Lin, Duyu Tang, et almbox.. 2015. Modeling Mention, Context and Entity with Neural Networks for Entity Disambiguation. IJCAI."
+        },
+        {
+          "key": "e_1_3_2_1_39_1",
+          "volume-title": "Le",
+          "author": "Sutskever Ilya",
+          "year": "2014",
+          "unstructured": "Ilya Sutskever , Oriol Vinyals , and Quoc V . Le . 2014 . Sequence to Sequence Learning with Neural Networks. NIPS. Ilya Sutskever, Oriol Vinyals, and Quoc V. Le. 2014. Sequence to Sequence Learning with Neural Networks. NIPS."
+        },
+        {
+          "key": "e_1_3_2_1_40_1",
+          "volume-title": "mbox",
+          "author": "Ming Tan",
+          "year": "2016",
+          "unstructured": "Ming Tan et al mbox .. 2016 . Improved Representation Learning for Question Answer Matching. ACL. Ming Tan et almbox.. 2016. Improved Representation Learning for Question Answer Matching. ACL."
+        },
+        {
+          "key": "e_1_3_2_1_41_1",
+          "volume-title": "mbox",
+          "author": "Ashish Vaswani",
+          "year": "2017",
+          "unstructured": "Ashish Vaswani et al mbox .. 2017 . Attention Is All You Need. NIPS. Ashish Vaswani et almbox.. 2017. Attention Is All You Need. NIPS."
+        },
+        {
+          "key": "e_1_3_2_1_42_1",
+          "volume-title": "et almbox",
+          "author": "Vinyals Oriol",
+          "year": "2016",
+          "unstructured": "Oriol Vinyals , Charles Blundell , Tim Lillicrap , Daan Wierstra , et almbox .. 2016 . Matching networks for one shot learning. ACL. Oriol Vinyals, Charles Blundell, Tim Lillicrap, Daan Wierstra, et almbox.. 2016. Matching networks for one shot learning. ACL."
+        },
+        {
+          "key": "e_1_3_2_1_43_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.14778/2350229.2350263"
+        },
+        {
+          "key": "e_1_3_2_1_44_1",
+          "unstructured": "Shuohang Wang and Jing Jiang. 2017. A Compare-Aggregate Model for Matching Text Sequences. ICLR. Shuohang Wang and Jing Jiang. 2017. A Compare-Aggregate Model for Matching Text Sequences. ICLR."
+        },
+        {
+          "key": "e_1_3_2_1_45_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3003665.3003669"
+        },
+        {
+          "key": "e_1_3_2_1_46_1",
+          "volume-title": "Shieber",
+          "author": "Wiseman Sam",
+          "year": "2016",
+          "unstructured": "Sam Wiseman , Alexander M. Rush , and Stuart M . Shieber . 2016 . Learning Global Features for Coreference Resolution. NAACL. Sam Wiseman, Alexander M. Rush, and Stuart M. Shieber. 2016. Learning Global Features for Coreference Resolution. NAACL."
+        },
+        {
+          "key": "e_1_3_2_1_47_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1145/3183713.3183729"
+        },
+        {
+          "key": "e_1_3_2_1_48_1",
+          "unstructured": "Wenpeng Yin et almbox.. 2016 a. Simple Question Answering by Attentive Convolutional Neural Network. COLING. Wenpeng Yin et almbox.. 2016 a. Simple Question Answering by Attentive Convolutional Neural Network. COLING."
+        },
+        {
+          "key": "e_1_3_2_1_49_1",
+          "volume-title": "et almbox.. 2016 b. Simple question answering by attentive convolutional neural network. CoRR",
+          "author": "Yin Wenpeng",
+          "year": "2016",
+          "unstructured": "Wenpeng Yin , Mo Yu , Bing Xiang , et almbox.. 2016 b. Simple question answering by attentive convolutional neural network. CoRR Vol. abs/ 1606 .03391 ( 2016 ). Wenpeng Yin, Mo Yu, Bing Xiang, et almbox.. 2016 b. Simple question answering by attentive convolutional neural network. CoRR Vol. abs/1606.03391 (2016)."
+        },
+        {
+          "key": "e_1_3_2_1_50_1",
+          "unstructured": "Radu Florian Zhiguo Wang Wael Hamza. 2017. Bilateral Multi-Perspective Matching for Natural Language Sentences. IJCAI. Radu Florian Zhiguo Wang Wael Hamza. 2017. Bilateral Multi-Perspective Matching for Natural Language Sentences. IJCAI."
+        }
+      ],
+      "event": {
+        "name": "SIGMOD/PODS '18: International Conference on Management of Data",
+        "location": "Houston TX USA",
+        "acronym": "SIGMOD/PODS '18",
+        "sponsor": [
+          "SIGMOD ACM Special Interest Group on Management of Data"
+        ]
+      },
+      "container-title": [
+        "Proceedings of the 2018 International Conference on Management of Data"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://dl.acm.org/doi/10.1145/3183713.3196926",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://dl.acm.org/doi/pdf/10.1145/3183713.3196926",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            4
+          ]
+        ],
+        "date-time": "2025-07-04T19:25:38Z",
+        "timestamp": 1751657138000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dl.acm.org/doi/10.1145/3183713.3196926"
+        }
+      },
+      "subtitle": [
+        "A Design Space Exploration"
+      ],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            27
+          ]
+        ]
+      },
+      "references-count": 49,
+      "alternative-id": [
+        "10.1145/3183713.3196926",
+        "10.1145/3183713"
+      ],
+      "URL": "https://doi.org/10.1145/3183713.3196926",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            27
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2018-05-27",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,918 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=Entity%20Matching%20using%20Large%20Language%20Models&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 8558485,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                27
+              ]
+            ],
+            "date-time": "2026-03-27T12:22:18Z",
+            "timestamp": 1774614138882,
+            "version": "3.50.1"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "group-title": "SSRN",
+          "reference-count": 32,
+          "publisher": "Elsevier BV",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "abstract": "<jats:p>With the rapid growth of multimodal data on e-commerce platforms and social media, accurately determining whether different text-image records refer to the same real-world entity has become a key research problem. However, existing work predominantly focuses on text-only entity matching, leaving multimodal entity matching (MEM) relatively underexplored. While recent large vision-language models (VLMs) provide strong cross-modal understanding, they are not directly suitable for MEM because they are trained for generation rather than discriminative matching, and they are sensitive to noisy or incomplete text-image records. To address these limitations, we propose VLM-Match, a discriminative VLM-based framework for MEM. First, we introduce a high-confidence positive-pair data augmentation strategy with dual consistency constraints to alleviate positive-pair scarcity. Second, we extract verifiable entity evidence for semantic completion and propose a Region Localization and Semantic Alignment (RLSA) module for text-region alignment while suppressing background noise. Finally, we introduce a unified discriminative training objective that combines classification and contrastive learning for fine-grained multimodal matching. Experiments on eight real-world datasets demonstrate the effectiveness of VLM-Match, achieving an average F1 improvement of 10.4% over the best baseline.</jats:p>",
+          "DOI": "10.2139/ssrn.6478518",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                27
+              ]
+            ],
+            "date-time": "2026-03-27T11:41:32Z",
+            "timestamp": 1774611692000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Towards Entity-Discriminative Large Vision-Language Models for Multimodal Entity Matching"
+          ],
+          "prefix": "10.2139",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0009-1632-4951",
+              "authenticated-orcid": true,
+              "given": "Yupeng",
+              "family": "Cao",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Hanbo",
+              "family": "Liang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Chenchen",
+              "family": "Sun",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Jieqiong",
+              "family": "Song",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-3193-3658",
+              "authenticated-orcid": true,
+              "given": "Yaxian",
+              "family": "Wang",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-4632-4919",
+              "authenticated-orcid": true,
+              "given": "Yisheng",
+              "family": "An",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "crossref",
+              "first-page": "1183",
+              "DOI": "10.1613/jair.1.11688",
+              "article-title": "Trends in integration of vision and language research: A survey of tasks, datasets, and methods",
+              "volume": "71",
+              "author": "A Mogadala",
+              "year": "2021",
+              "journal-title": "Journal of Artificial Intelligence Research"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1007/978-3-642-31164-2",
+              "author": "P Christen",
+              "year": "2012",
+              "journal-title": "Data matching: concepts and techniques for record linkage, entity resolution, and duplicate detection"
+            },
+            {
+              "key": "ref3",
+              "first-page": "91",
+              "author": "J Pollack",
+              "year": "2024",
+              "journal-title": "Intermediate fusion for multimodal product matching"
+            },
+            {
+              "key": "ref4",
+              "author": "M Wilke",
+              "year": "2021",
+              "journal-title": "Towards multi-modal entity resolution for product matching"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "crossref",
+              "first-page": "459",
+              "DOI": "10.1007/978-3-030-21348-0_30",
+              "article-title": "Mmkg: multi-modal knowledge graphs",
+              "author": "Y Liu",
+              "year": "2019",
+              "journal-title": "European Semantic Web Conference"
+            },
+            {
+              "issue": "1",
+              "key": "ref6",
+              "doi-asserted-by": "crossref",
+              "first-page": "33",
+              "DOI": "10.1145/3277006.3277015",
+              "article-title": "Technical perspective: toward building entity matching management systems",
+              "volume": "47",
+              "author": "P Konda",
+              "year": "2018",
+              "journal-title": "ACM SIGMOD Record"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "crossref",
+              "first-page": "1581",
+              "DOI": "10.14778/3007263.3007314",
+              "article-title": "Magellan: toward building entity matching management systems over data science stacks",
+              "volume": "9",
+              "author": "P Konda",
+              "year": "2016",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "crossref",
+              "first-page": "19",
+              "DOI": "10.1145/3183713.3196926",
+              "article-title": "Deep learning for entity matching: A design space exploration",
+              "author": "S Mudgal",
+              "year": "2018",
+              "journal-title": "Proceedings of the 2018 international conference on management of data"
+            },
+            {
+              "key": "ref9",
+              "first-page": "4171",
+              "volume": "1",
+              "author": "J Devlin",
+              "year": "2019",
+              "journal-title": "Pre-training of deep bidirectional transformers for language understanding"
+            },
+            {
+              "key": "ref10",
+              "author": "Y Liu",
+              "year": "2019",
+              "journal-title": "A robustly optimized bert pretraining approach"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.knosys.2024.111708",
+              "article-title": "Self-ensemble training with pre-trained language models for entity matching",
+              "volume": "293",
+              "author": "H Ding",
+              "year": "2024",
+              "journal-title": "Knowledge-Based Systems"
+            },
+            {
+              "key": "ref12",
+              "first-page": "8748",
+              "article-title": "Learning transferable visual models from natural language supervision",
+              "author": "A Radford",
+              "year": "2021",
+              "journal-title": "International conference on machine learning"
+            },
+            {
+              "key": "ref13",
+              "first-page": "9694",
+              "article-title": "Align before fuse: Vision and language representation learning with momentum distillation",
+              "volume": "34",
+              "author": "J Li",
+              "year": "2021",
+              "journal-title": "Advances in neural information processing systems"
+            },
+            {
+              "key": "ref14",
+              "first-page": "12888",
+              "article-title": "Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation",
+              "author": "J Li",
+              "year": "2022",
+              "journal-title": "International conference on machine learning"
+            },
+            {
+              "key": "ref15",
+              "first-page": "19730",
+              "article-title": "Blip-2: Bootstrapping languageimage pre-training with frozen image encoders and large language models",
+              "author": "J Li",
+              "year": "2023",
+              "journal-title": "International conference on machine learning"
+            },
+            {
+              "key": "ref16",
+              "first-page": "34892",
+              "article-title": "Visual instruction tuning",
+              "volume": "36",
+              "author": "H Liu",
+              "year": "2023",
+              "journal-title": "Advances in neural information processing systems"
+            },
+            {
+              "key": "ref17",
+              "author": "P Wang",
+              "year": "2024",
+              "journal-title": "Qwen2-vl: Enhancing vision-language model's perception of the world at any resolution"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "crossref",
+              "first-page": "381",
+              "DOI": "10.1145/3308560.3316609",
+              "article-title": "The wdc training dataset and gold standard for large-scale product matching",
+              "author": "A Primpeli",
+              "year": "2019",
+              "journal-title": "Companion Proceedings of The 2019 World Wide Web Conference"
+            },
+            {
+              "issue": "4",
+              "key": "ref19",
+              "article-title": "Product matching with two-branch neural network embedding",
+              "volume": "57",
+              "author": "A Mistiawan",
+              "year": "2024",
+              "journal-title": "Journal Europ�en des Syst�mes Automatis�s"
+            },
+            {
+              "key": "ref20",
+              "article-title": "Better entity matching with transformers through ensembles",
+              "volume": "293",
+              "author": "J F Low",
+              "year": "2024",
+              "journal-title": "Knowledge-Based Systems"
+            },
+            {
+              "key": "ref21",
+              "author": "C Ye",
+              "year": "2022",
+              "journal-title": "Jointmatcher: Numerically-aware entity matching using pre-trained language models with attention concentration, Knowledge-Based Systems"
+            },
+            {
+              "key": "ref22",
+              "author": "Y Li",
+              "year": "2020",
+              "journal-title": "Deep entity matching with pre-trained language models"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "crossref",
+              "first-page": "2413",
+              "DOI": "10.1145/3308558.3313578",
+              "article-title": "Auto-em: End-to-end fuzzy entity-matching using pre-trained deep models and transfer learning",
+              "author": "C Zhao",
+              "year": "2019",
+              "journal-title": "The World Wide Web Conference"
+            },
+            {
+              "key": "ref24",
+              "volume": "10",
+              "author": "R Estrada-Valenciano",
+              "year": "2022",
+              "journal-title": "An entity-matching system based on multimodal data for two major e-commerce stores in mexico"
+            },
+            {
+              "key": "ref25",
+              "author": "D Zhu",
+              "year": "2023",
+              "journal-title": "Minigpt-4: Enhancing vision-language understanding with advanced large language models"
+            },
+            {
+              "key": "ref26",
+              "article-title": "Exploring advanced training and test-time recipes for open-source multimodal models",
+              "volume": "3",
+              "author": "J Zhu",
+              "year": "2025",
+              "journal-title": "Internvl"
+            },
+            {
+              "key": "ref27",
+              "author": "H Touvron",
+              "year": "2023",
+              "journal-title": "Llama: Open and efficient foundation language models"
+            },
+            {
+              "key": "ref28",
+              "volume": "14",
+              "author": "W.-L Chiang",
+              "year": "2023",
+              "journal-title": "Vicuna: An opensource chatbot impressing gpt-4 with 90%* chatgpt quality"
+            },
+            {
+              "issue": "6",
+              "key": "ref29",
+              "doi-asserted-by": "crossref",
+              "first-page": "1137",
+              "DOI": "10.1109/TPAMI.2016.2577031",
+              "article-title": "Faster r-cnn: Towards real-time object detection with region proposal networks",
+              "volume": "39",
+              "author": "S Ren",
+              "year": "2016",
+              "journal-title": "IEEE transactions on pattern analysis and machine intelligence"
+            },
+            {
+              "key": "ref30",
+              "author": "T Wang",
+              "year": "2022",
+              "journal-title": "Bridging the gap between reality and ideality of entity matching: A revisiting and benchmark re-construction"
+            },
+            {
+              "key": "ref31",
+              "first-page": "11782",
+              "author": "X Zhan",
+              "year": "2021",
+              "journal-title": "Product1m: Towards weakly supervised instance-level product retrieval via cross-modal pretraining"
+            },
+            {
+              "issue": "2",
+              "key": "ref32",
+              "article-title": "Low-rank adaptation of large language models",
+              "volume": "1",
+              "author": "E J Hu",
+              "year": "2022",
+              "journal-title": "ICLR"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                27
+              ]
+            ],
+            "date-time": "2026-03-27T11:45:29Z",
+            "timestamp": 1774611929000
+          },
+          "score": 37.397854,
+          "resource": {
+            "primary": {
+              "URL": "https://www.ssrn.com/abstract=6478518"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "references-count": 32,
+          "URL": "https://doi.org/10.2139/ssrn.6478518",
+          "published": {
+            "date-parts": [
+              [
+                2026
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                2
+              ]
+            ],
+            "date-time": "2026-10-02T16:58:12Z",
+            "timestamp": 1790960292301,
+            "version": "4.1.0"
+          },
+          "publisher-location": "New York, NY, USA",
+          "reference-count": 15,
+          "publisher": "ACM",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    6,
+                    9
+                  ]
+                ],
+                "date-time": "2024-06-09T00:00:00Z",
+                "timestamp": 1717891200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100006374",
+              "name": "National Science Foundation",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "1845638, 2008295, 2106197, 2103794, 2312991"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "1845638, 2008295, 2106197, 2103794, 2312991"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100006374",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100006374",
+              "name": "Google",
+              "doi-asserted-by": "publisher",
+              "id": [
+                {
+                  "id": "10.13039/501100006374",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "name": "Amazon"
+            },
+            {
+              "name": "Adobe"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1145/3665601.3669844",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                7
+              ]
+            ],
+            "date-time": "2024-06-07T12:20:36Z",
+            "timestamp": 1717762836000
+          },
+          "page": "36-39",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 9,
+          "title": [
+            "Disambiguate Entity Matching using Large Language Models through Relation Discovery"
+          ],
+          "prefix": "10.1145",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0002-6613-0337",
+              "authenticated-orcid": false,
+              "given": "Zezhou",
+              "family": "Huang",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Columbia University, USA"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                9
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_2_1_1_1",
+              "unstructured": "US Environmental Protection Agency. 2024. Scopes 1 2 and 3 Emissions Inventorying and Guidance. https://www.epa.gov/climateleadership/scopes-1-2-and-3-emissions-inventorying-and-guidance"
+            },
+            {
+              "key": "e_1_3_2_1_2_1",
+              "volume-title": "Neural networks for entity matching: A survey. ACM Transactions on Knowledge Discovery from Data (TKDD) 15, 3",
+              "author": "Barlaug Nils",
+              "year": "2021",
+              "unstructured": "Nils Barlaug and Jon Atle Gulla. 2021. Neural networks for entity matching: A survey. ACM Transactions on Knowledge Discovery from Data (TKDD) 15, 3 (2021), 1–37."
+            },
+            {
+              "key": "e_1_3_2_1_3_1",
+              "volume-title": "Proceedings of the German Medical Data Sciences (GMDS)",
+              "author": "Bathelt Franziska",
+              "year": "2021",
+              "unstructured": "Franziska Bathelt. 2021. The usage of OHDSI OMOP–a scoping review. Proceedings of the German Medical Data Sciences (GMDS) (2021), 95."
+            },
+            {
+              "key": "e_1_3_2_1_4_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3352063.3352128"
+            },
+            {
+              "key": "e_1_3_2_1_5_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/362384.362685"
+            },
+            {
+              "key": "e_1_3_2_1_6_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2844544"
+            },
+            {
+              "key": "e_1_3_2_1_7_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s00778-023-00779-z"
+            },
+            {
+              "key": "e_1_3_2_1_8_1",
+              "volume-title": "Entity alignment via knowledge embedding and type matching constraints for knowledge graph inference. Journal of Ambient Intelligence and Humanized Computing",
+              "author": "Lu Guoming",
+              "year": "2021",
+              "unstructured": "Guoming Lu, Lizong Zhang, Minjie Jin, Pancheng Li, and Xi Huang. 2021. Entity alignment via knowledge embedding and type matching constraints for knowledge graph inference. Journal of Ambient Intelligence and Humanized Computing (2021), 1–11."
+            },
+            {
+              "key": "e_1_3_2_1_9_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1108/DTA-09-2019-0163"
+            },
+            {
+              "key": "e_1_3_2_1_10_1",
+              "volume-title": "OWL web ontology language overview. W3C recommendation 10, 10",
+              "author": "McGuinness L",
+              "year": "2004",
+              "unstructured": "Deborah L McGuinness, Frank Van Harmelen, 2004. OWL web ontology language overview. W3C recommendation 10, 10 (2004), 2004."
+            },
+            {
+              "key": "e_1_3_2_1_11_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3183713.3196926"
+            },
+            {
+              "key": "e_1_3_2_1_12_1",
+              "volume-title": "Can foundation models wrangle your data?arXiv preprint arXiv:2205.09911",
+              "author": "Narayan Avanika",
+              "year": "2022",
+              "unstructured": "Avanika Narayan, Ines Chami, Laurel Orr, Simran Arora, and Christopher Ré. 2022. Can foundation models wrangle your data?arXiv preprint arXiv:2205.09911 (2022)."
+            },
+            {
+              "key": "e_1_3_2_1_13_1",
+              "volume-title": "Cloud and Internet Computing: Proceedings of the 18th International Conference on P2P, Parallel, Grid, Cloud and Internet Computing (3PGCIC-2023)",
+              "author": "Nuntachit Nontakan",
+              "year": "2023",
+              "unstructured": "Nontakan Nuntachit and Prompong Sugannasil. 2023. Check for updates Can Chat GPT Outperform Other Language Models? An Experiment on Using Chat GPT for Entity Matching. In Advances on P2P, Parallel, Grid, Cloud and Internet Computing: Proceedings of the 18th International Conference on P2P, Parallel, Grid, Cloud and Internet Computing (3PGCIC-2023), Vol. 189. Springer Nature, 14."
+            },
+            {
+              "key": "e_1_3_2_1_14_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3377455"
+            },
+            {
+              "key": "e_1_3_2_1_15_1",
+              "volume-title": "Denny Zhou",
+              "author": "Wei Jason",
+              "year": "2022",
+              "unstructured": "Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, 2022. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems 35 (2022), 24824–24837."
+            }
+          ],
+          "event": {
+            "name": "SIGMOD/PODS '24: International Conference on Management of Data",
+            "location": "Santiago AA Chile",
+            "acronym": "SIGMOD/PODS '24",
+            "sponsor": [
+              "SIGMOD ACM Special Interest Group on Management of Data"
+            ]
+          },
+          "container-title": [
+            "Proceedings of the Conference on Governance, Understanding and Integration of Data for Effective and Responsible AI"
+          ],
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3665601.3669844",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3665601.3669844",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                8,
+                23
+              ]
+            ],
+            "date-time": "2025-08-23T18:35:28Z",
+            "timestamp": 1755974128000
+          },
+          "score": 34.959312,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3665601.3669844"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                9
+              ]
+            ]
+          },
+          "references-count": 15,
+          "alternative-id": [
+            "10.1145/3665601.3669844",
+            "10.1145/3665601"
+          ],
+          "URL": "https://doi.org/10.1145/3665601.3669844",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                6,
+                9
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2024-06-09",
+              "order": 3,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                12
+              ]
+            ],
+            "date-time": "2026-10-12T23:05:48Z",
+            "timestamp": 1791846348057,
+            "version": "4.3.4"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                17
+              ]
+            ]
+          },
+          "reference-count": 0,
+          "publisher": "Wiley",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    9,
+                    17
+                  ]
+                ],
+                "date-time": "2024-09-17T00:00:00Z",
+                "timestamp": 1726531200000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "abstract": "<jats:p>Named entity matching plays a critical role in data integration tasks, where the challenge lies in accurately identifying and linking records that refer to the same real-world entities across disparate data sources. The novel integration of Monte Carlo Tree Search (MCTS) for optimizing hyperparameter tuning in fine-tuning language models, such as Mistral, presents a significant advancement in enhancing the accuracy and efficiency of entity matching. The research focuses on leveraging Mistral LLM to identify subtle variations in ransomware-related entities, showcasing the effectiveness of MCTS in systematically exploring the hyperparameter space to achieve optimal model configurations. Extensive experimentation demonstrated the superiority of the fine-tuned model over traditional approaches, including rule-based systems and support vector machines, in terms of precision, recall, and F1-score. The study also involved a detailed error analysis and sensitivity analysis, highlighting the critical impact of hyperparameter selection on model performance and the ability of MCTS to streamline the optimization process. The findings provide valuable insights into the potential of combining advanced search techniques with language models to address complex entity matching tasks in various domains.</jats:p>",
+          "DOI": "10.22541/au.172659950.06571592/v1",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                17
+              ]
+            ],
+            "date-time": "2024-09-17T14:58:32Z",
+            "timestamp": 1726585112000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 3,
+          "title": [
+            "A Novel Approach to Optimize Large Language Models for Named Entity Matching with Monte Carlo Tree Search"
+          ],
+          "prefix": "10.22541",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0000-9213-7888",
+              "authenticated-orcid": false,
+              "given": "Teon",
+              "family": "Volkova",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0001-7046-0809",
+              "authenticated-orcid": false,
+              "given": "Evander",
+              "family": "Delacruz",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0005-6443-2704",
+              "authenticated-orcid": false,
+              "given": "Thaddeus",
+              "family": "Cavanaugh",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "311",
+          "link": [
+            {
+              "URL": "https://www.authorea.com/doi/pdf/10.22541/au.172659950.06571592/v1",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                30
+              ]
+            ],
+            "date-time": "2026-06-30T17:38:55Z",
+            "timestamp": 1782841135000
+          },
+          "score": 34.943184,
+          "resource": {
+            "primary": {
+              "URL": "https://www.authorea.com/doi/full/10.22541/au.172659950.06571592/v1"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                17
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.22541/au.172659950.06571592/v1",
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                17
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

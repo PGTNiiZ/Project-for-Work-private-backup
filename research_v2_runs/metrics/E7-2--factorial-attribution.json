@@ -1,0 +1,133 @@
+{
+  "cells": [
+    {
+      "config": "factorial-B0-M0-P0",
+      "blocker": 0,
+      "matcher": 0,
+      "policy": 0,
+      "cost": 9.468090255043205e-05,
+      "recall": 0.7433356117566644
+    },
+    {
+      "config": "factorial-B0-M0-P1",
+      "blocker": 0,
+      "matcher": 0,
+      "policy": 1,
+      "cost": 7.437234961618631e-05,
+      "recall": 0.589149008885851
+    },
+    {
+      "config": "factorial-B0-M1-P0",
+      "blocker": 0,
+      "matcher": 1,
+      "policy": 0,
+      "cost": 6.74225933555368e-05,
+      "recall": 0.8380041011619959
+    },
+    {
+      "config": "factorial-B0-M1-P1",
+      "blocker": 0,
+      "matcher": 1,
+      "policy": 1,
+      "cost": 5.42801942794266e-05,
+      "recall": 0.7898325358851676
+    },
+    {
+      "config": "factorial-B1-M0-P0",
+      "blocker": 1,
+      "matcher": 0,
+      "policy": 0,
+      "cost": 9.490341936018629e-05,
+      "recall": 0.7477785372522214
+    },
+    {
+      "config": "factorial-B1-M0-P1",
+      "blocker": 1,
+      "matcher": 0,
+      "policy": 1,
+      "cost": 7.126879641213896e-05,
+      "recall": 0.588209159261791
+    },
+    {
+      "config": "factorial-B1-M1-P0",
+      "blocker": 1,
+      "matcher": 1,
+      "policy": 0,
+      "cost": 5.6741786487332953e-05,
+      "recall": 0.8591934381408065
+    },
+    {
+      "config": "factorial-B1-M1-P1",
+      "blocker": 1,
+      "matcher": 1,
+      "policy": 1,
+      "cost": 4.442714994350855e-05,
+      "recall": 0.7979835953520164
+    }
+  ],
+  "effects": [
+    {
+      "factors": [
+        "blocker"
+      ],
+      "cost_effect": -5.853721899603748e-06,
+      "recall_effect": 0.008210868079289169,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "matcher"
+      ],
+      "cost_effect": -2.8088435968284683e-05,
+      "recall_effect": 0.15413533834586457,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "policy"
+      ],
+      "cost_effect": -1.7350052875556914e-05,
+      "recall_effect": -0.10578434723171559,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "matcher"
+      ],
+      "cost_effect": -4.413203702457195e-06,
+      "recall_effect": 0.006459330143540609,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "policy"
+      ],
+      "cost_effect": -6.245768703789474e-07,
+      "recall_effect": -0.004605263157894723,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "matcher",
+        "policy"
+      ],
+      "cost_effect": 4.621535065589614e-06,
+      "recall_effect": 0.05109364319890636,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "matcher",
+        "policy"
+      ],
+      "cost_effect": 1.038458136521847e-06,
+      "recall_effect": -0.001913875598086201,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 1.3332999515114352e-05
+}

@@ -1,0 +1,8 @@
+{
+  "candidate_AP": 0.8799712227486455,
+  "summary_sha256": "5b66077c8463ad46e5f92528de02a640084fc9fd4a19cd7210edbc1668d544e0",
+  "name": "LR-fusion-without-fullname",
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.04871816699960618
+}

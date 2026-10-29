@@ -1,0 +1,138 @@
+
+## backup@ab93b36:experiments/icsec_final/authoritative_run_v2r1/sealed_guard.py
+1: """Process-wide sealed-label value guard and runtime access audit for v2r1.
+2: 
+3: The scientific invariant is defined precisely as:
+4: 
+5:     SEALED_TEST LABEL VALUES MATERIALIZED BEFORE FINAL_EVALUATION == 0
+6: 
+7: "Materialized" means the ground-truth ``actual`` column of a registered
+8: sealed-label artifact is loaded into memory. Hashing bytes, reading parquet
+9: footers/schema/row counts, or loading ONLY the safe ``pair_key`` column are
+10: explicitly allowed pre-final and are audited as non-materializing events.
+11: 
+12: The guard patches ``pandas.read_parquet`` and ``pyarrow.parquet.read_table``
+13: for the whole process, so every code path used by the scientific CLI is
+14: covered — not only ``LazySealedLabelStore``.
+15: """
+16: from __future__ import annotations
+24: import pyarrow.parquet as pq
+25: 
+26: LABEL_COLUMN = "actual"
+27: 
+28: 
+29: class SealedLabelViolation(RuntimeError):
+30:     """Raised when sealed-test label values would be materialized pre-final."""
+31: 
+32: 
+33: @dataclass
+34: class SealedLabelGuard:
+35:     """Singleton-style runtime guard over registered sealed-label artifacts."""
+36: 
+37:     sealed_paths: set[str] = field(default_factory=set)
+38:     phase: str = "PREPARATION"
+39:     events: list[dict[str, Any]] = field(default_factory=list)
+40:     _installed: bool = False
+41:     _original_pd_read: Any = None
+42:     _original_pq_read: Any = None
+43: 
+44:     def register(self, path: str | Path) -> None:
+45:         self.sealed_paths.add(str(Path(path).resolve()))
+46: 
+47:     def set_phase(self, phase: str) -> None:
+48:         self.phase = phase
+49:         self.events.append({"event": "phase_change", "phase": phase,
+50:                             "order": len(self.events), "timestamp": time.time()})
+51: 
+52:     def _is_sealed(self, path: object) -> bool:
+53:         try:
+54:             return str(Path(str(path)).resolve()) in self.sealed_paths
+56:             return False
+57: 
+58:     def _audit(self, *, resource: str, operation: str, columns: Any,
+59:                materialized: bool, allowed: bool) -> None:
+60:         self.events.append({
+61:             "event": "sealed_artifact_access", "phase": self.phase,
+62:             "resource": resource, "operation": operation,
+63:             "requested_columns": list(columns) if columns is not None else None,
+64:             "label_column_materialized": materialized, "allowed": allowed,
+65:             "order": len(self.events), "timestamp": time.time(),
+66:         })
+67: 
+68:     def _check(self, path: object, columns: Any, operation: str):
+69:         if not self._is_sealed(path):
+70:             return
+71:         materializes = columns is None or LABEL_COLUMN in set(columns)
+72:         allowed = (not materializes) or self.phase == "FINAL_EVALUATION"
+73:         self._audit(resource=str(path), operation=operation, columns=columns,
+74:                     materialized=materializes and allowed, allowed=allowed)
+75:         if not allowed:
+76:             raise SealedLabelViolation(
+77:                 f"sealed-test label values may not be materialized during "
+78:                 f"phase {self.phase!r} (path={path})")
+79: 
+80:     def install(self) -> None:
+81:         if self._installed:
+82:             return
+83:         self._original_pd_read = pd.read_parquet
+84:         self._original_pq_read = pq.read_table
+85:         guard = self
+86: 
+87:         def guarded_pd_read(path, *args, **kwargs):
+88:             guard._check(path, kwargs.get("columns"), "pandas.read_parquet")
+89:             return guard._original_pd_read(path, *args, **kwargs)
+90: 
+91:         def guarded_pq_read(source, *args, **kwargs):
+92:             guard._check(source, kwargs.get("columns"), "pyarrow.parquet.read_table")
+93:             return guard._original_pq_read(source, *args, **kwargs)
+94: 
+95:         pd.read_parquet = guarded_pd_read
+96:         pq.read_table = guarded_pq_read
+97:         self._installed = True
+98: 
+99:     def uninstall(self) -> None:
+100:         if self._installed:
+101:             pd.read_parquet = self._original_pd_read
+102:             pq.read_table = self._original_pq_read
+103:             self._installed = False
+104: 
+105:     # ---- derived (never hard-coded) audit counts -------------------------
+106:     def pre_final_materializations(self) -> int:
+107:         return sum(1 for e in self.events
+108:                    if e.get("event") == "sealed_artifact_access"
+109:                    and e.get("label_column_materialized")
+110:                    and e.get("phase") != "FINAL_EVALUATION")
+111: 
+112:     def final_materializations(self) -> int:
+113:         return sum(1 for e in self.events
+114:                    if e.get("event") == "sealed_artifact_access"
+115:                    and e.get("label_column_materialized")
+116:                    and e.get("phase") == "FINAL_EVALUATION")
+117: 
+118:     def report(self) -> dict[str, Any]:
+119:         return {
+120:             "invariant": "SEALED_TEST_LABEL_VALUES_MATERIALIZED_BEFORE_FINAL_EVALUATION == 0",
+121:             "pre_final_label_value_materializations": self.pre_final_materializations(),
+122:             "final_evaluation_label_value_materializations": self.final_materializations(),
+123:             "events": self.events,
+124:         }
+125: 
+126: 
+127: GUARD = SealedLabelGuard()
+128: 
+129: 
+130: # ---- label-free preflight validation helpers ----------------------------
+131: 
+132: def sealed_artifact_metadata(path: str | Path) -> dict[str, Any]:
+133:     """Inspect a sealed-label parquet WITHOUT materializing label values."""
+134:     parquet = pq.ParquetFile(str(path))
+135:     schema_names = list(parquet.schema_arrow.names)
+140: 
+141: 
+142: def sealed_pair_keys(path: str | Path) -> pd.Series:
+143:     """Load ONLY the safe pair_key column (label-free by construction)."""
+144:     if GUARD._is_sealed(path):
+145:         GUARD._audit(resource=str(path), operation="pair_key_only_read",
+146:                      columns=["pair_key"], materialized=False, allowed=True)
+147:     table = pq.ParquetFile(str(path)).read(columns=["pair_key"])
+148:     return table.to_pandas()["pair_key"]

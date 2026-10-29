@@ -1,0 +1,193 @@
+[2409.08966] User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications
+Skip to main content
+Search
+Search arXiv
+Press Enter to search ·
+Advanced search
+Computer Science > Social and Information Networks
+arXiv:2409.08966
+(cs)
+[Submitted on 13 Sep 2024]
+Title:
+User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications
+Authors:
+Caterina Senette
+,
+Marco Siino
+,
+Maurizio Tesconi
+View a PDF of the paper titled User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications, by Caterina Senette and 2 other authors
+View PDF
+HTML (experimental)
+Abstract:
+In an Online Social Network (OSN), users can create a unique public persona by crafting a user identity that may encompass profile details, content, and network-related information. As a result, a relevant task of interest is related to the ability to link identities across different OSNs. Linking users across social networks can have multiple implications in several contexts both at the individual level and at the group level. At the individual level, the main interest in linking the same identity across social networks is to enable a better knowledge of each user. At the group level, linking user identities through different OSNs helps in predicting user behaviors, network dynamics, information diffusion, and migration phenomena across social media. The process of tying together user accounts on different OSNs is challenging and has attracted more and more research attention in the last fifteen years. The purpose of this work is to provide a comprehensive review of recent studies (from 2016 to the present) on User Identity Linkage (UIL) methods across online social networks. This review aims to offer guidance for other researchers in the field by outlining the main problem formulations, the different feature extraction strategies, algorithms, machine learning models, datasets, and evaluation metrics proposed by researchers working in this area. The proposed overview takes a pragmatic perspective to highlight the concrete possibilities for accomplishing this task depending on the type of available data.
+Comments:
+25 pages, 4 figures
+Subjects:
+Social and Information Networks (cs.SI)
+Cite as:
+arXiv:2409.08966
+[cs.SI]
+(or
+arXiv:2409.08966v1
+[cs.SI]
+for this version)
+https://doi.org/10.48550/arXiv.2409.08966
+Focus to learn more
+arXiv-issued DOI via DataCite
+Journal reference:
+IEEE Access, vol. 12, pp. 171241-171268, 2024,
+Related DOI
+:
+https://doi.org/10.1109/ACCESS.2024.3500374
+Focus to learn more
+DOI(s) linking to related resources
+Submission history
+From: Caterina Senette [
+view email
+]
+[v1]
+Fri, 13 Sep 2024 16:32:54 UTC (1,933 KB)
+Full-text links:
+Access Paper:
+View a PDF of the paper titled User Identity Linkage on Social Networks: A Review of Modern Techniques and Applications, by Caterina Senette and 2 other authors
+View PDF
+HTML (experimental)
+TeX Source
+view license
+Additional Features
+Audio Summary
+Current browse context:
+cs.SI
+< prev
+|
+next >
+new
+|
+recent
+|
+2024-09
+Change to browse by:
+cs
+References & Citations
+SciX
+Google Scholar
+Semantic Scholar
+export BibTeX citation
+Loading...
+BibTeX formatted citation
+×
+loading...
+Data provided by:
+Bookmark
+Bibliographic Tools
+Bibliographic and Citation Tools
+Bibliographic Explorer Toggle
+Bibliographic Explorer
+(
+What is the Explorer?
+)
+Connected Papers Toggle
+Connected Papers
+(
+What is Connected Papers?
+)
+Litmaps Toggle
+Litmaps
+(
+What is Litmaps?
+)
+scite.ai Toggle
+scite Smart Citations
+(
+What are Smart Citations?
+)
+Code, Data, Media
+Code, Data and Media Associated with this Article
+alphaXiv Toggle
+alphaXiv
+(
+What is alphaXiv?
+)
+Links to Code Toggle
+CatalyzeX Code Finder for Papers
+(
+What is CatalyzeX?
+)
+DagsHub Toggle
+DagsHub
+(
+What is DagsHub?
+)
+GotitPub Toggle
+Gotit.pub
+(
+What is GotitPub?
+)
+Huggingface Toggle
+Hugging Face
+(
+What is Huggingface?
+)
+ScienceCast Toggle
+ScienceCast
+(
+What is ScienceCast?
+)
+Demos
+Demos
+Replicate Toggle
+Replicate
+(
+What is Replicate?
+)
+Spaces Toggle
+Hugging Face Spaces
+(
+What is Spaces?
+)
+Spaces Toggle
+TXYZ.AI
+(
+What is TXYZ.AI?
+)
+Related Papers
+Recommenders and Search Tools
+Link to Influence Flower
+Influence Flower
+(
+What are Influence Flowers?
+)
+Core recommender toggle
+CORE Recommender
+(
+What is CORE?
+)
+Author
+Venue
+Institution
+Topic
+About arXivLabs
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community?
+Learn more about arXivLabs
+.
+Which authors of this paper are endorsers?
+|
+Disable MathJax
+(
+What is MathJax?
+)
+We gratefully acknowledge support from our
+major funders
+,
+member institutions
+,
+,
+        and all contributors.
+Major funding support from
+(opens in new tab)
+(opens in new tab)
+(opens in new tab)

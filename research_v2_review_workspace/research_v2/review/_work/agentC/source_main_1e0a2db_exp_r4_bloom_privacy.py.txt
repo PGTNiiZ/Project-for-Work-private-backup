@@ -1,0 +1,212 @@
+
+## main@1e0a2db:exp_r4_bloom_privacy.py
+5: R5 = repr:+Bloom filter, decision: GA (จาก exp_r1_ga_redecision.py)
+6: 
+7: Bloom เข้ารหัสเฉพาะ userName/fullName (ตาม prompt) แล้วแทนที่ "name-similarity feature"
+8: (jaro/lev/token-sort ของ username/fullname + name_sim รวม 7 คอลัมน์ใน pair_features17.parquet)
+9: ด้วย 3 คอลัมน์ dice-on-bloom (dice_username, dice_fullname, name_sim_bloom=max ของสองตัว)
+10: feature ที่เหลือ (bio/location/platform/length ฯลฯ) ใช้ pair_features17.parquet เดิมตรงๆ
+11: (non-name features "ไม่แตะ" ตามที่ prompt สั่ง) -> รวม 13 features ต่อค่า L
+12: 
+13: sweep L ใน {2000, 1000, 500, 250}, k=10 hash/gram, salt คงที่ (ทุกฝั่งใช้ salt เดียวกัน
+14: เหมือนสถานการณ์ linkage ที่ตกลง salt ร่วมกันไว้ล่วงหน้า -- ไม่ใช่ salt ต่างฝั่งซึ่งจะจับคู่ไม่ได้เลย)
+15: 
+16: train_neg_ratio=3.0 (มาจาก stage10_13 เดิม) ทำหน้าที่ subsample negative สำหรับ train อยู่แล้ว
+17: ตาม fallback ที่ prompt อนุญาต (ข้อ 3 ของ R4/R5) -- ไม่แตะ eval set
+18: 
+21: from __future__ import annotations
+22: 
+23: import hashlib
+24: import pickle
+25: import random
+35: from sklearn.isotonic import IsotonicRegression
+36: from sklearn.metrics import average_precision_score, f1_score
+37: from sklearn.model_selection import train_test_split
+38: from sklearn.preprocessing import StandardScaler
+39: 
+40: from exp_lib import EXP, MATCH, NO_MATCH, REVIEW, PROFILES, build_cache, evaluate, save_json, split_constants
+41: import exp_r1_ga_redecision as r1
+42: from exp_r2_bert_feature import (
+43:     FEAT17_PATH, IdentityMLP, FocalLoss, log as _log_base, set_seed,
+44:     undersample_negatives, make_loader, predict_probs, train_mlp,
+45:     decide_manual, TRAIN_NEG_RATIO, EVAL_BATCH_SIZE, SEED,
+46: )
+47: 
+48: L_VALUES = [2000, 1000, 500, 250]
+49: K_HASHES = 10
+50: SALT = "identity-resolution-r4-bloom-salt-fixed"
+51: 
+59:     "bio_jaccard", "bio_len_ratio", "both_have_bio",
+60:     "location_jaro", "location_exact", "both_have_location",
+61:     "same_platform", "username_len_diff", "fullname_wordcount_diff",
+62:     "username_prefix3_match",
+63: ]
+66: 
+67: 
+68: def log(msg: str) -> None:
+69:     line = f"[{time.strftime('%H:%M:%S')}] {msg}"
+70:     print(line)
+73: 
+74: 
+75: def bigrams(s: str) -> list[str]:
+76:     padded = f" {s} "
+77:     return [padded[i:i + 2] for i in range(len(padded) - 1)] if len(padded) >= 2 else []
+78: 
+79: 
+80: def bloom_packed(s: str, L: int, k: int, salt: str) -> tuple[np.ndarray, int]:
+81:     """คืน packed bits (uint8, ceil(L/8) bytes) + popcount ของ string s"""
+82:     bits = np.zeros(L, dtype=bool)
+83:     for g in bigrams(s):
+84:         for j in range(k):
+85:             h = hashlib.md5(f"{salt}|{j}|{g}".encode("utf-8")).hexdigest()
+86:             pos = int(h, 16) % L
+87:             bits[pos] = True
+90: 
+91: 
+92: def build_profile_bloom(L: int) -> dict:
+93:     cache_path = BLOOM_DIR / f"profiles_L{L}.npz"
+94:     if cache_path.exists():
+96:         with np.load(cache_path) as z:
+97:             return dict(ids=z["ids"], username_packed=z["username_packed"], username_pop=z["username_pop"],
+98:                        fullname_packed=z["fullname_packed"], fullname_pop=z["fullname_pop"])
+99: 
+100:     prof = pd.read_csv(PROFILES, keep_default_na=False, low_memory=False)
+102:     prof = prof[prof["profile_row_id"].notna()].copy()
+103: 
+104:     def clean(s):
+105:         s = s.astype(str).str.lower().str.strip()
+106:         return s.where(~s.isin(["", "nan"]), "").values
+107: 
+108:     uname = clean(prof["userName"])
+109:     fname = clean(prof["fullName"])
+110:     ids = prof["profile_row_id"].astype(int).values
+111:     n = len(ids)
+113: 
+114:     username_packed = np.zeros((n, nbytes), dtype=np.uint8)
+115:     fullname_packed = np.zeros((n, nbytes), dtype=np.uint8)
+116:     username_pop = np.zeros(n, dtype=np.int32)
+117:     fullname_pop = np.zeros(n, dtype=np.int32)
+118: 
+119:     t0 = time.time()
+120:     for i in range(n):
+121:         p, c = bloom_packed(uname[i], L, K_HASHES, SALT)
+122:         username_packed[i], username_pop[i] = p, c
+123:         p, c = bloom_packed(fname[i], L, K_HASHES, SALT)
+124:         fullname_packed[i], fullname_pop[i] = p, c
+125:         if i and i % 10000 == 0:
+126:             log(f"  L={L} bloom-encode {i:,}/{n:,} ({time.time()-t0:.0f}s)")
+128: 
+129:     np.savez(cache_path, ids=ids, username_packed=username_packed, username_pop=username_pop,
+130:              fullname_packed=fullname_packed, fullname_pop=fullname_pop)
+131:     return dict(ids=ids, username_packed=username_packed, username_pop=username_pop,
+132:                fullname_packed=fullname_packed, fullname_pop=fullname_pop)
+133: 
+134: 
+135: def dice_chunked(packed_a, packed_b, pop_a, pop_b, chunk=200_000):
+136:     n = len(pop_a)
+137:     out = np.zeros(n, dtype=np.float32)
+144: 
+145: 
+146: def compute_pair_bloom_features(L: int, cache: pd.DataFrame) -> pd.DataFrame:
+147:     out_path = BLOOM_DIR / f"pairs_L{L}.parquet"
+148:     if out_path.exists():
+161:         prof_bloom["username_packed"][a_idx], prof_bloom["username_packed"][b_idx],
+162:         prof_bloom["username_pop"][a_idx], prof_bloom["username_pop"][b_idx])
+163:     dice_fullname = dice_chunked(
+164:         prof_bloom["fullname_packed"][a_idx], prof_bloom["fullname_packed"][b_idx],
+165:         prof_bloom["fullname_pop"][a_idx], prof_bloom["fullname_pop"][b_idx])
+166:     name_sim_bloom = np.maximum(dice_username, dice_fullname)
+167: 
+168:     out = pd.DataFrame({
+170:         "profile_id_b": scored["profile_id_b"].values,
+171:         "dice_username": dice_username,
+172:         "dice_fullname": dice_fullname,
+173:         "name_sim_bloom": name_sim_bloom,
+174:     })
+178: 
+179: 
+180: def build_probabilities_for_L(L: int, cache: pd.DataFrame, feat17: pd.DataFrame) -> pd.DataFrame:
+181:     prob_path = BLOOM_DIR / f"probability_r4_L{L}.parquet"
+182:     if prob_path.exists():
+185: 
+186:     bloom_feat = compute_pair_bloom_features(L, cache)
+187:     scored = cache[cache.decision_source != "AUTO_EXACT"][["profile_id_a", "profile_id_b", "actual", "split"]]
+188:     feats = scored.merge(feat17[["profile_id_a", "profile_id_b"] + NON_NAME_COLS],
+189:                          on=["profile_id_a", "profile_id_b"], how="left") \
+190:                    .merge(bloom_feat, on=["profile_id_a", "profile_id_b"], how="left")
+191:     assert len(feats) == len(scored)
+192:     feature_cols = ["dice_username", "dice_fullname", "name_sim_bloom"] + NON_NAME_COLS
+193:     assert feats[feature_cols].isna().sum().sum() == 0
+194: 
+195:     val_mask = feats["split"].values == "val"
+196:     X_val = feats.loc[val_mask, feature_cols].to_numpy(dtype=np.float32)
+197:     y_val = feats.loc[val_mask, "actual"].to_numpy(dtype=np.float32)
+198: 
+199:     idx = np.arange(len(X_val))
+200:     idx_train, idx_holdout = train_test_split(idx, test_size=0.15, random_state=SEED, stratify=y_val)
+201: 
+202:     scaler = StandardScaler()
+203:     Xtr, ytr = undersample_negatives(X_val[idx_train], y_val[idx_train], TRAIN_NEG_RATIO, SEED)
+204:     Xtr = scaler.fit_transform(Xtr)
+205:     Xho = scaler.transform(X_val[idx_holdout])
+207:     log(f"L={L}: train_inner={len(Xtr):,} (pos={int(ytr.sum()):,}) holdout={len(Xho):,} (pos={int(yho.sum()):,})")
+208: 
+209:     set_seed(SEED)
+210:     model, meta = train_mlp(Xtr, ytr, Xho, yho, input_dim=len(feature_cols))
+211: 
+212:     device = torch.device("cpu")
+213:     holdout_raw = predict_probs(model, Xho, EVAL_BATCH_SIZE, device)
+214:     calibrator = IsotonicRegression(out_of_bounds="clip")
+215:     calibrator.fit(holdout_raw, yho)
+216: 
+217:     X_all = scaler.transform(feats[feature_cols].to_numpy(dtype=np.float32))
+218:     probs_raw_all = predict_probs(model, X_all, EVAL_BATCH_SIZE, device)
+219:     probs_cal_all = calibrator.predict(probs_raw_all).astype(np.float32)
+220: 
+221:     model_dir = BLOOM_DIR / f"model_L{L}"
+224:     with (model_dir / "scaler.pkl").open("wb") as fh:
+225:         pickle.dump(scaler, fh)
+226:     with (model_dir / "isotonic_calibrator.pkl").open("wb") as fh:
+227:         pickle.dump(calibrator, fh)
+228:     save_json(model_dir / "train_meta.json", {**meta, "L": L, "n_train": int(len(Xtr)), "n_holdout": int(len(Xho))})
+229: 
+239: 
+240: 
+241: def eval_manual(cache, consts, prob_df) -> dict:
+242:     scored = cache[cache.decision_source != "AUTO_EXACT"].merge(prob_df, on=["profile_id_a", "profile_id_b"], how="left")
+243:     out = {}
+244:     for sp in ["test", "full"]:
+245:         sub = scored if sp == "full" else scored[scored.split == sp]
+246:         code = decide_manual(sub["probability"].values)
+247:         actual = sub["actual"].values.astype(np.int8)
+250: 
+251: 
+252: def eval_ga(cache, consts, prob_df) -> tuple[dict, dict]:
+253:     # หมายเหตุ: ใช้ name_sim_bloom (ไม่ใช่ name_sim plaintext จาก cache) เป็นสัญญาณ promote/demote
+254:     # ของ GA ด้วย -- ไม่งั้นจะแอบใช้ plaintext name ผ่านทาง GA ซึ่งขัดกับโจทย์ privacy ของ R4/R5
+255:     scored = cache[cache.decision_source != "AUTO_EXACT"].merge(prob_df, on=["profile_id_a", "profile_id_b"], how="left")
+256:     val = scored[scored.split == "val"]
+257:     best, history = r1.run_ga(val["probability"].values, val["name_sim_bloom"].values,
+258:                               val["actual"].values.astype(np.int8), 0)
+259:     genome = dict(t_m=float(best[0]), t_r=float(best[1]), c_promote=float(best[2]), c_demote=float(best[3]))
+260:     out = {}
+261:     for sp in ["test", "full"]:
+262:         sub = scored if sp == "full" else scored[scored.split == sp]
+263:         code = r1.decide_code(sub["probability"].values, sub["name_sim_bloom"].values, best)
+264:         actual = sub["actual"].values.astype(np.int8)
+267: 
+268: 
+269: def main():
+270:     LOG_PATH.write_text("", encoding="utf-8")
+271:     log("=== R4/R5 bloom privacy sweep start ===")
+272: 
+273:     cache = build_cache()
+274:     consts = split_constants(cache)
+275:     assert consts["full"]["total_pos"] == 29247
+276: 
+277:     if not FEAT17_PATH.exists():
+279:     feat17 = pd.read_parquet(FEAT17_PATH)
+280: 
+281:     results = {"L_values": L_VALUES, "k_hashes": K_HASHES, "per_L": {}}
+282:     for L in L_VALUES:
+283:         log(f"--- L={L} ---")

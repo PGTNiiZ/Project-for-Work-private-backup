@@ -1,0 +1,6 @@
+{
+  "threshold": 0.54,
+  "validation_F1": 0.9519480210391033,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 1.9970417090007686
+}

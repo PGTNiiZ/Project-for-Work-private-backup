@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/a8SpdAzj3x8tipvgxuOYqiMdjm0</id>
+  <title>arXiv Query: search_query=ti:MAUIL&amp;id_list=&amp;start=0&amp;max_results=3</title>
+  <updated>2026-10-25T17:50:21Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=ti:MAUIL&amp;start=0&amp;max_results=3&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>3</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2012.00936v2</id>
+    <title>MAUIL: Multi-level Attribute Embedding for Semi-supervised User Identity Linkage</title>
+    <updated>2022-02-16T07:06:18Z</updated>
+    <link href="https://arxiv.org/abs/2012.00936v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.00936v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>User identity linkage (UIL) across social networks has recently attracted an increasing amount of attention due to its significant research challenges and practical value. Most of the existing methods use a single method to express different types of attribute features. However, the simplex pattern can neither cover the entire set of different attribute features nor capture the higher-level semantic features in the attribute text. This paper establishes a novel semisupervised model, namely the multilevel attribute embedding for semisupervised user identity linkage (MAUIL), to seek the common user identity across social networks. MAUIL includes two components: multilevel attribute embedding and regularized canonical correlation analysis (RCCA)-based linear projection. Specifically, the text attributes for each network are first divided into three types: character-level, word-level, and topic-level attributes. Second, unsupervised approaches are employed to extract the corresponding three types of text attribute features, and user relationships are embedded as a complimentary feature. All the resultant features are combined to form the final representation of each user. Finally, target social networks are projected into a common correlated space by RCCA with the help of a small number of prematched user pairs. We demonstrate the superiority of the proposed method over state-of-the-art methods through extensive experiments on two real-world datasets.</summary>
+    <category term="cs.SI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-12-02T02:44:37Z</published>
+    <arxiv:comment>Accepted by Information Sciences in Feb. 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.SI"/>
+    <author>
+      <name>Baiyang Chen</name>
+    </author>
+    <author>
+      <name>Xiaoliang Chen</name>
+    </author>
+    <arxiv:doi>10.1016/j.ins.2022.02.023</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.ins.2022.02.023" title="doi"/>
+  </entry>
+</feed>

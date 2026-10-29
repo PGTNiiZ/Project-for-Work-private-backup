@@ -1,0 +1,95 @@
+# main@1e0a2db:train_data/v2/stage8_labeling_v2.ipynb — code cells ONLY; outputs intentionally excluded
+CELL 1
+cell_source_L16; raw_JSON_L[82]: print(f'df_clean: {len(df_clean):,} | candidate_pairs: {len(candidate_pairs):,}')
+cell_source_L17; raw_JSON_L[83]: print(f'Columns: {list(df_clean.columns)}')
+cell_source_L18; raw_JSON_L[84]: assert 'user_folder' in df_clean.columns, 'ERROR: user_folder column missing from df_clean!'
+cell_source_L19; raw_JSON_L[85]: print(f'user_folder unique: {df_clean["user_folder"].nunique():,}')
+CELL 3
+cell_source_L1; raw_JSON_L[148]: # --- 8.1 Positive Pair Generation (v2: user_folder groupby) ---
+cell_source_L2; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L3; raw_JSON_L[150]: def build_positive_pairs(df: pd.DataFrame) -> pd.DataFrame:
+cell_source_L4; raw_JSON_L[151, 154, 328, 332]:     """
+cell_source_L5; raw_JSON_L[152]:     v2: สร้าง positive pairs โดย groupby user_folder
+cell_source_L6; raw_JSON_L[153]:     user_folder เดียวกัน + platform ต่างกัน = คนเดียวกัน (ground truth)
+cell_source_L7; raw_JSON_L[151, 154, 328, 332]:     """
+cell_source_L8; raw_JSON_L[155, 241]:     pairs = []
+cell_source_L9; raw_JSON_L[156]:     for folder, group in df.groupby('user_folder'):
+cell_source_L10; raw_JSON_L[157]:         # ต้องมีอย่างน้อย 2 platform
+cell_source_L11; raw_JSON_L[158]:         if group['platform'].nunique() < 2:
+cell_source_L16; raw_JSON_L[163]:                 continue
+cell_source_L17; raw_JSON_L[164, 257]:             pairs.append({
+cell_source_L18; raw_JSON_L[165, 258]:                 'profile_id_a': row_a['profile_id'],
+cell_source_L19; raw_JSON_L[166, 259]:                 'profile_id_b': row_b['profile_id'],
+cell_source_L20; raw_JSON_L[167]:                 'entity_id_a':  folder,
+cell_source_L21; raw_JSON_L[168]:                 'platform_a':   row_a['platform'],
+cell_source_L22; raw_JSON_L[169]:                 'platform_b':   row_b['platform'],
+cell_source_L31; raw_JSON_L[178]: print(f'  Positive pairs   : {len(positive_pairs):,}')
+cell_source_L32; raw_JSON_L[179]: if len(positive_pairs) > 0:
+cell_source_L33; raw_JSON_L[180]:     print(f'  Unique entities  : {positive_pairs["entity_id_a"].nunique():,}')
+cell_source_L34; raw_JSON_L[181]:     print(f'\n  Platform combo distribution:')
+cell_source_L35; raw_JSON_L[182]:     combo = positive_pairs.apply(lambda r: f"{r['platform_a']}↔{r['platform_b']}", axis=1)
+cell_source_L37; raw_JSON_L[184]:     print(f'\n  Sample positive pairs (5):')
+cell_source_L38; raw_JSON_L[185]:     for _, r in positive_pairs.head(5).iterrows():
+cell_source_L39; raw_JSON_L[186]:         print(f'    [{r["platform_a"]}] {str(r["profile_id_a"])[:30]} '
+cell_source_L40; raw_JSON_L[187]:               f'↔ [{r["platform_b"]}] {str(r["profile_id_b"])[:30]}  (folder={r["entity_id_a"]})')
+cell_source_L41; raw_JSON_L[188]: print(f'\n✅ Step 8.1 เสร็จ')
+CELL 5
+cell_source_L2; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L3; raw_JSON_L[238]: def build_random_negatives(df: pd.DataFrame, n_neg: int, seed: int = 42) -> pd.DataFrame:
+cell_source_L4; raw_JSON_L[239]:     """สร้าง random negative pairs (คนละ user_folder ข้าม platform)"""
+cell_source_L5; raw_JSON_L[240]:     rng = np.random.default_rng(seed)
+cell_source_L6; raw_JSON_L[155, 241]:     pairs = []
+cell_source_L18; raw_JSON_L[253]:         row_a = df1.iloc[rng.integers(len(df1))]
+cell_source_L19; raw_JSON_L[254]:         row_b = df2.iloc[rng.integers(len(df2))]
+cell_source_L20; raw_JSON_L[255]:         # v2: ใช้ user_folder เพื่อตรวจสอบว่าคนละคน
+cell_source_L21; raw_JSON_L[256]:         if str(row_a['user_folder']) != str(row_b['user_folder']):
+cell_source_L22; raw_JSON_L[164, 257]:             pairs.append({
+cell_source_L23; raw_JSON_L[165, 258]:                 'profile_id_a': row_a['profile_id'],
+cell_source_L24; raw_JSON_L[166, 259]:                 'profile_id_b': row_b['profile_id'],
+cell_source_L25; raw_JSON_L[260]:                 'entity_id_a':  row_a['user_folder'],
+cell_source_L26; raw_JSON_L[261]:                 'platform_a':   p1,
+cell_source_L27; raw_JSON_L[262]:                 'platform_b':   p2,
+CELL 7
+cell_source_L6; raw_JSON_L[329]:     Hard negatives จาก blocking candidates:
+cell_source_L7; raw_JSON_L[330]:     - cross-platform
+cell_source_L8; raw_JSON_L[331]:     - คนละ user_folder = negative
+cell_source_L9; raw_JSON_L[151, 154, 328, 332]:     """
+cell_source_L10; raw_JSON_L[333]:     if candidate_pairs is None or len(candidate_pairs) == 0:
+cell_source_L11; raw_JSON_L[334]:         return pd.DataFrame()
+cell_source_L12; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L13; raw_JSON_L[336]:     # v2: lookup โดย profile_id → user_folder
+cell_source_L14; raw_JSON_L[337]:     pid_to_folder = df.set_index('profile_id')['user_folder'].to_dict()
+cell_source_L15; raw_JSON_L[338]:     pid_to_platform = df.set_index('profile_id')['platform'].to_dict()
+cell_source_L16; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L17; raw_JSON_L[340]:     hard_pairs = []
+cell_source_L18; raw_JSON_L[341]:     for _, row in candidate_pairs.iterrows():
+cell_source_L19; raw_JSON_L[342]:         id_a = row['profile_id_a']
+cell_source_L20; raw_JSON_L[343]:         id_b = row['profile_id_b']
+cell_source_L21; raw_JSON_L[344]:         folder_a = pid_to_folder.get(id_a, '')
+cell_source_L22; raw_JSON_L[345]:         folder_b = pid_to_folder.get(id_b, '')
+cell_source_L24; raw_JSON_L[347]:         plat_b   = pid_to_platform.get(id_b, '')
+cell_source_L25; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L26; raw_JSON_L[349]:         # cross-platform + คนละ user_folder = hard negative
+cell_source_L27; raw_JSON_L[350]:         if plat_a != plat_b and str(folder_a) != str(folder_b) and folder_a and folder_b:
+cell_source_L28; raw_JSON_L[351]:             hard_pairs.append({
+cell_source_L29; raw_JSON_L[352]:                 'profile_id_a': id_a,
+cell_source_L30; raw_JSON_L[353]:                 'profile_id_b': id_b,
+cell_source_L31; raw_JSON_L[354]:                 'entity_id_a':  folder_a,
+cell_source_L32; raw_JSON_L[355]:                 'platform_a':   plat_a,
+cell_source_L33; raw_JSON_L[356]:                 'platform_b':   plat_b,
+cell_source_L37; raw_JSON_L[360]:     hard_df = pd.DataFrame(hard_pairs)
+cell_source_L38; raw_JSON_L[361]:     if len(hard_df) > n_hard:
+cell_source_L39; raw_JSON_L[362]:         hard_df = hard_df.sample(n=n_hard, random_state=seed)
+cell_source_L40; raw_JSON_L[363]:     return hard_df
+cell_source_L41; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+CELL 9
+cell_source_L8; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L9; raw_JSON_L[447]: labeled_pairs = pd.concat(all_parts, ignore_index=True)
+cell_source_L10; raw_JSON_L[448]: labeled_pairs = labeled_pairs.sample(frac=1, random_state=RANDOM_SEED).reset_index(drop=True)
+cell_source_L11; raw_JSON_L[18, 20, 23, 30, 33, 75, 79, 102, 130, 135, 142, 149, 151, 154, 173, 175, 230, 237, 239, 245, 248, 266, 269, 318, 325, 328, 332, 335, 339, 348, 359, 364, 367, 418, 429, 431, 440, 446, 449, 453, 465]: 
+cell_source_L12; raw_JSON_L[450]: # Summary
+cell_source_L22; raw_JSON_L[460]: print(f'  Ratio neg:pos : {n_neg/max(n_pos,1):.1f}:1')
+cell_source_L23; raw_JSON_L[461]: print(f'\n  Source breakdown:')
+cell_source_L24; raw_JSON_L[462]: print(f'    Positive (user_folder match) : {len(positive_pairs):,}')
+cell_source_L25; raw_JSON_L[463]: print(f'    Random negatives             : {len(random_negatives):,}')
+cell_source_L26; raw_JSON_L[464]: print(f'    Hard negatives (candidates)  : {len(hard_negatives):,}')

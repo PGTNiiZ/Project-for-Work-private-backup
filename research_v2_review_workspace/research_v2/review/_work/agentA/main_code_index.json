@@ -1,0 +1,1802 @@
+[
+  {
+    "path": "Confix/fix-data-platform.py",
+    "lines": 0,
+    "symbols": []
+  },
+  {
+    "path": "Confix/fix_numpy.py",
+    "lines": 118,
+    "symbols": []
+  },
+  {
+    "path": "REPORT_R0_R5.ipynb",
+    "lines": 303,
+    "symbols": [
+      "49: def style_ax(ax, grid_axis=None):",
+      "59: def finish(fig, name):",
+      "83: def add(exp, config, split, m, L=None):"
+    ]
+  },
+  {
+    "path": "Train-Data/preprocess_pipeline_backup.ipynb",
+    "lines": 1222,
+    "symbols": [
+      "31: def load_all_profiles(base_path: str) -> pd.DataFrame:",
+      "166: def save_full_data():",
+      "286: def remove_emojis(text: str) -> str:",
+      "305: def clean_username(text: str) -> str:",
+      "333: def clean_fullname(text: str) -> str:",
+      "362: def safe_str(value) -> str:",
+      "372: def extract_urls(text: str) -> list:",
+      "375: def extract_mentions(text: str) -> list:",
+      "378: def clean_single_url(url: str) -> str:",
+      "385: def clean_bio(text) -> str:",
+      "476: def parse_dms_to_decimal(dms_str):",
+      "495: def clean_location_full(text):",
+      "603: def safe_str(value) -> str:",
+      "614: def parse_url_list(value) -> list:",
+      "641: def normalize_url(url: str) -> str:",
+      "675: def extract_domain(cleaned_url: str) -> str:",
+      "687: def clean_external_url_field(value):",
+      "699: def squash_single_or_list(items):"
+    ]
+  },
+  {
+    "path": "archive/train_data/notebooks/stage10_dataset copy.ipynb",
+    "lines": 475,
+    "symbols": [
+      "62: def _get_torch():",
+      "84: def detect_feature_cols(df: pd.DataFrame) -> list[str]:",
+      "111: def undersample_negatives(df: pd.DataFrame,",
+      "140: def compute_pos_weight(df: pd.DataFrame) -> float:",
+      "156: def fit_scaler(train_df: pd.DataFrame,",
+      "169: def apply_scaler(df: pd.DataFrame,",
+      "184: class PairDataset:",
+      "228: def build_dataloaders(",
+      "262: def run_sanity_checks(train_fm: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "archive/train_data/notebooks/stage7_blocking copy.ipynb",
+    "lines": 550,
+    "symbols": [
+      "44: def safe_str(value):",
+      "51: def calculate_string_similarity(str1, str2, method=\"jaro_winkler\"):",
+      "75: def extract_location_prefix(location, length=3):",
+      "87: def extract_bio_prefix(bio, length=4):",
+      "104: def create_advanced_blocking_keys(df):",
+      "138: def create_multi_key_blocks(df):",
+      "203: def calculate_comprehensive_similarity(row_a, row_b):",
+      "250: def generate_advanced_candidate_pairs(blocks):",
+      "313: def main():",
+      "342: def find_exact_matches(df):",
+      "377: def save_results(exact_matches, candidate_pairs):",
+      "392: def print_summary(df, exact_matches, candidate_pairs):",
+      "473: def display_evaluation_results(quality_summary):"
+    ]
+  },
+  {
+    "path": "archive/train_data/notebooks/stage8_labeling copy.ipynb",
+    "lines": 1675,
+    "symbols": [
+      "63: def _safe_str(val) -> str:",
+      "69: def _name_similarity(a: str, b: str) -> float:",
+      "78: class PairBuilder:",
+      "395: def run_quality_checks(labeled_pairs: pd.DataFrame, df_profiles: pd.DataFrame) -> dict:",
+      "615: def _safe_str(val) -> str:",
+      "621: def _name_similarity(a: str, b: str) -> float:",
+      "630: class PairBuilder:",
+      "977: def run_quality_checks(labeled_pairs: pd.DataFrame,",
+      "1168: def _safe_str(val) -> str:",
+      "1174: def _name_similarity(a: str, b: str) -> float:",
+      "1183: class PairBuilder:",
+      "1530: def run_quality_checks(labeled_pairs: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "archive/train_data/notebooks/stage9_features copy.ipynb",
+    "lines": 1475,
+    "symbols": [
+      "83: def _get_rapidfuzz():",
+      "98: def _safe_str(val) -> str:",
+      "103: def _parse_list_field(val) -> list:",
+      "117: def _parse_mentions(val) -> set:",
+      "123: def _extract_hashtags(bio: str) -> set:",
+      "126: def _jaccard(a: set, b: set) -> float:",
+      "132: def _haversine_km(lat1, lon1, lat2, lon2) -> float:",
+      "145: class PairFeatureComputer:",
+      "342: def _torch():",
+      "349: def _deepface():",
+      "356: def _clip():",
+      "370: def _imagehash():",
+      "377: def _blip():",
+      "393: def _download_image(url: str) -> Optional[\"PIL.Image.Image\"]:",
+      "409: class ImageFeatureExtractor:",
+      "620: def compute_sbert_embeddings(df: pd.DataFrame,",
+      "645: class FeatureEngineer:",
+      "799: def find_data_file(name: str) -> Optional[Path]:",
+      "969: def _safe_str(val) -> str:",
+      "975: def _name_similarity(a: str, b: str) -> float:",
+      "984: class PairBuilder:",
+      "1331: def run_quality_checks(labeled_pairs: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "bigram_username_and_fullname/bigram_full_pipeline.py",
+    "lines": 715,
+    "symbols": [
+      "40: def log_stage(pair_name: str, stage: str, start_ts: float) -> None:",
+      "44: def norm_text(v: object) -> str:",
+      "50: def normalize_location(text: object) -> str:",
+      "70: def to_bigrams(s: str) -> Set[str]:",
+      "79: def jaccard(a: Set[str], b: Set[str]) -> float:",
+      "88: def build_index(gram_sets: Sequence[Set[str]]) -> Dict[str, List[int]]:",
+      "96: def infer_pair_prefixes(df: pd.DataFrame) -> Tuple[str, str]:",
+      "107: def quality_filter(",
+      "124: class ProfileRow:",
+      "139: def _to_float_or_nan(v: object) -> float:",
+      "148: def load_location_lookup(mapping_file: Path) -> Dict[str, Dict[str, object]]:",
+      "172: def resolve_location(raw_location: object, location_lookup: Dict[str, Dict[str, object]]) -> Dict[str, object]:",
+      "200: def make_source_rows(",
+      "237: def make_target_rows(",
+      "267: def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:",
+      "287: def top_k_candidates_by_ub(",
+      "328: def build_features_for_candidates(",
+      "376: def build_balanced_train_set(",
+      "414: def evaluate_top1(",
+      "484: def run_pair_pipeline(",
+      "644: def main() -> None:"
+    ]
+  },
+  {
+    "path": "bio_vector/sbert_mpnet_matching.ipynb",
+    "lines": 668,
+    "symbols": [
+      "68: def safe_str(value) -> str:",
+      "77: def clean_bio(text) -> str:",
+      "94: def normalize_name(name) -> str:",
+      "101: def extract_domain(url) -> str:",
+      "114: def enrich_profile(row) -> str:",
+      "236: def search_similar(query, top_k=10, platform_filter=None):",
+      "284: def name_similarity(name1, name2) -> float:",
+      "293: def username_similarity(user1, user2) -> float:",
+      "304: def location_similarity(loc1, loc2) -> float:",
+      "313: def url_match(url1, url2) -> float:",
+      "324: def compute_match_score(source_row, target_row, bio_sim) -> dict:",
+      "360: def match_cross_platform(",
+      "475: def display_matches(matches_df, title, top_n=10):",
+      "560: def find_same_person(profile_idx_or_bio, top_k=10):"
+    ]
+  },
+  {
+    "path": "bio_vector/vector_embredding.ipynb",
+    "lines": 684,
+    "symbols": [
+      "68: def safe_str(value) -> str:",
+      "77: def clean_bio(text) -> str:",
+      "94: def normalize_name(name) -> str:",
+      "101: def extract_domain(url) -> str:",
+      "117: def enrich_profile(row) -> str:",
+      "241: def search_similar(query, top_k=10, platform_filter=None):",
+      "289: def name_similarity(name1, name2) -> float:",
+      "298: def username_similarity(user1, user2) -> float:",
+      "310: def location_similarity(loc1, loc2) -> float:",
+      "319: def url_match(url1, url2) -> float:",
+      "328: def compute_match_score(source_row, target_row, bio_sim) -> dict:",
+      "368: def match_cross_platform(",
+      "491: def display_matches(matches_df, title, top_n=10):",
+      "578: def find_same_person(profile_idx_or_bio, top_k=10):"
+    ]
+  },
+  {
+    "path": "build_r0_r3_report.py",
+    "lines": 195,
+    "symbols": [
+      "13: def sha256(path: Path) -> str:",
+      "21: def read_json(path: Path) -> dict:",
+      "25: def metric_row(label: str, source: str, metric: dict, variability: dict | None = None) -> dict:",
+      "46: def aggregate_row(label: str, source: str, aggregate: dict) -> dict:",
+      "64: def write_charts(r1_dir: Path, r3_dir: Path, output_dir: Path) -> list[str]:",
+      "97: def model_seed_robustness(run_dirs: list[Path]) -> dict:",
+      "124: def build_report(r1_dir: Path, r3_dir: Path, output_dir: Path,",
+      "182: def main() -> int:"
+    ]
+  },
+  {
+    "path": "clean_data/location_mapping_pipeline.py",
+    "lines": 166,
+    "symbols": [
+      "15: def normalize_location(text: object) -> str:",
+      "35: def similarity(a: str, b: str) -> float:",
+      "48: def prepare_ontology(df: pd.DataFrame) -> pd.DataFrame:",
+      "55: def best_match(raw_norm: str, onto: pd.DataFrame) -> Tuple[Optional[pd.Series], float]:",
+      "70: def run(",
+      "132: def main() -> None:"
+    ]
+  },
+  {
+    "path": "clean_data/preprocess_dataset.py",
+    "lines": 442,
+    "symbols": [
+      "27: def load_all_profiles(base_path: str | Path = DEFAULT_DATASET_ROOT) -> pd.DataFrame:",
+      "75: def remove_emojis(text: str) -> str:",
+      "97: def normalize_text(text: str) -> str:",
+      "118: def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:",
+      "167: def split_by_platform(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:",
+      "189: def create_ground_truth_pairs(",
+      "244: def create_full_matching_dataset(",
+      "327: def run_preprocessing_pipeline("
+    ]
+  },
+  {
+    "path": "data/processed/view_train_dataset.ipynb",
+    "lines": 27,
+    "symbols": []
+  },
+  {
+    "path": "exp_lib.py",
+    "lines": 248,
+    "symbols": [
+      "36: def bucket(key: str) -> str:",
+      "41: def load_profiles():",
+      "48: def _name_sim_arrays(ua, fa, ub, fb):",
+      "67: def _clean_names(series):",
+      "72: def build_cache(force=False):",
+      "107: def split_constants(cache):",
+      "130: def evaluate(decision_code, actual, consts):",
+      "143: def save_json(path, obj):",
+      "147: def entity_keys_by_profile() -> pd.Series:",
+      "156: def _nested_entity_bucket(key: str, seed: int) -> str:",
+      "166: def build_nested_entity_split(cache: pd.DataFrame, seed: int = 42,",
+      "223: def nested_split_constants(cache: pd.DataFrame, seed: int = 42) -> dict:"
+    ]
+  },
+  {
+    "path": "exp_r1_ga_redecision.py",
+    "lines": 198,
+    "symbols": [
+      "22: class CostWeights:",
+      "34: class GAConfig:",
+      "61: def default_weights():",
+      "66: def default_config():",
+      "71: def _config_or_default(config):",
+      "75: def decide_code(prob, nsim, g):",
+      "87: def confusion_counts(d, actual):",
+      "96: def cost_from_counts(counts, weights=None):",
+      "103: def raw_cost(d, actual, weights=None):",
+      "107: def clip(g):",
+      "116: def uniform_crossover(parent_a, parent_b, rng):",
+      "121: def mutate(genome, rng, config=None):",
+      "130: def run_ga(prob, nsim, actual, const_fn_below=0, config=None, verbose=True):",
+      "159: def main():"
+    ]
+  },
+  {
+    "path": "exp_r2_bert_feature.py",
+    "lines": 988,
+    "symbols": [
+      "64: def log(msg: str) -> None:",
+      "71: def set_seed(seed: int) -> None:",
+      "78: def build_profile_texts() -> pd.DataFrame:",
+      "95: def encode_profiles() -> tuple[np.ndarray, np.ndarray]:",
+      "116: def compute_bert_cos(cache: pd.DataFrame, emb: np.ndarray, ids: np.ndarray) -> pd.DataFrame:",
+      "141: def _clean(series: pd.Series) -> np.ndarray:",
+      "146: def compute_features17(cache: pd.DataFrame) -> pd.DataFrame:",
+      "270: class FocalLoss(nn.Module):",
+      "285: class IdentityMLP(nn.Module):",
+      "314: class R2TrainingConfig:",
+      "341: def undersample_negatives(x: np.ndarray, y: np.ndarray, ratio: float, seed: int):",
+      "352: def make_loader(x, y, batch_size, shuffle):",
+      "358: def predict_probs(model, x, batch_size, device):",
+      "368: def train_mlp(train_x, train_y, val_x, val_y, input_dim: int, seed: int = SEED,",
+      "409: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,",
+      "511: def build_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame) -> pd.DataFrame:",
+      "587: def decide_manual(prob: np.ndarray) -> np.ndarray:",
+      "594: def run_r2(cache: pd.DataFrame, consts: dict, prob_df: pd.DataFrame) -> dict:",
+      "613: def run_r3(cache: pd.DataFrame, consts: dict, prob_df: pd.DataFrame) -> tuple[dict, list, np.ndarray]:",
+      "647: def fn_recovery(cache: pd.DataFrame, prob_df: pd.DataFrame, r3_full_code: np.ndarray) -> dict:",
+      "671: def main():",
+      "703: class R2TrainingConfig:",
+      "732: def set_deterministic_seed(seed: int, num_threads: int = 1) -> None:",
+      "753: def environment_snapshot(num_threads: int) -> dict:",
+      "771: def _sha256_file(path: Path) -> str:",
+      "779: def _validate_feature_frame(frame: pd.DataFrame, columns: list[str], label: str,",
+      "791: def _preflight_r2_inputs(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame) -> None:",
+      "807: def train_mlp(train_x, train_y, val_x, val_y, input_dim: int, seed: int = SEED,",
+      "867: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "exp_r4_bloom_privacy.py",
+    "lines": 316,
+    "symbols": [
+      "68: def log(msg: str) -> None:",
+      "75: def bigrams(s: str) -> list[str]:",
+      "80: def bloom_packed(s: str, L: int, k: int, salt: str) -> tuple[np.ndarray, int]:",
+      "92: def build_profile_bloom(L: int) -> dict:",
+      "135: def dice_chunked(packed_a, packed_b, pop_a, pop_b, chunk=200_000):",
+      "146: def compute_pair_bloom_features(L: int, cache: pd.DataFrame) -> pd.DataFrame:",
+      "180: def build_probabilities_for_L(L: int, cache: pd.DataFrame, feat17: pd.DataFrame) -> pd.DataFrame:",
+      "241: def eval_manual(cache, consts, prob_df) -> dict:",
+      "252: def eval_ga(cache, consts, prob_df) -> tuple[dict, dict]:",
+      "269: def main():"
+    ]
+  },
+  {
+    "path": "exp_r6_bert_er.py",
+    "lines": 599,
+    "symbols": [
+      "103: def log(msg: str) -> None:",
+      "110: def set_seed(seed: int) -> None:",
+      "117: def clean_field(x) -> str:",
+      "122: def build_profile_texts() -> pd.DataFrame:",
+      "140: def tokenize_all_profiles(tokenizer) -> dict:",
+      "153: class BertERModel(nn.Module):",
+      "187: def cosine_contrastive_loss(z_a: torch.Tensor, z_b: torch.Tensor, labels: torch.Tensor,",
+      "196: def quantization_reg(z: torch.Tensor) -> torch.Tensor:",
+      "202: def encode_all_profiles(model: BertERModel, tok: dict, device) -> tuple[np.ndarray, np.ndarray]:",
+      "230: def build_training_pairs(cache: pd.DataFrame) -> pd.DataFrame:",
+      "288: def pairs_to_row_indices(pairs: pd.DataFrame, id_to_row: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:",
+      "296: def eval_ap(model, embs: torch.Tensor, a_idx, b_idx, labels) -> float:",
+      "304: def train_heads(model: BertERModel, embs: torch.Tensor, id_to_row: dict,",
+      "383: def compute_hash_codes(model: BertERModel, embs: torch.Tensor) -> np.ndarray:",
+      "393: def build_buckets(codes: np.ndarray, ids: np.ndarray) -> dict:",
+      "400: def neighbor_codes(code: int, radius: int = 1):",
+      "407: def blocking_recovery_eval(id_to_code: dict, radius: int) -> dict:",
+      "424: def enumerate_bucket_pairs(buckets: dict, max_bucket_size: int = 2000) -> pd.DataFrame:",
+      "447: def score_pairs_with_match_head(model: BertERModel, embs: torch.Tensor, id_to_row: dict,",
+      "472: def main():"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/00_shared_protocol/00_shared_protocol.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/build_walkthrough_notebooks.py",
+    "lines": 171,
+    "symbols": [
+      "20: def find_root():",
+      "30: def source(module, *names):",
+      "35: def read_json(relative):",
+      "42: def md(text: str) -> tuple[str, str]:",
+      "46: def code(text: str) -> tuple[str, str]:",
+      "159: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/gb_transformer_ga/GB_transformer_GA.ipynb",
+    "lines": 43,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r0_baseline/R0_baseline.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r1_ga_redecision/R1_ga_redecision.ipynb",
+    "lines": 40,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r2_minilm_feature/R2_minilm_feature.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r3_minilm_ga/R3_minilm_ga.ipynb",
+    "lines": 36,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r4_bloom_manual/R4_bloom_manual.ipynb",
+    "lines": 34,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r5_bloom_ga/R5_bloom_ga.ipynb",
+    "lines": 36,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r6_bert_er/R6_bert_er.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "image_process/ArcFace.ipynb",
+    "lines": 420,
+    "symbols": [
+      "47: class ImageProfile:",
+      "57: def log_stage(stage: str, start_ts: float) -> None:",
+      "63: def load_and_normalize(npy_path: Path) -> Optional[np.ndarray]:",
+      "73: def fuse_embeddings(clip_emb, face_emb):",
+      "87: def discover_profiles() -> List[ImageProfile]:",
+      "139: def cosine_similarity(a, b):",
+      "145: def l2_distance(a, b):",
+      "152: def compute_pairwise_similarity(profiles):",
+      "176: def build_pairwise_results(profiles, sim_matrix, top_k):",
+      "218: def select_candidates_from_matrix(sim_matrix, src_idx, k):",
+      "227: def build_features_for_candidates(src, candidate_indices, all_profiles):",
+      "247: def build_balanced_train_set(profiles, sim_matrix, train_indices, k, rng):",
+      "306: def evaluate_top1(model, model_name, profiles, sim_matrix, test_indices, k):",
+      "383: def predict_similarity(profile_a_id, profile_b_id, platform_a='twitter', platform_b='twitter', model=None):"
+    ]
+  },
+  {
+    "path": "image_process/create_normalized_db.py",
+    "lines": 241,
+    "symbols": [
+      "43: def create_normalized_tables():"
+    ]
+  },
+  {
+    "path": "image_process/image_caption.py",
+    "lines": 606,
+    "symbols": [
+      "81: def setup_directories():",
+      "93: class CaptionDatabase:",
+      "243: class BLIPCaptioner:",
+      "337: class MultilingualTextEmbedder:",
+      "423: def run_caption_pipeline(",
+      "539: def search_similar_captions(query_text: str, top_k: int = 10) -> List[Tuple[str, float]]:"
+    ]
+  },
+  {
+    "path": "image_process/image_embeddings.py",
+    "lines": 567,
+    "symbols": [
+      "62: def get_image_filename(url: str, profile_id: str, platform: str) -> str:",
+      "68: def is_valid_url(url: str) -> bool:",
+      "78: def download_image(url: str, save_path: str, timeout: int = TIMEOUT) -> Tuple[bool, str]:",
+      "123: def download_all_images(",
+      "212: class CLIPEmbedder:",
+      "344: def extract_and_save_embeddings(",
+      "405: def process_existing_images(",
+      "487: def run_image_embedding_pipeline("
+    ]
+  },
+  {
+    "path": "image_process/image_features.py",
+    "lines": 600,
+    "symbols": [
+      "100: def setup_directories():",
+      "110: def extract_metadata(image_path: Path) -> Dict:",
+      "133: def calculate_blur_score(image_path: Path) -> Tuple[float, bool]:",
+      "159: def calculate_phash(image_path: Path) -> str:",
+      "174: class FaceDetector:",
+      "238: def load_existing_embedding(item_id: str, emb_type: str = 'clip') -> Optional[np.ndarray]:",
+      "254: class CLIPZeroShot:",
+      "334: def cluster_faces(embeddings: np.ndarray, item_ids: List[str],",
+      "367: def detect_duplicates(phashes: Dict[str, str], threshold: int = 5) -> Dict[str, Tuple[int, bool]]:",
+      "436: def run_feature_extraction("
+    ]
+  },
+  {
+    "path": "image_process/image_matching_pipeline.py",
+    "lines": 848,
+    "symbols": [
+      "58: def log_stage(stage: str, start_ts: float) -> None:",
+      "69: class ImageProfile:",
+      "84: def load_and_normalize(npy_path: Path) -> Optional[np.ndarray]:",
+      "95: def fuse_embeddings(",
+      "113: def discover_profiles() -> List[ImageProfile]:",
+      "172: def cosine_similarity(a: Optional[np.ndarray], b: Optional[np.ndarray]) -> float:",
+      "179: def l2_distance(a: Optional[np.ndarray], b: Optional[np.ndarray]) -> float:",
+      "191: def compute_pairwise_similarity(",
+      "217: def build_pairwise_results(",
+      "264: def select_candidates_from_matrix(",
+      "287: def build_features_for_pair(",
+      "314: def build_features_for_candidates(",
+      "341: def build_balanced_train_set(",
+      "387: def evaluate_top1(",
+      "455: def predict_similarity(",
+      "520: def run_pipeline(",
+      "771: def main() -> None:"
+    ]
+  },
+  {
+    "path": "image_process/merge_image_data.py",
+    "lines": 234,
+    "symbols": [
+      "39: def load_captions():",
+      "59: def create_merged_database():"
+    ]
+  },
+  {
+    "path": "image_process/profile_image_pair_features.py",
+    "lines": 493,
+    "symbols": [
+      "80: def _get_torch():",
+      "89: def _get_deepface():",
+      "98: def _get_clip():",
+      "115: def _get_imagehash():",
+      "124: def get_url_hash(url: str) -> str:",
+      "128: def build_image_hash_index(image_dir: Path) -> dict[str, Path]:",
+      "140: def resolve_local_image_path(picture_url: str, image_hash_index: dict[str, Path]) -> Path | None:",
+      "147: def normalize_bio_text(text: str) -> str:",
+      "151: def bio_mentions_selfie(text: str) -> float:",
+      "159: def clip_bio_consistency(category: str | None, bio: str) -> float:",
+      "169: class ImageFeatureExtractor:",
+      "363: def _import_pandas():",
+      "369: def load_profiles_df(csv_path: Path):",
+      "374: def load_pairs_df(csv_path: Path):",
+      "379: def precompute_all_profiles(",
+      "416: def add_image_features_to_pairs(pairs_df, image_cache: dict[Any, dict[str, Any]], extractor: ImageFeatureExtractor | None = None):",
+      "435: def run_precompute(args: argparse.Namespace) -> None:",
+      "452: def run_pair_features(args: argparse.Namespace) -> None:",
+      "463: def build_parser() -> argparse.ArgumentParser:",
+      "486: def main() -> None:"
+    ]
+  },
+  {
+    "path": "image_process/pull-picture.ipynb",
+    "lines": 246,
+    "symbols": [
+      "37: def get_filename(url: str, username: str, idx: int) -> str:",
+      "127: def load_csv(csv_path: str) -> list:",
+      "145: def save_report(results: list, elapsed: float, output_dir: Path):"
+    ]
+  },
+  {
+    "path": "image_process/recover_profile_images.py",
+    "lines": 687,
+    "symbols": [
+      "51: class DownloadItem:",
+      "61: def parse_args() -> argparse.Namespace:",
+      "88: def get_url_hash(url: str) -> str:",
+      "92: def get_filename(url: str, username: str, idx: int) -> str:",
+      "102: def normalize_username(username: str, platform: str) -> str:",
+      "109: def load_previous_failures(report_path: Path) -> dict[str, str]:",
+      "126: def load_items(",
+      "165: def build_existing_file_set(output_dir: Path) -> tuple[set[str], set[str]]:",
+      "180: def dedupe_keep_order(values: list[str]) -> list[str]:",
+      "190: def build_twitter_candidates(url: str) -> list[str]:",
+      "224: def build_instagram_candidates(url: str) -> list[str]:",
+      "240: def build_generic_candidates(url: str) -> list[str]:",
+      "570: def save_outputs(",
+      "638: def print_summary(results: list[dict[str, Any]], elapsed_sec: float, output_dir: Path) -> None:",
+      "681: def main() -> int:"
+    ]
+  },
+  {
+    "path": "pub_multi/bench_classical_leaksafe.py",
+    "lines": 244,
+    "symbols": [
+      "35: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "42: def setup_theme() -> None:",
+      "50: def load_inputs() -> tuple[pd.DataFrame, list[str], dict]:",
+      "58: def fit_models(pair_features: pd.DataFrame, feature_cols: list[str]) -> pd.DataFrame:",
+      "132: def validate_against_report(result: pd.DataFrame, report: dict) -> None:",
+      "150: def save_outputs(result: pd.DataFrame) -> None:",
+      "163: def make_metric_figure(result: pd.DataFrame) -> None:",
+      "208: def make_cm_figure(result: pd.DataFrame) -> None:",
+      "232: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/bench_models.py",
+    "lines": 453,
+    "symbols": [
+      "86: def ensure_dirs() -> None:",
+      "91: def load_dataset() -> tuple[pd.DataFrame, list[str]]:",
+      "98: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "105: def expected_calibration_error(labels: np.ndarray, probs: np.ndarray, bins: int = 10) -> float:",
+      "121: def get_models(seed: int) -> dict[str, tuple[object, bool]]:",
+      "192: def fit_and_score(",
+      "269: def add_narrative(df: pd.DataFrame) -> pd.DataFrame:",
+      "302: def save_plot(df: pd.DataFrame) -> None:",
+      "334: def save_confusion_grid(df: pd.DataFrame) -> None:",
+      "361: def save_markdown(df: pd.DataFrame) -> None:",
+      "417: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/bench_strict_models.py",
+    "lines": 373,
+    "symbols": [
+      "50: def ensure_dirs() -> None:",
+      "55: def set_seed(seed: int) -> None:",
+      "60: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "67: def expected_calibration_error(labels: np.ndarray, probs: np.ndarray, bins: int = 10) -> float:",
+      "80: def load_feature_cols() -> list[str]:",
+      "92: def iter_batches(path: Path, columns: list[str], batch_size: int = 250_000):",
+      "98: def build_balanced_train(path: Path, columns: list[str], neg_ratio: float, seed: int) -> pd.DataFrame:",
+      "135: def collect_predictions(",
+      "157: def get_models(seed: int) -> dict[str, tuple[object, bool]]:",
+      "197: def fit_and_eval(model_name: str, model: object, use_scaler: bool, train_df: pd.DataFrame, feature_cols: list[str]) -> dict[str, object]:",
+      "244: def load_existing_mlp() -> dict[str, object]:",
+      "271: def save_plot(df: pd.DataFrame) -> None:",
+      "298: def save_confusion_grid(df: pd.DataFrame) -> None:",
+      "319: def save_markdown(df: pd.DataFrame) -> None:",
+      "341: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/build_ch04_docx.py",
+    "lines": 367,
+    "symbols": [
+      "30: def parse_args() -> argparse.Namespace:",
+      "37: def resolve_writable_output(path: Path) -> Path:",
+      "59: def set_font(run_or_style, name: str, size_pt: float | None = None, bold: bool | None = None) -> None:",
+      "75: def configure_document(doc: Document) -> None:",
+      "115: def add_page_number_header(section) -> None:",
+      "126: def add_inline_runs(paragraph, text: str) -> None:",
+      "147: def is_alignment_row(row: list[str]) -> bool:",
+      "151: def parse_table(lines: list[str]) -> list[list[str]]:",
+      "162: def add_table(doc: Document, rows: list[list[str]]) -> None:",
+      "185: def add_heading(doc: Document, text: str, level: int) -> None:",
+      "208: def add_paragraph(doc: Document, text: str, style: str | None = None, alignment: WD_ALIGN_PARAGRAPH | None = None) -> None:",
+      "218: def add_table_title(doc: Document, text: str) -> None:",
+      "233: def add_figure(doc: Document, image_path: Path, caption: str) -> None:",
+      "258: def consume_paragraph(lines: list[str], start: int) -> tuple[str, int]:",
+      "281: def build_doc(input_path: Path, output_path: Path) -> Path:",
+      "360: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/build_ch05_docx.py",
+    "lines": 367,
+    "symbols": [
+      "30: def parse_args() -> argparse.Namespace:",
+      "37: def resolve_writable_output(path: Path) -> Path:",
+      "59: def set_font(run_or_style, name: str, size_pt: float | None = None, bold: bool | None = None) -> None:",
+      "75: def configure_document(doc: Document) -> None:",
+      "115: def add_page_number_header(section) -> None:",
+      "126: def add_inline_runs(paragraph, text: str) -> None:",
+      "147: def is_alignment_row(row: list[str]) -> bool:",
+      "151: def parse_table(lines: list[str]) -> list[list[str]]:",
+      "162: def add_table(doc: Document, rows: list[list[str]]) -> None:",
+      "185: def add_heading(doc: Document, text: str, level: int) -> None:",
+      "208: def add_paragraph(doc: Document, text: str, style: str | None = None, alignment: WD_ALIGN_PARAGRAPH | None = None) -> None:",
+      "218: def add_table_title(doc: Document, text: str) -> None:",
+      "233: def add_figure(doc: Document, image_path: Path, caption: str) -> None:",
+      "258: def consume_paragraph(lines: list[str], start: int) -> tuple[str, int]:",
+      "281: def build_doc(input_path: Path, output_path: Path) -> Path:",
+      "360: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/build_pkg.py",
+    "lines": 908,
+    "symbols": [
+      "107: def ensure_dirs() -> None:",
+      "112: def read_json(path: Path) -> dict:",
+      "116: def write_json(path: Path, payload: dict) -> None:",
+      "120: def save_csv(df: pd.DataFrame, path: Path) -> None:",
+      "124: def copy_assets() -> list[dict[str, str]]:",
+      "141: def load_profiles() -> pd.DataFrame:",
+      "159: def build_train_all(main_report: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "217: def threshold_sweep(scores: pd.DataFrame) -> pd.DataFrame:",
+      "237: def build_results(main_report: dict, full_report: dict, crm_report: dict) -> dict[str, pd.DataFrame]:",
+      "378: def save_feature_importance() -> pd.DataFrame:",
+      "395: def plot_style() -> None:",
+      "402: def save_fig(fig_name: str) -> Path:",
+      "410: def make_figures(",
+      "544: def write_docs(main_report: dict, full_report: dict, crm_report: dict) -> list[str]:",
+      "864: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/make_ch04_figure_set.py",
+    "lines": 356,
+    "symbols": [
+      "31: def read_json(path: Path) -> dict:",
+      "35: def setup_theme() -> None:",
+      "43: def save(fig: plt.Figure, name: str) -> None:",
+      "49: def make_experiment_roadmap(r1: dict, r2: dict, r3: dict, r4: dict, tune: pd.DataFrame, r6: dict, r7: dict, crm: dict) -> None:",
+      "89: def make_data_prep_summary(full_pipeline: dict, r4: dict, r6: dict, suite: pd.DataFrame) -> None:",
+      "151: def make_split_design(r4: dict, r7: dict) -> None:",
+      "191: def make_leakage_diagnosis(r1: dict, r2: dict, r3: dict) -> None:",
+      "219: def make_cm_rebuilt(r4: dict) -> None:",
+      "230: def make_sbert_gain(tune: pd.DataFrame, r6: dict) -> None:",
+      "292: def make_crm_outcomes(crm: dict) -> None:",
+      "332: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/refresh_clean_ch04_figures.py",
+    "lines": 324,
+    "symbols": [
+      "19: def setup_theme() -> None:",
+      "27: def save(fig: plt.Figure, name: str) -> None:",
+      "33: def metric_label(col: str) -> str:",
+      "43: def model_label(name: str) -> str:",
+      "59: def feature_label(name: str) -> str:",
+      "80: def annotated_heatmap(df: pd.DataFrame, title: str, file_name: str, vmin: float, vmax: float) -> None:",
+      "104: def draw_cm(ax, cm: np.ndarray, title: str) -> None:",
+      "126: def save_single_cm(cm: np.ndarray, title: str, file_name: str) -> None:",
+      "132: def make_classical_figures() -> None:",
+      "179: def make_suite_figure() -> None:",
+      "204: def make_model_family_figure() -> None:",
+      "217: def make_model_strict_figures() -> None:",
+      "264: def make_feature_importance_figure() -> None:",
+      "278: def make_modality_figure() -> None:",
+      "300: def make_main_cm_figure() -> None:",
+      "311: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/refresh_threshold_ch04_figures.py",
+    "lines": 905,
+    "symbols": [
+      "58: def read_json(path: Path) -> dict:",
+      "62: def setup_theme() -> None:",
+      "73: def save(fig: plt.Figure, filename: str) -> None:",
+      "79: def add_box(ax, x: float, y: float, w: float, h: float, title: str, lines: list[str], facecolor: str) -> None:",
+      "95: def arrow(ax, x1: float, y1: float, x2: float, y2: float) -> None:",
+      "99: def feature_group(name: str) -> str:",
+      "121: def make_threshold_flow(full_report: dict, crm_report: dict) -> None:",
+      "201: def make_model_pipeline(experiment_report: dict) -> None:",
+      "287: def make_threshold_dashboard(full_report: dict, crm_report: dict) -> None:",
+      "348: def make_production_decision_matrix(full_report: dict) -> None:",
+      "403: def make_error_analysis_summary() -> None:",
+      "465: def make_feature_importance_all(features: pd.DataFrame) -> None:",
+      "500: def make_feature_family_importance(features: pd.DataFrame) -> None:",
+      "522: def make_metric_heatmap(suite_df: pd.DataFrame) -> None:",
+      "556: def make_model_family_heatmap(model_df: pd.DataFrame) -> None:",
+      "595: def make_main_confusion_matrix(experiment_report: dict) -> None:",
+      "633: def make_suite_confusion_grid() -> None:",
+      "685: def make_calibration_curve() -> None:",
+      "739: def make_retrieval_funnel(full_report: dict) -> None:",
+      "760: def make_threshold_tradeoff() -> None:",
+      "789: def make_score_distribution() -> None:",
+      "805: def make_image_coverage(experiment_report: dict) -> None:",
+      "842: def make_ranking_quality(full_report: dict) -> None:",
+      "874: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s01_prep.py",
+    "lines": 448,
+    "symbols": [
+      "27: def load_all_profiles(base_path: str | Path = DEFAULT_DATASET_ROOT) -> pd.DataFrame:",
+      "75: def remove_emojis(text: str) -> str:",
+      "97: def normalize_text(text: str) -> str:",
+      "118: def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:",
+      "167: def split_by_platform(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:",
+      "189: def create_ground_truth_pairs(",
+      "244: def create_full_matching_dataset(",
+      "327: def run_preprocessing_pipeline("
+    ]
+  },
+  {
+    "path": "pub_multi/src/s02_loc.py",
+    "lines": 166,
+    "symbols": [
+      "15: def normalize_location(text: object) -> str:",
+      "35: def similarity(a: str, b: str) -> float:",
+      "48: def prepare_ontology(df: pd.DataFrame) -> pd.DataFrame:",
+      "55: def best_match(raw_norm: str, onto: pd.DataFrame) -> Tuple[Optional[pd.Series], float]:",
+      "70: def run(",
+      "132: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s03_norm.py",
+    "lines": 241,
+    "symbols": [
+      "43: def create_normalized_tables():"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s04_img.py",
+    "lines": 687,
+    "symbols": [
+      "51: class DownloadItem:",
+      "61: def parse_args() -> argparse.Namespace:",
+      "88: def get_url_hash(url: str) -> str:",
+      "92: def get_filename(url: str, username: str, idx: int) -> str:",
+      "102: def normalize_username(username: str, platform: str) -> str:",
+      "109: def load_previous_failures(report_path: Path) -> dict[str, str]:",
+      "126: def load_items(",
+      "165: def build_existing_file_set(output_dir: Path) -> tuple[set[str], set[str]]:",
+      "180: def dedupe_keep_order(values: list[str]) -> list[str]:",
+      "190: def build_twitter_candidates(url: str) -> list[str]:",
+      "224: def build_instagram_candidates(url: str) -> list[str]:",
+      "240: def build_generic_candidates(url: str) -> list[str]:",
+      "570: def save_outputs(",
+      "638: def print_summary(results: list[dict[str, Any]], elapsed_sec: float, output_dir: Path) -> None:",
+      "681: def main() -> int:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s05_pair.py",
+    "lines": 544,
+    "symbols": [
+      "62: def _safe_str(val) -> str:",
+      "68: def _name_similarity(a: str, b: str) -> float:",
+      "77: class PairBuilder:",
+      "394: def run_quality_checks(labeled_pairs: pd.DataFrame, df_profiles: pd.DataFrame) -> dict:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s06_feat.py",
+    "lines": 837,
+    "symbols": [
+      "67: def _load_profile_image_module():",
+      "84: def _get_rapidfuzz():",
+      "96: def _safe_str(val) -> str:",
+      "102: def _safe_str_lower(val) -> str:",
+      "106: def _parse_list_field(val) -> list[str]:",
+      "121: def _parse_mentions(val) -> set[str]:",
+      "128: def _extract_hashtags(bio: str) -> set[str]:",
+      "134: def _jaccard(a: set, b: set) -> float:",
+      "141: def _haversine_km(lat1, lon1, lat2, lon2) -> float:",
+      "151: def _normalize_picture_url(url: str) -> str:",
+      "155: def _picture_stem(url: str) -> str:",
+      "161: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "173: def _write_parquet_compat(df: pd.DataFrame, path: Path) -> None:",
+      "187: def ensure_output_dirs() -> None:",
+      "192: def _find_resume_offset(split_name: str, output_prefix: str) -> int:",
+      "205: def save_split_artifacts(",
+      "221: def load_split_artifacts() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "236: def build_profile_lookup(split_df: pd.DataFrame) -> dict[str, dict]:",
+      "245: def save_profile_cache(split_name: str, split_df: pd.DataFrame) -> None:",
+      "251: def load_profile_cache(split_name: str) -> dict[str, dict]:",
+      "259: def merge_feature_chunks(split_name: str, output_prefix: str) -> Path:",
+      "282: def _build_row_cache(row: dict, source_idx: int) -> dict:",
+      "314: class PairFeatureComputer:",
+      "477: def compute_sbert_embeddings(df: pd.DataFrame, model_name: str = \"all-mpnet-base-v2\", batch_size: int = 64) -> np.ndarray:",
+      "497: class FeatureEngineer:",
+      "633: def build_entity_split(df: pd.DataFrame, pairs: pd.DataFrame, random_seed: int = 42):",
+      "661: def build_or_load_image_cache(df: pd.DataFrame, force: bool = False) -> dict:",
+      "673: def parse_args():",
+      "691: def main():"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s07_base.py",
+    "lines": 759,
+    "symbols": [
+      "52: def ensure_dirs() -> None:",
+      "57: def set_seed(seed: int) -> None:",
+      "62: def normalize_username(value: object) -> str:",
+      "66: def clean_text(value: object) -> str:",
+      "72: def lower_text(value: object) -> str:",
+      "76: def parse_list_field(value: object) -> list[str]:",
+      "89: def parse_urls(value: object) -> set[str]:",
+      "98: def extract_domains(urls: set[str]) -> set[str]:",
+      "108: def parse_mentions(value: object) -> set[str]:",
+      "115: def extract_hashtags(text: str) -> set[str]:",
+      "119: def jaccard(a: set[str], b: set[str]) -> float:",
+      "128: def biolen_ratio(a: str, b: str) -> float:",
+      "137: def punct_ratio(text: str) -> float:",
+      "144: def avg_word_len(text: str) -> float:",
+      "151: class UnionFind:",
+      "179: class ExperimentData:",
+      "186: def load_profiles() -> pd.DataFrame:",
+      "205: def build_positive_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "236: def assign_components(positive_pairs: pd.DataFrame) -> dict[str, str]:",
+      "246: def assign_splits_by_component(positive_pairs: pd.DataFrame, components: dict[str, str], seed: int) -> tuple[dict[str, str], dict[str, object]]:",
+      "291: def make_profile_lookup(profiles: pd.DataFrame, keep_ids: set[str]) -> dict[str, object]:",
+      "304: def generate_random_negatives(",
+      "349: def generate_hard_negatives(",
+      "408: def build_pairs(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, dict[str, object]]:",
+      "485: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "544: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "551: def train_and_evaluate(data: ExperimentData, seed: int) -> dict[str, object]:",
+      "655: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "681: def build_experiment_data(args: argparse.Namespace) -> ExperimentData:",
+      "722: def parse_args() -> argparse.Namespace:",
+      "730: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s08_multi.py",
+    "lines": 482,
+    "symbols": [
+      "33: def ensure_dirs() -> None:",
+      "38: def load_base_module(module_name: str):",
+      "47: def configure_base_module(base, run_dir: Path) -> None:",
+      "58: def clean_text(value: object) -> str:",
+      "64: def lower_text(value: object) -> str:",
+      "68: def image_entropy(gray: np.ndarray) -> float:",
+      "74: def compute_local_image_descriptor(image_path: Path) -> dict[str, object]:",
+      "102: def scan_local_image_map() -> dict[int, Path]:",
+      "117: def build_image_profile_features(base, profiles: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:",
+      "215: def hash_similarity(hash_a: str, hash_b: str) -> float:",
+      "222: def make_multimodal_wrappers(base, experiment_kind: str, image_df: pd.DataFrame, caption_embeddings: np.ndarray):",
+      "315: def summarize_modalities(profiles: pd.DataFrame, image_df: pd.DataFrame, feature_df: pd.DataFrame) -> dict[str, object]:",
+      "346: def composite_score(metrics: dict[str, object]) -> float:",
+      "354: def run_experiment(run_name: str, experiment_kind: str, args: argparse.Namespace) -> dict[str, object]:",
+      "404: def parse_args() -> argparse.Namespace:",
+      "418: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s09_full.py",
+    "lines": 521,
+    "symbols": [
+      "38: def ensure_dirs() -> None:",
+      "43: def load_module(module_name: str, module_path: Path):",
+      "52: def clean_text(value: object) -> str:",
+      "58: def lower_text(value: object) -> str:",
+      "62: def prefix3(value: object) -> str:",
+      "69: def pair_key(a: int, b: int) -> int:",
+      "74: def unpack_pair_key(key: int) -> tuple[int, int]:",
+      "78: def load_profiles() -> pd.DataFrame:",
+      "99: def count_cross_platform_all_pairs(df: pd.DataFrame) -> int:",
+      "109: def build_ground_truth_set(base_module, profiles: pd.DataFrame) -> tuple[set[int], pd.DataFrame]:",
+      "118: def build_exact_match_pairs(df: pd.DataFrame) -> tuple[set[int], dict[str, int]]:",
+      "153: def build_candidate_pairs(df: pd.DataFrame, exact_keys: set[int]) -> tuple[set[int], dict[str, int]]:",
+      "182: def export_pair_keys(keys: set[int], output_path: Path, pair_type: str, chunk_size: int = 500_000) -> int:",
+      "202: def load_best_model_artifacts():",
+      "216: def load_scored_candidates() -> pd.DataFrame:",
+      "223: def build_scoring_engine():",
+      "239: def score_candidates_chunked(",
+      "329: def parse_args() -> argparse.Namespace:",
+      "338: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s10_crm.py",
+    "lines": 497,
+    "symbols": [
+      "30: def ensure_dirs() -> None:",
+      "35: def load_module(module_name: str, module_path: Path):",
+      "44: def clean_text(value: object) -> str:",
+      "50: def lower_text(value: object) -> str:",
+      "54: def json_text(value: object) -> str:",
+      "58: def load_profiles() -> pd.DataFrame:",
+      "76: def build_feature_engine():",
+      "97: def load_exact_and_scores() -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "117: def build_match_decisions(scored_df: pd.DataFrame, match_threshold: float, review_threshold: float) -> pd.DataFrame:",
+      "144: def heuristic_support_score(feature_name: str, value: float) -> float:",
+      "160: def build_review_queue(",
+      "251: class UnionFind:",
+      "274: def choose_canonical_name(names: list[str]) -> str:",
+      "282: def build_unified_tables(match_decisions: pd.DataFrame, profiles: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "373: def build_lead_scores(unified_profiles: pd.DataFrame, profile_mapping: pd.DataFrame, profiles: pd.DataFrame) -> pd.DataFrame:",
+      "406: def parse_args() -> argparse.Namespace:",
+      "414: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s11_train.py",
+    "lines": 455,
+    "symbols": [
+      "36: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "47: def ensure_dirs(training_root: Path) -> tuple[Path, Path]:",
+      "55: def set_seed(seed: int) -> None:",
+      "63: def load_feature_frame(split_name: str, prefix: str, features_dir: Path) -> pd.DataFrame:",
+      "77: def load_feature_cols(prefix: str, artifacts_dir: Path, train_df: pd.DataFrame | None = None, features_dir: Path | None = None) -> list[str]:",
+      "106: def undersample_negatives(train_df: pd.DataFrame, target_ratio: float, seed: int) -> pd.DataFrame:",
+      "116: def parse_excluded_features(args: argparse.Namespace) -> set[str]:",
+      "128: class DataBundle:",
+      "144: def build_data_bundle(",
+      "185: class FocalLoss(nn.Module):",
+      "201: class IdentityMLP(nn.Module):",
+      "217: def make_loader(x: np.ndarray, y: np.ndarray, batch_size: int, shuffle: bool) -> DataLoader:",
+      "223: def predict_probs(model: nn.Module, x: np.ndarray, batch_size: int, device: torch.device) -> np.ndarray:",
+      "234: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "241: def expected_calibration_error(probs: np.ndarray, labels: np.ndarray, n_bins: int = 10) -> float:",
+      "254: def train_model(bundle: DataBundle, args: argparse.Namespace) -> tuple[IdentityMLP, dict]:",
+      "312: def evaluate_and_save(",
+      "403: def parse_args() -> argparse.Namespace:",
+      "425: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/s12_imgpair.py",
+    "lines": 493,
+    "symbols": [
+      "80: def _get_torch():",
+      "89: def _get_deepface():",
+      "98: def _get_clip():",
+      "115: def _get_imagehash():",
+      "124: def get_url_hash(url: str) -> str:",
+      "128: def build_image_hash_index(image_dir: Path) -> dict[str, Path]:",
+      "140: def resolve_local_image_path(picture_url: str, image_hash_index: dict[str, Path]) -> Path | None:",
+      "147: def normalize_bio_text(text: str) -> str:",
+      "151: def bio_mentions_selfie(text: str) -> float:",
+      "159: def clip_bio_consistency(category: str | None, bio: str) -> float:",
+      "169: class ImageFeatureExtractor:",
+      "363: def _import_pandas():",
+      "369: def load_profiles_df(csv_path: Path):",
+      "374: def load_pairs_df(csv_path: Path):",
+      "379: def precompute_all_profiles(",
+      "416: def add_image_features_to_pairs(pairs_df, image_cache: dict[Any, dict[str, Any]], extractor: ImageFeatureExtractor | None = None):",
+      "435: def run_precompute(args: argparse.Namespace) -> None:",
+      "452: def run_pair_features(args: argparse.Namespace) -> None:",
+      "463: def build_parser() -> argparse.ArgumentParser:",
+      "486: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/strict_calibration_compare.py",
+    "lines": 243,
+    "symbols": [
+      "30: def fit_sigmoid(raw_scores: np.ndarray, labels: np.ndarray) -> LogisticRegression:",
+      "36: def predict_sigmoid(model: LogisticRegression, raw_scores: np.ndarray) -> np.ndarray:",
+      "40: def threshold_table(labels: np.ndarray, probs: np.ndarray) -> pd.DataFrame:",
+      "61: def evaluate(labels: np.ndarray, probs: np.ndarray, threshold: float) -> dict[str, object]:",
+      "80: def summarize_model(",
+      "115: def fit_base_model(model: object, use_scaler: bool, train_df: pd.DataFrame, feature_cols: list[str]):",
+      "127: def save_plot(df: pd.DataFrame) -> None:",
+      "158: def save_markdown(df: pd.DataFrame) -> None:",
+      "192: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/strict_threshold_diag.py",
+    "lines": 180,
+    "symbols": [
+      "25: def threshold_table(labels: np.ndarray, probs: np.ndarray) -> pd.DataFrame:",
+      "46: def fit_model_diag(model_name: str, model: object, use_scaler: bool, train_df: pd.DataFrame, feature_cols: list[str]) -> tuple[dict[str, object], pd.DataFrame]:",
+      "105: def save_markdown(diag_df: pd.DataFrame) -> None:",
+      "136: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/tune_top_models.py",
+    "lines": 258,
+    "symbols": [
+      "34: def ensure_dirs() -> None:",
+      "39: def load_dataset() -> tuple[pd.DataFrame, list[str]]:",
+      "46: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "53: def get_configs(seed: int) -> list[dict[str, object]]:",
+      "127: def evaluate_config(",
+      "177: def save_plot(df: pd.DataFrame) -> None:",
+      "205: def save_markdown(df: pd.DataFrame) -> None:",
+      "229: def main() -> None:"
+    ]
+  },
+  {
+    "path": "run_ga_experiments.py",
+    "lines": 937,
+    "symbols": [
+      "40: class ExperimentData:",
+      "52: def _file_sha256(path: Path) -> str:",
+      "60: def _artifact_manifest(path: Path) -> dict:",
+      "69: def _require_columns(frame: pd.DataFrame, columns: Iterable[str], label: str) -> None:",
+      "75: def _r1_baseline(sub: pd.DataFrame) -> np.ndarray:",
+      "82: def _r2_baseline(sub: pd.DataFrame) -> np.ndarray:",
+      "90: def make_r1_data(cache: pd.DataFrame, input_manifest: Optional[dict] = None) -> ExperimentData:",
+      "104: def make_r3_data(cache: pd.DataFrame, probability_path: Path,",
+      "131: def train_fresh_r2_for_run(cache: pd.DataFrame, output_dir: Path, model_seed: int,",
+      "168: def _validate_experiment_data(data: ExperimentData, consts: dict) -> None:",
+      "178: def _metric_with_cost(code: np.ndarray, actual: np.ndarray, consts: dict,",
+      "185: def _to_json_value(value):",
+      "195: def _write_json(path: Path, value: dict) -> None:",
+      "199: def _write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:",
+      "206: def _make_config(seed: int, settings: dict, weights: ga.CostWeights) -> ga.GAConfig:",
+      "223: def _scenario_specs(experiment: str, override_weights: Optional[ga.CostWeights]) -> list[tuple[str, ga.CostWeights]]:",
+      "236: def _percent_change(baseline: float, candidate: float):",
+      "242: def _format_pct(value) -> str:",
+      "246: def _full_validation_cost(data: ExperimentData, consts: dict, genome: np.ndarray,",
+      "253: def _run_trial(data: ExperimentData, consts: dict, scenario: str, config: ga.GAConfig) -> tuple[dict, list[dict]]:",
+      "323: def _baseline_metrics(data: ExperimentData, consts: dict, weights: ga.CostWeights) -> dict:",
+      "328: def _aggregate(records: list[dict], baseline: dict) -> dict:",
+      "364: def _markdown_summary(experiment: str, data: ExperimentData, baselines: dict,",
+      "420: def run_experiments(data: ExperimentData, consts: dict, seeds: Iterable[int], settings: Optional[dict],",
+      "491: def _parser() -> argparse.ArgumentParser:",
+      "517: def main(argv: Optional[list[str]] = None) -> int:",
+      "592: def make_r3_data(cache: pd.DataFrame, probability_path: Path,",
+      "633: def _validation_name(data: ExperimentData) -> str:",
+      "637: def _test_name(data: ExperimentData) -> str:",
+      "641: def _split_column(data: ExperimentData) -> str:",
+      "645: def _validate_experiment_data(data: ExperimentData, consts: dict) -> None:",
+      "655: def _full_validation_cost(data: ExperimentData, consts: dict, genome: np.ndarray,",
+      "663: def _run_trial(data: ExperimentData, consts: dict, scenario: str, config: ga.GAConfig) -> tuple[dict, list[dict]]:",
+      "716: def _baseline_metrics(data: ExperimentData, consts: dict, weights: ga.CostWeights) -> dict:",
+      "722: def _runner_environment() -> dict:",
+      "747: def run_experiments(data: ExperimentData, consts: dict, seeds: Iterable[int], settings: Optional[dict],",
+      "826: def _parser() -> argparse.ArgumentParser:",
+      "850: def main(argv: Optional[list[str]] = None) -> int:"
+    ]
+  },
+  {
+    "path": "run_gb_transformer_experiments.py",
+    "lines": 865,
+    "symbols": [
+      "70: def sha256_file(path: Path) -> str:",
+      "78: def sha256_bytes(value: bytes) -> str:",
+      "82: def json_default(value: Any) -> Any:",
+      "94: def write_json(path: Path, value: Any) -> None:",
+      "101: def environment_snapshot() -> dict[str, Any]:",
+      "129: def set_seed(seed: int = SEED) -> None:",
+      "135: def require_columns(frame: pd.DataFrame, columns: list[str], label: str) -> None:",
+      "141: def assert_unique_keys(frame: pd.DataFrame, label: str) -> None:",
+      "146: def validate_ranges(frame: pd.DataFrame, columns: list[str], lower: float,",
+      "156: def pair_key_digest(frame: pd.DataFrame) -> str:",
+      "164: def labels_for(assigned: pd.DataFrame, keys: pd.DataFrame, role: str,",
+      "181: def validate_inputs(cache: pd.DataFrame, feat17: pd.DataFrame,",
+      "242: def build_nested_constants_without_test(assigned: pd.DataFrame) -> dict:",
+      "248: def metric_with_cost(decision: np.ndarray, actual: np.ndarray,",
+      "258: def manual_decision(probabilities: np.ndarray) -> np.ndarray:",
+      "265: def class_counts(labels: np.ndarray) -> dict[str, int]:",
+      "269: def deterministic_sample_indices(labels: np.ndarray, ratio: float, seed: int) -> np.ndarray:",
+      "279: def train_gb_variant(name: str, feature_columns: list[str], work: pd.DataFrame,",
+      "357: def probability_artifact_check(path: Path, work: pd.DataFrame,",
+      "374: def run_ga_trials(work: pd.DataFrame, assigned: pd.DataFrame,",
+      "471: def metric_row(label: str, source: str, metric: dict[str, Any],",
+      "488: def load_comparison_sources() -> tuple[dict, dict, dict]:",
+      "514: def delta_effect(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:",
+      "521: def build_summary(output_dir: Path, test_rows: list[dict], trials: list[dict],",
+      "572: def write_summary_markdown(path: Path, summary: dict) -> None:",
+      "632: def write_csv(path: Path, rows: list[dict]) -> None:",
+      "636: def run(args: argparse.Namespace) -> dict:",
+      "849: def parse_args() -> argparse.Namespace:"
+    ]
+  },
+  {
+    "path": "scripts/analysis/compare_pipeline_metrics.py",
+    "lines": 93,
+    "symbols": [
+      "10: def main() -> None:"
+    ]
+  },
+  {
+    "path": "scripts/image/advanced_embeddings.py",
+    "lines": 762,
+    "symbols": [
+      "109: def setup_directories():",
+      "118: def setup_logging():",
+      "137: class ProgressTracker:",
+      "254: def download_image(url: str, save_path: Path, tracker: ProgressTracker) -> Tuple[bool, str]:",
+      "290: class CLIPEmbedder:",
+      "379: class FaceEmbedder:",
+      "446: class FAISSIndexBuilder:",
+      "542: def fuse_embeddings(face_emb: Optional[np.ndarray],",
+      "593: def run_advanced_pipeline("
+    ]
+  },
+  {
+    "path": "stage10_eval_harness.py",
+    "lines": 107,
+    "symbols": [
+      "22: def load(path=TA):",
+      "26: def add_derived(df):",
+      "36: def slice_of(df):",
+      "43: def metrics_at(y, score, thr):",
+      "54: def full_report(df, score_col=\"probability\", thr=0.35, split=\"test\"):",
+      "89: def print_report(rep, tag=\"\"):"
+    ]
+  },
+  {
+    "path": "stage11_adaptive_threshold.py",
+    "lines": 147,
+    "symbols": [
+      "29: def best_f1_threshold(y, s, grid=GRID):",
+      "34: def best_recall_at_precision(y, s, floor=PREC_FLOOR, grid=GRID):",
+      "49: def fit_pair_thresholds(val, objective):",
+      "64: def apply_pair_thresholds(df, thr):",
+      "69: def eval_pred(df, pred):",
+      "78: def slice_recall(df, pred):",
+      "88: def main():"
+    ]
+  },
+  {
+    "path": "stage16_error_groups.py",
+    "lines": 90,
+    "symbols": [
+      "30: def load_profiles():",
+      "37: def main():"
+    ]
+  },
+  {
+    "path": "stage17_error_analysis.py",
+    "lines": 136,
+    "symbols": [
+      "29: def name_sim(row):",
+      "39: def bucket(s):",
+      "44: def plat_pair(df):",
+      "48: def field_presence(df):",
+      "57: def main():"
+    ]
+  },
+  {
+    "path": "stage18_review_redecision.py",
+    "lines": 83,
+    "symbols": [
+      "36: def name_sim(row):",
+      "46: def main():"
+    ]
+  },
+  {
+    "path": "stage8_pair_builder.py",
+    "lines": 544,
+    "symbols": [
+      "62: def _safe_str(val) -> str:",
+      "68: def _name_similarity(a: str, b: str) -> float:",
+      "77: class PairBuilder:",
+      "394: def run_quality_checks(labeled_pairs: pd.DataFrame, df_profiles: pd.DataFrame) -> dict:"
+    ]
+  },
+  {
+    "path": "stage9_noisy_or_fusion.py",
+    "lines": 133,
+    "symbols": [
+      "24: def build_signals(df: pd.DataFrame) -> pd.DataFrame:",
+      "39: def noisy_or_prob(S: np.ndarray, r: np.ndarray) -> np.ndarray:",
+      "45: def fit_noisy_or(S: np.ndarray, y: np.ndarray):",
+      "55: def best_threshold(y, p, grid=None):",
+      "61: def name_max(df):",
+      "66: def report_block(tag, y, pred, name_mx):",
+      "84: def main():"
+    ]
+  },
+  {
+    "path": "tests/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "tests/test_ga_runner.py",
+    "lines": 131,
+    "symbols": [
+      "14: def synthetic_r1_data(test_actual):",
+      "35: class GARunnerIntegrationTests(unittest.TestCase):",
+      "107: class GARegressionTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_ga_threshold.py",
+    "lines": 66,
+    "symbols": [
+      "9: class GATresholdUnitTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_nested_protocol.py",
+    "lines": 170,
+    "symbols": [
+      "19: def sha256(path: Path) -> str:",
+      "23: def nested_training_inputs(seed: int = 11):",
+      "50: class NestedEntitySplitTests(unittest.TestCase):",
+      "96: class R2AntiLeakageTests(unittest.TestCase):",
+      "136: class R3AntiLeakageTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_r2_training.py",
+    "lines": 54,
+    "symbols": [
+      "11: class R2TrainingIntegrationTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "train_data/build_ground_truth_matrix.ipynb",
+    "lines": 84,
+    "symbols": []
+  },
+  {
+    "path": "train_data/check_combined_profiles.ipynb",
+    "lines": 60,
+    "symbols": []
+  },
+  {
+    "path": "train_data/leakage_safe_experiment/run_experiment.py",
+    "lines": 759,
+    "symbols": [
+      "52: def ensure_dirs() -> None:",
+      "57: def set_seed(seed: int) -> None:",
+      "62: def normalize_username(value: object) -> str:",
+      "66: def clean_text(value: object) -> str:",
+      "72: def lower_text(value: object) -> str:",
+      "76: def parse_list_field(value: object) -> list[str]:",
+      "89: def parse_urls(value: object) -> set[str]:",
+      "98: def extract_domains(urls: set[str]) -> set[str]:",
+      "108: def parse_mentions(value: object) -> set[str]:",
+      "115: def extract_hashtags(text: str) -> set[str]:",
+      "119: def jaccard(a: set[str], b: set[str]) -> float:",
+      "128: def biolen_ratio(a: str, b: str) -> float:",
+      "137: def punct_ratio(text: str) -> float:",
+      "144: def avg_word_len(text: str) -> float:",
+      "151: class UnionFind:",
+      "179: class ExperimentData:",
+      "186: def load_profiles() -> pd.DataFrame:",
+      "205: def build_positive_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "236: def assign_components(positive_pairs: pd.DataFrame) -> dict[str, str]:",
+      "246: def assign_splits_by_component(positive_pairs: pd.DataFrame, components: dict[str, str], seed: int) -> tuple[dict[str, str], dict[str, object]]:",
+      "291: def make_profile_lookup(profiles: pd.DataFrame, keep_ids: set[str]) -> dict[str, object]:",
+      "304: def generate_random_negatives(",
+      "349: def generate_hard_negatives(",
+      "408: def build_pairs(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, dict[str, object]]:",
+      "485: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "544: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "551: def train_and_evaluate(data: ExperimentData, seed: int) -> dict[str, object]:",
+      "655: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "681: def build_experiment_data(args: argparse.Namespace) -> ExperimentData:",
+      "722: def parse_args() -> argparse.Namespace:",
+      "730: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/load_data.ipynb",
+    "lines": 17,
+    "symbols": []
+  },
+  {
+    "path": "train_data/preprocess_pipeline_backup.ipynb",
+    "lines": 897,
+    "symbols": [
+      "30: def load_all_profiles(base_path: str) -> pd.DataFrame:",
+      "281: def remove_emojis(text: str) -> str:",
+      "300: def clean_username(text: str) -> str:",
+      "328: def clean_fullname(text: str) -> str:",
+      "357: def safe_str(value) -> str:",
+      "367: def extract_urls(text: str) -> list:",
+      "370: def extract_mentions(text: str) -> list:",
+      "373: def clean_single_url(url: str) -> str:",
+      "380: def clean_bio(text) -> str:",
+      "471: def parse_dms_to_decimal(dms_str):",
+      "490: def clean_location_full(text):",
+      "598: def safe_str(value) -> str:",
+      "609: def parse_url_list(value) -> list:",
+      "636: def normalize_url(url: str) -> str:",
+      "670: def extract_domain(cleaned_url: str) -> str:",
+      "682: def clean_external_url_field(value):",
+      "694: def squash_single_or_list(items):",
+      "807: def normalize_text(text: str) -> str:"
+    ]
+  },
+  {
+    "path": "train_data/stage10_13_training_pipeline.py",
+    "lines": 455,
+    "symbols": [
+      "36: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "47: def ensure_dirs(training_root: Path) -> tuple[Path, Path]:",
+      "55: def set_seed(seed: int) -> None:",
+      "63: def load_feature_frame(split_name: str, prefix: str, features_dir: Path) -> pd.DataFrame:",
+      "77: def load_feature_cols(prefix: str, artifacts_dir: Path, train_df: pd.DataFrame | None = None, features_dir: Path | None = None) -> list[str]:",
+      "106: def undersample_negatives(train_df: pd.DataFrame, target_ratio: float, seed: int) -> pd.DataFrame:",
+      "116: def parse_excluded_features(args: argparse.Namespace) -> set[str]:",
+      "128: class DataBundle:",
+      "144: def build_data_bundle(",
+      "185: class FocalLoss(nn.Module):",
+      "201: class IdentityMLP(nn.Module):",
+      "217: def make_loader(x: np.ndarray, y: np.ndarray, batch_size: int, shuffle: bool) -> DataLoader:",
+      "223: def predict_probs(model: nn.Module, x: np.ndarray, batch_size: int, device: torch.device) -> np.ndarray:",
+      "234: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "241: def expected_calibration_error(probs: np.ndarray, labels: np.ndarray, n_bins: int = 10) -> float:",
+      "254: def train_model(bundle: DataBundle, args: argparse.Namespace) -> tuple[IdentityMLP, dict]:",
+      "312: def evaluate_and_save(",
+      "403: def parse_args() -> argparse.Namespace:",
+      "425: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage10_dataset.ipynb",
+    "lines": 156,
+    "symbols": [
+      "124: class PairDataset(Dataset):"
+    ]
+  },
+  {
+    "path": "train_data/stage11_training.ipynb",
+    "lines": 217,
+    "symbols": [
+      "42: class PairDataset(Dataset):",
+      "64: class FocalLoss(nn.Module):",
+      "75: class IdentityMLP(nn.Module):"
+    ]
+  },
+  {
+    "path": "train_data/stage12_13_calibration_evaluation.ipynb",
+    "lines": 286,
+    "symbols": [
+      "40: class PairDataset(Dataset):",
+      "49: class IdentityMLP(nn.Module):",
+      "113: def expected_calibration_error(probs, labels, n_bins=10):",
+      "190: def get_decision(prob):"
+    ]
+  },
+  {
+    "path": "train_data/stage14_inference.ipynb",
+    "lines": 155,
+    "symbols": [
+      "25: class IdentityMLP(nn.Module):",
+      "56: def string_sim(a, b, method='jaro'):",
+      "63: def get_decision(prob):"
+    ]
+  },
+  {
+    "path": "train_data/stage15_16_17_merge_scoring_export.ipynb",
+    "lines": 322,
+    "symbols": [
+      "56: def merge_profiles(profile_ids: set, lookup: pd.DataFrame) -> dict:",
+      "156: def compute_lead_score(row: pd.Series) -> dict:"
+    ]
+  },
+  {
+    "path": "train_data/stage15_crm_entity_pipeline/run_crm_entity_pipeline.py",
+    "lines": 497,
+    "symbols": [
+      "30: def ensure_dirs() -> None:",
+      "35: def load_module(module_name: str, module_path: Path):",
+      "44: def clean_text(value: object) -> str:",
+      "50: def lower_text(value: object) -> str:",
+      "54: def json_text(value: object) -> str:",
+      "58: def load_profiles() -> pd.DataFrame:",
+      "76: def build_feature_engine():",
+      "97: def load_exact_and_scores() -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "117: def build_match_decisions(scored_df: pd.DataFrame, match_threshold: float, review_threshold: float) -> pd.DataFrame:",
+      "144: def heuristic_support_score(feature_name: str, value: float) -> float:",
+      "160: def build_review_queue(",
+      "251: class UnionFind:",
+      "274: def choose_canonical_name(names: list[str]) -> str:",
+      "282: def build_unified_tables(match_decisions: pd.DataFrame, profiles: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "373: def build_lead_scores(unified_profiles: pd.DataFrame, profile_mapping: pd.DataFrame, profiles: pd.DataFrame) -> pd.DataFrame:",
+      "406: def parse_args() -> argparse.Namespace:",
+      "414: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_13_multimodal_suite/run_multimodal_suite.py",
+    "lines": 482,
+    "symbols": [
+      "33: def ensure_dirs() -> None:",
+      "38: def load_base_module(module_name: str):",
+      "47: def configure_base_module(base, run_dir: Path) -> None:",
+      "58: def clean_text(value: object) -> str:",
+      "64: def lower_text(value: object) -> str:",
+      "68: def image_entropy(gray: np.ndarray) -> float:",
+      "74: def compute_local_image_descriptor(image_path: Path) -> dict[str, object]:",
+      "102: def scan_local_image_map() -> dict[int, Path]:",
+      "117: def build_image_profile_features(base, profiles: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:",
+      "215: def hash_similarity(hash_a: str, hash_b: str) -> float:",
+      "222: def make_multimodal_wrappers(base, experiment_kind: str, image_df: pd.DataFrame, caption_embeddings: np.ndarray):",
+      "315: def summarize_modalities(profiles: pd.DataFrame, image_df: pd.DataFrame, feature_df: pd.DataFrame) -> dict[str, object]:",
+      "346: def composite_score(metrics: dict[str, object]) -> float:",
+      "354: def run_experiment(run_name: str, experiment_kind: str, args: argparse.Namespace) -> dict[str, object]:",
+      "404: def parse_args() -> argparse.Namespace:",
+      "418: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_14_full_candidate_pipeline/run_full_candidate_pipeline.py",
+    "lines": 521,
+    "symbols": [
+      "38: def ensure_dirs() -> None:",
+      "43: def load_module(module_name: str, module_path: Path):",
+      "52: def clean_text(value: object) -> str:",
+      "58: def lower_text(value: object) -> str:",
+      "62: def prefix3(value: object) -> str:",
+      "69: def pair_key(a: int, b: int) -> int:",
+      "74: def unpack_pair_key(key: int) -> tuple[int, int]:",
+      "78: def load_profiles() -> pd.DataFrame:",
+      "99: def count_cross_platform_all_pairs(df: pd.DataFrame) -> int:",
+      "109: def build_ground_truth_set(base_module, profiles: pd.DataFrame) -> tuple[set[int], pd.DataFrame]:",
+      "118: def build_exact_match_pairs(df: pd.DataFrame) -> tuple[set[int], dict[str, int]]:",
+      "153: def build_candidate_pairs(df: pd.DataFrame, exact_keys: set[int]) -> tuple[set[int], dict[str, int]]:",
+      "182: def export_pair_keys(keys: set[int], output_path: Path, pair_type: str, chunk_size: int = 500_000) -> int:",
+      "202: def load_best_model_artifacts():",
+      "216: def load_scored_candidates() -> pd.DataFrame:",
+      "223: def build_scoring_engine():",
+      "239: def score_candidates_chunked(",
+      "329: def parse_args() -> argparse.Namespace:",
+      "338: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_8_rebuilt_experiment/run_rebuilt_pipeline.py",
+    "lines": 557,
+    "symbols": [
+      "52: def ensure_dirs() -> None:",
+      "57: def set_seed(seed: int) -> None:",
+      "62: def clean_text(value: object) -> str:",
+      "68: def lower_text(value: object) -> str:",
+      "72: def parse_list_field(value: object) -> list[str]:",
+      "85: def parse_urls(value: object) -> set[str]:",
+      "94: def extract_domains(urls: set[str]) -> set[str]:",
+      "104: def parse_mentions(value: object) -> set[str]:",
+      "111: def extract_hashtags(text: str) -> set[str]:",
+      "115: def jaccard(a: set[str], b: set[str]) -> float:",
+      "122: def biolen_ratio(a: str, b: str) -> float:",
+      "131: def punct_ratio(text: str) -> float:",
+      "138: def avg_word_len(text: str) -> float:",
+      "145: def load_profiles() -> pd.DataFrame:",
+      "163: def build_ground_truth_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "185: def save_ground_truth_matrix(profiles: pd.DataFrame, gt_pairs: pd.DataFrame) -> None:",
+      "204: def assign_splits(profiles: pd.DataFrame, seed: int) -> dict[int, str]:",
+      "230: def generate_negatives(",
+      "301: def make_profile_bundle(profiles: pd.DataFrame) -> dict[str, object]:",
+      "314: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "363: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "370: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "393: def train_and_eval(feature_df: pd.DataFrame, feature_cols: list[str], seed: int) -> dict[str, object]:",
+      "463: def build_dataset(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, list[str], dict[str, object]]:",
+      "525: def parse_args() -> argparse.Namespace:",
+      "533: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py",
+    "lines": 583,
+    "symbols": [
+      "56: def ensure_dirs() -> None:",
+      "61: def set_seed(seed: int) -> None:",
+      "66: def clean_text(value: object) -> str:",
+      "72: def lower_text(value: object) -> str:",
+      "76: def parse_list_field(value: object) -> list[str]:",
+      "89: def parse_urls(value: object) -> set[str]:",
+      "98: def extract_domains(urls: set[str]) -> set[str]:",
+      "108: def parse_mentions(value: object) -> set[str]:",
+      "115: def extract_hashtags(text: str) -> set[str]:",
+      "119: def jaccard(a: set[str], b: set[str]) -> float:",
+      "126: def biolen_ratio(a: str, b: str) -> float:",
+      "135: def punct_ratio(text: str) -> float:",
+      "142: def avg_word_len(text: str) -> float:",
+      "149: def load_profiles() -> pd.DataFrame:",
+      "167: def build_ground_truth_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "189: def save_ground_truth_matrix(profiles: pd.DataFrame, gt_pairs: pd.DataFrame) -> None:",
+      "208: def assign_splits(profiles: pd.DataFrame, seed: int) -> dict[int, str]:",
+      "234: def generate_negatives(",
+      "305: def make_profile_bundle(profiles: pd.DataFrame) -> dict[str, object]:",
+      "336: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "388: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "395: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "418: def train_and_eval(feature_df: pd.DataFrame, feature_cols: list[str], seed: int) -> dict[str, object]:",
+      "488: def build_dataset(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, list[str], dict[str, object]]:",
+      "551: def parse_args() -> argparse.Namespace:",
+      "559: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_8_rebuilt_experiment_tuned/run_rebuilt_pipeline.py",
+    "lines": 557,
+    "symbols": [
+      "52: def ensure_dirs() -> None:",
+      "57: def set_seed(seed: int) -> None:",
+      "62: def clean_text(value: object) -> str:",
+      "68: def lower_text(value: object) -> str:",
+      "72: def parse_list_field(value: object) -> list[str]:",
+      "85: def parse_urls(value: object) -> set[str]:",
+      "94: def extract_domains(urls: set[str]) -> set[str]:",
+      "104: def parse_mentions(value: object) -> set[str]:",
+      "111: def extract_hashtags(text: str) -> set[str]:",
+      "115: def jaccard(a: set[str], b: set[str]) -> float:",
+      "122: def biolen_ratio(a: str, b: str) -> float:",
+      "131: def punct_ratio(text: str) -> float:",
+      "138: def avg_word_len(text: str) -> float:",
+      "145: def load_profiles() -> pd.DataFrame:",
+      "163: def build_ground_truth_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "185: def save_ground_truth_matrix(profiles: pd.DataFrame, gt_pairs: pd.DataFrame) -> None:",
+      "204: def assign_splits(profiles: pd.DataFrame, seed: int) -> dict[int, str]:",
+      "230: def generate_negatives(",
+      "301: def make_profile_bundle(profiles: pd.DataFrame) -> dict[str, object]:",
+      "314: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "363: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "370: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "393: def train_and_eval(feature_df: pd.DataFrame, feature_cols: list[str], seed: int) -> dict[str, object]:",
+      "463: def build_dataset(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, list[str], dict[str, object]]:",
+      "525: def parse_args() -> argparse.Namespace:",
+      "533: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_8_rebuilt_experiment_tuned/tune_rebuilt_pipeline.py",
+    "lines": 123,
+    "symbols": [
+      "28: def score_trial(report: dict) -> float:",
+      "37: def run_trial(cfg: dict) -> dict:",
+      "58: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage7_blocking.ipynb",
+    "lines": 480,
+    "symbols": [
+      "50: def extract_domain(url: str) -> str:",
+      "60: def stripped_prefix4(s: str) -> str:",
+      "68: def fullname_first4(s: str) -> str:",
+      "89: def find_exact_matches(df: pd.DataFrame, match_col: str) -> pd.DataFrame:",
+      "160: def block_by_key(df: pd.DataFrame,",
+      "196: def generate_cross_platform_pairs(blocks: Dict) -> pd.DataFrame:",
+      "260: def compute_edge_weight(row_a: pd.Series, row_b: pd.Series) -> float:"
+    ]
+  },
+  {
+    "path": "train_data/stage8_labeling.ipynb",
+    "lines": 170,
+    "symbols": [
+      "20: def build_positive_pairs(df: pd.DataFrame) -> pd.DataFrame:",
+      "61: def build_random_negatives(df: pd.DataFrame, n_neg: int, seed: int = 42) -> pd.DataFrame:",
+      "101: def build_hard_negatives(df: pd.DataFrame, candidate_pairs: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "train_data/stage9_compare_features.py",
+    "lines": 158,
+    "symbols": [
+      "15: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "26: def _load_frame(path: Path) -> pd.DataFrame:",
+      "37: def _feature_cols(df: pd.DataFrame) -> list[str]:",
+      "41: def _safe_numeric_diff(old: pd.Series, new: pd.Series) -> dict[str, float]:",
+      "55: def compare_frames(old_df: pd.DataFrame, new_df: pd.DataFrame, top_k: int) -> dict:",
+      "113: def parse_args() -> argparse.Namespace:",
+      "122: def main() -> None:"
+    ]
+  },
+  {
+    "path": "train_data/stage9_features.ipynb",
+    "lines": 220,
+    "symbols": [
+      "25: def string_sim(a: str, b: str, method: str = 'jaro') -> float:"
+    ]
+  },
+  {
+    "path": "train_data/stage9_features_pipeline.py",
+    "lines": 784,
+    "symbols": [
+      "50: def _load_profile_image_module():",
+      "67: def _get_rapidfuzz():",
+      "79: def _safe_str(val) -> str:",
+      "85: def _safe_str_lower(val) -> str:",
+      "89: def _parse_list_field(val) -> list[str]:",
+      "104: def _parse_mentions(val) -> set[str]:",
+      "111: def _extract_hashtags(bio: str) -> set[str]:",
+      "117: def _jaccard(a: set, b: set) -> float:",
+      "124: def _haversine_km(lat1, lon1, lat2, lon2) -> float:",
+      "134: def _normalize_picture_url(url: str) -> str:",
+      "138: def _picture_stem(url: str) -> str:",
+      "157: def _row_index(row) -> int:",
+      "163: def _build_row_cache(row: dict, idx: int) -> dict:",
+      "196: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "208: def _write_parquet_compat(df: pd.DataFrame, path: Path) -> None:",
+      "222: def ensure_output_dirs() -> None:",
+      "227: class PairFeatureComputer:",
+      "418: def compute_sbert_embeddings(",
+      "442: class FeatureEngineer:",
+      "543: def build_entity_split(df: pd.DataFrame, pairs: pd.DataFrame, random_seed: int = 42):",
+      "571: def build_or_load_image_cache(df: pd.DataFrame, force: bool = False) -> dict:",
+      "583: def save_split_artifacts(",
+      "599: def load_split_artifacts() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "614: def parse_args() -> argparse.Namespace:",
+      "641: def main():"
+    ]
+  },
+  {
+    "path": "train_data/stage9_features_pipeline_chunked.py",
+    "lines": 837,
+    "symbols": [
+      "67: def _load_profile_image_module():",
+      "84: def _get_rapidfuzz():",
+      "96: def _safe_str(val) -> str:",
+      "102: def _safe_str_lower(val) -> str:",
+      "106: def _parse_list_field(val) -> list[str]:",
+      "121: def _parse_mentions(val) -> set[str]:",
+      "128: def _extract_hashtags(bio: str) -> set[str]:",
+      "134: def _jaccard(a: set, b: set) -> float:",
+      "141: def _haversine_km(lat1, lon1, lat2, lon2) -> float:",
+      "151: def _normalize_picture_url(url: str) -> str:",
+      "155: def _picture_stem(url: str) -> str:",
+      "161: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "173: def _write_parquet_compat(df: pd.DataFrame, path: Path) -> None:",
+      "187: def ensure_output_dirs() -> None:",
+      "192: def _find_resume_offset(split_name: str, output_prefix: str) -> int:",
+      "205: def save_split_artifacts(",
+      "221: def load_split_artifacts() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "236: def build_profile_lookup(split_df: pd.DataFrame) -> dict[str, dict]:",
+      "245: def save_profile_cache(split_name: str, split_df: pd.DataFrame) -> None:",
+      "251: def load_profile_cache(split_name: str) -> dict[str, dict]:",
+      "259: def merge_feature_chunks(split_name: str, output_prefix: str) -> Path:",
+      "282: def _build_row_cache(row: dict, source_idx: int) -> dict:",
+      "314: class PairFeatureComputer:",
+      "477: def compute_sbert_embeddings(df: pd.DataFrame, model_name: str = \"all-mpnet-base-v2\", batch_size: int = 64) -> np.ndarray:",
+      "497: class FeatureEngineer:",
+      "633: def build_entity_split(df: pd.DataFrame, pairs: pd.DataFrame, random_seed: int = 42):",
+      "661: def build_or_load_image_cache(df: pd.DataFrame, force: bool = False) -> dict:",
+      "673: def parse_args():",
+      "691: def main():"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage10_dataset_v2.ipynb",
+    "lines": 150,
+    "symbols": [
+      "121: class PairDataset(Dataset):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage11_training_v2.ipynb",
+    "lines": 233,
+    "symbols": [
+      "69: class PairDataset(Dataset):",
+      "88: class FocalLoss(nn.Module):",
+      "99: class IdentityMLP(nn.Module):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage12_13_calibration_evaluation_v2.ipynb",
+    "lines": 292,
+    "symbols": [
+      "60: class PairDataset(Dataset):",
+      "69: class IdentityMLP(nn.Module):",
+      "126: def expected_calibration_error(probs, labels, n_bins=10):",
+      "200: def get_decision(prob):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage14_inference_v2.ipynb",
+    "lines": 207,
+    "symbols": [
+      "42: class IdentityMLP(nn.Module):",
+      "70: def string_sim(a, b, method='jaro'):",
+      "81: def get_decision(prob):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage15_16_17_merge_scoring_export_v2.ipynb",
+    "lines": 326,
+    "symbols": [
+      "67: def merge_profiles(profile_ids: set, lookup: pd.DataFrame) -> dict:",
+      "161: def compute_lead_score(row: pd.Series) -> dict:"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage6_preprocessing_v2.ipynb",
+    "lines": 125,
+    "symbols": [
+      "42: def fix_null_profile_id(row):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage7_blocking_v2.ipynb",
+    "lines": 155,
+    "symbols": [
+      "24: def fullname_tokens(name):",
+      "40: def stripped_prefix4(s: str) -> str:",
+      "52: def block_by_key(df, key_col):",
+      "69: def block_by_fullname_tokens(df):",
+      "112: def sim_score(id_a, id_b):"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage8_labeling_v2.ipynb",
+    "lines": 187,
+    "symbols": [
+      "24: def build_positive_pairs(df: pd.DataFrame) -> pd.DataFrame:",
+      "66: def build_random_negatives(df: pd.DataFrame, n_neg: int, seed: int = 42) -> pd.DataFrame:",
+      "106: def build_hard_negatives(df: pd.DataFrame, candidate_pairs: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "train_data/v2/stage9_features_v2.ipynb",
+    "lines": 218,
+    "symbols": [
+      "31: def string_sim(a: str, b: str, method: str = 'jaro') -> float:"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+50d95e9 2026-10-24 Document project status and reorganization plan
+1e0a2db 2026-08-10 Update experiment walkthroughs
+1f57da1 2026-08-10 Sync latest experiment code
+99dcd76 2026-08-08 Add experiment artifacts
+1571288 2026-08-06 Upload latest project code
+bc0cb2a 2026-03-21 Backup 21/03
+70dc24e 2026-03-18 Update .gitignore and stop tracking generated files
+70264ef 2026-03-18 Pipeline v2: improve blocking recall, fix merge to include POSSIBLE_MATCH
+fcdf451 2026-03-17 Reorganize: move v2 notebooks to Train-Data/v2/ folder
+fd3dfb2 2026-03-17 Pipeline v2: fix profile_id collision, improve blocking recall 56%→92%, rebuild all stages
+671275d 2026-03-16 Resolve merge conflicts: keep local pipeline notebooks
+169882a 2026-03-15 update notebooks
+77122cb 2026-03-15 Backup 15/03
+9b92836 2026-03-14 Resolve merge conflict: keep remote version
+65518e3 2026-03-14 Data-for Project
+cf6a2ec 2026-03-14 create normalized data csv
+40cc82a 2026-03-14 data 36000
+cb36d27 2026-03-14 14/03 Backup
+08f4c5e 2026-03-12 Add combined training matrix generation and outputs
+e57ffcf 2026-03-10 10/30 Backup
+397f70e 2026-02-24 Add location mapping and bigram pipeline results with location features
+7dcc1dd 2026-02-24 Vector and Picture
+3472b45 2026-02-16 update
+64d3b0b 2026-01-14 initial project: profile matching and evaluation
+574b5ff 2026-01-14 initial project: profile matching and evaluation
+44e2e07 2026-01-12 initial project structure
+a00518a 2026-01-10 Initial commit

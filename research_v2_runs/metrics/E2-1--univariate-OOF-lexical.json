@@ -1,0 +1,148 @@
+{
+  "features": [
+    {
+      "feature": "username_exact",
+      "candidate_AP": 0.44623326287972115
+    },
+    {
+      "feature": "username_jaro_winkler",
+      "candidate_AP": 0.700393851617691
+    },
+    {
+      "feature": "username_normalized_levenshtein",
+      "candidate_AP": 0.701724313794959
+    },
+    {
+      "feature": "username_token_jaccard",
+      "candidate_AP": 0.44623326287972115
+    },
+    {
+      "feature": "username_tfidf_cosine",
+      "candidate_AP": 0.7631756616248525
+    },
+    {
+      "feature": "username_both_present",
+      "candidate_AP": 0.06167627828010964
+    },
+    {
+      "feature": "username_one_missing",
+      "candidate_AP": 0.06132470742861187
+    },
+    {
+      "feature": "fullname_exact",
+      "candidate_AP": 0.6057941847541946
+    },
+    {
+      "feature": "fullname_jaro_winkler",
+      "candidate_AP": 0.8117668238887065
+    },
+    {
+      "feature": "fullname_normalized_levenshtein",
+      "candidate_AP": 0.7661038375127307
+    },
+    {
+      "feature": "fullname_token_jaccard",
+      "candidate_AP": 0.764031858808239
+    },
+    {
+      "feature": "fullname_tfidf_cosine",
+      "candidate_AP": 0.8510308773069925
+    },
+    {
+      "feature": "fullname_both_present",
+      "candidate_AP": 0.06241589896066579
+    },
+    {
+      "feature": "fullname_one_missing",
+      "candidate_AP": 0.06078387455031571
+    },
+    {
+      "feature": "bio_exact",
+      "candidate_AP": 0.06794558752884952
+    },
+    {
+      "feature": "bio_jaro_winkler",
+      "candidate_AP": 0.14881632372519663
+    },
+    {
+      "feature": "bio_normalized_levenshtein",
+      "candidate_AP": 0.15629554794190048
+    },
+    {
+      "feature": "bio_token_jaccard",
+      "candidate_AP": 0.19792284591941545
+    },
+    {
+      "feature": "bio_tfidf_cosine",
+      "candidate_AP": 0.18246943535507068
+    },
+    {
+      "feature": "bio_both_present",
+      "candidate_AP": 0.05833735172072951
+    },
+    {
+      "feature": "bio_one_missing",
+      "candidate_AP": 0.06666928824299004
+    },
+    {
+      "feature": "location_exact",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_jaro_winkler",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_normalized_levenshtein",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_token_jaccard",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_tfidf_cosine",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_both_present",
+      "candidate_AP": 0.06138369360501175
+    },
+    {
+      "feature": "location_one_missing",
+      "candidate_AP": 0.06272163926234334
+    },
+    {
+      "feature": "links_exact",
+      "candidate_AP": 0.20015477939429685
+    },
+    {
+      "feature": "links_jaro_winkler",
+      "candidate_AP": 0.28895031884637024
+    },
+    {
+      "feature": "links_normalized_levenshtein",
+      "candidate_AP": 0.25275369969144695
+    },
+    {
+      "feature": "links_token_jaccard",
+      "candidate_AP": 0.20015477939429685
+    },
+    {
+      "feature": "links_tfidf_cosine",
+      "candidate_AP": 0.6099780894063519
+    },
+    {
+      "feature": "links_both_present",
+      "candidate_AP": 0.06170812705229288
+    },
+    {
+      "feature": "links_one_missing",
+      "candidate_AP": 0.06028778926233063
+    }
+  ],
+  "n_pairs": 351494,
+  "positive_pairs": 21576,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.7879782909985806
+}

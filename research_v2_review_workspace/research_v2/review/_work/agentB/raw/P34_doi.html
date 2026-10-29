@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html prefix="og: https://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="https://www.techscience.com/static/css/style.css?t=20261008" />
+        <link rel="stylesheet" type="text/css" href="https://www.techscience.com/static/css/animate.min.css?t=20261008" />
+        <link rel="stylesheet" href="https://www.techscience.com/static/css/iconfont.css?t=20261008" />
+        <link rel="stylesheet" type="text/css" href="https://www.techscience.com/static/bu/bu.css?t=20261008" />
+        <title>CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods</title>
+        <meta name="keywords"    content="User identity linkage (UIL); cross-network mapping; adversarial attacks; privacy protection; online social networks" />
+                
+                <link rel="canonical" href="https://www.techscience.com/cmc/v86n2/64808" />
+                                    
+            <meta name="title" content="From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" />
+<meta name="description" content="User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. Over the past decade, the research community has developed a wide range of UIL methods, from structural embeddings to multimodal fusion architectures. However, corresponding adversarial and defensive approaches remain fragmented and comparatively understudied. In this survey, we provide a unified overview of both mapping and anti-mapping methods for UIL. We categorize representative mapping models by learning paradigm and data modality, and systematically compare them with emerging countermeasures including adversarial injection, structural perturbation, and identity obfuscation. To bridge these two threads, we introduce a modality-oriented taxonomy and a formal game-theoretic framing that casts cross-network mapping as a contest between mappers and anti-mappers. This framing allows us to construct a cross-modality dependency matrix, which reveals structural information as the most contested signal, identifies node injection as the most robust defensive strategy, and points to multimodal integration as a promising direction. Our survey underscores the need for balanced, privacy-preserving identity inference and provides a foundation for future research on the adversarial dynamics of social identity mapping and defense." />
+<meta name="dc.identifier" content="doi:10.32604/cmc.2025.073175"/>
+<meta name="DOI" content="10.32604/cmc.2025.073175"/>
+<meta property="twitter:site" content="@TechScience_TSP"/>
+<meta property="twitter:creator" content="@TechScience_TSP"/>
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:url" content="https://www.techscience.com/cmc/v86n2/64808"/>
+<meta property="og:site" content="Tech Science Press"/>
+<meta property="og:site_name" content="Tech Science Press"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"/>
+<meta property="og:description" content="User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. ... | Find, read and cite all the research you need on Tech Science Press"/>
+<meta property="og:url" content="https://www.techscience.com/cmc/v86n2/64808"/>
+<meta property="og:image" content="https://www.techscience.com/static/images/logo/logo-200.png?t=20261008"/>
+<meta name="citation_title" content="From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"/>
+<meta name="citation_author" content="Shaojie Min"/>
+<meta name="citation_author" content="Yaxiao Luo"/>
+<meta name="citation_author" content="Kebing Liu"/>
+<meta name="citation_author" content="Qingyuan Gong"/>
+<meta name="citation_author" content="Yang Chen"/>
+<meta name="citation_publication_date" content="2025/12/09"/>
+<meta name="citation_online_date" content=""/>
+<meta name="citation_journal_title" content="Computers, Materials &amp; Continua"/>
+<meta name="citation_year" content="2026"/>
+<meta name="citation_volume" content="86"/>
+<meta name="citation_issue" content="2"/>
+<meta name="citation_firstpage" content="1"/>
+<meta name="citation_lastpage" content="23"/>
+<meta name="citation_article_type" content="REVIEW"/>
+<meta name="citation_fulltext_world_readable" content=""/>
+<meta name="citation_pdf_url" content="https://www.techscience.com/cmc/v86n2/64808/TSP_CMC_73175.pdf" />
+<meta name="citation_publisher" content="Tech Science Press"/>
+<meta name="citation_public_url" content="https://www.techscience.com/cmc/v86n2/64808" />
+<meta name="citation_abstract_html_url" content="https://www.techscience.com/cmc/v86n2/64808"/>
+<meta name="citation_fulltext_html_url" content="https://www.techscience.com/cmc/v86n2/64808.html"/>
+<meta name="citation_issn" content="1546-2218"/>
+<meta name="citation_issn" content="1546-2226"/>
+<meta name="citation_doi" content="10.32604/cmc.2025.073175"/>
+<meta name="citation_journal_abbrev" content="CMC" />
+<meta name="citation_language" content="en" />
+<meta name="citation_date" content="2025"/>
+<meta name="citation_reference" content="citation_title=Connecting corresponding identities across communities;citation_article_type=conf-proc;citation_volume=3;citation_firstpage=354;citation_lastpage=7;citation_publication_date=2009;citation_publisher=AAAI Press;citation_author=R Zafarani;citation_author=H Liu;"/>
+<meta name="citation_reference" content="citation_title=Inferring anchor links across multiple heterogeneous social networks;citation_article_type=conf-proc;citation_firstpage=179;citation_lastpage=88;citation_author=X Kong;citation_author=J Zhang;citation_author=PS Yu;"/>
+<meta name="citation_reference" content="citation_title=User identity linkage across online social networks: a review;citation_article_type=journal;citation_volume=18;citation_issue=2;citation_firstpage=5;citation_lastpage=17;citation_publication_date=2017;citation_doi=10.1145/3068777.3068781;citation_author=K Shu;citation_author=S Wang;citation_author=J Tang;citation_author=R Zafarani;citation_author=H Liu;"/>
+<meta name="citation_reference" content="citation_title=Cyberspace endogenous safety and security;citation_article_type=journal;citation_volume=15;citation_firstpage=179;citation_lastpage=85;citation_publication_date=2022;citation_author=J Wu;"/>
+<meta name="citation_reference" content="citation_title=Meta-path based multi-network collective link prediction;citation_article_type=conf-proc;citation_firstpage=1286;citation_lastpage=95;citation_author=J Zhang;citation_author=PS Yu;citation_author=ZH Zhou;"/>
+<meta name="citation_reference" content="citation_title=Cross-network embedding for multi-network alignment;citation_article_type=conf-proc;citation_firstpage=273;citation_lastpage=84;citation_author=X Chu;citation_author=X Fan;citation_author=D Yao;citation_author=Z Zhu;citation_author=J Huang;citation_author=J Bi;"/>
+<meta name="citation_reference" content="citation_title=Adversarial learning for weakly-supervised social network alignment;citation_article_type=conf-proc;citation_volume=33;citation_firstpage=996;citation_lastpage=1003;citation_publication_date=2019;citation_publisher=AAAI Press;citation_author=C Li;citation_author=S Wang;citation_author=Y Wang;citation_author=P Yu;citation_author=Y Liang;citation_author=Y Liu;"/>
+<meta name="citation_reference" content="citation_title=Distribution distance minimization for unsupervised user identity linkage;citation_article_type=conf-proc;citation_firstpage=447;citation_lastpage=56;citation_author=C Li;citation_author=S Wang;citation_author=PS Yu;citation_author=L Zheng;citation_author=X Zhang;citation_author=Z Li;"/>
+<meta name="citation_reference" content="citation_title=TOAK: a topology-oriented attack strategy for degrading user identity linkage in cross-network learning;citation_article_type=conf-proc;citation_firstpage=2208;citation_lastpage=18;citation_author=J Shao;citation_author=Y Wang;citation_author=F Guo;citation_author=B Shi;citation_author=H Shen;citation_author=X Cheng;"/>
+<meta name="citation_reference" content="citation_title=An effective node injection approach for attacking social network alignment;citation_article_type=journal;citation_volume=20;citation_firstpage=589;citation_lastpage=604;citation_publication_date=2025;citation_doi=10.1109/tifs.2024.3515842;citation_author=S Jiang;citation_author=Y Qiu;citation_author=X Mo;citation_author=R Tang;citation_author=W Wang;"/>
+<meta name="citation_reference" content="citation_title=DeLink: an adversarial framework for defending against cross-site user identity linkage;citation_article_type=journal;citation_volume=18;citation_issue=2;citation_firstpage=1;citation_lastpage=34;citation_publication_date=2024;citation_doi=10.1145/3643828;citation_author=P Zhang;citation_author=Q Zhou;citation_author=T Lu;citation_author=H Gu;citation_author=N Gu;"/>
+<meta name="citation_reference" content="citation_title=Cross-platform network user alignment interference methods based on obfuscation strategy;citation_article_type=conf-proc;citation_firstpage=2185;citation_lastpage=90;citation_publication_date=2024;citation_publisher=IEEE;citation_author=L Wang;citation_author=Y Liu;citation_author=X Guo;citation_author=Z Long;citation_author=C Yang;"/>
+<meta name="citation_reference" content="citation_title=Predict anchor links across social networks via an embedding approach;citation_article_type=conf-proc;citation_volume=16;citation_firstpage=1823;citation_lastpage=9;citation_publication_date=2016;citation_publisher=AAAI Press;citation_author=T Man;citation_author=H Shen;citation_author=S Liu;citation_author=X Jin;citation_author=X Cheng;"/>
+<meta name="citation_reference" content="citation_title=Structural representation learning for user alignment across social networks;citation_article_type=journal;citation_volume=32;citation_issue=9;citation_firstpage=1824;citation_lastpage=37;citation_publication_date=2019;citation_doi=10.1109/tkde.2019.2911516;citation_author=L Liu;citation_author=X Li;citation_author=WK Cheung;citation_author=L Liao;"/>
+<meta name="citation_reference" content="citation_title=NeXLink: node embedding framework for cross-network linkages across social networks;citation_article_type=conf-proc;citation_firstpage=61;citation_lastpage=75;citation_publication_date=2020;citation_publisher=Springer;citation_author=R Kaushal;citation_author=S Singh;citation_author=P Kumaraguru;"/>
+<meta name="citation_reference" content="citation_title=Deep multi-granularity graph embedding for user identity linkage across social networks;citation_article_type=journal;citation_volume=193;citation_firstpage=105301;citation_publication_date=2020;citation_doi=10.1016/j.knosys.2019.105301;citation_author=S Fu;citation_author=G Wang;citation_author=S Xia;citation_author=L Liu;"/>
+<meta name="citation_reference" content="citation_title=Hierarchical multi-marginal optimal transport for network alignment;citation_article_type=conf-proc;citation_volume=38;citation_firstpage=16660;citation_lastpage=8;citation_publication_date=2024;citation_publisher=AAAI Press;citation_author=Z Zeng;citation_author=B Du;citation_author=S Zhang;citation_author=Y Xia;citation_author=Z Liu;citation_author=H Tong;"/>
+<meta name="citation_reference" content="citation_title=Balancing consistency and disparity in network alignment;citation_article_type=conf-proc;citation_firstpage=2212;citation_lastpage=22;citation_author=S Zhang;citation_author=H Tong;citation_author=L Jin;citation_author=Y Xia;citation_author=Y Guo;"/>
+<meta name="citation_reference" content="citation_title=Graph neural networks for user identity linkage;citation_article_type=other;citation_publication_date=arXiv.1903.02174. 2019;citation_author=W Zhang;citation_author=K Shu;citation_author=H Liu;citation_author=Y Wang;"/>
+<meta name="citation_reference" content="citation_title=The earth mover’s distance as a metric for image retrieval;citation_article_type=journal;citation_volume=40;citation_issue=2;citation_firstpage=99;citation_lastpage=121;citation_publication_date=2000;citation_doi=10.1023/a:1026543900054;citation_author=Y Rubner;citation_author=C Tomasi;citation_author=LJ Guibas;"/>
+<meta name="citation_reference" content="citation_title=Multi-marginal optimal transport: theory and applications;citation_article_type=journal;citation_volume=49;citation_issue=6;citation_firstpage=1771;citation_lastpage=90;citation_publication_date=2015;citation_doi=10.1051/m2an/2015020;citation_author=B Pass;"/>
+<meta name="citation_reference" content="citation_title=On the reliability of profile matching across large online social networks;citation_article_type=conf-proc;citation_firstpage=1799;citation_lastpage=808;citation_author=O Goga;citation_author=P Loiseau;citation_author=R Sommer;citation_author=R Teixeira;citation_author=KP Gummadi;"/>
+<meta name="citation_reference" content="citation_title=Connecting users across social media sites: a behavioral-modeling approach;citation_article_type=conf-proc;citation_firstpage=41;citation_lastpage=9;citation_author=R Zafarani;citation_author=H Liu;"/>
+<meta name="citation_reference" content="citation_title=StyleLink: user identity linkage across social media with stylometric representations;citation_article_type=conf-proc;citation_volume=19;citation_firstpage=2076;citation_lastpage=88;citation_publication_date=2025;citation_publisher=AAAI Press;citation_author=W Xu;citation_author=BC Fung;"/>
+<meta name="citation_reference" content="citation_title=GradAlign+: empowering gradual network alignment using attribute augmentation;citation_article_type=conf-proc;citation_firstpage=4374;citation_lastpage=8;citation_author=JD Park;citation_author=C Tran;citation_author=WY Shin;citation_author=X Cao;"/>
+<meta name="citation_reference" content="citation_article_type=book;citation_firstpage=162;citation_lastpage=71;citation_publication_date=2020;citation_doi=10.1007/978-3-030-66922-5_11;citation_publisher=Springer;citation_author=X Guo;citation_author=Y Liu;citation_author=X Meng;citation_author=L Liu;"/>
+<meta name="citation_reference" content="citation_title=MFLink: user identity linkage across online social networks via multimodal fusion and adversarial learning;citation_article_type=journal;citation_volume=8;citation_issue=5;citation_firstpage=3716;citation_lastpage=25;citation_publication_date=2024;citation_doi=10.1109/tetci.2024.3372374;citation_author=S Li;citation_author=D Lu;citation_author=Q Li;citation_author=X Wu;citation_author=S Li;citation_author=Z Wang;"/>
+<meta name="citation_reference" content="citation_title=Partially shared adversarial learning for semi-supervised multi-platform user identity linkage;citation_article_type=conf-proc;citation_firstpage=249;citation_lastpage=58;citation_author=C Li;citation_author=S Wang;citation_author=H Wang;citation_author=Y Liang;citation_author=PS Yu;citation_author=Z Li;"/>
+<meta name="citation_reference" content="citation_title=Anchor link prediction for cross-network digital forensics from local and global perspectives;citation_article_type=journal;citation_volume=19;citation_firstpage=3620;citation_lastpage=35;citation_publication_date=2024;citation_doi=10.1109/tifs.2024.3364066;citation_author=H Wang;citation_author=W Yang;citation_author=D Man;citation_author=J Lv;citation_author=S Han;citation_author=J Tan;"/>
+<meta name="citation_reference" content="citation_title=Cross-network representation learning for anchor users on multiplex heterogeneous social network;citation_article_type=journal;citation_volume=118;citation_firstpage=108461;citation_publication_date=2022;citation_doi=10.1016/j.asoc.2022.108461;citation_author=A Amara;citation_author=MAH Taieb;citation_author=MB Aouicha;"/>
+<meta name="citation_reference" content="citation_title=Adversarial-enhanced hybrid graph network for user identity linkage;citation_article_type=conf-proc;citation_firstpage=1084;citation_lastpage=93;citation_author=X Chen;citation_author=X Song;citation_author=G Peng;citation_author=S Feng;citation_author=L Nie;"/>
+<meta name="citation_reference" content="citation_title=CINA: curvature-based integrated network alignment with hypergraph;citation_article_type=conf-proc;citation_firstpage=2709;citation_lastpage=22;citation_publication_date=2024;citation_publisher=IEEE;citation_author=P Jiao;citation_author=Y Liu;citation_author=Y Wang;citation_author=G Zhang;"/>
+<meta name="citation_reference" content="citation_title=TDGIA: effective injection attacks on graph neural networks;citation_article_type=conf-proc;citation_firstpage=2461;citation_lastpage=71;citation_author=X Zou;citation_author=Q Zheng;citation_author=Y Dong;citation_author=X Guan;citation_author=E Kharlamov;citation_author=J Lu;"/>
+<meta name="citation_reference" content="citation_title=Adversarial camouflage for node injection attack on graphs;citation_article_type=journal;citation_volume=649;citation_firstpage=119611;citation_publication_date=2023;citation_doi=10.1016/j.ins.2023.119611;citation_author=S Tao;citation_author=Q Cao;citation_author=H Shen;citation_author=Y Wu;citation_author=L Hou;citation_author=F Sun;"/>
+<meta name="citation_reference" content="citation_title=Adversarial attacks on graph neural networks via node injections: a hierarchical reinforcement learning approach;citation_article_type=conf-proc;citation_firstpage=673;citation_lastpage=83;citation_author=Y Sun;citation_author=S Wang;citation_author=X Tang;citation_author=TY Hsieh;citation_author=V Honavar;"/>
+<meta name="citation_reference" content="citation_title=Single node injection attack against graph neural networks;citation_article_type=conf-proc;citation_firstpage=1794;citation_lastpage=803;citation_author=S Tao;citation_author=Q Cao;citation_author=H Shen;citation_author=J Huang;citation_author=Y Wu;citation_author=X Cheng;"/>
+<meta name="citation_reference" content="citation_title=An analysis of social network-based sybil defenses;citation_article_type=journal;citation_volume=40;citation_issue=4;citation_firstpage=363;citation_lastpage=74;citation_publication_date=2010;citation_doi=10.1145/1851275.1851226;citation_author=B Viswanath;citation_author=A Post;citation_author=KP Gummadi;citation_author=A Mislove;"/>
+<meta name="citation_reference" content="citation_title=Degrading the accuracy of interlayer link prediction: a method based on the analysis of node importance;citation_article_type=journal;citation_volume=36;citation_issue=10;citation_firstpage=2442004;citation_publication_date=2025;citation_doi=10.1142/s012918312442004x;citation_author=R Tang;citation_author=Z Yong;citation_author=Y Mei;citation_author=X Li;citation_author=J Li;citation_author=J Ding;"/>
+<meta name="citation_reference" content="citation_title=Adversarial attacks on neural networks for graph data;citation_article_type=conf-proc;citation_firstpage=2847;citation_lastpage=56;citation_author=D Zügner;citation_author=A Akbarnejad;citation_author=S Günnemann;"/>
+<meta name="citation_reference" content="citation_title=Fast gradient attack on network embedding;citation_article_type=other;citation_author=J Chen;citation_author=Y Wu;citation_author=X Xu;citation_author=Y Chen;citation_author=H Zheng;citation_author=Q Xuan;"/>
+<meta name="citation_reference" content="citation_title=Adversarial attacks on node embeddings via graph poisoning;citation_article_type=conf-proc;citation_firstpage=695;citation_lastpage=704;citation_publication_date=2019;citation_publisher=PMLR;citation_author=A Bojchevski;citation_author=S Günnemann;"/>
+<meta name="citation_reference" content="citation_title=Topology attack and defense for graph neural networks: an optimization perspective;citation_article_type=other;citation_author=K Xu;citation_author=H Chen;citation_author=S Liu;citation_author=PY Chen;citation_author=TW Weng;citation_author=M Hong;"/>
+<meta name="citation_reference" content="citation_title=Preserving privacy in social networks against neighborhood attacks;citation_article_type=conf-proc;citation_firstpage=506;citation_lastpage=15;citation_publication_date=2008;citation_publisher=IEEE;citation_author=B Zhou;citation_author=J Pei;"/>
+<meta name="citation_reference" content="citation_title=Sharing graphs using differentially private graph models;citation_article_type=conf-proc;citation_firstpage=81;citation_lastpage=98;citation_publication_date=2011;citation_publisher=ACM;citation_author=A Sala;citation_author=X Zhao;citation_author=C Wilson;citation_author=H Zheng;citation_author=BY Zhao;"/>
+<meta name="citation_reference" content="citation_title=Hiding individuals and communities in a social network;citation_article_type=journal;citation_volume=2;citation_issue=2;citation_firstpage=139;citation_lastpage=47;citation_publication_date=2018;citation_doi=10.1038/s41562-017-0290-3;citation_author=M Waniek;citation_author=TP Michalak;citation_author=MJ Wooldridge;citation_author=T Rahwan;"/>
+<meta name="citation_reference" content="citation_title=Adversarial stylometry: circumventing authorship recognition to preserve privacy and anonymity;citation_article_type=journal;citation_volume=15;citation_issue=3;citation_firstpage=1;citation_lastpage=22;citation_publication_date=2012;citation_doi=10.1145/2382448.2382450;citation_author=M Brennan;citation_author=S Afroz;citation_author=R Greenstadt;"/>
+<meta name="citation_reference" content="citation_title=ALISON: fast and effective stylometric authorship obfuscation;citation_article_type=conf-proc;citation_volume=38;citation_firstpage=19315;citation_lastpage=22;citation_publication_date=2024;citation_publisher=AAAI Press;citation_author=E Xing;citation_author=S Venkatraman;citation_author=T Le;citation_author=D Lee;"/>
+<meta name="citation_reference" content="citation_title=BERT: pre-training of deep bidirectional transformers for language understanding;citation_article_type=conf-proc;citation_firstpage=4171;citation_lastpage=86;citation_publication_date=2019;citation_publisher=ACL;citation_author=J Devlin;citation_author=MW Chang;citation_author=K Lee;citation_author=K Toutanova;"/>
+<meta name="citation_reference" content="citation_title=Text processing like humans do: visually attacking and shielding NLP systems;citation_article_type=other;citation_author=S Eger;citation_author=GG Şahin;citation_author=A Rücklé;citation_author=JU Lee;citation_author=C Schulz;citation_author=M Mesgar;"/>
+<meta name="citation_reference" content="citation_title=TextBugger: generating adversarial text against real-world applications;citation_article_type=other;citation_author=J Li;citation_author=S Ji;citation_author=T Du;citation_author=B Li;citation_author=T Wang;"/>
+<meta name="citation_reference" content="citation_title=Defending against user identity linkage attack across multiple online social networks;citation_article_type=conf-proc;citation_firstpage=375;citation_lastpage=6;citation_author=Y Shen;citation_author=F Wang;citation_author=H Jin;"/>
+<meta name="citation_reference" content="citation_title=A: author attribute anonymity by adversarial training of neural machine translation;citation_article_type=conf-proc;citation_firstpage=1633;citation_lastpage=50;citation_author=R Shetty;citation_author=B Schiele;citation_author=M Fritz;"/>
+<meta name="citation_reference" content="citation_title=Aligning users across social networks using network embedding;citation_article_type=conf-proc;citation_firstpage=1774;citation_lastpage=80;citation_publication_date=2016;citation_publisher=AAAI Press;citation_author=L Liu;citation_author=WK Cheung;citation_author=X Li;citation_author=L Liao;"/>
+<meta name="citation_reference" content="citation_title=Transferring heterogeneous links across location-based social networks;citation_article_type=conf-proc;citation_firstpage=303;citation_lastpage=12;citation_author=J Zhang;citation_author=X Kong;citation_author=PS Yu;"/>
+<meta name="citation_reference" content="citation_title=Mapping users across networks by manifold alignment on hypergraph;citation_article_type=conf-proc;citation_firstpage=159;citation_lastpage=65;citation_publication_date=2014;citation_publisher=AAAI Press;citation_author=S Tan;citation_author=Z Guan;citation_author=D Cai;citation_author=X Qin;citation_author=J Bu;citation_author=C Chen;"/>
+<meta name="citation_reference" content="citation_title=A community sensing approach for user identity linkage;citation_article_type=conf-proc;citation_firstpage=191;citation_lastpage=202;citation_publication_date=2019;citation_publisher=Springer;citation_author=Z Wang;citation_author=T Hayashi;citation_author=Y Ohsawa;"/>
+<meta name="citation_reference" content="citation_title=Multi-level graph convolutional networks for cross-platform anchor link prediction;citation_article_type=conf-proc;citation_firstpage=1503;citation_lastpage=11;citation_author=H Chen;citation_author=H Yin;citation_author=X Sun;citation_author=T Chen;citation_author=B Gabrys;citation_author=K Musial;"/>
+<meta name="citation_reference" content="citation_title=Hyperbolic user identity linkage across social networks;citation_article_type=conf-proc;citation_firstpage=1;citation_lastpage=6;citation_publication_date=2020;citation_publisher=IEEE;citation_author=F Wang;citation_author=L Sun;citation_author=Z Zhang;"/>
+<meta name="citation_reference" content="citation_title=Network structural perturbation against interlayer link prediction;citation_article_type=journal;citation_volume=250;citation_firstpage=109095;citation_publication_date=2022;citation_doi=10.1016/j.knosys.2022.109095;citation_author=R Tang;citation_author=S Jiang;citation_author=X Chen;citation_author=W Wang;citation_author=W Wang;"/>
+<meta name="citation_reference" content="citation_title=Integrated anchor and social link predictions across social networks;citation_article_type=conf-proc;citation_firstpage=2125;citation_lastpage=32;citation_publication_date=2015;citation_publisher=AAAI Press;citation_author=J Zhang;citation_author=SY Philip;"/>
+<meta name="citation_reference" content="citation_title=ASNets: a benchmark dataset of aligned social networks for cross-platform user modeling;citation_article_type=conf-proc;citation_firstpage=1881;citation_lastpage=4;citation_author=X Cao;citation_author=Y Yu;"/>
+<meta name="citation_reference" content="citation_title=Attributed network alignment: problem definitions and fast solutions;citation_article_type=journal;citation_volume=31;citation_issue=9;citation_firstpage=1680;citation_lastpage=92;citation_publication_date=2018;citation_author=S Zhang;citation_author=H Tong;"/>
+<meta name="citation_reference" content="citation_title=ComSoc: adaptive transfer of user behaviors over composite social network;citation_article_type=conf-proc;citation_firstpage=696;citation_lastpage=704;citation_author=E Zhong;citation_author=W Fan;citation_author=J Wang;citation_author=L Xiao;citation_author=Y Li;"/>
+<meta name="citation_reference" content="citation_article_type=book;citation_publication_date=2006;citation_publisher=Harvard University Press;citation_author=MA Nowak;"/>
+<meta name="citation_reference" content="citation_title=Assessing the privacy risk of cross-platform identity linkage using eye movement biometrics;citation_article_type=conf-proc;citation_firstpage=1;citation_lastpage=9;citation_publication_date=2023;citation_publisher=IEEE;citation_author=S Aziz;citation_author=O Komogortsev;"/>
+<meta name="citation_reference" content="citation_title=Towards federated learning driving technology for privacy-preserving micro-expression recognition;citation_article_type=journal;citation_volume=30;citation_issue=5;citation_firstpage=2169;citation_lastpage=83;citation_publication_date=2025;citation_doi=10.26599/tst.2024.9010098;citation_author=M Wang;citation_author=L Zhou;citation_author=X Huang;citation_author=W Zheng;"/>
+<meta name="citation_keywords" content="User identity linkage (UIL); cross-network mapping; adversarial attacks; privacy protection; online social networks" />
+<meta name="citation_id" content="64808" />
+<meta name="citation_state" content="" />
+<meta name="DC.Contributor" content="Shaojie Min"/>
+<meta name="DC.Creator" content="Shaojie Min"/>
+<meta name="DC.Contributor" content="Yaxiao Luo"/>
+<meta name="DC.Creator" content="Yaxiao Luo"/>
+<meta name="DC.Contributor" content="Kebing Liu"/>
+<meta name="DC.Creator" content="Kebing Liu"/>
+<meta name="DC.Contributor" content="Qingyuan Gong"/>
+<meta name="DC.Creator" content="Qingyuan Gong"/>
+<meta name="DC.Contributor" content="Yang Chen"/>
+<meta name="DC.Creator" content="Yang Chen"/>
+<meta name="DC.Created" content="2025-12-09"/>
+<meta name="DC.Date" content="2025-12-09"/>
+<meta name="DC.Format" content="text/html" />
+<meta name="DC.Type" content="text" />
+<meta name="DC.Title" content="From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods"/>
+<meta name="DC.Description" content="User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. ... | Find, read and cite all the research you need on Tech Science Press"/>
+<meta name="DC.Publisher" content="Tech Science Press"/>
+<meta name="dc.subject" content="REVIEW"/>
+
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@id":"https:\/\/www.techscience.com\/cmc\/v86n2\/64808","@type":"ScholarlyArticle","headline":"From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods","author":[{"@type":"Person","name":"Min, Shaojie"},{"@type":"Person","name":"Luo, Yaxiao"},{"@type":"Person","name":"Liu, Kebing"},{"@type":"Person","name":"Gong, Qingyuan"},{"@type":"Person","name":"Chen, Yang"}],"datePublished":"2025\/12\/09","publisher":{"@id":"https:\/\/www.techscience.com\/ndetail\/abt","@type":"NewsMediaOrganization","name":"Tech Science Press","logo":{"@type":"ImageObject","url":"https:\/\/www.techscience.com\/static\/images\/logo.png"}},"name":"From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods","keywords":"User identity linkage (UIL), cross-network mapping, adversarial attacks, privacy protection, online social networks","articleSection":"Computers, Materials & Continua","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http:\/\/schema.org\/ReadAction","userInteractionCount":"1781"},{"@type":"InteractionCounter","interactionType":"http:\/\/schema.org\/DownloadAction","userInteractionCount":"812"}],"sameAs":"https:\/\/doi.org\/10.32604\/cmc.2025.073175"}</script>
+
+                
+                <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/www.techscience.com\/"},{"@type":"ListItem","position":2,"name":"Journals","item":"https:\/\/www.techscience.com\/journals"},{"@type":"ListItem","position":3,"name":"CMC","item":"https:\/\/www.techscience.com\/journal\/cmc"},{"@type":"ListItem","position":4,"name":"Vol.86, No.2, 2026","item":"https:\/\/www.techscience.com\/cmc\/v86n2"},{"@type":"ListItem","position":5,"name":"10.32604\/cmc.2025.073175"}]}</script>
+                        </head><style>
+/* Downloads / Citation Tools 下拉：改用纯 CSS 控制展开，
+   原来依赖 Bootstrap(jQuery) 的 data-toggle="dropdown"，外部 JS 未加载完成时点击无反应。
+   现在用 hover + focus-within 展开，不依赖 JS，资源没加载好也能点开使用。
+   作用域限定 .nkslj，不影响页面其它下拉。 */
+.nkslj .dropdown{ position: relative; }
+.nkslj .dropdown > .dropdown-toggle{ cursor: pointer; outline: none; }
+.nkslj .dropdown > .dropdown-menu{ display: none; }
+.nkslj .dropdown:hover > .dropdown-menu,
+.nkslj .dropdown:focus-within > .dropdown-menu{ display: block; }
+ .rotate90{
+ width: 15px; height: 25px;
+transform:rotate(90deg);
+-ms-transform:rotate(90deg); 	/* IE 9 */
+-moz-transform:rotate(90deg); 	/* Firefox */
+-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+-o-transform:rotate(90deg); 	/* Opera */
+}
+.menudetail li a{
+     width: 170px;cursor: auto;
+}
+.menudetail li a:hover{
+    text-decoration: none; cursor: auto
+}
+.menudetail li a span{
+ float: right; padding-right: 15px
+}
+.cite_detail{
+    padding:0px; position: relative; padding-left: 110px;line-height: 19px;font-size: 12px
+}
+.cite_detail a{
+    cursor: pointer;
+    color: #235abf;
+    text-decoration: none;
+    text-decoration: none;
+    outline: none;}
+.cite_detail a:hover{ text-decoration: underline;}
+.sub-item-box{
+    padding-top: 0px; overflow: hidden;
+}
+.sub-item-box-item{
+    float: left; width: 120px; text-align: center;
+}
+.sub-item-box-item a{
+    display: block; 
+}
+.clear{ clear: both;}
+.crossmark_svg_box{ position: relative; }
+.crossmark_svg{
+    position: absolute;
+	right: 10px;
+	top: -47px;
+	width: 50px;
+	height: 50px;
+}
+@media only screen and (max-width:600px){	
+    #section_abstract img{ max-width: 95% !important}
+}
+
+.RetractedContainer{
+    margin-top: 20px;
+    border-left: 5px solid #e87626;
+    padding-left: 10px;
+    background-color: #fff6ec;
+}
+.RetractedContainer__content {
+    padding: 16px 24px 16px 12px;
+    border-bottom: 1px solid #ffcb8d;
+}
+.RetractedContainer__alertText{
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-align: left;
+}
+.RetractedContainer__alertText::before {
+    content: "";
+    display: inline-block;
+    min-width: 16px;
+    min-height: 20px;
+    margin-top: 2px;
+    margin-right: 8px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iNCIgeT0iMy4zMzM1IiB3aWR0aD0iOCIgaGVpZ2h0PSI5LjMzMzMzIiBmaWxsPSIjMjgyODI4Ii8+CjxwYXRoIGQ9Ik03Ljk5OTk2IDAuOTU5OTYxQzYuNjA3NTggMC45NTk5NjEgNS4yNDY0NyAxLjM3Mjg1IDQuMDg4NzUgMi4xNDY0MUMyLjkzMTAzIDIuOTE5OTggMi4wMjg2OSA0LjAxOTQ4IDEuNDk1ODUgNS4zMDU4N0MwLjk2MzAxMSA2LjU5MjI2IDAuODIzNTk2IDguMDA3NzcgMS4wOTUyNCA5LjM3MzRDMS4zNjY4OCAxMC43MzkgMi4wMzczNyAxMS45OTM0IDMuMDIxOTMgMTIuOTc4QzQuMDA2NDkgMTMuOTYyNiA1LjI2MDkgMTQuNjMzIDYuNjI2NTMgMTQuOTA0N0M3Ljk5MjE2IDE1LjE3NjMgOS40MDc2NiAxNS4wMzY5IDEwLjY5NDEgMTQuNTA0MUMxMS45ODA0IDEzLjk3MTIgMTMuMDc5OSAxMy4wNjg5IDEzLjg1MzUgMTEuOTExMkMxNC42MjcxIDEwLjc1MzUgMTUuMDQgOS4zOTIzNCAxNS4wNCA3Ljk5OTk2QzE1LjAzNzggNi4xMzM0OSAxNC4yOTU1IDQuMzQ0MDcgMTIuOTc1NyAzLjAyNDI3QzExLjY1NTkgMS43MDQ0NyA5Ljg2NjQ0IDAuOTYyMDc4IDcuOTk5OTYgMC45NTk5NjFaTTguNjM5OTYgMTEuNTM2QzguNjM5OTYgMTEuNjIwOCA4LjYwNjI1IDExLjcwMjIgOC41NDYyNCAxMS43NjIyQzguNDg2MjMgMTEuODIyMiA4LjQwNDgzIDExLjg1NiA4LjMxOTk2IDExLjg1Nkg3LjY3OTk2QzcuNTk1MSAxMS44NTYgNy41MTM3IDExLjgyMjIgNy40NTM2OSAxMS43NjIyQzcuMzkzNjggMTEuNzAyMiA3LjM1OTk2IDExLjYyMDggNy4zNTk5NiAxMS41MzZWMTAuODk2QzcuMzU5OTYgMTAuODExMSA3LjM5MzY4IDEwLjcyOTcgNy40NTM2OSAxMC42Njk3QzcuNTEzNyAxMC42MDk3IDcuNTk1MSAxMC41NzYgNy42Nzk5NiAxMC41NzZIOC4zMTk5NkM4LjQwNDgzIDEwLjU3NiA4LjQ4NjIzIDEwLjYwOTcgOC41NDYyNCAxMC42Njk3QzguNjA2MjUgMTAuNzI5NyA4LjYzOTk2IDEwLjgxMTEgOC42Mzk5NiAxMC44OTZWMTEuNTM2Wk04LjYzOTk2IDguOTc1OTZDOC42Mzk5NiA5LjA2MDgzIDguNjA2MjUgOS4xNDIyMiA4LjU0NjI0IDkuMjAyMjRDOC40ODYyMyA5LjI2MjI1IDguNDA0ODMgOS4yOTU5NiA4LjMxOTk2IDkuMjk1OTZINy42Nzk5NkM3LjU5NTEgOS4yOTU5NiA3LjUxMzcgOS4yNjIyNSA3LjQ1MzY5IDkuMjAyMjRDNy4zOTM2OCA5LjE0MjIyIDcuMzU5OTYgOS4wNjA4MyA3LjM1OTk2IDguOTc1OTZWNC40OTU5NkM3LjM1OTk2IDQuNDExMDkgNy4zOTM2OCA0LjMyOTcgNy40NTM2OSA0LjI2OTY5QzcuNTEzNyA0LjIwOTY4IDcuNTk1MSA0LjE3NTk2IDcuNjc5OTYgNC4xNzU5Nkg4LjMxOTk2QzguNDA0ODMgNC4xNzU5NiA4LjQ4NjIzIDQuMjA5NjggOC41NDYyNCA0LjI2OTY5QzguNjA2MjUgNC4zMjk3IDguNjM5OTYgNC40MTEwOSA4LjYzOTk2IDQuNDk1OTZWOC45NzU5NloiIGZpbGw9IiNFODc2MjYiLz4KPC9zdmc+Cg==);
+    background-repeat: no-repeat;
+}
+.RetractedContainer__info{
+    padding-left: 24px;
+}
+.RetractedContainer-full{
+    margin-top: 20px;
+}
+.TSP2022 span.sup{
+    line-height: 10px;
+}
+
+#modal {
+        display: none;
+    }
+    .modal {
+        margin: auto;
+        padding-top: 5%;
+        width: 50%;
+        height: 80%;
+        z-index: 1;
+    }
+
+    .modal img {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+        display: block;
+        padding: 10px;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        box-shadow: 0 2px 6px rgb(0, 0, 0, 0.2), 0 10px 20px rgb(0, 0, 0, 0.2);
+        border-radius: 12px;
+        border: 1px solid white;
+    }
+    
+    .modal-close{
+        color: #333;
+        overflow: visible;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+        -webkit-appearance: none;
+        display: block;
+        outline: 0;
+        padding: 0;
+        z-index: 1046;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        text-decoration: none;
+        text-align: center;
+        opacity: .65;
+
+        font-style: normal;
+        font-size: 28px;
+    }
+        
+    @media only screen and (max-width:992px){	
+        .modal {
+             width: 100%;
+             padding-top: 20%;
+        }
+        .modal img {
+            padding: 5px;
+            max-width: calc(100% - 20px);
+        }
+        .modal-close{
+            right: 10px;
+            top: 0px;
+        }
+    }
+
+    @keyframes zoom {
+        from {transform: scale(0.1)}
+        to {transform: scale(1)}
+    }
+</style>
+<body>
+            <div style='position:fixed;width:100%;height:100%;z-index: 99999999;background-color:rgb(0,0,0,0.65)' id='modal'>
+        <div class='modal' id='modalw'>
+            <div style="position: relative;">
+                <button title="Close (Esc)" type="button" class="modal-close" onclick="modalClose()">×</button>
+            </div>
+            <a href="" target="_blank" id="bgImgLink">
+                <img id='bgImg' />
+            </a>
+        </div>
+    </div>
+    
+    
+
+
+<div class="header">
+    <div class="top1">
+        <div class="logo"><a href="https://www.techscience.com/" title="www.techscience.com"><img src="https://www.techscience.com/static/images/logo.png?t=20261008" alt="logo"/></a></div>
+  
+    <div class="shui">
+        <div class="ss"><a href="https://www.techscience.com/results" title="Search"><i class="iconfont icon-sousuo"></i></a></div>
+    
+
+
+    <div class="btn1"><a href="https://ijs.tspsubmission.com/homepage?returnUrl=/submission/1">Submit</a></div>
+<div class="btn2">
+    <p>
+        <a href="https://ijs.tspsubmission.com/homepage?returnUrl=/submission/1"><img src="https://www.techscience.com/static/images/r1.png?t=20261008" alt="Login" width="15" height="15" /> Login</a>
+    </p>
+    <p>
+        <a href="https://ijs.tspsubmission.com/regist"><img src="https://www.techscience.com/static/images/r2.png?t=20261008" alt="Register" width="15" height="15" /> Register</a>
+    </p>
+</div>
+
+      </div>
+     
+       
+ 
+  </div>
+  
+  <div class="top2">  <div class="an"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+  
+       
+
+        <div class="nav">
+            <ul>
+                <li>
+                    <div class="y_j"><a href="https://www.techscience.com/" class="o_lm">Home</a></div>
+                </li>     
+                  
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/journals" class="o_lm">Academic Journals</a>
+                                                    </div>
+                                                    
+                    </li>  
+                      
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/info/books" class="o_lm">Books &amp; Monographs</a>
+                                                    </div>
+                                                    
+                    </li>  
+                      
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/conferences" class="o_lm">Conferences</a>
+                                                    </div>
+                                                    
+                    </li>  
+                      
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/ndetail/languageservice" class="o_lm">Language Service</a>
+                            <i class="iconfont icon-jiantou"></i>                        </div>
+                                                <div class="e_j">
+                        <ul>
+                              
+                            <li><a href="https://www.techscience.com/ndetail/editingservice">Standard Editing Service</a></li>
+                              
+                            <li><a href="https://www.techscience.com/ndetail/scientificediting">Expert Scientific Editing Service</a></li>
+                              
+                            <li><a href="https://www.techscience.com/ndetail/translationservice">Academic Translation Service</a></li>
+                                                    </ul>
+                        </div>
+                                                    
+                    </li>  
+                      
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/newslist" class="o_lm">News &amp; Announcements</a>
+                                                    </div>
+                                                    
+                    </li>  
+                      
+                    <li>
+                        <div class="y_j">
+                            <a href="https://www.techscience.com/ndetail/abt" class="o_lm">About</a>
+                                                    </div>
+                                                    
+                    </li>  
+                         
+            </ul>
+        </div>
+      
+ </div>
+  
+  </div>
+    <div class="jiange"></div>
+    <div class="hui2">
+        <div class="weizhi breadcrumb breadcrumbs avia-breadcrumbs">
+             
+                    <a href="https://www.techscience.com/">Home</a><span>/</span> 
+                     
+                    <a href="https://www.techscience.com/journals">Journals</a><span>/</span> 
+                     
+                    <a href="https://www.techscience.com/journal/cmc">CMC</a><span>/</span> 
+                     
+                    <a href="https://www.techscience.com/cmc/v86n2">Vol.86, No.2, 2026</a><span>/</span> 
+                     
+                    10.32604/cmc.2025.073175 
+
+                     
+        </div>
+    </div>
+    
+    <div class="nmain">
+        <div class="nlf">
+         
+            
+
+<div class="k1">
+<ul>
+  
+    <li><a href="https://www.techscience.com/journal/cmc"><img src="https://file.techscience.com/uploads/imgs/202507/e46d74fe50e298f5b40da10d61974dde.png?t=20220620" alt="Journal Logo" width="350" height="84" /></a></li>
+  
+     
+    <li><a href="https://ijs.tspsubmission.com/homepage?returnUrl=/submission/1"><img src="https://www.techscience.com/static/images/k10.png?t=20261008" alt="Submit a Paper icon" width="50" height="50" />Submit a Paper</a></li>
+    
+      
+    <li><a href="https://ijs.tspsubmission.com/journal/issues/propose"><img src="https://www.techscience.com/static/images/k11.png?t=20261008" alt="Propose a Special lssue icon" width="50" height="50" />Propose a Special lssue</a></li>
+           
+    <li><a href="https://ijs.tspsubmission.com/page/index.html#/volunteer/apply?jid=1" target="_blank">Review for CMC</a></li>
+   
+</ul>
+</div>
+
+
+            <div class="k2 gsfd">
+                <h2 class="nbt">Table of Content</h2>
+
+                <ul>
+                    <li><a href="#section_abstract">Abstract</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s1" target="_blank">Introduction</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s2" target="_blank">Characterizing Mapping Models by Data Source Dependency</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s3" target="_blank">Anti-Mapping Models: Injection, Perturbation, and Obfuscation</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s4" target="_blank">Systematic Comparison of Mapping and Anti-Mapping Strategies from Different Perspectives</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s5" target="_blank">Challenges and Future Directions</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s6" target="_blank">Limitations of This Survey</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#s7" target="_blank">Conclusion</a></li>
+                                        <li><a href="https://www.techscience.com/cmc/v86n2/64808/html#sref" target="_blank">References</a></li>
+                                    </ul>
+
+            </div>
+
+
+        </div>
+
+        <div class="ncenter">
+             <article>
+            <div class="html-article-content xxjs">
+                <span itemprop="publisher" content="Tech Science Press"></span>
+                <span itemprop="url" content="https://www.techscience.com/cmc/v86n2/64808"></span>
+                <div class="bq1">
+                    <p class="hong"><img src="https://www.techscience.com/static/images/suob.png?t=20261008" alt="Open Access icon" width="126" height="198" />Open Access</p>
+       <p class="lv">REVIEW</p>
+                
+                
+                 </div>
+                <div class="bq2">
+                    <div class="crossmark_svg_box">
+                                                      <!-- Start Crossmark Snippet v2.0 -->
+                            <script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+                            <a data-target="crossmark" ><img class="crossmark_svg" alt="crossmark" src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_square.svg" width="50" /></a>
+                            <!-- End Crossmark Snippet -->
+                                                </div>
+                     
+                    <h1 class="title citation_title" itemprop="name">From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods</h1>
+                                   
+                    <p class="authors citation_author">
+                        Shaojie Min<sup>1</sup>, Yaxiao Luo<sup>1</sup>, Kebing Liu<sup>1</sup>, Qingyuan Gong<sup>2</sup>, Yang Chen<sup>1,*</sup>                    </p>
+
+                    <p class="affiliation">
+                        1 Shanghai Key Lab of Intelligent Information Processing, College of Computer Science and Artificial Intelligence, Fudan University, Shanghai, 200433, China<br/>2 Research Institute of Intelligent Complex Systems, Fudan University, Shanghai, 200433, China                    </p>
+
+                                            <p class="Corresponding">
+
+                        * Corresponding Author: Yang Chen. Email: <img style="vertical-align: middle" alt="email" src="https://www.techscience.com/psh.php?mailname=chenyang@fudan.edu.cn" />  
+
+                        </p>
+                    
+                                            <p class="SpecialIssue">
+                        (This article belongs to the Special Issue: <a href="https://www.techscience.com/cmc/special_detail/cyberspace_mapping">Cyberspace Mapping and Anti-Mapping Techniques</a>)
+                        </p>
+                                            <p class="cite-info">
+                       <i>Computers, Materials &amp; Continua</i> <b>2026</b>, <i>86</i>(2), 1-23. <a href="https://doi.org/10.32604/cmc.2025.073175">https://doi.org/10.32604/cmc.2025.073175</a>                    </p>
+                    <p class="article-date">
+                         <strong>Received</strong> 12 September 2025; <strong>Accepted</strong> 29 October 2025;                         <strong>Issue published</strong> 09 December 2025                        
+                                            </p>
+                                        
+                                        
+                                        
+                                        
+                </div>
+                <div class="bq3">
+                    <div class="gengduo">
+                    <ul>
+                                                <li><a href="https://www.techscience.com/cmc/v86n2/64808/html"><img src="https://www.techscience.com/static/images/bb1.png?t=20261008" alt="View Full Text icon" />View Full Text</a></li>
+                                                                            <li><a href="https://www.techscience.com/cmc/v86n2/64808/pdf"><img src="https://www.techscience.com/static/images/bb2.png?t=20261008" alt="Download PDF icon" />Download PDF</a></li>
+                                                                        </ul>
+                    </div>
+
+                    <div class="fenxiang">
+                        <ul>
+                            <li style="display: none"><a href="javascript:addStar('64808')"><i class="iconfont icon-dianzan_kuai"></i></a></li>
+                            <li><a class="button" data-sharer="linkedin" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808"><i class="iconfont icon-LinkedinIn"></i></a></li>
+                            <li><a class="button" data-sharer="facebook" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808"><i class="iconfont icon-Facebook-copy"></i></a></li>
+                            <li><a class="button" data-sharer="twitter" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808"><i class="iconfont icon-twitter"></i></a></li>
+                            <li><a onClick="javascript:document.getElementById('sasas').style.display='block';"><i class="iconfont icon-rizhi"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>   
+                
+                <div class="bq2">
+                                        
+                                            
+                     
+
+                                            
+                                            
+                      
+                        
+                </div>
+
+                <div class="bq4" id="section_abstract">
+
+                    <h2 class="xiaobt">Abstract</h2>
+
+                    User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. Over the past decade, the research community has developed a wide range of UIL methods, from structural embeddings to multimodal fusion architectures. However, corresponding adversarial and defensive approaches remain fragmented and comparatively understudied. In this survey, we provide a unified overview of both mapping and anti-mapping methods for UIL. We categorize representative mapping models by learning paradigm and data modality, and systematically compare them with emerging countermeasures including adversarial injection, structural perturbation, and identity obfuscation. To bridge these two threads, we introduce a modality-oriented taxonomy and a formal game-theoretic framing that casts cross-network mapping as a contest between mappers and anti-mappers. This framing allows us to construct a cross-modality dependency matrix, which reveals structural information as the most contested signal, identifies node injection as the most robust defensive strategy, and points to multimodal integration as a promising direction. Our survey underscores the need for balanced, privacy-preserving identity inference and provides a foundation for future research on the adversarial dynamics of social identity mapping and defense.                    <hr />
+                    
+                                        
+                         
+                
+                                        <h2 class="xiaobt">Keywords</h2>
+                    <div itemprop="keywords">
+                        User identity linkage (UIL); cross-network mapping; adversarial attacks; privacy protection; online social networks                    </div>
+                    <hr />
+                                         
+                                        
+                     
+                        
+                     
+                    
+                      
+					
+           <div id="cite_article_list">           
+            <h2 class="xiaobt">Cite This Article</h2>
+            <div>
+                <b>APA Style</b>
+                <div>Min, S., Luo, Y., Liu, K., Gong, Q., Chen, Y. (2026). From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods. <i>Computers, Materials &amp; Continua</i>, <i>86</i><i>(2)</i>, 1–23. <a href="https://doi.org/10.32604/cmc.2025.073175">https://doi.org/10.32604/cmc.2025.073175</a></div>
+            </div>
+            <div>
+                <b>Vancouver Style</b>
+                <div>Min S, Luo Y, Liu K, Gong Q, Chen Y. From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods. Comput Mater Contin. 2026;86(2):1–23. <a href="https://doi.org/10.32604/cmc.2025.073175">https://doi.org/10.32604/cmc.2025.073175</a></div>
+            </div>
+            <div>
+                <b>IEEE Style</b>
+                <div>S. Min, Y. Luo, K. Liu, Q. Gong,  and Y. Chen, “From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods,” <i>Comput. Mater. Contin.</i>, vol. 86, no. 2, pp. 1–23, 2026. <a href="https://doi.org/10.32604/cmc.2025.073175">https://doi.org/10.32604/cmc.2025.073175</a></div>
+            </div>
+          
+
+          <div class="citation-link cite_detail" style="padding-left:0">
+              <a href="https://www.techscience.com/cmc/v86n2/64808/bibtex" >BibTex</a>
+              <a href="https://www.techscience.com/cmc/v86n2/64808/enw" >EndNote</a>
+              <a href="https://www.techscience.com/cmc/v86n2/64808/ris" >RIS</a>
+            </div>
+          </div>
+    
+          </div><!-- comment -->
+      <br/>
+      <br/>
+      <br/>
+                    <div class="cite_detail" style='line-height: 14px; padding-left: 120px;'>
+                  <img src="https://www.techscience.com/static/images/cc.jpg?t=20261008" alt="cc" width="110" style="position:absolute; left: 0" /> Copyright © 2026 The Author(s). Published by Tech Science Press.<br/> This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a> , which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. 
+              </div>
+       
+        
+       
+
+
+
+
+<div id="trendmd-suggestions"></div>
+
+<script defer src='//js.trendmd.com/trendmd.min.js' data-trendmdconfig='{"journal_id":"74181", "element":"#trendmd-suggestions"}'></script>
+
+ 
+
+
+
+
+
+                
+                </div>   
+
+            </article>
+
+            </div>
+
+
+       
+        <div class="nlf2">
+            <script src="https://www.techscience.com/static/js/tan.js?t=20261008"></script>
+
+            <div class="nkslj">
+                <ul >
+                    <li class="dropdown">
+                        <a data-target="#" class="dropdown-toggle" data-test-id="download-button" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://www.techscience.com/static/images/gj2.png?t=20261008" alt="Downloads icon"  />Downloads
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a class="download-files-pdf action-link" href="https://www.techscience.com/cmc/v86n2/64808/pdf" >Full-Text PDF</a></li>
+                                                        <li><a class="download-files-readcube" href="https://www.techscience.com/cmc/v86n2/64808/html" >Full-Text HTML</a></li>
+                                                                                    <li><a class="download-files-epub" href="https://www.techscience.com/cmc/v86n2/64808/xml" >Full-Text XML</a></li>
+                                                          
+
+                        </ul>
+                    </li>                   
+                    <li class="dropdown">
+                        <a data-target="#" class="dropdown-toggle" data-test-id="citation-button" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://www.techscience.com/static/images/gj.png?t=20261008" alt="Citation Tools icon" />Citation Tools
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://www.techscience.com/cmc/v86n2/64808/bibtex"   >BibTex</a></li>
+                            <li><a href="https://www.techscience.com/cmc/v86n2/64808/enw" >EndNote</a></li>
+                            <li><a href="https://www.techscience.com/cmc/v86n2/64808/ris"  >RIS</a></li>
+                        </ul>
+                    </li>
+                    <div class="clear"></div>            
+                </ul>
+
+            </div>
+
+            <div class="shuliang">
+                <ul>
+                    <li>
+                        <h3>1781</h3>
+                        <p><i class="iconfont icon-yanjing1"></i>View</p>
+
+                    </li>
+                    <li>
+                        <h3>812</h3>
+                        <p><i class="iconfont icon-xiazai2"></i>Download</p>
+
+                    </li>
+                    <li style="display: none">
+                        <h3 id="star_64808">0</h3>
+                        <p><i class="iconfont icon-dianzan_kuai"></i>Like</p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+           <div class="acade-j" style="margin-top: 15px; padding-left: 33%;">
+          
+<span class="__dimensions_badge_embed__" data-doi="10.32604/cmc.2025.073175"   data-hide-zero-citations="true" data-style="small_circle"></span><script async="true" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+      </div>
+                        <div class="k2">
+                <h2 class="nbt">Related articles</h2>
+                <div class="weizhang">
+                    <ul>
+                           
+                        <li>
+                            <p>
+                                <a href="https://www.techscience.com/cmc/v74n1/49777" title="Privacy Data Management Mechanism Based on Blockchain and Federated Learning">
+                                    Privacy Data Management Mechanism Based on Blockchain and Federated Learning                                </a> 
+                            </p>
+                            <span title="Mingsen Mo, Shan Ji, Xiaowan Wang, Ghulam Mohiuddin, Yongjun Ren">Mingsen Mo, Shan Ji, Xiaowan Wang,...</span>
+                        </li>
+                              
+                        <li>
+                            <p>
+                                <a href="https://www.techscience.com/cmc/v74n1/49880" title="GrCol-PPFL: User-Based Group Collaborative Federated Learning Privacy Protection Framework">
+                                    GrCol-PPFL: User-Based Group Collaborative Federated Learning Privacy Protection Framework                                </a> 
+                            </p>
+                            <span title="Jieren Cheng, Zhenhao Liu, Yiming Shi, Ping Luo, Victor S. Sheng">Jieren Cheng, Zhenhao Liu, Yiming...</span>
+                        </li>
+                              
+                        <li>
+                            <p>
+                                <a href="https://www.techscience.com/cmc/v74n2/50187" title="Classification of Adversarial Attacks Using Ensemble Clustering Approach">
+                                    Classification of Adversarial Attacks Using Ensemble Clustering Approach                                </a> 
+                            </p>
+                            <span title="Pongsakorn Tatongjai, Tossapon Boongoen, Natthakan Iam-On, Nitin Naik, Longzhi Yang">Pongsakorn Tatongjai, Tossapon...</span>
+                        </li>
+                              
+                        <li>
+                            <p>
+                                <a href="https://www.techscience.com/cmc/v74n2/50206" title="Identity-Based Edge Computing Anonymous Authentication Protocol">
+                                    Identity-Based Edge Computing Anonymous Authentication Protocol                                </a> 
+                            </p>
+                            <span title="Naixin Kang, Zhenhu Ning, Shiqiang Zhang,  Sadaqat ur Rehman,  Muhammad Waqas">Naixin Kang, Zhenhu Ning, Shiqiang...</span>
+                        </li>
+                              
+                        <li>
+                            <p>
+                                <a href="https://www.techscience.com/cmc/v74n2/50246" title="Developing a Secure Framework Using Feature Selection and Attack Detection Technique">
+                                    Developing a Secure Framework Using Feature Selection and Attack Detection Technique                                </a> 
+                            </p>
+                            <span title="Mahima Dahiya, Nitin Nitin">Mahima Dahiya, Nitin Nitin</span>
+                        </li>
+                                               </ul>
+                </div>
+            </div>
+                                </div>
+        <div class="clear"></div>
+    </div>
+        <div class="clear"></div>
+
+
+    <!-- footer start -->
+<div class="footer wow fadeIn" >
+    <!-- footer-container -->
+    <div class="foot1">
+        <div class="dlink">
+            <ul>
+                                    <li><h3>Further Information</h3>
+                         
+                            <p><a href="https://www.techscience.com/ndetail/abt"  title="About Tech Science Press">About Tech Science Press</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/openaccess"  title="Open Access Policy">Open Access Policy</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/apc"  title="Article Processing Charges">Article Processing Charges</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/specialissue"  title="Special Issue Policy">Special Issue Policy</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/494"  title="Generative AI Policies for Journals">Generative AI Policies for Journals</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/researchtopic"  title="Research Topic Policy">Research Topic Policy</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/terms"  title="Terms and Conditions">Terms and Conditions</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/privacy"  title="Privacy Policy">Privacy Policy</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/advertising"  title="Advertising Policy">Advertising Policy</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/contact"  title="Contact">Contact</a></p>
+                                                </li>
+                                        <li><h3>Guidelines</h3>
+                         
+                            <p><a href="https://www.techscience.com/ndetail/editors"  title="For Editors">For Editors</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/reviewers"  title="For Reviewers">For Reviewers</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/authors"  title="For Authors">For Authors</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/organizers"  title="For Conference Organizers">For Conference Organizers</a></p>
+                             
+                            <p><a href="https://www.techscience.com/ndetail/subscribers"  title="For Subscribers">For Subscribers</a></p>
+                                                </li>
+                                    <li>
+                    <h3>Follow Us</h3>    
+                    <p><a href="https://www.linkedin.com/company/tech-science-press-2022/"  title="LinkedIn">LinkedIn</a></p>
+                    <p><a href="https://twitter.com/TechScience_TSP"  title="LinkedIn">Twitter</a></p>
+                </li>
+                <li>
+                    <h3>Join Us</h3>    
+                    <p><a href="https://www.techscience.com/join-as-editor" >Join TSP editorial community</a></p>
+                </li>
+                <li class="dguanzhu1">
+                    <h3>Contact Us</h3>    
+                    <div>
+                        <a href="https://www.techscience.com/ndetail/contact"><i class="iconfont icon-youxiang"></i></a>
+                        <a href="https://www.techscience.com/ndetail/contact"><i class="iconfont icon-w_dizhi-"></i></a>
+                        <a href="javascript:showWhatsApp();"><i class="iconfont icon-whats-app"></i></a>
+                    </div>
+                </li>
+            </ul>       
+        </div>        
+        
+    </div>
+    <div id="whats-app" class="zx_bm" style="display: none;">
+        <div class="bm_bj"></div>
+        <div class="b_m" style="padding: 30px 30px; max-width: 280px"> 
+            <h3>WhatsApp:</h3>
+            <div class="fuzhi">
+                +1（702）9272320
+            </div>
+            <a href="javascript:hideWhatsApp();" style="float:right; position:absolute; right:10px; top:10px;">
+                <img src="https://www.techscience.com/static/images/fixe_esc1.png?t=20261008" width="25" height="25">
+            </a> 
+        </div>
+    </div>
+
+    <div class="foot2"> 
+           <div>  
+        Copyright© 2026 Tech Science Press <br/>
+© 1997-2026 TSP (Henderson, USA) unless otherwise stated    </div>
+    <span id="siteseal" style="margin-left: 15px;margin-top: 7px; display: block;"><script async="true" type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=NyuRzmGl5GM74T5fwbHA1hxL09vRSUVWcF3oFoQPks7JU48TJ739mUEZzqqm"></script></span>
+</div></div>
+<!-- footer end -->
+
+<script src="https://www.techscience.com/static/js/iconfont.js?t=20261008"></script>
+<script src="https://www.techscience.com/static/js/jquery-1.8.3.min.js?t=20261008" type="text/javascript" ></script>
+<script src="https://www.techscience.com/static/js/main.js?t=20261008" type="text/javascript" ></script>
+<script src="https://www.techscience.com/static/js/detail.js?t=20261008" type="text/javascript" ></script>
+<script src="https://www.techscience.com/static/js/wow.min.js?t=20261008"></script>
+
+<script>
+    new WOW().init();
+    
+    function showWhatsApp() {
+        document.getElementById('whats-app').style.display = 'block';
+    }
+    function hideWhatsApp() {
+        document.getElementById('whats-app').style.display = 'none';
+    }
+</script>
+<link rel="stylesheet" href="https://www.techscience.com/static/css/swiper.min.css?t=20261008" />
+<!-- Google tag (gtag.js) -->
+<script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-PD3QTEE3HW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PD3QTEE3HW');
+</script>
+<script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script>
+<script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="hGjI_wnNp25nVw" async></script>
+
+    
+<div class="sddh">
+    <ul>
+        <li><a href="https://www.techscience.com/"><i class="iconfont icon-shouye"></i>Home</a></li>
+        <li><a href="https://ijs.tspsubmission.com/homepage?returnUrl=/submission/1"><i class="iconfont icon-tijiao"></i>Submit</a></li>
+        <li><a href="https://ijs.tspsubmission.com/homepage?returnUrl=/submission/1"><i class="iconfont icon-touxiang"></i>Login</a></li>
+        <li><a href="https://ijs.tspsubmission.com/regist"><i class="iconfont icon-zhuce"></i>Register</a></li>
+    </ul>
+</div>
+
+<div id="sasas" class="zx_bm">
+    <div class="bm_bj"></div>
+    <div class="b_m"> 
+        <h3>Share Link</h3>
+        <div class="tguanzhu">
+            <ul>
+                <li>
+                    <a class="button" data-sharer="email" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808" data-subject="Hey! Check out that URL" data-to="office@techscience.com">
+                        <i class="iconfont icon-youxiang"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button" data-sharer="twitter" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808">
+                        <i class="iconfont icon-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button" data-sharer="linkedin" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808">
+                        <i class="iconfont icon-LinkedinIn"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button" data-sharer="facebook" data-title="CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods" data-url="https://www.techscience.com/cmc/v86n2/64808" >
+                        <i class="iconfont icon-Facebook-copy"></i>
+                    </a>
+                </li>
+
+                    <!--<li><a href="javascript:document.getElementById('sasas1').style.display = 'block';"><i class="iconfont icon-weixin1"></i></a></li>-->
+            </ul>
+        </div>
+        <div class="fuzhi">
+            <input id="foo" type="text" value="https://www.techscience.com/cmc/v86n2/64808" class="fz1" />
+            <button class="fz2" data-clipboard-action="copy" data-clipboard-target="#foo">Copy</button> 
+            <!-- 2. Include library -->
+            <script src="https://www.techscience.com/static/js/clipboard.min.js?t=20261008"></script>
+        </div>
+
+        <a href="javascript:hideShareLinked()" style="float:right; position:absolute; right:10px; top:10px;" >
+            <img src="https://www.techscience.com/static/images/fixe_esc1.png?t=20261008" width="25" height="25" />
+        </a> 
+    </div>
+</div>
+<div class="toTop" id="roll_top"><i class="iconfont icon-dingbu1"></i></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*返回顶部*/
+        $('#roll_top').hide();
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                $('#roll_top').fadeIn(400);//当滑动栏向下滑动时，按钮渐现的时间
+            } else {
+                $('#roll_top').fadeOut(0);//当页面回到顶部第一屏时，按钮渐隐的时间
+            }
+        });
+        $('#roll_top').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 300);//返回顶部所用的时间 返回顶部也可调用goto()函数
+        });
+    });
+    function goto(selector) {
+        $.scrollTo(selector, 1000);
+    }
+
+    $(function () {
+        var clipboard = new Clipboard('.fz2');
+
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
+                
+        $(".nlf .nbt").click(function () {
+            $(this).toggleClass("currentDd").siblings(".nbt").removeClass("currentDd")
+            $(this).toggleClass("currentDt").siblings(".nbt").removeClass("currentDt")
+            // 修改数字控制速度， slideUp(500)控制卷起速度
+            $(this).next(".k2 ul").slideToggle(500).siblings(".k2 ul").slideUp(500),
+                    $(this).next(".k2 .news ").slideToggle(500).siblings(".k2 .news ").slideUp(500),
+                    $(this).next(".k2 .weizhang ").slideToggle(500).siblings(".k2 .weizhang ").slideUp(500),
+                    $(this).next(".k3 .gdg").slideToggle(500).siblings(".k3 .gdg").slideUp(500);
+        })
+    })
+</script>    
+
+        <script>
+   var modal = document.getElementById('modal');
+   var bgImg = document.getElementById('bgImg');
+   var bgImgLink = document.getElementById('bgImgLink');
+
+  function showBgImg(e) {
+       modal.style.display = 'block';
+       bgImg.src = e.src;
+       bgImgLink.href = e.src;
+   }
+
+   modal.onclick = function() {
+       modal.style.display = 'none';
+   }
+   
+   bgImg.onclick = function() {
+       event.stopPropagation();    // 上层加上这行代码，可以阻止点击穿透
+   }
+   
+   function modalClose(){
+       modal.style.display = 'none';
+   }
+    </script>
+    <script type="text/javascript">
+  $(window).scroll(function(){
+    var top = $(window).scrollTop();
+	var hed = $(".gsfd").innerHeight();
+    if(top>hed){
+      $(".gsfd").addClass("on");
+    }else{
+      $(".gsfd").removeClass("on");
+    };
+  });
+</script>
+
+
+    <script>
+
+    
+    function loadCitationList(id) {
+        $('#cite_article_msg').html('loading...')
+        req_html( 'https://www.techscience.com/tg/home/journal/citation_list',{id: id}, function (data) {
+            $('#cite_article_msg').html('')
+            $("#citation_detail").html(data); 
+        }, 'get')
+    }
+    
+    /*
+    * 实现点赞功能
+    * @param    资源id
+    * */
+    function addStar(id){
+        var num =  $('#star_'+id).html();
+        var cookieKey = "star_" + id
+        var star=getCookieById(cookieKey,1);
+        if(star==""){
+            addCookieById(cookieKey,1,365);
+            //后台点赞操作
+            req_html( 'https://www.techscience.com/tg/home/journal/addStar',{id: id, num: num}, function (data) {
+                $('#star_'+id).html(data.data)
+            }, 'get','json')
+        }else{
+            alert("Already “LIKED” it! Thanks for loving this article!");
+        }
+    }
+    
+    $(document).ready(function(){
+            // jQuery加载后，将toggleIssueAccordion升级为带滑动动画的版本
+            window.toggleIssueAccordion = function (dome) {
+                var $ej = $(dome).siblings(".nav_div_ej");
+                var isHidden = $ej.is(":hidden");
+                $(".nav_div_ej").slideUp();
+                $(".nav_div_dome").removeClass("on");
+                if (isHidden) {
+                    $ej.slideDown();
+                    $(dome).addClass("on");
+                }
+            };
+            
+            $("#cite_btn").click(function(){
+               $('#more_cite').toggle('slow');
+            });
+            -
+            $("#article_information").click(function(){
+                
+              if(   $(this).find('div').hasClass('rotate90') ){
+                  $(this).find('div').removeClass('rotate90');
+                  $('#affiliation').hide();
+              }else{
+                  $(this).find('div').addClass('rotate90');
+                  $('#affiliation').show();   
+              }
+            });  
+           
+           
+
+              });
+ 
+
+
+</script>
+</body>
+</html>

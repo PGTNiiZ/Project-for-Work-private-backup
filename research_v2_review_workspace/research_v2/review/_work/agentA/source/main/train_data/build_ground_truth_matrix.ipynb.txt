@@ -1,0 +1,84 @@
+# CELL 1
+from pathlib import Path
+import pandas as pd
+import numpy as np
+from scipy.sparse import coo_matrix, save_npz
+from itertools import combinations
+# CELL 3
+data_path = Path('/Users/tm/Documents/GitHub/Project-for-Work/data_for_project/merged_profiles.csv')
+
+df_social = pd.read_csv(data_path).reset_index(drop=True)
+
+print(f'merged_profiles: {df_social.shape}')
+print(f'columns: {df_social.columns.tolist()}')
+df_social[['userName', 'user_folder']].head()
+# CELL 5
+N = len(df_social)
+
+# user_folder มีอยู่แล้วใน merged_profiles
+# profiles ที่ไม่มี label ให้ assign unique value (ไม่ match กับใคร)
+null_mask = df_social['user_folder'].isna() | (df_social['user_folder'] == '')
+df_social.loc[null_mask, 'user_folder'] = ['__no_label_' + str(i) for i in df_social.index[null_mask]]
+
+print(f'Total profiles (N):              {N:,}')
+print(f'Profiles with known user_folder: {(~null_mask).sum():,}')
+print(f'Profiles without label:          {null_mask.sum():,}')
+print(f'Platforms: {df_social["platform"].value_counts().to_dict()}')
+df_social[['userName', 'user_folder', 'platform']].head(10)
+
+# CELL 7
+groups = df_social.groupby('user_folder').groups  # dict: folder -> Index
+match_groups = {k: list(v) for k, v in groups.items() if len(v) > 1}
+total_pairs = sum(len(v) * (len(v) - 1) // 2 for v in match_groups.values())
+
+print(f'Total user_folder groups:        {len(groups):,}')
+print(f'Groups with >= 2 profiles:       {len(match_groups):,}')
+print(f'Total positive pairs (i<j):      {total_pairs:,}')
+print(f'Total entries (symmetric):       {total_pairs * 2:,}')
+# CELL 9
+print(f'Building {N:,} x {N:,} sparse matrix...')
+
+rows_list, cols_list = [], []
+for indices in match_groups.values():
+    for i, j in combinations(indices, 2):
+        rows_list += [i, j]  # symmetric
+        cols_list += [j, i]
+
+rows_arr = np.array(rows_list, dtype=np.int32)
+cols_arr = np.array(cols_list, dtype=np.int32)
+data_arr = np.ones(len(rows_arr), dtype=np.int8)
+
+matrix = coo_matrix((data_arr, (rows_arr, cols_arr)), shape=(N, N)).tocsr()
+
+mem = (matrix.data.nbytes + matrix.indices.nbytes + matrix.indptr.nbytes) / 1024**2
+print(f'Matrix shape:     {matrix.shape}')
+print(f'Non-zero entries: {matrix.nnz:,}')
+print(f'Density:          {matrix.nnz / (N * N):.8f}')
+print(f'Memory (sparse):  ~{mem:.1f} MB')
+# CELL 11
+sample = list(match_groups.values())[0]
+i, j = sample[0], sample[1]
+
+print('=== Positive pair (same person) ===')
+print(f'Profile {i}: {df_social.loc[i, "userName"]} | folder: {df_social.loc[i, "user_folder"]}')
+print(f'Profile {j}: {df_social.loc[j, "userName"]} | folder: {df_social.loc[j, "user_folder"]}')
+print(f'matrix[{i},{j}] = {matrix[i, j]}  <-ควรเป็น 1')
+print(f'matrix[{j},{i}] = {matrix[j, i]}  <- ควรเป็น 1 (symmetric)')
+print()
+
+other = [k for k in list(match_groups.keys()) if k != df_social.loc[i, 'user_folder']][0]
+k = match_groups[other][0]
+print('=== Negative pair (different person) ===')
+print(f'Profile {i}: folder: {df_social.loc[i, "user_folder"]}')
+print(f'Profile {k}: folder: {df_social.loc[k, "user_folder"]}')
+print(f'matrix[{i},{k}] = {matrix[i, k]}  <- ควรเป็น 0')
+# CELL 13
+output_dir = Path('/Users/tm/Documents/GitHub/Project-for-Work/train_data')
+
+matrix_path = output_dir / 'ground_truth_matrix.npz'
+save_npz(matrix_path, matrix)
+print(f'Saved: {matrix_path}  ({matrix_path.stat().st_size / 1024**2:.2f} MB)')
+
+index_path = output_dir / 'ground_truth_matrix_index.csv'
+df_social[['userName', 'user_folder']].to_csv(index_path, index=True, index_label='matrix_idx')
+print(f'Saved: {index_path}')

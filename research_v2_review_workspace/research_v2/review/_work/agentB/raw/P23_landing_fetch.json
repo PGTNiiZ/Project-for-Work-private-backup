@@ -1,0 +1,308 @@
+{
+  "url": "https://doi.org/10.1371/journal.pone.0118432",
+  "final_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432",
+  "status": 200,
+  "bytes": 249665,
+  "metadata": [
+    {
+      "name": "description",
+      "content": "Binary classifiers are routinely evaluated with performance measures such as sensitivity and specificity, and performance is frequently illustrated with Receiver Operating Characteristics (ROC) plots. Alternative measures such as positive predictive value (PPV) and the associated Precision/Recall (PRC) plots are used less frequently. Many bioinformatics studies develop and evaluate classifiers that are to be applied to strongly imbalanced datasets in which the number of negatives outweighs the number of positives significantly. While ROC plots are visually appealing and provide an overview of a classifier's performance across a wide range of specificities, one can ask whether ROC plots could be misleading when applied in imbalanced classification scenarios. We show here that the visual interpretability of ROC plots in the context of imbalanced datasets can be deceptive with respect to conclusions about the reliability of classification performance, owing to an intuitive but wrong interpretation of specificity. PRC plots, on the other hand, can provide the viewer with an accurate prediction of future classification performance due to the fact that they evaluate the fraction of true positives among positive predictions. Our findings have potential implications for the interpretation of a large number of studies that use ROC plots on imbalanced datasets."
+    },
+    {
+      "name": "citation_abstract",
+      "content": "Binary classifiers are routinely evaluated with performance measures such as sensitivity and specificity, and performance is frequently illustrated with Receiver Operating Characteristics (ROC) plots. Alternative measures such as positive predictive value (PPV) and the associated Precision/Recall (PRC) plots are used less frequently. Many bioinformatics studies develop and evaluate classifiers that are to be applied to strongly imbalanced datasets in which the number of negatives outweighs the number of positives significantly. While ROC plots are visually appealing and provide an overview of a classifier's performance across a wide range of specificities, one can ask whether ROC plots could be misleading when applied in imbalanced classification scenarios. We show here that the visual interpretability of ROC plots in the context of imbalanced datasets can be deceptive with respect to conclusions about the reliability of classification performance, owing to an intuitive but wrong interpretation of specificity. PRC plots, on the other hand, can provide the viewer with an accurate prediction of future classification performance due to the fact that they evaluate the fraction of true positives among positive predictions. Our findings have potential implications for the interpretation of a large number of studies that use ROC plots on imbalanced datasets."
+    },
+    {
+      "name": "citation_doi",
+      "content": "10.1371/journal.pone.0118432"
+    },
+    {
+      "name": "citation_author",
+      "content": "Takaya Saito"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "Computational Biology Unit, Department of Informatics, University of Bergen, P. O. Box 7803, N-5020, Bergen, Norway"
+    },
+    {
+      "name": "citation_author",
+      "content": "Marc Rehmsmeier"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "Computational Biology Unit, Department of Informatics, University of Bergen, P. O. Box 7803, N-5020, Bergen, Norway"
+    },
+    {
+      "name": "citation_title",
+      "content": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets"
+    },
+    {
+      "name": "citation_journal_title",
+      "content": "PLOS ONE"
+    },
+    {
+      "name": "citation_journal_abbrev",
+      "content": "PLOS ONE"
+    },
+    {
+      "name": "citation_date",
+      "content": "Mar 4, 2015"
+    },
+    {
+      "name": "citation_firstpage",
+      "content": "e0118432"
+    },
+    {
+      "name": "citation_issue",
+      "content": "3"
+    },
+    {
+      "name": "citation_volume",
+      "content": "10"
+    },
+    {
+      "name": "citation_issn",
+      "content": "1932-6203"
+    },
+    {
+      "name": "citation_publisher",
+      "content": "Public Library of Science"
+    },
+    {
+      "name": "citation_pdf_url",
+      "content": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118432&type=printable"
+    },
+    {
+      "name": "citation_article_type",
+      "content": "Research Article"
+    },
+    {
+      "name": "dc.identifier",
+      "content": "10.1371/journal.pone.0118432"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Binary classifiers are routinely evaluated with performance measures such as sensitivity and specificity, and performance is frequently illustrated with Receiver Operating Characteristics (ROC) plots. Alternative measures such as positive predictive value (PPV) and the associated Precision/Recall (PRC) plots are used less frequently. Many bioinformatics studies develop and evaluate classifiers that are to be applied to strongly imbalanced datasets in which the number of negatives outweighs the number of positives significantly. While ROC plots are visually appealing and provide an overview of a classifier's performance across a wide range of specificities, one can ask whether ROC plots could be misleading when applied in imbalanced classification scenarios. We show here that the visual interpretability of ROC plots in the context of imbalanced datasets can be deceptive with respect to conclusions about the reliability of classification performance, owing to an intuitive but wrong interpretation of specificity. PRC plots, on the other hand, can provide the viewer with an accurate prediction of future classification performance due to the fact that they evaluate the fraction of true positives among positive predictions. Our findings have potential implications for the interpretation of a large number of studies that use ROC plots on imbalanced datasets."
+    },
+    {
+      "name": "og:description",
+      "content": "Binary classifiers are routinely evaluated with performance measures such as sensitivity and specificity, and performance is frequently illustrated with Receiver Operating Characteristics (ROC) plots. Alternative measures such as positive predictive value (PPV) and the associated Precision/Recall (PRC) plots are used less frequently. Many bioinformatics studies develop and evaluate classifiers that are to be applied to strongly imbalanced datasets in which the number of negatives outweighs the number of positives significantly. While ROC plots are visually appealing and provide an overview of a classifier's performance across a wide range of specificities, one can ask whether ROC plots could be misleading when applied in imbalanced classification scenarios. We show here that the visual interpretability of ROC plots in the context of imbalanced datasets can be deceptive with respect to conclusions about the reliability of classification performance, owing to an intuitive but wrong interpretation of specificity. PRC plots, on the other hand, can provide the viewer with an accurate prediction of future classification performance due to the fact that they evaluate the fraction of true positives among positive predictions. Our findings have potential implications for the interpretation of a large number of studies that use ROC plots on imbalanced datasets."
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Machine learning and its applications to biology;citation_author=AL Tarca;citation_author=VJ Carey;citation_author=XW Chen;citation_author=R Romero;citation_author=S Draghici;citation_journal_title=PLoS Comput Biol;citation_volume=3;citation_number=3;citation_first_page=e116;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=What are artificial neural networks?;citation_author=A Krogh;citation_journal_title=Nat Biotechnol;citation_volume=26;citation_number=26;citation_first_page=195;citation_last_page=197;citation_publication_date=2008;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Support vector machines and kernels for computational biology;citation_author=A Ben-Hur;citation_author=CS Ong;citation_author=S Sonnenburg;citation_author=B Scholkopf;citation_author=G Ratsch;citation_journal_title=PLoS Comput Biol;citation_volume=4;citation_number=4;citation_first_page=e1000173;citation_publication_date=2008;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The meaning and use of the area under a receiver operating characteristic (ROC) curve;citation_author=JA Hanley;citation_author=BJ McNeil;citation_journal_title=Radiology;citation_volume=143;citation_number=143;citation_first_page=29;citation_last_page=36;citation_publication_date=1982;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Learning from Imbalanced Data;citation_author=H He;citation_author=E Garcia;citation_journal_title=IEEE Trans Knowl Data Eng;citation_volume=21;citation_number=21;citation_first_page=1263;citation_last_page=1284;citation_publication_date=2009;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Editorial: Special Issue on Learning from Imbalanced Data Sets;citation_author=N Chawla;citation_author=N Japkowicz;citation_journal_title=SIGKDD Explor;citation_first_page=6;citation_publication_date=2004;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=SMOTE: synthetic minority over-sampling technique;citation_author=NV Chawla;citation_author=KW Bowyer;citation_author=LO Hall;citation_author=WP Kegelmeyer;citation_journal_title=J Artif Intell Res;citation_volume=16;citation_number=16;citation_first_page=321;citation_last_page=357;citation_publication_date=2002;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Data mining for improved cardiac care;citation_author=RB Rao;citation_author=S Krishnan;citation_author=RS Niculescu;citation_journal_title=SIGKDD Explor;citation_volume=8;citation_number=8;citation_first_page=3;citation_last_page=10;citation_publication_date=2006;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Machine Learning for the Detection of Oil Spills in Satellite Radar Images;citation_author=M Kubat;citation_author=RC Holte;citation_author=S Matwin;citation_journal_title=Mach Learn;citation_volume=30;citation_number=30;citation_first_page=195;citation_last_page=215;citation_publication_date=1998;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "Provost F. Machine learning from imbalanced data sets 101. Proceedings of the AAAI-2000 Workshop on Imbalanced Data Sets. 2000."
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Experimental perspectives on learning from imbalanced data. Proceedings of the 24th international conference on;citation_author=JV Hulse;citation_author=TM Khoshgoftaar;citation_author=A Napolitano;citation_journal_title=Machine learning;citation_first_page=935;citation_last_page=942;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Learning from imbalanced data sets with boosting and data generation: the DataBoost-IM approach;citation_author=H Guo;citation_author=HL Viktor;citation_journal_title=SIGKDD Explor;citation_volume=6;citation_number=6;citation_first_page=30;citation_last_page=39;citation_publication_date=2004;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Addressing the curse of imbalanced training sets: one-sided selection;citation_author=M Kubat;citation_author=S Matwin;citation_journal_title=In Proceedings of the Fourteenth International Conference on Machine Learning;citation_first_page=179;citation_last_page=186;citation_publication_date=1997;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Data Mining for Direct Marketing: Problems and Solutions;citation_author=C Ling;citation_author=C Li;citation_journal_title=In Proceedings of the Fourth International Conference on Knowledge Discovery and Data Mining;citation_first_page=73;citation_last_page=79;citation_publication_date=1998;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The foundations of cost-sensitive learning;citation_author=C Elkan;citation_journal_title=Proceedings of the 17th international joint conference on Artificial intelligence;citation_volume=Volume 2;citation_number=2;citation_first_page=973;citation_last_page=978;citation_publication_date=2001;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Cost-sensitive boosting for classification of imbalanced data;citation_author=Y Sun;citation_author=MS Kamel;citation_author=AKC Wong;citation_author=Y Wang;citation_journal_title=Pattern Recognit;citation_volume=40;citation_number=40;citation_first_page=3358;citation_last_page=3378;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The class imbalance problem: A systematic study;citation_author=N Japkowicz;citation_author=S Stephen;citation_journal_title=Intell Data Anal;citation_volume=6;citation_number=6;citation_first_page=429;citation_last_page=449;citation_publication_date=2002;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A kernel-based two-class classifier for imbalanced data sets;citation_author=X Hong;citation_author=S Chen;citation_author=CJ Harris;citation_journal_title=IEEE Trans Neural Netw;citation_volume=18;citation_number=18;citation_first_page=28;citation_last_page=41;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "Wu G, Chang E. Class-Boundary Alignment for Imbalanced Dataset Learning. Workshop on Learning from Imbalanced Datasets in ICML. 2003."
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A Multiple Resampling Method for Learning from Imbalanced Data Sets;citation_author=A Estabrooks;citation_author=T Jo;citation_author=N Japkowicz;citation_journal_title=Comput Intell;citation_volume=20;citation_number=20;citation_first_page=18;citation_last_page=36;citation_publication_date=2004;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A user&apos;s guide to support vector machines;citation_author=A Ben-Hur;citation_author=J Weston;citation_journal_title=Methods Mol Biol;citation_volume=609;citation_number=609;citation_first_page=223;citation_last_page=239;citation_publication_date=2010;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The problem of bias in training data in regression problems in medical decision support;citation_author=B Mac Namee;citation_author=P Cunningham;citation_author=S Byrne;citation_author=OI Corrigan;citation_journal_title=Artif Intell Med;citation_volume=24;citation_number=24;citation_first_page=51;citation_last_page=70;citation_publication_date=2002;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Receiver-operating characteristic curve analysis in diagnostic, prognostic and predictive biomarker research;citation_author=K Soreide;citation_journal_title=J Clin Pathol;citation_volume=62;citation_number=62;citation_first_page=1;citation_last_page=5;citation_publication_date=2009;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=An introduction to ROC analysis;citation_author=T Fawcett;citation_journal_title=Pattern Recognit Lett;citation_volume=27;citation_number=27;citation_first_page=861;citation_last_page=874;citation_publication_date=2006;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Measuring the accuracy of diagnostic systems;citation_author=JA Swets;citation_journal_title=Science;citation_volume=240;citation_number=240;citation_first_page=1285;citation_last_page=1293;citation_publication_date=1988;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The relationship between Precision-Recall and ROC curves;citation_author=J Davis;citation_author=M Goadrich;citation_journal_title=Proceedings of the 23rd international conference on Machine learning;citation_first_page=233;citation_last_page=240;citation_publication_date=2006;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A CROC stronger than ROC: measuring, visualizing and optimizing early retrieval;citation_author=SJ Swamidass;citation_author=CA Azencott;citation_author=K Daily;citation_author=P Baldi;citation_journal_title=Bioinformatics;citation_volume=26;citation_number=26;citation_first_page=1348;citation_last_page=1356;citation_publication_date=2010;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Explicitly Representing Expected Cost: An Alternative to ROC Representation;citation_author=C Drummond;citation_author=R Holte;citation_journal_title=In Proceedings of the Sixth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining;citation_first_page=198;citation_last_page=207;citation_publication_date=2000;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Caveats and pitfalls of ROC analysis in clinical microarray research (and how to avoid them);citation_author=D Berrar;citation_author=P Flach;citation_journal_title=Brief Bioinform;citation_volume=13;citation_number=13;citation_first_page=83;citation_last_page=97;citation_publication_date=2012;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=MiRFinder: an improved approach and software implementation for genome-wide fast microRNA precursor scans;citation_author=TH Huang;citation_author=B Fan;citation_author=MF Rothschild;citation_author=ZL Hu;citation_author=K Li;citation_author=SH Zhao;citation_journal_title=BMC Bioinformatics;citation_volume=8;citation_number=8;citation_first_page=341;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Diagnostic tests. 1: Sensitivity and specificity;citation_author=DG Altman;citation_author=JM Bland;citation_journal_title=BMJ;citation_volume=308;citation_number=308;citation_first_page=1552;citation_publication_date=1994;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Assessing the accuracy of prediction algorithms for classification: an overview;citation_author=P Baldi;citation_author=S Brunak;citation_author=Y Chauvin;citation_author=CA Andersen;citation_author=H Nielsen;citation_journal_title=Bioinformatics;citation_volume=16;citation_number=16;citation_first_page=412;citation_last_page=424;citation_publication_date=2000;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A probabilistic interpretation of precision, recall and F-score, with implication for evaluation;citation_author=C Goutte;citation_author=E Gaussier;citation_journal_title=Advances in Information Retrieval;citation_first_page=345;citation_last_page=359;citation_publication_date=2005;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The WEKA data mining software: an update;citation_author=M Hall;citation_author=E Frank;citation_author=G Holmes;citation_author=B Pfahringer;citation_author=P Reutemann;citation_author=IH Witten;citation_journal_title=SIGKDD Explor;citation_volume=11;citation_number=11;citation_first_page=10;citation_last_page=18;citation_publication_date=2009;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=LIBSVM: A library for support vector machines;citation_author=C-C Chang;citation_author=C-J Lin;citation_journal_title=ACM Trans Intell Syst Technol;citation_volume=2;citation_number=2;citation_first_page=1;citation_last_page=27;citation_publication_date=2011;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=The area under the ROC curve and its competitors;citation_author=J Hilden;citation_journal_title=Med Decis Making;citation_volume=11;citation_number=11;citation_first_page=95;citation_last_page=101;citation_publication_date=1991;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Evaluating virtual screening methods: good and bad metrics for the &quot;early recognition&quot; problem;citation_author=JF Truchon;citation_author=CI Bayly;citation_journal_title=J Chem Inf Model;citation_volume=47;citation_number=47;citation_first_page=488;citation_last_page=508;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Use of receiver operating characteristic (ROC) analysis to evaluate sequence matching;citation_author=M Gribskov;citation_author=NL Robinson;citation_journal_title=Comput Chem;citation_volume=20;citation_number=20;citation_first_page=25;citation_last_page=33;citation_publication_date=1996;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "Macskassy S, Provost F. Confidence bands for ROC curves: Methods and an empirical study. Proceedings of the First Workshop on ROC Analysis in AI. 2004."
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=ROCR: visualizing classifier performance in R;citation_author=T Sing;citation_author=O Sander;citation_author=N Beerenwinkel;citation_author=T Lengauer;citation_journal_title=Bioinformatics;citation_volume=21;citation_number=21;citation_first_page=3940;citation_last_page=3941;citation_publication_date=2005;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=R: A Language for Data Analysis and Graphics;citation_author=R Ihaka;citation_author=R Gentleman;citation_journal_title=J Comput Graph Stat;citation_volume=5;citation_number=5;citation_first_page=299;citation_last_page=314;citation_publication_date=1996;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Bioconductor: open software development for computational biology and bioinformatics;citation_author=RC Gentleman;citation_author=VJ Carey;citation_author=DM Bates;citation_author=B Bolstad;citation_author=M Dettling;citation_author=S Dudoit;citation_journal_title=Genome Biol;citation_volume=5;citation_number=5;citation_first_page=R80;citation_publication_date=2004;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=minet: A R/Bioconductor package for inferring large transcriptional networks using mutual information;citation_author=PE Meyer;citation_author=F Lafitte;citation_author=G Bontempi;citation_journal_title=BMC Bioinformatics;citation_volume=9;citation_number=9;citation_first_page=461;citation_publication_date=2008;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Genome-wide association studies for common diseases and complex traits;citation_author=JN Hirschhorn;citation_author=MJ Daly;citation_journal_title=Nat Rev Genet;citation_volume=6;citation_number=6;citation_first_page=95;citation_last_page=108;citation_publication_date=2005;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=RNAz 2.0: improved noncoding RNA detection;citation_author=AR Gruber;citation_author=S Findeiss;citation_author=S Washietl;citation_author=IL Hofacker;citation_author=PF Stadler;citation_journal_title=Pac Symp Biocomput;citation_first_page=69;citation_last_page=79;citation_publication_date=2010;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=miRBase: integrating microRNA annotation and deep-sequencing data;citation_author=A Kozomara;citation_author=S Griffiths-Jones;citation_journal_title=Nucleic Acids Res;citation_volume=39;citation_number=39;citation_first_page=D152;citation_last_page=157;citation_publication_date=2011;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=MiPred: classification of real and pseudo microRNA precursors using random forest prediction model with combined features;citation_author=P Jiang;citation_author=H Wu;citation_author=W Wang;citation_author=W Ma;citation_author=X Sun;citation_author=Z Lu;citation_journal_title=Nucleic Acids Res;citation_volume=35;citation_number=35;citation_first_page=W339;citation_last_page=344;citation_publication_date=2007;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Hairpins in a Haystack: recognizing microRNA precursors in comparative genomics data;citation_author=J Hertel;citation_author=PF Stadler;citation_journal_title=Bioinformatics;citation_volume=22;citation_number=22;citation_first_page=e197;citation_last_page=202;citation_publication_date=2006;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Human microRNA prediction through a probabilistic co-learning model of sequence and structure;citation_author=JW Nam;citation_author=KR Shin;citation_author=J Han;citation_author=Y Lee;citation_author=VN Kim;citation_author=BT Zhang;citation_journal_title=Nucleic Acids Res;citation_volume=33;citation_number=33;citation_first_page=3570;citation_last_page=3581;citation_publication_date=2005;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Fast Folding and Comparison of RNA Secondary Structures;citation_author=I Hofacker;citation_author=W Fontana;citation_author=P Stadler;citation_author=S Bonhoeffer;citation_author=M Tacker;citation_author=P Schuster;citation_journal_title=Monatsh Chem;citation_volume=125;citation_number=125;citation_first_page=167;citation_last_page=188;citation_publication_date=1994;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A training algorithm for optimal margin classifiers;citation_author=B Boser;citation_author=I Guyon;citation_author=V Vapnik;citation_journal_title=Proceedings of the fifth annual workshop on Computational learning theory;citation_first_page=144;citation_last_page=152;citation_publication_date=1992;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=Small Sample Size Effects in Statistical Pattern Recognition: Recommendations for Practitioners;citation_author=SJ Raudys;citation_author=AK Jain;citation_journal_title=IEEE Trans Pattern Anal Mach Intell;citation_volume=13;citation_number=13;citation_first_page=252;citation_last_page=264;citation_publication_date=1991;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=MicroRNAs: genomics, biogenesis, mechanism, and function;citation_author=DP Bartel;citation_journal_title=Cell;citation_volume=116;citation_number=116;citation_first_page=281;citation_last_page=297;citation_publication_date=2004;"
+    },
+    {
+      "name": "citation_reference",
+      "content": "citation_title=A Review of Computational Tools in microRNA Discovery;citation_author=CP Gomes;citation_author=JH Cho;citation_author=L Hood;citation_author=OL Franco;citation_author=RW Pereira;citation_author=K Wang;citation_journal_title=Front Genet;citation_volume=4;citation_number=4;citation_first_page=81;citation_publication_date=2013;"
+    }
+  ]
+}

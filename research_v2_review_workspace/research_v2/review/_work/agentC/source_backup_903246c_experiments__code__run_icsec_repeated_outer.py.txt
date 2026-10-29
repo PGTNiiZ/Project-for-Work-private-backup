@@ -1,0 +1,66 @@
+
+## backup@903246c:experiments/code/run_icsec_repeated_outer.py
+1: """Repeated outer entity-disjoint GB-17/GB-18/GB-18-GA evaluation."""
+2: from __future__ import annotations
+3: import argparse, hashlib, json, random
+7: from experiments.code import exp_r1_ga_redecision as ga
+8: from experiments.code import run_gb_transformer_experiments as base
+9: from experiments.code.exp_lib import BLOCKING_MISSED, PROFILES, build_nested_entity_split, entity_keys_by_profile
+10: 
+11: OUTER_TEST_PCT=30
+12: 
+13: def outer_role(key: str, seed: int) -> str:
+14:     h=int(hashlib.md5(f"icsec-outer-v1:{seed}:{key}".encode()).hexdigest(),16)%100
+15:     return "test" if h<OUTER_TEST_PCT else "val"
+16: 
+17: def constants(assigned:pd.DataFrame, seed:int)->dict[str,dict[str,int]]:
+18:     keys=entity_keys_by_profile()
+19:     bm=pd.read_csv(BLOCKING_MISSED,keep_default_na=False)
+20:     bm["role"]=bm.user_folder_a.astype(str).map(lambda x: outer_role(x,seed))
+21:     out={}
+22:     for role in ("model_train","model_calibration","ga_validation","test"):
+23:         exact=assigned[(assigned.decision_source=="AUTO_EXACT")&(assigned.experiment_split==role)]
+24:         scored=assigned[(assigned.decision_source!="AUTO_EXACT")&(assigned.experiment_split==role)]
+25:         # Blocking misses are only in the outer test; development constants do not affect GA ordering.
+26:         missed=int((bm.role=="test").sum()) if role=="test" else 0
+27:         out[role]={"tp_exact":int((exact.actual==1).sum()),"fp_exact":int((exact.actual==0).sum()),"fn_blocking":missed,"total_pos":int((scored.actual==1).sum())+int((exact.actual==1).sum())+missed,"n_scored":int(len(scored))}
+28:     return out
+29: 
+30: def run_one(root:Path, outer_seed:int)->list[dict]:
+31:     d=root/f"outer_{outer_seed}"
+32:     d.mkdir(parents=True,exist_ok=False); (d/"model").mkdir()
+33:     base.set_seed(42)
+34:     cache=pd.read_parquet("experiments/scored_pairs_enriched.parquet")
+35:     keys=entity_keys_by_profile()
+36:     a=cache.profile_id_a.map(keys); b=cache.profile_id_b.map(keys)
+37:     cache=cache.copy(); cache["split"]=np.where(a.map(lambda x:outer_role(str(x),outer_seed))==b.map(lambda x:outer_role(str(x),outer_seed)),a.map(lambda x:outer_role(str(x),outer_seed)),"drop")
+38:     assigned,manifest=build_nested_entity_split(cache,seed=outer_seed)
+39:     feat17=pd.read_parquet("experiments/pair_features17.parquet"); bert=pd.read_parquet("experiments/pair_bert_cos.parquet")
+40:     work=base.validate_inputs(cache,feat17,bert,assigned)
+41:     const=constants(assigned,outer_seed)
+42:     p17,m17=base.train_gb_variant("GB-17",base.FEATURE17_COLS.copy(),work,assigned,d,42)
+43:     p18,m18=base.train_gb_variant("GB-18",base.FEATURE17_COLS+["bert_cos"],work,assigned,d,42)
+44:     p18f=pd.read_parquet(d/"gb18_probabilities.parquet")
+45:     trials,generations,selection=base.run_ga_trials(work,assigned,p18f,const,[7,42,123,999,2025],d)
+46:     test=work[work.experiment_split=="test"].copy(); mask=work.experiment_split.to_numpy()=="test"
+47:     y=base.labels_for(assigned,test[base.KEY_COLS],"test",allow_test=True)
+48:     genome=np.array([selection["selected_genome"][k] for k in ("t_m","t_r","c_promote","c_demote")])
+49:     decs={"GB-17":base.manual_decision(p17[mask]),"GB-18":base.manual_decision(p18f.loc[mask,"probability_gb18"].to_numpy()),"GB-18-GA":ga.decide_code(p18f.loc[mask,"probability_gb18"].to_numpy(),test.name_sim.to_numpy(),genome)}
+50:     rows=[]
+51:     for method,dec in decs.items():
+52:         metric=base.metric_with_cost(dec,y,const["test"],base.GA_WEIGHTS)
+53:         rows.append({"outer_seed":outer_seed,"method":method,**metric,"candidate_recall":1-const["test"]["fn_blocking"]/max(const["test"]["total_pos"],1),"blocking_missed":const["test"]["fn_blocking"]})
+54:     pd.DataFrame(rows).to_csv(d/"test_results.csv",index=False)
+55:     pd.DataFrame(trials).to_csv(d/"ga_trials.csv",index=False);pd.DataFrame(generations).to_csv(d/"ga_generations.csv",index=False)
+56:     manifest.update({"outer_seed":outer_seed,"outer_assignment":"MD5(icsec-outer-v1:seed:entity_key) < 30 => test","entity_overlap_check":manifest["entity_overlap_check"],"test_labels_accessed_before_final_evaluation":False,"selected_ga_test_evaluations":1,"constants":const})
+57:     (d/"split_manifest.json").write_text(json.dumps(manifest,indent=2));(d/"selected_policy.json").write_text(json.dumps(selection,indent=2))
+58:     return rows
+59: 
+60: def main():
+61:  p=argparse.ArgumentParser();p.add_argument("--output",type=Path,default=Path("experiments/icsec_final/repeated_outer"));p.add_argument("--seeds",nargs="+",type=int,default=[101,202,303]);a=p.parse_args()
+62:  a.output.mkdir(parents=True,exist_ok=False);rows=[]
+63:  for seed in a.seeds: rows.extend(run_one(a.output,seed))
+64:  all=pd.DataFrame(rows);all.to_csv(a.output/"all_results.csv",index=False)
+65:  summary=all.groupby("method")[["precision","recall","F1","FP","FN","REVIEW","cost","candidate_recall","blocking_missed"]].agg(["mean","std"]).reset_index();summary.to_csv(a.output/"summary.csv",index=False)
+66:  (a.output/"protocol.json").write_text(json.dumps({"outer_seeds":a.seeds,"outer_test_pct":OUTER_TEST_PCT,"note":"Each outer test is selected before fitting/calibration/GA selection; metrics include outer-specific exact/blocking constants."},indent=2))
+67: if __name__=="__main__":main()

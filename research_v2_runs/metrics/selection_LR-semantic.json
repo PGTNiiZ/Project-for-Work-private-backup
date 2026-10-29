@@ -1,0 +1,14 @@
+{
+  "learner": "LR",
+  "feature": "semantic",
+  "exp_id": "E4-2",
+  "params": {
+    "C": 87.35561807988194,
+    "class_weight": null
+  },
+  "configs_completed": 200,
+  "tuning_fits": 800,
+  "validation_selection_AP": 0.8447379972785851,
+  "selection_scope": "four development folds",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

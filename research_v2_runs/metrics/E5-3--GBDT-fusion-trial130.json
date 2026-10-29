@@ -1,0 +1,20 @@
+{
+  "fold_AP": [
+    0.9753868701854981,
+    0.9694462884925839,
+    0.9708914599255365,
+    0.9732152096154589
+  ],
+  "mean_fold_AP": 0.9722349570547693,
+  "parameters": {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.21348103832260668
+  },
+  "test_access": false,
+  "atomic_fit_count": 4,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 6.297589916997822
+}

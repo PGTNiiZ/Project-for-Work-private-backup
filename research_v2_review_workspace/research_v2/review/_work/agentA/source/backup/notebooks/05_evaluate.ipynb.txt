@@ -1,0 +1,77 @@
+# CELL 1
+from pathlib import Path
+import json, sys
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from IPython.display import display
+from sklearn.metrics import (average_precision_score, confusion_matrix,
+                             precision_score, recall_score, f1_score)
+
+ROOT = next(p for p in [Path.cwd().resolve(), *Path.cwd().resolve().parents]
+            if (p / 'pyproject.toml').exists())
+SRC = ROOT / 'src'
+if str(SRC) not in sys.path: sys.path.insert(0, str(SRC))
+from identity_resolution.stages import evaluate
+print('Project root:', ROOT)
+# CELL 3
+DATA_PATH = ROOT / 'pub_multi' / 'data' / 'train_all.parquet'
+required = {'split_name', 'label', 'probability', *evaluate.NAME_COLS, *evaluate.BIO_COLS,
+            'platform_a', 'platform_b'}
+df = pd.read_parquet(DATA_PATH)
+missing = sorted(required - set(df.columns))
+assert not missing, f'Missing columns: {missing}'
+assert set(df['split_name'].unique()) >= {'train', 'val', 'test'}
+assert df['label'].isin([0, 1]).all()
+assert df['probability'].between(0, 1).all()
+display(pd.DataFrame({
+    'rows': df.groupby('split_name').size(),
+    'positives': df.groupby('split_name')['label'].sum(),
+    'positive_rate': df.groupby('split_name')['label'].mean(),
+}).loc[['train', 'val', 'test']])
+print('Shape:', df.shape, '| Features/columns:', len(df.columns))
+# CELL 5
+BEST_THRESHOLD, sweep = evaluate.select_threshold(df, split='val', score_col='probability')
+best = sweep.sort_values(['f1', 'precision'], ascending=False).iloc[0]
+display(best.to_frame('validation_best'))
+ax = sweep.plot(x='threshold', y=['precision', 'recall', 'f1'], figsize=(9, 4), grid=True)
+ax.axvline(BEST_THRESHOLD, color='black', linestyle='--', label=f'best={BEST_THRESHOLD:.2f}')
+ax.legend(); plt.title('Validation threshold sweep'); plt.show()
+# CELL 7
+test = df[df.split_name == 'test'].copy()
+y_test = test.label.to_numpy()
+p_test = test.probability.to_numpy()
+pred_test = (p_test >= BEST_THRESHOLD).astype(int)
+tn, fp, fn, tp = confusion_matrix(y_test, pred_test, labels=[0, 1]).ravel()
+test_metrics = {
+    'threshold_selected_on_validation': BEST_THRESHOLD,
+    'average_precision': float(average_precision_score(y_test, p_test)),
+    'precision': float(precision_score(y_test, pred_test, zero_division=0)),
+    'recall': float(recall_score(y_test, pred_test, zero_division=0)),
+    'f1': float(f1_score(y_test, pred_test, zero_division=0)),
+    'tn': int(tn), 'fp': int(fp), 'fn': int(fn), 'tp': int(tp),
+}
+display(pd.Series(test_metrics, name='test'))
+display(pd.DataFrame([[tn, fp], [fn, tp]],
+                     index=['actual_0', 'actual_1'],
+                     columns=['pred_0', 'pred_1']))
+# CELL 9
+report = evaluate.full_report(df, score_col='probability',
+                              thr=BEST_THRESHOLD, split='test')
+display(pd.DataFrame(report['by_slice']).T)
+display(pd.DataFrame(report['by_platform_pair']).T.sort_index())
+# CELL 11
+OUTPUT_DIR = ROOT / 'artifacts' / 'evaluation'
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+summary = {
+    'data_path': str(DATA_PATH.relative_to(ROOT)),
+    'selection_rule': 'maximize validation F1; precision breaks ties',
+    'validation_best': {k: float(best[k]) for k in ['threshold', 'precision', 'recall', 'f1']},
+    'test': test_metrics,
+    'slice_report': report['by_slice'],
+    'platform_pair_report': report['by_platform_pair'],
+}
+output_path = OUTPUT_DIR / 'notebook_model_evaluation.json'
+output_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding='utf-8')
+print('Saved:', output_path)
+print('EVALUATE STAGE: PASS')

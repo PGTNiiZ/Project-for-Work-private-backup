@@ -1,0 +1,12 @@
+{
+  "owned_outside_count": 0,
+  "concurrent_path_count": 16,
+  "concurrent_commits": [
+    "c68c9d209bc690306f75c01cf36b07603d26a169"
+  ],
+  "scope": "per-commit ownership; unrelated inherited history retained, not rewritten",
+  "recorded_base": "a2dce399a36b354ce7464e22f1facf2ffe407508",
+  "concurrent_parent": "932cf9569abb38dfd9c3aa55e258da299e5290e6",
+  "whole_branch_is_runs_only": false,
+  "concurrent_change_retained_without_rewrite": true
+}

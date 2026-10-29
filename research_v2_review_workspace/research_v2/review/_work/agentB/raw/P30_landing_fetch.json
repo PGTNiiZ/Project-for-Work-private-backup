@@ -1,0 +1,144 @@
+{
+  "url": "https://doi.org/10.1007/978-3-319-57454-7_49",
+  "final_url": "https://link.springer.com/chapter/10.1007/978-3-319-57454-7_49?error=cookies_not_supported&code=00a6e5d1-ec43-4c2f-b053-c61d2a99643d",
+  "status": 200,
+  "bytes": 308458,
+  "metadata": [
+    {
+      "name": "twitter:description",
+      "content": "Privacy-preserving record linkage (PPRL) is the process of identifying records that represent the same entity across databases held by different organizations without revealing any sensitive information about these entities. A popular technique used in PPRL is Bloom..."
+    },
+    {
+      "name": "dc.identifier",
+      "content": "10.1007/978-3-319-57454-7_49"
+    },
+    {
+      "name": "dc.description",
+      "content": "Privacy-preserving record linkage (PPRL) is the process of identifying records that represent the same entity across databases held by different organizations without revealing any sensitive information about these entities. A popular technique used in PPRL is Bloom..."
+    },
+    {
+      "name": "citation_pdf_url",
+      "content": "https://link.springer.com/content/pdf/10.1007/978-3-319-57454-7_49.pdf"
+    },
+    {
+      "name": "citation_fulltext_html_url",
+      "content": "https://link.springer.com/chapter/10.1007/978-3-319-57454-7_49"
+    },
+    {
+      "name": "citation_abstract_html_url",
+      "content": "https://link.springer.com/chapter/10.1007/978-3-319-57454-7_49"
+    },
+    {
+      "name": "citation_inbook_title",
+      "content": "Advances in Knowledge Discovery and Data Mining"
+    },
+    {
+      "name": "citation_title",
+      "content": "Efficient Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage"
+    },
+    {
+      "name": "citation_publication_date",
+      "content": "2017"
+    },
+    {
+      "name": "citation_firstpage",
+      "content": "628"
+    },
+    {
+      "name": "citation_lastpage",
+      "content": "640"
+    },
+    {
+      "name": "citation_language",
+      "content": "en"
+    },
+    {
+      "name": "citation_doi",
+      "content": "10.1007/978-3-319-57454-7_49"
+    },
+    {
+      "name": "citation_issn",
+      "content": "1611-3349"
+    },
+    {
+      "name": "citation_isbn",
+      "content": "978-3-319-57454-7"
+    },
+    {
+      "name": "citation_conference_series_id",
+      "content": "springer/pakdd, dblp/pakdd"
+    },
+    {
+      "name": "citation_conference_title",
+      "content": "Pacific-Asia Conference on Knowledge Discovery and Data Mining"
+    },
+    {
+      "name": "citation_conference_abbrev",
+      "content": "PAKDD"
+    },
+    {
+      "name": "description",
+      "content": "Privacy-preserving record linkage (PPRL) is the process of identifying records that represent the same entity across databases held by different organizations without revealing any sensitive information about these entities. A popular technique used in PPRL is Bloom..."
+    },
+    {
+      "name": "citation_author",
+      "content": "Christen, Peter"
+    },
+    {
+      "name": "citation_author_email",
+      "content": "peter.christen@anu.edu.au"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "The Australian National University"
+    },
+    {
+      "name": "citation_author",
+      "content": "Schnell, Rainer"
+    },
+    {
+      "name": "citation_author_email",
+      "content": "rainer.schnell@uni-due.de"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "University Duisburg-Essen"
+    },
+    {
+      "name": "citation_author",
+      "content": "Vatsalan, Dinusha"
+    },
+    {
+      "name": "citation_author_email",
+      "content": "dinusha.vatsalan@anu.edu.au"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "The Australian National University"
+    },
+    {
+      "name": "citation_author",
+      "content": "Ranbaduge, Thilina"
+    },
+    {
+      "name": "citation_author_email",
+      "content": "thilina.ranbaduge@anu.edu.au"
+    },
+    {
+      "name": "citation_author_institution",
+      "content": "The Australian National University"
+    },
+    {
+      "name": "citation_publisher",
+      "content": "Springer, Cham"
+    },
+    {
+      "name": "citation_springer_api_url",
+      "content": "http://api.springer.com/xmldata/jats?q=doi:10.1007/978-3-319-57454-7_49&api_key="
+    },
+    {
+      "name": "og:description",
+      "content": "Privacy-preserving record linkage (PPRL) is the process of identifying records that represent the same entity across databases held by different organizations without revealing any sensitive information about these entities. A popular technique used in PPRL is Bloom..."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "category": "aggregate_statistics",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E5-4",
+  "key": "ensemble-summary-GBDT-fusion-without-bio",
+  "parameters": {
+    "aggregation": "all frozen seeds",
+    "oof_sha256": "0243b83264f21189143eb0e6d44c80a20b3135e5320c64e4d7632ca1e57d44b3",
+    "summary_sha256": "895addad4f4a6f353a8ffb6e43c3834941a1d3c3cd1c406b9f80c6293bfcc032"
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

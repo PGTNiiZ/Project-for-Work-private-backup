@@ -1,0 +1,14 @@
+{
+  "learner": "LR",
+  "feature": "fusion",
+  "exp_id": "E5-3",
+  "params": {
+    "C": 0.6419155626253977,
+    "class_weight": null
+  },
+  "configs_completed": 200,
+  "tuning_fits": 800,
+  "validation_selection_AP": 0.9600627659228558,
+  "selection_scope": "four development folds",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "LR-fusion",
+  "exp_id": "E5-3",
+  "learner": "LR",
+  "feature": "fusion",
+  "params": {
+    "C": 0.6419155626253977,
+    "class_weight": null
+  },
+  "group": null,
+  "exclude_group": null,
+  "seeds": [
+    42
+  ],
+  "seed_AP": [
+    0.9600270749277199
+  ],
+  "seed_AP_SD": 0.0,
+  "mean_score_AP": 0.9600270749277199,
+  "model_paths": [
+    "artifacts/model_LR-fusion_seed42.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_LR-fusion_seed42.pkl": "45512fc325a06dd66081f32705a4cccc3761493f0954c6955f60ee933e432990"
+  },
+  "oof_path": "artifacts/oof_LR-fusion.npz",
+  "oof_sha256": "2c203e848934da7875656244c6d328d3d9b02eb40b1081aca8942cbc85805780",
+  "operating_points": {
+    "validation_F1_threshold": 0.87,
+    "validation_F1": 0.9229438061818007,
+    "precision_target_threshold": 0.685961127281189,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 5,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.9600270749277204,
+    "precision": 0.8271254727840816,
+    "recall": 0.9324712643678161,
+    "f1": 0.876644880174292,
+    "tp": 20119,
+    "fp": 4205,
+    "tn": 325713,
+    "fn": 1457,
+    "automatic_fn": 1457,
+    "utility_fn": 1457,
+    "rejected_positive_fn": 1457,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9324712643678161,
+    "raw_cost": 9867.0,
+    "cost_per_pair": 0.02807160292921074,
+    "brier": 0.013010029902988454,
+    "ece15_equalmass": 0.025633802413330967
+  }
+}

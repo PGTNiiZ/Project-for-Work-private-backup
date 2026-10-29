@@ -1,0 +1,1081 @@
+{
+  "cost_sensitivity": [
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.184641667273952e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.8188145750735556e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.721333298472366e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 0.00010892197837470384,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.326922253182964e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.3602997746461e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.233020159466672e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.627319946351197e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.34639247403646e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.424273357450447e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.628543788804845e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 8.047320424762337e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.145701225566959e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.69643032970872e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.348617642134003e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 0.00010102263162842808,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.2680854709317946e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.5962977653193086e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 6.580934648481852e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 8.221996120419422e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.462018327597036e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.539899211011022e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.136698751736326e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.1629462783229134e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8939790845324666e-05,
+      "seed_SD": 3.0323727201363767e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.9763103041415384e-05,
+      "seed_SD": 2.665465170735311e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.030381888911821e-05,
+      "seed_SD": 2.1268906482298523e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.634960061014109e-05,
+      "seed_SD": 2.0600755450969622e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.894479747354414e-05,
+      "seed_SD": 3.530903892014406e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.976254674939099e-05,
+      "seed_SD": 3.335299439553805e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.01891114736899e-05,
+      "seed_SD": 3.043961640107082e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.6304540956165864e-05,
+      "seed_SD": 5.940279698432836e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8779578742301616e-05,
+      "seed_SD": 2.8971132237687978e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.955838757644148e-05,
+      "seed_SD": 2.897113223768896e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.994245159007731e-05,
+      "seed_SD": 5.794226447537347e-09,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.578885824956039e-05,
+      "seed_SD": 2.8971132237687875e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8726174707960596e-05,
+      "seed_SD": 1.881002038130264e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.9504983542100464e-05,
+      "seed_SD": 1.8810020381300567e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.989616809364842e-05,
+      "seed_SD": 2.2272995294803685e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.573545421521937e-05,
+      "seed_SD": 1.881002038130264e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.397544081970743e-05,
+      "seed_SD": 9.15753475502772e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.478206425506657e-05,
+      "seed_SD": 9.306514148806902e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.1838834412447145e-05,
+      "seed_SD": 1.6881277038338676e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.123505173793972e-05,
+      "seed_SD": 2.6972929779526003e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    }
+  ],
+  "prior": [
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 1.0,
+      "assumed_prior": 0.061686164511641696,
+      "reweighted_precision": 0.99690534628108,
+      "assumed_expected_cost_per_pair": 0.004139130236482635,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 0.5,
+      "assumed_prior": 0.030843082255820848,
+      "reweighted_precision": 0.9936282600080659,
+      "assumed_expected_cost_per_pair": 0.0026586867825586264,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "candidate",
+      "natural_prior": 0.061686164511641696,
+      "factor": 0.1,
+      "assumed_prior": 0.00616861645116417,
+      "reweighted_precision": 0.9681673244379461,
+      "assumed_expected_cost_per_pair": 0.00147433201941942,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 1.0,
+      "assumed_prior": 0.00032554209267046316,
+      "reweighted_precision": 0.9969053462810799,
+      "assumed_expected_cost_per_pair": 4.478206425506657e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.5,
+      "assumed_prior": 0.00016277104633523158,
+      "reweighted_precision": 0.993828788774959,
+      "assumed_expected_cost_per_pair": 2.5088814103344733e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.1,
+      "assumed_prior": 3.255420926704632e-05,
+      "reweighted_precision": 0.9698834681866509,
+      "assumed_expected_cost_per_pair": 9.334213981967261e-06,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    },
+    {
+      "scope": "workflow",
+      "natural_prior": 0.00032554209267046316,
+      "factor": 0.19999728733918207,
+      "assumed_prior": 6.510753544881326e-05,
+      "reweighted_precision": 0.9847118019463721,
+      "assumed_expected_cost_per_pair": 1.3272757170095497e-05,
+      "assumptions": "conditional TPR/FPR/review rates stable under prior shift; not a newly observed cohort"
+    }
+  ],
+  "label_sensitivity": [
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968132568514978,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12055707450444293
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970053475935828,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.1212406015037594
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970079076725796,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12101845522898155
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968023875506289,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12083048530416952
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9969976410036457,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12129186602870813
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9967969250480462,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.1209671907040328
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968023875506289,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12083048530416952
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970008568980291,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12243677375256323
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9968227070535903,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12031784005468216
+    },
+    {
+      "S1_precision_unlabeled_as_negative": 0.9970066281804576,
+      "S2_precision_unlabeled_excluded": 1.0,
+      "S2_positive_only_cost_per_positive": 0.12043745727956254
+    }
+  ],
+  "strata": [
+    {
+      "stratum": "stratum_username_low",
+      "value": 0,
+      "n_pairs": 46393,
+      "positive_pairs": 4790,
+      "candidate_AP": 0.987677732869153,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_username_low",
+      "value": 1,
+      "n_pairs": 41309,
+      "positive_pairs": 620,
+      "candidate_AP": 0.902406022979707,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_both_names_low",
+      "value": 0,
+      "n_pairs": 66026,
+      "positive_pairs": 5348,
+      "candidate_AP": 0.982492126030667,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_both_names_low",
+      "value": 1,
+      "n_pairs": 21676,
+      "positive_pairs": 62,
+      "candidate_AP": 0.622115357856854,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_non_ascii_text",
+      "value": 0,
+      "n_pairs": 77516,
+      "positive_pairs": 4492,
+      "candidate_AP": 0.9797055838745783,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_non_ascii_text",
+      "value": 1,
+      "n_pairs": 10186,
+      "positive_pairs": 918,
+      "candidate_AP": 0.977209449890547,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 0,
+      "n_pairs": 54,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 1,
+      "n_pairs": 2317,
+      "positive_pairs": 73,
+      "candidate_AP": 0.8165926737113117,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 2,
+      "n_pairs": 22,
+      "positive_pairs": 1,
+      "candidate_AP": 0.5,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 3,
+      "n_pairs": 9158,
+      "positive_pairs": 681,
+      "candidate_AP": 0.9322233677939399,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 4,
+      "n_pairs": 59,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 5,
+      "n_pairs": 330,
+      "positive_pairs": 16,
+      "candidate_AP": 0.934044908285895,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 7,
+      "n_pairs": 10618,
+      "positive_pairs": 616,
+      "candidate_AP": 0.9619879322583348,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 16,
+      "n_pairs": 13,
+      "positive_pairs": 0,
+      "candidate_AP": 0.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 17,
+      "n_pairs": 239,
+      "positive_pairs": 20,
+      "candidate_AP": 0.9699227688787184,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 18,
+      "n_pairs": 19,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 19,
+      "n_pairs": 10224,
+      "positive_pairs": 925,
+      "candidate_AP": 0.9887682262629185,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 20,
+      "n_pairs": 131,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 21,
+      "n_pairs": 801,
+      "positive_pairs": 45,
+      "candidate_AP": 0.9805259529805486,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 22,
+      "n_pairs": 4,
+      "positive_pairs": 1,
+      "candidate_AP": 1.0,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "stratum_presence_pattern",
+      "value": 23,
+      "n_pairs": 53713,
+      "positive_pairs": 3030,
+      "candidate_AP": 0.9896365251036123,
+      "definition_note": "non_ascii is script proxy, not language identification; presence pattern is five binary both-present indicators"
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        0,
+        1
+      ],
+      "n_pairs": 24444,
+      "positive_pairs": 1529,
+      "candidate_AP": 0.9788267962162072
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        0,
+        2
+      ],
+      "n_pairs": 39245,
+      "positive_pairs": 1935,
+      "candidate_AP": 0.973370319036772
+    },
+    {
+      "stratum": "platform_pair_code",
+      "value": [
+        1,
+        2
+      ],
+      "n_pairs": 24013,
+      "positive_pairs": 1946,
+      "candidate_AP": 0.9848635350483278
+    }
+  ],
+  "taxonomy": [
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 41,
+      "FN_other_feature_patterns_in_candidates": 677,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 505,
+      "FP_total": 15,
+      "automatic_FN_total": 1160
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 706,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 535,
+      "FP_total": 14,
+      "automatic_FN_total": 1191
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 702,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 532,
+      "FP_total": 14,
+      "automatic_FN_total": 1187
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 692,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 521,
+      "FP_total": 15,
+      "automatic_FN_total": 1176
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 718,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 548,
+      "FP_total": 14,
+      "automatic_FN_total": 1203
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 700,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 529,
+      "FP_total": 15,
+      "automatic_FN_total": 1184
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 42,
+      "FN_other_feature_patterns_in_candidates": 692,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 521,
+      "FP_total": 15,
+      "automatic_FN_total": 1176
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 713,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 535,
+      "FP_total": 14,
+      "automatic_FN_total": 1198
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 15,
+      "FN_low_both_names_in_candidates": 41,
+      "FN_other_feature_patterns_in_candidates": 663,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 491,
+      "FP_total": 15,
+      "automatic_FN_total": 1146
+    },
+    {
+      "FP_low_both_names": 0,
+      "FP_other_feature_patterns": 14,
+      "FN_low_both_names_in_candidates": 43,
+      "FN_other_feature_patterns_in_candidates": 704,
+      "FN_blocking_miss": 442,
+      "REVIEW_positive_not_auto_linked": 538,
+      "FP_total": 14,
+      "automatic_FN_total": 1189
+    }
+  ],
+  "factorial_cells": [
+    {
+      "config": "factorial-B0-M0-P0",
+      "blocker": 0,
+      "matcher": 0,
+      "policy": 0,
+      "cost": 9.468090255043205e-05,
+      "recall": 0.7433356117566644
+    },
+    {
+      "config": "factorial-B0-M0-P1",
+      "blocker": 0,
+      "matcher": 0,
+      "policy": 1,
+      "cost": 7.437234961618631e-05,
+      "recall": 0.589149008885851
+    },
+    {
+      "config": "factorial-B0-M1-P0",
+      "blocker": 0,
+      "matcher": 1,
+      "policy": 0,
+      "cost": 6.74225933555368e-05,
+      "recall": 0.8380041011619959
+    },
+    {
+      "config": "factorial-B0-M1-P1",
+      "blocker": 0,
+      "matcher": 1,
+      "policy": 1,
+      "cost": 5.42801942794266e-05,
+      "recall": 0.7898325358851676
+    },
+    {
+      "config": "factorial-B1-M0-P0",
+      "blocker": 1,
+      "matcher": 0,
+      "policy": 0,
+      "cost": 9.490341936018629e-05,
+      "recall": 0.7477785372522214
+    },
+    {
+      "config": "factorial-B1-M0-P1",
+      "blocker": 1,
+      "matcher": 0,
+      "policy": 1,
+      "cost": 7.126879641213896e-05,
+      "recall": 0.588209159261791
+    },
+    {
+      "config": "factorial-B1-M1-P0",
+      "blocker": 1,
+      "matcher": 1,
+      "policy": 0,
+      "cost": 5.6741786487332953e-05,
+      "recall": 0.8591934381408065
+    },
+    {
+      "config": "factorial-B1-M1-P1",
+      "blocker": 1,
+      "matcher": 1,
+      "policy": 1,
+      "cost": 4.442714994350855e-05,
+      "recall": 0.7979835953520164
+    }
+  ],
+  "factorial_effects": [
+    {
+      "factors": [
+        "blocker"
+      ],
+      "cost_effect": -5.853721899603748e-06,
+      "recall_effect": 0.008210868079289169,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "matcher"
+      ],
+      "cost_effect": -2.8088435968284683e-05,
+      "recall_effect": 0.15413533834586457,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "policy"
+      ],
+      "cost_effect": -1.7350052875556914e-05,
+      "recall_effect": -0.10578434723171559,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "matcher"
+      ],
+      "cost_effect": -4.413203702457195e-06,
+      "recall_effect": 0.006459330143540609,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "policy"
+      ],
+      "cost_effect": -6.245768703789474e-07,
+      "recall_effect": -0.004605263157894723,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "matcher",
+        "policy"
+      ],
+      "cost_effect": 4.621535065589614e-06,
+      "recall_effect": 0.05109364319890636,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    },
+    {
+      "factors": [
+        "blocker",
+        "matcher",
+        "policy"
+      ],
+      "cost_effect": 1.038458136521847e-06,
+      "recall_effect": -0.001913875598086201,
+      "scope": "descriptive fixed eight-cell factorial contrast; interactions do not imply external causal generalization"
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

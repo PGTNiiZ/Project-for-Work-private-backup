@@ -1,0 +1,107 @@
+
+## main@1e0a2db:exp_r2_bert_feature.py
+94: 
+95: def encode_profiles() -> tuple[np.ndarray, np.ndarray]:
+96:     if EMB_PATH.exists() and EMB_IDS_PATH.exists():
+97:         log(f"embeddings cache found -> {EMB_PATH}")
+98:         return np.load(EMB_PATH), np.load(EMB_IDS_PATH)
+102:     prof_text = build_profile_texts()
+103:     log(f"encoding {len(prof_text):,} profiles ด้วย all-MiniLM-L6-v2 (CPU) ...")
+104:     model = SentenceTransformer("all-MiniLM-L6-v2")
+105:     emb = model.encode(
+106:         prof_text["text"].tolist(), batch_size=256, show_progress_bar=True,
+115: 
+116: def compute_bert_cos(cache: pd.DataFrame, emb: np.ndarray, ids: np.ndarray) -> pd.DataFrame:
+117:     if BERT_COS_PATH.exists():
+118:         log(f"bert_cos cache found -> {BERT_COS_PATH}")
+119:         return pd.read_parquet(BERT_COS_PATH)
+145: 
+146: def compute_features17(cache: pd.DataFrame) -> pd.DataFrame:
+147:     if FEAT17_PATH.exists():
+148:         log(f"features17 cache found -> {FEAT17_PATH}")
+149:         return pd.read_parquet(FEAT17_PATH)
+250:         "fullname_lev_sim": fullname_lev_sim,
+251:         "fullname_token_sort": fullname_token_sort,
+252:         "name_sim": scored["name_sim"].values.astype(np.float32),
+253:         "bio_jaccard": bio_jaccard,
+254:         "bio_len_ratio": bio_len_ratio,
+407: 
+408: 
+409: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,
+410:                            output_dir: Path, training_config: R2TrainingConfig | None = None,
+411:                            logger=None) -> tuple[pd.DataFrame, dict]:
+420:     probability_path = output_dir / "r2_probabilities.parquet"
+421:     metadata_path = output_dir / "r2_training.json"
+422:     if probability_path.exists() or model_dir.exists() or metadata_path.exists():
+423:         raise FileExistsError(f"refusing to overwrite R2 training artifacts in {output_dir}")
+424:     output_dir.mkdir(parents=True, exist_ok=True)
+443:     from sklearn.model_selection import train_test_split
+444:     idx = np.arange(len(X_val_all))
+445:     idx_train, idx_holdout = train_test_split(
+446:         idx, test_size=0.15, random_state=cfg.seed, stratify=y_val_all)
+447:     scaler = StandardScaler()
+448:     Xtr_raw, ytr = X_val_all[idx_train], y_val_all[idx_train]
+449:     Xtr_bal, ytr_bal = undersample_negatives(Xtr_raw, ytr, cfg.train_neg_ratio, cfg.seed)
+450:     Xtr_bal = scaler.fit_transform(Xtr_bal)
+461:     holdout_probs_raw = predict_probs(model, Xho, cfg.eval_batch_size, device)
+462:     calibrator = IsotonicRegression(out_of_bounds="clip")
+463:     calibrator.fit(holdout_probs_raw, yho)
+464:     cal_probs = calibrator.predict(holdout_probs_raw)
+465:     thresholds = np.arange(0.01, 1.00, 0.01)
+510: 
+511: def build_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame) -> pd.DataFrame:
+512:     if PROB_PATH.exists():
+513:         log(f"probability_r2 cache found -> {PROB_PATH}")
+514:         return pd.read_parquet(PROB_PATH)
+530:     from sklearn.model_selection import train_test_split
+531:     idx = np.arange(len(X_val_all))
+532:     idx_train, idx_holdout = train_test_split(
+533:         idx, test_size=0.15, random_state=SEED, stratify=y_val_all)
+534: 
+535:     scaler = StandardScaler()
+536:     Xtr_raw, ytr = X_val_all[idx_train], y_val_all[idx_train]
+537:     Xtr_bal, ytr_bal = undersample_negatives(Xtr_raw, ytr, TRAIN_NEG_RATIO, SEED)
+538:     Xtr_bal = scaler.fit_transform(Xtr_bal)
+546:     holdout_probs_raw = predict_probs(model, Xho, EVAL_BATCH_SIZE, device)
+547:     calibrator = IsotonicRegression(out_of_bounds="clip")
+548:     calibrator.fit(holdout_probs_raw, yho)
+549: 
+550:     thresholds = np.arange(0.01, 1.00, 0.01)
+865: 
+866: 
+867: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,
+868:                            output_dir: Path, training_config: R2TrainingConfig | None = None,
+869:                            logger=None) -> tuple[pd.DataFrame, dict]:
+878:     metadata_path = output_dir / "r2_training.json"
+879:     history_path = output_dir / "training_history.csv"
+880:     if any(path.exists() for path in (probability_path, model_dir, metadata_path, history_path)):
+881:         raise FileExistsError(f"refusing to overwrite R2 training artifacts in {output_dir}")
+882:     output_dir.mkdir(parents=True, exist_ok=True)
+900: 
+901:     train = feats.loc[feats["experiment_split"] == "model_train"]
+902:     calibration = feats.loc[feats["experiment_split"] == "model_calibration"]
+903:     ga_validation = feats.loc[feats["experiment_split"] == "ga_validation"]
+904:     test = feats.loc[feats["experiment_split"] == "test"]
+905:     if train.empty or calibration.empty or ga_validation.empty or test.empty:
+906:         raise ValueError("nested split must contain model_train, model_calibration, ga_validation, and test rows")
+907:     y_train = train["actual"].to_numpy(dtype=np.float32)
+908:     y_calibration = calibration["actual"].to_numpy(dtype=np.float32)
+909:     if len(np.unique(y_train)) != 2 or len(np.unique(y_calibration)) != 2:
+910:         raise ValueError("model_train and model_calibration each require both label classes")
+911: 
+912:     X_train, y_train = undersample_negatives(
+921:     raw_calibration = predict_probs(model, X_calibration, cfg.eval_batch_size, torch.device("cpu"))
+922:     calibrator = IsotonicRegression(out_of_bounds="clip")
+923:     calibrator.fit(raw_calibration, y_calibration)
+924:     calibrated_calibration = calibrator.predict(raw_calibration)
+925:     thresholds = np.arange(0.01, 1.00, 0.01)
+951:     pd.DataFrame(train_meta["training_history"]).to_csv(history_path, index=False)
+952:     split_counts = {role: int((feats["experiment_split"] == role).sum()) for role in
+953:                     ("model_train", "model_calibration", "ga_validation", "test", "drop")}
+954:     metadata = {
+955:         **{key: value for key, value in train_meta.items() if key != "training_history"},
+960:         "label_access": {
+961:             "model_fit": "model_train only",
+962:             "early_stopping_and_calibration": "model_calibration only",
+963:             "ga_optimisation": "ga_validation only (performed after this function)",
+964:             "held_out_test": "features predicted only; labels never read by this function",

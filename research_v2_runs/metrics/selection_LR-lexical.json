@@ -1,0 +1,14 @@
+{
+  "learner": "LR",
+  "feature": "lexical",
+  "exp_id": "E3-1",
+  "params": {
+    "C": 0.6471071313151987,
+    "class_weight": null
+  },
+  "configs_completed": 200,
+  "tuning_fits": 800,
+  "validation_selection_AP": 0.9595297590142112,
+  "selection_scope": "four development folds",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

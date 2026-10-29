@@ -1,0 +1,20 @@
+{
+  "final_config_id": "blocking-hybrid_rrf",
+  "kind": "blocking",
+  "blocker": "hybrid_rrf",
+  "population": {
+    "ground_truth_pairs": 5852,
+    "candidate_pairs": 87702,
+    "found_positives": 5408,
+    "blocking_misses": 444,
+    "pc": 0.9241285030758715,
+    "pq": 0.06166336001459488,
+    "rr": 0.9951212076877333,
+    "all_cross_platform_pairs": 17976170,
+    "profiles": 7363
+  },
+  "prediction_artifact_sha256": "9870eec517903dc6a2288b6e209d5f774113baec5ce6be3d8ecc181bb1216175",
+  "prediction_artifact_path": "data_derived/final/blocking-hybrid_rrf.npz",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 322.80353362499955
+}

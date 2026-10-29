@@ -1,0 +1,278 @@
+Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection | Springer Nature Link
+Skip to main content
+Advertisement
+Log in
+Data Matching
+Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection
+Book
+©
+2012
+Save book
+View saved research
+Accessibility information
+Overview
+Authors:
+Peter Christen
+0
+Peter Christen
+School of Computer Science, The Australian National University, Canberra, Australia
+View author publications
+Search author on:
+PubMed
+Google Scholar
+First book on a topic of growing importance for applications
+Brings together research from various areas like databases, statistics, information retrieval, data mining, and machine learning
+Details the data matching process step by step
+Includes an overview of freely available data matching systems and a detailed discussion of practical aspects and limitations
+Includes supplementary material:
+sn.pub/extras
+Includes supplementary material:
+sn.pub/extras
+Part of the book series:
+Data-Centric Systems and Applications
+(DCSA)
+72k
+Accesses
+996
+Citations
+38
+Altmetric
+This is a preview of subscription content,
+log in via an institution
+to check access.
+Access this book
+Log in via an institution
+eBook
+EUR 117.69
+Price includes VAT (Thailand)
+Available as EPUB and PDF
+Read on any device
+Instant download
+Own it forever
+Buy eBook
+Softcover Book
+EUR 97.99
+EUR 139.99
+Discount applied
+Price excludes VAT (Thailand)
+Compact, lightweight edition
+Free shipping worldwide -
+view details
+Buy Softcover Book
+Hardcover Book
+EUR 104.99
+EUR 149.99
+Discount applied
+Price excludes VAT (Thailand)
+Durable hardcover edition
+Free shipping worldwide -
+view details
+Buy Hardcover Book
+Tax calculation will be finalised at checkout
+Licence this eBook for your library
+Learn about institutional subscriptions
+Other ways to access
+Licence this eBook for your library
+Institutional subscriptions
+About this book
+Data matching (also known as record or data linkage, entity resolution, object identification, or field matching) is the task of identifying, matching and merging records that correspond to the same entities from several databases or even within one database. Based on research in various domains including applied statistics, health informatics, data mining, machine learning, artificial intelligence, database management, and digital libraries, significant advances have been achieved over the last decade in all aspects of the data matching process, especially on how to improve the accuracy of data matching, and its scalability to large databases.
+Peter Christen’s book is divided into three parts: Part I, “Overview”, introduces the subject by presenting several sample applications and their special challenges, as well as a general overview of a generic data matching process. Part II, “Steps of the Data Matching Process”, then details its main steps like pre-processing, indexing, field and record comparison, classification, and quality evaluation. Lastly, part III, “Further Topics”, deals with specific aspects like privacy, real-time matching, or matching unstructured data. Finally, it briefly describes the main features of many research and open source systems available today.
+By providing the reader with a broad range of data matching concepts and techniques and touching on all aspects of the data matching process, this book helps researchers as well as students specializing in data quality or data matching aspects to familiarize themselves with recent research advances and to identify open research challenges in the area of data matching. To this end, each chapter of the book includes a final section that provides pointers to further background and research material. Practitioners will better understand the current state of the art in data matching as well as the internal workings and limitations of current systems. Especially,they will learn that it is often not feasible to simply implement an existing off-the-shelf data matching system without substantial adaption and customization. Such practical considerations are discussed for each of the major steps in the data matching process.
+Similar content being viewed by others
+Overview of Data Linkage Methods for Policy Design and Evaluation
+Chapter
+© 2019
+Record Linkage
+Chapter
+© 2017
+Record Linkage
+Chapter
+© 2023
+Explore related subjects
+Discover the latest articles, books and news in related subjects.
+Database Management
+Artificial Intelligence
+Information Storage and Retrieval
+Automated Pattern Recognition
+Data Mining and Knowledge Discovery
+Entity Resolution Techniques in Data Management
+Search within this book
+Search
+Table of contents (10 chapters)
+Front Matter
+Pages i-xix
+Download chapter
+PDF
+Overview
+Front Matter
+Pages 1-1
+Download chapter
+PDF
+Introduction
+Peter Christen
+Pages 3-22
+The Data Matching Process
+Peter Christen
+Pages 23-35
+Steps of the Data Matching Process
+Front Matter
+Pages 37-37
+Download chapter
+PDF
+Steps of the DataMatching Process
+Data Pre-Processing
+Peter Christen
+Pages 39-67
+Indexing
+Peter Christen
+Pages 69-100
+Field and Record Comparison
+Peter Christen
+Pages 101-127
+Classification
+Peter Christen
+Pages 129-162
+Evaluation of Matching Quality and Complexity
+Peter Christen
+Pages 163-184
+Further Topics
+Front Matter
+Pages 185-185
+Download chapter
+PDF
+Privacy Aspects of Data Matching
+Peter Christen
+Pages 187-207
+Further Topics and Research Directions
+Peter Christen
+Pages 209-228
+Data Matching Systems
+Peter Christen
+Pages 229-242
+Back Matter
+Pages 243-270
+Download chapter
+PDF
+Back to top
+Reviews
+"The book is very well organized and exceptionally well written. Because of the depth, amount, and quality of the material that is covered, I would expect this book to be one of the standard references in future years."
+William E. Winkler, U.S. Bureau of the Census, Washington, DC, USA
+Authors and affiliations
+School of Computer Science, The Australian National University, Canberra, Australia
+Peter Christen
+About the author
+Peter Christen is Senior Lecturer at the Research School of Computer Science at the Australian National University in Canberra, Australia. His research interests are data mining, with a focus on data matching, and privacy-preserving data sharing and mining. He has published over 50 papers in these areas, and he is the principle developer of the `Febrl' (Freely Extensible Biomedical Record Linkage) open source data cleaning, deduplication and record linkage system.
+Accessibility information
+Accessibility information for this book is coming soon. We're working to make it available as quickly as possible. Thank you for your patience.
+Bibliographic information
+Book title
+:
+Data Matching
+Book subtitle
+:
+Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection
+Authors
+:
+Peter Christen
+Series title
+:
+Data-Centric Systems and Applications
+DOI
+:
+https://doi.org/10.1007/978-3-642-31164-2
+Publisher
+:
+Springer Berlin, Heidelberg
+eBook packages
+:
+Computer Science
+,
+Computer Science (R0)
+Copyright information
+:
+Springer-Verlag Berlin Heidelberg 2012
+Hardcover ISBN
+:
+978-3-642-31163-5
+Published: 05 July 2012
+Softcover ISBN
+:
+978-3-642-43001-5
+Published: 09 August 2014
+eBook ISBN
+:
+978-3-642-31164-2
+Published: 04 July 2012
+Series ISSN
+:
+2197-9723
+Series E-ISSN
+:
+2197-974X
+Edition number
+:
+1
+Number of pages
+:
+XX, 272
+Topics
+:
+Database Management
+,
+Data Mining and Knowledge Discovery
+,
+Information Storage and Retrieval
+,
+Artificial Intelligence
+,
+Pattern Recognition
+Keywords
+data consistency
+data management
+data matching
+data quality
+duplicate detection
+entity resolution
+field matching
+record linkage
+Publish with us
+Policies and ethics
+Back to top
+Access this book
+Log in via an institution
+eBook
+EUR 117.69
+Price includes VAT (Thailand)
+Available as EPUB and PDF
+Read on any device
+Instant download
+Own it forever
+Buy eBook
+Softcover Book
+EUR 97.99
+EUR 139.99
+Discount applied
+Price excludes VAT (Thailand)
+Compact, lightweight edition
+Free shipping worldwide -
+view details
+Buy Softcover Book
+Hardcover Book
+EUR 104.99
+EUR 149.99
+Discount applied
+Price excludes VAT (Thailand)
+Durable hardcover edition
+Free shipping worldwide -
+view details
+Buy Hardcover Book
+Tax calculation will be finalised at checkout
+Licence this eBook for your library
+Learn about institutional subscriptions
+Other ways to access
+Licence this eBook for your library
+Institutional subscriptions
+Footer Navigation
+180.183.56.190
+Not affiliated
+© 2026 Springer Nature

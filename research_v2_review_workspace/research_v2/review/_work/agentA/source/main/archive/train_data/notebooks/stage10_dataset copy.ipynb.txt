@@ -1,0 +1,475 @@
+# CELL 2
+"""
+Stage 10: Dataset Building & Entity-Aware Split
+================================================
+รับ feature_matrix จาก Stage 9 → เตรียมพร้อมสำหรับ train ML model
+
+ขั้นตอน:
+  10.1  Load feature matrices (train/val/test)
+  10.2  ระบุ numeric feature columns อัตโนมัติ
+  10.3  Class imbalance handling — undersample negatives ใน train
+        คำนวณ pos_weight สำหรับ FocalLoss
+  10.4  StandardScaler — fit บน train เท่านั้น → transform val/test
+  10.5  สร้าง PyTorch PairDataset + DataLoader
+  10.6  Sanity checks + save artifacts
+
+Input:
+  feature_matrix_train.parquet  (จาก Stage 9)
+  feature_matrix_val.parquet
+  feature_matrix_test.parquet
+
+Output:
+  train_scaled.parquet          (optional, สำหรับ debug)
+  val_scaled.parquet
+  test_scaled.parquet
+  scaler.pkl                    (StandardScaler — ใช้ตอน inference)
+  feature_cols.pkl              (list ของ feature column names)
+  class_weights.json            (pos_weight สำหรับ FocalLoss)
+  dataloader_config.json        (config สำหรับ reproduce)
+
+Data Leakage Rules:
+  - StandardScaler.fit() บน train เท่านั้น
+  - val/test ใช้ transform() เท่านั้น
+  - Undersample ทำบน train เท่านั้น (val/test ไม่แตะ)
+  - feature_cols ต้องเหมือนกันทุก split
+
+Install:
+  pip install torch scikit-learn pandas numpy
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import pickle
+import random
+import warnings
+from pathlib import Path
+from typing import Optional, Tuple
+
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+warnings.filterwarnings("ignore")
+
+
+# ─── lazy torch import ───────────────────────────────────────────────────────
+_torch = None
+_Dataset = None
+_DataLoader = None
+
+def _get_torch():
+    global _torch, _Dataset, _DataLoader
+    if _torch is None:
+        import torch
+        from torch.utils.data import Dataset, DataLoader
+        _torch      = torch
+        _Dataset    = Dataset
+        _DataLoader = DataLoader
+    return _torch, _Dataset, _DataLoader
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 1 — COLUMN DETECTION
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# columns ที่ไม่ใช่ feature (exclude ออกก่อน scale)
+NON_FEATURE_COLS = {
+    "profile_id_a", "profile_id_b", "label", "pair_type",
+    # categorical string columns จาก image
+    "clip_category_a", "clip_category_b",
+}
+
+def detect_feature_cols(df: pd.DataFrame) -> list[str]:
+    """
+    ระบุ numeric feature columns อัตโนมัติ
+    - ตัด NON_FEATURE_COLS ออก
+    - ตัด object/string columns ออก
+    - ตัด columns ที่มี variance = 0 ออก (constant → ไม่มี signal)
+    """
+    candidates = [c for c in df.columns if c not in NON_FEATURE_COLS]
+
+    # numeric only
+    num_cols = df[candidates].select_dtypes(include=[np.number]).columns.tolist()
+
+    # ตัด constant columns
+    non_const = [c for c in num_cols if df[c].std() > 1e-8]
+
+    n_removed = len(num_cols) - len(non_const)
+    if n_removed > 0:
+        print(f"[Step 10.2] Removed {n_removed} constant columns")
+
+    print(f"[Step 10.2] Feature columns: {len(non_const)}")
+    return non_const
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 2 — CLASS IMBALANCE HANDLING
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def undersample_negatives(df: pd.DataFrame,
+                           target_ratio: float = 5.0,
+                           seed: int = 42) -> pd.DataFrame:
+    """
+    Undersample negatives ใน train set ให้ได้ ratio ที่ต้องการ
+    target_ratio = neg / pos
+
+    *** ใช้กับ train set เท่านั้น ***
+    """
+    pos = df[df["label"] == 1]
+    neg = df[df["label"] == 0]
+
+    n_pos     = len(pos)
+    n_neg_max = int(n_pos * target_ratio)
+
+    if len(neg) <= n_neg_max:
+        print(f"[Step 10.3] No undersample needed — ratio already {len(neg)/max(n_pos,1):.1f}:1")
+        return df.copy()
+
+    neg_sampled = neg.sample(n=n_neg_max, random_state=seed)
+    df_balanced = pd.concat([pos, neg_sampled], ignore_index=True)
+    df_balanced = df_balanced.sample(frac=1, random_state=seed).reset_index(drop=True)
+
+    print(f"[Step 10.3] Undersample: {len(neg):,} → {n_neg_max:,} negatives")
+    print(f"           Ratio: 1 : {len(neg_sampled)/max(n_pos,1):.1f}  "
+          f"(Total: {len(df_balanced):,})")
+    return df_balanced
+
+
+def compute_pos_weight(df: pd.DataFrame) -> float:
+    """
+    คำนวณ pos_weight สำหรับ BCEWithLogitsLoss / FocalLoss
+    pos_weight = n_negative / n_positive
+    """
+    n_pos = (df["label"] == 1).sum()
+    n_neg = (df["label"] == 0).sum()
+    w     = n_neg / max(n_pos, 1)
+    print(f"[Step 10.3] pos_weight = {w:.2f}  (neg={n_neg:,}, pos={n_pos:,})")
+    return float(w)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 3 — FEATURE SCALING
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def fit_scaler(train_df: pd.DataFrame,
+               feature_cols: list[str]) -> StandardScaler:
+    """
+    Fit StandardScaler บน train set เท่านั้น
+    """
+    scaler = StandardScaler()
+    scaler.fit(train_df[feature_cols].fillna(0.0))
+    print(f"[Step 10.4] Scaler fitted on {len(train_df):,} train samples")
+    print(f"           Feature mean range: "
+          f"[{scaler.mean_.min():.3f}, {scaler.mean_.max():.3f}]")
+    return scaler
+
+
+def apply_scaler(df: pd.DataFrame,
+                 scaler: StandardScaler,
+                 feature_cols: list[str]) -> np.ndarray:
+    """
+    Transform features ด้วย fitted scaler
+    Return np.ndarray shape (n, n_features)
+    """
+    X = df[feature_cols].fillna(0.0).values
+    return scaler.transform(X)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 4 — PYTORCH DATASET & DATALOADER
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class PairDataset:
+    """
+    PyTorch-compatible Dataset สำหรับ pair features + labels
+
+    ใช้ lazy import เพื่อไม่บังคับให้ install torch ตอน import module
+    """
+
+    def __init__(self, X: np.ndarray, y: np.ndarray,
+                 pid_a: np.ndarray = None, pid_b: np.ndarray = None):
+        torch, Dataset, _ = _get_torch()
+        self.X     = torch.tensor(X,   dtype=torch.float32)
+        self.y     = torch.tensor(y,   dtype=torch.float32)
+        self.pid_a = pid_a  # เก็บไว้สำหรับ debug
+        self.pid_b = pid_b
+        self._Dataset = Dataset
+
+    def __len__(self) -> int:
+        return len(self.y)
+
+    def __getitem__(self, idx):
+        return self.X[idx], self.y[idx]
+
+    # ทำให้ใช้กับ DataLoader ได้โดยไม่ต้อง inherit Dataset อย่างเป็นทางการ
+    def to_dataloader(self, batch_size: int = 512,
+                      shuffle: bool = False,
+                      num_workers: int = 0):
+        torch, Dataset, DataLoader = _get_torch()
+
+        # สร้าง wrapper ที่ inherit Dataset จริงๆ
+        X, y = self.X, self.y
+
+        class _DS(Dataset):
+            def __len__(self_):        return len(y)
+            def __getitem__(self_, i): return X[i], y[i]
+
+        return DataLoader(
+            _DS(),
+            batch_size  = batch_size,
+            shuffle     = shuffle,
+            num_workers = num_workers,
+            pin_memory  = torch.cuda.is_available(),
+        )
+
+
+def build_dataloaders(
+        train_X: np.ndarray, train_y: np.ndarray,
+        val_X:   np.ndarray, val_y:   np.ndarray,
+        test_X:  np.ndarray, test_y:  np.ndarray,
+        batch_size:   int  = 512,
+        num_workers:  int  = 0,
+) -> tuple:
+    """
+    สร้าง DataLoader ทั้ง 3 splits
+
+    Returns: (train_loader, val_loader, test_loader)
+    """
+    train_ds = PairDataset(train_X, train_y)
+    val_ds   = PairDataset(val_X,   val_y)
+    test_ds  = PairDataset(test_X,  test_y)
+
+    train_loader = train_ds.to_dataloader(batch_size, shuffle=True,  num_workers=num_workers)
+    val_loader   = val_ds.to_dataloader(  batch_size, shuffle=False, num_workers=num_workers)
+    test_loader  = test_ds.to_dataloader( batch_size, shuffle=False, num_workers=num_workers)
+
+    # batch shape check
+    torch, _, _ = _get_torch()
+    for name, loader in [("train", train_loader), ("val", val_loader), ("test", test_loader)]:
+        x_batch, y_batch = next(iter(loader))
+        print(f"[Step 10.5] {name:5} loader — X: {tuple(x_batch.shape)}, "
+              f"y: {tuple(y_batch.shape)}, batches: {len(loader)}")
+
+    return train_loader, val_loader, test_loader
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 5 — SANITY CHECKS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def run_sanity_checks(train_fm: pd.DataFrame,
+                      val_fm:   pd.DataFrame,
+                      test_fm:  pd.DataFrame,
+                      feature_cols: list[str],
+                      train_X_scaled: np.ndarray,
+                      val_X_scaled:   np.ndarray,
+                      test_X_scaled:  np.ndarray) -> dict:
+    """ตรวจสอบความถูกต้องก่อน train"""
+
+    results = {}
+    print("\n" + "=" * 50)
+    print("Sanity Checks")
+    print("=" * 50)
+
+    # 1. feature columns เหมือนกันทุก split
+    same_cols = (
+        list(train_fm[feature_cols].columns) ==
+        list(val_fm[feature_cols].columns)   ==
+        list(test_fm[feature_cols].columns)
+    )
+    results["same_feature_cols"] = same_cols
+    print(f"  [{'PASS' if same_cols else 'FAIL'}] Same feature cols across splits")
+
+    # 2. ไม่มี NaN หลัง scale
+    train_nan = np.isnan(train_X_scaled).sum()
+    val_nan   = np.isnan(val_X_scaled).sum()
+    test_nan  = np.isnan(test_X_scaled).sum()
+    no_nan    = (train_nan + val_nan + test_nan) == 0
+    results["no_nan_after_scale"] = no_nan
+    print(f"  [{'PASS' if no_nan else 'FAIL'}] No NaN after scaling  "
+          f"(train={train_nan}, val={val_nan}, test={test_nan})")
+
+    # 3. train mean ≈ 0, std ≈ 1 (StandardScaler ทำงานถูก)
+    train_mean_ok = abs(train_X_scaled.mean()) < 0.1
+    train_std_ok  = abs(train_X_scaled.std() - 1.0) < 0.1
+    results["scaler_correct"] = train_mean_ok and train_std_ok
+    print(f"  [{'PASS' if train_mean_ok and train_std_ok else 'FAIL'}] "
+          f"Train mean≈0 std≈1  "
+          f"(mean={train_X_scaled.mean():.4f}, std={train_X_scaled.std():.4f})")
+
+    # 4. label distribution ต่อ split
+    for name, fm in [("train", train_fm), ("val", val_fm), ("test", test_fm)]:
+        n1 = (fm["label"] == 1).sum()
+        n0 = (fm["label"] == 0).sum()
+        print(f"  [INFO] {name:5} labels — pos={n1:,}, neg={n0:,}, "
+              f"ratio=1:{n0/max(n1,1):.1f}")
+
+    # 5. ไม่มี entity leak (profile_id_a ใน train ไม่ปรากฏใน test)
+    train_pids = set(train_fm["profile_id_a"]) | set(train_fm["profile_id_b"])
+    test_pids  = set(test_fm["profile_id_a"])  | set(test_fm["profile_id_b"])
+    leak       = len(train_pids & test_pids)
+    # entity-aware split ควรมี 0 overlap
+    results["no_entity_leak"] = leak == 0
+    print(f"  [{'PASS' if leak == 0 else 'WARN'}] "
+          f"Entity overlap train∩test = {leak:,} profiles")
+
+    all_pass = all(v for k, v in results.items() if k != "no_entity_leak")
+    results["all_pass"] = all_pass
+    print(f"\n  {'✅ All checks passed!' if all_pass else '⚠️ Some checks need attention'}")
+
+    return results
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SECTION 6 — MAIN
+# ═══════════════════════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+
+    print("=" * 55)
+    print("Stage 10: Dataset Building & DataLoader")
+    print("=" * 55)
+
+    # ─── Config ──────────────────────────────────────────────
+    BATCH_SIZE      = 512
+    NEG_POS_RATIO   = 5.0    # undersample negatives ใน train → ratio = 5:1
+    RANDOM_SEED     = 42
+    NUM_WORKERS     = 0      # Windows ใช้ 0, Linux/Mac ใช้ 2-4
+    SAVE_SCALED_CSV = False  # True = save scaled parquet files (ใหญ่)
+
+    random.seed(RANDOM_SEED)
+    np.random.seed(RANDOM_SEED)
+
+    # ─── Step 10.1: Load feature matrices ────────────────────
+    print("\n[Step 10.1] Loading feature matrices ...")
+    train_fm = pd.read_parquet("feature_matrix_train.parquet")
+    val_fm   = pd.read_parquet("feature_matrix_val.parquet")
+    test_fm  = pd.read_parquet("feature_matrix_test.parquet")
+
+    print(f"  Train: {len(train_fm):,} pairs  "
+          f"(pos={( train_fm['label']==1).sum():,}, "
+          f"neg={(train_fm['label']==0).sum():,})")
+    print(f"  Val:   {len(val_fm):,} pairs")
+    print(f"  Test:  {len(test_fm):,} pairs")
+
+    # ─── Step 10.2: Detect feature columns ───────────────────
+    print("\n[Step 10.2] Detecting feature columns ...")
+    feature_cols = detect_feature_cols(train_fm)
+    print(f"  Columns: {feature_cols[:5]} ... [{len(feature_cols)} total]")
+
+    # ─── Step 10.3: Class imbalance (train only) ─────────────
+    print("\n[Step 10.3] Handling class imbalance ...")
+    train_balanced = undersample_negatives(
+        train_fm, target_ratio=NEG_POS_RATIO, seed=RANDOM_SEED
+    )
+    pos_weight = compute_pos_weight(train_balanced)
+
+    print(f"\n  Before undersample: {len(train_fm):,} rows")
+    print(f"  After  undersample: {len(train_balanced):,} rows")
+
+    # ─── Step 10.4: StandardScaler (fit on train only) ───────
+    print("\n[Step 10.4] Fitting StandardScaler on train ...")
+    scaler = fit_scaler(train_balanced, feature_cols)
+
+    train_X = apply_scaler(train_balanced, scaler, feature_cols)
+    val_X   = apply_scaler(val_fm,         scaler, feature_cols)
+    test_X  = apply_scaler(test_fm,        scaler, feature_cols)
+
+    train_y = train_balanced["label"].values.astype(np.float32)
+    val_y   = val_fm["label"].values.astype(np.float32)
+    test_y  = test_fm["label"].values.astype(np.float32)
+
+    print(f"  train_X: {train_X.shape}")
+    print(f"  val_X:   {val_X.shape}")
+    print(f"  test_X:  {test_X.shape}")
+
+    # ─── Step 10.5: PyTorch DataLoaders ──────────────────────
+    print("\n[Step 10.5] Building PyTorch DataLoaders ...")
+    try:
+        train_loader, val_loader, test_loader = build_dataloaders(
+            train_X, train_y,
+            val_X,   val_y,
+            test_X,  test_y,
+            batch_size  = BATCH_SIZE,
+            num_workers = NUM_WORKERS,
+        )
+        print("  DataLoaders ready!")
+        HAS_TORCH = True
+    except ImportError:
+        print("  [WARN] PyTorch not installed — skip DataLoader creation")
+        print("         Install with: pip install torch")
+        train_loader = val_loader = test_loader = None
+        HAS_TORCH = False
+
+    # ─── Step 10.6: Sanity checks ────────────────────────────
+    sanity = run_sanity_checks(
+        train_balanced, val_fm, test_fm,
+        feature_cols,
+        train_X, val_X, test_X,
+    )
+
+    # ─── Save artifacts ──────────────────────────────────────
+    print("\n[Saving artifacts ...]")
+
+    pickle.dump(scaler,       open("scaler.pkl",       "wb"))
+    pickle.dump(feature_cols, open("feature_cols.pkl", "wb"))
+
+    class_weights = {
+        "pos_weight":    pos_weight,
+        "n_pos_train":   int((train_balanced["label"] == 1).sum()),
+        "n_neg_train":   int((train_balanced["label"] == 0).sum()),
+        "neg_pos_ratio": NEG_POS_RATIO,
+    }
+    with open("class_weights.json", "w") as f:
+        json.dump(class_weights, f, indent=2)
+
+    config = {
+        "batch_size":      BATCH_SIZE,
+        "neg_pos_ratio":   NEG_POS_RATIO,
+        "random_seed":     RANDOM_SEED,
+        "n_features":      len(feature_cols),
+        "train_size":      len(train_balanced),
+        "val_size":        len(val_fm),
+        "test_size":       len(test_fm),
+        "pos_weight":      pos_weight,
+        "sanity":          sanity,
+    }
+    with open("dataloader_config.json", "w") as f:
+        json.dump(config, f, indent=2)
+
+    # optional: save scaled arrays
+    if SAVE_SCALED_CSV:
+        train_scaled_df = train_balanced[["profile_id_a","profile_id_b","label","pair_type"]].copy()
+        for i, col in enumerate(feature_cols):
+            train_scaled_df[col] = train_X[:, i]
+        train_scaled_df.to_parquet("train_scaled.parquet", index=False)
+
+        val_scaled_df = val_fm[["profile_id_a","profile_id_b","label","pair_type"]].copy()
+        for i, col in enumerate(feature_cols):
+            val_scaled_df[col] = val_X[:, i]
+        val_scaled_df.to_parquet("val_scaled.parquet", index=False)
+
+    # ─── Final summary ────────────────────────────────────────
+    print("\n" + "=" * 55)
+    print("Stage 10 Complete!")
+    print("=" * 55)
+    print(f"  scaler.pkl           — StandardScaler")
+    print(f"  feature_cols.pkl     — {len(feature_cols)} features")
+    print(f"  class_weights.json   — pos_weight = {pos_weight:.2f}")
+    print(f"  dataloader_config.json")
+    print()
+    print(f"  Train: {len(train_balanced):,} pairs  "
+          f"(pos={int((train_balanced['label']==1).sum()):,}, "
+          f"neg={int((train_balanced['label']==0).sum()):,})")
+    print(f"  Val  : {len(val_fm):,} pairs")
+    print(f"  Test : {len(test_fm):,} pairs")
+    print(f"  input_dim = {len(feature_cols)}  ← ใช้ใน Stage 11 MLP")
+    print(f"  pos_weight = {pos_weight:.2f}  ← ใส่ใน FocalLoss")
+
+    if HAS_TORCH:
+        print()
+        print("  DataLoaders พร้อมใช้:")
+        print(f"    train_loader, val_loader, test_loader")
+        print(f"    batch_size = {BATCH_SIZE}")

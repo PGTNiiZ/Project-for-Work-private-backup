@@ -7,3 +7,14 @@ artifacts/
 cache/
 *.log
 work/**/tmp/
+work/git_execution/
+# Explicit aggregate-only figure exceptions; private artifacts remain ignored.
+!/figures/pr_curves.png
+!/figures/pr_curves.svg
+!/figures/pc_candidate_curve.png
+!/figures/pc_candidate_curve.svg
+!/figures/cost_sensitivity.png
+!/figures/cost_sensitivity.svg
+!/figures/calibration_reliability.png
+!/figures/calibration_reliability.svg
+single_file_runs/

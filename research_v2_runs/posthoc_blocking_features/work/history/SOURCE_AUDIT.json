@@ -1,0 +1,41 @@
+{
+  "scope": "SYNTHETIC / CODE-ONLY / DEVELOPMENT-ONLY; NO REAL DATA READS",
+  "main_pin": "1e0a2dbba4d30e7b291dda3cc02d6c11fdd3909b",
+  "backup_pin": "903246c87eba069d4c07106695cbae072dbbb343",
+  "sources": {
+    "base": {
+      "path": "train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py",
+      "pinned_sha256": "184286905ac157218c0c26d35a01feb0c0c0214b3cc780d32ff24e03cf489c73",
+      "review_copy": "research_v2_review_workspace/research_v2/review/_work/agentA/source/main/train_data/stage7_8_rebuilt_experiment_hybrid/run_rebuilt_pipeline.py.txt",
+      "matches_pinned_ignoring_final_newline": true,
+      "backup_path_exists": false
+    },
+    "multimodal": {
+      "path": "train_data/stage7_13_multimodal_suite/run_multimodal_suite.py",
+      "pinned_sha256": "8586adf9ef95ad02d6d0bf3ab5cebb936fca7d275613294b104beaae53c07c8f",
+      "review_copy": "research_v2_review_workspace/research_v2/review/_work/agentA/source/main/train_data/stage7_13_multimodal_suite/run_multimodal_suite.py.txt",
+      "matches_pinned_ignoring_final_newline": true,
+      "backup_path_exists": false
+    },
+    "recover": {
+      "path": "image_process/recover_profile_images.py",
+      "pinned_sha256": "bdfbb91de296b2566759e581e030668fa06af14d94e45622c77aaaeccbbe1cc3"
+    }
+  },
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "rapidfuzz": "3.14.6",
+    "Pillow": "13.0.0",
+    "pandas": "3.1.0"
+  },
+  "owned_sha256": {
+    "hist_features.py": "f24082d05358f12ccab558398c37250d02c1863a1cbe6a496679586147c7ffb0",
+    "test_hist_features_synthetic.py": "cf39043031b3c6ac3d0554f730f905a6e6c53999e510c310256b79c9315459fa",
+    "test_source_parity_synthetic.py": "e86520ee6e433635ad2c0fbb51b5a879522fa4a022a74dbbd9b4f301549587af",
+    "MAPPING_TH.md": "a95a017722c7bf2b8e4bf8bc43d45a3984fcc5bd58231963b6b97581028b54d0"
+  },
+  "test_exit_code": 0,
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 research_v2_runs/.venv/bin/python -m unittest discover -s research_v2_runs/posthoc_blocking_features/work/history -p test_*synthetic.py -v"
+}

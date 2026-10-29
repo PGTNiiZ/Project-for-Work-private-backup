@@ -1,0 +1,534 @@
+{
+  "rows": [
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.184641667273952e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.8188145750735556e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.721333298472366e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "fixed_0.5",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 0.00010892197837470384,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.326922253182964e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.3602997746461e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.233020159466672e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_R0",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.627319946351197e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.34639247403646e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.424273357450447e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.628543788804845e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "historical_stage18",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 8.047320424762337e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.145701225566959e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.69643032970872e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 7.348617642134003e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "validation_F1",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 0.00010102263162842808,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.2680854709317946e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.5962977653193086e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 6.580934648481852e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "closed_cost",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 8.221996120419422e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.462018327597036e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.539899211011022e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.136698751736326e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "Chow",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.1629462783229134e-05,
+      "seed_SD": 0.0,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8939790845324666e-05,
+      "seed_SD": 3.0323727201363767e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.9763103041415384e-05,
+      "seed_SD": 2.665465170735311e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.030381888911821e-05,
+      "seed_SD": 2.1268906482298523e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "random",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.634960061014109e-05,
+      "seed_SD": 2.0600755450969622e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.894479747354414e-05,
+      "seed_SD": 3.530903892014406e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.976254674939099e-05,
+      "seed_SD": 3.335299439553805e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.01891114736899e-05,
+      "seed_SD": 3.043961640107082e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "scrambled_sobol",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.6304540956165864e-05,
+      "seed_SD": 5.940279698432836e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8779578742301616e-05,
+      "seed_SD": 2.8971132237687978e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.955838757644148e-05,
+      "seed_SD": 2.897113223768896e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.994245159007731e-05,
+      "seed_SD": 5.794226447537347e-09,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "TPE",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.578885824956039e-05,
+      "seed_SD": 2.8971132237687875e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.8726174707960596e-05,
+      "seed_SD": 1.881002038130264e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.9504983542100464e-05,
+      "seed_SD": 1.8810020381300567e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.989616809364842e-05,
+      "seed_SD": 2.2272995294803685e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "GA",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.573545421521937e-05,
+      "seed_SD": 1.881002038130264e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        1,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.397544081970743e-05,
+      "seed_SD": 9.15753475502772e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        2,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.478206425506657e-05,
+      "seed_SD": 9.306514148806902e-08,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        5,
+        1,
+        0.02
+      ],
+      "mean_cost_per_all_cross_platform_pair": 4.1838834412447145e-05,
+      "seed_SD": 1.6881277038338676e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    },
+    {
+      "family": "three_way",
+      "cost_weights": [
+        10,
+        1,
+        0.1
+      ],
+      "mean_cost_per_all_cross_platform_pair": 5.123505173793972e-05,
+      "seed_SD": 2.6972929779526003e-07,
+      "thresholds_frozen_at_primary_cost": true,
+      "assumption": "cost scenario, not measured financial outcome"
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 1.0291998478351161e-05
+}

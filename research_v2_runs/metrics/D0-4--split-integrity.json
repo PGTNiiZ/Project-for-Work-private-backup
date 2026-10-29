@@ -1,0 +1,40 @@
+{
+  "entity_overlap": 0,
+  "component_overlap": 0,
+  "same_platform_username_cross_identity_components": 17,
+  "folds": [
+    {
+      "fold": 0,
+      "entities": 3060,
+      "profiles": 7356,
+      "ground_truth_pairs": 5841
+    },
+    {
+      "fold": 1,
+      "entities": 3059,
+      "profiles": 7365,
+      "ground_truth_pairs": 5858
+    },
+    {
+      "fold": 2,
+      "entities": 3060,
+      "profiles": 7358,
+      "ground_truth_pairs": 5842
+    },
+    {
+      "fold": 3,
+      "entities": 3059,
+      "profiles": 7362,
+      "ground_truth_pairs": 5850
+    },
+    {
+      "fold": 4,
+      "entities": 3059,
+      "profiles": 7363,
+      "ground_truth_pairs": 5852
+    }
+  ],
+  "routing": "both endpoints same fold; no negative edges across folds",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.000206208998861257
+}

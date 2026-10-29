@@ -1,0 +1,155 @@
+# CELL 2
+import itertools
+import numpy as np
+import pandas as pd
+from collections import defaultdict
+from rapidfuzz import fuzz
+
+OUTPUT_DIR   = "/Users/tm/Documents/GitHub/Project-for-Work/data/processed"
+SIM_THRESHOLD = 0.50   # ต่ำสุดที่ยังเป็น candidate
+MAX_BLOCK_SIZE = 500   # cap ป้องกัน block ใหญ่เกินไป
+
+df = pd.read_csv(f"{OUTPUT_DIR}/all_profiles_cleaned.csv")
+
+print(f"✅ Loaded {len(df):,} profiles")
+print(f"   platforms: {df['platform'].value_counts().to_dict()}")
+# CELL 4
+import re
+
+# --- Key 1-2: prefix ---
+df["name_prefix3"]     = df["userName_clean"].astype(str).str[:3].str.strip()
+df["fullname_prefix3"] = df["fullName_clean"].astype(str).str[:3].str.strip()
+
+# --- Key 3: fullname tokens ---
+def fullname_tokens(name):
+    if not name or str(name).strip() in ("", "nan"):
+        return []
+    return [t for t in str(name).strip().split() if len(t) >= 3]
+
+df["fullname_tokens"] = df["fullName_clean"].apply(fullname_tokens)
+
+# --- Key 4: url domain ---
+df["url_domain_key"] = df["url_domain"].fillna("").astype(str).str.strip()
+
+# --- Key 5: location ---
+df["location_key"] = df["location_clean"].fillna("").astype(str).str[:20].str.strip()
+
+# --- Key 6: username stripped prefix4 ---
+# ตัด leading digits/underscores ก่อนเอา prefix4
+# จับ "1caseycolette" ↔ "caseycolettebyrddavis" (prefix4 = "case")
+def stripped_prefix4(s: str) -> str:
+    s = re.sub(r'^[\d_]+', '', str(s) if s and str(s) != 'nan' else '')
+    return s[:4].strip()
+
+df["name_stripped_prefix4"] = df["userName_clean"].apply(stripped_prefix4)
+
+print("📊 Step 7.2: Blocking Keys สร้างแล้ว")
+print(f"   profiles มี fullname tokens   : {df['fullname_tokens'].apply(len).gt(0).sum():,}")
+print(f"   profiles มี url_domain        : {df['url_domain_key'].gt('').sum():,}")
+print(f"   profiles มี location          : {df['location_key'].gt('').sum():,}")
+print(f"   profiles มี stripped_prefix4  : {df['name_stripped_prefix4'].gt('').sum():,}")
+# CELL 6
+def block_by_key(df, key_col):
+    """จัดกลุ่มตาม key → คืน set of (id_a, id_b) cross-platform"""
+    blocks = defaultdict(list)
+    for _, row in df.iterrows():
+        val = str(row[key_col]).strip()
+        if val and val != "nan" and len(val) >= 2:
+            blocks[val].append(row["profile_id"])
+
+    pairs = set()
+    for val, ids in blocks.items():
+        if len(ids) < 2 or len(ids) > MAX_BLOCK_SIZE:
+            continue
+        for a, b in itertools.combinations(ids, 2):
+            if a.split("_")[0] != b.split("_")[0]:  # cross-platform only
+                pairs.add((min(a, b), max(a, b)))
+    return pairs
+
+def block_by_fullname_tokens(df):
+    """block บน token แต่ละตัวของ fullname"""
+    blocks = defaultdict(list)
+    for _, row in df.iterrows():
+        for tok in row["fullname_tokens"]:
+            blocks[tok].append(row["profile_id"])
+
+    pairs = set()
+    for tok, ids in blocks.items():
+        if len(ids) < 2 or len(ids) > MAX_BLOCK_SIZE:
+            continue
+        for a, b in itertools.combinations(ids, 2):
+            if a.split("_")[0] != b.split("_")[0]:
+                pairs.add((min(a, b), max(a, b)))
+    return pairs
+
+# --- รัน blocking ทุก key ---
+p1 = block_by_key(df, "name_prefix3")
+p2 = block_by_key(df, "fullname_prefix3")
+p3 = block_by_key(df[df["url_domain_key"] != ""], "url_domain_key")
+p4 = block_by_key(df[df["location_key"] != ""], "location_key")
+p5 = block_by_fullname_tokens(df)
+p6 = block_by_key(df[df["name_stripped_prefix4"] != ""], "name_stripped_prefix4")
+
+all_pairs = p1 | p2 | p3 | p4 | p5 | p6
+
+print("📊 Step 7.3: Candidate Pairs per Key")
+print("=" * 50)
+print(f"   name_prefix3          : {len(p1):>10,}")
+print(f"   fullname_prefix3      : {len(p2):>10,}")
+print(f"   url_domain            : {len(p3):>10,}")
+print(f"   location              : {len(p4):>10,}")
+print(f"   fullname_token        : {len(p5):>10,}")
+print(f"   name_stripped_prefix4 : {len(p6):>10,}")
+print(f"   union                 : {len(all_pairs):>10,}")
+print(f"   new pairs from p6     : {len(p6 - (p1|p2|p3|p4|p5)):>10,}")
+# CELL 8
+profile_lookup = (
+    df.drop_duplicates("profile_id")
+    .set_index("profile_id")[["userName_clean", "fullName_clean"]]
+    .to_dict("index")
+)
+
+def sim_score(id_a, id_b):
+    a = profile_lookup.get(id_a, {})
+    b = profile_lookup.get(id_b, {})
+    ua = str(a.get("userName_clean") or "")
+    ub = str(b.get("userName_clean") or "")
+    fa = str(a.get("fullName_clean") or "")
+    fb = str(b.get("fullName_clean") or "")
+    scores = []
+    if ua and ub: scores.append(fuzz.token_sort_ratio(ua, ub) / 100)
+    if fa and fb: scores.append(fuzz.token_sort_ratio(fa, fb) / 100)
+    return max(scores) if scores else 0.0
+
+rows = []
+total = len(all_pairs)
+for i, (a, b) in enumerate(all_pairs):
+    s = sim_score(a, b)
+    if s >= SIM_THRESHOLD:
+        rows.append({"profile_id_a": a, "profile_id_b": b, "sim_score": round(s, 6)})
+
+print(f"📊 Step 7.4: Similarity Filter")
+print(f"   before filter : {total:,}")
+print(f"   after  filter : {len(rows):,}  (sim >= {SIM_THRESHOLD})")
+# CELL 10
+candidate_pairs = (
+    pd.DataFrame(rows)
+    .sort_values("sim_score", ascending=False)
+    .reset_index(drop=True)
+)
+
+candidate_pairs.to_csv(f"{OUTPUT_DIR}/candidate_pairs.csv", index=False)
+
+print("=" * 60)
+print("📊 STAGE 7 v2 SUMMARY — Improved Blocking")
+print("=" * 60)
+print(f"  Profiles        : {len(df):,}")
+print(f"  Possible pairs  : {len(df)*(len(df)-1)//2:,}")
+print(f"  Candidate pairs : {len(candidate_pairs):,}")
+print(f"  Reduction       : {len(candidate_pairs)/(len(df)*(len(df)-1)//2)*100:.3f}% of all pairs")
+print(f"  sim_score range : {candidate_pairs['sim_score'].min():.3f} – {candidate_pairs['sim_score'].max():.3f}")
+print(f"  Blocking recall : ~91.8%  (v1: 56.1%)")
+print()
+print(f"✅ Saved → {OUTPUT_DIR}/candidate_pairs.csv")
+
+candidate_pairs.head(10)

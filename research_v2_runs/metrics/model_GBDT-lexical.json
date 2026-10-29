@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-lexical",
+  "exp_id": "E3-2",
+  "learner": "GBDT",
+  "feature": "lexical",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.7025780325534994
+  },
+  "group": null,
+  "exclude_group": null,
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.9762146971245254,
+    0.9765146560105163,
+    0.9766112001316813,
+    0.9761527612023589,
+    0.9765804873049387
+  ],
+  "seed_AP_SD": 0.00021488485402782425,
+  "mean_score_AP": 0.9769397699665603,
+  "model_paths": [
+    "artifacts/model_GBDT-lexical_seed11.pkl",
+    "artifacts/model_GBDT-lexical_seed23.pkl",
+    "artifacts/model_GBDT-lexical_seed42.pkl",
+    "artifacts/model_GBDT-lexical_seed71.pkl",
+    "artifacts/model_GBDT-lexical_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-lexical_seed11.pkl": "7371468767b0ab7987d91c24873f71e56c4c3a23103ab23047dc2095ff13b5c5",
+    "artifacts/model_GBDT-lexical_seed23.pkl": "8a5517407e1d40eaa02b64137d30107bd10c19cede55edd20e1a80275eb0d7ea",
+    "artifacts/model_GBDT-lexical_seed42.pkl": "5fcdfe909b2fb6d9feb3e4e70a8aff35f850cded8227567e65fed2bed5aaacfc",
+    "artifacts/model_GBDT-lexical_seed71.pkl": "8dc6d35306bc77fc5035efc59ff15962be5c7a6f77b149d6f07558b7d1639eed",
+    "artifacts/model_GBDT-lexical_seed101.pkl": "ebde3fc01f1fbd77e5554c985ee8443c2070c23e451d0ec8c824decf7095cb60"
+  },
+  "oof_path": "artifacts/oof_GBDT-lexical.npz",
+  "oof_sha256": "318b6e993416d2d3b88ef02944edb5115f5aba441c08b01f595beb04b27e02a0",
+  "operating_points": {
+    "validation_F1_threshold": 0.91,
+    "validation_F1": 0.950979222823883,
+    "precision_target_threshold": 0.5786240655146357,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.976939769966559,
+    "precision": 0.877393334748461,
+    "recall": 0.9578698553948832,
+    "f1": 0.9158671423190269,
+    "tp": 20667,
+    "fp": 2888,
+    "tn": 327030,
+    "fn": 909,
+    "automatic_fn": 909,
+    "utility_fn": 909,
+    "rejected_positive_fn": 909,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9578698553948832,
+    "raw_cost": 6685.0,
+    "cost_per_pair": 0.019018816821908768,
+    "brier": 0.008538628248073075,
+    "ece15_equalmass": 0.016546707726719886
+  }
+}

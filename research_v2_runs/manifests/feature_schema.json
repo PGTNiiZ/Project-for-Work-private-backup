@@ -1,0 +1,94 @@
+{
+  "lexical_names": [
+    "username_exact",
+    "username_jaro_winkler",
+    "username_normalized_levenshtein",
+    "username_token_jaccard",
+    "username_tfidf_cosine",
+    "username_both_present",
+    "username_one_missing",
+    "fullname_exact",
+    "fullname_jaro_winkler",
+    "fullname_normalized_levenshtein",
+    "fullname_token_jaccard",
+    "fullname_tfidf_cosine",
+    "fullname_both_present",
+    "fullname_one_missing",
+    "bio_exact",
+    "bio_jaro_winkler",
+    "bio_normalized_levenshtein",
+    "bio_token_jaccard",
+    "bio_tfidf_cosine",
+    "bio_both_present",
+    "bio_one_missing",
+    "location_exact",
+    "location_jaro_winkler",
+    "location_normalized_levenshtein",
+    "location_token_jaccard",
+    "location_tfidf_cosine",
+    "location_both_present",
+    "location_one_missing",
+    "links_exact",
+    "links_jaro_winkler",
+    "links_normalized_levenshtein",
+    "links_token_jaccard",
+    "links_tfidf_cosine",
+    "links_both_present",
+    "links_one_missing"
+  ],
+  "groups": {
+    "username": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "fullname": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "bio": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "location": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "links": [
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ]
+  },
+  "semantic_names": [
+    "fullname_cosine",
+    "fullname_both_present",
+    "fullname_one_missing",
+    "bio_cosine",
+    "bio_both_present",
+    "bio_one_missing"
+  ]
+}

@@ -1,0 +1,110 @@
+
+## backup@ab93b36:experiments/code/run_reviewer_revision.py
+1: """Reanalyze frozen outcomes; replay validation search without retraining.
+2: Run: uv run --python 3.11 python -m experiments.code.run_reviewer_revision
+3: """
+4: from pathlib import Path
+5: import hashlib
+10: import warnings
+11: import numpy as np
+12: import pandas as pd
+13: from experiments.code.reviewer_revision import chow_decide, metrics
+14: from experiments.icsec_final.authoritative_run_v2 import policies as pol
+15: from experiments.icsec_final.authoritative_run_v2.features import FEATURE18_COLUMNS
+16: 
+17: ROOT = Path(__file__).resolve().parents[2]
+18: V2 = ROOT/'experiments/icsec_final/authoritative_run_v2'
+19: AUTH = ROOT/'experiments/icsec_final/authoritative_run_v2r1'
+20: OUT = ROOT/'experiments/icsec_final/reviewer_revision'
+21: 
+22: def sha(p):
+23:     return hashlib.sha256(p.read_bytes()).hexdigest()
+24: 
+25: def main():
+26:     OUT.mkdir(exist_ok=True)
+27:     inputs = {}
+28:     for mf in AUTH.rglob('SHA256SUMS.txt'):
+39:         assert sha(V2/rel)==h, f'changed input {rel}'
+40:         inputs[str((V2/rel).relative_to(ROOT))]=h
+41:     rows = []
+42:     for seed in [101,202,303]:
+43:         d=AUTH/'scientific_outputs'/f'outer_{seed}'
+44:         summary=json.loads((d/'summary.json').read_text())
+45:         original={}
+46:         for method, old in summary.items():
+48:             assert f.pair_key.is_unique
+49:             original[method]=f
+50:             m=metrics(f)
+51:             for k,oldkey in [('precision','precision'),('decision_recall','recall'),('decision_F1','F1'),('U','U'),('TP','TP'),('FP','FP'),('FN','FN'),('REVIEW','REVIEW')]:
+52:                 assert abs(m[k]-old[oldkey])<1e-12, (seed,method,k)
+53:             rows.append(dict(seed=seed,policy=method,**m))
+54:         baseline=original['B0'].copy()
+55:         scored=baseline.pair_type.eq('MODEL_SCORED')
+56:         baseline.loc[scored,'decision']=chow_decide(baseline.loc[scored,'calibrated_probability'].to_numpy())
+57:         # Probability and decisions are already joined by safe pair key in frozen workflow.
+58:         frozen=pd.read_parquet(d/'sealed_predictions/predictions.parquet')
+59:         p=frozen.loc[frozen.model_policy.eq('B0'),['pair_key','calibrated_probability']]
+60:         joined=baseline.loc[scored,['pair_key','calibrated_probability']].merge(p,on='pair_key',validate='one_to_one',suffixes=('_row','_frozen'))
+61:         assert len(joined)==scored.sum()
+62:         assert np.array_equal(joined.calibrated_probability_row,joined.calibrated_probability_frozen)
+63:         sd=OUT/f'outer_{seed}'; sd.mkdir(exist_ok=True)
+64:         baseline.to_parquet(sd/'Chow_workflow.parquet',index=False)
+65:         rows.append(dict(seed=seed,policy='Chow',**metrics(baseline)))
+66:         print('METRICS',seed,flush=True)
+67:     table=pd.DataFrame(rows)
+68:     table.to_csv(OUT/'metrics_per_seed.csv',index=False)
+69:     agg={m:{k:dict(mean=float(g[k].mean()),sample_sd=float(g[k].std(ddof=1))) for k in table.columns if k not in ['seed','policy']} for m,g in table.groupby('policy')}
+70:     (OUT/'aggregate.json').write_text(json.dumps(agg,indent=2)+'\n')
+71:     print('AGGREGATES',json.dumps(agg),flush=True)
+72: 
+73:     # Validation-only replay. The original _cost is observed, not modified mathematically.
+74:     f17=pd.read_parquet(V2/'features/gb17.parquet')
+75:     bert=pd.read_parquet(V2/'features/bert_cos.parquet')
+76:     features=f17.merge(bert,on=['profile_row_id_a','profile_row_id_b'],validate='one_to_one',sort=False)
+77:     checkpoints=[]
+78:     for seed in [101,202,303]:
+79:         d=AUTH/'scientific_outputs'/f'outer_{seed}'; sd=OUT/f'outer_{seed}'
+80:         route=pd.read_parquet(V2/'routing'/f'outer_{seed}'/'workflow.parquet')
+81:         val=route.loc[route.role.eq('POLICY_VALIDATION') & route.pair_type.eq('MODEL_SCORED')]
+82:         val=val.merge(features,on=['profile_row_id_a','profile_row_id_b'],validate='one_to_one',sort=False)
+83:         meta=json.loads((V2/'scientific_inputs'/f'outer_{seed}'/'input_artifact_manifest.json').read_text())
+84:         labpath=Path(meta['artifacts']['development']['path'])
+85:         labels=pd.read_parquet(labpath)
+86:         labels=labels.loc[labels.role.eq('POLICY_VALIDATION'),['pair_key','actual']]
+91:         with (d/'models/GB-18_calibrator.pkl').open('rb') as fh: cal=pickle.load(fh)
+92:         p=cal.predict(model.predict_proba(val[FEATURE18_COLUMNS].to_numpy(np.float32))[:,1])
+93:         y=val.actual.to_numpy(np.int8); n=val.name_sim.to_numpy()
+94:         pd.DataFrame({'pair_key':val.pair_key,'probability':p,'name_sim':n,'actual':y}).to_parquet(sd/'validation_replay_input.parquet',index=False)
+95:         frozen=json.loads((d/'policies.json').read_text())['parameters']
+96:         original_cost=pol._cost; original_decide=pol.decide_four_parameter
+97:         for method,search in [('B2',pol.b2_sobol_search),('B3',pol.b3_ga_search)]:
+98:             history=[]; current=[None]; best=[float('inf'),None]
+99:             def observe_decide(prob,name,genome):
+100:                 current[0]=genome
+101:                 return original_decide(prob,name,genome)
+102:             def observe_cost(decisions,actual):
+103:                 value=original_cost(decisions,actual)
+104:                 if value<best[0]: best[:]=[value,current[0]]
+105:                 history.append((len(history)+1,value,best[0],*best[1]))
+108:             try:
+109:                 with warnings.catch_warnings():
+110:                     warnings.simplefilter('ignore',UserWarning)
+111:                     winner,metadata=search(p,n,y,budget=12000,seed=seed)
+112:             finally:
+113:                 pol._cost=original_cost; pol.decide_four_parameter=original_decide
+114:             assert tuple(winner)==tuple(frozen[method]), f'replay vector mismatch {seed} {method}'
+115:             trace=pd.DataFrame(history,columns=['evaluations','objective','best_U','t_m','t_r','c_p','c_d'])
+116:             assert len(trace)==12000
+117:             trace.to_csv(sd/f'{method}_anytime.csv',index=False)
+118:             for b in [100,250,500,1000,2000,4000,8000,12000]:
+119:                 checkpoints.append(dict(seed=seed,policy=method,**trace.iloc[b-1].to_dict()))
+120:             print('REPLAY VERIFIED',seed,method,'best_validation_U',best[0],'vector',winner,flush=True)
+121:         (sd/'replay_verification.json').write_text(json.dumps({'final_vectors_identical':True,'validation_rows':len(val),'seed':seed,'budget':12000},indent=2)+'\n')
+122:     pd.DataFrame(checkpoints).to_csv(OUT/'anytime_checkpoints.csv',index=False)
+123:     provenance={'python':sys.version,'platform':platform.platform(),'inputs':inputs,
+124:                 'sources':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__),ROOT/'experiments/code/reviewer_revision.py']},
+125:                 'protocol_sha256':sha(OUT/'PROTOCOL.md'),'model_refit':False,'calibration_refit':False,
+126:                 'test_tuning':False,'validation_replay_budget':12000,'seeds':[101,202,303]}
+127:     (OUT/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
+128:     # Runtime logs are still open when this executes; close their hashes only after process exit.
+129:     (OUT/'SHA256SUMS.txt').write_text(''.join(f'{sha(p)}  {p.relative_to(OUT)}\n' for p in sorted(OUT.rglob('*')) if p.is_file() and p.name!='SHA256SUMS.txt' and p.suffix!='.log'))

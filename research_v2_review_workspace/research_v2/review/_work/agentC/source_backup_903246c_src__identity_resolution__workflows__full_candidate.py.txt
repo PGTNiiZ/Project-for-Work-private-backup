@@ -1,0 +1,84 @@
+
+## backup@903246c:src/identity_resolution/workflows/full_candidate.py
+19: 
+20: WORKFLOW_ROOT = PATHS.prediction_run
+21: PROFILES_PATH = PATHS.profiles
+22: BEST_RUN_PATH = PATHS.production_model_run
+23: 
+24: ARTIFACTS_DIR = WORKFLOW_ROOT / "artifacts"
+25: REPORTS_DIR = WORKFLOW_ROOT / "reports"
+47:     return text[:3] if len(text) >= 3 else ""
+48: 
+49: 
+50: def load_profiles() -> pd.DataFrame:
+51:     df = pd.read_csv(PROFILES_PATH, keep_default_na=False, low_memory=False)
+52:     df["profile_row_id"] = pd.to_numeric(df["profile_row_id"], errors="coerce").astype("Int64")
+53:     df["profile_id"] = pd.to_numeric(df["profile_id"], errors="coerce").astype("Int64")
+171:     return total
+172: 
+173: 
+174: def load_best_model_artifacts():
+175:     with (BEST_RUN_PATH / "models" / "best_model.pkl").open("rb") as fh:
+176:         model = pickle.load(fh)
+177:     with (BEST_RUN_PATH / "models" / "scaler.pkl").open("rb") as fh:
+178:         scaler = pickle.load(fh)
+179:     with (BEST_RUN_PATH / "models" / "calibrator.pkl").open("rb") as fh:
+180:         calibrator = pickle.load(fh)
+181:     with (BEST_RUN_PATH / "models" / "feature_cols.pkl").open("rb") as fh:
+182:         feature_cols = pickle.load(fh)
+183:     report = json.loads((BEST_RUN_PATH / "reports" / "experiment_report.json").read_text(encoding="utf-8"))
+184:     threshold = float(report["metrics"]["threshold"])
+185:     return model, scaler, calibrator, feature_cols, threshold
+186: 
+195: def build_scoring_engine():
+196:     from identity_resolution.stages import train_base as base
+197:     from identity_resolution.stages import train_multimodal as suite
+198:     base.SCRIPT_DIR = BEST_RUN_PATH
+199:     base.PROJECT_ROOT = PROJECT_ROOT
+200:     base.PROFILES_PATH = PROFILES_PATH
+201:     base.ARTIFACTS_DIR = BEST_RUN_PATH / "artifacts"
+202:     base.MODELS_DIR = BEST_RUN_PATH / "models"
+203:     base.REPORTS_DIR = BEST_RUN_PATH / "reports"
+204:     profiles = base.load_profiles()
+205:     image_df, caption_embeddings = suite.build_image_profile_features(base, profiles)
+206:     wrapped_make, wrapped_compute = suite.make_multimodal_wrappers(base, "image_context", image_df, caption_embeddings)
+287:         "predicted_true_positive_count": int(tp),
+288:         "predicted_false_positive_count": int(fp),
+289:         "threshold_precision": float(precision_score(y, (probs >= threshold).astype(int), zero_division=0)),
+290:         "threshold_recall_within_candidates": float(recall_score(y, (probs >= threshold).astype(int), zero_division=0)),
+291:         "threshold_f1_within_candidates": float(f1_score(y, (probs >= threshold).astype(int), zero_division=0)),
+292:     }
+293: 
+294:     for k in [100, 500, 1000, 5000]:
+333:     gt_candidate = len(candidate_keys & gt_set)
+334:     gt_total_covered = len((exact_keys | candidate_keys) & gt_set)
+335: 
+336:     model, scaler, calibrator, feature_cols, threshold = load_best_model_artifacts()
+337:     candidate_key_list = sorted(candidate_keys)
+338:     if args.reuse_scores and sorted(SCORES_DIR.glob("candidate_scores_*.parquet")):
+339:         scored_df = load_scored_candidates()
+347:                 "predicted_true_positive_count": int(((scored_df["probability"] >= threshold) & (scored_df["label"] == 1)).sum()),
+348:                 "predicted_false_positive_count": int(((scored_df["probability"] >= threshold) & (scored_df["label"] == 0)).sum()),
+349:                 "threshold_precision": float(precision_score(scored_df["label"], (scored_df["probability"] >= threshold).astype(int), zero_division=0)),
+350:                 "threshold_recall_within_candidates": float(recall_score(scored_df["label"], (scored_df["probability"] >= threshold).astype(int), zero_division=0)),
+351:                 "threshold_f1_within_candidates": float(f1_score(scored_df["label"], (scored_df["probability"] >= threshold).astype(int), zero_division=0)),
+352:             },
+353:             "predicted_matches": scored_df[scored_df["probability"] >= threshold].copy(),
+354:             "top_scores": scored_df.sort_values("probability", ascending=False).head(5000).copy(),
+440:             "ground_truth_coverage_pct": float(100.0 * gt_total_covered / len(gt_set)) if gt_set else 0.0,
+441:         },
+442:         "model_report": {
+443:             "source_run": str(BEST_RUN_PATH),
+444:             "feature_count": int(len(feature_cols)),
+445:             "threshold": float(threshold),
+446:             **scoring_result["metrics"],
+457:             "match_threshold": float(args.match_threshold),
+458:             "review_threshold": float(args.review_threshold),
+459:             "tiers": tier_metrics,
+460:             "final_match_only_count": final_prod_count,
+461:             "final_match_only_true_positive_count": final_prod_tp,
+462:             "final_match_only_precision": final_prod_precision,
+463:             "final_match_only_recall": final_prod_recall,
+464:         },
+465:         "paths": {
+466:             "exact_matches_dir": str(ARTIFACTS_DIR),

@@ -1,0 +1,11 @@
+SYNTHETIC ONLY — no scientific metrics
+test_synthetic_image_legacy_hex_character_distance_and_context (test_hist_features_synthetic.SyntheticImageContract.test_synthetic_image_legacy_hex_character_distance_and_context) ... ok
+test_synthetic_text_exact_order_training_scope_and_semantic_requirement (test_hist_features_synthetic.SyntheticTextContract.test_synthetic_text_exact_order_training_scope_and_semantic_requirement) ... ok
+test_synthetic_18_columns_equal_allowlisted_original (test_source_parity_synthetic.SyntheticSourceParity.test_synthetic_18_columns_equal_allowlisted_original) ... ok
+test_synthetic_23_columns_equal_allowlisted_original (test_source_parity_synthetic.SyntheticSourceParity.test_synthetic_23_columns_equal_allowlisted_original) ... ok
+test_synthetic_boundary_rejects_sensitive_columns_bad_pairs_and_missing_mentions (test_source_parity_synthetic.SyntheticSourceParity.test_synthetic_boundary_rejects_sensitive_columns_bad_pairs_and_missing_mentions) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.089s
+
+OK

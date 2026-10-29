@@ -1,0 +1,156 @@
+CMC | From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods
+×
+Submit
+Login
+Register
+Home
+Academic Journals
+Books & Monographs
+Conferences
+Language Service
+Standard Editing Service
+Expert Scientific Editing Service
+Academic Translation Service
+News & Announcements
+About
+Home
+/
+Journals
+/
+CMC
+/
+Vol.86, No.2, 2026
+/
+10.32604/cmc.2025.073175
+Submit a Paper
+Propose a Special lssue
+Review for CMC
+Table of Content
+Abstract
+Introduction
+Characterizing Mapping Models by Data Source Dependency
+Anti-Mapping Models: Injection, Perturbation, and Obfuscation
+Systematic Comparison of Mapping and Anti-Mapping Strategies from Different Perspectives
+Challenges and Future Directions
+Limitations of This Survey
+Conclusion
+References
+Open Access
+REVIEW
+From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods
+Shaojie Min
+1
+, Yaxiao Luo
+1
+, Kebing Liu
+1
+, Qingyuan Gong
+2
+, Yang Chen
+1,*
+1 Shanghai Key Lab of Intelligent Information Processing, College of Computer Science and Artificial Intelligence, Fudan University, Shanghai, 200433, China
+2 Research Institute of Intelligent Complex Systems, Fudan University, Shanghai, 200433, China
+* Corresponding Author: Yang Chen. Email:
+(This article belongs to the Special Issue:
+Cyberspace Mapping and Anti-Mapping Techniques
+)
+Computers, Materials & Continua
+2026
+,
+86
+(2), 1-23.
+https://doi.org/10.32604/cmc.2025.073175
+Received
+12 September 2025;
+Accepted
+29 October 2025;
+Issue published
+09 December 2025
+View Full Text
+Download PDF
+Abstract
+User identity linkage (UIL) across online social networks seeks to match accounts belonging to the same real-world individual. This cross-platform mapping enables accurate user modeling but also raises serious privacy risks. Over the past decade, the research community has developed a wide range of UIL methods, from structural embeddings to multimodal fusion architectures. However, corresponding adversarial and defensive approaches remain fragmented and comparatively understudied. In this survey, we provide a unified overview of both mapping and anti-mapping methods for UIL. We categorize representative mapping models by learning paradigm and data modality, and systematically compare them with emerging countermeasures including adversarial injection, structural perturbation, and identity obfuscation. To bridge these two threads, we introduce a modality-oriented taxonomy and a formal game-theoretic framing that casts cross-network mapping as a contest between mappers and anti-mappers. This framing allows us to construct a cross-modality dependency matrix, which reveals structural information as the most contested signal, identifies node injection as the most robust defensive strategy, and points to multimodal integration as a promising direction. Our survey underscores the need for balanced, privacy-preserving identity inference and provides a foundation for future research on the adversarial dynamics of social identity mapping and defense.
+Keywords
+User identity linkage (UIL); cross-network mapping; adversarial attacks; privacy protection; online social networks
+Cite This Article
+APA Style
+Min, S., Luo, Y., Liu, K., Gong, Q., Chen, Y. (2026). From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods.
+Computers, Materials & Continua
+,
+86
+(2)
+, 1–23.
+https://doi.org/10.32604/cmc.2025.073175
+Vancouver Style
+Min S, Luo Y, Liu K, Gong Q, Chen Y. From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods. Comput Mater Contin. 2026;86(2):1–23.
+https://doi.org/10.32604/cmc.2025.073175
+IEEE Style
+S. Min, Y. Luo, K. Liu, Q. Gong,  and Y. Chen, “From Identification to Obfuscation: A Survey of Cross-Network Mapping and Anti-Mapping Methods,”
+Comput. Mater. Contin.
+, vol. 86, no. 2, pp. 1–23, 2026.
+https://doi.org/10.32604/cmc.2025.073175
+BibTex
+EndNote
+RIS
+Copyright © 2026 The Author(s). Published by Tech Science Press.
+This work is licensed under a
+Creative Commons Attribution 4.0 International License
+, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+Downloads
+Full-Text PDF
+Full-Text HTML
+Full-Text XML
+Citation Tools
+BibTex
+EndNote
+RIS
+1781
+View
+812
+Download
+0
+Like
+Related articles
+Privacy Data Management Mechanism Based on Blockchain and Federated Learning
+Mingsen Mo, Shan Ji, Xiaowan Wang,...
+GrCol-PPFL: User-Based Group Collaborative Federated Learning Privacy Protection Framework
+Jieren Cheng, Zhenhao Liu, Yiming...
+Classification of Adversarial Attacks Using Ensemble Clustering Approach
+Pongsakorn Tatongjai, Tossapon...
+Identity-Based Edge Computing Anonymous Authentication Protocol
+Naixin Kang, Zhenhu Ning, Shiqiang...
+Developing a Secure Framework Using Feature Selection and Attack Detection Technique
+Mahima Dahiya, Nitin Nitin
+Further Information
+About Tech Science Press
+Open Access Policy
+Article Processing Charges
+Special Issue Policy
+Generative AI Policies for Journals
+Research Topic Policy
+Terms and Conditions
+Privacy Policy
+Advertising Policy
+Contact
+Guidelines
+For Editors
+For Reviewers
+For Authors
+For Conference Organizers
+For Subscribers
+Follow Us
+LinkedIn
+Twitter
+Join Us
+Join TSP editorial community
+Contact Us
+WhatsApp:
++1（702）9272320
+Copyright© 2026 Tech Science Press
+© 1997-2026 TSP (Henderson, USA) unless otherwise stated
+Home
+Submit
+Login
+Register
+Share Link
+Copy

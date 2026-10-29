@@ -1,0 +1,1222 @@
+# CELL 2
+import os
+import json
+import re
+import ast
+import pandas as pd
+import numpy as np
+import unicodedata
+import emoji
+import math
+import html
+import csv
+from ftfy import fix_text
+from typing import Dict, Tuple
+from urllib.parse import urlparse
+from datetime import datetime
+
+
+# =================================================
+# ===========
+# CONFIG — แก้ path ตรงนี้ที่เดียว
+# ============================================================
+BASE_PATH   = "../data/data/Dataset-LinkSocial"  # โฟลเดอร์ dataset ต้นทาง
+OUTPUT_DIR  = "../data/data/Dataset-LinkSocial/data"                 # โฟลเดอร์ output
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+print(f"✅ Config loaded")
+print(f"   BASE_PATH  = {os.path.abspath(BASE_PATH)}")
+print(f"   OUTPUT_DIR = {os.path.abspath(OUTPUT_DIR)}")
+# CELL 5
+def load_all_profiles(base_path: str) -> pd.DataFrame:
+    """
+    โหลด profiles ทั้งหมดจาก 3 โฟลเดอร์ profile.data
+
+    Returns:
+        pd.DataFrame ที่มี column: userName, fullName, bio, location,
+        externalUrl, pictureURL, platform, source_folder, user_folder
+    """
+    all_profiles = []
+    profile_folders = ["1.profile.data", "2.profile.data", "3.profile.data"]
+
+    for folder in profile_folders:
+        folder_path = os.path.join(base_path, folder)
+
+        if not os.path.exists(folder_path):
+            print(f"⚠️  Folder {folder_path} not found, skipping...")
+            continue
+
+        print(f"📂 Loading from {folder}...")
+
+        # รวบรวม user_paths ทั้งหมด
+        # 2.profile.data มีโครงสร้าง 3 ชั้น: folder/pair_folder/user_folder/
+        # 1 & 3 มีโครงสร้าง 2 ชั้น: folder/user_folder/
+        user_paths = []
+
+        for entry in os.listdir(folder_path):
+            entry_path = os.path.join(folder_path, entry)
+            if not os.path.isdir(entry_path):
+                continue
+
+            # ตรวจสอบว่าเป็น pair folder (เช่น Google_Insta) หรือ user folder
+            sub_entries = os.listdir(entry_path)
+            has_json = any(f.endswith('.json') for f in sub_entries)
+
+            if has_json:
+                # โครงสร้าง 2 ชั้น: entry คือ user_folder ที่มี JSON อยู่ข้างใน
+                user_paths.append((entry, entry_path))
+            else:
+                # โครงสร้าง 3 ชั้น: entry คือ pair folder → ต้องวนลูปอีกชั้น
+                for user_folder in sub_entries:
+                    user_path = os.path.join(entry_path, user_folder)
+                    if os.path.isdir(user_path):
+                        user_paths.append((user_folder, user_path))
+
+        print(f"   Found {len(user_paths)} user folders")
+
+        for user_folder_name, user_path in user_paths:
+            for file in os.listdir(user_path):
+                if file.endswith('.json'):
+                    # ข้าม metadata files ที่ไม่ใช่ profile
+                    if file in ('filename.json', 'score_file.json'):
+                        continue
+
+                    file_path = os.path.join(user_path, file)
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            data = json.load(f)
+                            data['source_folder'] = folder
+                            data['user_folder'] = user_folder_name
+
+                            # ระบุ platform จากชื่อไฟล์
+                            if 'twitter' in file.lower():
+                                data['platform'] = 'twitter'
+                            elif 'instagram' in file.lower():
+                                data['platform'] = 'instagram'
+                            elif 'google' in file.lower():
+                                data['platform'] = 'googleplus'
+                            else:
+                                data['platform'] = 'unknown'
+
+                            all_profiles.append(data)
+                    except Exception as e:
+                        print(f"❌ Error reading {file_path}: {e}")
+
+    df = pd.DataFrame(all_profiles)
+
+    print(f"\n{'='*50}")
+    print(f"📦 Step 2.1 Summary")
+    print(f"{'='*50}")
+    print(f"Total JSON files loaded: {len(df)}")
+
+    return df
+
+# === โหลดไฟล์ทั้งหมด ===
+df_raw = load_all_profiles(BASE_PATH)
+# CELL 7
+# === แสดงผล DataFrame ===
+print(f"{'='*50}")
+print(f"📊 Step 2.2: DataFrame Summary")
+print(f"{'='*50}")
+print(f"Total profiles : {len(df_raw)}")
+print(f"Total columns  : {len(df_raw.columns)}")
+print(f"Columns        : {list(df_raw.columns)}")
+
+print(f"\n📈 Platform distribution:")
+
+print(df_raw['platform'].value_counts().to_string())
+
+print(f"\n📂 Source folder distribution:")
+print(df_raw['source_folder'].value_counts().to_string())
+
+print(f"\n📋 DataFrame Info:")
+df_raw.info()
+
+print(f"\n🔍 Sample data (first 5 rows):")
+df_raw.head()
+
+# CELL 9
+# === แสดงผล DataFrame ===
+print(f"{'='*50}")
+print(f"📊 Step 2.2: DataFrame Summary")
+print(f"{'='*50}")
+print(f"Total profiles : {len(df_raw)}")
+print(f"Total columns  : {len(df_raw.columns)}")
+print(f"Columns        : {list(df_raw.columns)}")
+
+print(f"\n📈 Platform distribution:")
+print(df_raw['platform'].value_counts().to_string())
+
+print(f"\n📂 Source folder distribution:")
+print(df_raw['source_folder'].value_counts().to_string())
+
+print(f"\n📋 DataFrame Info:")
+df_raw.info()
+
+print(f"\n🔍 Sample data (first 5 rows):")
+df_raw.head()
+
+# CELL 12
+output_dir = os.path.join(BASE_PATH, "data") 
+os.makedirs(output_dir, exist_ok=True) 
+
+raw_csv_path = os.path.join(output_dir, "combined_profiles.csv")
+
+# 1. ฟังก์ชันสำหรับเซฟไฟล์ (เพิ่ม quoting เพื่อล็อกข้อความที่มีการขึ้นบรรทัดใหม่ไม่ให้ CSV พัง)
+def save_full_data():
+    print(f"\n💾 กำลังบันทึกไฟล์ใหม่ทั้งหมดไปที่: {raw_csv_path}...")
+    df_raw.to_csv(raw_csv_path, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)
+
+need_to_save = True
+
+# 2. ตรวจสอบไฟล์เดิมว่ามีอยู่และข้อมูลครบไหม
+if os.path.exists(raw_csv_path):
+    print("🔍 พบไฟล์เดิมอยู่ กำลังตรวจสอบจำนวนข้อมูล...")
+    try:
+        # ลองโหลดไฟล์เดิมมานับแถว
+        df_existing = pd.read_csv(raw_csv_path, low_memory=False)
+        if len(df_existing) == len(df_raw):
+            print(f"✅ ข้อมูลในไฟล์ CSV มีจำนวนแถวตรงกับข้อมูลดิบเป๊ะ ({len(df_raw)} แถว) ไม่ต้องบันทึกใหม่")
+            need_to_save = False
+        else:
+            print(f"⚠️ ข้อมูลไม่ตรงกัน! (ในไฟล์มี {len(df_existing)} แถว, แต่ข้อมูลใหม่มี {len(df_raw)} แถว)")
+            print("🔄 กำลังเตรียมเขียนทับใหม่ให้สมบูรณ์...")
+    except Exception as e:
+        print(f"⚠️ ไฟล์เดิมอ่านไม่ได้หรือพัง ({e}) กำลังเตรียมสร้างใหม่...")
+
+# 3. สั่งเซฟและตรวจสอบความเรียบร้อย
+if need_to_save:
+    save_full_data()
+    
+    print("🔍 กำลังตรวจสอบความถูกต้องหลังบันทึก...")
+    # โหลดไฟล์ที่เพิ่งเซฟเสร็จมาเช็ค (โหลดมาทั้งหมดเพื่อความชัวร์เรื่องจำนวนแถว)
+    df_verify = pd.read_csv(raw_csv_path, low_memory=False)
+    
+    # ด่านตรวจ: จำนวนคอลัมน์และจำนวนแถวต้องเป๊ะ!
+    assert len(df_verify.columns) == len(df_raw.columns), "❌ Error: จำนวนคอลัมน์หลังจากบันทึกไม่ตรง!"
+    assert len(df_verify) == len(df_raw), f"❌ Error: จำนวนแถวหลังเซฟ ({len(df_verify)}) ยังไม่ตรงกับต้นฉบับ ({len(df_raw)})!"
+    
+    print(f"✅ บันทึกไฟล์สำเร็จ! ข้อมูลครบถ้วนทั้ง {len(df_verify)} แถวเรียบร้อยแล้ว!")
+
+print(raw_csv_path)
+# CELL 14
+
+# ถอยหลัง 1 ก้าว (../) ออกจาก Train-Data แล้วเข้าโฟลเดอร์ data
+file_path = "../data/data/Dataset-LinkSocial\data\combined_profiles.csv" 
+print(file_path)
+df = pd.read_csv(file_path)
+print(df.shape)
+
+# CELL 17
+df_clean = df.copy()
+
+
+# CELL 19
+
+# --- ก่อนทำ: ดู NaN ทั้งหมด ---
+text_columns = ['userName', 'fullName', 'bio', 'location', 'externalUrl', 'pictureURL', 'platform','user_folder']
+
+print("NaN Count — Before:")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        nan_count = df_clean[col].isna().sum()
+        total = len(df_clean)
+        pct = nan_count / total * 100
+        print(f"  {col:15s}: {nan_count:>5} NaN ({pct:5.1f}%)")
+    else:
+        print(f"  {col:15s}: column ไม่มีใน DataFrame")
+# CELL 20
+# --- ทำ NaN Handling ---
+
+# Text fields: NaN → empty string
+for col in text_columns:
+    if col in df_clean.columns:
+        df_clean[col] = df_clean[col].fillna('')
+
+# outputProfileName: ถ้าไม่มีให้ใช้ user_folder แทน
+if 'outputProfileName' in df_clean.columns:
+    df_clean['outputProfileName'] = df_clean['outputProfileName'].fillna(df_clean['user_folder'])
+else:
+    df_clean['outputProfileName'] = df_clean['user_folder']
+
+# --- หลังทำ: ดู NaN อีกที ---
+print("📊 NaN Count — หลังทำ (After):")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        nan_count = df_clean[col].isna().sum()
+        print(f"  {col:15s}: {nan_count:>5} NaN")
+
+# ดูจำนวน empty string ด้วย
+print(f"\n📊 Empty String Count (หลัง fillna):")
+print("-" * 40)
+for col in text_columns:
+    if col in df_clean.columns:
+        empty_count = (df_clean[col] == '').sum()
+        total = len(df_clean)
+        pct = empty_count / total * 100
+        print(f"  {col:15s}: {empty_count:>5} empty ({pct:5.1f}%)")
+
+print(f"\n✅ Step 3.2 NaN Handling เสร็จ")
+# CELL 21
+# 1. กำหนดรายชื่อคอลัมน์ที่ต้องการ (ตามที่คุณเลือกมา 6 คอลัมน์)
+cols_to_combine = ['userName', 'fullName', 'bio', 'location', 'externalUrl', 'pictureURL', 'platform','user_folder']
+
+# 2. สร้าง DataFrame ใหม่โดยเลือกเฉพาะคอลัมน์เหล่านี้
+# ใช้ .copy() เพื่อป้องกัน Warning เวลาเราไปแก้ไขข้อมูลในตัวแปรใหม่นี้
+df_already = df_clean[cols_to_combine].copy()
+
+df_already.head()
+
+# CELL 23
+output_path = 'Project-for-Work/data/data/Dataset-LinkSocial/data/cleaned_social_data.csv'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+df_already.to_csv(output_path, index=False, encoding='utf-8-sig')
+# CELL 24
+output_path = '../data-for-project/cleaned_social_data.csv'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)
+df_already.to_csv(output_path, index=False, encoding='utf-8-sig')
+
+# CELL 25
+df_already.count()
+# CELL 27
+df_nomalized = df_already.copy()
+# CELL 29
+def remove_emojis(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    emoji_pattern = re.compile(
+        "["
+        "\U0001F600-\U0001F64F"
+        "\U0001F300-\U0001F5FF"
+        "\U0001F680-\U0001F6FF"
+        "\U0001F1E0-\U0001F1FF"
+        "\U00002702-\U000027B0"
+        "\U000024C2-\U0001F251"
+        "\U0001f926-\U0001f937"
+        "\U00010000-\U0010ffff"
+        "]+",
+        flags=re.UNICODE
+    )
+    return emoji_pattern.sub('', text)
+# CELL 30
+
+def clean_username(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    text = text.strip().lower()
+    text = re.sub(r'^@+', '', text)
+    text = remove_emojis(text)
+    text = re.sub(r'[^a-z0-9._\-]', '', text)
+    text = re.sub(r'\.{2,}', '.', text)
+    text = re.sub(r'_{2,}', '_', text)
+    text = re.sub(r'-{2,}', '-', text)
+    text = text.strip('._-')
+    return text
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'userName'] = df_nomalized['userName'].apply(clean_username)
+
+
+# CELL 31
+df_nomalized.head(5)
+# CELL 33
+comparison_df = pd.DataFrame()
+
+comparison_df['Original_username'] = df_already['userName']
+comparison_df['Cleaned_username'] = df_nomalized['userName']
+
+
+comparison_df.head(30)
+# CELL 35
+def clean_fullname(text: str) -> str:
+    if pd.isna(text) or not isinstance(text, str):
+        return ""
+    text = text.strip().lower()
+    text = remove_emojis(text)
+    text = re.sub(r'\b(mr|mrs|ms|dr|prof)\.?\s*', '', text)
+    text = re.sub(r'[^a-z0-9\s]', '', text)
+    text = re.sub(r'\s+', ' ', text)
+    text = text.strip()
+    return text
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'fullName'] = df_nomalized['fullName'].apply(clean_fullname)
+# CELL 36
+df_nomalized 
+# CELL 37
+comparison_df = pd.DataFrame()
+
+comparison_df['Original_fullName'] = df_already['fullName']
+comparison_df['Cleaned_fullName'] = df_nomalized['fullName']
+comparison_df.head()
+# CELL 39
+
+# === Regex patterns (compile ครั้งเดียว) ===
+URL_RE = re.compile(r'https?://\S+|www\.\S+', re.IGNORECASE)
+MENTION_RE = re.compile(r'@(\w+)')
+HASHTAG_RE = re.compile(r'#(\w+)')
+NOISY_SEP_RE = re.compile(r'[|•·►▸▹▻>>>★☆✦✧~≡]{1,}')
+MULTISPACE_RE = re.compile(r'\s+')
+def safe_str(value) -> str:
+    """Convert any value to safe string"""
+    if value is None:
+        return ''
+    if isinstance(value, float) and math.isnan(value):
+        return ''
+    s = str(value).strip()
+    if s.lower() == 'none':
+        return ''
+    return s
+def extract_urls(text: str) -> list:
+    """ดึง URL ทั้งหมดออกจาก text"""
+    return URL_RE.findall(text)
+def extract_mentions(text: str) -> list:
+    """ดึง @mention ทั้งหมดออกจาก text (ไม่รวม @)"""
+    return MENTION_RE.findall(text)
+def clean_single_url(url: str) -> str:
+    """Clean URL: ลบ protocol, www., trailing /"""
+    text = url.strip().lower()
+    text = re.sub(r'^https?://', '', text)
+    text = re.sub(r'^www\.', '', text)
+    text = text.rstrip('/')
+    return text
+def clean_bio(text) -> str:
+    """ทำความสะอาด bio text — ได้ข้อความสะอาดกลับมา"""
+    # 1. แปลงค่าว่างเป็น "" และ trim
+    text = safe_str(text)
+    if not text:
+        return ''
+    # 2. แก้ broken unicode (ftfy)
+    text = fix_text(text)
+    # 3. แปลง HTML entities (&amp; → &, &lt; → <)
+    text = html.unescape(text)
+    # 4. ยุบช่องว่าง/newline หลายอัน → space เดียว
+    text = MULTISPACE_RE.sub(' ', text).strip()
+    # 5. lowercase
+    text = text.lower()
+    # 6. ลบ URL (แยกเก็บใน column อื่น)
+    text = URL_RE.sub(' ', text)
+    # 7. ลบ @mention (แยกเก็บใน column อื่น)
+    text = MENTION_RE.sub(' ', text)
+    # 8. #hashtag → ลบ # เก็บคำ
+    text = HASHTAG_RE.sub(r'\1', text)
+    # 9. emoji → ข้อความ (🚀 → rocket)
+    text = emoji.demojize(text, delimiters=(' ', ' '))
+    # 10. ลบตัวคั่นรก ๆ
+    text = NOISY_SEP_RE.sub(' ', text)
+    # 11. ยุบช่องว่างอีกรอบ + trim
+    text = MULTISPACE_RE.sub(' ', text).strip()
+    return text if len(text) >= 3 else ''
+
+# Cell 19 (Step 3.3)
+df_nomalized.loc[:, 'bio'] = df_nomalized['bio'].apply(clean_bio)
+# CELL 40
+df_nomalized
+# CELL 41
+
+
+df_nomalized['bio_urls'] = df_already['bio'].apply(
+    lambda x: ' | '.join(clean_single_url(u) for u in extract_urls(safe_str(x))) if pd.notna(x) else ''
+)
+df_nomalized['bio_url_count'] = df_nomalized['bio_urls'].apply(
+    lambda x: len(x.split(' | ')) if x else 0
+)
+df_nomalized['bio_mentions'] = df_already['bio'].apply(
+    lambda x: ' | '.join(m.lower() for m in extract_mentions(safe_str(x))) if pd.notna(x) else ''
+)
+df_nomalized['bio_mentions_count'] = df_nomalized['bio_mentions'].apply(
+    lambda x: len(x.split(' | ')) if x else 0
+)
+
+# === แสดงผล ===
+comparison_df = pd.DataFrame()
+comparison_df['Original_bio'] = df_already['bio']
+comparison_df['bio_clean'] = df_nomalized['bio']
+comparison_df['bio_urls'] = df_nomalized['bio_urls']
+comparison_df['bio_url_count'] = df_nomalized['bio_url_count']
+comparison_df['bio_mentions'] = df_nomalized['bio_mentions']
+comparison_df['bio_mentions_count'] = df_nomalized['bio_mentions_count']
+comparison_df[comparison_df['bio_clean'] != ''].head(30)
+
+# CELL 42
+df_nomalized
+# CELL 43
+# === แสดงผลลัพธ์ ===
+print("📊 Step 3.5: Clean Bio (Advanced) — ผลลัพธ์")
+print("=" * 60)
+
+total = len(df_nomalized)
+non_empty_orig = (df_already['bio'].apply(safe_str).str.len() > 0).sum()
+non_empty_clean = (df_nomalized['bio'].str.len() > 0).sum()
+has_urls = (df_nomalized['bio_urls'].str.len() > 0).sum()
+has_mentions = (df_nomalized['bio_mentions'].str.len() > 0).sum()
+
+print(f"  Total profiles          : {total}")
+print(f"  Non-empty bio (raw)     : {non_empty_orig} ({non_empty_orig/total*100:.1f}%)")
+print(f"  Non-empty bio (clean)   : {non_empty_clean} ({non_empty_clean/total*100:.1f}%)")
+print(f"  มี URL ใน bio           : {has_urls}")
+print(f"  มี @mention ใน bio      : {has_mentions}")
+
+
+# สถิติความยาว
+bio_lengths = df_nomalized['bio'].str.len()
+print(f"📏 สถิติความยาว bio_clean:")
+print(f"  Mean   : {bio_lengths.mean():.1f} chars")
+print(f"  Median : {bio_lengths.median():.1f} chars")
+print(f"  Max    : {bio_lengths.max()} chars")
+print(f"  Empty  : {(bio_lengths == 0).sum()} profiles")
+
+print(f"\n✅ Step 3.5 เสร็จ — เพิ่ม columns: bio_clean, bio_urls, bio_url_count, bio_mentions, bio_mentions_count")
+
+# CELL 46
+
+# ฟังก์ชันแปลง DMS
+def parse_dms_to_decimal(dms_str):
+    try:
+        dms_str = dms_str.replace("°", " ").replace("'", " ").replace('"', " ").replace("”", " ").replace("’", " ")
+        parts = re.findall(r'([NSWE]?)[\s]*([+-]?\d+)[\s]+(\d+)[\s]+(\d+)', dms_str)
+        if len(parts) != 2:
+            return None, None
+        lat_dir, lat_deg, lat_min, lat_sec = parts[0]
+        lon_dir, lon_deg, lon_min, lon_sec = parts[1]
+        lat = int(lat_deg) + int(lat_min)/60 + int(lat_sec)/3600
+        lon = int(lon_deg) + int(lon_min)/60 + int(lon_sec)/3600
+        if lat_dir.upper() == 'S':
+            lat = -lat
+        if lon_dir.upper() == 'W':
+            lon = -lon
+        return lat, lon
+    except:
+        return None, None
+
+# ฟังก์ชัน full cleaning/classification
+def clean_location_full(text):
+    result = {
+        "location_raw": text,
+        "location_clean": "",
+        "location_type": "unknown",
+        "location_valid": 0,
+        "latitude": None,
+        "longitude": None
+    }
+
+    if pd.isna(text) or not isinstance(text, str) or text.strip() == "":
+        return result
+    
+    t = text.strip()
+    t = remove_emojis(t)
+    t = re.sub(r'\s+', ' ', t)
+    t = re.sub(r'^(iphone:|üt:)\s*', '', t, flags=re.I)
+
+    # Decimal coordinates
+    match = re.match(r'([+-]?\d+\.\d+),\s*([+-]?\d+\.\d+)', t)
+    if match:
+        lat, lon = float(match.group(1)), float(match.group(2))
+        result.update({
+            "location_clean": f"{lat},{lon}",
+            "location_type": "coordinates",
+            "location_valid": 1,
+            "latitude": lat,
+            "longitude": lon
+        })
+        return result
+
+    # DMS coordinates
+    lat, lon = parse_dms_to_decimal(t)
+    if lat is not None and lon is not None:
+        result.update({
+            "location_clean": f"{lat},{lon}",
+            "location_type": "coordinates_dms",
+            "location_valid": 1,
+            "latitude": lat,
+            "longitude": lon
+        })
+        return result
+
+    # IP address
+    if re.match(r'^(\d{1,3}\.){3}\d{1,3}$', t):
+        result.update({"location_type": "ip_address"})
+        return result
+
+    # Text location fallback
+    clean_text = re.sub(r'[^\w\s,.-]', '', t.lower())
+    result.update({
+        "location_clean": clean_text,
+        "location_type": "text_location",
+        "location_valid": 1
+    })
+    return result
+
+
+
+
+# ------------------------
+# # Apply กับ df_nomalized แต่ไม่ทับ column location
+# df_nomalized = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+# df_nomalized['location'] = df_nomalized['location'].apply(clean_location_full)
+# ------------------------
+# # Apply full location pipeline
+location_pipeline_df = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+
+# ------------------------
+# # เก็บค่า location ลง df_nomalized โดยตรง
+# df_nomalized['location_raw'] = location_pipeline_df['location_raw']
+
+df_nomalized['location'] = location_pipeline_df['location_clean']
+df_nomalized['location_type'] = location_pipeline_df['location_type']
+df_nomalized['location_valid'] = location_pipeline_df['location_valid']
+df_nomalized['latitude'] = location_pipeline_df['latitude']
+df_nomalized['longitude'] = location_pipeline_df['longitude']
+
+
+
+# CELL 47
+df_nomalized.head(30)
+# CELL 49
+# ------------------------
+# Apply full location pipeline
+location_pipeline_df = df_nomalized['location'].apply(clean_location_full).apply(pd.Series)
+
+# ------------------------
+# Filter เฉพาะ location ที่มีตัวเลข
+mask_has_digit = df_nomalized['location'].str.contains(r'\d', na=False)
+
+# ------------------------
+# สร้าง comparison table เฉพาะ location ที่มีตัวเลข
+comparison_df_numbers = pd.DataFrame({
+    'Original_location': df_already.loc[mask_has_digit, 'location'],
+    'Location_raw': location_pipeline_df.loc[mask_has_digit, 'location_raw'],
+    'Location_clean': location_pipeline_df.loc[mask_has_digit, 'location_clean'],
+    'Location_type': location_pipeline_df.loc[mask_has_digit, 'location_type'],
+    'Location_valid': location_pipeline_df.loc[mask_has_digit, 'location_valid'],
+    'Latitude': location_pipeline_df.loc[mask_has_digit, 'latitude'],
+    'Longitude': location_pipeline_df.loc[mask_has_digit, 'longitude']
+})
+
+# แสดงผล
+pd.set_option('display.max_rows', 1000)
+pd.set_option('display.max_colwidth', 200)
+comparison_df_numbers.head(50)
+# CELL 51
+def safe_str(value) -> str:
+    """Convert any value to safe string"""
+    if value is None:
+        return ''
+    if isinstance(value, float) and math.isnan(value):
+        return ''
+    s = str(value).strip()
+    if s.lower() in {'none', 'nan', 'null'}:
+        return ''
+    return s
+
+def parse_url_list(value) -> list:
+    """
+    แปลง externalUrl ให้เป็น list ของ URL เสมอ
+    รองรับ:
+    - URL เดี่ยว: 'https://abc.com'
+    - list-string: "['https://a.com', 'http://b.com']"
+    - list จริง: ['https://a.com', 'http://b.com']
+    """
+    if isinstance(value, list):
+        return [safe_str(x) for x in value if safe_str(x)]
+
+    s = safe_str(value)
+    if not s:
+        return []
+
+    # กรณีเป็น string ที่เก็บ list ไว้
+    if s.startswith('[') and s.endswith(']'):
+        try:
+            parsed = ast.literal_eval(s)
+            if isinstance(parsed, list):
+                return [safe_str(x) for x in parsed if safe_str(x)]
+        except Exception:
+            pass
+
+    # กรณี URL เดี่ยว
+    return [s]
+
+def normalize_url(url: str) -> str:
+    """
+    clean URL ให้เหลือรูปแบบมาตรฐาน:
+    - lowercase
+    - ลบ protocol
+    - ลบ www.
+    - ลบ trailing slash
+    - ลบ fragment (#...)
+    """
+    u = safe_str(url).lower()
+    if not u:
+        return ''
+
+    # เติม scheme ชั่วคราว ถ้าไม่มี เพื่อให้ urlparse ทำงานถูก
+    if not re.match(r'^[a-z]+://', u):
+        u_for_parse = 'http://' + u
+    else:
+        u_for_parse = u
+
+    parsed = urlparse(u_for_parse)
+
+    domain = parsed.netloc.lower()
+    path = parsed.path.rstrip('/')
+    query = parsed.query
+
+    # ลบ www.
+    domain = re.sub(r'^www\.', '', domain)
+
+    cleaned = domain + path
+    if query:
+        cleaned += '?' + query
+
+    return cleaned.strip()
+
+def extract_domain(cleaned_url: str) -> str:
+    """
+    ดึง domain จาก cleaned url
+    เช่น:
+    linkedin.com/in/aaron -> linkedin.com
+    thailand.go.th -> thailand.go.th
+    """
+    s = safe_str(cleaned_url)
+    if not s:
+        return ''
+    return s.split('/')[0]
+
+def clean_external_url_field(value):
+    """
+    คืนค่า 3 อย่าง:
+    - cleaned_urls
+    - domains
+    - url_count
+    """
+    url_list = parse_url_list(value)
+    cleaned_urls = [normalize_url(u) for u in url_list if normalize_url(u)]
+    domains = [extract_domain(u) for u in cleaned_urls if extract_domain(u)]
+    return cleaned_urls, domains, len(cleaned_urls)
+
+def squash_single_or_list(items):
+    """
+    ถ้ามี 1 ค่า -> คืน string
+    ถ้ามีหลายค่า -> คืน list
+    ถ้าไม่มี -> คืน ''
+    """
+    if not items:
+        return ''
+    if len(items) == 1:
+        return items[0]
+    return items
+    
+# df_nomalized.loc[:, 'externalUrl'] = df_nomalized['externalUrl'].apply(normalize_url)
+# CELL 52
+
+result = df_nomalized['externalUrl'].apply(clean_external_url_field)
+
+df_nomalized['externalUrl_clean_list'] = result.apply(lambda x: x[0])    # เก็บเป็น list จริง
+df_nomalized['external_domain_list'] = result.apply(lambda x: x[1])      # เก็บเป็น list จริง
+df_nomalized['url_count'] = result.apply(lambda x: x[2])
+
+# version สำหรับแสดงผลอ่านง่าย
+df_nomalized['externalUrl_clean'] = df_nomalized['externalUrl_clean_list'].apply(squash_single_or_list)
+df_nomalized['external_domain'] = df_nomalized['external_domain_list'].apply(squash_single_or_list)
+
+
+
+
+# CELL 53
+
+# ============================================================
+# Summary Stats
+# ============================================================
+total_profiles = len(df_nomalized)
+non_empty_raw = df_nomalized['externalUrl'].apply(lambda x: safe_str(x) != '').sum()
+non_empty_clean = (df_nomalized['url_count'] > 0).sum()
+multi_url_profiles = (df_nomalized['url_count'] > 1).sum()
+single_url_profiles = (df_nomalized['url_count'] == 1).sum()
+empty_profiles = (df_nomalized['url_count'] == 0).sum()
+
+url_count_series = df_nomalized['url_count']
+
+print("📊 Step X.X: Clean External URL — Summary")
+print("=" * 60)
+print(f"  Total profiles              : {total_profiles}")
+print(f"  Non-empty externalUrl (raw) : {non_empty_raw} ({non_empty_raw/total_profiles*100:.1f}%)")
+print(f"  Non-empty after clean       : {non_empty_clean} ({non_empty_clean/total_profiles*100:.1f}%)")
+print(f"  Single URL profiles         : {single_url_profiles}")
+print(f"  Multi-URL profiles          : {multi_url_profiles}")
+print(f"  Empty externalUrl           : {empty_profiles}")
+print()
+print("📏 สถิติ url_count:")
+print(f"  Mean   : {url_count_series.mean():.2f}")
+print(f"  Median : {url_count_series.median():.1f}")
+print(f"  Max    : {url_count_series.max()}")   # max ของ external_url
+print(f"  Min    : {url_count_series.min()}")
+print()
+# CELL 54
+df_nomalized.columns
+# CELL 55
+
+df_nomalized = df_nomalized.drop(columns=['externalUrl_clean_list'])
+df_nomalized = df_nomalized.drop(columns=['external_domain_list'])
+# CELL 56
+df_nomalized
+# CELL 57
+df_nomalized[['latitude', 'longitude']] = df_nomalized[['latitude', 'longitude']].fillna(0)
+# CELL 58
+output_path = "../data-for-project/normalized_profiles.csv"
+df_nomalized.to_csv(
+    output_path,
+    index=False,
+    encoding='utf-8',
+    quoting=csv.QUOTE_ALL
+)
+print(f"Saved : {output_path}")
+print(f"Shape : {df_nomalized.shape}")
+print(f"Rows  : {len(df_nomalized)}")
+print(f"Cols  : {list(df_nomalized.columns)}")
+print(f" cols : {len(df_nomalized.columns)}")
+# CELL 59
+df_nomalized = pd.read_csv(
+    "../data-for-project/normalized_profiles.csv",
+    keep_default_na=False
+)
+
+# CELL 60
+df_nomalized
+# CELL 61
+# ตรวจ row ปัญหาในไฟล์ CSV แบบไม่แปลง NA อัตโนมัติ
+import pandas as pd
+
+raw_path = "../data-for-project/combined_profiles.csv"
+
+df_raw_check = pd.read_csv(
+    raw_path,
+    keep_default_na=False,   # สำคัญ: อย่าให้ pandas แปลง "nan" เป็น NaN
+    na_filter=False
+)
+
+problem_idx = [29532, 29533, 29534]
+
+display(
+    df_raw_check.loc[
+        problem_idx,
+        ["userName", "fullName", "platform", "user_folder"]
+    ]
+)
+
+print(df_raw_check.loc[problem_idx, "user_folder"].map(repr).to_list())
+
+# CELL 62
+# ตรวจ row ปัญหาในไฟล์ CSV แบบไม่แปลง NA อัตโนมัติ
+import pandas as pd
+
+raw_path = "../data-for-project/normalized_profiles.csv"
+
+df_raw_check = pd.read_csv(
+    raw_path,
+    keep_default_na=False,   # สำคัญ: อย่าให้ pandas แปลง "nan" เป็น NaN
+    na_filter=False
+)
+
+problem_idx = [29532, 29533, 29534]
+
+display(
+    df_raw_check.loc[
+        problem_idx,
+        ["userName", "fullName", "platform", "user_folder"]
+    ]
+)
+
+print(df_raw_check.loc[problem_idx, "user_folder"].map(repr).to_list())
+
+# CELL 64
+# --- Step 3.8: Create Profile ID from user_folder (safe for literal "nan") ---
+
+import pandas as pd
+import numpy as np
+import csv
+
+df_normalized = pd.read_csv(
+    "../data-for-project/normalized_profiles.csv",
+    keep_default_na=False
+)
+
+# ถ้ายังไม่ได้อ่านใหม่ แนะนำอ่านไฟล์ใหม่แบบนี้
+df_profiles = pd.read_csv(
+    "../data-for-project/normalized_profiles.csv",
+    keep_default_na=False
+).copy()
+
+# ทำความสะอาดเฉพาะ whitespace
+df_profiles["user_folder"] = (
+    df_profiles["user_folder"]
+    .astype("string")
+    .str.strip()
+)
+
+# ถือว่า missing เฉพาะค่าว่างจริงเท่านั้น
+missing_user_folder_mask = df_profiles["user_folder"].isna() | (df_profiles["user_folder"] == "")
+
+# factorize ได้เลย
+codes, unique_user_folders = pd.factorize(
+    df_profiles.loc[~missing_user_folder_mask, "user_folder"],
+    sort=True
+)
+
+df_profiles["profile_id"] = pd.Series(pd.NA, index=df_profiles.index, dtype="Int64")
+df_profiles.loc[~missing_user_folder_mask, "profile_id"] = codes.astype("int64")
+
+df_profiles["profile_row_id"] = np.arange(len(df_profiles), dtype=np.int64)
+
+print("Step 3.8 Summary")
+print("=" * 60)
+print(f"Rows                  : {len(df_profiles):,}")
+print(f"Distinct user_folder  : {df_profiles['user_folder'].nunique(dropna=True):,}")
+print(f"Distinct profile_id   : {df_profiles['profile_id'].nunique(dropna=True):,}")
+print(f"Missing profile_id    : {df_profiles['profile_id'].isna().sum():,}")
+
+display(
+    df_profiles[df_profiles["user_folder"] == "nan"][
+        ["userName", "fullName", "platform", "user_folder", "profile_id"]
+    ]
+)
+
+# save
+output_path = "../data-for-project/normalized_profiles_with_profile_id.csv"
+df_profiles.to_csv(output_path, index=False, encoding="utf-8", quoting=csv.QUOTE_ALL)
+
+print(f"Saved: {output_path}")
+
+df_normalized = df_profiles
+
+# CELL 65
+import pandas as pd
+
+df_check_default = pd.read_csv("../data-for-project/normalized_profiles.csv")
+df_check_safe = pd.read_csv(
+    "../data-for-project/normalized_profiles.csv",
+    keep_default_na=False
+)
+
+idxs = [29532, 29533, 29534]
+
+print("Default read_csv")
+display(df_check_default.loc[idxs, ["userName", "fullName", "platform", "user_folder"]])
+
+print("Safe read_csv")
+display(df_check_safe.loc[idxs, ["userName", "fullName", "platform", "user_folder"]])
+
+print("repr with safe read:")
+print(df_check_safe.loc[idxs, "user_folder"].map(repr).to_list())
+
+# CELL 66
+# --- Step 3.8: Clean user_folder + Create Profile ID + Summary Report ---
+
+import pandas as pd
+import numpy as np
+import csv
+
+# ใช้ df_nomalized จาก step ก่อนหน้า
+df_profiles = df_nomalized.copy()
+
+# ------------------------------------------------------------------
+# 1) ตรวจสอบคอลัมน์ที่ต้องมี
+# ------------------------------------------------------------------
+required_cols = ["userName", "platform", "user_folder"]
+missing_cols = [col for col in required_cols if col not in df_profiles.columns]
+if missing_cols:
+    raise ValueError(f"Missing required columns: {missing_cols}")
+
+# ------------------------------------------------------------------
+# 2) ตรวจ raw user_folder ก่อนแก้
+#    สำคัญ: treat missing เฉพาะ NA จริง + ค่าว่าง ""
+#    "nan" string ถือเป็นค่าปกติ ห้ามลบทิ้ง
+# ------------------------------------------------------------------
+raw_user_folder = df_profiles["user_folder"].astype("string")
+
+nan_mask_before = raw_user_folder.isna()
+blank_mask_before = raw_user_folder.fillna("").str.strip() == ""
+
+print("Before Cleaning")
+print("=" * 60)
+print(f"Total rows              : {len(df_profiles):,}")
+print(f"NaN user_folder         : {nan_mask_before.sum():,}")
+print(f"Blank/empty user_folder : {blank_mask_before.sum():,}")
+print(f"Problematic total       : {(nan_mask_before | blank_mask_before).sum():,}")
+
+problem_rows_before = df_profiles[nan_mask_before | blank_mask_before].copy()
+if len(problem_rows_before) > 0:
+    print("\nSample problematic rows (before cleaning)")
+    display(
+        problem_rows_before.assign(
+            raw_user_folder_repr=problem_rows_before["user_folder"].map(repr)
+        )[["userName", "fullName", "platform", "user_folder", "raw_user_folder_repr"]].head(20)
+    )
+
+# ------------------------------------------------------------------
+# 3) Clean user_folder
+#    trim whitespace เท่านั้น
+#    ถ้าเป็น "" ค่อยเปลี่ยนเป็น NA
+#    แต่ "nan" string จะยังคงอยู่
+# ------------------------------------------------------------------
+df_profiles["user_folder"] = (
+    df_profiles["user_folder"]
+    .astype("string")
+    .str.strip()
+)
+
+df_profiles.loc[df_profiles["user_folder"] == "", "user_folder"] = pd.NA
+
+# ------------------------------------------------------------------
+# 4) สร้าง profile_id จาก user_folder เท่านั้น
+# ------------------------------------------------------------------
+missing_user_folder_mask = df_profiles["user_folder"].isna()
+
+valid_user_folder = df_profiles.loc[~missing_user_folder_mask, "user_folder"]
+codes, unique_user_folders = pd.factorize(valid_user_folder, sort=True)
+
+df_profiles["profile_id"] = pd.Series(pd.NA, index=df_profiles.index, dtype="Int64")
+df_profiles.loc[~missing_user_folder_mask, "profile_id"] = codes.astype("int64")
+
+# row-level id สำหรับใช้สร้าง pair / matrix ต่อ
+df_profiles["profile_row_id"] = np.arange(len(df_profiles), dtype=np.int64)
+
+# ------------------------------------------------------------------
+# 5) Quality checks
+# ------------------------------------------------------------------
+total_profiles = len(df_profiles)
+valid_profiles = int((~missing_user_folder_mask).sum())
+missing_profiles = int(missing_user_folder_mask.sum())
+distinct_user_folder = int(df_profiles["user_folder"].nunique(dropna=True))
+unique_profile_ids = int(df_profiles["profile_id"].nunique(dropna=True))
+
+cross_platform_stats = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("profile_id")["platform"]
+    .nunique()
+)
+
+cross_platform_profiles = int((cross_platform_stats > 1).sum())
+single_platform_profiles = int((cross_platform_stats == 1).sum())
+
+mapping_check = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("user_folder")["profile_id"]
+    .nunique()
+)
+bad_user_folder_to_profile_id = int((mapping_check > 1).sum())
+
+reverse_check = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("profile_id")["user_folder"]
+    .nunique()
+)
+bad_profile_id_to_user_folder = int((reverse_check > 1).sum())
+
+# ------------------------------------------------------------------
+# 6) Summary output
+# ------------------------------------------------------------------
+print("\nAfter Cleaning + Profile ID Creation")
+print("=" * 60)
+print(f"Total Profiles            : {total_profiles:,}")
+print(f"Profiles with user_folder : {valid_profiles:,}")
+print(f"Profiles missing key      : {missing_profiles:,}")
+print(f"Distinct user_folder      : {distinct_user_folder:,}")
+print(f"Unique Profile IDs        : {unique_profile_ids:,}")
+print(f"Cross-platform Profiles   : {cross_platform_profiles:,}")
+print(f"Single-platform Profiles  : {single_platform_profiles:,}")
+print(f"Missing profile_id        : {df_profiles['profile_id'].isna().sum():,}")
+
+print("\nIdentity Mapping Checks")
+print("=" * 60)
+print(f"user_folder -> multiple profile_id issues : {bad_user_folder_to_profile_id:,}")
+print(f"profile_id -> multiple user_folder issues : {bad_profile_id_to_user_folder:,}")
+
+if bad_user_folder_to_profile_id == 0 and bad_profile_id_to_user_folder == 0:
+    print("Identity mapping check    : PASSED")
+else:
+    print("Identity mapping check    : FAILED")
+
+if distinct_user_folder == unique_profile_ids:
+    print("Distinct count check      : PASSED")
+else:
+    print("Distinct count check      : FAILED")
+
+# ------------------------------------------------------------------
+# 7) Preview problematic rows after cleaning
+# ------------------------------------------------------------------
+problem_rows_after = df_profiles[df_profiles["user_folder"].isna()].copy()
+
+if len(problem_rows_after) > 0:
+    print("\nRows still missing user_folder after cleaning")
+    print("=" * 60)
+    display(
+        problem_rows_after[
+            ["userName", "fullName", "platform", "user_folder", "profile_id"]
+        ].head(20)
+    )
+
+# ------------------------------------------------------------------
+# 8) Preview literal 'nan' rows to confirm they are preserved
+# ------------------------------------------------------------------
+literal_nan_rows = df_profiles[df_profiles["user_folder"] == "nan"].copy()
+
+if len(literal_nan_rows) > 0:
+    print("\nRows where user_folder == 'nan' (literal string, preserved as valid key)")
+    print("=" * 60)
+    display(
+        literal_nan_rows[
+            ["userName", "fullName", "platform", "user_folder", "profile_id"]
+        ].head(20)
+    )
+
+# ------------------------------------------------------------------
+# 9) Preview final table
+# ------------------------------------------------------------------
+print("\nPreview final table")
+print("=" * 60)
+display(
+    df_profiles[
+        ["profile_row_id", "userName", "platform", "user_folder", "profile_id"]
+    ].head(20)
+)
+
+# ------------------------------------------------------------------
+# 10) Save output
+# ------------------------------------------------------------------
+output_path = "../data-for-project/normalized_profiles_with_profile_id.csv"
+
+df_profiles.to_csv(
+    output_path,
+    index=False,
+    encoding="utf-8",
+    quoting=csv.QUOTE_ALL
+)
+
+print("\nSaved Output")
+print("=" * 60)
+print(f"Saved : {output_path}")
+print(f"Shape : {df_profiles.shape}")
+print(f"Rows  : {len(df_profiles):,}")
+print(f"Cols  : {list(df_profiles.columns)}")
+print(f"# cols: {len(df_profiles.columns)}")
+
+# ใช้ตัวนี้ต่อใน notebook
+df_nomalized = df_profiles
+
+# CELL 67
+# --- Step 3.8: Create Profile ID from user_folder only ---
+
+import pandas as pd
+import numpy as np
+
+# ใช้ df_nomalized จาก step ก่อนหน้า
+df_profiles = df_nomalized.copy()
+
+# ------------------------------------------------------------------
+# 1) ตรวจสอบว่ามี user_folder หรือไม่
+# ------------------------------------------------------------------
+required_col = "user_folder"
+if required_col not in df_profiles.columns:
+    raise ValueError(f"Missing required column: {required_col}")
+
+# ทำความสะอาด user_folder
+df_profiles["user_folder"] = (
+    df_profiles["user_folder"]
+    .astype("string")
+    .str.strip()
+)
+
+# แถวที่ไม่มี user_folder จะไม่ถูก assign profile_id
+missing_user_folder_mask = (
+    df_profiles["user_folder"].isna() |
+    (df_profiles["user_folder"] == "")
+)
+
+# ------------------------------------------------------------------
+# 2) สร้าง profile_id จาก user_folder เท่านั้น
+# ------------------------------------------------------------------
+valid_user_folder = df_profiles.loc[~missing_user_folder_mask, "user_folder"]
+
+codes, unique_user_folders = pd.factorize(valid_user_folder, sort=True)
+
+df_profiles["profile_id"] = pd.Series(pd.NA, index=df_profiles.index, dtype="Int64")
+df_profiles.loc[~missing_user_folder_mask, "profile_id"] = codes.astype("int64")
+
+# ------------------------------------------------------------------
+# 3) สร้าง profile_row_id สำหรับใช้เป็น row-level key ถ้าต้องการในอนาคต
+# ------------------------------------------------------------------
+df_profiles["profile_row_id"] = np.arange(len(df_profiles), dtype=np.int64)
+
+# ------------------------------------------------------------------
+# 4) Summary statistics
+# ------------------------------------------------------------------
+total_profiles = len(df_profiles)
+valid_profiles = int((~missing_user_folder_mask).sum())
+missing_profiles = int(missing_user_folder_mask.sum())
+unique_profile_ids = int(df_profiles["profile_id"].nunique(dropna=True))
+
+cross_platform_stats = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("profile_id")["platform"]
+    .nunique()
+)
+
+cross_platform_profiles = int((cross_platform_stats > 1).sum())
+single_platform_profiles = int((cross_platform_stats == 1).sum())
+
+print("Step 3.8 Summary")
+print("=" * 60)
+print(f"Total Profiles            : {total_profiles:,}")
+print(f"Profiles with user_folder : {valid_profiles:,}")
+print(f"Profiles missing key      : {missing_profiles:,}")
+print(f"Unique Profile IDs        : {unique_profile_ids:,}")
+print(f"Cross-platform Profiles   : {cross_platform_profiles:,}")
+print(f"Single-platform Profiles  : {single_platform_profiles:,}")
+
+# ------------------------------------------------------------------
+# 5) Quality checks
+# ------------------------------------------------------------------
+print("\nQuality Checks")
+print("=" * 60)
+
+# check: user_folder เดียวกันต้องได้ profile_id เดียวกัน
+mapping_check = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("user_folder")["profile_id"]
+    .nunique()
+)
+bad_mapping_count = int((mapping_check > 1).sum())
+
+print(f"user_folder -> multiple profile_id issues : {bad_mapping_count:,}")
+
+# check: profile_id เดียวกันมีได้หลาย profile แต่ควรผูกกับ user_folder เดียว
+reverse_check = (
+    df_profiles.loc[df_profiles["profile_id"].notna()]
+    .groupby("profile_id")["user_folder"]
+    .nunique()
+)
+bad_reverse_count = int((reverse_check > 1).sum())
+
+print(f"profile_id -> multiple user_folder issues : {bad_reverse_count:,}")
+
+if bad_mapping_count == 0 and bad_reverse_count == 0:
+    print("Identity mapping check    : PASSED")
+else:
+    print("Identity mapping check    : FAILED")
+
+# ------------------------------------------------------------------
+# 6) Preview
+# ------------------------------------------------------------------
+print("\nPreview")
+print("=" * 60)
+display(
+    df_profiles[
+        ["profile_row_id", "userName", "platform", "user_folder", "profile_id"]
+    ].head(20)
+)
+
+# CELL 69
+
+# CELL 71

@@ -1,0 +1,61 @@
+{
+  "n_seeds": 1,
+  "means": {
+    "raw_cost": 5137.8,
+    "cost_per_pair": 0.014541944869788203,
+    "precision": 0.9965479452054794,
+    "recall": 0.8429273266592511,
+    "f1": 0.9133229548536133,
+    "end_to_end_recall": 0.777521268864093,
+    "review_rate": 0.0006202097333098147,
+    "review": 218.0,
+    "tp": 18187.0,
+    "fp": 63.0,
+    "automatic_fn": 5204.0,
+    "utility_fn": 4990.0
+  },
+  "seed_SD": {
+    "raw_cost": 0.0,
+    "cost_per_pair": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "end_to_end_recall": 0.0,
+    "review_rate": 0.0,
+    "review": 0.0,
+    "tp": 0.0,
+    "fp": 0.0,
+    "automatic_fn": 0.0,
+    "utility_fn": 0.0
+  },
+  "per_seed": [
+    {
+      "candidate_ap": 0.9777779725949055,
+      "precision": 0.9965479452054794,
+      "recall": 0.8429273266592511,
+      "f1": 0.9133229548536133,
+      "tp": 18187,
+      "fp": 63,
+      "tn": 329851,
+      "fn": 3389,
+      "automatic_fn": 5204,
+      "utility_fn": 4990,
+      "rejected_positive_fn": 3175,
+      "workflow_misses": 1815,
+      "candidate_positives": 21576,
+      "total_positives": 23391,
+      "n_pairs": 351494,
+      "review": 218,
+      "review_positives": 214,
+      "review_rate": 0.0006202097333098147,
+      "end_to_end_recall": 0.777521268864093,
+      "raw_cost": 5137.8,
+      "cost_per_pair": 0.014541944869788203,
+      "brier": 0.004873583585658889,
+      "ece15_equalmass": 0.000449631786738549
+    }
+  ],
+  "aggregation": "arithmetic mean across all predeclared optimizer seeds, never select a best seed",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.07423650000055204
+}

@@ -1,0 +1,125 @@
+# CELL 1
+import pandas as pd
+
+OUTPUT_DIR = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+
+df = pd.read_csv(f'{OUTPUT_DIR}/all_profiles_cleaned.csv')
+print(f'profiles: {len(df):,}')
+print(f'unique profile_id: {df["profile_id"].nunique():,}')
+# CELL 3
+# --- 6.1 ตรวจสอบปัญหา ---
+
+# ปัญหา 1: profile_id ที่ลงท้ายด้วย _nan หรือ _ (userName เป็น null)
+nan_pids = df[df['profile_id'].isin(['googleplus_nan', 'twitter_nan', 'instagram_nan'])]
+empty_pids = df[df['profile_id'].str.endswith('_')]
+
+print(f'profile_id ลงท้ายด้วย _nan : {len(nan_pids)} rows')
+print(f'profile_id ลงท้ายด้วย _    : {len(empty_pids)} rows')
+print()
+
+# ปัญหา 2: profile_id ที่ซ้ำกัน
+dup = df[df['profile_id'].duplicated(keep=False)]
+print(f'duplicate profile_id: {dup["profile_id"].nunique()} IDs, {len(dup)} rows')
+print()
+
+# แสดงตัวอย่างปัญหา
+if len(nan_pids) > 0:
+    print('ตัวอย่าง _nan collision (คนละ entity ได้ profile_id เดียวกัน):')
+    print(nan_pids[['profile_id', 'userName', 'user_folder', 'platform']].head(5).to_string())
+    print()
+
+if len(dup) > 0:
+    print('ตัวอย่าง duplicate:')
+    print(dup[['profile_id', 'userName', 'user_folder', 'platform']].head(6).to_string())
+# CELL 5
+# --- 6.2 แก้ _nan และ _ ---
+
+PROBLEM_SUFFIXES = {
+    'googleplus_nan', 'twitter_nan', 'instagram_nan',
+    'googleplus_', 'twitter_', 'instagram_'
+}
+
+def fix_null_profile_id(row):
+    """
+    ถ้า profile_id มีปัญหา (userName เป็น null) → ใช้ user_folder แทน
+    เช่น: googleplus_nan + user_folder=ilexxx → googleplus_ilexxx
+    """
+    pid = str(row['profile_id']).strip()
+    if pid not in PROBLEM_SUFFIXES:
+        return pid
+
+    folder = str(row['user_folder']).strip() if pd.notna(row['user_folder']) else ''
+    if folder and folder != 'nan':
+        return f'{row["platform"]}_{folder}'
+
+    # fallback: ใช้ index ถ้าไม่มี user_folder
+    return f'{row["platform"]}_unknown_{row.name}'
+
+
+before = df['profile_id'].nunique()
+df['profile_id'] = df.apply(fix_null_profile_id, axis=1)
+after = df['profile_id'].nunique()
+
+print(f'unique profile_id: {before:,} → {after:,}')
+print()
+
+# verify
+still_nan = df[df['profile_id'].isin(PROBLEM_SUFFIXES)]
+print(f'_nan / _ ที่เหลือ: {len(still_nan)} rows  (ควรเป็น 0)')
+
+# แสดงตัวอย่างที่แก้แล้ว
+fixed_sample = df[df['userName'].isna()][['profile_id', 'userName', 'user_folder', 'platform']].head(5)
+print()
+print('ตัวอย่างที่แก้แล้ว:')
+print(fixed_sample.to_string())
+# CELL 7
+# --- 6.3 แก้ duplicate profile_id ---
+
+seen = {}
+new_ids = []
+
+for idx, row in df.iterrows():
+    pid = row['profile_id']
+    if pid not in seen:
+        seen[pid] = idx
+        new_ids.append(pid)
+    else:
+        # ชนกัน → เพิ่ม user_folder suffix
+        folder = str(row['user_folder']).strip() if pd.notna(row['user_folder']) else str(idx)
+        new_pid = f'{pid}_{folder}'
+        # ป้องกัน collision ซ้ำ
+        if new_pid in seen:
+            new_pid = f'{pid}_{idx}'
+        seen[new_pid] = idx
+        new_ids.append(new_pid)
+
+df['profile_id'] = new_ids
+
+remaining_dup = df['profile_id'].duplicated().sum()
+print(f'duplicates ที่เหลือ: {remaining_dup}  (ควรเป็น 0)')
+print(f'unique profile_id  : {df["profile_id"].nunique():,} / {len(df):,}')
+# CELL 9
+# --- 6.4 Verify & Save ---
+
+print('=== สรุปผล ===')
+print(f'total profiles      : {len(df):,}')
+print(f'unique profile_id   : {df["profile_id"].nunique():,}')
+print(f'duplicates          : {df["profile_id"].duplicated().sum()}')
+print(f'_nan / _ profile_id : {df["profile_id"].isin(PROBLEM_SUFFIXES).sum()}')
+print()
+
+# ทุก user_folder มี unique profile_id
+folder_pid = df.groupby('user_folder')['profile_id'].nunique()
+folder_size = df.groupby('user_folder').size()
+all_unique = (folder_pid == folder_size).all()
+print(f'ทุก user_folder มี unique profile_id: {all_unique}')
+print()
+
+# platform distribution
+print('platform distribution:')
+print(df['platform'].value_counts().to_string())
+
+# save
+out_path = f'{OUTPUT_DIR}/all_profiles_cleaned.csv'
+df.to_csv(out_path, index=False)
+print(f'\nSaved → {out_path}')

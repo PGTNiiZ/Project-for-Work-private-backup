@@ -1,0 +1,23 @@
+{
+  "input_rows": 36807,
+  "eligible_rows": 36804,
+  "quarantined_rows": 3,
+  "missing_key_rows": 3,
+  "distinct_entities": 15297,
+  "group_size_histogram": {
+    "1": 1526,
+    "2": 6039,
+    "3": 7728,
+    "4": 4
+  },
+  "max_group_size": 4,
+  "cross_platform_positive_pairs": 29243,
+  "platform_counts": {
+    "twitter": 13959,
+    "googleplus": 11889,
+    "instagram": 10956
+  },
+  "million_positive_guard": true,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 5.172286041999541
+}

@@ -1,0 +1,11 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S5",
+  "key": "frozen-policy-and-cause-recall",
+  "start": "2026-10-26T01:49:04.400161+00:00",
+  "config_sha256": "2a2ba14ffc5c1ce88811f79213142dbd73654f93febd1aa7fb4c8d6a80799675",
+  "test_access": false,
+  "status": "DONE",
+  "end": "2026-10-26T01:49:08.523069+00:00",
+  "runtime_seconds": 4.122906042000977
+}

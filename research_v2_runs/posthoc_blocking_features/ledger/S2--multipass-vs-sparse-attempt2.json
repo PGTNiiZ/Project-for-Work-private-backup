@@ -1,0 +1,20 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S2",
+  "key": "multipass-vs-sparse-attempt2",
+  "config": {
+    "multipliers": [
+      1.0,
+      1.5,
+      2.0
+    ],
+    "passes": [
+      "username_tfidf",
+      "fullname_tfidf",
+      "cross_field_username_fullname",
+      "link_domain_key"
+    ],
+    "pool": 50
+  },
+  "PLAN_sha256": "122343d4f0434c2ee63e6af097de01c81c24e7090b4ed3aab3d41b99d572e8c3"
+}

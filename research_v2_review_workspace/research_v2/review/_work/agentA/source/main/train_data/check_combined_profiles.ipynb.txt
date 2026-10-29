@@ -1,0 +1,60 @@
+# CELL 1
+from pathlib import Path
+import pandas as pd
+import numpy as np
+
+BASE = Path('/Users/tm/Documents/GitHub/Project-for-Work/data_for_project/')
+
+df_combined = pd.read_csv(BASE / 'combined_profiles.csv')
+df_social   = pd.read_csv(BASE / 'cleaned_social_data.csv')
+
+print('combined_profiles :', df_combined.shape)
+print('cleaned_social_data:', df_social.shape)
+# CELL 3
+df_combined.dtypes
+# CELL 5
+df_combined.head(10)
+# CELL 7
+null_stats = pd.DataFrame({
+    'null_count': df_combined.isnull().sum(),
+    'null_%': (df_combined.isnull().mean() * 100).round(1)
+})
+null_stats
+# CELL 9
+str_cols = ['userName', 'fullName', 'bio', 'location', 'externalUrl']
+len_stats = pd.DataFrame({
+    col: df_combined[col].dropna().str.len().describe()
+    for col in str_cols
+})
+len_stats.round(1)
+# CELL 11
+folder_counts = df_combined['user_folder'].value_counts()
+print(f'Unique user_folder: {folder_counts.nunique():,}')
+print(f'Folders with >= 2 profiles: {(folder_counts >= 2).sum():,}')
+print(f'Max profiles per folder:    {folder_counts.max()}')
+print()
+print('Distribution of profiles per folder:')
+folder_counts.value_counts().sort_index().head(10)
+# CELL 13
+top_folders = folder_counts.head(20).reset_index()
+top_folders.columns = ['user_folder', 'profile_count']
+top_folders
+# CELL 15
+# เปลี่ยน folder_name เพื่อดู group อื่น
+folder_name = folder_counts.index[0]
+print(f'Showing folder: {folder_name}')
+df_combined[df_combined['user_folder'] == folder_name][['userName','fullName','bio','location','user_folder']]
+# CELL 17
+print('=== cleaned_social_data ===')
+print(df_social.columns.tolist())
+display(df_social.isnull().sum().rename('null_count').to_frame())
+
+print('\n=== combined_profiles ===')
+print(df_combined.columns.tolist())
+display(df_combined.isnull().sum().rename('null_count').to_frame())
+# CELL 19
+# แก้ keyword ได้เลย
+keyword = 'aaron'
+mask = df_combined['userName'].str.contains(keyword, case=False, na=False)
+print(f'Found {mask.sum()} profiles matching "{keyword}"')
+df_combined[mask][['userName','fullName','bio','location','user_folder']].head(20)

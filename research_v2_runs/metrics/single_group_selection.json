@@ -1,0 +1,412 @@
+{
+  "best_single_group": "GBDT-lexical-single-fullname",
+  "selected_on": "development mean ensemble AP only",
+  "summaries": [
+    {
+      "name": "GBDT-lexical-single-username",
+      "exp_id": "E5-5",
+      "learner": "GBDT",
+      "feature": "lexical",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      },
+      "group": "username",
+      "exclude_group": null,
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.7778487707668603,
+        0.7775377101058086,
+        0.7781425669913558,
+        0.7769642119263517,
+        0.7773635626514346
+      ],
+      "seed_AP_SD": 0.0004517120203259414,
+      "mean_score_AP": 0.7787381424355315,
+      "model_paths": [
+        "artifacts/model_GBDT-lexical-single-username_seed11.pkl",
+        "artifacts/model_GBDT-lexical-single-username_seed23.pkl",
+        "artifacts/model_GBDT-lexical-single-username_seed42.pkl",
+        "artifacts/model_GBDT-lexical-single-username_seed71.pkl",
+        "artifacts/model_GBDT-lexical-single-username_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-lexical-single-username_seed11.pkl": "d2e62d9baecdae2968f05a601e99f0bcf9c00d9d77ba922de63f4bbf33a53361",
+        "artifacts/model_GBDT-lexical-single-username_seed23.pkl": "f1e1bcaa1c4133e75819401288f3e4c93855d6c88a1968fda112d5d1a04b1a77",
+        "artifacts/model_GBDT-lexical-single-username_seed42.pkl": "3139dcbdcdbf5e82bf8faba924de43865df06b436b6a2529069ceedf27d2b1b0",
+        "artifacts/model_GBDT-lexical-single-username_seed71.pkl": "35212fb6dfa2875427cbcf09b33998051ae41f12aecdb93d849f4634eac19a6d",
+        "artifacts/model_GBDT-lexical-single-username_seed101.pkl": "679ce200a64cbee8dc0c50f905f7449e115e4ecfc9e9deaf4a8c5f735c428710"
+      },
+      "oof_path": "artifacts/oof_GBDT-lexical-single-username.npz",
+      "oof_sha256": "a01f10d47b6b156b9313a9a5c171e15b3b4530731a85c65a66fa03009547638e",
+      "operating_points": {
+        "validation_F1_threshold": 0.87,
+        "validation_F1": 0.7690423577647028,
+        "precision_target_threshold": 0.8646369536580589,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.7787381424355284,
+        "precision": 0.6682724814063556,
+        "recall": 0.7329440118650352,
+        "f1": 0.6991158267020336,
+        "tp": 15814,
+        "fp": 7850,
+        "tn": 322068,
+        "fn": 5762,
+        "automatic_fn": 5762,
+        "utility_fn": 5762,
+        "rejected_positive_fn": 5762,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.7329440118650352,
+        "raw_cost": 21462.0,
+        "cost_per_pair": 0.06105936374447359,
+        "brier": 0.03498339162639338,
+        "ece15_equalmass": 0.07726390383984932
+      }
+    },
+    {
+      "name": "GBDT-lexical-single-fullname",
+      "exp_id": "E5-5",
+      "learner": "GBDT",
+      "feature": "lexical",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      },
+      "group": "fullname",
+      "exclude_group": null,
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.8795280700912597,
+        0.8790369168371943,
+        0.8796222227840257,
+        0.878195563430402,
+        0.8795347192741806
+      ],
+      "seed_AP_SD": 0.0005983449040322946,
+      "mean_score_AP": 0.880522503205124,
+      "model_paths": [
+        "artifacts/model_GBDT-lexical-single-fullname_seed11.pkl",
+        "artifacts/model_GBDT-lexical-single-fullname_seed23.pkl",
+        "artifacts/model_GBDT-lexical-single-fullname_seed42.pkl",
+        "artifacts/model_GBDT-lexical-single-fullname_seed71.pkl",
+        "artifacts/model_GBDT-lexical-single-fullname_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-lexical-single-fullname_seed11.pkl": "574fd18be1ff3a194894bfade2baffea942cebc15e5a1e4d195d34b2ae15c197",
+        "artifacts/model_GBDT-lexical-single-fullname_seed23.pkl": "be909779824646d58171cfeed0290f5d23400d2bccb84f5764812296e92723a9",
+        "artifacts/model_GBDT-lexical-single-fullname_seed42.pkl": "360ccaeca937b08ddec7e020d9f0b6affc6ca2631f7f19a6e4aabce9f287ec89",
+        "artifacts/model_GBDT-lexical-single-fullname_seed71.pkl": "91dae9d7e8b71a968ada3a42608a2e9e296d769c7aaa27ea49e1e976155f39ee",
+        "artifacts/model_GBDT-lexical-single-fullname_seed101.pkl": "a3012f7be8c0446f0b934f215a6798e81d6e77825fd7e306e8cbcff789038e9a"
+      },
+      "oof_path": "artifacts/oof_GBDT-lexical-single-fullname.npz",
+      "oof_sha256": "da78b05bebb0a8dce83e4b4906bf43f7a8862bd5966b5b727b7cb79603228063",
+      "operating_points": {
+        "validation_F1_threshold": 0.81,
+        "validation_F1": 0.855326391670004,
+        "precision_target_threshold": 0.7424026816888412,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.88052250320512,
+        "precision": 0.7941614145658263,
+        "recall": 0.8409807193177605,
+        "f1": 0.8169007743562039,
+        "tp": 18145,
+        "fp": 4703,
+        "tn": 325215,
+        "fn": 3431,
+        "automatic_fn": 3431,
+        "utility_fn": 3431,
+        "rejected_positive_fn": 3431,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.8409807193177605,
+        "raw_cost": 12837.0,
+        "cost_per_pair": 0.036521249295862805,
+        "brier": 0.02033708024992331,
+        "ece15_equalmass": 0.04453261245929094
+      }
+    },
+    {
+      "name": "GBDT-lexical-single-bio",
+      "exp_id": "E5-5",
+      "learner": "GBDT",
+      "feature": "lexical",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      },
+      "group": "bio",
+      "exclude_group": null,
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.2828462938634527,
+        0.28109943971358564,
+        0.28119950427192864,
+        0.28181577928176055,
+        0.28121823033359955
+      ],
+      "seed_AP_SD": 0.000733159032636444,
+      "mean_score_AP": 0.2840302962207124,
+      "model_paths": [
+        "artifacts/model_GBDT-lexical-single-bio_seed11.pkl",
+        "artifacts/model_GBDT-lexical-single-bio_seed23.pkl",
+        "artifacts/model_GBDT-lexical-single-bio_seed42.pkl",
+        "artifacts/model_GBDT-lexical-single-bio_seed71.pkl",
+        "artifacts/model_GBDT-lexical-single-bio_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-lexical-single-bio_seed11.pkl": "37f237970259ba51bd61cda6c5f04df0fc062de5451a0bbf7256cc2572e99d1e",
+        "artifacts/model_GBDT-lexical-single-bio_seed23.pkl": "02c38b379d6437ac615a93f4a6e60bbca9f67b30596ce6e383f261a700eb8ae5",
+        "artifacts/model_GBDT-lexical-single-bio_seed42.pkl": "4dcf81836e2ad7e54537cca605729d1726488cc82ee91418c380b52edd899a5b",
+        "artifacts/model_GBDT-lexical-single-bio_seed71.pkl": "0347d48f66a411d7ce1004705fd940134255d09d507523bb51be24acd2d48522",
+        "artifacts/model_GBDT-lexical-single-bio_seed101.pkl": "fde9d707a330129c00c09d831edd2161a777f5b1105be8a87d1a9ff7a0e0d15b"
+      },
+      "oof_path": "artifacts/oof_GBDT-lexical-single-bio.npz",
+      "oof_sha256": "c5835aa6f43f77a0fea6fcf00ed75d449b78702dae9cd7e994afaff17ead964d",
+      "operating_points": {
+        "validation_F1_threshold": 0.44,
+        "validation_F1": 0.26902012144302895,
+        "precision_target_threshold": 0.9257014333637258,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.2840302962207116,
+        "precision": 0.48267055819044147,
+        "recall": 0.1839543937708565,
+        "f1": 0.266384778012685,
+        "tp": 3969,
+        "fp": 4254,
+        "tn": 325664,
+        "fn": 17607,
+        "automatic_fn": 17607,
+        "utility_fn": 17607,
+        "rejected_positive_fn": 17607,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.1839543937708565,
+        "raw_cost": 26115.0,
+        "cost_per_pair": 0.07429714305222848,
+        "brier": 0.08144129948416924,
+        "ece15_equalmass": 0.1503010407617233
+      }
+    },
+    {
+      "name": "GBDT-lexical-single-location",
+      "exp_id": "E5-5",
+      "learner": "GBDT",
+      "feature": "lexical",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      },
+      "group": "location",
+      "exclude_group": null,
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.0636024554849838,
+        0.0631991749294924,
+        0.0636024554849838,
+        0.06353739448864247,
+        0.06353739448864247
+      ],
+      "seed_AP_SD": 0.0001689655417885505,
+      "mean_score_AP": 0.0635351543388809,
+      "model_paths": [
+        "artifacts/model_GBDT-lexical-single-location_seed11.pkl",
+        "artifacts/model_GBDT-lexical-single-location_seed23.pkl",
+        "artifacts/model_GBDT-lexical-single-location_seed42.pkl",
+        "artifacts/model_GBDT-lexical-single-location_seed71.pkl",
+        "artifacts/model_GBDT-lexical-single-location_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-lexical-single-location_seed11.pkl": "c651b291bb1ca345d39b606d023f32e3877a5532d631a4561eb10e7a1b12ccb7",
+        "artifacts/model_GBDT-lexical-single-location_seed23.pkl": "710d7f58755b159980c9aa70395912e9a0d0cbb87f4a4d6534401265a9190792",
+        "artifacts/model_GBDT-lexical-single-location_seed42.pkl": "aadb25efb0305289b3f4e4c6616a59531de363667166d83faf9860a0177cf614",
+        "artifacts/model_GBDT-lexical-single-location_seed71.pkl": "f21a7e6d2e228a8ebb45fa3fac323e63313c6bbab0fa946fa3240ce7adc9c279",
+        "artifacts/model_GBDT-lexical-single-location_seed101.pkl": "7d28f29c8dd15daae3d8e9aba18e8f4656842fd8aab2146d94a29f2d94ec581b"
+      },
+      "oof_path": "artifacts/oof_GBDT-lexical-single-location.npz",
+      "oof_sha256": "03ba6b0165ced9039c851a181b47d505454256ea2d53a46a3f1ff8633f500af8",
+      "operating_points": {
+        "validation_F1_threshold": 0.24,
+        "validation_F1": 0.1158090296129022,
+        "precision_target_threshold": 1.0000001,
+        "P_target": 0.9,
+        "target_feasible": false
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.06353515433888092,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 329918,
+        "fn": 21576,
+        "automatic_fn": 21576,
+        "utility_fn": 21576,
+        "rejected_positive_fn": 21576,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.0,
+        "raw_cost": 21576.0,
+        "cost_per_pair": 0.06138369360501175,
+        "brier": 0.0931980718471327,
+        "ece15_equalmass": 0.188547835007872
+      }
+    },
+    {
+      "name": "GBDT-lexical-single-links",
+      "exp_id": "E5-5",
+      "learner": "GBDT",
+      "feature": "lexical",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.7025780325534994
+      },
+      "group": "links",
+      "exclude_group": null,
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.6570513451522884,
+        0.6568446121942485,
+        0.657105181305396,
+        0.6566367809182868,
+        0.6575352792479475
+      ],
+      "seed_AP_SD": 0.0003355209420906239,
+      "mean_score_AP": 0.6579091739497015,
+      "model_paths": [
+        "artifacts/model_GBDT-lexical-single-links_seed11.pkl",
+        "artifacts/model_GBDT-lexical-single-links_seed23.pkl",
+        "artifacts/model_GBDT-lexical-single-links_seed42.pkl",
+        "artifacts/model_GBDT-lexical-single-links_seed71.pkl",
+        "artifacts/model_GBDT-lexical-single-links_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-lexical-single-links_seed11.pkl": "2ab6c5cc2ad0448b51df9a309e048e65db4e256d5c2e7da4db5b0bc09e7fef3b",
+        "artifacts/model_GBDT-lexical-single-links_seed23.pkl": "de95f400a7283f0e0746412e0781c5b53ba521c4a640c1e6f1958436a809ee14",
+        "artifacts/model_GBDT-lexical-single-links_seed42.pkl": "65c5bc90235051f0420769a7e8ed5f7d286b4c748bab406ad2cff15f589d6d22",
+        "artifacts/model_GBDT-lexical-single-links_seed71.pkl": "edbd7db777ac25249ae85673b1838e7acb69fddf6b02837f50bce52306c28e3f",
+        "artifacts/model_GBDT-lexical-single-links_seed101.pkl": "8a3d69a467eb2ad327a6ffcea5886299d63aa00aa831d70ecdb9cc19293a459d"
+      },
+      "oof_path": "artifacts/oof_GBDT-lexical-single-links.npz",
+      "oof_sha256": "5ec3d14836cb79f4a1f4a1a03466841810fac9acafc0f8470d166030c908e84d",
+      "operating_points": {
+        "validation_F1_threshold": 0.81,
+        "validation_F1": 0.6714068352059925,
+        "precision_target_threshold": 0.7837678356039823,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.657909173949701,
+        "precision": 0.7670257670257671,
+        "recall": 0.564284390063033,
+        "f1": 0.6502176293091939,
+        "tp": 12175,
+        "fp": 3698,
+        "tn": 326220,
+        "fn": 9401,
+        "automatic_fn": 9401,
+        "utility_fn": 9401,
+        "rejected_positive_fn": 9401,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.564284390063033,
+        "raw_cost": 16797.0,
+        "cost_per_pair": 0.04778744445139889,
+        "brier": 0.043940760855525625,
+        "ece15_equalmass": 0.09334503726074377
+      }
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

@@ -157,3 +157,7 @@ holdout_eval/**/*.csv
 holdout_eval/**/*.jsonl
 holdout_eval/**/progress.json
 /data/
+
+# Machine-local review dependencies and nested repository clones
+/research_v2_review_workspace/research_v2/review/_work/v3_deps/
+/research_v2_review_workspace/research_v2/review/_work/repos/

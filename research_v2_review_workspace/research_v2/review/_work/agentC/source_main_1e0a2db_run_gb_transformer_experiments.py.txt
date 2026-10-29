@@ -1,0 +1,527 @@
+
+## main@1e0a2db:run_gb_transformer_experiments.py
+2: 
+3: This runner compares GB-17, GB-18, and GB-18-GA using the exact nested
+4: entity-aware split used by the latest R3 run.  It deliberately keeps test
+5: labels out of model fitting, calibration, GA optimisation, and deployment
+6: selection.  The held-out test labels are fetched only after the deployment
+7: genome has been selected.
+8: 
+9: The GradientBoostingClassifier settings are the explicit project-standard
+10: configuration in ``Project-for-Work/pub_multi/bench_classical_leaksafe.py``;
+11: no test-driven tuning is performed here.
+12: """
+13: from __future__ import annotations
+40:     build_nested_entity_split,
+41:     evaluate,
+42:     nested_split_constants,
+43:     PROFILES,
+44: )
+50: DEFAULT_OUTPUT = EXP / "automation" / "gb_transformer_primary_20260809"
+51: KEY_COLS = ["profile_id_a", "profile_id_b"]
+52: ROLES = ["model_train", "model_calibration", "ga_validation", "test", "drop"]
+53: DEV_ROLES = ["model_train", "model_calibration", "ga_validation"]
+54: SCORED_SOURCE = "decision_source"
+55: SEED = 42
+56: SPLIT_SEED = 42
+57: TRAIN_NEG_RATIO = 3.0
+58: GA_SEEDS = [7, 42, 123, 999, 2025]
+59: MANUAL_MATCH_THRESHOLD = 0.98
+60: MANUAL_REVIEW_THRESHOLD = 0.95
+63:     "learning_rate": 0.05,
+64:     "max_depth": 6,
+65:     "random_state": SEED,
+66: }
+67: GA_WEIGHTS = ga.CostWeights(fp=5.0, fn=1.0, review=0.02)
+68: 
+69: 
+70: def sha256_file(path: Path) -> str:
+71:     digest = hashlib.sha256()
+72:     with Path(path).open("rb") as handle:
+76: 
+77: 
+78: def sha256_bytes(value: bytes) -> str:
+79:     return hashlib.sha256(value).hexdigest()
+80: 
+81: 
+82: def json_default(value: Any) -> Any:
+83:     if isinstance(value, (np.integer,)):
+84:         return int(value)
+92: 
+93: 
+94: def write_json(path: Path, value: Any) -> None:
+95:     path.write_text(
+96:         json.dumps(value, indent=2, ensure_ascii=False, default=json_default),
+99: 
+100: 
+101: def environment_snapshot() -> dict[str, Any]:
+102:     import sklearn
+103: 
+111:         "scikit_learn": sklearn.__version__,
+112:         "cwd": str(Path.cwd().resolve()),
+113:         "deterministic_numpy_seed": SEED,
+114:         "generated_at": datetime.now().astimezone().isoformat(),
+115:     }
+127: 
+128: 
+129: def set_seed(seed: int = SEED) -> None:
+130:     os.environ["PYTHONHASHSEED"] = str(seed)
+131:     random.seed(seed)
+132:     np.random.seed(seed)
+133: 
+134: 
+135: def require_columns(frame: pd.DataFrame, columns: list[str], label: str) -> None:
+136:     missing = sorted(set(columns) - set(frame.columns))
+137:     if missing:
+139: 
+140: 
+141: def assert_unique_keys(frame: pd.DataFrame, label: str) -> None:
+142:     if frame.duplicated(KEY_COLS).any():
+143:         raise AssertionError(f"{label} contains duplicate pair keys")
+144: 
+145: 
+146: def validate_ranges(frame: pd.DataFrame, columns: list[str], lower: float,
+147:                     upper: float, label: str) -> None:
+148:     values = frame[columns].to_numpy(dtype=np.float64)
+154: 
+155: 
+156: def pair_key_digest(frame: pd.DataFrame) -> str:
+157:     ordered = frame[KEY_COLS].astype("int64").sort_values(KEY_COLS)
+158:     payload = "\n".join(
+162: 
+163: 
+164: def labels_for(assigned: pd.DataFrame, keys: pd.DataFrame, role: str,
+165:                allow_test: bool = False) -> np.ndarray:
+166:     """Fetch labels for a role; test is hard-blocked until final evaluation."""
+167:     if role == "test" and not allow_test:
+168:         raise AssertionError("test labels requested before final evaluation")
+169:     source = assigned.loc[assigned["experiment_split"] == role,
+170:                           KEY_COLS + ["actual"]]
+171:     joined = keys[KEY_COLS].merge(source, on=KEY_COLS, how="left",
+172:                                   validate="one_to_one", sort=False)
+173:     if joined["actual"].isna().any():
+174:         raise AssertionError(f"label alignment failed for role {role}")
+175:     values = joined["actual"].to_numpy(dtype=np.int8)
+176:     if not np.isin(values, [0, 1]).all():
+177:         raise AssertionError(f"role {role} contains non-binary labels")
+179: 
+180: 
+181: def validate_inputs(cache: pd.DataFrame, feat17: pd.DataFrame,
+182:                     bert_cos: pd.DataFrame, assigned: pd.DataFrame) -> pd.DataFrame:
+183:     """Validate pair keys, joins, feature ranges, and development labels."""
+184:     require_columns(cache, KEY_COLS + ["actual", "split", "decision_source", "name_sim"],
+185:                     "scored cache")
+186:     require_columns(feat17, KEY_COLS + FEATURE17_COLS, "17-feature cache")
+193: 
+194:     scored = assigned.loc[assigned[SCORED_SOURCE] != "AUTO_EXACT",
+195:                           KEY_COLS + ["experiment_split", "name_sim"]].copy()
+196:     if len(scored) != len(feat17) or len(scored) != len(bert_cos):
+197:         raise AssertionError(
+201: 
+202:     # Merge validation is also the exact pair-key alignment check.  No labels
+203:     # are carried into this feature frame, so test labels stay sealed here.
+204:     work = scored.merge(feat17, on=KEY_COLS, how="left", validate="one_to_one",
+205:                         suffixes=("_cache", "_features"), sort=False)
+210:         raise AssertionError("MiniLM cosine join changed the scored row count")
+211:     merged_feature_columns = [
+212:         "name_sim_features" if column == "name_sim" else column
+213:         for column in FEATURE17_COLS
+214:     ] + ["bert_cos"]
+216:         raise ValueError("feature join contains missing values")
+217:     validate_ranges(work, [
+218:         "name_sim_features" if column == "name_sim" else column
+219:         for column in FEATURE17_COLS
+220:     ], 0.0, 1.0, "joined 17 features")
+221:     validate_ranges(work, ["bert_cos"], -1.0, 1.0, "joined MiniLM cosine")
+222:     validate_ranges(work, ["name_sim_cache", "name_sim_features"], 0.0, 1.0,
+223:                     "name similarity")
+224:     if not np.allclose(work["name_sim_cache"].to_numpy(),
+225:                        work["name_sim_features"].to_numpy(), atol=1e-6):
+226:         raise AssertionError("cached name_sim and feature-17 name_sim are misaligned")
+227:     work["name_sim"] = work["name_sim_features"].astype(np.float32)
+228:     work = work.drop(columns=["name_sim_cache", "name_sim_features"])
+229:     if work[KEY_COLS].duplicated().any():
+230:         raise AssertionError("joined work frame contains duplicate pair keys")
+231: 
+232:     # Before training, only development labels are inspected.  The test branch
+233:     # is intentionally not included in this validation loop.
+234:     for role in DEV_ROLES:
+240: 
+241: 
+242: def build_nested_constants_without_test(assigned: pd.DataFrame) -> dict:
+243:     """Use exp_lib's exact harness constants while keeping test labels sealed."""
+244:     development = assigned.loc[assigned["experiment_split"] != "test"].copy()
+245:     return nested_split_constants(development, seed=SPLIT_SEED)
+246: 
+247: 
+248: def metric_with_cost(decision: np.ndarray, actual: np.ndarray,
+249:                      constants: dict[str, int], weights: ga.CostWeights) -> dict[str, Any]:
+250:     metric = evaluate(decision, actual, constants)
+251:     metric["cost"] = round(
+252:         weights.fp * (metric["FP"]) + weights.fn * metric["FN"]
+256: 
+257: 
+258: def manual_decision(probabilities: np.ndarray) -> np.ndarray:
+259:     decision = np.full(len(probabilities), NO_MATCH, dtype=np.int8)
+260:     decision[probabilities >= MANUAL_REVIEW_THRESHOLD] = REVIEW
+263: 
+264: 
+265: def class_counts(labels: np.ndarray) -> dict[str, int]:
+266:     return {str(value): int((labels == value).sum()) for value in (0, 1)}
+267: 
+268: 
+269: def deterministic_sample_indices(labels: np.ndarray, ratio: float, seed: int) -> np.ndarray:
+270:     """Return indices using exp_r2's exact deterministic undersampling policy."""
+271:     row_ids = np.arange(len(labels), dtype=np.float32).reshape(-1, 1)
+272:     sampled_ids, sampled_labels = undersample_negatives(row_ids, labels, ratio, seed)
+273:     indices = sampled_ids[:, 0].astype(np.int64)
+274:     if not np.array_equal(sampled_labels.astype(np.int8), labels[indices].astype(np.int8)):
+277: 
+278: 
+279: def train_gb_variant(name: str, feature_columns: list[str], work: pd.DataFrame,
+280:                      assigned: pd.DataFrame, output_dir: Path, model_seed: int,
+281:                      smoke: bool = False) -> tuple[np.ndarray, dict[str, Any]]:
+282:     """Fit one GB variant and calibrate only on model_calibration."""
+283:     train = work.loc[work["experiment_split"] == "model_train"].copy()
+284:     calibration = work.loc[work["experiment_split"] == "model_calibration"].copy()
+285:     y_train_raw = labels_for(assigned, train, "model_train")
+286:     y_calibration = labels_for(assigned, calibration, "model_calibration")
+287:     sample_indices = deterministic_sample_indices(y_train_raw, TRAIN_NEG_RATIO, model_seed)
+288:     X_train_raw = train[feature_columns].to_numpy(dtype=np.float32)
+289:     X_calibration = calibration[feature_columns].to_numpy(dtype=np.float32)
+290:     X_train = X_train_raw[sample_indices]
+291:     y_train = y_train_raw[sample_indices]
+296:     model = GradientBoostingClassifier(**params)
+297:     started = time.perf_counter()
+298:     model.fit(X_train, y_train)
+299:     fit_seconds = time.perf_counter() - started
+300:     raw_calibration = model.predict_proba(X_calibration)[:, 1]
+301:     calibrator = IsotonicRegression(out_of_bounds="clip")
+302:     calibrator.fit(raw_calibration, y_calibration)
+303:     calibrated_calibration = calibrator.predict(raw_calibration)
+304:     calibration_ap = float(average_precision_score(y_calibration, calibrated_calibration))
+305: 
+306:     X_all = work[feature_columns].to_numpy(dtype=np.float32)
+307:     raw_all = model.predict_proba(X_all)[:, 1]
+308:     probabilities = calibrator.predict(raw_all).astype(np.float32)
+309:     if not np.isfinite(probabilities).all() or (probabilities < 0).any() or (probabilities > 1).any():
+310:         raise ValueError(f"{name} probabilities are not finite values in [0, 1]")
+312:     artifact_stem = "gb17" if name == "GB-17" else "gb18"
+313:     model_path = output_dir / "model" / f"{artifact_stem}_model.pkl"
+314:     calibrator_path = output_dir / "model" / f"{artifact_stem}_calibrator.pkl"
+315:     with model_path.open("wb") as handle:
+316:         pickle.dump(model, handle, protocol=pickle.HIGHEST_PROTOCOL)
+317:     with calibrator_path.open("wb") as handle:
+318:         pickle.dump(calibrator, handle, protocol=pickle.HIGHEST_PROTOCOL)
+319: 
+320:     probability_name = "gb17" if name == "GB-17" else "gb18"
+331:         "hyperparameters": params,
+332:         "project_standard_source": "Project-for-Work/pub_multi/bench_classical_leaksafe.py",
+333:         "model_seed": int(model_seed),
+334:         "calibration": "sklearn.isotonic.IsotonicRegression(out_of_bounds='clip')",
+335:         "train_neg_ratio": TRAIN_NEG_RATIO,
+336:         "class_counts_before_undersampling": class_counts(y_train_raw),
+338:         "n_model_train_before_undersampling": int(len(y_train_raw)),
+339:         "n_model_train_after_undersampling": int(len(y_train)),
+340:         "n_model_calibration": int(len(y_calibration)),
+341:         "sampled_model_train_pair_key_sha256": train_key_hash,
+342:         "calibration_average_precision": calibration_ap,
+343:         "fit_seconds": float(fit_seconds),
+344:         "probability_artifact": probability_path.name,
+345:         "model_artifact": str(model_path.relative_to(output_dir)),
+346:         "calibrator_artifact": str(calibrator_path.relative_to(output_dir)),
+347:         "label_access": {
+348:             "model_fit": "model_train only",
+349:             "probability_calibration": "model_calibration only",
+350:             "ga_optimisation": "ga_validation only after model fitting",
+351:             "held_out_test": "not accessed by this training function",
+352:         },
+353:     }
+355: 
+356: 
+357: def probability_artifact_check(path: Path, work: pd.DataFrame,
+358:                                column: str) -> pd.DataFrame:
+359:     frame = pd.read_parquet(path)
+372: 
+373: 
+374: def run_ga_trials(work: pd.DataFrame, assigned: pd.DataFrame,
+375:                   probability_frame: pd.DataFrame, constants: dict,
+376:                   ga_seeds: list[int], output_dir: Path,
+377:                   smoke: bool = False) -> tuple[list[dict], list[dict], dict]:
+378:     validation = work.loc[work["experiment_split"] == "ga_validation"].copy()
+379:     labels = labels_for(assigned, validation, "ga_validation")
+380:     probabilities = probability_frame.loc[validation.index, "probability_gb18"].to_numpy(dtype=float)
+381:     nsim = validation["name_sim"].to_numpy(dtype=float)
+382:     ga_configs = {
+383:         "population_size": 10 if smoke else 60,
+389:     trials: list[dict] = []
+390:     generations: list[dict] = []
+391:     for seed in ga_seeds:
+392:         config = ga.GAConfig(
+393:             seed=int(seed),
+394:             population_size=ga_configs["population_size"],
+395:             generations=ga_configs["generations"],
+407:         trial = {
+408:             "experiment": "GB-18-GA",
+409:             "seed": int(seed),
+410:             "t_m": float(best[0]),
+411:             "t_r": float(best[1]),
+422:             "objective_val_cost": round(float(objective_cost), 2),
+423:             "runtime_seconds": round(float(trial_runtime), 6),
+424:             "test_labels_accessed": False,
+425:         }
+426:         trials.append(trial)
+432:             generations.append({
+433:                 "experiment": "GB-18-GA",
+434:                 "seed": int(seed),
+435:                 "generation": int(entry["gen"]),
+436:                 "objective_val_cost": float(entry["cost"]),
+442:             })
+443: 
+444:     selected = min(trials, key=lambda row: (float(row["val_cost"]), int(row["seed"])))
+445:     numeric_trial_columns = [
+446:         "val_cost", "objective_val_cost", "t_m", "t_r", "c_promote", "c_demote",
+458:         }
+459:     selection = {
+460:         "policy": "minimum ga_validation weighted cost; ties resolved by smallest GA seed",
+461:         "selected_seed": int(selected["seed"]),
+462:         "selected_genome": {key: float(selected[key]) for key in
+463:                             ("t_m", "t_r", "c_promote", "c_demote")},
+464:         "selected_validation_cost": float(selected["val_cost"]),
+465:         "seed_statistics": stats,
+466:         "test_evaluations_during_selection": 0,
+467:     }
+468:     return trials, generations, selection
+469: 
+470: 
+471: def metric_row(label: str, source: str, metric: dict[str, Any],
+472:                test_eval_mode: str) -> dict[str, Any]:
+473:     return {
+474:         "experiment": label,
+482:         "F1": metric["F1"],
+483:         "cost": metric["cost"],
+484:         "test_eval_mode": test_eval_mode,
+485:     }
+486: 
+487: 
+488: def load_comparison_sources() -> tuple[dict, dict, dict]:
+489:     r0_path = EXP / "automation" / "r1_nested_primary_20260809" / "summary.json"
+490:     r3_path = EXP / "automation" / "r3_primary_20260809" / "summary.json"
+496:     r3_metrics = r3_summary["aggregates"]["A_current"]["metrics"]
+497:     r3 = {
+498:         "TP": r3_metrics["test_TP"]["mean"],
+499:         "FP": r3_metrics["test_FP"]["mean"],
+500:         "FN": r3_metrics["test_FN"]["mean"],
+501:         "REVIEW": r3_metrics["test_REVIEW"]["mean"],
+502:         "precision": r3_metrics["test_precision"]["mean"],
+503:         "recall": r3_metrics["test_recall"]["mean"],
+504:         "F1": r3_metrics["test_F1"]["mean"],
+505:         "cost": r3_metrics["test_cost"]["mean"],
+506:     }
+507:     source_hashes = {
+512: 
+513: 
+514: def delta_effect(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+515:     fields = ["TP", "FP", "FN", "REVIEW", "precision", "recall", "F1", "cost"]
+516:     result = {field: float(right[field]) - float(left[field]) for field in fields}
+519: 
+520: 
+521: def build_summary(output_dir: Path, test_rows: list[dict], trials: list[dict],
+522:                   selection: dict, training_meta: dict, split_manifest: dict,
+523:                   input_hashes: dict, runtime_seconds: float) -> dict:
+524:     r0, r3, comparison_sources = load_comparison_sources()
+525:     rows_by_label = {row["experiment"]: row for row in test_rows}
+526:     comparison = [
+527:         metric_row("R0", "Original production baseline", r0, "existing sealed R0 artifact"),
+528:         metric_row("R3", "MiniLM + IdentityMLP + GA", r3, "mean over existing R3 GA seeds"),
+529:         metric_row("GB-17", "Gradient Boosting + 17 handcrafted features", rows_by_label["GB-17"],
+530:                    "single final test evaluation"),
+531:         metric_row("GB-18", "Gradient Boosting + 17 features + MiniLM cosine", rows_by_label["GB-18"],
+532:                    "single final test evaluation"),
+533:         metric_row("GB-18-GA", "Same calibrated GB-18 probabilities + GA rule",
+534:                    rows_by_label["GB-18-GA"], "selected genome evaluated once after selection"),
+535:     ]
+546:         "experiment": "GB-17 vs GB-18 vs GB-18-GA",
+547:         "status": "completed",
+548:         "selection_policy": "No test labels were used for fitting, calibration, threshold choice, GA optimisation, or seed/genome selection.",
+549:         "test_evaluation_policy": "Test labels were fetched once after GA selection; GB-18-GA was evaluated exactly once on test.",
+550:         "comparison": comparison,
+551:         "isolated_effects": effects,
+563:             "gb17_gb18_same_hyperparameters": training_meta["GB-17"]["hyperparameters"] == training_meta["GB-18"]["hyperparameters"],
+564:             "gb18_and_ga_probability_artifact_same": True,
+565:             "test_labels_accessed_before_final_evaluation": False,
+566:             "selected_ga_test_evaluations": 1,
+567:             "drop_pairs_used_for_training_or_evaluation": False,
+568:         },
+570: 
+571: 
+572: def write_summary_markdown(path: Path, summary: dict) -> None:
+573:     def fmt(value: Any) -> str:
+574:         if isinstance(value, float):
+575:             return f"{value:.4f}"
+579:         "# GB-17 / GB-18 / GB-18-GA Experiment",
+580:         "",
+581:         "Nested entity-aware split seed 42; outer test remained sealed until final evaluation.",
+582:         "GB configuration: GradientBoostingClassifier(n_estimators=300, learning_rate=0.05, max_depth=6, random_state=42).",
+583:         "",
+584:         "## Test comparison",
+585:         "",
+586:         "| Experiment | TP | FP | FN | REVIEW | Precision | Recall | F1 | Weighted cost |",
+604:         lines.append("")
+605:     lines.extend([
+606:         "## GA validation seeds",
+607:         "",
+608:         "Test metrics were not calculated per GA seed. The selected seed/genome was chosen from ga_validation weighted cost only, then evaluated on test once.",
+609:         "",
+610:         "| Seed | Validation cost | t_m | t_r | c_promote | c_demote |",
+611:         "|---:|---:|---:|---:|---:|---:|",
+612:     ])
+613:     for row in summary["ga_trials"]:
+614:         lines.append(f"| {row['seed']} | {row['val_cost']:.2f} | {row['t_m']:.6f} | {row['t_r']:.6f} | {row['c_promote']:.6f} | {row['c_demote']:.6f} |")
+615:     selected = summary["selected_ga"]
+616:     lines.extend([
+617:         "",
+618:         f"Selected seed: {selected['selected_seed']}; selected validation cost: {selected['selected_validation_cost']:.2f}.",
+619:         f"Selected genome: `{json.dumps(selected['selected_genome'], sort_keys=True)}`.",
+620:         "",
+621:         "## Verification",
+622:         "",
+623:         "- GB-17 and GB-18 share the same sampled training pair hash, labels, model seed, and hyperparameters.",
+624:         "- GB-18 manual and GB-18-GA use the same `gb18_probabilities.parquet` artifact.",
+625:         "- Test labels were not accessed before final selection; drop pairs were excluded.",
+626:         "- See `artifact_hashes.json` for SHA-256 hashes.",
+627:         "",
+630: 
+631: 
+632: def write_csv(path: Path, rows: list[dict]) -> None:
+633:     pd.DataFrame(rows).to_csv(path, index=False)
+634: 
+635: 
+636: def run(args: argparse.Namespace) -> dict:
+637:     set_seed(SEED)
+638:     started = time.perf_counter()
+639:     output_dir = Path(args.output_dir).resolve()
+673:     feat17 = pd.read_parquet(feat17_path)
+674:     bert_cos = pd.read_parquet(bert_path)
+675:     assigned, split_manifest = build_nested_entity_split(cache, seed=SPLIT_SEED)
+676:     split_manifest["source_inputs"] = input_hashes
+677:     split_manifest["scored_feature_row_count"] = int(len(feat17))
+678:     split_manifest["feature_columns"] = FEATURE17_COLS + ["bert_cos"]
+679:     split_manifest["roles"] = ROLES
+680:     split_manifest["test_sealed_until"] = "final_test_evaluation"
+681:     work = validate_inputs(cache, feat17, bert_cos, assigned)
+682:     if args.smoke:
+683:         # Keep the same assigned roles while making a small, deterministic code-path test.
+684:         frames = []
+685:         for role in ["model_train", "model_calibration", "ga_validation", "test"]:
+686:             role_frame = work.loc[work["experiment_split"] == role]
+687:             n = min(len(role_frame), int(args.smoke_rows))
+688:             frames.append(role_frame.sample(n=n, random_state=SEED).sort_index())
+689:         work = pd.concat(frames, ignore_index=True)
+690:         split_manifest["smoke"] = True
+695: 
+696:     # Constants for GA validation are computed from a development-only frame.
+697:     # This calls exp_lib's harness without reading any test labels.
+698:     development_constants = build_nested_constants_without_test(assigned)
+699:     training_meta: dict[str, Any] = {}
+700:     model17_features = FEATURE17_COLS.copy()
+701:     model18_features = FEATURE17_COLS + ["bert_cos"]
+702:     prob17, training_meta["GB-17"] = train_gb_variant(
+703:         "GB-17", model17_features, work, assigned, output_dir, SEED, args.smoke)
+704:     prob18, training_meta["GB-18"] = train_gb_variant(
+705:         "GB-18", model18_features, work, assigned, output_dir, SEED, args.smoke)
+706:     if training_meta["GB-17"]["sampled_model_train_pair_key_sha256"] != training_meta["GB-18"]["sampled_model_train_pair_key_sha256"]:
+707:         raise AssertionError("GB-17 and GB-18 did not use identical sampled model_train rows")
+714:         raise AssertionError("GB-18 probability artifact changed after writing")
+715:     trials, generations, selection = run_ga_trials(
+716:         work, assigned, prob18_frame, development_constants, GA_SEEDS, output_dir, args.smoke)
+717:     write_csv(output_dir / "trials.csv", trials)
+718:     write_csv(output_dir / "ga_generations.csv", generations)
+719: 
+720:     # No test labels have been accessed to this point.  Select the genome from
+721:     # validation cost, then evaluate all three final configurations together.
+722:     test_mask = work["experiment_split"].to_numpy() == "test"
+723:     test_work = work.loc[test_mask].copy()
+724:     selected_genome = np.asarray([selection["selected_genome"][key]
+725:                                   for key in ("t_m", "t_r", "c_promote", "c_demote")], dtype=float)
+726:     test_code17 = manual_decision(prob17[test_mask])
+727:     test_code18 = manual_decision(prob18_frame.loc[test_mask, "probability_gb18"].to_numpy(dtype=float))
+728:     test_code18_ga = ga.decide_code(
+729:         prob18_frame.loc[test_mask, "probability_gb18"].to_numpy(dtype=float),
+730:         test_work["name_sim"].to_numpy(dtype=float), selected_genome,
+731:     )
+732:     # This is the single point at which the sealed test labels are opened.
+733:     test_actual = labels_for(assigned, test_work, "test", allow_test=True)
+734:     full_constants = nested_split_constants(assigned, seed=SPLIT_SEED)
+735:     for role in DEV_ROLES:
+736:         for key in ("tp_exact", "fp_exact", "fn_blocking", "total_pos", "n_scored"):
+737:             if development_constants[role][key] != full_constants[role][key]:
+738:                 raise AssertionError(f"development/test-deferred constants changed for {role}/{key}")
+739:     final_specs = [
+740:         ("GB-17", "manual_thresholds_0.98_0.95", test_code17, training_meta["GB-17"]["calibration_average_precision"], "gb17_probabilities.parquet"),
+741:         ("GB-18", "manual_thresholds_0.98_0.95", test_code18, training_meta["GB-18"]["calibration_average_precision"], "gb18_probabilities.parquet"),
+742:         ("GB-18-GA", "ga_selected_validation_cost", test_code18_ga, training_meta["GB-18"]["calibration_average_precision"], "gb18_probabilities.parquet"),
+743:     ]
+744:     test_results: list[dict] = []
+745:     for label, rule, decision, calibration_ap, probability_artifact in final_specs:
+746:         metrics = metric_with_cost(decision, test_actual, full_constants["test"], GA_WEIGHTS)
+747:         test_results.append({
+748:             "experiment": label,
+749:             "decision_rule": rule,
+750:             "probability_artifact": probability_artifact,
+751:             "calibration_average_precision": float(calibration_ap),
+752:             "selected_ga_seed": selection["selected_seed"] if label == "GB-18-GA" else "",
+753:             **metrics,
+754:         })
+755:     write_csv(output_dir / "test_results.csv", test_results)
+756: 
+757:     training_meta["shared_fairness_assertions"] = {
+760:         "same_labels": True,
+761:         "same_hyperparameters": True,
+762:         "same_model_seed": True,
+763:         "only_feature_difference": "bert_cos feature 18",
+764:         "calibrators_are_separate": True,
+765:     }
+766:     training_meta["role_counts_scored_pairs"] = {
+772:     runtime_seconds = time.perf_counter() - started
+773:     summary = build_summary(
+774:         output_dir, test_results, trials, selection, training_meta,
+775:         split_manifest, input_hashes, runtime_seconds,
+776:     )
+783:         "split": {
+784:             "version": "entity_nested_v1",
+785:             "seed": SPLIT_SEED,
+786:             "roles": ROLES,
+787:             "outer_test_sealed": True,
+788:             "cross_entity_or_cross_split_pairs": "drop and excluded",
+789:         },
+795:         "gb_configuration": GB_PARAMS if not args.smoke else {**GB_PARAMS, "n_estimators": 5},
+796:         "training": {
+797:             "model_seed": SEED,
+798:             "train_neg_ratio": TRAIN_NEG_RATIO,
+799:             "calibration": "isotonic on model_calibration",
+800:             "hyperparameter_selection": "none; project-standard benchmark configuration",
+801:         },
+803:         "ga": {
+804:             "implementation": "exp_r1_ga_redecision.py",
+805:             "seeds": GA_SEEDS,
+806:             "population": 10 if args.smoke else 60,
+807:             "generations": 2 if args.smoke else 40,
+815:         "output_artifacts": {
+816:             "probabilities": ["gb17_probabilities.parquet", "gb18_probabilities.parquet"],
+817:             "models": ["model/gb17_model.pkl", "model/gb17_calibrator.pkl", "model/gb18_model.pkl", "model/gb18_calibrator.pkl"],
+818:         },
+819:         "label_access": {
+820:             "before_final_test_evaluation": ["model_train", "model_calibration", "ga_validation"],
+821:             "test": "fetched once after selected genome; no test metric used for selection",
+822:         },
+823:         "generated_at": datetime.now().astimezone().isoformat(),
+847: 
+848: 
+849: def parse_args() -> argparse.Namespace:
+850:     parser = argparse.ArgumentParser(description=__doc__)
+851:     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
+852:     parser.add_argument("--smoke", action="store_true",
+853:                         help="run a small deterministic path test with reduced GB/GA settings")
+854:     parser.add_argument("--smoke-rows", type=int, default=2000)
+855:     return parser.parse_args()

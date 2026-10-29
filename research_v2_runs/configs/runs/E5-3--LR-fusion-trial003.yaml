@@ -1,0 +1,24 @@
+{
+  "category": "hyperparameter_search",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E5-3",
+  "key": "LR-fusion-trial003",
+  "parameters": {
+    "TPE_trial": 3,
+    "feature": "fusion",
+    "folds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "learner": "LR",
+    "params": {
+      "C": 3.470266988650414,
+      "class_weight": "balanced"
+    }
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

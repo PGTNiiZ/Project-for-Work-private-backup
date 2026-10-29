@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-lexical-single-location",
+  "exp_id": "E5-5",
+  "learner": "GBDT",
+  "feature": "lexical",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.7025780325534994
+  },
+  "group": "location",
+  "exclude_group": null,
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.0636024554849838,
+    0.0631991749294924,
+    0.0636024554849838,
+    0.06353739448864247,
+    0.06353739448864247
+  ],
+  "seed_AP_SD": 0.0001689655417885505,
+  "mean_score_AP": 0.0635351543388809,
+  "model_paths": [
+    "artifacts/model_GBDT-lexical-single-location_seed11.pkl",
+    "artifacts/model_GBDT-lexical-single-location_seed23.pkl",
+    "artifacts/model_GBDT-lexical-single-location_seed42.pkl",
+    "artifacts/model_GBDT-lexical-single-location_seed71.pkl",
+    "artifacts/model_GBDT-lexical-single-location_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-lexical-single-location_seed11.pkl": "c651b291bb1ca345d39b606d023f32e3877a5532d631a4561eb10e7a1b12ccb7",
+    "artifacts/model_GBDT-lexical-single-location_seed23.pkl": "710d7f58755b159980c9aa70395912e9a0d0cbb87f4a4d6534401265a9190792",
+    "artifacts/model_GBDT-lexical-single-location_seed42.pkl": "aadb25efb0305289b3f4e4c6616a59531de363667166d83faf9860a0177cf614",
+    "artifacts/model_GBDT-lexical-single-location_seed71.pkl": "f21a7e6d2e228a8ebb45fa3fac323e63313c6bbab0fa946fa3240ce7adc9c279",
+    "artifacts/model_GBDT-lexical-single-location_seed101.pkl": "7d28f29c8dd15daae3d8e9aba18e8f4656842fd8aab2146d94a29f2d94ec581b"
+  },
+  "oof_path": "artifacts/oof_GBDT-lexical-single-location.npz",
+  "oof_sha256": "03ba6b0165ced9039c851a181b47d505454256ea2d53a46a3f1ff8633f500af8",
+  "operating_points": {
+    "validation_F1_threshold": 0.24,
+    "validation_F1": 0.1158090296129022,
+    "precision_target_threshold": 1.0000001,
+    "P_target": 0.9,
+    "target_feasible": false
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.06353515433888092,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 0,
+    "tn": 329918,
+    "fn": 21576,
+    "automatic_fn": 21576,
+    "utility_fn": 21576,
+    "rejected_positive_fn": 21576,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.0,
+    "raw_cost": 21576.0,
+    "cost_per_pair": 0.06138369360501175,
+    "brier": 0.0931980718471327,
+    "ece15_equalmass": 0.188547835007872
+  }
+}

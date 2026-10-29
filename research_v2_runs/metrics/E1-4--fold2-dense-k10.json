@@ -1,0 +1,13 @@
+{
+  "ground_truth_pairs": 5842,
+  "candidate_pairs": 128447,
+  "found_positives": 4870,
+  "blocking_misses": 972,
+  "pc": 0.8336186237589867,
+  "pq": 0.037914470559841804,
+  "rr": 0.9928451002386155,
+  "all_cross_platform_pairs": 17952313,
+  "profiles": 7358,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.7820229579992883
+}

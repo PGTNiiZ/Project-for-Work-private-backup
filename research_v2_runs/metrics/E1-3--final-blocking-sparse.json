@@ -1,0 +1,20 @@
+{
+  "final_config_id": "blocking-sparse",
+  "kind": "blocking",
+  "blocker": "sparse",
+  "population": {
+    "ground_truth_pairs": 5852,
+    "candidate_pairs": 87702,
+    "found_positives": 5410,
+    "blocking_misses": 442,
+    "pc": 0.9244702665755298,
+    "pq": 0.061686164511641696,
+    "rr": 0.9951212076877333,
+    "all_cross_platform_pairs": 17976170,
+    "profiles": 7363
+  },
+  "prediction_artifact_sha256": "e0ff7fb5042ba1889848f0ef99365919007a0e13ab53cd932f6079807c02d605",
+  "prediction_artifact_path": "data_derived/final/blocking-sparse.npz",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 27.400033625002834
+}

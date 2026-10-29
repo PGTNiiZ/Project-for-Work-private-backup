@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-fusion-without-username",
+  "exp_id": "E5-4",
+  "learner": "GBDT",
+  "feature": "fusion",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.28297338396242927
+  },
+  "group": null,
+  "exclude_group": "username",
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.9472853879637209,
+    0.9478269013916899,
+    0.9471513214742021,
+    0.9471742579841154,
+    0.9476770554742614
+  ],
+  "seed_AP_SD": 0.00030915182412518587,
+  "mean_score_AP": 0.9483411977836889,
+  "model_paths": [
+    "artifacts/model_GBDT-fusion-without-username_seed11.pkl",
+    "artifacts/model_GBDT-fusion-without-username_seed23.pkl",
+    "artifacts/model_GBDT-fusion-without-username_seed42.pkl",
+    "artifacts/model_GBDT-fusion-without-username_seed71.pkl",
+    "artifacts/model_GBDT-fusion-without-username_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-fusion-without-username_seed11.pkl": "7e116b9b9e2ce9aed3b7c6fb64b158185d4036757dda2038aafb882e46a26b12",
+    "artifacts/model_GBDT-fusion-without-username_seed23.pkl": "f98c0175b4d88ee8bdd3a570c431b412a7140290cd197902036ec8c2a8b62b94",
+    "artifacts/model_GBDT-fusion-without-username_seed42.pkl": "18b92e7d0151c8e5a3a229958b49266c61332dce997ade0f8e64811be5739f6f",
+    "artifacts/model_GBDT-fusion-without-username_seed71.pkl": "7c21b31642c82b4c020193c21367ce8903ed47a655a3a6638d2216c8c613e177",
+    "artifacts/model_GBDT-fusion-without-username_seed101.pkl": "77912ad06155c1f2a9a3c491189777d67897233d23faf78c0ba278f10278a54f"
+  },
+  "oof_path": "artifacts/oof_GBDT-fusion-without-username.npz",
+  "oof_sha256": "90ab9f8c4928592087f9f28d4c3aa428c8b5362d06b0716b6143cc0bd715370b",
+  "operating_points": {
+    "validation_F1_threshold": 0.86,
+    "validation_F1": 0.9154715872938182,
+    "precision_target_threshold": 0.6090136534705877,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.9483411977836886,
+    "precision": 0.8631133447956619,
+    "recall": 0.907397107897664,
+    "f1": 0.884701416661018,
+    "tp": 19578,
+    "fp": 3105,
+    "tn": 326813,
+    "fn": 1998,
+    "automatic_fn": 1998,
+    "utility_fn": 1998,
+    "rejected_positive_fn": 1998,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.907397107897664,
+    "raw_cost": 8208.0,
+    "cost_per_pair": 0.023351749958747517,
+    "brier": 0.01265064007904677,
+    "ece15_equalmass": 0.025904149679480782
+  }
+}

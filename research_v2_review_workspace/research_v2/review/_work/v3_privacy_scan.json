@@ -1,0 +1,68 @@
+[
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://arxiv.org/abs/2012.00936v2",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://doi.org/10.1016/j.ins.2022.02.023",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://github.com/ChenBaiyang/MAUIL",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://api.github.com/repos/ChenBaiyang/MAUIL/license",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://www.ijcai.org/Proceedings/16/Papers/254.pdf",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://github.com/KDD-HIEPT/DeepLink",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://api.github.com/repos/KDD-HIEPT/DeepLink/license",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://github.com/vishalshar/Dataset-LinkSocial",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/CONFIRMATORY_EVIDENCE_OPTIONS.md",
+    "kind": "url",
+    "hit": "https://api.github.com/repos/vishalshar/Dataset-LinkSocial/license",
+    "disposition": "PUBLIC_LITERATURE_OR_REPOSITORY_URL"
+  },
+  {
+    "file": "research_v2/review/_work/aggregate_queries.log",
+    "kind": "url",
+    "hit": "https://git-lfs'",
+    "disposition": "REVIEWED_SOURCE_CODE_LFS_PREFIX_LITERAL_NOT_PROFILE_URL"
+  },
+  {
+    "file": "research_v2/review/_work/aggregate_queries.log",
+    "kind": "url",
+    "hit": "https://git-lfs'",
+    "disposition": "REVIEWED_SOURCE_CODE_LFS_PREFIX_LITERAL_NOT_PROFILE_URL"
+  }
+]

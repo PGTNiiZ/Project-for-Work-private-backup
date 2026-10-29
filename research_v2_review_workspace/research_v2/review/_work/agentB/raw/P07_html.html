@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction | IJCAI</title>
+<meta name='robots' content='max-image-preview:large' />
+<meta name="citation_title" content="Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction">
+<meta name="citation_author" content="Wang, Tianshu">
+<meta name="citation_author_institution" content="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; Hangzhou Institute for Advanced Study , University of Chinese Academy of Sciences">
+<meta name="citation_author" content="Lin, Hongyu">
+<meta name="citation_author_institution" content="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences">
+<meta name="citation_author" content="Fu, Cheng">
+<meta name="citation_author_institution" content="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences">
+<meta name="citation_author" content="Han, Xianpei">
+<meta name="citation_author_institution" content="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences; Beijing Academy of Artificial Intelligence">
+<meta name="citation_author" content="Sun, Le">
+<meta name="citation_author_institution" content="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences">
+<meta name="citation_author" content="Xiong, Feiyu">
+<meta name="citation_author_institution" content="Alibaba Group , China">
+<meta name="citation_author" content="Chen, Hui">
+<meta name="citation_author_institution" content="Alibaba Group , China">
+<meta name="citation_author" content="Lu, Minlong">
+<meta name="citation_author_institution" content="Alibaba Group , China">
+<meta name="citation_author" content="Zhu, Xiuwen">
+<meta name="citation_author_institution" content="Alibaba Group , China">
+<meta name="citation_publication_date" content="2022">
+<meta name="citation_conference_title" content="Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence">
+<meta name="citation_publisher" content="International Joint Conferences on Artificial Intelligence Organization">
+<meta name="citation_firstpage" content="3978">
+<meta name="citation_lastpage" content="3984">
+<meta name="citation_doi" content="10.24963/ijcai.2022/552">
+<meta name="citation_pdf_url" content="https://ijcai.org/proceedings/2022/0552.pdf">
+<meta name="citation_abstract_html_url" content="https://ijcai.org/proceedings/2022/552">
+<link rel="canonical" href="https://ijcai.org/proceedings/2022/552">
+<link rel="alternate" type="text/markdown" href="https://ijcai.org/proceedings/2022/552.md">
+<link rel="alternate" type="application/json" href="https://ijcai.org/proceedings/2022/552.json">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction","name":"Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction","abstract":"Entity matching (EM) is the most critical step for entity resolution (ER). While current deep learning-based methods achieve very impressive performance on standard EM benchmarks, their real-world application performance is much frustrating. In this paper, we highlight that such the gap between reality and ideality stems from the unreasonable benchmark construction process, which is inconsistent with the nature of entity matching and therefore leads to biased evaluations of current EM approaches. To this end, we build a new EM corpus and re-construct EM benchmarks to challenge critical assumptions implicit in the previous benchmark construction process by step-wisely changing the restricted entities, balanced labels, and single-modal records in previous benchmarks into open entities, imbalanced labels, and multi-modal records in an open environment. Experimental results demonstrate that the assumptions made in the previous benchmark construction process are not coincidental with the open environment, which conceal the main challenges of the task and therefore significantly overestimate the current progress of entity matching. The constructed benchmarks and code are publicly released at https://github.com/tshu-w/ember.","author":[{"@type":"Person","name":"Tianshu Wang","url":"https://ijcai.org/authors/tianshu-wang/","affiliation":{"@type":"Organization","name":"Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; Hangzhou Institute for Advanced Study , University of Chinese Academy of Sciences"}},{"@type":"Person","name":"Hongyu Lin","url":"https://ijcai.org/authors/hongyu-lin/","affiliation":{"@type":"Organization","name":"Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences"}},{"@type":"Person","name":"Cheng Fu","url":"https://ijcai.org/authors/cheng-fu/","affiliation":{"@type":"Organization","name":"Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences"}},{"@type":"Person","name":"Xianpei Han","url":"https://ijcai.org/authors/xianpei-han/","affiliation":{"@type":"Organization","name":"Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences; Beijing Academy of Artificial Intelligence"}},{"@type":"Person","name":"Le Sun","url":"https://ijcai.org/authors/le-sun/","affiliation":{"@type":"Organization","name":"Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences"}},{"@type":"Person","name":"Feiyu Xiong","url":"https://ijcai.org/authors/feiyu-xiong/","affiliation":{"@type":"Organization","name":"Alibaba Group , China"}},{"@type":"Person","name":"Hui Chen","url":"https://ijcai.org/authors/hui-chen/","affiliation":{"@type":"Organization","name":"Alibaba Group , China"}},{"@type":"Person","name":"Minlong Lu","url":"https://ijcai.org/authors/minlong-lu/","affiliation":{"@type":"Organization","name":"Alibaba Group , China"}},{"@type":"Person","name":"Xiuwen Zhu","url":"https://ijcai.org/authors/xiuwen-zhu/","affiliation":{"@type":"Organization","name":"Alibaba Group , China"}}],"datePublished":"2022","isPartOf":{"@type":"Book","name":"Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence","isbn":"978-1-956792-00-3","url":"https://ijcai.org/proceedings/2022/"},"publisher":{"@type":"Organization","name":"International Joint Conferences on Artificial Intelligence Organization"},"identifier":{"@type":"PropertyValue","propertyID":"DOI","value":"10.24963/ijcai.2022/552"},"sameAs":"https://doi.org/10.24963/ijcai.2022/552","url":"https://ijcai.org/proceedings/2022/552","keywords":"Data Mining: Intelligent Database Systems; Multidisciplinary Topics and Applications: Databases","pageStart":3978,"pageEnd":3984,"encoding":{"@type":"MediaObject","encodingFormat":"application/pdf","contentUrl":"https://ijcai.org/proceedings/2022/0552.pdf"}}</script>
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="wp-block-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer." }
+/*# sourceURL=wp-block-styles-placeholder-inline-css */
+</style>
+<style id="wp-global-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer." }
+/*# sourceURL=wp-global-styles-placeholder-inline-css */
+</style>
+<link rel='stylesheet' id='ijcai-main-css' href='https://ijcai.org/wp-content/themes/ijcai/assets/css/main.css?ver=1.0.13' media='all' />
+<link rel='stylesheet' id='ijcai-archive-css' href='https://ijcai.org/wp-content/themes/ijcai/assets/css/archive.css?ver=1.1.0' media='all' />
+<link rel="https://api.w.org/" href="https://ijcai.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ijcai.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
+<link rel="icon" href="https://ijcai.org/wp-content/themes/ijcai/assets/img/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="https://ijcai.org/wp-content/themes/ijcai/assets/img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="https://ijcai.org/wp-content/themes/ijcai/assets/img/apple-touch-icon.png?v=2">
+</head>
+<body class="wp-theme-ijcai ijcai-archive ijcai-archive--article">
+
+<header class="site-header">
+    <div class="site-header__bar">
+        <span class="site-header__spacer"></span>
+        <a href="https://ijcai.org/" class="site-logo">
+            <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/logo.svg"
+                 width="247" height="105" alt="IJCAI">
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false" aria-controls="nav-panel">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav id="nav-panel" class="nav-panel" aria-label="Primary Navigation">
+        <ul id="menu-primary" class="nav-panel__menu"><li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-230"><a href="https://ijcai.org/future_conferences/">Conferences</a>
+<ul class="sub-menu">
+	<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="https://ijcai.org/future_conferences/">Future Conferences</a></li>
+	<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="https://ijcai.org/past_conferences/">Past Conferences</a></li>
+</ul>
+</li>
+<li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-233"><a href="https://ijcai.org/all_proceedings/">Proceedings</a>
+<ul class="sub-menu">
+	<li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234"><a href="/proceedings/2026/">IJCAI 2026 Proceedings</a></li>
+	<li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="https://ijcai.org/all_proceedings/">All Proceedings</a></li>
+</ul>
+</li>
+<li id="menu-item-236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236"><a href="https://ijcai.org/awards/">Awards</a></li>
+<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-237"><a href="https://ijcai.org/trustees/current_trustees/">Trustees/officers</a>
+<ul class="sub-menu">
+	<li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238"><a href="https://ijcai.org/trustees/current_trustees/">Current trustees</a></li>
+	<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239"><a href="https://ijcai.org/trustees/trustees_elect/">Trustees Elect</a></li>
+	<li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240"><a href="https://ijcai.org/officers/ijcai_secretariat/">IJCAI Secretariat</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="https://ijcai.org/officers/sponsorship_publicity/">IJCAI Sponsorship and Publicity Officers</a></li>
+	<li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://ijcai.org/officers/ijcai_team/">IJCAI Team</a></li>
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-243"><a href="https://ijcai.org/officers/local_arrangements_chairs/">Local Arrangements Chairs</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244"><a href="https://ijcai.org/trustees/former_trustees_serving_on_the_executive_committee/">Former Trustees serving on the Executive Committee</a></li>
+	<li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-245"><a href="https://ijcai.org/officers/other_former_officers/">Other Former Officers</a></li>
+</ul>
+</li>
+<li id="menu-item-246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246"><a href="https://ijcai.org/aijd/">AI Journal</a></li>
+<li id="menu-item-247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-247"><a href="https://ijcai.org/aboutijcai/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://ijcai.org/aboutijcai/">About IJCAI</a></li>
+	<li id="menu-item-314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-314"><a href="https://ijcai.org/documents/">Documents</a></li>
+	<li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://ijcai.org/contact/">Contact Information</a></li>
+</ul>
+</li>
+</ul>    </nav>
+</header>
+
+<main id="main" class="site-main">
+    <div class="page-banner" style="background-image: url('https://ijcai.org/wp-content/themes/ijcai/assets/img/banners/proceedings.jpg?v=1');">
+    <details class="section-nav section-nav--overlay">
+    <summary>Proceedings</summary>
+    <ul>
+                    <li>
+                <a href="/proceedings/2026/">
+                    IJCAI 2026 Proceedings                </a>
+            </li>
+                    <li>
+                <a href="https://ijcai.org/all_proceedings/">
+                    All Proceedings                </a>
+            </li>
+            </ul>
+</details>
+</div>
+    <article class="panel archive-record">
+        <nav class="archive-crumbs" aria-label="Breadcrumb">
+            <a href="https://ijcai.org/all_proceedings/">Proceedings</a>
+                            <span aria-hidden="true">›</span>
+                <a href="https://ijcai.org/proceedings/2022/">IJCAI 2022</a>
+                    </nav>
+
+        
+        <div class="entry-content">
+            <div class="article">
+    <div class="article__grid">
+        <div class="article__main">
+            <h1 class="article__title">Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction</h1>
+
+            <p class="article__authors">
+                <span title="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; Hangzhou Institute for Advanced Study , University of Chinese Academy of Sciences"><a href="https://ijcai.org/authors/tianshu-wang/">Tianshu Wang</a></span>, <span title="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences"><a href="https://ijcai.org/authors/hongyu-lin/">Hongyu Lin</a></span>, <span title="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences"><a href="https://ijcai.org/authors/cheng-fu/">Cheng Fu</a></span>, <span title="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences; Beijing Academy of Artificial Intelligence"><a href="https://ijcai.org/authors/xianpei-han/">Xianpei Han</a></span>, <span title="Chinese Information Processing Laboratory , Institute of Software , Chinese Academy of Sciences; State Key Laboratory of Computer Science , Institute of Software , Chinese Academy of Sciences"><a href="https://ijcai.org/authors/le-sun/">Le Sun</a></span>, <span title="Alibaba Group , China"><a href="https://ijcai.org/authors/feiyu-xiong/">Feiyu Xiong</a></span>, <span title="Alibaba Group , China"><a href="https://ijcai.org/authors/hui-chen/">Hui Chen</a></span>, <span title="Alibaba Group , China"><a href="https://ijcai.org/authors/minlong-lu/">Minlong Lu</a></span>, <span title="Alibaba Group , China"><a href="https://ijcai.org/authors/xiuwen-zhu/">Xiuwen Zhu</a></span>            </p>
+
+            <div class="article__actions">
+                                                            <a class="action action--video" href="https://slideslive.com/38986594" target="_blank" rel="noopener">
+                                            <span class="action__icon" aria-hidden="true">▶</span>Video #1                    </a>
+                                                            <a class="action action--video" href="https://slideslive.com/38984737" target="_blank" rel="noopener">
+                                            <span class="action__icon" aria-hidden="true">▶</span>Video #2                    </a>
+                                                    <a class="action action--pdf" href="/proceedings/2022/0552.pdf"><span class="action__icon" aria-hidden="true">PDF</span>Download</a>
+                                <a class="action action--bib" href="/proceedings/2022/bibtex/552"><span class="action__icon" aria-hidden="true">Bib</span>BibTeX</a>
+                <a class="action action--cite" href="#cite" data-tab-open="cite"><span class="action__icon" aria-hidden="true">“”</span>Cite</a>
+            </div>
+
+            <p class="article__venue">
+                <a href="/proceedings/2022/">Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence</a>.
+                Main Track. Pages 3978-3984.
+            </p>
+            <p class="article__doi"><a href="https://doi.org/10.24963/ijcai.2022/552">https://doi.org/10.24963/ijcai.2022/552</a></p>
+
+                            <div class="article__keywords">
+                    <p class="eyebrow">Keywords</p>
+                    <ul>
+                                                    <li>Data Mining: Intelligent Database Systems</li>
+                                                    <li>Multidisciplinary Topics and Applications: Databases</li>
+                                            </ul>
+                </div>
+                    </div>
+
+        <div class="article__abstract">
+            <p class="eyebrow">Abstract</p>
+                            <p>Entity matching (EM) is the most critical step for entity resolution (ER). While current deep learning-based methods achieve very impressive performance on standard EM benchmarks, their real-world application performance is much frustrating. In this paper, we highlight that such the gap between reality and ideality stems from the unreasonable benchmark construction process, which is inconsistent with the nature of entity matching and therefore leads to biased evaluations of current EM approaches. To this end, we build a new EM corpus and re-construct EM benchmarks to challenge critical assumptions implicit in the previous benchmark construction process by step-wisely changing the restricted entities, balanced labels, and single-modal records in previous benchmarks into open entities, imbalanced labels, and multi-modal records in an open environment. Experimental results demonstrate that the assumptions made in the previous benchmark construction process are not coincidental with the open environment, which conceal the main challenges of the task and therefore significantly overestimate the current progress of entity matching. The constructed benchmarks and code are publicly released at https://github.com/tshu-w/ember.</p>                    </div>
+    </div>
+
+    <div class="article-tabs" data-tabs>
+        <div class="article-tabs__list" role="tablist">
+                            <button role="tab" id="tab-references" aria-controls="references" aria-selected="true">References (20)</button>
+                                        <button role="tab" id="tab-fulltext" aria-controls="fulltext" aria-selected="false">Full text</button>
+                                    <button role="tab" id="tab-cite" aria-controls="cite" aria-selected="false">Cite</button>
+            <button role="tab" id="tab-data" aria-controls="data" aria-selected="false">Data</button>
+        </div>
+
+                    <section role="tabpanel" id="references" aria-labelledby="tab-references">
+                <ol class="references">
+                                            <li value="1">
+                            [Christophides et al., 2021] Vassilis Christophides, Vasilis Efthymiou, Themis Palpanas, George Papadakis, and Kostas Stefanidis. An overview of end-to-end entity res- olution for big data. ACM Comput. Surv., 53(6):127:1- 127:42, 2021.                                                                                </li>
+                                            <li value="2">
+                            [Dosovitskiy et al., 2021] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Min- derer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby. An image is worth 16x16 words: Trans- formers for image recognition at scale. In 9th Inter- national Conference on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. OpenRe- view.net, 2021.                                                                                </li>
+                                            <li value="3">
+                            [Fellegi and Sunter, 1969] Ivan P. Fellegi and Alan B. Sunter. A theory for record linkage. Journal of the Ameri- can Statistical Association, 64(328):1183-1210, dec 1969.                                                                                </li>
+                                            <li value="4">
+                            [Fu et al., 2020] Cheng Fu, Xianpei Han, Jiaming He, and Le Sun. Hierarchical matching network for heterogeneous entity resolution. In Proceedings of the Twenty-Ninth In- ternational Joint Conference on Artificial Intelligence, IJ- CAI 2020, pages 3665-3671. ijcai.org, 2020.                                                            <a class="ref-link ref-link--ijcai" href="/proceedings/2020/507">IJCAI</a>
+                                                                                </li>
+                                            <li value="5">
+                            [Ge et al., 2021] Congcong Ge, Pengfei Wang, Lu Chen, Xi- aoze Liu, Baihua Zheng, and Yunjun Gao. CollaborEM: A self-supervised entity matching framework using multi- features collaboration. IEEE Transactions on Knowledge and Data Engineering, pages 1-1, 2021.                                                                                </li>
+                                            <li value="6">
+                            [Jiménez-Ruiz et al., 2020] Ernesto Jiménez-Ruiz, Oktie Hassanzadeh, Vasilis Efthymiou, Jiaoyan Chen, and Kavitha Srinivas. Semtab 2019: Resources to benchmark tabular data to knowledge graph matching systems. In The Semantic Web -17th International Conference, ESWC 2020, Heraklion, Crete, Greece, May 31-June 4, 2020, Proceedings, volume 12123 of Lecture Notes in Computer Science, pages 514-530. Springer, 2020.                                                                                </li>
+                                            <li value="7">
+                            [Li et al., 2020] Yuliang Li, Jinfeng Li, Yoshihiko Suhara, AnHai Doan, and Wang-Chiew Tan. Deep entity matching with pre-trained language models. Proc. VLDB Endow., 14(1):50-60, 2020.                                                                                </li>
+                                            <li value="8">
+                            [Meyer and Bolosky, 2012] Dutch T. Meyer and William J. Bolosky. A study of practical deduplication. ACM Trans. Storage, 7(4):14:1-14:20, 2012.                                                                                </li>
+                                            <li value="9">
+                            [Mudgal et al., 2018] Sidharth Mudgal, Han Li, Theodoros Rekatsinas, AnHai Doan, Youngchoon Park, Ganesh Krishnan, Rohit Deep, Esteban Arcaute, and Vijay Raghavendra. Deep learning for entity matching: A de- sign space exploration. In Proceedings of the 2018 Inter- national Conference on Management of Data, SIGMOD Conference 2018, Houston, TX, USA, June 10-15, 2018, pages 19-34. ACM, 2018.                                                                                </li>
+                                            <li value="10">
+                            [Nie et al., 2019] Hao Nie, Xianpei Han, Ben He, Le Sun, Bo Chen, Wei Zhang, Suhui Wu, and Hao Kong. Deep sequence-to-sequence entity matching for heterogeneous entity resolution. In Proceedings of the 28th ACM In- ternational Conference on Information and Knowledge Management, CIKM 2019, Beijing, China, November 3- 7, 2019, pages 629-638. ACM, 2019.                                                                                </li>
+                                            <li value="11">
+                            [Papadakis et al., 2021] George Papadakis, Ekaterini Ioan- nou, Emanouil Thanos, and Themis Palpanas. The Four Generations of Entity Resolution. Synthesis Lectures on Data Management. Morgan &amp; Claypool Publishers, 2021.                                                                                </li>
+                                            <li value="12">
+                            [Primpeli and Bizer, 2020] Anna Primpeli and Christian Bizer. Profiling entity matching benchmark tasks. In CIKM &#039;20: The 29th ACM International Conference on Information and Knowledge Management, Virtual Event, Ireland, October 19-23, 2020, pages 3101-3108. ACM, 2020.                                                                                </li>
+                                            <li value="13">
+                            [Primpeli et al., 2019] Anna Primpeli, Ralph Peeters, and Christian Bizer. The WDC training dataset and gold stan- dard for large-scale product matching. In Companion of The 2019 World Wide Web Conference, WWW 2019, San Francisco, CA, USA, May 13-17, 2019, pages 381-386. ACM, 2019.                                                                                </li>
+                                            <li value="14">
+                            [Shao et al., 2020] Jingyu Shao, Qing Wang, Asiri Wi- jesinghe, and Erhard Rahm. Ergan: Generative adversarial networks for entity resolution. In 20th IEEE International Conference on Data Mining, ICDM 2020, Sorrento, Italy, November 17-20, 2020, pages 1250-1255. IEEE, 2020.                                                                                </li>
+                                            <li value="15">
+                            [Thirumuruganathan et al., 2018] Saravanan Thirumuru- ganathan, Shameem Ahamed Puthiya Parambath, Mourad Ouzzani, Nan Tang, and Shafiq R. Joty. Reuse and adaptation for entity resolution through transfer learning. CoRR, abs/1809.11084, 2018.                                                                                </li>
+                                            <li value="16">
+                            [Thirumuruganathan et al., 2021] Saravanan Thirumuru- ganathan, Han Li, Nan Tang, Mourad Ouzzani, Yash Govind, Derek Paulsen, Glenn Fung, and AnHai Doan. Deep learning for blocking in entity matching: A design space exploration. Proc. VLDB Endow., 14(11):2459- 2472, 2021.                                                                                </li>
+                                            <li value="17">
+                            [Wang et al., 2011] Jiannan Wang, Guoliang Li, Jeffrey Xu Yu, and Jianhua Feng. Entity matching: How similar is similar. Proc. VLDB Endow., 4(10):622-633, 2011.                                                                                </li>
+                                            <li value="18">
+                            [Wang et al., 2021] Jin Wang, Yuliang Li, and Wataru Hi- rota. Machamp: A generalized entity matching bench- mark. In CIKM &#039;21: The 30th ACM International Con- ference on Information and Knowledge Management, Vir- tual Event, Queensland, Australia, November 1 -5, 2021, pages 4633-4642. ACM, 2021.                                                                                </li>
+                                            <li value="19">
+                            [Wilke and Rahm, 2021] Moritz Wilke and Erhard Rahm. Towards multi-modal entity resolution for product match- ing. In Proceedings of the 32nd GI-Workshop Grundlagen von Datenbanken, Online Event, Germany, September 01- 03, 2021, volume 3075 of CEUR Workshop Proceedings. CEUR-WS.org, 2021.                                                                                </li>
+                                            <li value="20">
+                            [Zhao and He, 2019] Chen Zhao and Yeye He. Auto-em: End-to-end fuzzy entity-matching using pre-trained deep models and transfer learning. In The World Wide Web Con- ference, WWW 2019, San Francisco, CA, USA, May 13-17, 2019, pages 2413-2424. ACM, 2019.                                                                                </li>
+                                    </ol>
+                <p class="tab-note">References were extracted automatically from the PDF and may contain errors.</p>
+            </section>
+        
+                    <section role="tabpanel" id="fulltext" aria-labelledby="tab-fulltext" hidden>
+                <p class="tab-note">Full text extracted automatically from the PDF; figures, tables and equations may differ. The PDF is the version of record.</p>
+                <div class="fulltext"><h2>1 Introduction</h2>
+<p>Entity resolution, also known as record linkage [Fellegi and Sunter, 1969] or deduplication [Meyer and Bolosky, 2012], is about merging records that refer to the same real-world entity. Entity matching (EM) aims to identify whether two entity records refer to the same real-world entity, which is the most critical step for entity resolution. For example, an effective entity matcher should resolve the two entity records "iPhone</p>
+<p>∗Corresponding author.</p>
+<figure><figcaption><div class="caption">Figure 1: Current benchmarks for EM commonly consider restricted entities, balanced labels, and single modality. However, these conditions do not hold in an open environment, therefore leading to the inconsistency between benchmark performance and real-world applications.</div></figcaption><img src="/proceedings/2022/fulltext/552/image_000000_a9a63aceb891f7c8bc047592ee5a5a956a795cd10d75c8628480e405be9e2d0b.png"></figure>
+<p>13 Pro, CA" and "apple, iphone, 13 pro" into the same entity cluster because they refer to the same real-world product. Recent years have witnessed the impressive development of EM approaches, especially with the rapid progress of deep learning-based methods [Mudgal et al., 2018; Fu et al., 2020; Li et al., 2020]. Commonly, these methods are evaluated on the various EM benchmarks [Primpeli and Bizer, 2020] from different domains but constructed with a similar process. The state-of-the-art (SOTA) approaches have achieved over 90% F1 score on most of these datasets, which shows their strong effectiveness on these benchmarks.</p>
+<p>However, once launched in real applications, the SOTA EM systems can become frustrating due to the discrepancies between current benchmarks and the open environment. Such discrepancies result in biased scores on the established benchmarks which can not well represent the real-world application performance. Unfortunately, there is no literature looking deep into this reality-ideality gap of entity matching, and therefore causes and effects of these discrepancies are not well studied. As a result, we are unable to evaluate the actual progress of novel approaches to real-world entity matching.</p>
+<p>In this paper, we highlight that the discrepancies between benchmarks and the open environment stem from the implicit, unaware assumptions introduced during common benchmark construction. Such erroneous assumptions conceal the main challenges of entity matching, which lead to high performance on current benchmarks. Unfortunately, these assumptions do not hold in real-world scenarios, and therefore discrepancies between benchmarks and the open environment occur. Specifically, as illustrated in Figure 1, there are three critical erroneous assumptions made when constructing training and test sets of current EM benchmarks:</p>
+<ul>
+<li style="list-style-type: '· ';">Restricted Entity Assumption, which means that the entity clusters and/or entity records in the test sets of current benchmarks are mostly covered by records in the training sets, as shown in Table 1. This assumption is made because of the cluster/record sampling strategies applied for current benchmarks. Unfortunately, none of the mainstream entity resolution applications can meet, even be close to, such an assumption, because an effective entity matcher should be able to deal with unseen clusters and records in an open environment. As a result, current benchmarks are unable to evaluate entity matchers in an open environment.</li>
+<li style="list-style-type: '· ';">Balanced Label Assumption, which means that the ratios of mismatched to matched instances are relatively low and quite close in training and test sets of benchmarks. However, entity matching is an extremely imbalanced problem in real-world applications, and such the mismatched/matched ratio is commonly unknown and diverges significantly. Even with the prior blocking step, the ratio of mismatched record pairs to matched pairs can be up to 100:1 [Thirumuruganathan et al., 2021]. This poses the critical but ignored challenge to train and evaluate entity matchers in highly-imbalanced settings. As a result, current benchmarks are unable to evaluate entity matchers in the real-world imbalanced situation.</li>
+<li style="list-style-type: '· ';">Single Modality Assumption, which means current benchmarks mainly focus on textual attributes of entity records. This is due to the absence of the high-quality multi-modal entity corpus. However, in an open environment with noisy textual attributes, information from other modalities like images or audio can play a decisive role in entity matching. As a result, current benchmarks are difficult to be applied to accurately evaluate the effectiveness of multi-modal information for EM.</li>
+</ul>
+<p>To assess how these three implicit assumptions bias evaluations of entity matchers, this paper constructs a new multi-modal corpus, which comes from a large Chinese ecommerce website and contains more than 120,000 records for 10,000 products. Each record in the corpus is with a highquality image attribute. Then starting from the corpus and standard benchmark construction criteria, we re-construct new benchmarks by removing the above-mentioned three erroneous assumptions step-by-step to revisit how these assumptions influence the evaluations on previous benchmarks. Specifically, for restricted entity assumption, we propose to leverage more practical cluster/record sampling strategies to build three benchmarks based on three most common EM application paradigms. For balanced label assumption, we vary the ratio of mismatched to matched instances on training and test set respectively to see how the real-world imbalanced situation can influence the evaluation. For single modality assumption, we thoroughly evaluate the effectiveness of introducing visual attributes based on the above real-world settings. From the newly re-constructed benchmarks, we find previous benchmarks are far from evaluating entity matching in an open environment because</p>
+<table><caption><div class="caption">Table 1: Overview of previous EM benchmarks. We omit the datasets in some benchmarks whose test set is less than 100 instances. We can see that they are with very high seen cluster and record ratios, as well as a relatively low mismatched/matched ratio. However, these conditions no longer hold in an open environment.</div></caption><tbody><tr><th>Benchmarks</th><th>Matched: Mismatched</th><th>Seen Clusters</th><th>Seen Records</th></tr><tr><th>abt-buy [Mudgal et al., 2018]</th><td>≈1:6</td><td>99%</td><td>96%</td></tr><tr><th>amazon-google [Mudgal et al., 2018]</th><td>≈1:6</td><td>99%</td><td>97%</td></tr><tr><th>dblp-acm [Mudgal et al., 2018]</th><td>≈1:20</td><td>100%</td><td>100%</td></tr><tr><th>dblp-scholar [Mudgal et al., 2018]</th><td>≈1:15</td><td>100%</td><td>100%</td></tr><tr><th>walmart-amazon [Mudgal et al., 2018]</th><td>≈1:12</td><td>100%</td><td>99%</td></tr><tr><th>cora [Wang et al., 2011]</th><td>≈1:4</td><td>100%</td><td>100%</td></tr><tr><th>wdc cameras [Primpeli et al., 2019]</th><td>≈1:3</td><td>100%</td><td>78%</td></tr><tr><th>wdc watchers [Primpeli et al., 2019]</th><td>≈1:3</td><td>100%</td><td>81%</td></tr><tr><th>wdc computers [Primpeli et al., 2019]</th><td>≈1:3</td><td>100%</td><td>72%</td></tr><tr><th>wdc shoes [Primpeli et al., 2019]</th><td>≈1:3</td><td>100%</td><td>62%</td></tr></tbody></table>
+<ul>
+<li style="list-style-type: '· ';">Restricted Entity Assumption biases the nature of the task of entity matching. The assumption changes the task from learning an effective matcher to learning effective representations of seen clusters/records. This discrepancy makes previous benchmarks significantly overestimate the performance of current entity matchers.</li>
+<li style="list-style-type: '· ';">Balanced Label Assumption conceals the most critical challenge of entity matching. We find that in realworld imbalanced scenarios, the performance on imbalanced test sets will dramatically diverge from the evaluation results on previous benchmarks, no matter how the degree of balance of the training set changes.</li>
+<li style="list-style-type: '· ';">Single Modality Assumption stems from the underestimation of the importance of multi-modality on previous benchmarks. We find that in the open environment, visual information can improve the performance of entity matching significantly. Moreover, the importance of visual information can significantly rise especially in open and imbalanced settings. This also confirms that previous restricted entities and balanced label benchmarks can not well estimate the effectiveness of multi-modal entity matchers.</li>
+</ul>
+<p>Our re-constructed benchmark clearly shows that previous benchmark construction criteria can not cover the main challenges of entity matching, and there is still a long way to build an effective entity matcher in an open environment. Generally speaking, the main contributions of this paper are:</p>
+<ul>
+<li style="list-style-type: '· ';">We reveal three implicit assumptions behind current EM benchmarks. These assumptions are introduced during the benchmark construction process, which leads to significant discrepancies between current benchmarks and open environment.</li>
+<li style="list-style-type: '· ';">We build a new multi-modal entity matching corpus. The corpus contains more than 120,000 multimodal records for 10,000 products. This corpus provides</li>
+</ul>
+<p>a solid foundation for evaluating the impact of above assumptions, as well as future research on multi-modal EM.</p>
+<ul>
+<li style="list-style-type: '· ';">We thoroughly assess the impact of the above three critical assumptions for evaluating entity matcher. Experimental results show that these assumptions conceal the most critical challenges of entity matching, and therefore significantly overestimate the current progress due to the biased benchmarks.</li>
+</ul>
+<h2>2 Background and NewCorpus Construction</h2>
+<p>In this section, we will first demonstrate the construction process of conventional entity matching benchmarks and point out three implicit assumptions made during the process. Then to assess the impacts of the three assumptions, we present a new multi-modal corpus for entity matching. Finally, we will briefly introduce the state-of-the-art approaches on entity matching, which will be used to evaluate the impact of the above-mentioned assumptions in the following sections.</p>
+<h2>2.1 Construction and Implicit Assumptions of Previous Benchmarks</h2>
+<p>Algorithm 1 outlines the construction process of current entity matching benchmarks. The procedure commonly first removes non-textual attributes from all records. Then a fixed number of entity clusters are sampled to construct datasets. Some record pairs within the same clusters are regarded as the matched entity record pairs, and a number of mismatched pairs are sampled from records from different clusters. The number of mismatched instances is commonly proportional to the number of matched instances with a fixed ratio. Finally, all record pairs with matched/mismatched labels are split into training/validation/test sets to build the standard benchmarks.</p>
+<p>Such a construction process, however, is implicitly incorporated with three assumptions. First, because all records are sampled from the same group of clusters C ′ , there is a great chance that clusters and records in the test set would appear in the training set. To show this, Table 1 presents the statistics from several most widely-used EM benchmarks. We can see that nearly all entity clusters in the test set of these benchmarks are covered by the training set. Furthermore, a vast majority of entity records in the test set are also covered by the training set. However, in an open environment this assumption does not hold, because a great number of entity clusters and records are unseen during training. Second, due to the mismatched-matched instance sampling strategy, the ratio of mismatched pairs to matched pairs is relatively low, as shown in Table 1 again. Further, such ratios are nearly the same for the training and test set. Unfortunately, in real-world applications we will face an extremely high mismatched-matched ratio. Even after the blocking of entity resolution, a record may have up to 100 candidate matches. And due to the long-tail phenomenon, it is very frequently that only one instance among them is the matched one. Consequently, current benchmarks can not well reflect how well entity matchers can deal with such an extremely imbalanced situation. Third, many current benchmarks only focus on textual attributes, which multi-modal attributes become increas-</p>
+<pre><code>Data: A set of entity clusters C = {c1, c2, · · · , cn}, where each cluster ci contains several records ci = {r1 i , r2 i , · · · , rm i } Input: train/val/test ratio r, mismatched/matched ratio k Output: training, validation, and test set: train, val, test foreach ci ∈ C do foreach rj i ∈ ci do **Single modality assumption** preserving only textual attributes of record rj i end end sample a subset of clusters C ′ fromC D = Ø foreach ci ∈ C ′ do for rj i , rk i ∈ ci do D ← D ∪ (rj i , rk i ,matched) end end **Balanced label assumption** for i ← 1 to k ∗ ∥D∥ do sample different cluster records rli , rm j fromC ′ D ← D ∪ (rli , rm j ,mismatched) end **Restricted entity assumption** train, val, test ← RANDOM SPLIT(D, r) return train, val, test</code></pre>
+<p>ingly popular and important in many EM scenarios. Due to the above reasons, current benchmarks with these implicit assumptions can not well evaluate the performance of the entity matcher in the open environment.</p>
+<h2>2.2 NewCorpus Construction</h2>
+<p>In order to assess how these three implicit assumptions influence the evaluations of entity matchers, we construct a new multi-modal corpus based on product information from a Chinese e-commerce website. The newly built corpus contains 3 main categories (clothing, shoes, and accessories) of products. Each product record includes a record ID, title, categorical info, cluster ID, attribute pairs (e.g., color, style, material, etc.), as well as a product image. Entity records with the same cluster ID, which are manually checked, are considered as referring to the same real-world product entity. Finally, there are 10,000 products and 126,277 records in this corpus. Each product has records between 10 and 20.</p>
+<p>From the corpus, we use the clusters from all categories and three specific categories to build the datasets. For each dataset, we randomly sample 250 clusters to build the training set and hold out 100 clusters for the unseen cluster benchmark. For each cluster in the training set, we also hold out 40% of the records as unseen records.</p>
+<h2>(a) Dataset Splits</h2>
+<figure><img src="/proceedings/2022/fulltext/552/image_000001_faab7d709d781bca78bd1f6b924fcd2295d4b874368f9a83db94c54028f3f614.png"></figure>
+<h2>(b) Benchmarks for different scenarios</h2>
+<table><caption><div class="caption">Figure 2: Four kinds of benchmarks we constructed: a) Open Matching, which contains records all from unseen clusters; b) Clusterfocused Matching, which contains unseen records all from seen clusters; c) Record Linking, which contains one seen record and one unseen record from seen clusters; d) Vanilla setup, which contains records that are all seen during training.</div></caption><tbody><tr><td>Open Matching</td><td>(✧, ◇) (◇, ◇) (◇, ✧) (✧, ✧)</td></tr><tr><th>Cluster-focused Matching</th><td>(○, □) (□, □) (□, ○) (□, △)</td></tr><tr><th>Record Linking</th><td>(●, □) (□, ■) (○, ▲) (□, ▲)</td></tr><tr><th>Vanilla</th><td>(●, ■) (■, ■) (■, ▲) (●, ▲)</td></tr></tbody></table>
+<h2>2.3 Baselines</h2>
+<p>In this paper, we mainly focus on exploring the impact of the three above problems on deep learning-based approaches while leaving others for future work. We choose two representative methods as baselines in our experiments:</p>
+<ul>
+<li style="list-style-type: '· ';">Deepmatcher (DMatcher), which is the first detailed exploration of deep learning methods on EM [Mudgal et al., 2018]. We use their open source code directly.</li>
+<li style="list-style-type: '· ';">Ditto, which is the SOTA EM method based on pretrained language models [Li et al., 2020]. We reproduce and obtain comparable results on existing benchmarks.</li>
+</ul>
+<h2>3 Benchmark Reconstruction for EM</h2>
+<p>Applications of entity matching in the open environment are highly diversified and complicated. So it is difficult to build one benchmark for all downstream EM applications. To this end, this paper investigates the three most representative applications of entity matching and evaluates how well the current SOTA approaches can accomplish these applications. Specifically, we build benchmarks for the following three kinds of typical downstream paradigms of entity matching:</p>
+<ul>
+<li style="list-style-type: '· ';">Open Matching (OM), which tries to identify whether two open records refer to the same entity clusters, and there is no specific restriction for the entity clusters. This paradigm corresponds to the scenarios where we want to leverage the learned entity matcher as a universal tool for merging or deduplicating (e.g., combining two databases, deduplicating a new table, etc.). As a result, the clusters and records in the test benchmark are commonly unknown during training under this scenario.</li>
+<li style="list-style-type: '· ';">Cluster-focusedMatching (CFM), which tries to identify whether two records belonging to specific seen clusters are matched. This paradigm corresponds to the scenarios where we try to sort the mined records about a group of products or merge information about specific</li>
+</ul>
+<table><caption><div class="caption">Table 2: F1 scores on 4 benchmarks. We can see that unseen clusters and records can significantly reduce the performance of entity matchers.</div></caption><tbody><tr><td></td><td></td><th>Vanilla</th><th>RL</th><th>CFM</th><th>OM</th></tr><tr><th>All</th><th>DMatcher</th><td>78.48</td><td>70.20</td><td>65.18</td><td>53.09</td></tr><tr><td></td><th>Ditto</th><td>93.06</td><td>88.27</td><td>84.02</td><td>67.82</td></tr><tr><th>Cloth.</th><th>DMatcher</th><td>77.62</td><td>69.02</td><td>63.43</td><td>57.40</td></tr><tr><td></td><th>Ditto</th><td>89.75</td><td>82.84</td><td>80.20</td><td>70.54</td></tr><tr><th>Shoes</th><th>DMatcher Ditto</th><td>75.44 84.93</td><td>69.09 82.08</td><td>63.60 76.57</td><td>54.49 62.21</td></tr><tr><th>Acc.</th><th>DMatcher</th><td>81.47</td><td>70.73</td><td>63.16</td><td>50.67</td></tr><tr><td></td><th>Ditto</th><td>91.41</td><td>84.93</td><td>81.23</td><td>61.19</td></tr></tbody></table>
+<p>entities from multiple sources. Under this scenario, all entity clusters in the test set are observed during training, but all records in the test benchmark are new and unseen.</p>
+<ul>
+<li style="list-style-type: '· ';">Record Linking (RL), which tries to link a newlyobtained record to other records in the database. Under this scenario, we can use all entity clusters in the database for training, and there is no new cluster in the test set. However, for each record pair to classify, only one record in it has appeared in the training set, and another record is new. This is a very common scenario for entity matching applications, e.g., linking a new product record to the constructed commodity library.</li>
+</ul>
+<p>Apart from the above three benchmarks, we also build a vanilla benchmark for comparison, which follows the construction criteria of the WDC benchmarks [Primpeli et al., 2019]. Figure 2 illustrates how we build these benchmarks upon our constructed corpus. All these 4 benchmarks share the same training and validation sets. For the test benchmark of OM, we apply the same record pair generation procedure as Algorithm 1 on the hold-out clusters to generate matched and mismatched record pairs. For CFM, we use the hold-out records from the training set to build the test benchmark. For RL, we first sample a record from the hold-out records and then sample a matched or mismatched record to it from the training set. We set the default matched-mismatched ratio on training and test sets to 1:3 like the WDC 1 . However, in experiments, we also vary the matched-mismatched ratio of the benchmarks to investigate how the balanced label assumption influences EM performance. Besides, following the same criteria, we also build these 4 benchmarks for each category.</p>
+<h2>4 Experiments and Findings</h2>
+<h2>4.1 Restricted Entity Assumption</h2>
+<p>Findings 1. Restricted entity assumption biases the nature of entity matching, which changes the task from learning an effective matcher to learning effective representations of seen clusters/records.</p>
+<p>To demonstrate this, we compared the performance of the SOTA entity matchers on 4 newly constructed benchmarks. Table 2 shows the results. We can find that on the vanilla benchmark, these methods can achieve competitive performance of nearly 90% F1 scores, which is similar to that on previous benchmarks. Unfortunately, the performance dramatically dropped when the restricted entity assumption was removed. We find that the model performance dropped most significantly in the realistic Open Matching scenario - nearly 30% of F1 scores. Meanwhile, the performance also have a significant drop in Record Linking and Cluster-focused Matching, even most clusters or records in these two settings have been observed during training. This verifies that previous benchmarks incorporated with restricted entity assumption significantly overestimate the performance. Furthermore, we find that the more information about seen records or clusters in benchmarks, the better the performance of the models. This shows that current models, trained on standard benchmarks, do not learn sufficient information to build a universal matcher. Instead, they pay more attention to learning sufficient representations of seen clusters and records. However, in order for the entity matcher can be used in a broader range of scenarios, we hope that the learned entity matcher can be generalized to unseen clusters and records. As a result, only focusing on learning representations of seen clusters or records is not sufficient for EM in an open environment.</p>
+<p><a href="http://webdatacommons.org/largescaleproductcorpus/v2/#toc4.2">1 webdatacommons.org/largescaleproductcorpus/v2/#toc4.2</a></p>
+<table><caption><div class="caption">Table 3: F1 scores on 4 benchmarks with mismatched/matched ratio = 100. We find that the performance dramatically dropped on imbalanced benchmarks compared with balanced benchmarks in Table 2.</div></caption><tbody><tr><td></td><td></td><th>Vanilla</th><th>RL</th><th>CFM</th><th>OM</th></tr><tr><th>All</th><th>DMatcher</th><td>16.43</td><td>13.33</td><td>11.93</td><td>6.98</td></tr><tr><td></td><th>Ditto</th><td>38.52</td><td>32.71</td><td>28.55</td><td>14.52</td></tr><tr><th>Cloth.</th><th>DMatcher</th><td>15.70</td><td>11.65</td><td>10.11</td><td>8.02</td></tr><tr><td></td><th>Ditto</th><td>33.39</td><td>27.15</td><td>24.86</td><td>18.15</td></tr><tr><th>Shoes</th><th>DMatcher Ditto</th><td>13.91</td><td>10.77</td><td>9.59</td><td>6.31</td></tr><tr><td></td><td></td><td>24.53</td><td>21.90</td><td>20.39</td><td>10.11</td></tr><tr><th rowspan="2">Acc.</th><th>DMatcher Ditto</th><td>16.85</td><td>13.89</td><td>11.86</td><td>6.84</td></tr><tr><td></td><td>30.44</td><td>25.24</td><td>23.18</td><td>10.58</td></tr></tbody></table>
+<p>In general, previous benchmarks mainly evaluate the ability to learn on seen records or clusters but cannot reflect the ability of generalized entity matching in the open environment. Therefore, there is a discrepancy between previous benchmarks and the real-world entity matching applications.</p>
+<h2>4.2 Balanced Label Assumption</h2>
+<p>Findings 2. Balanced label assumption conceals the most critical challenge of entity matching.</p>
+<p>To show this, we investigated the performance of the baselines on 4 newly constructed benchmarks and varied the ratio of matched record pairs to mismatched record pairs gradually from 1:3 to 1:100. Note that 1:100 is a reasonable matchedmismatched ratio in real-world entity matching applications, because the entity resolution system may keep more than 100 candidates for a record at the blocking step to ensure recall [Thirumuruganathan et al., 2021]. And due to the longtail phenomenon, it is very frequently that only one instance among them is the matched pair. So a matched-mismatched ratio of 1:100 corresponds to real-world EM applications.</p>
+<p>Table 3 shows the results. We can see that even on the vanilla benchmark, the F1 score dropped dramatically on the imbalanced scenario, compared to the results on the balanced scenario in Table 2. More importantly, the performance becomes even worse in other three benchmarks. On the open matching benchmark, the performance of state-of-the-art systems is even as low as 14.52%. This shows the significant impact of imbalanced labels on entity matching.</p>
+<figure><figcaption><div class="caption">Figure 3: F1 scores on 4 benchmarks w.r.t. different ratios of mismatched-matched ratio on test set.</div></figcaption><img src="/proceedings/2022/fulltext/552/image_000002_0f3e5eb25a6627201a83286deba050b8107ff7be8b08f2e936af43d2f683b494.png"></figure>
+<figure><figcaption><div class="caption">Figure 4: F1 scores on 4 categories w.r.t. different ratios of mismatched-matched ratio on both training and test sets.</div></figcaption><img src="/proceedings/2022/fulltext/552/image_000003_46909017cd8eb33de84980ce337a5150fcf2aa071b420610af3b7c3232815d44.png"></figure>
+<p>In order to take a closer look at the challenges posed by imbalanced labels, we dynamically varied the mismatchedmatched ratio on test benchmark. Figure 3 shows the results. We can see that the performance on all benchmarks steadily dropped when the mismatched-matched ratio increased on the test benchmark. Furthermore, we find that this problem can not be solved by merely adjusting the mismatched-matched ratio on the training set, as shown in Figure 4. We believe that this is because the imbalanced training set will pose a great challenge for model learning. As a result, how to deal with the extremely imbalanced labels in the open environment is one of the most critical challenges for entity matching. Unfortunately, previous benchmarks conceal this challenge because they introduced the balanced label assumption when generating mismatched instances. Consequently, previous benchmarks can not well represent the real-world performance of entity matchers in an open environment.</p>
+<h2>4.3 Single Modality Assumption</h2>
+<p>Findings 3. Single modality assumption stems from the underestimation of the importance of multi-modality on previous benchmarks.</p>
+<p>To show this, we conducted experiments on newly constructed benchmarks with multi-modal records. Because currently there is little previous work focused on multi-modal entity matching, we build a simple baseline for visual and multimodal EM. Specifically, we use Vision Transformer [Dosovitskiy et al., 2021] as the image encoder and apply a multilayer perceptron on the representations of images of two records to obtain a visual matching representation. Then for the singlemodal visual baseline, we direct send the visual matching representation into a classifier to determine the match result. For the multi-modal approach, we use a gated mechanism to fuse this visual matching representation with the text matching representation and then send it to a classifier.</p>
+<table><caption><div class="caption">Table 4: Experimental results on multi-modal EM. We can see that introducing the visual attribute can significantly boost the performance on open clusters and imbalanced settings.</div></caption><tbody><tr><td></td><td></td><th>Vanilla</th><th>RL</th><th>CFM</th><th>OM</th></tr><tr><th colspan="6">Balanced (Matched:Mismatched = 1:3)</th></tr><tr><th>All</th><th>Textual</th><td>93.06</td><td>88.27</td><td>84.02</td><td>67.82</td></tr><tr><td></td><th>Visual</th><td>95.42</td><td>91.50</td><td>88.13</td><td>74.14</td></tr><tr><td></td><th>Multi-modal</th><td>96.89</td><td>93.66</td><td>91.11</td><td>78.45</td></tr><tr><td></td><th>Textual</th><td>89.75</td><td>82.84</td><td>80.20</td><td>70.54</td></tr><tr><th>Cloth.</th><th>Visual</th><td>95.87</td><td>92.08</td><td>88.12</td><td>78.12</td></tr><tr><td></td><th>Multi-modal</th><td>96.90</td><td>93.40</td><td>90.18</td><td>80.56</td></tr><tr><th>Shoes</th><th>Textual</th><td>84.93</td><td>82.08</td><td>76.57</td><td>62.21</td></tr><tr><td></td><th>Visual</th><td>89.50</td><td>83.82</td><td>79.79</td><td>64.90</td></tr><tr><td></td><th>Multi-modal</th><td>91.82</td><td>87.13</td><td>85.29</td><td>72.02</td></tr><tr><th>Acc.</th><th>Textual</th><td>91.41</td><td>84.93</td><td>81.23</td><td>61.19</td></tr><tr><td></td><th>Visual</th><td>92.64</td><td>88.48</td><td>83.59</td><td>65.12</td></tr><tr><td></td><th>Multi-modal</th><td>94.96</td><td>91.26</td><td>86.98</td><td>68.29</td></tr><tr><th colspan="6">Imbalanced (Matched:Mismatched = 1:100)</th></tr><tr><th>All</th><th>Textual</th><td>38.52</td><td>32.71</td><td>28.55</td><td>14.52</td></tr><tr><td></td><th>Visual</th><td>65.82</td><td>55.92</td><td>50.29</td><td>30.93</td></tr><tr><td></td><th>Multi-modal</th><td>76.72</td><td>64.67</td><td>60.06</td><td>30.39</td></tr><tr><td></td><th>Textual</th><td>33.39</td><td>27.15</td><td>24.86</td><td>18.15</td></tr><tr><th>Cloth.</th><th>Visual</th><td>65.10</td><td>54.93</td><td>49.64</td><td>29.83</td></tr><tr><td></td><th>Multi-modal</th><td>73.16</td><td>62.37</td><td>58.38</td><td>30.86</td></tr><tr><td></td><th>Textual</th><td>24.53</td><td>21.90</td><td>20.39</td><td>10.11</td></tr><tr><th rowspan="2">Shoes</th><th>Visual</th><td>38.52</td><td>29.25</td><td>24.15</td><td>12.09</td></tr><tr><th>Multi-modal</th><td>46.95</td><td>35.88</td><td>30.07</td><td>14.61</td></tr><tr><td></td><th>Textual</th><td>30.44</td><td>25.24</td><td>23.18</td><td>10.58</td></tr><tr><th>Acc.</th><th>Visual</th><td>46.54</td><td>38.85</td><td>33.36</td><td>14.93</td></tr><tr><td></td><th>Multi-modal</th><td>49.02</td><td>41.24</td><td>36.03</td><td>14.37</td></tr></tbody></table>
+<p>Table 4 shows the results. We can find that the importance of visual attributes can be underestimated based on the performance of the vanilla benchmarks. In balanced vanilla benchmarks, the improvement of introducing visual information is not very significant, which is consistent with the phenomenon from previous benchmarks [Wilke and Rahm, 2021]. However, when we refer to the results on open environment benchmarks, the improvement of incorporating visual information is very significant: there are more than 7 points of F1 score gains on CFM and more than 11 points of F1 score gains on OM. Furthermore, the multi-modal model achieves more than 40% of F1 scores improvements under the imbalanced benchmarks for some categories and can be better generalized to unseen clusters and records. All these results demonstrate that multi-modal information can significantly benefit entity matching in the open environment.</p>
+<h2>5 RelatedWork</h2>
+<p>EMApproaches. Entitymatching aims to identify whether two entity records refer to the same real-world entity, which is the most critical step of entity resolution [Christophides et al., 2021]. This study dates back to [Fellegi and Sunter, 1969] and has attached great attention. To solve this open problem, various approaches have been proposed, e.g., distance-based, rule-based, declarative, and probabilistic methods [Papadakis et al., 2021]. In recent years, deep learning has been introduced to this field and achieved promising results [Thirumuruganathan et al., 2018; Mudgal et al., 2018; Nie et al., 2019; Zhao and He, 2019; Fu et al., 2020; Shao et al., 2020; Li et al., 2020; Ge et al., 2021].</p>
+<p>EM Benchmarks. In the early development of EM, many datasets are used to construct benchmarks to evaluate EM methods [Primpeli and Bizer, 2020]. There has been an effort on building large-scale datasets for deep learning methods [Primpeli et al., 2019]. There have also been some attempts on extending the EM task to broader scenarios by extending the data schema, record formats, and relationships between records [Jim´enez-Ruiz et al., 2020; Wang et al., 2021]. Unfortunately, as we mentioned above, all these benchmarks are built on three erroneous assumptions, which lead to a significant gap between the benchmarks and EM in the open environment. There is also some literature discussing multi-modal entity matching [Christophides et al., 2021; Wilke and Rahm, 2021]. However, due to the benchmark limitation, the importance and effectiveness of multi-modal attributes to EM were hindered and inaccurately evaluated.</p>
+<h2>6 Conclusions</h2>
+<p>In this paper, we highlight that the gap between reality and ideality of entity matching stems from the erroneous implicit assumptions introduced during the benchmark construction process. These assumptions are inconsistent with the nature of entity matching and therefore lead to biased evaluations of current EM approaches. To this end, we build a new EM corpus and re-construct EM benchmarks. By step-wisely changing the restricted entities, balanced labels, and singlemodal records in previous benchmarks into open entities, imbalanced labels, and multi-modal records in an open environment, we find that current state-of-the-art approaches suffer severely from unseen clusters, imbalanced labels. Furthermore, previous benchmarks also underestimated the impact of multi-modal attributes on entity matching. Our findings reveal that previous benchmarks biased the evaluation of the progress of current entity matching approaches, and there is still a long way to go to build effective entity matchers.</p>
+<h2>Acknowledgments</h2>
+<p>This work was supported by the National Key Research and Development Program of China (No. 2020AAA0106400), and the National Natural Science Foundation of China under Grants no. 62122077, 62106251, 62076233.</p></div>
+            </section>
+        
+        
+        <section role="tabpanel" id="cite" aria-labelledby="tab-cite" hidden>
+            <div class="cite" data-cite>
+                <div class="cite__formats" role="radiogroup" aria-label="Citation format">
+                                            <button type="button" data-format="acm" aria-pressed="true">ACM</button>
+                                            <button type="button" data-format="apa" aria-pressed="false">APA</button>
+                                            <button type="button" data-format="bibtex" aria-pressed="false">BibTeX</button>
+                                            <button type="button" data-format="ris" aria-pressed="false">RIS</button>
+                                    </div>
+                                    <div class="cite__text" data-format-text="acm" >Tianshu Wang, Hongyu Lin, Cheng Fu, Xianpei Han, Le Sun, Feiyu Xiong, Hui Chen, Minlong Lu, and Xiuwen Zhu. 2022. Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction. In <i>Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence, IJCAI-22</i>. IJCAI, 3978–3984. https://doi.org/10.24963/ijcai.2022/552</div>
+                                    <div class="cite__text" data-format-text="apa" hidden>Wang, T., Lin, H., Fu, C., Han, X., Sun, L., Xiong, F., Chen, H., Lu, M., &amp; Zhu, X. (2022). Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction. In <i>Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence, IJCAI-22</i> (pp. 3978–3984). IJCAI. https://doi.org/10.24963/ijcai.2022/552</div>
+                                                    <pre class="cite__text" data-format-text="bibtex" hidden>@inproceedings{ijcai2022p552,
+  title     = {Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction},
+  author    = {Wang, Tianshu and Lin, Hongyu and Fu, Cheng and Han, Xianpei and Sun, Le and Xiong, Feiyu and Chen, Hui and Lu, Minlong and Zhu, Xiuwen},
+  booktitle = {Proceedings of the Thirty-First International Joint Conference on
+               Artificial Intelligence, {IJCAI-22}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Luc De Raedt},
+  pages     = {3978--3984},
+  year      = {2022},
+  month     = {7},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2022/552},
+  url       = {https://doi.org/10.24963/ijcai.2022/552},
+}
+</pre>
+                                    <pre class="cite__text" data-format-text="ris" hidden>TY  - CPAPER
+TI  - Bridging the Gap between Reality and Ideality of Entity Matching: A Revisiting and Benchmark Re-Construction
+AU  - Wang, Tianshu
+AU  - Lin, Hongyu
+AU  - Fu, Cheng
+AU  - Han, Xianpei
+AU  - Sun, Le
+AU  - Xiong, Feiyu
+AU  - Chen, Hui
+AU  - Lu, Minlong
+AU  - Zhu, Xiuwen
+T2  - Proceedings of the Thirty-First International Joint Conference on Artificial Intelligence, IJCAI-22
+PB  - International Joint Conferences on Artificial Intelligence Organization
+PY  - 2022
+SP  - 3978
+EP  - 3984
+DO  - 10.24963/ijcai.2022/552
+UR  - https://doi.org/10.24963/ijcai.2022/552
+ER  - 
+</pre>
+                                <button type="button" class="button" data-copy>Copy</button>
+                <span class="cite__copied" role="status" hidden>Copied</span>
+            </div>
+        </section>
+
+        <section role="tabpanel" id="data" aria-labelledby="tab-data" hidden>
+            <p>Machine-readable versions of this paper, for tools and AI agents:</p>
+            <ul>
+                <li><a href="/proceedings/2022/552.md">Markdown</a> — metadata, abstract, full text and references</li>
+                <li><a href="/proceedings/2022/552.json">JSON</a> — metadata and structured references</li>
+                <li><a href="/proceedings/2022/bibtex/552">BibTeX</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <nav class="article-nav" aria-label="Previous and next paper">
+                    <a class="article-nav__prev" href="/proceedings/2022/551" title="Adaptive Long-Short Pattern Transformer for Stock Investment Selection">◀ <span class="screen-reader-text">Previous paper</span></a>
+                            <a class="article-nav__next" href="/proceedings/2022/553" title="Learnability of Competitive Threshold Models"><span class="screen-reader-text">Next paper</span> ▶</a>
+            </nav>
+</div>
+        </div>
+    </article>
+</main>
+
+<section class="image-grid">
+            <a class="image-grid__tile" href="https://ijcai.org/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/welcome.jpg" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">Welcome</span>
+        </a>
+            <a class="image-grid__tile" href="https://ijcai.org/future_conferences/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/future-conferences.jpg" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">Future Conferences</span>
+        </a>
+            <a class="image-grid__tile" href="https://ijcai.org/aijd/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/ai-journal.png" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">AI Journal Division</span>
+        </a>
+            <a class="image-grid__tile" href="https://ijcai.org/all_proceedings/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/proceedings.jpg" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">IJCAI Proceedings</span>
+        </a>
+            <a class="image-grid__tile" href="https://ijcai.org/aboutijcai/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/about.jpg" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">About IJCAI</span>
+        </a>
+            <a class="image-grid__tile" href="https://ijcai.org/awards/">
+            <span class="image-grid__img">
+                <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/grid/awards.jpg" alt="" loading="lazy">
+            </span>
+            <span class="image-grid__caption">IJCAI Awards</span>
+        </a>
+    </section>
+
+<footer class="site-footer">
+    <div class="sponsors">
+    <div class="container">
+        <h2 class="sponsors__title">Organization thanks to</h2>
+        <div class="sponsors__list">
+                            <a class="sponsors__item" href="https://www.didiglobal.com/" target="_blank" rel="noopener">
+                    <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/sponsors/didi.png" alt="DiDi" loading="lazy">
+                </a>
+                            <a class="sponsors__item" href="https://www.baidu.com/" target="_blank" rel="noopener">
+                    <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/sponsors/baidu.png" alt="Baidu" loading="lazy">
+                </a>
+                            <a class="sponsors__item" href="https://www.huawei.com" target="_blank" rel="noopener">
+                    <img src="https://ijcai.org/wp-content/themes/ijcai/assets/img/sponsors/huawei.png" alt="Huawei" loading="lazy">
+                </a>
+                    </div>
+        <hr class="sponsors__divider">
+    </div>
+</div>
+
+    <div class="site-footer__bottom">
+        <div class="container">
+            <div class="footer-columns">
+                                    <div class="footer-column">
+                        <ul id="menu-footer-1" class="footer-menu"><li id="menu-item-250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-250"><a href="https://ijcai.org/future_conferences/">Conferences</a>
+<ul class="sub-menu">
+	<li id="menu-item-251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-251"><a href="https://ijcai.org/future_conferences/">Future Conferences</a></li>
+	<li id="menu-item-252" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-252"><a href="https://ijcai.org/past_conferences/">Past Conferences</a></li>
+</ul>
+</li>
+<li id="menu-item-253" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-253"><a href="https://ijcai.org/all_proceedings/">Proceedings</a>
+<ul class="sub-menu">
+	<li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254"><a href="/proceedings/2026/">IJCAI 2026 Proceedings</a></li>
+	<li id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="https://ijcai.org/all_proceedings/">All Proceedings</a></li>
+</ul>
+</li>
+<li id="menu-item-256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-256"><a href="https://ijcai.org/awards/">Awards</a></li>
+</ul>                    </div>
+                                    <div class="footer-column">
+                        <ul id="menu-footer-2" class="footer-menu"><li id="menu-item-257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-257"><a href="https://ijcai.org/trustees/current_trustees/">Trustees/officers</a>
+<ul class="sub-menu">
+	<li id="menu-item-258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-258"><a href="https://ijcai.org/trustees/current_trustees/">Current trustees</a></li>
+	<li id="menu-item-259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-259"><a href="https://ijcai.org/trustees/trustees_elect/">Trustees Elect</a></li>
+	<li id="menu-item-260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="https://ijcai.org/officers/ijcai_secretariat/">IJCAI Secretariat</a></li>
+	<li id="menu-item-261" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-261"><a href="https://ijcai.org/officers/sponsorship_publicity/">IJCAI Sponsorship and Publicity Officers</a></li>
+	<li id="menu-item-262" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-262"><a href="https://ijcai.org/officers/ijcai_team/">IJCAI Team</a></li>
+	<li id="menu-item-263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-263"><a href="https://ijcai.org/officers/local_arrangements_chairs/">Local Arrangements Chairs</a></li>
+	<li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-264"><a href="https://ijcai.org/trustees/former_trustees_serving_on_the_executive_committee/">Former Trustees serving on the Executive Committee</a></li>
+	<li id="menu-item-265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-265"><a href="https://ijcai.org/officers/other_former_officers/">Other Former Officers</a></li>
+</ul>
+</li>
+</ul>                    </div>
+                                    <div class="footer-column">
+                        <ul id="menu-footer-3" class="footer-menu"><li id="menu-item-266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-266"><a href="https://ijcai.org/aijd/">AI Journal</a></li>
+<li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-267"><a href="https://ijcai.org/aboutijcai/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268"><a href="https://ijcai.org/aboutijcai/">About IJCAI</a></li>
+	<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a href="https://ijcai.org/documents/">Documents</a></li>
+	<li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="https://ijcai.org/contact/">Contact Information</a></li>
+</ul>
+</li>
+</ul>                    </div>
+                            </div>
+
+            <a href="#top" class="back-to-top">
+                <span class="back-to-top__triangle"></span>
+                <span>Back to top</span>
+            </a>
+
+            <div class="legal-row">
+                                                <span>&copy; 2026 International Joint Conferences on Artificial Intelligence</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ijcai/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<script id="ijcai-archive-js" src="https://ijcai.org/wp-content/themes/ijcai/assets/js/archive.js?ver=1.1.0"></script>
+<script id="ijcai-main-js" src="https://ijcai.org/wp-content/themes/ijcai/assets/js/main.js?ver=1.0.2"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://ijcai.org/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://ijcai.org/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>

@@ -1,0 +1,1743 @@
+{
+  "url": "https://api.crossref.org/works?query.bibliographic=A%20taxonomy%20of%20privacy-preserving%20record%20linkage%20techniques&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 1510733,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                16
+              ]
+            ],
+            "date-time": "2026-10-16T20:30:27Z",
+            "timestamp": 1792182627243,
+            "version": "4.4.0"
+          },
+          "reference-count": 143,
+          "publisher": "Elsevier BV",
+          "issue": "6",
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Information Systems"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2013,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1016/j.is.2012.11.005",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2012,
+                11,
+                28
+              ]
+            ],
+            "date-time": "2012-11-28T03:04:31Z",
+            "timestamp": 1354071871000
+          },
+          "page": "946-969",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 241,
+          "title": [
+            "A taxonomy of privacy-preserving record linkage techniques"
+          ],
+          "prefix": "10.1016",
+          "volume": "38",
+          "author": [
+            {
+              "given": "Dinusha",
+              "family": "Vatsalan",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Peter",
+              "family": "Christen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Vassilios S.",
+              "family": "Verykios",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "10.1016/j.is.2012.11.005_bib1",
+              "series-title": "Data Mining",
+              "author": "Han",
+              "year": "2011"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib2",
+              "series-title": "Data Quality",
+              "author": "Batini",
+              "year": "2006"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib3",
+              "series-title": "Journey to Data Quality",
+              "author": "Lee",
+              "year": "2009"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib4",
+              "first-page": "3",
+              "article-title": "Data cleaning",
+              "volume": "23",
+              "author": "Rahm",
+              "year": "2000",
+              "journal-title": "IEEE Data Engineering Bulletin"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib5",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Christen, A comparison of personal name matching: techniques and practical issues, in: IEEE ICDM Workshop on Mining Complex Data, Hong Kong, 2006.",
+              "DOI": "10.1109/ICDMW.2006.2"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib6",
+              "series-title": "Data Quality and Record Linkage Techniques",
+              "author": "Herzog",
+              "year": "2007"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib7",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Christen, Privacy-preserving data linkage and geocoding: current approaches and research directions, in: IEEE ICDM Workshop on Privacy Aspects of Data Mining, Hong Kong, 2006.",
+              "DOI": "10.1109/ICDMW.2006.135"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib8",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1109/TKDE.2007.250581",
+              "article-title": "Duplicate record detection",
+              "volume": "19",
+              "author": "Elmagarmid",
+              "year": "2007",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib9",
+              "series-title": "Schema Matching and Mapping, Data-Centric Systems and Applications",
+              "author": "Bellahsene",
+              "year": "2011"
+            },
+            {
+              "issue": "328",
+              "key": "10.1016/j.is.2012.11.005_bib10",
+              "doi-asserted-by": "crossref",
+              "first-page": "1183",
+              "DOI": "10.1080/01621459.1969.10501049",
+              "article-title": "A theory for record linkage",
+              "volume": "64",
+              "author": "Fellegi",
+              "year": "1969",
+              "journal-title": "Journal of the American Statistical Society"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib11",
+              "doi-asserted-by": "crossref",
+              "first-page": "1654",
+              "DOI": "10.14778/1687553.1687620",
+              "article-title": "Data fusion",
+              "volume": "2",
+              "author": "Dong",
+              "year": "2009",
+              "journal-title": "Proceedings of the VLDB Endowment"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib12",
+              "doi-asserted-by": "crossref",
+              "first-page": "1",
+              "DOI": "10.1145/1456650.1456651",
+              "article-title": "Data fusion",
+              "volume": "41",
+              "author": "Bleiholder",
+              "year": "2008",
+              "journal-title": "ACM Computing Surveys"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib13",
+              "series-title": "Data Matching, Data-Centric Systems and Applications",
+              "author": "Christen",
+              "year": "2012"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib14",
+              "doi-asserted-by": "crossref",
+              "unstructured": "F. Naumann, M. Herschel, An introduction to duplicate detection, Synthesis Lectures on Data Management, vol. 2 (1), 2010, pp. 1–87.",
+              "DOI": "10.2200/S00262ED1V01Y201003DTM003"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib15",
+              "doi-asserted-by": "crossref",
+              "first-page": "9",
+              "DOI": "10.1023/A:1009761603038",
+              "article-title": "Real-world data is dirty",
+              "volume": "2",
+              "author": "Hernandez",
+              "year": "1998",
+              "journal-title": "Data Mining and Knowledge Discovery"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib16",
+              "doi-asserted-by": "crossref",
+              "unstructured": "W.W. Cohen, J. Richman, Learning to match and cluster large high-dimensional data sets for data integration, in: ACM SIGKDD, Edmonton, 2002.",
+              "DOI": "10.1145/775107.775116"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib17",
+              "unstructured": "R. Baxter, P. Christen, T. Churches, A comparison of fast blocking methods for record linkage, in: ACM SIGKDD Workshop on Data Cleaning, Record Linkage and Object Consolidation, Washington, DC, 2003."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib18",
+              "first-page": "127",
+              "article-title": "Quality and complexity measures for data linkage and deduplication",
+              "volume": "vol. 43",
+              "author": "Christen",
+              "year": "2007"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.is.2012.11.005_bib19",
+              "doi-asserted-by": "crossref",
+              "first-page": "1537",
+              "DOI": "10.1109/TKDE.2011.127",
+              "article-title": "A survey of indexing techniques for scalable record linkage and deduplication",
+              "volume": "24",
+              "author": "Christen",
+              "year": "2012",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib20",
+              "doi-asserted-by": "crossref",
+              "unstructured": "C. Clifton, M. Kantarcioglu, A. Doan, G. Schadow, J. Vaidya, A. Elmagarmid, D. Suciu, Privacy-preserving data integration and sharing, in: ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery, Paris, 2004, pp. 19–26.",
+              "DOI": "10.1145/1008694.1008698"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib21",
+              "doi-asserted-by": "crossref",
+              "first-page": "19",
+              "DOI": "10.1111/j.1753-6405.2008.00160.x",
+              "article-title": "Public good through data linkage",
+              "volume": "32",
+              "author": "Brook",
+              "year": "2008",
+              "journal-title": "Australian and New Zealand Journal of Public Health"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib22",
+              "doi-asserted-by": "crossref",
+              "first-page": "186",
+              "DOI": "10.1136/ip.2003.004580",
+              "article-title": "Practical introduction to record linkage for injury research",
+              "volume": "10",
+              "author": "Clark",
+              "year": "2004",
+              "journal-title": "Injury Prevention"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib23",
+              "doi-asserted-by": "crossref",
+              "first-page": "251",
+              "DOI": "10.1111/j.1467-842X.2002.tb00682.x",
+              "article-title": "Research use of linked health data—a best practice protocol",
+              "volume": "26",
+              "author": "Kelman",
+              "year": "2002",
+              "journal-title": "Australian and New Zealand Journal of Public Health"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib24",
+              "series-title": "Effective Counterterrorism and the Limited Role of Predictive Data Mining",
+              "author": "Jonas",
+              "year": "2006"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.is.2012.11.005_bib25",
+              "doi-asserted-by": "crossref",
+              "first-page": "533",
+              "DOI": "10.1109/TKDE.2010.262",
+              "article-title": "Resilient identity crime detection",
+              "volume": "24",
+              "author": "Phua",
+              "year": "2012",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.is.2012.11.005_bib26",
+              "doi-asserted-by": "crossref",
+              "first-page": "70",
+              "DOI": "10.1145/971617.971618",
+              "article-title": "Automatically detecting deceptive criminal identities",
+              "volume": "47",
+              "author": "Wang",
+              "year": "2004",
+              "journal-title": "Communications of the ACM"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib27",
+              "unstructured": "W.E. Winkler, Overview of Record Linkage and Current Research Directions, Technical Report RR2006/02, US Bureau of the Census, 2006."
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib28",
+              "doi-asserted-by": "crossref",
+              "first-page": "457",
+              "DOI": "10.1007/s00778-009-0175-9",
+              "article-title": "Efficient privacy preserving similar document detection",
+              "volume": "19",
+              "author": "Murugesan",
+              "year": "2010",
+              "journal-title": "International Journal on Very Large Databases"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.is.2012.11.005_bib29",
+              "article-title": "Preparation of name and address data for record linkage using hidden Markov models",
+              "volume": "2",
+              "author": "Churches",
+              "year": "2002",
+              "journal-title": "BioMed Central Medical Informatics and Decision Making"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib30",
+              "doi-asserted-by": "crossref",
+              "first-page": "39",
+              "DOI": "10.1145/1656274.1656282",
+              "article-title": "Development and user experiences of an open source data cleaning, deduplication and record linkage system",
+              "volume": "11",
+              "author": "Christen",
+              "year": "2009",
+              "journal-title": "SIGKDD Explorations"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib31",
+              "unstructured": "W.W. Cohen, P. Ravikumar, S. Fienberg, A comparison of string distance metrics for name-matching tasks, in: IJCAI Workshop on Information Integration on the Web, Acapulco, 2003, pp. 73–78."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib32",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Christen, Febrl: an open source data cleaning, deduplication and record linkage system with a graphical user interface, in: ACM SIGKDD, Las Vegas, 2008, pp. 1065–1068.",
+              "DOI": "10.1145/1401890.1402020"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib33",
+              "unstructured": "L. Gu, R. Baxter, Decision models for record linkage, in: Selected Papers from AusDM, Lecture Notes in Computer Science, vol. 3755, Springer, 2006, pp. 146–160."
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.is.2012.11.005_bib34",
+              "doi-asserted-by": "crossref",
+              "first-page": "531",
+              "DOI": "10.1016/j.is.2003.12.003",
+              "article-title": "Methods for evaluating and creating data quality",
+              "volume": "29",
+              "author": "Winkler",
+              "year": "2004",
+              "journal-title": "Information Systems"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib35",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1145/1217299.1217304",
+              "article-title": "Collective entity resolution in relational data",
+              "volume": "1",
+              "author": "Bhattacharya",
+              "year": "2007",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib36",
+              "doi-asserted-by": "crossref",
+              "first-page": "716",
+              "DOI": "10.1145/1138394.1138401",
+              "article-title": "Domain-independent data cleaning via analysis of entity-relationship graph",
+              "volume": "31",
+              "author": "Kalashnikov",
+              "year": "2006",
+              "journal-title": "ACM Transactions on Database Systems"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib37",
+              "doi-asserted-by": "crossref",
+              "first-page": "113",
+              "DOI": "10.3109/14639239608995013",
+              "article-title": "Irreversible encryption method by generation of polynomials",
+              "volume": "21",
+              "author": "Quantin",
+              "year": "1996",
+              "journal-title": "Medical Informatics and the Internet in Medicine"
+            },
+            {
+              "issue": "1–2",
+              "key": "10.1016/j.is.2012.11.005_bib38",
+              "first-page": "125",
+              "article-title": "A toolbox for record linkage",
+              "volume": "33",
+              "author": "Schnell",
+              "year": "2004",
+              "journal-title": "Austrian Journal of Statistics"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib39",
+              "doi-asserted-by": "crossref",
+              "unstructured": "J. Nin, V. Muntes-Mulero, N. Martinez-Bazan, J.-L. Larriba-Pey, On the use of semantic blocking techniques for data cleansing and integration, in: IDEAS, Banff, Canada, 2007, pp. 190–198.",
+              "DOI": "10.1109/IDEAS.2007.4318104"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib40",
+              "doi-asserted-by": "crossref",
+              "unstructured": "L. Jin, C. Li, S. Mehrotra, Efficient record linkage in large data sets, in: DASFAA, Tokyo, 2003, pp. 137–146.",
+              "DOI": "10.1109/DASFAA.2003.1192377"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib41",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M.A. Hernandez, S.J. Stolfo, The merge/purge problem for large databases, in: ACM SIGMOD, San Jose, 1995, pp. 127–138.",
+              "DOI": "10.1145/568271.223807"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib42",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Aizawa, K. Oyama, A fast linkage detection scheme for multi-source information integration, in: WIRI, Tokyo, 2005, pp. 30–39.",
+              "DOI": "10.1109/WIRI.2005.2"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib43",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1145/1921632.1921635",
+              "article-title": "Robust record linkage blocking using suffix arrays and Bloom filters",
+              "volume": "5",
+              "author": "de Vries",
+              "year": "2011",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib44",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. McCallum, K. Nigam, L.H. Ungar, Efficient clustering of high-dimensional data sets with application to reference matching, in: ACM SIGKDD, Boston, 2000, pp. 169–178.",
+              "DOI": "10.1145/347090.347123"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib45",
+              "doi-asserted-by": "crossref",
+              "first-page": "381",
+              "DOI": "10.1145/356827.356830",
+              "article-title": "Approximate string matching",
+              "volume": "12",
+              "author": "Hall",
+              "year": "1980",
+              "journal-title": "ACM Computing Surveys"
+            },
+            {
+              "issue": "12",
+              "key": "10.1016/j.is.2012.11.005_bib46",
+              "doi-asserted-by": "crossref",
+              "first-page": "1439",
+              "DOI": "10.1002/(SICI)1097-024X(199612)26:12<1439::AID-SPE71>3.0.CO;2-1",
+              "article-title": "A comparison of approximate string matching algorithms",
+              "volume": "26",
+              "author": "Jokinen",
+              "year": "1996",
+              "journal-title": "Software-Practice and Experience"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib47",
+              "doi-asserted-by": "crossref",
+              "first-page": "31",
+              "DOI": "10.1145/375360.375365",
+              "article-title": "A guided tour to approximate string matching",
+              "volume": "33",
+              "author": "Navarro",
+              "year": "2001",
+              "journal-title": "ACM Computing Surveys"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib48",
+              "unstructured": "E.H. Porter, W.E. Winkler, Approximate String Comparison and its Effect on an Advanced Record Linkage System, Technical Report RR97/02, US Bureau of the Census, 1997."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib49",
+              "doi-asserted-by": "crossref",
+              "unstructured": "H. Keskustalo, A. Pirkola, K. Visala, E. Leppänen, K. Järvelin, Non-adjacent diagrams improve matching of cross-lingual spelling variants, in: String Processing and Information Retrieval, Springer, 2003, pp. 252–265.",
+              "DOI": "10.1007/978-3-540-39984-1_19"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib50",
+              "doi-asserted-by": "crossref",
+              "first-page": "377",
+              "DOI": "10.1145/146370.146380",
+              "article-title": "Techniques for automatically correcting words in text",
+              "volume": "24",
+              "author": "Kukich",
+              "year": "1992",
+              "journal-title": "ACM Computing Surveys"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib51",
+              "doi-asserted-by": "crossref",
+              "unstructured": "B. van Berkel, K. De Smedt, Triphone analysis: a combined method for the correction of orthographical and typographical errors, in: ANLP, Austin, TX, USA, 1988, pp. 77–83.",
+              "DOI": "10.3115/974235.974250"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib52",
+              "doi-asserted-by": "crossref",
+              "first-page": "414",
+              "DOI": "10.1080/01621459.1989.10478785",
+              "article-title": "Advances in record-linkage methodology as applied to matching the 1985 census of Tampa, Florida",
+              "author": "Jaro",
+              "year": "1989",
+              "journal-title": "Journal of American Statistical Association"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib53",
+              "unstructured": "W. Winkler, String comparator metrics and enhanced decision rules in the Fellegi-Sunter model of record linkage, in: Survey Research Methods, American Statistical Association, 1990, pp. 778–783."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib54",
+              "unstructured": "W. Winkler, Improved decision rules in the Fellegi–Sunter model of record linkage, in: Survey Research Methods, American Statistical Association, vol. 274, 1993, p. 279."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib55",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Christen, Automatic record linkage using seeded nearest neighbour and support vector machine classification, in: ACM SIGKDD, Las Vegas, 2008.",
+              "DOI": "10.1145/1401890.1401913"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib56",
+              "doi-asserted-by": "crossref",
+              "first-page": "267",
+              "DOI": "10.1093/biomet/80.2.267",
+              "article-title": "Maximum likelihood estimation via the ECM algorithm",
+              "volume": "80",
+              "author": "Meng",
+              "year": "1993",
+              "journal-title": "Biometrika"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib57",
+              "unstructured": "W. Winkler, Using the EM algorithm for weight computation in the Fellegi-Sunter model of record linkage, in: Survey Research Methods, American Statistical Association, vol. 667, 1988, p. 671."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib58",
+              "unstructured": "W. Winkler, Near automatic weight computation in the Fellegi-Sunter model of record linkage, in: Fifth Annual Research Conference, US Bureau of the Census, 1989."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib59",
+              "unstructured": "S. Grannis, J. Overhage, C. McDonald, Analysis of identifier performance using a deterministic linkage algorithm, in: AMIA Annual Symposium, 2002, p. 305."
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.is.2012.11.005_bib60",
+              "doi-asserted-by": "crossref",
+              "first-page": "288",
+              "DOI": "10.1145/352595.352598",
+              "article-title": "Data integration using similarity joins and a word-based information representation language",
+              "volume": "18",
+              "author": "Cohen",
+              "year": "2000",
+              "journal-title": "ACM Transactions on Information Systems"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib61",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M.G. Elfeky, V.S. Verykios, A.K. Elmagarmid, TAILOR: a record linkage toolbox, in: IEEE ICDE, San Jose, 2002, pp. 17–28.",
+              "DOI": "10.1109/ICDE.2002.994694"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib62",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Bilenko, R.J. Mooney, Adaptive duplicate detection using learnable string similarity measures, in: ACM SIGKDD, Washington, DC, 2003, pp. 39–48.",
+              "DOI": "10.1145/956750.956759"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib63",
+              "doi-asserted-by": "crossref",
+              "unstructured": "B. On, N. Koudas, D. Lee, D. Srivastava, Group linkage, in: IEEE ICDE, Istanbul, Turkey, 2007, pp. 496–505.",
+              "DOI": "10.1109/ICDE.2007.367895"
+            },
+            {
+              "issue": "11",
+              "key": "10.1016/j.is.2012.11.005_bib64",
+              "doi-asserted-by": "crossref",
+              "first-page": "2094",
+              "DOI": "10.1109/TKDE.2011.99",
+              "article-title": "Scalable iterative graph duplicate detection",
+              "volume": "24",
+              "author": "Herschel",
+              "year": "2012",
+              "journal-title": "IEEE Transactions on Knowledge and Data Engineering"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib65",
+              "series-title": "Managing Gigabytes",
+              "author": "Witten",
+              "year": "1999"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.is.2012.11.005_bib66",
+              "doi-asserted-by": "crossref",
+              "first-page": "205",
+              "DOI": "10.1145/65943.65945",
+              "article-title": "A critical investigation of recall and precision as measures of retrieval system performance",
+              "volume": "7",
+              "author": "Raghavan",
+              "year": "1989",
+              "journal-title": "ACM Transactions on Information Systems"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib67",
+              "unstructured": "C. Manning, H. Schütze, MITCogNet, Foundations of Statistical Natural Language Processing, vol. 59, MIT Press, 1999."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib68",
+              "doi-asserted-by": "crossref",
+              "first-page": "174",
+              "DOI": "10.1007/3-540-48751-4_17",
+              "article-title": "Rule evaluation measures",
+              "author": "Lavrač",
+              "year": "1999",
+              "journal-title": "Inductive Logic Programming"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib69",
+              "doi-asserted-by": "crossref",
+              "first-page": "206",
+              "DOI": "10.1504/IJDMMM.2009.026076",
+              "article-title": "Privacy preserving record linkage approaches",
+              "volume": "1",
+              "author": "Verykios",
+              "year": "2009",
+              "journal-title": "International Journal of Data Mining, Modelling and Management"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib70",
+              "doi-asserted-by": "crossref",
+              "unstructured": "R. Hall, S. Fienberg, Privacy-preserving record linkage, in: Privacy in Statistical Databases, Springer Lecture Notes in Computer Science, vol. 6344, Corfu, Greece, 2010, pp. 269–283.",
+              "DOI": "10.1007/978-3-642-15838-4_24"
+            },
+            {
+              "issue": "9",
+              "key": "10.1016/j.is.2012.11.005_bib71",
+              "article-title": "Some methods for blindfolded record linkage",
+              "volume": "4",
+              "author": "Churches",
+              "year": "2004",
+              "journal-title": "BioMed Central Medical Informatics and Decision Making"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib72",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Al-Lawati, D. Lee, P. McDaniel, Blocking-aware private record linkage, in: International Workshop on Information Quality in Information Systems, Baltimore, MD, USA, 2005, pp. 59–68.",
+              "DOI": "10.1145/1077501.1077513"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib73",
+              "unstructured": "T. Bachteler, R. Schnell, J. Reiher, An empirical comparison of approaches to approximate string matching in private record linkage, in: Statistics Canada Symposium, 2010."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib74",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Inan, M. Kantarcioglu, E. Bertino, M. Scannapieco, A hybrid approach to private record linkage, in: IEEE ICDE, Cancun, Mexico, 2008, pp. 496–505.",
+              "DOI": "10.1109/ICDE.2008.4497458"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib75",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Yakout, M. Atallah, A. Elmagarmid, Efficient private record linkage, in: IEEE ICDE, Shanghai, 2009, pp. 1283–1286.",
+              "DOI": "10.1109/ICDE.2009.221"
+            },
+            {
+              "issue": "e1",
+              "key": "10.1016/j.is.2012.11.005_bib76",
+              "doi-asserted-by": "crossref",
+              "first-page": "e157",
+              "DOI": "10.1136/amiajnl-2011-000329",
+              "article-title": "A simple heuristic for blindfolded record linkage",
+              "volume": "19",
+              "author": "Weber",
+              "year": "2012",
+              "journal-title": "Journal of the American Medical Informatics Association"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib77",
+              "doi-asserted-by": "crossref",
+              "unstructured": "C. O'Keefe, M. Yung, L. Gu, R. Baxter, Privacy-preserving data linkage protocols, in: ACM Workshop on Privacy in the Electronic Society, Washington, DC, USA, 2004, pp. 94–102.",
+              "DOI": "10.1145/1029179.1029203"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib78",
+              "doi-asserted-by": "crossref",
+              "first-page": "245",
+              "DOI": "10.1016/j.inffus.2011.04.004",
+              "article-title": "Quantifying the correctness, computational complexity, and security of privacy-preserving string comparators for record linkage",
+              "volume": "13",
+              "author": "Durham",
+              "year": "2012",
+              "journal-title": "Information Fusion"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib79",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Karakasidis, V.S. Verykios, Advances in privacy preserving record linkage, in: E-activity and Innovative Technology, Advances in Applied Intelligence Technologies Book Series, IGI Global, 2010, pp. 22–34.",
+              "DOI": "10.4018/978-1-61520-871-5.ch003"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.is.2012.11.005_bib80",
+              "doi-asserted-by": "crossref",
+              "first-page": "253",
+              "DOI": "10.1080/19393550802492503",
+              "article-title": "Privacy-preserving string comparisons in record linkage systems",
+              "volume": "17",
+              "author": "Trepetin",
+              "year": "2008",
+              "journal-title": "Information Security Journal"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib81",
+              "doi-asserted-by": "crossref",
+              "unstructured": "P. Christen, Geocode matching and privacy preservation, in: KDD Workshop on Privacy, Security, and Trust, Las Vegas, 2009, pp. 7–24.",
+              "DOI": "10.1007/978-3-642-01718-6_2"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib82",
+              "volume": "vol. 2",
+              "author": "Goldreich",
+              "year": "2004"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib83",
+              "doi-asserted-by": "crossref",
+              "first-page": "5",
+              "DOI": "10.29012/jpc.v1i1.566",
+              "article-title": "Secure multiparty computation for privacy-preserving data mining",
+              "volume": "1",
+              "author": "Lindell",
+              "year": "2009",
+              "journal-title": "Journal of Privacy and Confidentiality"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib84",
+              "first-page": "52",
+              "article-title": "An efficient protocol for secure two-party computation in the presence of malicious adversaries",
+              "author": "Lindell",
+              "year": "2007",
+              "journal-title": "EUROCRYPT"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib85",
+              "doi-asserted-by": "crossref",
+              "first-page": "143",
+              "DOI": "10.1007/s001459910006",
+              "article-title": "Security and composition of multiparty cryptographic protocols",
+              "volume": "13",
+              "author": "Canetti",
+              "year": "2000",
+              "journal-title": "Journal of Cryptology"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib86",
+              "first-page": "644",
+              "article-title": "A one way public key cryptosystem for the linkage of nominal files in epidemiological studies",
+              "volume": "8",
+              "author": "Dusserre",
+              "year": "1995",
+              "journal-title": "Medinfo"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib87",
+              "doi-asserted-by": "crossref",
+              "first-page": "117",
+              "DOI": "10.1016/S1386-5056(98)00019-7",
+              "article-title": "How to ensure data security of an epidemiological follow-up",
+              "volume": "49",
+              "author": "Quantin",
+              "year": "1998",
+              "journal-title": "International Journal of Medical Informatics"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib88",
+              "unstructured": "H. Bouzelat, C. Quantin, L. Dusserre, Extraction and anonymity protocol of medical file, in: AMIA Fall Symposium, 1996, pp. 323–327."
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.is.2012.11.005_bib89",
+              "doi-asserted-by": "crossref",
+              "first-page": "271",
+              "DOI": "10.1055/s-0038-1634527",
+              "article-title": "Automatic record hash coding and linkage for epidemiological follow-up data confidentiality",
+              "volume": "37",
+              "author": "Quantin",
+              "year": "1998",
+              "journal-title": "Methods of Information in Medicine"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib90",
+              "series-title": "Applied Cryptography",
+              "author": "Schneier",
+              "year": "1996"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib91",
+              "doi-asserted-by": "crossref",
+              "unstructured": "H. Krawczyk, M. Bellare, R. Canetti, HMAC: Keyed-Hashing for Message Authentication, RFC Editor, 1997.",
+              "DOI": "10.17487/rfc2104"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib92",
+              "unstructured": "S. Singh, The Code Book: The Secret History of Codes and Code-breaking, Fourth Estate-E-books-General, 2010."
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.is.2012.11.005_bib93",
+              "doi-asserted-by": "crossref",
+              "first-page": "28",
+              "DOI": "10.1145/772862.772867",
+              "article-title": "Tools for privacy preserving distributed data mining",
+              "volume": "4",
+              "author": "Clifton",
+              "year": "2002",
+              "journal-title": "SIGKDD Explorations"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib94",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Yao, How to generate and exchange secrets, in: 27th Annual Symposium on Foundations of Computer Science, IEEE, 1986, pp. 162–167.",
+              "DOI": "10.1109/SFCS.1986.25"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib95",
+              "doi-asserted-by": "crossref",
+              "unstructured": "O. Goldreich, S. Micali, A. Wigderson, How to play any mental game, in: 19th Annual ACM Symposium on Theory of Computing, New York, USA, 1987, pp. 218–229.",
+              "DOI": "10.1145/28395.28420"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib96",
+              "doi-asserted-by": "crossref",
+              "unstructured": "R. Agrawal, A. Evfimievski, R. Srikant, Information sharing across private databases, in: ACM SIGMOD, San Diego, 2003, pp. 86–97.",
+              "DOI": "10.1145/872769.872771"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib97",
+              "doi-asserted-by": "crossref",
+              "unstructured": "L. Kissner, D. Song, Private and Threshold Set-intersection, Technical Report, Carnegie Mellon University, 2005.",
+              "DOI": "10.21236/ADA461119"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib98",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Luby, C. Rackoff, How to construct pseudo-random permutations from pseudo-random functions, in: CRYPTO, vol. 85, 1986, p. 447.",
+              "DOI": "10.1007/3-540-39799-X_34"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib99",
+              "unstructured": "D. Song, D. Wagner, A. Perrig, Practical techniques for searches on encrypted data, in: IEEE Symposium on Security and Privacy, 2000, pp. 44–55."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib100",
+              "doi-asserted-by": "crossref",
+              "first-page": "303",
+              "DOI": "10.1007/978-3-540-30576-7_17",
+              "article-title": "Keyword search and oblivious pseudorandom functions",
+              "author": "Freedman",
+              "year": "2005",
+              "journal-title": "Theory of Cryptography"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib101",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Karakasidis, V.S. Verykios, P. Christen, Fake injection strategies for private phonetic matching, in: International Workshop on Data Privacy Management, Leuven, Belgium, 2011.",
+              "DOI": "10.1007/978-3-642-28879-1_2"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib102",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Scannapieco, I. Figotin, E. Bertino, A. Elmagarmid, Privacy preserving schema and data matching, in: ACM SIGMOD, Beijing, China, 2007, pp. 653–664.",
+              "DOI": "10.1145/1247480.1247553"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib103",
+              "doi-asserted-by": "crossref",
+              "first-page": "71",
+              "DOI": "10.1007/978-3-642-00179-6_5",
+              "article-title": "Privacy-preserving fuzzy matching using a public reference table",
+              "author": "Pang",
+              "year": "2009",
+              "journal-title": "Intelligent Patient Management"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib104",
+              "unstructured": "D. Vatsalan, P. Christen, V.S. Verykios, An efficient two-party protocol for approximate matching in private record linkage, in: AusDM, CRPIT, vol. 121, Ballarat, Australia, 2011, pp. 125–136."
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.is.2012.11.005_bib105",
+              "doi-asserted-by": "crossref",
+              "first-page": "557",
+              "DOI": "10.1142/S0218488502001648",
+              "article-title": "K-anonymity",
+              "volume": "10",
+              "author": "Sweeney",
+              "year": "2002",
+              "journal-title": "International Journal of Uncertainty Fuzziness and Knowledge Based Systems"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib106",
+              "doi-asserted-by": "crossref",
+              "unstructured": "N. Li, T. Li, S. Venkatasubramanian, T-closeness: privacy beyond k-anonymity and l-diversity, in: IEEE ICDE, Istanbul, Turkey, 2007, pp. 106–115.",
+              "DOI": "10.1109/ICDE.2007.367856"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib107",
+              "doi-asserted-by": "crossref",
+              "first-page": "3",
+              "DOI": "10.1145/1217299.1217302",
+              "article-title": "l-diversity",
+              "volume": "1",
+              "author": "Machanavajjhala",
+              "year": "2007",
+              "journal-title": "ACM Transactions on Knowledge Discovery from Data"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib108",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Kantarcioglu, W. Jiang, B. Malin, A privacy-preserving framework for integrating person-specific databases, in: Privacy in Statistical Databases, Springer, 2008, pp. 298–314.",
+              "DOI": "10.1007/978-3-540-87471-3_25"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib109",
+              "doi-asserted-by": "crossref",
+              "first-page": "567",
+              "DOI": "10.1007/s00778-010-0214-6",
+              "article-title": "Anonymity meets game theory",
+              "volume": "20",
+              "author": "Mohammed",
+              "year": "2011",
+              "journal-title": "International Journal on Very Large Databases"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib110",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Karakasidis, V.S. Verykios, Reference table based k-anonymous private blocking, in: 27th Annual ACM Symposium on Applied Computing, Trento, Italy, 2012.",
+              "DOI": "10.1145/2245276.2245444"
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.is.2012.11.005_bib111",
+              "doi-asserted-by": "crossref",
+              "first-page": "422",
+              "DOI": "10.1145/362686.362692",
+              "article-title": "Space/time trade-offs in hash coding with allowable errors",
+              "volume": "13",
+              "author": "Bloom",
+              "year": "1970",
+              "journal-title": "Communications of the ACM"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib112",
+              "doi-asserted-by": "crossref",
+              "first-page": "485",
+              "DOI": "10.1080/15427951.2004.10129096",
+              "article-title": "Network applications of bloom filters",
+              "volume": "1",
+              "author": "Broder",
+              "year": "2004",
+              "journal-title": "Internet Mathematics"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib113",
+              "unstructured": "E. Durham, Y. Xue, M. Kantarcioglu, B. Malin, Private medical record linkage with approximate matching, in: AMIA Annual Symposium, Washington, DC, 2010, p. 182."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib114",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1186/1472-6947-9-41",
+              "article-title": "Privacy-preserving record linkage using bloom filters",
+              "volume": "9",
+              "author": "Schnell",
+              "year": "2009",
+              "journal-title": "BMC Medical Informatics and Decision Making"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib115",
+              "doi-asserted-by": "crossref",
+              "first-page": "223",
+              "DOI": "10.5626/JCSE.2011.5.3.223",
+              "article-title": "Secure blocking+secure matching = secure record linkage",
+              "volume": "5",
+              "author": "Karakasidis",
+              "year": "2011",
+              "journal-title": "Journal of Computing Science and Engineering"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib116",
+              "unstructured": "P. Lai, S. Yiu, K. Chow, C. Chong, L. Hui, An efficient Bloom filter based solution for multiparty private matching, in: SAM, Las Vegas, 2006, p. 7."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib117",
+              "unstructured": "D. Vatsalan, P. Christen, An iterative two-party protocol for scalable privacy-preserving record linkage, in: AusDM, CRPIT, vol. 134, Sydney, Australia, 2012."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib118",
+              "unstructured": "H. Kargupta, S. Datta, Q. Wang, K. Sivakumar, On the privacy preserving properties of random data perturbation techniques, in: IEEE ICDM, Florida, USA, 2003, pp. 99–106."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib119",
+              "doi-asserted-by": "crossref",
+              "unstructured": "A. Inan, M. Kantarcioglu, G. Ghinita, E. Bertino, Private record matching using differential privacy, in: EDBT, Lausanne, Switzerland, 2010, pp. 123–134.",
+              "DOI": "10.1145/1739041.1739059"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib120",
+              "doi-asserted-by": "crossref",
+              "unstructured": "C. Dwork, Differential privacy, in: International Colloquium on Automata, Languages and Programming, 2006, pp. 1–12.",
+              "DOI": "10.1007/11787006_1"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib121",
+              "series-title": "Computational Complexity",
+              "author": "Papadimitriou",
+              "year": "2003"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib122",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Kuzu, M. Kantarcioglu, E. Durham, B. Malin, A constraint satisfaction cryptanalysis of Bloom filters in private record linkage, in: Privacy Enhancing Technologies, Springer, 2011, pp. 226–245.",
+              "DOI": "10.1007/978-3-642-22263-4_13"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib123",
+              "volume": "vol. 19",
+              "author": "Shannon",
+              "year": "1962"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib124",
+              "unstructured": "P. Christen, A. Pudjijono, Accurate synthetic generation of realistic personal information, in: PAKDD, Lecture Notes in Artificial Intelligence, vol. 5476, Springer, Bangkok, Thailand, 2009, pp. 507–514."
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib125",
+              "doi-asserted-by": "crossref",
+              "first-page": "19",
+              "DOI": "10.1145/1276301.1276305",
+              "article-title": "A parallel general-purpose synthetic data generator",
+              "volume": "36",
+              "author": "Hoag",
+              "year": "2007",
+              "journal-title": "ACM SIGMOD"
+            },
+            {
+              "issue": "6",
+              "key": "10.1016/j.is.2012.11.005_bib126",
+              "first-page": "281",
+              "article-title": "Evaluation of the encryption procedure and record linkage in the Belgian National Cancer Registry",
+              "volume": "58",
+              "author": "Van Eycken",
+              "year": "2000",
+              "journal-title": "Archives of Public Health"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib127",
+              "doi-asserted-by": "crossref",
+              "unstructured": "W. Du, M. Atallah, Protocols for secure remote database access with approximate matching, in: E-Commerce Security and Privacy, Springer, 2001.",
+              "DOI": "10.1007/978-1-4615-1467-1_6"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib128",
+              "unstructured": "E. Durham, A Framework for Accurate, Efficient Private Record Linkage, Ph.D. Thesis, Vanderbilt University, 2012."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib129",
+              "doi-asserted-by": "crossref",
+              "unstructured": "M. Atallah, F. Kerschbaum, W. Du, Secure and private sequence comparisons, in: Workshop on Privacy in the Electronic Society, ACM, Washington, DC, USA, 2003.",
+              "DOI": "10.1145/1005140.1005147"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib130",
+              "unstructured": "P. Ravikumar, W. Cohen, S. Fienberg, A secure protocol for computing string distance metrics, in: Workshop on Privacy and Security Aspects of Data Mining held at IEEE ICDM, Brighton, UK, 2004."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib131",
+              "doi-asserted-by": "crossref",
+              "unstructured": "F. Li, Y. Chen, B. Luo, D. Lee, P. Liu, Privacy preserving group linkage, in: Scientific and Statistical Database Management, Springer, 2011, pp. 432–450.",
+              "DOI": "10.1007/978-3-642-22351-8_27"
+            },
+            {
+              "issue": "5",
+              "key": "10.1016/j.is.2012.11.005_bib132",
+              "doi-asserted-by": "crossref",
+              "first-page": "530",
+              "DOI": "10.1109/TPAMI.2003.1195989",
+              "article-title": "Properties of embedding methods for similarity searching in metric spaces",
+              "volume": "25",
+              "author": "Hjaltason",
+              "year": "2003",
+              "journal-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib133",
+              "unstructured": "D. Lin, An information-theoretic definition of similarity, in: ICML, vol. 1, Madison, WI, USA, 1998, pp. 296–304."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib134",
+              "doi-asserted-by": "crossref",
+              "unstructured": "B. Hawashin, F. Fotouhi, T. Truta, A privacy preserving efficient protocol for semantic similarity join using long string attributes, in: ACM Workshop on Privacy and Anonymity in the Information Society, Sweden, 2011, p. 6.",
+              "DOI": "10.1145/1971690.1971696"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib135",
+              "doi-asserted-by": "crossref",
+              "first-page": "5",
+              "DOI": "10.1016/j.acha.2006.04.006",
+              "article-title": "Diffusion maps",
+              "volume": "21",
+              "author": "Coifman",
+              "year": "2006",
+              "journal-title": "Applied and Computational Harmonic Analysis"
+            },
+            {
+              "issue": "6",
+              "key": "10.1016/j.is.2012.11.005_bib136",
+              "doi-asserted-by": "crossref",
+              "first-page": "391",
+              "DOI": "10.1002/(SICI)1097-4571(199009)41:6<391::AID-ASI1>3.0.CO;2-9",
+              "article-title": "Indexing by latent semantic analysis",
+              "volume": "41",
+              "author": "Deerwester",
+              "year": "1990",
+              "journal-title": "Journal of the American Society for Information Science"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib137",
+              "volume": "vol. 103",
+              "author": "He",
+              "year": "2004"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.is.2012.11.005_bib138",
+              "doi-asserted-by": "crossref",
+              "first-page": "316",
+              "DOI": "10.1007/s00778-006-0008-z",
+              "article-title": "A secure distributed framework for achieving k-anonymity",
+              "volume": "15",
+              "author": "Jiang",
+              "year": "2006",
+              "journal-title": "International Journal on Very Large Data Bases"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib139",
+              "unstructured": "M. Sadinle, R. Hall, S. Fienberg, Approaches to multiple record linkage, in: International Statistical Institute, Dublin, Ireland, 2011."
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib140",
+              "doi-asserted-by": "crossref",
+              "unstructured": "L. Wu, X. Ying, X. Wu, Reconstruction from randomized graph via low rank approximation, in: SIAM, Columbus, Ohio, USA, 2010, pp. 60–71.",
+              "DOI": "10.1137/1.9781611972801.6"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib141",
+              "doi-asserted-by": "crossref",
+              "unstructured": "E. Zheleva, L. Getoor, Preserving the privacy of sensitive relationships in graph data, in: 1st ACM SIGKDD Workshop on Privacy, Security, and Trust, Springer-Verlag, San Jose, USA, 2007, pp. 153–171.",
+              "DOI": "10.1007/978-3-540-78478-4_9"
+            },
+            {
+              "issue": "1",
+              "key": "10.1016/j.is.2012.11.005_bib142",
+              "doi-asserted-by": "crossref",
+              "first-page": "66",
+              "DOI": "10.1145/290163.290168",
+              "article-title": "Crowds",
+              "volume": "1",
+              "author": "Reiter",
+              "year": "1998",
+              "journal-title": "ACM Transactions on Information and System Security"
+            },
+            {
+              "key": "10.1016/j.is.2012.11.005_bib143",
+              "first-page": "83",
+              "article-title": "A privacy-preserving framework for accuracy and completeness quality assessment",
+              "author": "Barone",
+              "year": "2009",
+              "journal-title": "Emerging Paradigms in Informatics, Systems and Communication"
+            }
+          ],
+          "container-title": [
+            "Information Systems"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0306437912001470?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0306437912001470?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                4,
+                22
+              ]
+            ],
+            "date-time": "2025-04-22T22:07:50Z",
+            "timestamp": 1745359670000
+          },
+          "score": 46.255775,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0306437912001470"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2013,
+                9
+              ]
+            ]
+          },
+          "references-count": 143,
+          "journal-issue": {
+            "issue": "6",
+            "published-print": {
+              "date-parts": [
+                [
+                  2013,
+                  9
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "S0306437912001470"
+          ],
+          "URL": "https://doi.org/10.1016/j.is.2012.11.005",
+          "ISSN": [
+            "0306-4379"
+          ],
+          "issn-type": [
+            {
+              "value": "0306-4379",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2013,
+                9
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "A taxonomy of privacy-preserving record linkage techniques",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Information Systems",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.is.2012.11.005",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "value": "Copyright © 2012 Elsevier Ltd. All rights reserved.",
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                28
+              ]
+            ],
+            "date-time": "2026-07-28T15:10:02Z",
+            "timestamp": 1785251402378,
+            "version": "3.55.0"
+          },
+          "reference-count": 0,
+          "publisher": "Journal of Privacy and Confidentiality",
+          "issue": "1",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    7,
+                    29
+                  ]
+                ],
+                "date-time": "2022-07-29T00:00:00Z",
+                "timestamp": 1659052800000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "JPC"
+          ],
+          "abstract": "<jats:p>Record linkage is the process of identifying records that corresponds to the same real-world entities across different databases. Due to the absence of unique entity identifiers, record linkage is often based on quasi-identifying values of entities (individuals) such as their names and addresses. However, regulatory ethical and legal obligations can limit the use of such personal information in the linkage process in order to protect the privacy and confidentiality of entities. Privacy-preserving record linkage (PPRL) aims to develop techniques that enable the linkage of records without revealing any sensitive or confidential information about the entities that are represented by these records. Over the past two decades various PPRL techniques have been proposed to securely link records between different databases by encrypting and/or encoding sensitive values. However, some PPRL techniques, such as popular Bloom filter encoding, have shown to be susceptible to privacy attacks. These attacks exploit the weaknesses of PPRL techniques by trying to reidentify encrypted and/or encoded sensitive values. In this paper we propose a taxonomy for analysing such attacks on PPRL where we categorise attacks across twelve dimensions, including different types of adversaries, different attack types, assumed knowledge of the adversary, the vulnerabilities of encoded and/or encrypted values exploited by an attack, and assessing the success of attacks. Our taxonomy can be used by data custodians to analyse the privacy risks associated with different PPRL techniques in terms of existing as well as potential future attacks on PPRL.</jats:p>",
+          "DOI": "10.29012/jpc.764",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                2
+              ]
+            ],
+            "date-time": "2022-08-02T12:43:54Z",
+            "timestamp": 1659444234000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 18,
+          "title": [
+            "Taxonomy of Attacks on Privacy-Preserving Record Linkage"
+          ],
+          "prefix": "10.29012",
+          "volume": "12",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-5386-5871",
+              "authenticated-orcid": false,
+              "given": "Anushka",
+              "family": "Vidanage",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5405-3704",
+              "authenticated-orcid": false,
+              "given": "Thilina",
+              "family": "Ranbaduge",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-3435-2015",
+              "authenticated-orcid": false,
+              "given": "Peter",
+              "family": "Christen",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-7843-4974",
+              "authenticated-orcid": false,
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "11550",
+          "published-online": {
+            "date-parts": [
+              [
+                2022,
+                7,
+                29
+              ]
+            ]
+          },
+          "container-title": [
+            "Journal of Privacy and Confidentiality"
+          ],
+          "link": [
+            {
+              "URL": "https://journalprivacyconfidentiality.org/index.php/jpc/article/download/764/734",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://journalprivacyconfidentiality.org/index.php/jpc/article/download/764/734",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                2
+              ]
+            ],
+            "date-time": "2022-08-02T12:43:55Z",
+            "timestamp": 1659444235000
+          },
+          "score": 42.90667,
+          "resource": {
+            "primary": {
+              "URL": "https://journalprivacyconfidentiality.org/index.php/jpc/article/view/764"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2022,
+                7,
+                29
+              ]
+            ]
+          },
+          "references-count": 0,
+          "journal-issue": {
+            "issue": "1",
+            "published-online": {
+              "date-parts": [
+                [
+                  2022,
+                  7,
+                  29
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.29012/jpc.764",
+          "ISSN": [
+            "2575-8527"
+          ],
+          "issn-type": [
+            {
+              "value": "2575-8527",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                7,
+                29
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                1,
+                14
+              ]
+            ],
+            "date-time": "2026-01-14T20:07:12Z",
+            "timestamp": 1768421232896,
+            "version": "3.49.0"
+          },
+          "reference-count": 0,
+          "publisher": "SCITEPRESS - Science and Technology Publications",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          },
+          "DOI": "10.5220/0010787200003123",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2022,
+                2,
+                24
+              ]
+            ],
+            "date-time": "2022-02-24T20:55:18Z",
+            "timestamp": 1645736118000
+          },
+          "page": "353-360",
+          "source": "Crossref",
+          "is-referenced-by-count": 3,
+          "title": [
+            "Salting as a Countermeasure against Attacks on Privacy Preserving Record Linkage Techniques"
+          ],
+          "prefix": "10.5220",
+          "author": [
+            {
+              "given": "Yanling",
+              "family": "Chen",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Methodology Research Unit, University of Duisburg-Essen, Duisburg, Germany, --- Select a Country ---"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Methodology Research Unit, University of Duisburg-Essen, Duisburg, Germany, --- Select a Country ---"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Frederik",
+              "family": "Armknecht",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Practical Computer Science Unit, University of Mannheim, Mannheim, Germany, --- Select a Country ---"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Youzhe",
+              "family": "Heng",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Practical Computer Science Unit, University of Mannheim, Mannheim, Germany, --- Select a Country ---"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "3171",
+          "event": {
+            "name": "15th International Conference on Health Informatics",
+            "location": "Online Streaming, --- Select a Country ---",
+            "start": {
+              "date-parts": [
+                [
+                  2022,
+                  2,
+                  9
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2022,
+                  2,
+                  11
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "Proceedings of the 15th International Joint Conference on Biomedical Engineering Systems and Technologies"
+          ],
+          "original-title": [
+            "Salting as a Countermeasure against Attacks on Privacy Preserving Record Linkage Techniques"
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2022,
+                8,
+                11
+              ]
+            ],
+            "date-time": "2022-08-11T09:23:49Z",
+            "timestamp": 1660209829000
+          },
+          "score": 42.270462,
+          "resource": {
+            "primary": {
+              "URL": "https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0010787200003123"
+            }
+          },
+          "subtitle": [
+            ""
+          ],
+          "issued": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.5220/0010787200003123",
+          "published": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

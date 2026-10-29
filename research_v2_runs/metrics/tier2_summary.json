@@ -1,0 +1,1032 @@
+{
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "status": "DONE",
+  "models": [
+    {
+      "name": "GBDT-fusion-without-username",
+      "exp_id": "E5-4",
+      "learner": "GBDT",
+      "feature": "fusion",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      },
+      "group": null,
+      "exclude_group": "username",
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.9472853879637209,
+        0.9478269013916899,
+        0.9471513214742021,
+        0.9471742579841154,
+        0.9476770554742614
+      ],
+      "seed_AP_SD": 0.00030915182412518587,
+      "mean_score_AP": 0.9483411977836889,
+      "model_paths": [
+        "artifacts/model_GBDT-fusion-without-username_seed11.pkl",
+        "artifacts/model_GBDT-fusion-without-username_seed23.pkl",
+        "artifacts/model_GBDT-fusion-without-username_seed42.pkl",
+        "artifacts/model_GBDT-fusion-without-username_seed71.pkl",
+        "artifacts/model_GBDT-fusion-without-username_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-fusion-without-username_seed11.pkl": "7e116b9b9e2ce9aed3b7c6fb64b158185d4036757dda2038aafb882e46a26b12",
+        "artifacts/model_GBDT-fusion-without-username_seed23.pkl": "f98c0175b4d88ee8bdd3a570c431b412a7140290cd197902036ec8c2a8b62b94",
+        "artifacts/model_GBDT-fusion-without-username_seed42.pkl": "18b92e7d0151c8e5a3a229958b49266c61332dce997ade0f8e64811be5739f6f",
+        "artifacts/model_GBDT-fusion-without-username_seed71.pkl": "7c21b31642c82b4c020193c21367ce8903ed47a655a3a6638d2216c8c613e177",
+        "artifacts/model_GBDT-fusion-without-username_seed101.pkl": "77912ad06155c1f2a9a3c491189777d67897233d23faf78c0ba278f10278a54f"
+      },
+      "oof_path": "artifacts/oof_GBDT-fusion-without-username.npz",
+      "oof_sha256": "90ab9f8c4928592087f9f28d4c3aa428c8b5362d06b0716b6143cc0bd715370b",
+      "operating_points": {
+        "validation_F1_threshold": 0.86,
+        "validation_F1": 0.9154715872938182,
+        "precision_target_threshold": 0.6090136534705877,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9483411977836886,
+        "precision": 0.8631133447956619,
+        "recall": 0.907397107897664,
+        "f1": 0.884701416661018,
+        "tp": 19578,
+        "fp": 3105,
+        "tn": 326813,
+        "fn": 1998,
+        "automatic_fn": 1998,
+        "utility_fn": 1998,
+        "rejected_positive_fn": 1998,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.907397107897664,
+        "raw_cost": 8208.0,
+        "cost_per_pair": 0.023351749958747517,
+        "brier": 0.01265064007904677,
+        "ece15_equalmass": 0.025904149679480782
+      }
+    },
+    {
+      "name": "GBDT-fusion-without-fullname",
+      "exp_id": "E5-4",
+      "learner": "GBDT",
+      "feature": "fusion",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      },
+      "group": null,
+      "exclude_group": "fullname",
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.9114087868100693,
+        0.9116988779242234,
+        0.9122237973887128,
+        0.9114777396140012,
+        0.9119869685300714
+      ],
+      "seed_AP_SD": 0.0003440121133337745,
+      "mean_score_AP": 0.9127664667822258,
+      "model_paths": [
+        "artifacts/model_GBDT-fusion-without-fullname_seed11.pkl",
+        "artifacts/model_GBDT-fusion-without-fullname_seed23.pkl",
+        "artifacts/model_GBDT-fusion-without-fullname_seed42.pkl",
+        "artifacts/model_GBDT-fusion-without-fullname_seed71.pkl",
+        "artifacts/model_GBDT-fusion-without-fullname_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-fusion-without-fullname_seed11.pkl": "95e52cff74222fda7211bc40cde7b2c694778770a7ca06413b73102681086733",
+        "artifacts/model_GBDT-fusion-without-fullname_seed23.pkl": "60e1ef6f9745eac13225eececf55ebcca7a996ffd5ace527507062db57c736d0",
+        "artifacts/model_GBDT-fusion-without-fullname_seed42.pkl": "c7e378e3beaf4f8d7fee461288e3d1c145cc9ccf7144471bb2502233ebc29cb8",
+        "artifacts/model_GBDT-fusion-without-fullname_seed71.pkl": "e3426116f359750183054126db323974f77dadfd20b3ca642d9ddbd8291e0601",
+        "artifacts/model_GBDT-fusion-without-fullname_seed101.pkl": "3ed33ec95a4ef6c4088ad9d4f5b29774407890cdb8341cc06e061be6b5539844"
+      },
+      "oof_path": "artifacts/oof_GBDT-fusion-without-fullname.npz",
+      "oof_sha256": "7768e3c8eec7593558b944ac11318ee6123296890e55e209bb2d6bd0c26647f7",
+      "operating_points": {
+        "validation_F1_threshold": 0.89,
+        "validation_F1": 0.8761720012932428,
+        "precision_target_threshold": 0.7795709817625756,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9127664667822276,
+        "precision": 0.7745500862848221,
+        "recall": 0.8737022617723397,
+        "f1": 0.8211438776843665,
+        "tp": 18851,
+        "fp": 5487,
+        "tn": 324431,
+        "fn": 2725,
+        "automatic_fn": 2725,
+        "utility_fn": 2725,
+        "rejected_positive_fn": 2725,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.8737022617723397,
+        "raw_cost": 13699.0,
+        "cost_per_pair": 0.038973638241335554,
+        "brier": 0.01981903704484621,
+        "ece15_equalmass": 0.04038203656627669
+      }
+    },
+    {
+      "name": "GBDT-fusion-without-bio",
+      "exp_id": "E5-4",
+      "learner": "GBDT",
+      "feature": "fusion",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      },
+      "group": null,
+      "exclude_group": "bio",
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.9737667567683117,
+        0.9739060205765622,
+        0.9738161522965697,
+        0.9735004154760155,
+        0.9736209096925588
+      ],
+      "seed_AP_SD": 0.00016128417033275176,
+      "mean_score_AP": 0.9744091004462285,
+      "model_paths": [
+        "artifacts/model_GBDT-fusion-without-bio_seed11.pkl",
+        "artifacts/model_GBDT-fusion-without-bio_seed23.pkl",
+        "artifacts/model_GBDT-fusion-without-bio_seed42.pkl",
+        "artifacts/model_GBDT-fusion-without-bio_seed71.pkl",
+        "artifacts/model_GBDT-fusion-without-bio_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-fusion-without-bio_seed11.pkl": "b74c6fc450346531f08c856c156ddea6489c301202a960ebedba989f6ae5b7a4",
+        "artifacts/model_GBDT-fusion-without-bio_seed23.pkl": "384f4e05148a6d2b092981eb2b616ae13a70cafb9d251bc0319cf36c65e0a9e1",
+        "artifacts/model_GBDT-fusion-without-bio_seed42.pkl": "e5f32021f455d3e47e68469f6918de9a666488e8d5ef634f77da9974c03ae6c3",
+        "artifacts/model_GBDT-fusion-without-bio_seed71.pkl": "f60426200af76c7f7564feb18e1c15dfb8ab0817a913e5c51a98ce028f1e3f82",
+        "artifacts/model_GBDT-fusion-without-bio_seed101.pkl": "0cb9f3ec0eafdfe56484bda15425a825162849e01de062dd6be3cae6df2b3d59"
+      },
+      "oof_path": "artifacts/oof_GBDT-fusion-without-bio.npz",
+      "oof_sha256": "0243b83264f21189143eb0e6d44c80a20b3135e5320c64e4d7632ca1e57d44b3",
+      "operating_points": {
+        "validation_F1_threshold": 0.9,
+        "validation_F1": 0.9476899579992364,
+        "precision_target_threshold": 0.6019638628823967,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.974409100446235,
+        "precision": 0.8677090357383682,
+        "recall": 0.9542547274749722,
+        "f1": 0.9089263641179588,
+        "tp": 20589,
+        "fp": 3139,
+        "tn": 326779,
+        "fn": 987,
+        "automatic_fn": 987,
+        "utility_fn": 987,
+        "rejected_positive_fn": 987,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9542547274749722,
+        "raw_cost": 7265.0,
+        "cost_per_pair": 0.02066891611236607,
+        "brier": 0.009153288395506437,
+        "ece15_equalmass": 0.017620346074645337
+      }
+    },
+    {
+      "name": "GBDT-fusion-without-location",
+      "exp_id": "E5-4",
+      "learner": "GBDT",
+      "feature": "fusion",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      },
+      "group": null,
+      "exclude_group": "location",
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.977005139327513,
+        0.9774530709478036,
+        0.9770940720417566,
+        0.9767792504460469,
+        0.9769863808954464
+      ],
+      "seed_AP_SD": 0.00024639971194684925,
+      "mean_score_AP": 0.9776849982207726,
+      "model_paths": [
+        "artifacts/model_GBDT-fusion-without-location_seed11.pkl",
+        "artifacts/model_GBDT-fusion-without-location_seed23.pkl",
+        "artifacts/model_GBDT-fusion-without-location_seed42.pkl",
+        "artifacts/model_GBDT-fusion-without-location_seed71.pkl",
+        "artifacts/model_GBDT-fusion-without-location_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-fusion-without-location_seed11.pkl": "95221dff61a73d6bf261e3d680643f4fc9d2931ea4bf2f90898fc5474122659d",
+        "artifacts/model_GBDT-fusion-without-location_seed23.pkl": "6af78879c8692dd642b3e4343e0b2af33d9b9a2990db1facf504d716bea3a4eb",
+        "artifacts/model_GBDT-fusion-without-location_seed42.pkl": "4b5b96be3f38715783373f75bd180e63df148a6fbf950443c82db925dc07dbe7",
+        "artifacts/model_GBDT-fusion-without-location_seed71.pkl": "0931fe5166167e1b5ba1b99fd464adb304e5698931d97db180567f7dd2efed5a",
+        "artifacts/model_GBDT-fusion-without-location_seed101.pkl": "3c15ab61359765604672f4db65a7703cc6454bffa1fa07dd5804782bf2dba28e"
+      },
+      "oof_path": "artifacts/oof_GBDT-fusion-without-location.npz",
+      "oof_sha256": "b827a67f3b3ae2b358d0d8366d16d1f8a6b219ad0dd6d946bfa2fafba6b18428",
+      "operating_points": {
+        "validation_F1_threshold": 0.9,
+        "validation_F1": 0.95209780230235,
+        "precision_target_threshold": 0.5644030144655231,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9776849982207773,
+        "precision": 0.8797923492617336,
+        "recall": 0.9582869855394883,
+        "f1": 0.9173636222463785,
+        "tp": 20676,
+        "fp": 2825,
+        "tn": 327093,
+        "fn": 900,
+        "automatic_fn": 900,
+        "utility_fn": 900,
+        "rejected_positive_fn": 900,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9582869855394883,
+        "raw_cost": 6550.0,
+        "cost_per_pair": 0.018634741987060947,
+        "brier": 0.008339125556800737,
+        "ece15_equalmass": 0.0161068580776342
+      }
+    },
+    {
+      "name": "GBDT-fusion-without-links",
+      "exp_id": "E5-4",
+      "learner": "GBDT",
+      "feature": "fusion",
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "max_iter": 150,
+        "min_samples_leaf": 50,
+        "l2_regularization": 0.28297338396242927
+      },
+      "group": null,
+      "exclude_group": "links",
+      "seeds": [
+        11,
+        23,
+        42,
+        71,
+        101
+      ],
+      "seed_AP": [
+        0.9629620060116048,
+        0.9629684386178726,
+        0.9633183334528217,
+        0.9627528990117292,
+        0.9627898126945713
+      ],
+      "seed_AP_SD": 0.00022378457905845007,
+      "mean_score_AP": 0.9635927862676646,
+      "model_paths": [
+        "artifacts/model_GBDT-fusion-without-links_seed11.pkl",
+        "artifacts/model_GBDT-fusion-without-links_seed23.pkl",
+        "artifacts/model_GBDT-fusion-without-links_seed42.pkl",
+        "artifacts/model_GBDT-fusion-without-links_seed71.pkl",
+        "artifacts/model_GBDT-fusion-without-links_seed101.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_GBDT-fusion-without-links_seed11.pkl": "fc9401fc68f1738bc5cfb9ba895b9e392ddec5859d5a0fab0c86f92e25f8de7d",
+        "artifacts/model_GBDT-fusion-without-links_seed23.pkl": "292ef24ef48f7e18edb1d72dcbedc7441aaa6c40c92dd992d3c48fee6a4a50b0",
+        "artifacts/model_GBDT-fusion-without-links_seed42.pkl": "88ee61bb1789d720d6f065969de78fd0f1a5d05f16a695355f09a7549a3cd8ea",
+        "artifacts/model_GBDT-fusion-without-links_seed71.pkl": "7b27178db314089f021a248d7c934a61441b5cb784ebb218a31aa9242f946e57",
+        "artifacts/model_GBDT-fusion-without-links_seed101.pkl": "8ba4a8061bbddaca109e9fbcc248e06654e6ca82ab5374d1b8daa4d2c5065e28"
+      },
+      "oof_path": "artifacts/oof_GBDT-fusion-without-links.npz",
+      "oof_sha256": "068fb079467b479ef5f8e4687b0b5421f6e6b9d0b9a85283da9a013b369c8c6e",
+      "operating_points": {
+        "validation_F1_threshold": 0.89,
+        "validation_F1": 0.9352092352092352,
+        "precision_target_threshold": 0.638735330671071,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 25,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9635927862676686,
+        "precision": 0.8514942914707858,
+        "recall": 0.9402113459399333,
+        "f1": 0.8936563876651982,
+        "tp": 20286,
+        "fp": 3538,
+        "tn": 326380,
+        "fn": 1290,
+        "automatic_fn": 1290,
+        "utility_fn": 1290,
+        "rejected_positive_fn": 1290,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9402113459399333,
+        "raw_cost": 8366.0,
+        "cost_per_pair": 0.0238012597654583,
+        "brier": 0.010942411771350238,
+        "ece15_equalmass": 0.02222726509171384
+      }
+    },
+    {
+      "name": "LR-fusion-without-username",
+      "exp_id": "E5-4",
+      "learner": "LR",
+      "feature": "fusion",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      },
+      "group": null,
+      "exclude_group": "username",
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.9208400654791709
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.9208400654791709,
+      "model_paths": [
+        "artifacts/model_LR-fusion-without-username_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-fusion-without-username_seed42.pkl": "e2a9e4838fef48c283e6a640557779c64dc7f48a1f3d2e63c288ce94e931a01f"
+      },
+      "oof_path": "artifacts/oof_LR-fusion-without-username.npz",
+      "oof_sha256": "7c361eb28471b7ddd02ac1cbe086672f6452a1a43fd0598eaddd424ef186823b",
+      "operating_points": {
+        "validation_F1_threshold": 0.78,
+        "validation_F1": 0.8799387593836429,
+        "precision_target_threshold": 0.6735427379608154,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9208400654791631,
+        "precision": 0.8092948035919479,
+        "recall": 0.8813496477567668,
+        "f1": 0.8437867459454663,
+        "tp": 19016,
+        "fp": 4481,
+        "tn": 325437,
+        "fn": 2560,
+        "automatic_fn": 2560,
+        "utility_fn": 2560,
+        "rejected_positive_fn": 2560,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.8813496477567668,
+        "raw_cost": 11522.0,
+        "cost_per_pair": 0.032780075904567364,
+        "brier": 0.017820893969870705,
+        "ece15_equalmass": 0.03704459177127985
+      }
+    },
+    {
+      "name": "LR-fusion-without-fullname",
+      "exp_id": "E5-4",
+      "learner": "LR",
+      "feature": "fusion",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      },
+      "group": null,
+      "exclude_group": "fullname",
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.8799712227486455
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.8799712227486455,
+      "model_paths": [
+        "artifacts/model_LR-fusion-without-fullname_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-fusion-without-fullname_seed42.pkl": "85761c425eecaccb262c25eada7419761ccbada2def15b77a67ba49ed2bb00bd"
+      },
+      "oof_path": "artifacts/oof_LR-fusion-without-fullname.npz",
+      "oof_sha256": "d5bef2cb1545d0dc44092e316afd1ebdd67a199a76a52de373e7952479b796c2",
+      "operating_points": {
+        "validation_F1_threshold": 0.8,
+        "validation_F1": 0.8370743322006994,
+        "precision_target_threshold": 0.7993258833885193,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.8799712227486448,
+        "precision": 0.7268209287531806,
+        "recall": 0.8472840192806822,
+        "f1": 0.7824430748159562,
+        "tp": 18281,
+        "fp": 6871,
+        "tn": 323047,
+        "fn": 3295,
+        "automatic_fn": 3295,
+        "utility_fn": 3295,
+        "rejected_positive_fn": 3295,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.8472840192806822,
+        "raw_cost": 17037.0,
+        "cost_per_pair": 0.04847024415779501,
+        "brier": 0.025061149335722583,
+        "ece15_equalmass": 0.051137630318118174
+      }
+    },
+    {
+      "name": "LR-fusion-without-bio",
+      "exp_id": "E5-4",
+      "learner": "LR",
+      "feature": "fusion",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      },
+      "group": null,
+      "exclude_group": "bio",
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.9529450265885865
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.9529450265885865,
+      "model_paths": [
+        "artifacts/model_LR-fusion-without-bio_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-fusion-without-bio_seed42.pkl": "9ef706f26be9affc72768fc7a91ee40ace4c851a12b5bdb398ea2a0202f6d8f4"
+      },
+      "oof_path": "artifacts/oof_LR-fusion-without-bio.npz",
+      "oof_sha256": "713d4f1dbb5bc1ed9855e377da759a3f0ee5109414413ab41d445124120bbc93",
+      "operating_points": {
+        "validation_F1_threshold": 0.86,
+        "validation_F1": 0.9128465915970456,
+        "precision_target_threshold": 0.7013669013977051,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9529450265885888,
+        "precision": 0.8112738100093813,
+        "recall": 0.9218576195773082,
+        "f1": 0.8630377714620441,
+        "tp": 19890,
+        "fp": 4627,
+        "tn": 325291,
+        "fn": 1686,
+        "automatic_fn": 1686,
+        "utility_fn": 1686,
+        "rejected_positive_fn": 1686,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9218576195773082,
+        "raw_cost": 10940.0,
+        "cost_per_pair": 0.031124286616556755,
+        "brier": 0.014647349243033406,
+        "ece15_equalmass": 0.028545537278760684
+      }
+    },
+    {
+      "name": "LR-fusion-without-location",
+      "exp_id": "E5-4",
+      "learner": "LR",
+      "feature": "fusion",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      },
+      "group": null,
+      "exclude_group": "location",
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.9599889476500268
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.9599889476500268,
+      "model_paths": [
+        "artifacts/model_LR-fusion-without-location_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-fusion-without-location_seed42.pkl": "c9b4b5bf63b8354f472fcc5c04a14a6e019a245ae4f48b121a18faaeff285adc"
+      },
+      "oof_path": "artifacts/oof_LR-fusion-without-location.npz",
+      "oof_sha256": "4accc4f6afbe0cddb7ab85d411b45a4e1cbedaec633f16522669670940db5717",
+      "operating_points": {
+        "validation_F1_threshold": 0.87,
+        "validation_F1": 0.9229733951789276,
+        "precision_target_threshold": 0.685721755027771,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9599889476500315,
+        "precision": 0.827356473104129,
+        "recall": 0.9324249165739711,
+        "f1": 0.8767541183648566,
+        "tp": 20118,
+        "fp": 4198,
+        "tn": 325720,
+        "fn": 1458,
+        "automatic_fn": 1458,
+        "utility_fn": 1458,
+        "rejected_positive_fn": 1458,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9324249165739711,
+        "raw_cost": 9854.0,
+        "cost_per_pair": 0.028034617945114283,
+        "brier": 0.013009244473845995,
+        "ece15_equalmass": 0.025623973705479364
+      }
+    },
+    {
+      "name": "LR-fusion-without-links",
+      "exp_id": "E5-4",
+      "learner": "LR",
+      "feature": "fusion",
+      "params": {
+        "C": 0.6419155626253977,
+        "class_weight": null
+      },
+      "group": null,
+      "exclude_group": "links",
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.9412323765172113
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.9412323765172113,
+      "model_paths": [
+        "artifacts/model_LR-fusion-without-links_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-fusion-without-links_seed42.pkl": "37e8497b838c1641aa7b8ecf7341dcb7ed8a18144b8aa5d89ec1a2070e16a87b"
+      },
+      "oof_path": "artifacts/oof_LR-fusion-without-links.npz",
+      "oof_sha256": "813fa3146c4ed0667e7d17c996e0974e3703a44f24811ad578367a64c9a8111d",
+      "operating_points": {
+        "validation_F1_threshold": 0.87,
+        "validation_F1": 0.9065562524500196,
+        "precision_target_threshold": 0.7202271223068237,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.9412323765172145,
+        "precision": 0.7873563218390804,
+        "recall": 0.9079996292176492,
+        "f1": 0.8433854233931724,
+        "tp": 19591,
+        "fp": 5291,
+        "tn": 324627,
+        "fn": 1985,
+        "automatic_fn": 1985,
+        "utility_fn": 1985,
+        "rejected_positive_fn": 1985,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.9079996292176492,
+        "raw_cost": 12567.0,
+        "cost_per_pair": 0.03575309962616716,
+        "brier": 0.016429296990307252,
+        "ece15_equalmass": 0.03351571803627531
+      }
+    },
+    {
+      "name": "LR-lexical-single-username",
+      "exp_id": "E5-5",
+      "learner": "LR",
+      "feature": "lexical",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      },
+      "group": "username",
+      "exclude_group": null,
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.7680067976533502
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.7680067976533502,
+      "model_paths": [
+        "artifacts/model_LR-lexical-single-username_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-lexical-single-username_seed42.pkl": "5b80a325e75fb58e7a5effbef1ced1af067572ea058c686f05ee0078bf95d02a"
+      },
+      "oof_path": "artifacts/oof_LR-lexical-single-username.npz",
+      "oof_sha256": "bca0684383d59662353c3b22422bfdba131e2011b6f730c5e4dabfb3fce5aa00",
+      "operating_points": {
+        "validation_F1_threshold": 0.78,
+        "validation_F1": 0.7627861927950712,
+        "precision_target_threshold": 0.7700443267822266,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.7680067976533521,
+        "precision": 0.6227956482463375,
+        "recall": 0.7349369670003708,
+        "f1": 0.6742351765631313,
+        "tp": 15857,
+        "fp": 9604,
+        "tn": 320314,
+        "fn": 5719,
+        "automatic_fn": 5719,
+        "utility_fn": 5719,
+        "rejected_positive_fn": 5719,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.7349369670003708,
+        "raw_cost": 24927.0,
+        "cost_per_pair": 0.07091728450556767,
+        "brier": 0.039156887687481684,
+        "ece15_equalmass": 0.08317245215290643
+      }
+    },
+    {
+      "name": "LR-lexical-single-fullname",
+      "exp_id": "E5-5",
+      "learner": "LR",
+      "feature": "lexical",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      },
+      "group": "fullname",
+      "exclude_group": null,
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.8612344062717435
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.8612344062717435,
+      "model_paths": [
+        "artifacts/model_LR-lexical-single-fullname_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-lexical-single-fullname_seed42.pkl": "5eb6bde783fca9f301d690a467746cc65d13e9b31572c8d320d1e46db9bad535"
+      },
+      "oof_path": "artifacts/oof_LR-lexical-single-fullname.npz",
+      "oof_sha256": "d6726397a411afc4e4c8ac76271528413d4cc8d024eaeb52c73eaeef270e116e",
+      "operating_points": {
+        "validation_F1_threshold": 0.7,
+        "validation_F1": 0.830572609948628,
+        "precision_target_threshold": 0.6943855881690979,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.8612344062717433,
+        "precision": 0.7353809562863939,
+        "recall": 0.8311549870226177,
+        "f1": 0.7803402811017797,
+        "tp": 17933,
+        "fp": 6453,
+        "tn": 323465,
+        "fn": 3643,
+        "automatic_fn": 3643,
+        "utility_fn": 3643,
+        "rejected_positive_fn": 3643,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.8311549870226177,
+        "raw_cost": 16549.0,
+        "cost_per_pair": 0.047081884754789555,
+        "brier": 0.026915289201323016,
+        "ece15_equalmass": 0.056099926003495365
+      }
+    },
+    {
+      "name": "LR-lexical-single-bio",
+      "exp_id": "E5-5",
+      "learner": "LR",
+      "feature": "lexical",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      },
+      "group": "bio",
+      "exclude_group": null,
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.19338797037426556
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.19338797037426556,
+      "model_paths": [
+        "artifacts/model_LR-lexical-single-bio_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-lexical-single-bio_seed42.pkl": "a4c729368cd30dafaf3acd68ff3f6cc319f4850a6bbaada7b40394e58638a913"
+      },
+      "oof_path": "artifacts/oof_LR-lexical-single-bio.npz",
+      "oof_sha256": "0791730e9db3f3251b668f16dc02869c844603ca1138757de1abeaf854677a27",
+      "operating_points": {
+        "validation_F1_threshold": 0.39,
+        "validation_F1": 0.1944955253156798,
+        "precision_target_threshold": 0.7655746936798096,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.1933879703742657,
+        "precision": 0.5363949483352468,
+        "recall": 0.10826844642195031,
+        "f1": 0.1801704523543249,
+        "tp": 2336,
+        "fp": 2019,
+        "tn": 327899,
+        "fn": 19240,
+        "automatic_fn": 19240,
+        "utility_fn": 19240,
+        "rejected_positive_fn": 19240,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.10826844642195031,
+        "raw_cost": 23278.0,
+        "cost_per_pair": 0.06622588152287094,
+        "brier": 0.08608142646524077,
+        "ece15_equalmass": 0.17203665905794638
+      }
+    },
+    {
+      "name": "LR-lexical-single-location",
+      "exp_id": "E5-5",
+      "learner": "LR",
+      "feature": "lexical",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      },
+      "group": "location",
+      "exclude_group": null,
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.0636024554849838
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.0636024554849838,
+      "model_paths": [
+        "artifacts/model_LR-lexical-single-location_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-lexical-single-location_seed42.pkl": "9f479fa8a6c501d0c09a3086746e921a450d80bce39ad49d636036c94c6b7601"
+      },
+      "oof_path": "artifacts/oof_LR-lexical-single-location.npz",
+      "oof_sha256": "48bb065e4dd9b8c60b891d9c2d8f9f1b552d57a6da2672d65c0b01c4077f85eb",
+      "operating_points": {
+        "validation_F1_threshold": 0.24,
+        "validation_F1": 0.1158090296129022,
+        "precision_target_threshold": 1.0000001,
+        "P_target": 0.9,
+        "target_feasible": false
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.06360245548498382,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "tn": 329918,
+        "fn": 21576,
+        "automatic_fn": 21576,
+        "utility_fn": 21576,
+        "rejected_positive_fn": 21576,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.0,
+        "raw_cost": 21576.0,
+        "cost_per_pair": 0.06138369360501175,
+        "brier": 0.09322757769329282,
+        "ece15_equalmass": 0.18862555119407004
+      }
+    },
+    {
+      "name": "LR-lexical-single-links",
+      "exp_id": "E5-5",
+      "learner": "LR",
+      "feature": "lexical",
+      "params": {
+        "C": 0.6471071313151987,
+        "class_weight": null
+      },
+      "group": "links",
+      "exclude_group": null,
+      "seeds": [
+        42
+      ],
+      "seed_AP": [
+        0.6503924367011139
+      ],
+      "seed_AP_SD": 0.0,
+      "mean_score_AP": 0.6503924367011139,
+      "model_paths": [
+        "artifacts/model_LR-lexical-single-links_seed42.pkl"
+      ],
+      "model_hashes": {
+        "artifacts/model_LR-lexical-single-links_seed42.pkl": "66cf01ec9039618720eb741f30f7d54329f4678f8e717848e9a0412ea5a3e784"
+      },
+      "oof_path": "artifacts/oof_LR-lexical-single-links.npz",
+      "oof_sha256": "24f229c3957517882b864c14aff1720cbf5f02fee685c7956e504e3eec28db8e",
+      "operating_points": {
+        "validation_F1_threshold": 0.78,
+        "validation_F1": 0.6619957786116323,
+        "precision_target_threshold": 0.7793915271759033,
+        "P_target": 0.9,
+        "target_feasible": true
+      },
+      "training_jobs": 5,
+      "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+      "development_metrics": {
+        "candidate_ap": 0.6503924367011111,
+        "precision": 0.7072129255626082,
+        "recall": 0.568038561364479,
+        "f1": 0.6300313576312137,
+        "tp": 12256,
+        "fp": 5074,
+        "tn": 324844,
+        "fn": 9320,
+        "automatic_fn": 9320,
+        "utility_fn": 9320,
+        "rejected_positive_fn": 9320,
+        "workflow_misses": 0,
+        "candidate_positives": 21576,
+        "total_positives": 21576,
+        "n_pairs": 351494,
+        "review": 0,
+        "review_positives": 0,
+        "review_rate": 0.0,
+        "end_to_end_recall": 0.568038561364479,
+        "raw_cost": 19468.0,
+        "cost_per_pair": 0.05538643618383244,
+        "brier": 0.04583878138178501,
+        "ece15_equalmass": 0.0962469052706876
+      }
+    }
+  ],
+  "rule_learning_curve": "NOT RUN: full-development tuned weights are not a matched reduced-data baseline"
+}

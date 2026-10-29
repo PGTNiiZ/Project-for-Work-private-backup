@@ -1,0 +1,207 @@
+{
+  "files_scanned": 25,
+  "findings": [
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 3,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 8,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/cost_sensitivity.svg",
+      "line": 13,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 3,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 8,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pr_curves.svg",
+      "line": 13,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 3,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 8,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/pc_candidate_curve.svg",
+      "line": 13,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 3,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 4,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 6,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 8,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "figures/calibration_reliability.svg",
+      "line": 13,
+      "kind": "url",
+      "classification": "REVIEWED_TECHNICAL_OR_REPOSITORY_URL"
+    },
+    {
+      "file": "GIT_COMMIT_MESSAGES",
+      "line": 4129,
+      "kind": "email",
+      "classification": "REVIEWED_SOFTWARE_SERVICE_EMAIL_NOT_PROFILE_VALUE"
+    }
+  ],
+  "unclassified_hits": 0,
+  "profile_values_confirmed": 0,
+  "scope": "new public reports/figures text, ledger, commit messages; PNG graphics generated only from aggregate arrays",
+  "terminal_transcript_privacy_incident_not_erased": true
+}

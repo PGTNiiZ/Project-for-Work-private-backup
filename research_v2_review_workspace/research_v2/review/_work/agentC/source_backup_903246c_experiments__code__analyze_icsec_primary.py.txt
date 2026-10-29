@@ -1,0 +1,167 @@
+
+## backup@903246c:experiments/code/analyze_icsec_primary.py
+12: from experiments.code import exp_r1_ga_redecision as ga
+13: from experiments.code.exp_lib import (
+14:     BLOCKING_MISSED,
+15:     PROFILES,
+16:     build_nested_entity_split,
+17:     nested_split_constants,
+18: )
+19: from experiments.code.run_gb_transformer_experiments import (
+27: 
+28: 
+29: def sha256(path: Path) -> str:
+30:     digest = hashlib.sha256()
+31:     with path.open("rb") as handle:
+35: 
+36: 
+37: def decision_metrics(decision: np.ndarray, labels: np.ndarray, constants: dict[str, int], weights: tuple[float, float, float]) -> dict[str, float]:
+38:     match = decision == 2
+39:     no_match = decision == 0
+40:     tp = int((match & (labels == 1)).sum()) + constants["tp_exact"]
+41:     fp = int((match & (labels == 0)).sum()) + constants["fp_exact"]
+42:     fn = int((no_match & (labels == 1)).sum()) + constants["fn_blocking"]
+43:     review = int((decision == 1).sum())
+44:     precision = tp / (tp + fp) if tp + fp else 0.0
+45:     recall = tp / constants["total_pos"] if constants["total_pos"] else 0.0
+46:     f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+47:     cfp, cfn, creview = weights
+48:     return {
+49:         "TP": tp,
+50:         "FP": fp,
+51:         "FN": fn,
+52:         "REVIEW": review,
+53:         "precision": precision,
+54:         "recall": recall,
+55:         "F1": f1,
+56:         "weighted_cost": cfp * fp + cfn * fn + creview * review,
+57:     }
+58: 
+59: 
+60: def bootstrap_pairwise(
+61:     decisions: dict[str, np.ndarray], labels: np.ndarray, constants: dict[str, int], weights: tuple[float, float, float], n_boot: int, seed: int,
+62: ) -> pd.DataFrame:
+63:     """Conditional paired bootstrap of scored test candidates.
+64: 
+65:     Exact-tier and blocking-missed constants remain fixed. This estimates
+66:     conditional uncertainty attributable to the scored sealed test instances.
+67:     """
+68:     rng = np.random.default_rng(seed)
+69:     rows: list[dict[str, object]] = []
+70:     comparisons = [("GB-17", "GB-18"), ("GB-18", "GB-18-GA")]
+71:     draws: dict[tuple[str, str], dict[str, list[float]]] = {
+72:         pair: {metric: [] for metric in ("precision", "recall", "F1", "FP", "FN", "REVIEW", "weighted_cost")}
+73:         for pair in comparisons
+74:     }
+77:         index = rng.integers(0, n, n)
+78:         computed = {
+79:             name: decision_metrics(code[index], labels[index], constants, weights)
+80:             for name, code in decisions.items()
+81:         }
+84:                 draws[(left, right)][metric].append(computed[right][metric] - computed[left][metric])
+85:     for (left, right), metric_draws in draws.items():
+86:         observed_left = decision_metrics(decisions[left], labels, constants, weights)
+87:         observed_right = decision_metrics(decisions[right], labels, constants, weights)
+88:         for metric, values in metric_draws.items():
+89:             low, high = np.quantile(values, [0.025, 0.975])
+94:                 "ci95_low": float(low),
+95:                 "ci95_high": float(high),
+96:                 "bootstrap_samples": n_boot,
+97:                 "bootstrap_type": "paired conditional bootstrap; exact/blocking constants fixed",
+98:             })
+99:     return pd.DataFrame(rows)
+100: 
+101: 
+102: def availability(frame: pd.DataFrame, column: str) -> np.ndarray:
+103:     return frame[column].fillna("").astype(str).str.strip().ne("").to_numpy()
+104: 
+105: 
+106: def main() -> None:
+107:     parser = argparse.ArgumentParser()
+108:     parser.add_argument("--run-dir", type=Path, default=Path("experiments/icsec_final/primary_reproduction"))
+109:     parser.add_argument("--bootstrap-samples", type=int, default=2000)
+110:     args = parser.parse_args()
+111:     run_dir = args.run_dir.resolve()
+118:     feat17 = pd.read_parquet("experiments/pair_features17.parquet")
+119:     bert = pd.read_parquet("experiments/pair_bert_cos.parquet")
+120:     assigned, split_manifest = build_nested_entity_split(cache, seed=42)
+121:     scored = assigned.loc[assigned.decision_source != "AUTO_EXACT"].copy()
+122:     work = scored[[*KEY_COLS, "experiment_split", "name_sim"]].merge(feat17, on=KEY_COLS, validate="one_to_one").merge(bert, on=KEY_COLS, validate="one_to_one")
+123:     test = work.loc[work.experiment_split == "test"].copy().reset_index(drop=True)
+124:     labels = labels_for(assigned, test[KEY_COLS], "test", allow_test=True)
+125:     constants = nested_split_constants(assigned, seed=42)["test"]
+126: 
+127:     prob17 = pd.read_parquet(run_dir / "gb17_probabilities.parquet")
+140:         "GB-18-GA": ga.decide_code(test.probability_gb18.to_numpy(), test.name_sim.to_numpy(), genome),
+141:     }
+142:     code_to_name = np.array(["NO_MATCH", "REVIEW", "MATCH"])
+143:     decision_export = test[[*KEY_COLS, "probability_gb17", "probability_gb18", "name_sim"]].copy()
+144:     decision_export["actual"] = labels
+147:     decision_export.to_parquet(run_dir / "decisions" / "sealed_test_decisions.parquet", index=False)
+148: 
+149:     objective_weights = (GA_WEIGHTS.fp, GA_WEIGHTS.fn, GA_WEIGHTS.review)
+150:     raw_metrics = []
+151:     for method, code in decisions.items():
+152:         raw_metrics.append({"method": method, **decision_metrics(code, labels, constants, objective_weights)})
+153:     pd.DataFrame(raw_metrics).to_csv(run_dir / "raw_metrics_recomputed.csv", index=False)
+154: 
+155:     ci = bootstrap_pairwise(decisions, labels, constants, objective_weights, args.bootstrap_samples, 20260902)
+156:     ci.to_csv(analysis_dir / "paired_bootstrap_ci.csv", index=False)
+157: 
+158:     scenarios = []
+159:     for cfp in (1.0, 2.0, 5.0, 10.0):
+160:         for creview in (0.02, 0.1, 0.5):
+161:             per_method = {method: decision_metrics(code, labels, constants, (cfp, 1.0, creview)) for method, code in decisions.items()}
+162:             winner = min(per_method, key=lambda method: per_method[method]["weighted_cost"])
+163:             for method, metrics in per_method.items():
+164:                 scenarios.append({
+165:                     "C_FP": cfp,
+166:                     "C_FN": 1.0,
+167:                     "C_REVIEW": creview,
+168:                     "method": method,
+169:                     "weighted_cost": metrics["weighted_cost"],
+170:                     "winner_by_frozen_policy_cost": winner,
+171:                     "post_hoc_only": True,
+172:                     "note": "Policies were selected under historical C_FP=5,C_FN=1,C_REVIEW=0.02; this table does not retune GA or reuse test data for selection.",
+173:                 })
+174:     sensitivity = pd.DataFrame(scenarios)
+187:         for pair in sorted(pair_names.unique()):
+188:             mask = pair_names.to_numpy() == pair
+189:             # These counts are scored-candidate counts only; no allocation of global exact/block constants.
+190:             match = code[mask] == 2
+191:             no_match = code[mask] == 0
+192:             y = labels[mask]
+193:             tp, fp, fn, review = int((match & (y == 1)).sum()), int((match & (y == 0)).sum()), int((no_match & (y == 1)).sum()), int((code[mask] == 1).sum())
+194:             precision = tp / (tp + fp) if tp + fp else 0.0
+195:             recall = tp / int((y == 1).sum()) if int((y == 1).sum()) else 0.0
+196:             platform_rows.append({"method": method, "platform_pair": pair, "scope": "scored candidates only", "rows": int(mask.sum()), "positive_pairs": int((y == 1).sum()), "TP": tp, "FP": fp, "FN": fn, "REVIEW": review, "precision": precision, "recall": recall, "F1": 2 * precision * recall / (precision + recall) if precision + recall else 0.0})
+197:     pd.DataFrame(platform_rows).to_csv(run_dir / "error_analysis" / "platform_pair_scored_metrics.csv", index=False)
+198: 
+220:         "false_positive_match": (primary == 2) & (labels == 0),
+221:         "false_negative_no_match": (primary == 0) & (labels == 1),
+222:         "review_positive": (primary == 1) & (labels == 1),
+223:         "review_negative": (primary == 1) & (labels == 0),
+224:     }
+225:     for category, mask in categories.items():
+231:     pd.DataFrame(category_rows).to_csv(run_dir / "error_analysis" / "failure_category_counts.csv", index=False)
+232: 
+233:     bm = pd.read_csv(BLOCKING_MISSED)
+234:     total_positive = 29243
+235:     missed = 3312
+236:     retrieval = pd.DataFrame([{
+238:         "candidate_workflow_pairs": 2086245,
+239:         "candidate_space_reduction": 1 - 2086245 / 449149239,
+240:         "total_cross_platform_positive_pairs": total_positive,
+241:         "candidate_covered_positive_pairs": total_positive - missed,
+242:         "blocking_missed_positive_pairs": missed,
+243:         "retrieval_recall": (total_positive - missed) / total_positive,
+244:         "blocking_miss_artifact_rows": len(bm),
+245:         "note": "Primary nested test metrics include split-specific blocking-missed false-negative constants; this table uses the cross-platform project scope.",
+246:     }])
+247:     retrieval.to_csv(run_dir / "error_analysis" / "candidate_retrieval_decomposition.csv", index=False)
+251:         "analysis_script_sha256": sha256(Path(__file__).resolve()),
+252:         "run_dir": str(run_dir),
+253:         "source_hashes": {name: sha256(Path(path)) for name, path in {"cache": "experiments/scored_pairs_enriched.parquet", "features17": "experiments/pair_features17.parquet", "bert_cos": "experiments/pair_bert_cos.parquet", "profiles": PROFILES, "blocking_missed": BLOCKING_MISSED}.items()},
+254:         "bootstrap_samples": args.bootstrap_samples,
+255:         "privacy": "No usernames, names, biographies, locations, URLs, profile images, or other profile text are exported by this analysis.",
+256:     }

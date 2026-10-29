@@ -1,0 +1,14 @@
+{
+  "category": "aggregate_statistics",
+  "data_hash": "17a95f754cb7f43cc28fd63a7ced2dcf59c57945d5a782fa9e3a057d45b182b1",
+  "exp_id": "E5-4",
+  "key": "ensemble-summary-GBDT-fusion-without-username",
+  "parameters": {
+    "aggregation": "all frozen seeds",
+    "oof_sha256": "90ab9f8c4928592087f9f28d4c3aa428c8b5362d06b0716b6143cc0bd715370b",
+    "summary_sha256": "7f436b9fd365cb177fb9c7fd61ce188364dd7945d582eb32a7fb6514bad19b05"
+  },
+  "protocol_sha256": "1b6acf5946b2eddacee3fa8affc631386fd9bac8293c9a4fc3505488046d0ed6",
+  "seed": 42,
+  "split_hash": "9134cae8dc8039a1e8a80dfedcb81dafabc31d3706a72bb2c8c970f862c1fdcc"
+}

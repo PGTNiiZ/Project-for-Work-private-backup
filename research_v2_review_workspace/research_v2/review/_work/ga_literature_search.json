@@ -1,0 +1,1383 @@
+[
+  {
+    "query": "\"record linkage\" \"genetic\"",
+    "items": [
+      {
+        "title": [
+          "GENETIC STUDIES BY RECORD LINKAGE"
+        ],
+        "DOI": "10.1016/s0140-6736(65)91331-0",
+        "author": null,
+        "published": {
+          "date-parts": [
+            [
+              1965,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "The Lancet"
+        ],
+        "URL": "https://doi.org/10.1016/s0140-6736(65)91331-0",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Record Linkage"
+        ],
+        "DOI": "10.1007/springerreference_64341",
+        "author": null,
+        "published": null,
+        "container-title": [
+          "SpringerReference"
+        ],
+        "URL": "https://doi.org/10.1007/springerreference_64341",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Record Linkage – Methodology"
+        ],
+        "DOI": "10.1007/0-387-69505-2_8",
+        "author": [
+          {
+            "given": "Thomas N.",
+            "family": "Herzog",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fritz J.",
+            "family": "Scheuren",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William E.",
+            "family": "Winkler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Data Quality and Record Linkage Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-69505-2_8",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Genetic linkage in soybean : Linkage Group 8"
+        ],
+        "DOI": "10.31274/rtd-180813-8401",
+        "author": [
+          {
+            "given": "Kimberly",
+            "family": "Haack",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Iowa State University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": null,
+        "URL": "https://doi.org/10.31274/rtd-180813-8401",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Review of Record Linkage Software"
+        ],
+        "DOI": "10.1007/0-387-69505-2_19",
+        "author": [
+          {
+            "given": "Thomas N.",
+            "family": "Herzog",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fritz J.",
+            "family": "Scheuren",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William E.",
+            "family": "Winkler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Data Quality and Record Linkage Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-69505-2_19",
+        "abstract": null
+      },
+      {
+        "title": [
+          "’STROKES’ – Record Linkage der Schlaganfälle in Hessen 2007-2010 (Strokes - Record Linkage of Stroke Cases in Hesse 2007-2010)"
+        ],
+        "DOI": "10.2139/ssrn.3549212",
+        "author": [
+          {
+            "given": "Tobias",
+            "family": "Gramlich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": null,
+        "URL": "https://doi.org/10.2139/ssrn.3549212",
+        "abstract": "<jats:p>&lt;b&gt;German abstract:&lt;/b&gt; Dieser Bericht beschreibt die Verknüpfung verschiedener Behandlungsstufen der Behandlung und Rehabilitation von Schlaganfallpatienten in Hessen. Verknüpft wurden alle Akutfälle der Jahre 2007/2008 bzw. 2009/2010 mit den Fällen der Frührehabilitation sowie der Rehabilitationsbehandlung in hessischen Kliniken. Insgesamt wurden fünf Verknüpfungen durchgeführt. Dieser Bericht beschreibt die Aufbereitung der Daten, das Vorgehen bei der Verknüpfung sowie die Ergebnisse der Verknüpfung. &lt;br&gt;&lt;br&gt;&lt;b&gt;English abstract:&lt;/b&gt; This report describes the Record Linkage between different treatment stages in the treatment and recovery of stroke patients in Hesse. All acute events of the years 2007/2008 and 2009/2010 were linked with the cases of post-operative rehabilitation and rehabilitation treatment in Hessian hospitals in the years 2007/2008 and 2009/2010, respectively. A total of five linkages was carried out. This report describes the preparation of the data, the procedure for linking and the results of the data linkage.</jats:p>"
+      },
+      {
+        "title": [
+          "Privacy preserving record linkage meets record linkage using unencrypted data"
+        ],
+        "DOI": "10.23889/ijpds.v3i4.651",
+        "author": [
+          {
+            "given": "Hesam",
+            "family": "Izakian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Population Data Science"
+        ],
+        "URL": "https://doi.org/10.23889/ijpds.v3i4.651",
+        "abstract": "<jats:p>IntroductionPrivacy preserving record linkage (PPRL) resolves privacy concerns because of its capabilities to link encrypted identifiers. It encrypts identifiers using bloom filters and performs record matching based on encrypted data using dice coefficient similarity. Matching data based on hashed identifiers impacts the performance of linkage due to loss of information.&#x0D;\nObjectives and ApproachWe propose a technique to optimize the bloom filter parameters and examine if the optimal parameters increase the performance of the linkage in terms of precision, recall, and f-measure. Let us consider a set of string values and calculate the similarity between any two of them using the Jaro-Winkler method. Now let us encrypt the string values using bloom filters and calculate the similarity between any two of them using the dice coefficient technique. Optimal parameters of bloom filters are those that minimize the difference between the calculated similarities using Jaro-Winkler vs. the calculated similarities using the dice coefficient technique.&#x0D;\nResultsUsing publically available data, several first name and last name datasets each comprising 1000 unique values were generated. The following values for bloom filter parameters were considered: q in q-grams (q=1,2,3), bit array length (l=50,100,200,500,1000), number of hash functions (k=5,10,20,50). The following five setups of bloom filters were able to minimize the difference between the calculated similarities on encrypted data using the dice coefficient technique, and the calculated similarities on unencrypted data using the Jaro-Winkler method: q=1,l=1000,k=50/q=1,l=500,k=20/ q=2,l=1000,k=50/ q=3,l=500,k=50. These setups were considered to perform data linkage over 10 synthetically-generated datasets. Results show that PPRL was able to achieve similar performance compared to data linkage over unencrypted data.&#x0D;\nConclusion/ImplicationsThis study showed that optimal parameters of bloom filters minimized loss of information resulting from data encryption. Experimental findings indicated that PPRL using optimal parameters of bloom filters achieves almost the same performance as data linkage on unencrypted data in terms of precision, recall, and f-measure.</jats:p>"
+      },
+      {
+        "title": [
+          "Genetic Algorithms and Genetic Linkage"
+        ],
+        "DOI": "10.1007/11339380_2",
+        "author": [
+          {
+            "given": "Ying-ping",
+            "family": "Chen",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Studies in Fuzziness and Soft Computing",
+          "Extending the Scalability of Linkage Learning Genetic Algorithms"
+        ],
+        "URL": "https://doi.org/10.1007/11339380_2",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Record Linkage Study"
+        ],
+        "DOI": "10.32388/um7x2b",
+        "author": [
+          {
+            "name": "National Cancer Institute",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2020,
+              2,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Definitions"
+        ],
+        "URL": "https://doi.org/10.32388/um7x2b",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Estimating the Parameters of the Fellegi–Sunter Record Linkage Model"
+        ],
+        "DOI": "10.1007/0-387-69505-2_9",
+        "author": [
+          {
+            "given": "Thomas N.",
+            "family": "Herzog",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fritz J.",
+            "family": "Scheuren",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William E.",
+            "family": "Winkler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Data Quality and Record Linkage Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-69505-2_9",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Handbook of record linkage: Methods for health and statistical studies, administration, and business, Howard B. Newcombe, Oxford, England: Oxford University Press, 1988, 210 pp, $40.00"
+        ],
+        "DOI": "10.1002/gepi.1370060409",
+        "author": [
+          {
+            "given": "Ming‐Pi",
+            "family": "Mi",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              1989,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Genetic Epidemiology"
+        ],
+        "URL": "https://doi.org/10.1002/gepi.1370060409",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Linkage (Genetic Linkage)"
+        ],
+        "DOI": "10.1002/0471650129.dob0395",
+        "author": [
+          {
+            "given": "Mark",
+            "family": "McCarthy",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Steven",
+            "family": "Wiltshire",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2004,
+              10,
+              15
+            ]
+          ]
+        },
+        "container-title": [
+          "Dictionary of Bioinformatics and Computational Biology"
+        ],
+        "URL": "https://doi.org/10.1002/0471650129.dob0395",
+        "abstract": null
+      }
+    ]
+  },
+  {
+    "query": "\"entity resolution\" \"evolutionary\"",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "query": "\"record linkage\" \"genetic programming\"",
+    "items": [
+      {
+        "title": [
+          "Active Learning of Expressive Linkage Rules Using Genetic Programming"
+        ],
+        "DOI": "10.2139/ssrn.3199077",
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Isele",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Bizer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "container-title": null,
+        "URL": "https://doi.org/10.2139/ssrn.3199077",
+        "abstract": "<jats:p>A central problem in the context of the Web of Linked Data as well as in data integration in general is to identify entities in different data sources that describe the same real-world object. Many existing methods for matching entities rely on explicit linkage rules, which specify the conditions which must hold true for two entities in order to be interlinked. As writing good linkage rules by hand is a non-trivial problem, the burden to generate links between data sources is still high. In order to reduce the effort and expertise required to write linkage rules, we present the ActiveGenLink algorithm which combines genetic programming and active learning to generate expressive linkage rules interactively. The ActiveGenLink algorithm automates the generation of linkage rules and only requires the user to confirm or decline a number of link candidates. ActiveGenLink uses a query strategy which minimizes user involvement by selecting link candidates which yield a high information gain. Our evaluation shows that ActiveGenLink is capable of generating high quality linkage rules based on labeling a small number of candidate links and that our query strategy for selecting the link candidates outperforms the query-by-vote-entropy baseline.</jats:p>"
+      },
+      {
+        "title": [
+          "GENETIC STUDIES BY RECORD LINKAGE"
+        ],
+        "DOI": "10.1016/s0140-6736(65)91331-0",
+        "author": null,
+        "published": {
+          "date-parts": [
+            [
+              1965,
+              5
+            ]
+          ]
+        },
+        "container-title": [
+          "The Lancet"
+        ],
+        "URL": "https://doi.org/10.1016/s0140-6736(65)91331-0",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Genetic-Fuzzy Programming Based Linkage Rule Miner (GFPLR-Miner) for Entity Linking in Semantic Web"
+        ],
+        "DOI": "10.4018/978-1-7998-8048-6.ch023",
+        "author": [
+          {
+            "given": "Amit",
+            "family": "Singh",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Jawaharlal Nehru University, New Delhi, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Aditi",
+            "family": "Sharan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "SC & SS: School of Computer and Systems Sciences, Jawaharlal Nehru University, New Delhi, India"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2021
+            ]
+          ]
+        },
+        "container-title": [
+          "Research Anthology on Multi-Industry Uses of Genetic Programming and Algorithms"
+        ],
+        "URL": "https://doi.org/10.4018/978-1-7998-8048-6.ch023",
+        "abstract": "<jats:p>This article describes how semantic web data sources follow linked data principles to facilitate efficient information retrieval and knowledge sharing. These data sources may provide complementary, overlapping or contradicting information. In order to integrate these data sources, the authors perform entity linking. Entity linking is an important task of identifying and linking entities across data sources that refer to the same real-world entities. In this work, they have proposed a genetic fuzzy approach to learn linkage rules for entity linking. This method is domain independent, automatic and scalable. Their approach uses fuzzy logic to adapt mutation and crossover rates of genetic programming to ensure guided convergence. The authors' experimental evaluation demonstrates that our approach is competitive and make significant improvements over state of the art methods.</jats:p>"
+      },
+      {
+        "title": [
+          "Record Linkage"
+        ],
+        "DOI": "10.1007/springerreference_64341",
+        "author": null,
+        "published": null,
+        "container-title": [
+          "SpringerReference"
+        ],
+        "URL": "https://doi.org/10.1007/springerreference_64341",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Record Linkage – Methodology"
+        ],
+        "DOI": "10.1007/0-387-69505-2_8",
+        "author": [
+          {
+            "given": "Thomas N.",
+            "family": "Herzog",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fritz J.",
+            "family": "Scheuren",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William E.",
+            "family": "Winkler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Data Quality and Record Linkage Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-69505-2_8",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Learning expressive linkage rules using genetic programming"
+        ],
+        "DOI": "10.14778/2350229.2350276",
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Isele",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Web-based Systems Group, Freie Universität Berlin, Garystr, Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Bizer",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Web-based Systems Group, Freie Universität Berlin, Garystr., Berlin, Germany"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2012,
+              7
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the VLDB Endowment"
+        ],
+        "URL": "https://doi.org/10.14778/2350229.2350276",
+        "abstract": "<jats:p>A central problem in data integration and data cleansing is to find entities in different data sources that describe the same real-world object. Many existing methods for identifying such entities rely on explicit linkage rules which specify the conditions that entities must fulfill in order to be considered to describe the same real-world object. In this paper, we present the GenLink algorithm for learning expressive linkage rules from a set of existing reference links using genetic programming. The algorithm is capable of generating linkage rules which select discriminative properties for comparison, apply chains of data transformations to normalize property values, choose appropriate distance measures and thresholds and combine the results of multiple comparisons using non-linear aggregation functions. Our experiments show that the GenLink algorithm outperforms the state-of-the-art genetic programming approach to learning linkage rules recently presented by Carvalho et. al. and is capable of learning linkage rules which achieve a similar accuracy as human written rules for the same problem.</jats:p>"
+      },
+      {
+        "title": [
+          "Genetic linkage in soybean : Linkage Group 8"
+        ],
+        "DOI": "10.31274/rtd-180813-8401",
+        "author": [
+          {
+            "given": "Kimberly",
+            "family": "Haack",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Iowa State University"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": null,
+        "URL": "https://doi.org/10.31274/rtd-180813-8401",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Review of Record Linkage Software"
+        ],
+        "DOI": "10.1007/0-387-69505-2_19",
+        "author": [
+          {
+            "given": "Thomas N.",
+            "family": "Herzog",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fritz J.",
+            "family": "Scheuren",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "William E.",
+            "family": "Winkler",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "Data Quality and Record Linkage Techniques"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-69505-2_19",
+        "abstract": null
+      },
+      {
+        "title": [
+          "’STROKES’ – Record Linkage der Schlaganfälle in Hessen 2007-2010 (Strokes - Record Linkage of Stroke Cases in Hesse 2007-2010)"
+        ],
+        "DOI": "10.2139/ssrn.3549212",
+        "author": [
+          {
+            "given": "Tobias",
+            "family": "Gramlich",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2020
+            ]
+          ]
+        },
+        "container-title": null,
+        "URL": "https://doi.org/10.2139/ssrn.3549212",
+        "abstract": "<jats:p>&lt;b&gt;German abstract:&lt;/b&gt; Dieser Bericht beschreibt die Verknüpfung verschiedener Behandlungsstufen der Behandlung und Rehabilitation von Schlaganfallpatienten in Hessen. Verknüpft wurden alle Akutfälle der Jahre 2007/2008 bzw. 2009/2010 mit den Fällen der Frührehabilitation sowie der Rehabilitationsbehandlung in hessischen Kliniken. Insgesamt wurden fünf Verknüpfungen durchgeführt. Dieser Bericht beschreibt die Aufbereitung der Daten, das Vorgehen bei der Verknüpfung sowie die Ergebnisse der Verknüpfung. &lt;br&gt;&lt;br&gt;&lt;b&gt;English abstract:&lt;/b&gt; This report describes the Record Linkage between different treatment stages in the treatment and recovery of stroke patients in Hesse. All acute events of the years 2007/2008 and 2009/2010 were linked with the cases of post-operative rehabilitation and rehabilitation treatment in Hessian hospitals in the years 2007/2008 and 2009/2010, respectively. A total of five linkages was carried out. This report describes the preparation of the data, the procedure for linking and the results of the data linkage.</jats:p>"
+      },
+      {
+        "title": [
+          "Background on Genetic Programming"
+        ],
+        "DOI": "10.1007/0-387-26417-5_2",
+        "author": null,
+        "published": null,
+        "container-title": [
+          "Genetic Programming Series",
+          "Genetic Programming IV"
+        ],
+        "URL": "https://doi.org/10.1007/0-387-26417-5_2",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Active learning of expressive linkage rules using genetic programming"
+        ],
+        "DOI": "10.1016/j.websem.2013.06.001",
+        "author": [
+          {
+            "given": "Robert",
+            "family": "Isele",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Christian",
+            "family": "Bizer",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2013,
+              12
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Web Semantics"
+        ],
+        "URL": "https://doi.org/10.1016/j.websem.2013.06.001",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Privacy preserving record linkage meets record linkage using unencrypted data"
+        ],
+        "DOI": "10.23889/ijpds.v3i4.651",
+        "author": [
+          {
+            "given": "Hesam",
+            "family": "Izakian",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2018,
+              8,
+              23
+            ]
+          ]
+        },
+        "container-title": [
+          "International Journal of Population Data Science"
+        ],
+        "URL": "https://doi.org/10.23889/ijpds.v3i4.651",
+        "abstract": "<jats:p>IntroductionPrivacy preserving record linkage (PPRL) resolves privacy concerns because of its capabilities to link encrypted identifiers. It encrypts identifiers using bloom filters and performs record matching based on encrypted data using dice coefficient similarity. Matching data based on hashed identifiers impacts the performance of linkage due to loss of information.&#x0D;\nObjectives and ApproachWe propose a technique to optimize the bloom filter parameters and examine if the optimal parameters increase the performance of the linkage in terms of precision, recall, and f-measure. Let us consider a set of string values and calculate the similarity between any two of them using the Jaro-Winkler method. Now let us encrypt the string values using bloom filters and calculate the similarity between any two of them using the dice coefficient technique. Optimal parameters of bloom filters are those that minimize the difference between the calculated similarities using Jaro-Winkler vs. the calculated similarities using the dice coefficient technique.&#x0D;\nResultsUsing publically available data, several first name and last name datasets each comprising 1000 unique values were generated. The following values for bloom filter parameters were considered: q in q-grams (q=1,2,3), bit array length (l=50,100,200,500,1000), number of hash functions (k=5,10,20,50). The following five setups of bloom filters were able to minimize the difference between the calculated similarities on encrypted data using the dice coefficient technique, and the calculated similarities on unencrypted data using the Jaro-Winkler method: q=1,l=1000,k=50/q=1,l=500,k=20/ q=2,l=1000,k=50/ q=3,l=500,k=50. These setups were considered to perform data linkage over 10 synthetically-generated datasets. Results show that PPRL was able to achieve similar performance compared to data linkage over unencrypted data.&#x0D;\nConclusion/ImplicationsThis study showed that optimal parameters of bloom filters minimized loss of information resulting from data encryption. Experimental findings indicated that PPRL using optimal parameters of bloom filters achieves almost the same performance as data linkage on unencrypted data in terms of precision, recall, and f-measure.</jats:p>"
+      }
+    ]
+  },
+  {
+    "query": "\"entity matching\" \"genetic algorithm\"",
+    "items": [
+      {
+        "title": [
+          "GAEMTBD: Genetic algorithm based entity matching techniques for bibliographic databases"
+        ],
+        "DOI": "10.1007/s10489-016-0874-z",
+        "author": [
+          {
+            "given": "Sumit",
+            "family": "Mishra",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Sriparna",
+            "family": "Saha",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Samrat",
+            "family": "Mondal",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2017,
+              3,
+              2
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied Intelligence"
+        ],
+        "URL": "https://doi.org/10.1007/s10489-016-0874-z",
+        "abstract": null
+      },
+      {
+        "title": [
+          "IGAEM: Improved Genetic Algorithm based Entity Matching"
+        ],
+        "DOI": "10.1088/1742-6596/1743/1/012001",
+        "author": [
+          {
+            "given": "Y.",
+            "family": "Aassem",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "I.",
+            "family": "Hafidi",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "N.",
+            "family": "Aboutabit",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "Journal of Physics: Conference Series"
+        ],
+        "URL": "https://doi.org/10.1088/1742-6596/1743/1/012001",
+        "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>The presence of duplicate records is a major data quality concern in huge datasets. To detect duplicates, entity matching is used as an essential step of the data cleaning process to map records that refer to the same real-world entity. Most of proposed algorithms require labeled data in order to train a classifier. However, we cannot always obtain labeled data. In our paper we propose an unsupervised approach for entity matching problem using an improved version of genetic algorithm. We explain the main improvements added to genetic algorithm and the encoding strategy to encode partitions in the form of a chromosome. Different similarity functions are used to compute similarities between records. The obtained results prove that our proposition stands as a powerful approach in the entity matching field where it outperforms the traditional genetic algorithm based approach.</jats:p>"
+      },
+      {
+        "title": [
+          "Declarative Entity Resolution Via Matching Dependencies and Combining Matching Dependencies With Machine Learning for Entity Resolution"
+        ],
+        "DOI": "10.22215/etd/2017-12066",
+        "author": [
+          {
+            "given": "Zeinab",
+            "family": "Bahmani",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": null,
+        "URL": "https://doi.org/10.22215/etd/2017-12066",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Adaptive Target-Consistency Entity Matching Algorithm Based on Semi-Supervised Learning"
+        ],
+        "DOI": "10.1109/bigdia63733.2024.10808744",
+        "author": [
+          {
+            "family": "Yuedanni",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Systems Engineering, National University of Defense Technology,Changsha,Hunan,China,410073"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "2024 10th International Conference on Big Data and Information Analytics (BigDIA)"
+        ],
+        "URL": "https://doi.org/10.1109/bigdia63733.2024.10808744",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Renaissance of Fuzzy and Fast Matching Entity with DSHS Algorithm"
+        ],
+        "DOI": "10.1007/s42979-024-03093-9",
+        "author": [
+          {
+            "given": "Venkatram",
+            "family": "Kari",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-3246-5243",
+            "authenticated-orcid": false,
+            "given": "Geetha Mary",
+            "family": "Amalanathan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              7,
+              27
+            ]
+          ]
+        },
+        "container-title": [
+          "SN Computer Science"
+        ],
+        "URL": "https://doi.org/10.1007/s42979-024-03093-9",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Inexact pattern matching using genetic algorithm"
+        ],
+        "DOI": "10.1145/1068009.1068262",
+        "author": [
+          {
+            "given": "Surapong",
+            "family": "Auwatanamongkol",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "National Institute of Development Administration, Bangkok, Thailand"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2005,
+              6,
+              25
+            ]
+          ]
+        },
+        "container-title": [
+          "Proceedings of the 7th annual conference on Genetic and evolutionary computation"
+        ],
+        "URL": "https://doi.org/10.1145/1068009.1068262",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Multisource spatial linear entity matching algorithm based on multisteps buffer analysis"
+        ],
+        "DOI": "10.1109/geoinformatics.2011.5981030",
+        "author": [
+          {
+            "given": "Li",
+            "family": "Guo",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Hongwei",
+            "family": "Li",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Haiying",
+            "family": "Zheng",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Haiyuan",
+            "family": "Liu",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2011,
+              6
+            ]
+          ]
+        },
+        "container-title": [
+          "2011 19th International Conference on Geoinformatics"
+        ],
+        "URL": "https://doi.org/10.1109/geoinformatics.2011.5981030",
+        "abstract": null
+      },
+      {
+        "title": [
+          "A genetic algorithm for impedance matching"
+        ],
+        "DOI": "10.1109/afrcon.2002.1159972",
+        "author": [
+          {
+            "given": "W.P.",
+            "family": "du Plessis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": [
+          "IEEE AFRICON. 6th Africon Conference in Africa,"
+        ],
+        "URL": "https://doi.org/10.1109/afrcon.2002.1159972",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Genetic Algorithm Applications in RF Broadband Matching Circuits Design"
+        ],
+        "DOI": "10.1109/southeastcon48659.2022.9764120",
+        "author": [
+          {
+            "given": "Jingbo",
+            "family": "Cheng",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "North Carolina A&#x0026;T State University,Electrical and computer Engr.,Greensboro,NC"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Zhijian",
+            "family": "Xie",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "North Carolina A&#x0026;T State University,Electrical and computer Engr.,Greensboro,NC"
+              }
+            ],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2022,
+              3,
+              26
+            ]
+          ]
+        },
+        "container-title": [
+          "SoutheastCon 2022"
+        ],
+        "URL": "https://doi.org/10.1109/southeastcon48659.2022.9764120",
+        "abstract": null
+      },
+      {
+        "title": [
+          "A Fast Variable Precision Template Matching Algorithm Based on Hybrid Genetic Algorithm"
+        ],
+        "DOI": "10.1109/icmult.2010.5630829",
+        "author": [
+          {
+            "given": "Mao-yi",
+            "family": "Ye",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "given": "Fu-cheng",
+            "family": "You",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2010,
+              10
+            ]
+          ]
+        },
+        "container-title": [
+          "2010 International Conference on Multimedia Technology"
+        ],
+        "URL": "https://doi.org/10.1109/icmult.2010.5630829",
+        "abstract": null
+      },
+      {
+        "title": [
+          "Application of Genetic Algorithm in Designing Matching and Decoupling Networks for Asymmetric Two-Element Antenna Arrays"
+        ],
+        "DOI": "10.12794/metadc2356253",
+        "author": [
+          {
+            "given": "Nishako",
+            "family": "Chakma",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": null,
+        "URL": "https://doi.org/10.12794/metadc2356253",
+        "abstract": "<jats:p xml:lang=\"en\">In this thesis, I demonstrate a genetic-algorithm-based optimization method for designing matching and decoupling networks (MDNs) for asymmetric two-element antenna arrays. The proposed method considers practical aspects in MDN realization by accounting for short pieces of transmission lines between the lumped elements and only using capacitor/inductor values from a predefined database of commercially available lumped component values. In addition, the proposed algorithm is able to explore all subsets of a general MDN topology in its search for a solution, providing some flexibility for system optimization (e.g., reducing the number of lumped elements used in an MDN). Details about the proposed approach along with performance analysis of four design examples based on this method are presented. One of the designs was fabricated and measured to demonstrate the effectiveness of the proposed design method. Chapter 1 provides the motivation and context for this work with relevant literature review and objectives of this thesis. Chapter 2 reviews existing MDN design techniques and discusses practical design considerations for the proposed method. Chapter 3 briefly discusses the basics of genetic algorithm (GA) and its relevance to this work. Chapter 4 presents the method proposed in my thesis work and describes how the genetic algorithm is implemented for designing MDNs for asymmetric two-element antenna arrays. Chapter 5 reports the details of four different MDN design examples along with their simulation and measurement results. Chapter 6 concludes the thesis work and discusses potential future development to further advance this work.</jats:p>"
+      },
+      {
+        "title": [
+          "Entity Matching for Person Records in Authority Files"
+        ],
+        "DOI": "10.20378/irb-112660",
+        "author": [
+          {
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0008-2531-3616",
+            "authenticated-orcid": false,
+            "given": "Maximilian",
+            "family": "Hebeis",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "role": "author",
+                "vocabulary": "crossref"
+              }
+            ]
+          }
+        ],
+        "published": null,
+        "container-title": null,
+        "URL": "https://doi.org/10.20378/irb-112660",
+        "abstract": "<jats:p>Authority control is of increasing importance in multiple research fields. To ensure reusability as promoted by the FAIR principles, authority files provide persistent identifiers to named entities such as persons, organisations, or geographical locations. Initially conceived as controlled vocabularies in the library context, in recent years authority files have evolved into broader knowledge bases with additional information on the entity referred to in each authority record. Reconciling authority files which contain records referencing the same entity remains a challenge. This thesis represents a case study into applying learning-based entity matching to person records from two large authority databases, namely the German national Integrated Authority File (GND) and the crowd-sourced open knowledge base Wikidata. A workflow is built to extract the person records from the data dumps of both authority files in the RDF/N-Triples format and store them in MongoDB collections. The person records with existing link attributes to a record from the respective other database are then used as source data to train, validate and test learning-based classifiers on. These classifiers are subsequently compared based on their performance classifying person record pairs correctly as matching (referring to the same person) or non-matching. The two approaches compared are classifiers based on classical machine learning and classifiers based on deep learning, i.e. a multilingual variant of the language model BERT. The results show that learning-based entity-matching architectures achieve high F1 scores on GND and Wikidata authority data; despite their semantic capabilities, BERT-based approaches don’t manage to outperform ML classifiers on the data used in this study.</jats:p>"
+      }
+    ]
+  }
+]

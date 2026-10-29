@@ -1,0 +1,37 @@
+# Environment — Round4
+
+{
+  "hardware": {
+    "os": "Darwin",
+    "release": "25.5.0",
+    "architecture": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 8,
+    "memory_bytes": 17179869184,
+    "python": "3.11.15",
+    "threads_per_model": 2,
+    "device": "cpu"
+  },
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "rapidfuzz": "3.14.6",
+    "sentence-transformers": "6.2.0",
+    "torch": "2.14.1",
+    "optuna": "5.0.0",
+    "numba": "0.68.0",
+    "matplotlib": "3.11.2",
+    "pyarrow": "26.0.0",
+    "pytest": "9.1.1"
+  },
+  "requirements_lock_sha256": "77dc078d06148602bfce46bdc143f306306a1156fc3d32b9aa36833f6e24fda0",
+  "scientific_status": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "isolation": "project-local .venv; own sparse Git worktree; source inputs read-only",
+  "synthetic_smoke": "tests/test_smoke.py passed, not manuscript evidence",
+  "package_intelligence": "installer reported incomplete external threat-intelligence metadata checks; not a malicious-package finding",
+  "initial_integration_tests_passed": 42
+}
+
+ดาวน์โหลดเฉพาะ model weights จาก public revision ที่ pin ไว้; profile serialization และ encoder inference ทำในเครื่อง. Pipeline ไม่เรียก hosted embedding/LLM API ด้วย profile bodies และไม่ใช้ GPU. มี terminal metadata privacy incident แยกตาม DEVIATIONS.md จึงไม่อ้าง zero disclosure ของทั้ง session.

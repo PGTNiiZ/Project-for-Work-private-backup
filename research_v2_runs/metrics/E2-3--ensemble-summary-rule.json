@@ -1,0 +1,11 @@
+{
+  "candidate_AP": 0.9252681250237215,
+  "name": "rule",
+  "source_summary": "metrics/model_rule.json",
+  "source_summary_sha256": "f84bbf3583fc6f5468e9086bf24db53120c5b361659d5fc0481ae0100c225093",
+  "n_pairs": 351494,
+  "seed_count": 1,
+  "ARTIFACT_CHECK": "ARTIFACT_CONSISTENT",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.05521279100139509
+}

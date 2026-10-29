@@ -1,0 +1,17 @@
+{
+  "fold_AP": [
+    0.960758677882036,
+    0.9591096018800469,
+    0.9576392501827066,
+    0.9604908735417718
+  ],
+  "mean_fold_AP": 0.9594996008716403,
+  "parameters": {
+    "C": 0.31019718887844494,
+    "class_weight": null
+  },
+  "test_access": false,
+  "atomic_fit_count": 4,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 0.43074470899955486
+}

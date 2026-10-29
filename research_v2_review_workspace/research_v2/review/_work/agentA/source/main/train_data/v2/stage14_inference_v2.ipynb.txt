@@ -1,0 +1,207 @@
+# CELL 1
+# ─── Config ───────────────────────────────────────────────────────────────
+OUTPUT_DIR      = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+PROFILES_CSV    = f'{OUTPUT_DIR}/all_profiles_cleaned.csv'
+CANDIDATES_CSV  = f'{OUTPUT_DIR}/candidate_pairs.csv'
+PREDICTIONS_CSV = f'{OUTPUT_DIR}/predictions.csv'
+FEAT_COLS_PKL   = f'{OUTPUT_DIR}/feature_cols.pkl'
+SCALER_PKL      = f'{OUTPUT_DIR}/scaler.pkl'
+MODEL_PT        = f'{OUTPUT_DIR}/model.pt'
+CALIBRATOR_PKL  = f'{OUTPUT_DIR}/calibrator.pkl'
+THRESHOLD_HIGH  = 0.90   # MATCH
+THRESHOLD_MID   = 0.70   # POSSIBLE_MATCH
+BATCH_SIZE      = 1024
+TFIDF_MAX_FEAT  = 5000
+# ──────────────────────────────────────────────────────────────────────────
+
+import os, pickle
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity as sk_cosine
+
+try:
+    from rapidfuzz import fuzz
+    HAS_RAPIDFUZZ = True
+except ImportError:
+    HAS_RAPIDFUZZ = False
+    from difflib import SequenceMatcher
+
+# Load artifacts
+with open(FEAT_COLS_PKL,   'rb') as f: feature_cols = pickle.load(f)
+with open(SCALER_PKL,      'rb') as f: scaler       = pickle.load(f)
+with open(CALIBRATOR_PKL,  'rb') as f: calibrator   = pickle.load(f)
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+class IdentityMLP(nn.Module):
+    def __init__(self, input_dim):
+        super().__init__()
+        self.network = nn.Sequential(
+            nn.Linear(input_dim,256), nn.BatchNorm1d(256), nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(256,128), nn.BatchNorm1d(128), nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(128,64),  nn.BatchNorm1d(64),  nn.ReLU(), nn.Dropout(0.3),
+            nn.Linear(64,1)
+        )
+    def forward(self, x): return self.network(x).squeeze(-1)
+
+model = IdentityMLP(len(feature_cols)).to(device)
+model.load_state_dict(torch.load(MODEL_PT, map_location=device, weights_only=True))
+model.eval()
+
+# Load data
+candidate_pairs = pd.read_csv(CANDIDATES_CSV)
+df_clean        = pd.read_csv(PROFILES_CSV)
+
+# v2: lookup directly by profile_id column
+profile_lookup  = df_clean.set_index('profile_id')
+
+# TF-IDF for bio
+bios         = df_clean['bio_clean'].fillna('').astype(str).tolist()
+tfidf_vec    = TfidfVectorizer(max_features=TFIDF_MAX_FEAT, ngram_range=(1,2))
+tfidf_matrix = tfidf_vec.fit_transform(bios)
+key_to_idx   = {pid: i for i, pid in enumerate(df_clean['profile_id'].tolist())}
+
+def string_sim(a, b, method='jaro'):
+    a = str(a) if a else ''
+    b = str(b) if b else ''
+    if not a or not b: return 0.0
+    if HAS_RAPIDFUZZ:
+        if method == 'jaro':        return fuzz.ratio(a, b) / 100
+        if method == 'token_sort':  return fuzz.token_sort_ratio(a, b) / 100
+        if method == 'levenshtein': return fuzz.ratio(a, b) / 100
+    from difflib import SequenceMatcher
+    return SequenceMatcher(None, a, b).ratio()
+
+def get_decision(prob):
+    if prob >= THRESHOLD_HIGH:  return 'MATCH'
+    elif prob >= THRESHOLD_MID: return 'POSSIBLE_MATCH'
+    return 'NO_MATCH'
+
+print(f'Artifacts loaded | candidate_pairs: {len(candidate_pairs):,} | profiles: {len(df_clean):,}')
+print(f'Model: IdentityMLP ({sum(p.numel() for p in model.parameters()):,} params)')
+print(f'Features: {len(feature_cols)}')
+# CELL 3
+# --- 14.2 Compute Features ---
+print('📊 Step 14.2: Computing Features for Candidate Pairs')
+print('=' * 60)
+
+infer_rows   = []
+total        = len(candidate_pairs)
+report_every = max(total // 5, 1)
+
+for i, (_, pair) in enumerate(candidate_pairs.iterrows()):
+    row    = {}
+    id_a   = pair['profile_id_a']
+    id_b   = pair['profile_id_b']
+
+    if id_a in profile_lookup.index and id_b in profile_lookup.index:
+        r_a = profile_lookup.loc[id_a]
+        r_b = profile_lookup.loc[id_b]
+        if isinstance(r_a, pd.DataFrame): r_a = r_a.iloc[0]
+        if isinstance(r_b, pd.DataFrame): r_b = r_b.iloc[0]
+
+        for col, prefix in [('userName_clean','username'), ('fullName_clean','fullname'), ('bio_clean','bio')]:
+            va = str(r_a.get(col, '') or '')
+            vb = str(r_b.get(col, '') or '')
+            for method in ['jaro', 'token_sort', 'levenshtein']:
+                row[f'{prefix}_{method}'] = string_sim(va, vb, method)
+            row[f'{prefix}_both_empty'] = 1.0 if (len(va.strip()) == 0 and len(vb.strip()) == 0) else 0.0
+
+        idx_a = key_to_idx.get(id_a)
+        idx_b = key_to_idx.get(id_b)
+        if idx_a is not None and idx_b is not None:
+            row['bio_tfidf_cosine'] = float(sk_cosine(tfidf_matrix[idx_a:idx_a+1], tfidf_matrix[idx_b:idx_b+1])[0][0])
+        else:
+            row['bio_tfidf_cosine'] = 0.0
+
+        ua = str(r_a.get('externalUrl_clean', '') or '')
+        ub = str(r_b.get('externalUrl_clean', '') or '')
+        da = str(r_a.get('url_domain', '') or '')
+        db = str(r_b.get('url_domain', '') or '')
+        row['url_exact_match']  = 1.0 if (ua and ub and ua == ub) else 0.0
+        row['url_domain_match'] = 1.0 if (da and db and da == db) else 0.0
+        row['same_platform']    = 1.0 if r_a.get('platform','') == r_b.get('platform','') else 0.0
+        la = str(r_a.get('location_clean', '') or '')
+        lb = str(r_b.get('location_clean', '') or '')
+        row['location_sim']     = string_sim(la, lb, 'jaro') if (la.strip() and lb.strip()) else 0.0
+    else:
+        for col in feature_cols: row[col] = 0.0
+
+    infer_rows.append(row)
+    if (i + 1) % report_every == 0:
+        print(f'  Progress: {i+1:,}/{total:,} ({(i+1)/total*100:.0f}%)')
+
+infer_df = pd.DataFrame(infer_rows)
+for col in feature_cols:
+    if col not in infer_df.columns: infer_df[col] = 0.0
+
+print(f'\n  Feature matrix: {infer_df.shape}')
+print(f'\n✅ Step 14.2 เสร็จ')
+# CELL 5
+# --- 14.3 Inference ---
+print('📊 Step 14.3: Inference')
+print('=' * 60)
+
+X_infer    = scaler.transform(infer_df[feature_cols].values)
+raw_probs  = []
+
+model.eval()
+with torch.no_grad():
+    for start in range(0, len(X_infer), BATCH_SIZE):
+        batch = torch.FloatTensor(X_infer[start:start+BATCH_SIZE]).to(device)
+        logits = model(batch)
+        probs  = torch.sigmoid(logits).cpu().numpy()
+        raw_probs.extend(probs)
+
+raw_probs      = np.array(raw_probs)
+cal_probs      = calibrator.predict(raw_probs)
+
+predictions_df = candidate_pairs.copy()
+predictions_df['probability'] = cal_probs
+predictions_df['decision']    = predictions_df['probability'].apply(get_decision)
+
+auto_merge   = predictions_df[predictions_df['decision'] == 'MATCH']
+review_queue = predictions_df[predictions_df['decision'] == 'POSSIBLE_MATCH']
+no_match     = predictions_df[predictions_df['decision'] == 'NO_MATCH']
+
+print(f'  Predictions: {len(predictions_df):,}')
+print(f'  Prob mean={cal_probs.mean():.4f}  std={cal_probs.std():.4f}')
+print(f'\n✅ Step 14.3 เสร็จ')
+# CELL 7
+# --- 14.4 Save ---
+predictions_df.to_csv(PREDICTIONS_CSV, index=False)
+
+print('=' * 60)
+print('📊 STAGE 14 v2 SUMMARY — Inference & Merge Decision')
+print('=' * 60)
+print(f'  Total      : {len(predictions_df):,}')
+print(f'  MATCH      : {len(auto_merge):,} → auto-merge')
+print(f'  POSSIBLE   : {len(review_queue):,} → human review')
+print(f'  NO_MATCH   : {len(no_match):,} → keep separate')
+
+if len(auto_merge) > 0:
+    print(f'\n  Top 10 MATCH pairs:')
+    for _, r in auto_merge.nlargest(10, 'probability').iterrows():
+        print(f'    prob={r["probability"]:.3f} | {str(r["profile_id_a"])[:35]} <-> {str(r["profile_id_b"])[:35]}')
+
+# Probability distribution plot
+plt.figure(figsize=(10, 5))
+plt.hist(cal_probs, bins=50, edgecolor='black', alpha=0.7)
+plt.axvline(x=THRESHOLD_HIGH, color='r', linestyle='--', label=f'MATCH  >= {THRESHOLD_HIGH}')
+plt.axvline(x=THRESHOLD_MID,  color='orange', linestyle='--', label=f'POSSIBLE >= {THRESHOLD_MID}')
+plt.xlabel('Calibrated Probability'); plt.ylabel('Count')
+plt.title('Prediction Probability Distribution (v2)')
+plt.legend(); plt.yscale('log'); plt.grid(True, alpha=0.3)
+plt.savefig(f'{OUTPUT_DIR}/predictions_dist_v2.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print(f'\n  Saved: {PREDICTIONS_CSV}')
+print(f'\n{"="*60}')
+print('✅ Stage 14 v2 COMPLETE')
+print(f'{"="*60}')

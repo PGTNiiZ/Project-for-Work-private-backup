@@ -1,0 +1,103 @@
+{
+  "per_fold": {
+    "0": {
+      "ground_truth": 5841,
+      "sparse_candidates": 89847,
+      "missed": 458,
+      "cause": {
+        "a": 4,
+        "b": 64,
+        "c": 72,
+        "d": 16,
+        "e": 17,
+        "f": 285
+      }
+    },
+    "1": {
+      "ground_truth": 5858,
+      "sparse_candidates": 93723,
+      "missed": 430,
+      "cause": {
+        "a": 4,
+        "b": 48,
+        "c": 62,
+        "d": 7,
+        "e": 5,
+        "f": 304
+      }
+    },
+    "2": {
+      "ground_truth": 5842,
+      "sparse_candidates": 83829,
+      "missed": 454,
+      "cause": {
+        "a": 8,
+        "b": 76,
+        "c": 61,
+        "d": 14,
+        "e": 12,
+        "f": 283
+      }
+    },
+    "3": {
+      "ground_truth": 5850,
+      "sparse_candidates": 84095,
+      "missed": 473,
+      "cause": {
+        "a": 3,
+        "b": 68,
+        "c": 69,
+        "d": 10,
+        "e": 20,
+        "f": 303
+      }
+    }
+  },
+  "pooled_cause": {
+    "a": 19,
+    "b": 256,
+    "c": 264,
+    "d": 47,
+    "e": 54,
+    "f": 1175
+  },
+  "pooled_platform_pair": {
+    "googleplus+instagram": {
+      "f": 335,
+      "b": 117,
+      "c": 107,
+      "e": 24,
+      "d": 5,
+      "a": 2
+    },
+    "googleplus+twitter": {
+      "b": 114,
+      "f": 591,
+      "c": 77,
+      "e": 28,
+      "d": 11,
+      "a": 7
+    },
+    "instagram+twitter": {
+      "f": 249,
+      "b": 25,
+      "c": 80,
+      "d": 31,
+      "a": 10,
+      "e": 2
+    }
+  },
+  "pooled_ground_truth": 23391,
+  "pooled_found": 21576,
+  "pooled_missed": 1815,
+  "pooled_PC_sparse": 0.922406053610363,
+  "overlapping_flags_not_exclusive": {
+    "a_overlap(user>=.85&name<.5)": 42,
+    "b_overlap(cross>=.85)": 275,
+    "c_overlap(missing)": 321,
+    "d_overlap(link)": 67,
+    "e_overlap(max_text<.2)": 54
+  },
+  "ceiling_PC_excluding_cause_e": 0.9976914197768373,
+  "note": "causes computed from similarity features only; not human adjudication; e = ceiling for these features only"
+}

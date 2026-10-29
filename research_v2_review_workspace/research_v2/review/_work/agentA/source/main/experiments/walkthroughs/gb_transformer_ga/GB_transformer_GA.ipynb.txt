@@ -1,0 +1,43 @@
+# CELL 1
+from pathlib import Path
+import sys, json, inspect
+import pandas as pd
+from IPython.display import Markdown, display
+
+def find_root():
+    candidates = [Path.cwd().resolve(), *Path.cwd().resolve().parents,
+                  Path(r'D:/66070260-Year3_Term2/Project1/Code')]
+    for candidate in candidates:
+        if (candidate / 'exp_lib.py').exists(): return candidate
+    raise FileNotFoundError('Project root containing exp_lib.py was not found')
+
+ROOT = find_root(); EXP = ROOT / 'experiments'
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+
+def source(module, *names):
+    for name in names:
+        display(Markdown(f'### `{module.__name__}.{name}`'))
+        print(inspect.getsource(getattr(module, name)))
+
+def read_json(relative):
+    return json.loads((ROOT / relative).read_text(encoding='utf-8'))
+
+print('Project root:', ROOT)
+
+# CELL 3
+import run_gb_transformer_experiments as gb
+source(gb, 'validate_inputs', 'deterministic_sample_indices', 'train_gb_variant')
+cfg=read_json('experiments/automation/gb_transformer_primary_20260809/config.json'); print(json.dumps(cfg['gb_configuration'], indent=2))
+# CELL 5
+m=read_json('experiments/automation/gb_transformer_primary_20260809/training_metadata.json')
+display(pd.DataFrame({k:{'features':len(v['feature_columns']),'train':v['n_model_train_after_undersampling'],'AP':v['calibration_average_precision'],'seconds':v['fit_seconds']} for k,v in m.items() if k.startswith('GB-')}).T)
+# CELL 7
+source(gb, 'run_ga_trials', 'build_summary')
+s=read_json('experiments/automation/gb_transformer_primary_20260809/summary.json')
+display(pd.DataFrame(s['comparison'])); print(json.dumps(s['selected_ga'], ensure_ascii=False, indent=2))
+# CELL 9
+display(pd.DataFrame(s['isolated_effects']).T); print(json.dumps(s['verification'], ensure_ascii=False, indent=2))
+# CELL 10
+# Optional full rerun:
+# import subprocess
+# subprocess.run([sys.executable, str(ROOT/'run_gb_transformer_experiments.py')], check=True)

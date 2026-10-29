@@ -1,0 +1,1180 @@
+{
+  "url": "https://api.crossref.org/works?query.title=Efficient%20Cryptanalysis%20of%20Bloom%20Filters%20for%20Privacy-Preserving%20Record%20Linkage&rows=3",
+  "status": 200,
+  "data": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 1164727,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                10,
+                17
+              ]
+            ],
+            "date-time": "2026-10-17T19:49:06Z",
+            "timestamp": 1792266546791,
+            "version": "4.4.0"
+          },
+          "publisher-location": "Cham",
+          "reference-count": 18,
+          "publisher": "Springer International Publishing",
+          "isbn-type": [
+            {
+              "value": "9783319574530",
+              "type": "print"
+            },
+            {
+              "value": "9783319574547",
+              "type": "electronic"
+            }
+          ],
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2017,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2017-01-01T00:00:00Z",
+                "timestamp": 1483228800000
+              },
+              "content-version": "unspecified",
+              "delay-in-days": 0,
+              "URL": "http://www.springer.com/tdm"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2017
+              ]
+            ]
+          },
+          "DOI": "10.1007/978-3-319-57454-7_49",
+          "type": "book-chapter",
+          "created": {
+            "date-parts": [
+              [
+                2017,
+                4,
+                22
+              ]
+            ],
+            "date-time": "2017-04-22T12:09:31Z",
+            "timestamp": 1492862971000
+          },
+          "page": "628-640",
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 42,
+          "title": [
+            "Efficient Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage"
+          ],
+          "prefix": "10.1007",
+          "author": [
+            {
+              "given": "Peter",
+              "family": "Christen",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Dinusha",
+              "family": "Vatsalan",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Thilina",
+              "family": "Ranbaduge",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2017,
+                4,
+                23
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "issue": "7",
+              "key": "49_CR1",
+              "doi-asserted-by": "publisher",
+              "first-page": "422",
+              "DOI": "10.1145/362686.362692",
+              "volume": "13",
+              "author": "B Bloom",
+              "year": "1970",
+              "unstructured": "Bloom, B.: Space/time trade-offs in hash coding with allowable errors. Commun. ACM 13(7), 422–426 (1970)",
+              "journal-title": "Commun. ACM"
+            },
+            {
+              "key": "49_CR2",
+              "doi-asserted-by": "publisher",
+              "first-page": "267",
+              "DOI": "10.1007/978-3-319-23633-9_11",
+              "volume-title": "Medical Data Privacy Handbook",
+              "author": "JH Boyd",
+              "year": "2015",
+              "unstructured": "Boyd, J.H., Randall, S.M., Ferrante, A.M.: Application of privacy-preserving techniques in operational record linkage centres. In: Gkoulalas-Divanis, A., Loukides, G. (eds.) Medical Data Privacy Handbook, pp. 267–287. Springer, Cham (2015). doi:10.1007/978-3-319-23633-9_11"
+            },
+            {
+              "issue": "2",
+              "key": "49_CR3",
+              "doi-asserted-by": "publisher",
+              "first-page": "5",
+              "DOI": "10.1145/1132956.1132958",
+              "volume": "3",
+              "author": "A Ceglar",
+              "year": "2006",
+              "unstructured": "Ceglar, A., Roddick, J.F.: Association mining. ACM CSUR 3(2), 5 (2006)",
+              "journal-title": "ACM CSUR"
+            },
+            {
+              "key": "49_CR4",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1007/978-3-642-31164-2",
+              "volume-title": "Data Matching – Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection",
+              "author": "P Christen",
+              "year": "2012",
+              "unstructured": "Christen, P.: Data Matching – Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Springer, Heidelberg (2012)"
+            },
+            {
+              "issue": "12",
+              "key": "49_CR5",
+              "first-page": "2956",
+              "volume": "26",
+              "author": "EA Durham",
+              "year": "2014",
+              "unstructured": "Durham, E.A., Kantarcioglu, M., Xue, Y., Toth, C., Kuzu, M., Malin, B.: Composite Bloom filters for secure record linkage. IEEE TKDE 26(12), 2956–2968 (2014)",
+              "journal-title": "IEEE TKDE"
+            },
+            {
+              "key": "49_CR6",
+              "series-title": "Lecture Notes in Computer Science (Lecture Notes in Artificial Intelligence)",
+              "doi-asserted-by": "publisher",
+              "first-page": "485",
+              "DOI": "10.1007/978-3-319-06608-0_40",
+              "volume-title": "Advances in Knowledge Discovery and Data Mining",
+              "author": "Z Fu",
+              "year": "2014",
+              "unstructured": "Fu, Z., Christen, P., Zhou, J.: A graph matching method for historical census household linkage. In: Tseng, V.S., Ho, T.B., Zhou, Z.-H., Chen, A.L.P., Kao, H.-Y. (eds.) PAKDD 2014. LNCS (LNAI), vol. 8443, pp. 485–496. Springer, Cham (2014). doi:10.1007/978-3-319-06608-0_40"
+            },
+            {
+              "key": "49_CR7",
+              "series-title": "Communications in Computer and Information Science",
+              "doi-asserted-by": "publisher",
+              "first-page": "341",
+              "DOI": "10.1007/978-3-319-27707-3_21",
+              "volume-title": "Biomedical Engineering Systems and Technologies",
+              "author": "M Kroll",
+              "year": "2015",
+              "unstructured": "Kroll, M., Steinmetzer, S.: Who is 1011011111$$\\ldots $$1110110010? Automated cryptanalysis of Bloom filter encryptions of databases with several personal identifiers. In: Fred, A., Gamboa, H., Elias, D. (eds.) BIOSTEC 2015. CCIS, vol. 574, pp. 341–356. Springer, Cham (2015). doi:10.1007/978-3-319-27707-3_21"
+            },
+            {
+              "key": "49_CR8",
+              "series-title": "Lecture Notes in Computer Science",
+              "doi-asserted-by": "publisher",
+              "first-page": "226",
+              "DOI": "10.1007/978-3-642-22263-4_13",
+              "volume-title": "Privacy Enhancing Technologies",
+              "author": "M Kuzu",
+              "year": "2011",
+              "unstructured": "Kuzu, M., Kantarcioglu, M., Durham, E., Malin, B.: A constraint satisfaction cryptanalysis of Bloom filters in private record linkage. In: Fischer-Hübner, S., Hopper, N. (eds.) PETS 2011. LNCS, vol. 6794, pp. 226–245. Springer, Heidelberg (2011). doi:10.1007/978-3-642-22263-4_13"
+            },
+            {
+              "issue": "2",
+              "key": "49_CR9",
+              "first-page": "285",
+              "volume": "20",
+              "author": "M Kuzu",
+              "year": "2013",
+              "unstructured": "Kuzu, M., Kantarcioglu, M., Durham, E., Toth, C., Malin, B.: A practical approach to achieve private medical record linkage in light of public resources. JAMIA 20(2), 285–292 (2013)",
+              "journal-title": "JAMIA"
+            },
+            {
+              "issue": "2",
+              "key": "49_CR10",
+              "doi-asserted-by": "crossref",
+              "first-page": "59",
+              "DOI": "10.29012/jpc.v6i2.640",
+              "volume": "6",
+              "author": "F Niedermeyer",
+              "year": "2014",
+              "unstructured": "Niedermeyer, F., Steinmetzer, S., Kroll, M., Schnell, R.: Cryptanalysis of basic Bloom filters used for privacy preserving record linkage. JPC 6(2), 59–79 (2014)",
+              "journal-title": "JPC"
+            },
+            {
+              "key": "49_CR11",
+              "series-title": "Lecture Notes in Computer Science (Lecture Notes in Artificial Intelligence)",
+              "doi-asserted-by": "publisher",
+              "first-page": "415",
+              "DOI": "10.1007/978-3-319-31750-2_33",
+              "volume-title": "Advances in Knowledge Discovery and Data Mining",
+              "author": "T Ranbaduge",
+              "year": "2016",
+              "unstructured": "Ranbaduge, T., Vatsalan, D., Christen, P., Verykios, V.: Hashing-based distributed multi-party blocking for privacy-preserving record linkage. In: Bailey, J., Khan, L., Washio, T., Dobbie, G., Huang, J.Z., Wang, R. (eds.) PAKDD 2016. LNCS (LNAI), vol. 9652, pp. 415–427. Springer, Cham (2016). doi:10.1007/978-3-319-31750-2_33"
+            },
+            {
+              "key": "49_CR12",
+              "first-page": "205",
+              "volume": "50",
+              "author": "S Randall",
+              "year": "2014",
+              "unstructured": "Randall, S., Ferrante, A., Boyd, J., Bauer, J., Semmens, J.: Privacy-preserving record linkage on large real world datasets. JBI 50, 205–212 (2014)",
+              "journal-title": "JBI"
+            },
+            {
+              "issue": "1",
+              "key": "49_CR13",
+              "doi-asserted-by": "publisher",
+              "first-page": "41",
+              "DOI": "10.1186/1472-6947-9-41",
+              "volume": "9",
+              "author": "R Schnell",
+              "year": "2009",
+              "unstructured": "Schnell, R., Bachteler, T., Reiher, J.: Privacy-preserving record linkage using Bloom filters. BMC Med. Inform. Decis. Mak. 9(1), 41 (2009)",
+              "journal-title": "BMC Med. Inform. Decis. Mak."
+            },
+            {
+              "key": "49_CR14",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Schnell, R., Bachteler, T., Reiher, J.: A novel error-tolerant anonymous linking code. In: Working Paper, German Record Linkage Center (2011)",
+              "DOI": "10.2139/ssrn.3549247"
+            },
+            {
+              "key": "49_CR15",
+              "doi-asserted-by": "publisher",
+              "unstructured": "Schnell, R., Borgs, C.: Randomized response and balanced Bloom filters for privacy preserving record linkage. In: ICDMW DINA, pp. 218–224 (2016). doi:10.1109/ICDMW.2016.0038",
+              "DOI": "10.1109/ICDMW.2016.0038"
+            },
+            {
+              "key": "49_CR16",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Vatsalan, D., Christen, P.: Scalable privacy-preserving record linkage for multiple databases. In: ACM CIKM, Shanghai (2014)",
+              "DOI": "10.1145/2661829.2661875"
+            },
+            {
+              "key": "49_CR17",
+              "first-page": "285",
+              "volume": "59",
+              "author": "D Vatsalan",
+              "year": "2016",
+              "unstructured": "Vatsalan, D., Christen, P.: Privacy-preserving matching of similar patients. JBI 59, 285–298 (2016)",
+              "journal-title": "JBI"
+            },
+            {
+              "issue": "6",
+              "key": "49_CR18",
+              "first-page": "946",
+              "volume": "38",
+              "author": "D Vatsalan",
+              "year": "2013",
+              "unstructured": "Vatsalan, D., Christen, P., Verykios, V.: A taxonomy of privacy-preserving record linkage techniques. IS 38(6), 946–969 (2013)",
+              "journal-title": "IS"
+            }
+          ],
+          "container-title": [
+            "Lecture Notes in Computer Science",
+            "Advances in Knowledge Discovery and Data Mining"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-3-319-57454-7_49",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                13
+              ]
+            ],
+            "date-time": "2024-03-13T16:19:07Z",
+            "timestamp": 1710346747000
+          },
+          "score": 67.23794,
+          "resource": {
+            "primary": {
+              "URL": "https://link.springer.com/10.1007/978-3-319-57454-7_49"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2017
+              ]
+            ]
+          },
+          "ISBN": [
+            "9783319574530",
+            "9783319574547"
+          ],
+          "references-count": 18,
+          "URL": "https://doi.org/10.1007/978-3-319-57454-7_49",
+          "ISSN": [
+            "0302-9743",
+            "1611-3349"
+          ],
+          "issn-type": [
+            {
+              "value": "0302-9743",
+              "type": "print"
+            },
+            {
+              "value": "1611-3349",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2017
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "23 April 2017",
+              "order": 1,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ChapterHistory",
+                "label": "Chapter History"
+              }
+            },
+            {
+              "value": "PAKDD",
+              "order": 1,
+              "name": "conference_acronym",
+              "label": "Conference Acronym",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+              "order": 2,
+              "name": "conference_name",
+              "label": "Conference Name",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Jeju",
+              "order": 3,
+              "name": "conference_city",
+              "label": "Conference City",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "Korea (Republic of)",
+              "order": 4,
+              "name": "conference_country",
+              "label": "Conference Country",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "2017",
+              "order": 5,
+              "name": "conference_year",
+              "label": "Conference Year",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "23 May 2017",
+              "order": 7,
+              "name": "conference_start_date",
+              "label": "Conference Start Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "26 May 2017",
+              "order": 8,
+              "name": "conference_end_date",
+              "label": "Conference End Date",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "21",
+              "order": 9,
+              "name": "conference_number",
+              "label": "Conference Number",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "pakdd2017",
+              "order": 10,
+              "name": "conference_id",
+              "label": "Conference ID",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            },
+            {
+              "value": "http://pakdd2017.snu.ac.kr/",
+              "order": 11,
+              "name": "conference_url",
+              "label": "Conference URL",
+              "group": {
+                "name": "ConferenceInfo",
+                "label": "Conference Information"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                23
+              ]
+            ],
+            "date-time": "2026-08-23T18:36:40Z",
+            "timestamp": 1787510200133,
+            "version": "build-2736575974"
+          },
+          "reference-count": 35,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100017622",
+              "name": "“Pioneer” and “Leading Goose” Research and Development Program of Zhejiang",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2022C03174"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2022C03174"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100017622",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100017622",
+              "name": "“Pioneer” and “Leading Goose” Research and Development Program of Zhejiang",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2023C03203"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2023C03203"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100017622",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100017622",
+              "name": "“Pioneer” and “Leading Goose” Research and Development Program of Zhejiang",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "2023C03180"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2023C03180"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100017622",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IEEE Trans.Inform.Forensic Secur."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "DOI": "10.1109/tifs.2024.3421292",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                7,
+                4
+              ]
+            ],
+            "date-time": "2024-07-04T13:30:25Z",
+            "timestamp": 1720099825000
+          },
+          "page": "6665-6678",
+          "source": "Crossref",
+          "is-referenced-by-count": 8,
+          "title": [
+            "Differential Cryptanalysis of Bloom Filters for Privacy-Preserving Record Linkage"
+          ],
+          "prefix": "10.1109",
+          "volume": "19",
+          "author": [
+            {
+              "given": "Weifeng",
+              "family": "Yin",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "School of Cyberspace, Hangzhou Dianzi University, Hangzhou, China"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-5655-1026",
+              "authenticated-orcid": false,
+              "given": "Lifeng",
+              "family": "Yuan",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "School of Cyberspace, Hangzhou Dianzi University, Hangzhou, China"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1421-9164",
+              "authenticated-orcid": false,
+              "given": "Yizhi",
+              "family": "Ren",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "School of Cyberspace, Hangzhou Dianzi University, Hangzhou, China"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-4384-5786",
+              "authenticated-orcid": false,
+              "given": "Weizhi",
+              "family": "Meng",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Department of Applied Mathematics and Computer Science, Technical University of Denmark, Kongens Lyngby, Denmark"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-9246-204X",
+              "authenticated-orcid": false,
+              "given": "Dong",
+              "family": "Wang",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "School of Cyberspace, Hangzhou Dianzi University, Hangzhou, China"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-0017-9026",
+              "authenticated-orcid": false,
+              "given": "Qiuhua",
+              "family": "Wang",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "School of Cyberspace, Hangzhou Dianzi University, Hangzhou, China"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "issue": "2",
+              "key": "ref1",
+              "first-page": "72",
+              "article-title": "Linking sensitive data: Methods and techniques for practical privacy-preserving information sharing: Synopsis by Kerina Jones",
+              "volume": "6",
+              "author": "Christen",
+              "year": "2021",
+              "journal-title": "Int. J. Population Data Sci."
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-031-01878-7"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TIFS.2021.3114026"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-22263-4_13"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.4018/978-1-59140-557-3.ch189"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JBHI.2018.2796941"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1515/jbnst-2017-1004"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3589641"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.29012/jpc.764"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-47436-2_11"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3340531.3411931"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/362686.362692"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/1472-6947-9-41"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-93040-4_42"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2018.2874004"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.2139/ssrn.3549247",
+              "article-title": "A novel error-tolerant anonymous linking code",
+              "author": "Schnell",
+              "year": "2011"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2013.91"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jisa.2017.01.002"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-33536-5_20"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDMW.2016.0038"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/tkde.2023.3342757"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3579856.3590338"
+            },
+            {
+              "issue": "2",
+              "key": "ref23",
+              "doi-asserted-by": "crossref",
+              "first-page": "59",
+              "DOI": "10.29012/jpc.v6i2.640",
+              "article-title": "Cryptanalysis of basic Bloom filters used for privacy preserving record linkage",
+              "volume": "6",
+              "author": "Niedermeyer",
+              "year": "2014",
+              "journal-title": "J. Privacy Confidentiality"
+            },
+            {
+              "key": "ref24",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.2139/ssrn.3527984",
+              "article-title": "XOR-folding for Bloom filter-based encryptions for privacy-preserving record linkage",
+              "author": "Schnell",
+              "year": "2016"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-27707-3_21"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-57454-7_49"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1504/IJBDI.2017.10006842"
+            },
+            {
+              "key": "ref28",
+              "article-title": "Vulnerabilities in the use of similarity tables in combination with pseudonymisation to preserve data privacy in the UK office for national statistics privacy-preserving record linkage",
+              "author": "Culnane",
+              "year": "2017",
+              "journal-title": "arXiv:1712.00871"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICDE.2019.00176"
+            },
+            {
+              "key": "ref30",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.23889/ijpds.v5i1.1345"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.is.2021.101930"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10115-019-01370-1"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-00305-0_19"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2505515.2507815"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11222-017-9746-6"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Information Forensics and Security"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/10206/10319981/10586207.pdf?arnumber=10586207",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                6
+              ]
+            ],
+            "date-time": "2024-09-06T03:48:44Z",
+            "timestamp": 1725594524000
+          },
+          "score": 61.69517,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/10586207/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          },
+          "references-count": 35,
+          "URL": "https://doi.org/10.1109/tifs.2024.3421292",
+          "ISSN": [
+            "1556-6013",
+            "1556-6021"
+          ],
+          "issn-type": [
+            {
+              "value": "1556-6013",
+              "type": "print"
+            },
+            {
+              "value": "1556-6021",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                12
+              ]
+            ],
+            "date-time": "2026-08-12T08:32:36Z",
+            "timestamp": 1786523556508,
+            "version": "build-2736575974"
+          },
+          "posted": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "group-title": "SSRN",
+          "reference-count": 0,
+          "publisher": "Elsevier BV",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "abstract": "<jats:p>Bloom filter encoded identifiers are increasingly used for privacy preserving record linkage applications, because they allow for errors in encrypted identifiers. However, little research on the security of Bloom filters has been published so far. In this paper, we formalize a successful attack on Bloom filters composed of bigrams. The attack is based on subtle filtering and elementary statistical analysis. Finally, we describe modifications of the Bloom filters for preventing similar attacks.</jats:p>",
+          "DOI": "10.2139/ssrn.3530867",
+          "type": "posted-content",
+          "created": {
+            "date-parts": [
+              [
+                2020,
+                3,
+                5
+              ]
+            ],
+            "date-time": "2020-03-05T06:31:22Z",
+            "timestamp": 1583389882000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 12,
+          "title": [
+            "Cryptanalysis of Basic Bloom Filters Used for Privacy Preserving Record Linkage"
+          ],
+          "prefix": "10.2139",
+          "author": [
+            {
+              "given": "Frank",
+              "family": "Niedermeyer",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Simone",
+              "family": "Steinmetzer",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Martin",
+              "family": "Kroll",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Rainer",
+              "family": "Schnell",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                12
+              ]
+            ],
+            "date-time": "2026-08-12T07:58:12Z",
+            "timestamp": 1786521492000
+          },
+          "score": 59.468918,
+          "resource": {
+            "primary": {
+              "URL": "https://www.ssrn.com/abstract=3530867"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "references-count": 0,
+          "URL": "https://doi.org/10.2139/ssrn.3530867",
+          "published": {
+            "date-parts": [
+              [
+                2020
+              ]
+            ]
+          },
+          "subtype": "preprint"
+        }
+      ],
+      "items-per-page": 3,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

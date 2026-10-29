@@ -1,0 +1,135 @@
+[
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "exp_lib.py",
+    "extract": "source_main_1e0a2db_exp_lib.py.txt",
+    "source_lines": 248
+  },
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "exp_r1_ga_redecision.py",
+    "extract": "source_main_1e0a2db_exp_r1_ga_redecision.py.txt",
+    "source_lines": 198
+  },
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "exp_r2_bert_feature.py",
+    "extract": "source_main_1e0a2db_exp_r2_bert_feature.py.txt",
+    "source_lines": 988
+  },
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "exp_r4_bloom_privacy.py",
+    "extract": "source_main_1e0a2db_exp_r4_bloom_privacy.py.txt",
+    "source_lines": 316
+  },
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "exp_r6_bert_er.py",
+    "extract": "source_main_1e0a2db_exp_r6_bert_er.py.txt",
+    "source_lines": 599
+  },
+  {
+    "repo": "main",
+    "ref": "1e0a2db",
+    "path": "run_gb_transformer_experiments.py",
+    "extract": "source_main_1e0a2db_run_gb_transformer_experiments.py.txt",
+    "source_lines": 865
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "src/identity_resolution/stages/features.py",
+    "extract": "source_backup_903246c_src__identity_resolution__stages__features.py.txt",
+    "source_lines": 831
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "src/identity_resolution/stages/pairs.py",
+    "extract": "source_backup_903246c_src__identity_resolution__stages__pairs.py.txt",
+    "source_lines": 555
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "src/identity_resolution/stages/train_neural.py",
+    "extract": "source_backup_903246c_src__identity_resolution__stages__train_neural.py.txt",
+    "source_lines": 455
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "experiments/code/run_icsec_repeated_outer.py",
+    "extract": "source_backup_903246c_experiments__code__run_icsec_repeated_outer.py.txt",
+    "source_lines": 67
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "experiments/code/analyze_icsec_primary.py",
+    "extract": "source_backup_903246c_experiments__code__analyze_icsec_primary.py.txt",
+    "source_lines": 261
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2/features.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2__features.py.txt",
+    "source_lines": 113
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2/policies.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2__policies.py.txt",
+    "source_lines": 118
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2/final_runner.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2__final_runner.py.txt",
+    "source_lines": 326
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2/real_adapters.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2__real_adapters.py.txt",
+    "source_lines": 161
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2r1/final_runner_r1.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2r1__final_runner_r1.py.txt",
+    "source_lines": 190
+  },
+  {
+    "repo": "backup",
+    "ref": "ab93b36",
+    "path": "experiments/icsec_final/authoritative_run_v2r1/sealed_guard.py",
+    "extract": "source_backup_ab93b36_experiments__icsec_final__authoritative_run_v2r1__sealed_guard.py.txt",
+    "source_lines": 148
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "docs/GETTING_STARTED_TH.md",
+    "extract": "source_backup_903246c_docs__GETTING_STARTED_TH.md.txt",
+    "source_lines": 163
+  },
+  {
+    "repo": "backup",
+    "ref": "903246c",
+    "path": "docs/ARCHITECTURE_TH.md",
+    "extract": "source_backup_903246c_docs__ARCHITECTURE_TH.md.txt",
+    "source_lines": 94
+  }
+]

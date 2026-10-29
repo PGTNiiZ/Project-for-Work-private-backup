@@ -1,0 +1,1257 @@
+[
+  {
+    "path": "experiments/code/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "experiments/code/analyze_icsec_primary.py",
+    "lines": 261,
+    "symbols": [
+      "29: def sha256(path: Path) -> str:",
+      "37: def decision_metrics(decision: np.ndarray, labels: np.ndarray, constants: dict[str, int], weights: tuple[float, float, float]) -> dict[str, float]:",
+      "60: def bootstrap_pairwise(",
+      "102: def availability(frame: pd.DataFrame, column: str) -> np.ndarray:",
+      "106: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/build_r0_r3_report.py",
+    "lines": 195,
+    "symbols": [
+      "13: def sha256(path: Path) -> str:",
+      "21: def read_json(path: Path) -> dict:",
+      "25: def metric_row(label: str, source: str, metric: dict, variability: dict | None = None) -> dict:",
+      "46: def aggregate_row(label: str, source: str, aggregate: dict) -> dict:",
+      "64: def write_charts(r1_dir: Path, r3_dir: Path, output_dir: Path) -> list[str]:",
+      "97: def model_seed_robustness(run_dirs: list[Path]) -> dict:",
+      "124: def build_report(r1_dir: Path, r3_dir: Path, output_dir: Path,",
+      "182: def main() -> int:"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_feature_attribution.py",
+    "lines": 97,
+    "symbols": [
+      "17: def _probabilities(model, scaler, calibrator, frame: pd.DataFrame, columns: list[str]) -> np.ndarray:",
+      "22: def _confidence_interval(values: list[float]) -> tuple[float, float]:",
+      "26: def run_attribution(run_dir: Path, repetitions: int, seed: int) -> pd.DataFrame:",
+      "83: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_lib.py",
+    "lines": 247,
+    "symbols": [
+      "36: def bucket(key: str) -> str:",
+      "41: def load_profiles():",
+      "48: def _name_sim_arrays(ua, fa, ub, fb):",
+      "67: def _clean_names(series):",
+      "72: def build_cache(force=False):",
+      "107: def split_constants(cache):",
+      "130: def evaluate(decision_code, actual, consts):",
+      "143: def save_json(path, obj):",
+      "147: def entity_keys_by_profile() -> pd.Series:",
+      "156: def _nested_entity_bucket(key: str, seed: int) -> str:",
+      "166: def build_nested_entity_split(cache: pd.DataFrame, seed: int = 42,",
+      "223: def nested_split_constants(cache: pd.DataFrame, seed: int = 42) -> dict:"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_name_similarity_ablation.py",
+    "lines": 267,
+    "symbols": [
+      "31: def _write_status(run_dir: Path, state: str, detail: str, progress: int | None = None) -> None:",
+      "48: def _name_features(record_a: dict, record_b: dict) -> dict[str, float]:",
+      "72: def _configure_base(run_dir: Path):",
+      "86: def _prepare_offline_embeddings(base, profiles: pd.DataFrame) -> None:",
+      "105: def _feature_computer(base_compute, feature_set):",
+      "125: def _metrics(labels: np.ndarray, probabilities: np.ndarray, threshold: float) -> dict[str, float]:",
+      "137: def _train_validation_only(feature_df: pd.DataFrame, feature_columns: list[str], seed: int, progress_callback):",
+      "169: def _run_training(args: argparse.Namespace) -> Path:",
+      "227: def _evaluate_test(run_dir: Path) -> None:",
+      "247: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_r1_ga_redecision.py",
+    "lines": 191,
+    "symbols": [
+      "28: class GAConfig:",
+      "55: def default_weights():",
+      "60: def default_config():",
+      "65: def _config_or_default(config):",
+      "69: def decide_code(prob, nsim, g):",
+      "81: def confusion_counts(d, actual):",
+      "90: def cost_from_counts(counts, weights=None):",
+      "96: def raw_cost(d, actual, weights=None):",
+      "100: def clip(g):",
+      "109: def uniform_crossover(parent_a, parent_b, rng):",
+      "114: def mutate(genome, rng, config=None):",
+      "123: def run_ga(prob, nsim, actual, const_fn_below=0, config=None, verbose=True):",
+      "152: def main():"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_r2_bert_feature.py",
+    "lines": 992,
+    "symbols": [
+      "69: def log(msg: str) -> None:",
+      "76: def set_seed(seed: int) -> None:",
+      "83: def build_profile_texts() -> pd.DataFrame:",
+      "100: def encode_profiles() -> tuple[np.ndarray, np.ndarray]:",
+      "121: def compute_bert_cos(cache: pd.DataFrame, emb: np.ndarray, ids: np.ndarray) -> pd.DataFrame:",
+      "146: def _clean(series: pd.Series) -> np.ndarray:",
+      "151: def compute_features17(cache: pd.DataFrame) -> pd.DataFrame:",
+      "275: class FocalLoss(nn.Module):",
+      "290: class IdentityMLP(nn.Module):",
+      "319: class R2TrainingConfig:",
+      "346: def undersample_negatives(x: np.ndarray, y: np.ndarray, ratio: float, seed: int):",
+      "357: def make_loader(x, y, batch_size, shuffle):",
+      "363: def predict_probs(model, x, batch_size, device):",
+      "373: def train_mlp(train_x, train_y, val_x, val_y, input_dim: int, seed: int = SEED,",
+      "414: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,",
+      "516: def build_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame) -> pd.DataFrame:",
+      "592: def decide_manual(prob: np.ndarray) -> np.ndarray:",
+      "599: def run_r2(cache: pd.DataFrame, consts: dict, prob_df: pd.DataFrame) -> dict:",
+      "618: def run_r3(cache: pd.DataFrame, consts: dict, prob_df: pd.DataFrame) -> tuple[dict, list, np.ndarray]:",
+      "652: def fn_recovery(cache: pd.DataFrame, prob_df: pd.DataFrame, r3_full_code: np.ndarray) -> dict:",
+      "676: def main():",
+      "708: class R2TrainingConfig:",
+      "737: def set_deterministic_seed(seed: int, num_threads: int = 1) -> None:",
+      "758: def environment_snapshot(num_threads: int) -> dict:",
+      "776: def _sha256_file(path: Path) -> str:",
+      "784: def _validate_feature_frame(frame: pd.DataFrame, columns: list[str], label: str,",
+      "796: def _preflight_r2_inputs(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame) -> None:",
+      "812: def train_mlp(train_x, train_y, val_x, val_y, input_dim: int, seed: int = SEED,",
+      "872: def train_r2_probabilities(cache: pd.DataFrame, feat17: pd.DataFrame, bert_cos: pd.DataFrame,"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_r4_bloom_privacy.py",
+    "lines": 328,
+    "symbols": [
+      "77: def log(msg: str) -> None:",
+      "84: def bigrams(s: str) -> list[str]:",
+      "89: def bloom_packed(s: str, L: int, k: int, salt: str) -> tuple[np.ndarray, int]:",
+      "101: def build_profile_bloom(L: int) -> dict:",
+      "144: def dice_chunked(packed_a, packed_b, pop_a, pop_b, chunk=200_000):",
+      "155: def compute_pair_bloom_features(L: int, cache: pd.DataFrame) -> pd.DataFrame:",
+      "189: def build_probabilities_for_L(L: int, cache: pd.DataFrame, feat17: pd.DataFrame) -> pd.DataFrame:",
+      "250: def eval_manual(cache, consts, prob_df) -> dict:",
+      "261: def eval_ga(cache, consts, prob_df) -> tuple[dict, dict]:",
+      "278: def main():"
+    ]
+  },
+  {
+    "path": "experiments/code/exp_r6_bert_er.py",
+    "lines": 608,
+    "symbols": [
+      "109: def log(msg: str) -> None:",
+      "116: def set_seed(seed: int) -> None:",
+      "123: def clean_field(x) -> str:",
+      "128: def build_profile_texts() -> pd.DataFrame:",
+      "146: def tokenize_all_profiles(tokenizer) -> dict:",
+      "159: class BertERModel(nn.Module):",
+      "193: def cosine_contrastive_loss(z_a: torch.Tensor, z_b: torch.Tensor, labels: torch.Tensor,",
+      "202: def quantization_reg(z: torch.Tensor) -> torch.Tensor:",
+      "208: def encode_all_profiles(model: BertERModel, tok: dict, device) -> tuple[np.ndarray, np.ndarray]:",
+      "236: def build_training_pairs(cache: pd.DataFrame) -> pd.DataFrame:",
+      "297: def pairs_to_row_indices(pairs: pd.DataFrame, id_to_row: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:",
+      "305: def eval_ap(model, embs: torch.Tensor, a_idx, b_idx, labels) -> float:",
+      "313: def train_heads(model: BertERModel, embs: torch.Tensor, id_to_row: dict,",
+      "392: def compute_hash_codes(model: BertERModel, embs: torch.Tensor) -> np.ndarray:",
+      "402: def build_buckets(codes: np.ndarray, ids: np.ndarray) -> dict:",
+      "409: def neighbor_codes(code: int, radius: int = 1):",
+      "416: def blocking_recovery_eval(id_to_code: dict, radius: int) -> dict:",
+      "433: def enumerate_bucket_pairs(buckets: dict, max_bucket_size: int = 2000) -> pd.DataFrame:",
+      "456: def score_pairs_with_match_head(model: BertERModel, embs: torch.Tensor, id_to_row: dict,",
+      "481: def main():"
+    ]
+  },
+  {
+    "path": "experiments/code/project_one_stage_to_full_2m.py",
+    "lines": 285,
+    "symbols": [
+      "44: def sha256_file(path: Path) -> str:",
+      "52: def score_and_mask_matrices(chunk: pd.DataFrame) -> tuple[np.ndarray, np.ndarray, list[str]]:",
+      "72: def run_projection(output: Path, feature_source: Path, freeze_source: Path) -> dict[str, object]:",
+      "274: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/reviewer_revision.py",
+    "lines": 34,
+    "symbols": [
+      "6: def chow_decide(prob: np.ndarray) -> np.ndarray:",
+      "18: def metrics(frame) -> dict:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_feature_aware_ga_pipeline.py",
+    "lines": 804,
+    "symbols": [
+      "56: def status(output: Path, phase: str, progress: int, detail: str) -> None:",
+      "68: def safe_max(frame: pd.DataFrame, columns: list[str]) -> np.ndarray:",
+      "72: def load_profile_evidence() -> pd.DataFrame:",
+      "83: def derive_decisioning_features(",
+      "134: def build_cache(output: Path) -> pd.DataFrame:",
+      "153: def metrics(labels: np.ndarray, probabilities: np.ndarray, threshold: float) -> dict[str, float]:",
+      "168: def best_threshold(labels: np.ndarray, probabilities: np.ndarray) -> float:",
+      "173: def feature_group(feature: str) -> str:",
+      "189: def train_weight_models(cache: pd.DataFrame, output: Path) -> dict:",
+      "225: def coverage_audit(cache: pd.DataFrame, output: Path) -> pd.DataFrame:",
+      "246: def decisions(probability: np.ndarray, evidence: np.ndarray, available: np.ndarray, genome: np.ndarray) -> np.ndarray:",
+      "257: def decision_metrics(decision: np.ndarray, labels: np.ndarray) -> dict[str, float]:",
+      "274: def clip_one_stage_genome(genome: np.ndarray, active_mask: np.ndarray | None = None) -> np.ndarray:",
+      "302: def one_stage_policy_score(scores: np.ndarray, masks: np.ndarray, weights: np.ndarray) -> np.ndarray:",
+      "325: def one_stage_decisions(scores: np.ndarray, masks: np.ndarray, genome: np.ndarray) -> np.ndarray:",
+      "342: def optimize_one_stage_policy(",
+      "467: def clip_genome(genome: np.ndarray) -> np.ndarray:",
+      "475: def optimize_policy(",
+      "537: def selector_experiments(cache: pd.DataFrame, audit: pd.DataFrame, output: Path) -> tuple[pd.DataFrame, dict]:",
+      "559: def optimize_weighted_policy(cache: pd.DataFrame, audit: pd.DataFrame, output: Path) -> dict:",
+      "605: def evaluate_frozen_winner(cache: pd.DataFrame, selector_winner: dict, weighted: dict, output: Path) -> dict:",
+      "645: def write_report(output: Path, model_bundle: dict, audit: pd.DataFrame, selector: pd.DataFrame, selector_winner: dict, weighted: dict, final_test: dict) -> None:",
+      "769: def regenerate_report(output: Path) -> None:",
+      "779: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_full_2m_one_stage_ga.py",
+    "lines": 175,
+    "symbols": [
+      "36: def load_validation(feature_source: Path) -> tuple[pd.DataFrame, dict[str, object]]:",
+      "54: def run(",
+      "154: def parse_seeds(value: str) -> tuple[int, ...]:",
+      "158: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_full_feature_aware_ga_pipeline.py",
+    "lines": 531,
+    "symbols": [
+      "60: def sha256_file(path: Path) -> str:",
+      "68: def write_state(output: Path, phase: str, completed_rows: int, total_rows: int, detail: str) -> None:",
+      "83: def load_scored_source(max_rows: int | None = None) -> tuple[pd.DataFrame, dict[str, object]]:",
+      "115: def prepare_text_context(output: Path):",
+      "142: def clean_image_text(value: object) -> str:",
+      "149: def load_image_lookup(profiles: pd.DataFrame) -> dict[int, dict[str, str]]:",
+      "170: def hash_similarity(left: str, right: str) -> float:",
+      "177: def add_image_evidence(",
+      "211: def compute_evidence_chunk(",
+      "235: def chunk_path(output: Path, start: int, stop: int) -> Path:",
+      "239: def manifest_path(path: Path) -> str:",
+      "246: def validate_chunk(path: Path, expected_rows: int) -> None:",
+      "255: def export_features(output: Path, chunk_size: int, max_rows: int | None) -> dict[str, object]:",
+      "298: def load_exported_features(output: Path) -> tuple[pd.DataFrame, dict[str, object]]:",
+      "334: def freeze_policy(selector_winner: dict, weighted: dict) -> dict[str, object]:",
+      "353: def apply_frozen_policy(cache: pd.DataFrame, policy: dict[str, object]) -> np.ndarray:",
+      "375: def system_metrics(values: dict[str, int | float]) -> dict[str, int | float]:",
+      "385: def write_full_report(",
+      "445: def optimize_full_policy(",
+      "497: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_ga_experiments.py",
+    "lines": 951,
+    "symbols": [
+      "45: class ExperimentData:",
+      "57: def _file_sha256(path: Path) -> str:",
+      "65: def _artifact_manifest(path: Path) -> dict:",
+      "74: def _require_columns(frame: pd.DataFrame, columns: Iterable[str], label: str) -> None:",
+      "80: def _r1_baseline(sub: pd.DataFrame) -> np.ndarray:",
+      "87: def _r2_baseline(sub: pd.DataFrame) -> np.ndarray:",
+      "95: def make_r1_data(cache: pd.DataFrame, input_manifest: Optional[dict] = None) -> ExperimentData:",
+      "109: def make_r3_data(cache: pd.DataFrame, probability_path: Path,",
+      "136: def train_fresh_r2_for_run(cache: pd.DataFrame, output_dir: Path, model_seed: int,",
+      "176: def _validate_experiment_data(data: ExperimentData, consts: dict) -> None:",
+      "186: def _metric_with_cost(code: np.ndarray, actual: np.ndarray, consts: dict,",
+      "193: def _to_json_value(value):",
+      "203: def _write_json(path: Path, value: dict) -> None:",
+      "207: def _write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:",
+      "214: def _make_config(seed: int, settings: dict, weights: ga.CostWeights) -> ga.GAConfig:",
+      "231: def _scenario_specs(experiment: str, override_weights: Optional[ga.CostWeights]) -> list[tuple[str, ga.CostWeights]]:",
+      "244: def _percent_change(baseline: float, candidate: float):",
+      "250: def _format_pct(value) -> str:",
+      "254: def _full_validation_cost(data: ExperimentData, consts: dict, genome: np.ndarray,",
+      "261: def _run_trial(data: ExperimentData, consts: dict, scenario: str, config: ga.GAConfig) -> tuple[dict, list[dict]]:",
+      "331: def _baseline_metrics(data: ExperimentData, consts: dict, weights: ga.CostWeights) -> dict:",
+      "336: def _aggregate(records: list[dict], baseline: dict) -> dict:",
+      "372: def _markdown_summary(experiment: str, data: ExperimentData, baselines: dict,",
+      "428: def run_experiments(data: ExperimentData, consts: dict, seeds: Iterable[int], settings: Optional[dict],",
+      "499: def _parser() -> argparse.ArgumentParser:",
+      "525: def main(argv: Optional[list[str]] = None) -> int:",
+      "603: def make_r3_data(cache: pd.DataFrame, probability_path: Path,",
+      "644: def _validation_name(data: ExperimentData) -> str:",
+      "648: def _test_name(data: ExperimentData) -> str:",
+      "652: def _split_column(data: ExperimentData) -> str:",
+      "656: def _validate_experiment_data(data: ExperimentData, consts: dict) -> None:",
+      "666: def _full_validation_cost(data: ExperimentData, consts: dict, genome: np.ndarray,",
+      "674: def _run_trial(data: ExperimentData, consts: dict, scenario: str, config: ga.GAConfig) -> tuple[dict, list[dict]]:",
+      "727: def _baseline_metrics(data: ExperimentData, consts: dict, weights: ga.CostWeights) -> dict:",
+      "733: def _runner_environment() -> dict:",
+      "758: def run_experiments(data: ExperimentData, consts: dict, seeds: Iterable[int], settings: Optional[dict],",
+      "837: def _parser() -> argparse.ArgumentParser:",
+      "861: def main(argv: Optional[list[str]] = None) -> int:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_gb_transformer_experiments.py",
+    "lines": 867,
+    "symbols": [
+      "72: def sha256_file(path: Path) -> str:",
+      "80: def sha256_bytes(value: bytes) -> str:",
+      "84: def json_default(value: Any) -> Any:",
+      "96: def write_json(path: Path, value: Any) -> None:",
+      "103: def environment_snapshot() -> dict[str, Any]:",
+      "131: def set_seed(seed: int = SEED) -> None:",
+      "137: def require_columns(frame: pd.DataFrame, columns: list[str], label: str) -> None:",
+      "143: def assert_unique_keys(frame: pd.DataFrame, label: str) -> None:",
+      "148: def validate_ranges(frame: pd.DataFrame, columns: list[str], lower: float,",
+      "158: def pair_key_digest(frame: pd.DataFrame) -> str:",
+      "166: def labels_for(assigned: pd.DataFrame, keys: pd.DataFrame, role: str,",
+      "183: def validate_inputs(cache: pd.DataFrame, feat17: pd.DataFrame,",
+      "244: def build_nested_constants_without_test(assigned: pd.DataFrame) -> dict:",
+      "250: def metric_with_cost(decision: np.ndarray, actual: np.ndarray,",
+      "260: def manual_decision(probabilities: np.ndarray) -> np.ndarray:",
+      "267: def class_counts(labels: np.ndarray) -> dict[str, int]:",
+      "271: def deterministic_sample_indices(labels: np.ndarray, ratio: float, seed: int) -> np.ndarray:",
+      "281: def train_gb_variant(name: str, feature_columns: list[str], work: pd.DataFrame,",
+      "359: def probability_artifact_check(path: Path, work: pd.DataFrame,",
+      "376: def run_ga_trials(work: pd.DataFrame, assigned: pd.DataFrame,",
+      "473: def metric_row(label: str, source: str, metric: dict[str, Any],",
+      "490: def load_comparison_sources() -> tuple[dict, dict, dict]:",
+      "516: def delta_effect(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:",
+      "523: def build_summary(output_dir: Path, test_rows: list[dict], trials: list[dict],",
+      "574: def write_summary_markdown(path: Path, summary: dict) -> None:",
+      "634: def write_csv(path: Path, rows: list[dict]) -> None:",
+      "638: def run(args: argparse.Namespace) -> dict:",
+      "851: def parse_args() -> argparse.Namespace:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_icsec_authoritative_v2.py",
+    "lines": 414,
+    "symbols": [
+      "59: def digest(path: Path) -> dict[str, object]:",
+      "65: def load_public_profiles() -> pd.DataFrame:",
+      "74: def pair_key(a: int, b: int) -> int:",
+      "79: def unpack_key(value: int) -> tuple[int, int]:",
+      "83: def generate_candidates(profiles: pd.DataFrame, output: Path) -> dict:",
+      "100: def candidate_scope(profiles: pd.DataFrame, candidates: dict) -> dict:",
+      "141: def regenerate_handcrafted_features(profiles: pd.DataFrame, scored: set[int], output: Path) -> dict:",
+      "150: def regenerate_minilm_cos(profiles: pd.DataFrame, scored: set[int], output: Path) -> dict:",
+      "169: def role_for_entity(entity: str, seed: int) -> str:",
+      "177: def split_manifest(profiles: pd.DataFrame, seed: int, output: Path) -> dict:",
+      "198: def preflight_label_seal() -> dict[str, object]:",
+      "211: def preflight_policy_equivalence() -> dict[str, object]:",
+      "225: def assert_no_legacy_v2_path() -> dict[str, object]:",
+      "243: def validate_split_manifests() -> dict[str, object]:",
+      "256: def static_route_real_artifacts() -> dict[str, object]:",
+      "284: def preflight(args: argparse.Namespace) -> dict:",
+      "316: def prepare_scientific_inputs() -> dict[str, object]:",
+      "340: def validate_final_scientific_gate(seeds: list[int]) -> None:",
+      "358: def execute_authorized_scientific(seeds: list[int]) -> dict[str, object]:",
+      "370: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_icsec_repeated_outer.py",
+    "lines": 67,
+    "symbols": [
+      "13: def outer_role(key: str, seed: int) -> str:",
+      "17: def constants(assigned:pd.DataFrame, seed:int)->dict[str,dict[str,int]]:",
+      "30: def run_one(root:Path, outer_seed:int)->list[dict]:",
+      "60: def main():"
+    ]
+  },
+  {
+    "path": "experiments/code/run_one_stage_weighted_ga_experiment.py",
+    "lines": 939,
+    "symbols": [
+      "50: def sha256_file(path: Path) -> str:",
+      "58: def write_status(output: Path, phase: str, detail: str, progress: int) -> None:",
+      "69: def load_split_cache(split_name: str) -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "81: def load_validation_cache() -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "86: def load_all_cache() -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "97: def policy_inputs(cache: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]:",
+      "112: def policy_matrices(",
+      "138: def expanded_metrics(decision: np.ndarray, labels: np.ndarray) -> dict[str, int | float | bool]:",
+      "157: def one_stage_trial(",
+      "193: def legacy_name_trial(",
+      "223: def feature_coverage(scores: np.ndarray, masks: np.ndarray, labels: np.ndarray, active: np.ndarray) -> pd.DataFrame:",
+      "241: def summarize_trials(trials: pd.DataFrame) -> pd.DataFrame:",
+      "261: def weight_summary(trials: pd.DataFrame) -> pd.DataFrame:",
+      "279: def bootstrap_intervals(",
+      "306: def platform_metrics(",
+      "330: def best_decisions(",
+      "352: def write_report(",
+      "460: def evaluate_frozen_policies_on_test(",
+      "604: def project_frozen_policies_to_all_dataset(output: Path) -> dict[str, object]:",
+      "715: def run_experiment(",
+      "892: def parse_seeds(value: str) -> tuple[int, ...]:",
+      "899: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/code/run_reviewer_revision.py",
+    "lines": 133,
+    "symbols": [
+      "22: def sha(p):",
+      "25: def main():"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/00_shared_protocol/00_shared_protocol.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/build_walkthrough_notebooks.py",
+    "lines": 171,
+    "symbols": [
+      "20: def find_root():",
+      "30: def source(module, *names):",
+      "35: def read_json(relative):",
+      "42: def md(text: str) -> tuple[str, str]:",
+      "46: def code(text: str) -> tuple[str, str]:",
+      "159: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/gb_transformer_ga/GB_transformer_GA.ipynb",
+    "lines": 43,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r0_baseline/R0_baseline.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r1_ga_redecision/R1_ga_redecision.ipynb",
+    "lines": 40,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r1_ga_redecision/export_r1_ga_input_detail.py",
+    "lines": 310,
+    "symbols": [
+      "33: def nested_role(entity_key: str) -> str:",
+      "43: def entity_keys_by_profile() -> pd.Series:",
+      "55: def selected_genome() -> tuple[dict, dict]:",
+      "67: def build_detail() -> tuple[pd.DataFrame, dict]:",
+      "211: def branch_examples(detail: pd.DataFrame) -> pd.DataFrame:",
+      "229: def changed_examples(detail: pd.DataFrame) -> pd.DataFrame:",
+      "270: def main() -> None:"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r2_minilm_feature/R2_minilm_feature.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r3_minilm_ga/R3_minilm_ga.ipynb",
+    "lines": 36,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r4_bloom_manual/R4_bloom_manual.ipynb",
+    "lines": 34,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r5_bloom_ga/R5_bloom_ga.ipynb",
+    "lines": 36,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "experiments/walkthroughs/r6_bert_er/R6_bert_er.ipynb",
+    "lines": 35,
+    "symbols": [
+      "7: def find_root():",
+      "17: def source(module, *names):",
+      "22: def read_json(relative):"
+    ]
+  },
+  {
+    "path": "manuscript/generate_report_figures.py",
+    "lines": 482,
+    "symbols": [
+      "47: def setup() -> None:",
+      "65: def save(figure: plt.Figure, filename: str) -> None:",
+      "71: def percent_axis(value: float, _position: int) -> str:",
+      "75: def figure_end_to_end_architecture() -> None:",
+      "161: def write_data_audit() -> None:",
+      "194: def figure_search_space() -> None:",
+      "214: def figure_model_comparison() -> None:",
+      "232: def figure_feature_importance() -> None:",
+      "243: def figure_platform_performance() -> None:",
+      "261: def figure_difficulty_slices() -> None:",
+      "278: def figure_decision_tiers() -> None:",
+      "298: def figure_error_taxonomy() -> None:",
+      "313: def figure_r_series() -> None:",
+      "335: def figure_feature_aware_ga() -> None:",
+      "356: def figure_name_similarity_ablation() -> None:",
+      "386: def figure_privacy_utility() -> None:",
+      "404: def figure_full_feature_aware_tradeoff() -> None:",
+      "451: def main() -> None:"
+    ]
+  },
+  {
+    "path": "manuscript/generate_report_pdf.py",
+    "lines": 154,
+    "symbols": [
+      "17: class ReportPDF(FPDF):",
+      "25: def plain_text(value: str) -> str:",
+      "33: def write_paragraph(pdf: ReportPDF, text: str, *, size: float = 10.3, indent: float = 0) -> None:",
+      "41: def write_table(pdf: ReportPDF, rows: list[list[str]]) -> None:",
+      "67: def write_image(pdf: ReportPDF, image_path: Path, alt_text: str) -> None:",
+      "88: def render_pdf() -> None:"
+    ]
+  },
+  {
+    "path": "notebooks/05_evaluate.ipynb",
+    "lines": 77,
+    "symbols": []
+  },
+  {
+    "path": "paper/overleaf_v2/generate_figures.py",
+    "lines": 54,
+    "symbols": [
+      "9: def box(ax, xy, wh, text, color=\"#E8F0FE\", edge=\"#315A8A\", fontsize=9):",
+      "16: def arrow(ax, start, end, color=\"#444444\"):",
+      "20: def save(fig, name):"
+    ]
+  },
+  {
+    "path": "paper/overleaf_v3/generate_figures.py",
+    "lines": 226,
+    "symbols": [
+      "37: def rounded(ax, xy, width, height, text, *, edge=INK, face=WHITE, size=7.0, weight=\"normal\", radius=0.03, lw=0.8):",
+      "49: def flow(ax, start, end, *, color=INK, lw=0.8, connectionstyle=\"arc3\"):",
+      "59: def save(fig, name):"
+    ]
+  },
+  {
+    "path": "paper/reviewer_revision/generate_figures.py",
+    "lines": 42,
+    "symbols": []
+  },
+  {
+    "path": "paper/reviewer_revision/verify_revision.py",
+    "lines": 90,
+    "symbols": [
+      "13: def main():"
+    ]
+  },
+  {
+    "path": "paper/reviewer_revision/verify_scope.py",
+    "lines": 28,
+    "symbols": [
+      "11: def main():"
+    ]
+  },
+  {
+    "path": "pub_multi/build_pkg.py",
+    "lines": 903,
+    "symbols": [
+      "102: def ensure_dirs() -> None:",
+      "107: def read_json(path: Path) -> dict:",
+      "111: def write_json(path: Path, payload: dict) -> None:",
+      "115: def save_csv(df: pd.DataFrame, path: Path) -> None:",
+      "119: def copy_assets() -> list[dict[str, str]]:",
+      "136: def load_profiles() -> pd.DataFrame:",
+      "154: def build_train_all(main_report: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "212: def threshold_sweep(scores: pd.DataFrame) -> pd.DataFrame:",
+      "232: def build_results(main_report: dict, full_report: dict, crm_report: dict) -> dict[str, pd.DataFrame]:",
+      "373: def save_feature_importance() -> pd.DataFrame:",
+      "390: def plot_style() -> None:",
+      "397: def save_fig(fig_name: str) -> Path:",
+      "405: def make_figures(",
+      "539: def write_docs(main_report: dict, full_report: dict, crm_report: dict) -> list[str]:",
+      "859: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/genetic_algorithm_tuning.py",
+    "lines": 226,
+    "symbols": [
+      "38: def parse_args() -> argparse.Namespace:",
+      "55: def load_table(path: Path) -> pd.DataFrame:",
+      "65: def select_feature_columns(frame: pd.DataFrame) -> list[str]:",
+      "74: def prepare_splits(frame: pd.DataFrame, seed: int, train_cap: int | None, val_cap: int | None) -> dict[str, pd.DataFrame]:",
+      "92: def stratified_cap(frame: pd.DataFrame, cap: int | None, seed: int) -> pd.DataFrame:",
+      "108: class IdentityFitness:",
+      "131: def build_model(genome: Genome, seed: int) -> GradientBoostingClassifier:",
+      "142: def metrics(labels: np.ndarray, probabilities: np.ndarray, threshold: float) -> dict[str, float]:",
+      "153: def save_outputs(",
+      "177: def main() -> None:"
+    ]
+  },
+  {
+    "path": "pub_multi/src/genetic_optimizer.py",
+    "lines": 206,
+    "symbols": [
+      "17: class Genome:",
+      "42: class Bounds:",
+      "52: class GAConfig:",
+      "75: class GeneticOptimizer:"
+    ]
+  },
+  {
+    "path": "pub_multi/tests/test_genetic_optimizer.py",
+    "lines": 45,
+    "symbols": [
+      "13: class GeneticOptimizerTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/__init__.py",
+    "lines": 3,
+    "symbols": []
+  },
+  {
+    "path": "src/identity_resolution/cli.py",
+    "lines": 41,
+    "symbols": [
+      "21: def usage() -> str:",
+      "31: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "src/identity_resolution/core/business_cost.py",
+    "lines": 30,
+    "symbols": [
+      "12: class CostWeights:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/decisioning.py",
+    "lines": 46,
+    "symbols": [
+      "11: class ThresholdPolicy:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/entities.py",
+    "lines": 39,
+    "symbols": [
+      "10: class UnionFind:",
+      "34: def choose_canonical_name(names: list[str]) -> str:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/name_similarity.py",
+    "lines": 116,
+    "symbols": [
+      "14: def normalize_name(value: object) -> str:",
+      "22: def _non_empty_pair(left: object, right: object) -> tuple[str, str] | None:",
+      "27: def damerau_similarity(left: object, right: object) -> float:",
+      "37: def token_set_similarity(left: object, right: object) -> float:",
+      "43: def char_ngram_cosine(left: object, right: object, ngram_size: int = 3) -> float:",
+      "60: def compact_handle(value: object) -> str:",
+      "65: def handle_features(left: object, right: object) -> dict[str, float]:",
+      "87: def latin_soundex(value: object) -> str:",
+      "113: def latin_soundex_match(left: object, right: object) -> float:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/pairs.py",
+    "lines": 13,
+    "symbols": [
+      "6: def pair_key(a: int, b: int) -> int:",
+      "12: def unpack_pair_key(key: int) -> tuple[int, int]:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/text.py",
+    "lines": 20,
+    "symbols": [
+      "9: def clean_text(value: object) -> str:",
+      "15: def lower_text(value: object) -> str:",
+      "19: def json_text(value: object) -> str:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "src/identity_resolution/imaging/captioning.py",
+    "lines": 606,
+    "symbols": [
+      "81: def setup_directories():",
+      "93: class CaptionDatabase:",
+      "243: class BLIPCaptioner:",
+      "337: class MultilingualTextEmbedder:",
+      "423: def run_caption_pipeline(",
+      "539: def search_similar_captions(query_text: str, top_k: int = 10) -> List[Tuple[str, float]]:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/embeddings.py",
+    "lines": 567,
+    "symbols": [
+      "62: def get_image_filename(url: str, profile_id: str, platform: str) -> str:",
+      "68: def is_valid_url(url: str) -> bool:",
+      "78: def download_image(url: str, save_path: str, timeout: int = TIMEOUT) -> Tuple[bool, str]:",
+      "123: def download_all_images(",
+      "212: class CLIPEmbedder:",
+      "344: def extract_and_save_embeddings(",
+      "405: def process_existing_images(",
+      "487: def run_image_embedding_pipeline("
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/features.py",
+    "lines": 600,
+    "symbols": [
+      "100: def setup_directories():",
+      "110: def extract_metadata(image_path: Path) -> Dict:",
+      "133: def calculate_blur_score(image_path: Path) -> Tuple[float, bool]:",
+      "159: def calculate_phash(image_path: Path) -> str:",
+      "174: class FaceDetector:",
+      "238: def load_existing_embedding(item_id: str, emb_type: str = 'clip') -> Optional[np.ndarray]:",
+      "254: class CLIPZeroShot:",
+      "334: def cluster_faces(embeddings: np.ndarray, item_ids: List[str],",
+      "367: def detect_duplicates(phashes: Dict[str, str], threshold: int = 5) -> Dict[str, Tuple[int, bool]]:",
+      "436: def run_feature_extraction("
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/matching.py",
+    "lines": 849,
+    "symbols": [
+      "59: def log_stage(stage: str, start_ts: float) -> None:",
+      "70: class ImageProfile:",
+      "85: def load_and_normalize(npy_path: Path) -> Optional[np.ndarray]:",
+      "96: def fuse_embeddings(",
+      "114: def discover_profiles() -> List[ImageProfile]:",
+      "173: def cosine_similarity(a: Optional[np.ndarray], b: Optional[np.ndarray]) -> float:",
+      "180: def l2_distance(a: Optional[np.ndarray], b: Optional[np.ndarray]) -> float:",
+      "192: def compute_pairwise_similarity(",
+      "218: def build_pairwise_results(",
+      "265: def select_candidates_from_matrix(",
+      "288: def build_features_for_pair(",
+      "315: def build_features_for_candidates(",
+      "342: def build_balanced_train_set(",
+      "388: def evaluate_top1(",
+      "456: def predict_similarity(",
+      "521: def run_pipeline(",
+      "772: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/merge.py",
+    "lines": 234,
+    "symbols": [
+      "39: def load_captions():",
+      "59: def create_merged_database():"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/normalized_store.py",
+    "lines": 241,
+    "symbols": [
+      "43: def create_normalized_tables():"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/pair_features.py",
+    "lines": 493,
+    "symbols": [
+      "80: def _get_torch():",
+      "89: def _get_deepface():",
+      "98: def _get_clip():",
+      "115: def _get_imagehash():",
+      "124: def get_url_hash(url: str) -> str:",
+      "128: def build_image_hash_index(image_dir: Path) -> dict[str, Path]:",
+      "140: def resolve_local_image_path(picture_url: str, image_hash_index: dict[str, Path]) -> Path | None:",
+      "147: def normalize_bio_text(text: str) -> str:",
+      "151: def bio_mentions_selfie(text: str) -> float:",
+      "159: def clip_bio_consistency(category: str | None, bio: str) -> float:",
+      "169: class ImageFeatureExtractor:",
+      "363: def _import_pandas():",
+      "369: def load_profiles_df(csv_path: Path):",
+      "374: def load_pairs_df(csv_path: Path):",
+      "379: def precompute_all_profiles(",
+      "416: def add_image_features_to_pairs(pairs_df, image_cache: dict[Any, dict[str, Any]], extractor: ImageFeatureExtractor | None = None):",
+      "435: def run_precompute(args: argparse.Namespace) -> None:",
+      "452: def run_pair_features(args: argparse.Namespace) -> None:",
+      "463: def build_parser() -> argparse.ArgumentParser:",
+      "486: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/imaging/recover.py",
+    "lines": 689,
+    "symbols": [
+      "53: class DownloadItem:",
+      "63: def parse_args() -> argparse.Namespace:",
+      "90: def get_url_hash(url: str) -> str:",
+      "94: def get_filename(url: str, username: str, idx: int) -> str:",
+      "104: def normalize_username(username: str, platform: str) -> str:",
+      "111: def load_previous_failures(report_path: Path) -> dict[str, str]:",
+      "128: def load_items(",
+      "167: def build_existing_file_set(output_dir: Path) -> tuple[set[str], set[str]]:",
+      "182: def dedupe_keep_order(values: list[str]) -> list[str]:",
+      "192: def build_twitter_candidates(url: str) -> list[str]:",
+      "226: def build_instagram_candidates(url: str) -> list[str]:",
+      "242: def build_generic_candidates(url: str) -> list[str]:",
+      "572: def save_outputs(",
+      "640: def print_summary(results: list[dict[str, Any]], elapsed_sec: float, output_dir: Path) -> None:",
+      "683: def main() -> int:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/settings.py",
+    "lines": 53,
+    "symbols": [
+      "13: class Paths:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/__init__.py",
+    "lines": 11,
+    "symbols": []
+  },
+  {
+    "path": "src/identity_resolution/stages/evaluate.py",
+    "lines": 152,
+    "symbols": [
+      "27: def load(path=TA):",
+      "31: def add_derived(df):",
+      "41: def slice_of(df):",
+      "48: def metrics_at(y, score, thr):",
+      "59: def threshold_sweep(df, *, split=\"val\", score_col=\"probability\", grid=None):",
+      "74: def select_threshold(df, *, split=\"val\", score_col=\"probability\"):",
+      "80: def full_report(df, score_col=\"probability\", thr=0.35, split=\"test\"):",
+      "115: def print_report(rep, tag=\"\"):",
+      "127: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/feature_registry.py",
+    "lines": 82,
+    "symbols": [
+      "20: class FeatureSet:",
+      "37: def resolve_feature_set(name: str, include_groups: tuple[str, ...] = ()) -> FeatureSet:",
+      "51: def group_for_feature(column: str) -> str:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/features.py",
+    "lines": 831,
+    "symbols": [
+      "65: def _load_profile_image_module():",
+      "78: def _get_rapidfuzz():",
+      "90: def _safe_str(val) -> str:",
+      "96: def _safe_str_lower(val) -> str:",
+      "100: def _parse_list_field(val) -> list[str]:",
+      "115: def _parse_mentions(val) -> set[str]:",
+      "122: def _extract_hashtags(bio: str) -> set[str]:",
+      "128: def _jaccard(a: set, b: set) -> float:",
+      "135: def _haversine_km(lat1, lon1, lat2, lon2) -> float:",
+      "145: def _normalize_picture_url(url: str) -> str:",
+      "149: def _picture_stem(url: str) -> str:",
+      "155: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "167: def _write_parquet_compat(df: pd.DataFrame, path: Path) -> None:",
+      "181: def ensure_output_dirs() -> None:",
+      "186: def _find_resume_offset(split_name: str, output_prefix: str) -> int:",
+      "199: def save_split_artifacts(",
+      "215: def load_split_artifacts() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:",
+      "230: def build_profile_lookup(split_df: pd.DataFrame) -> dict[str, dict]:",
+      "239: def save_profile_cache(split_name: str, split_df: pd.DataFrame) -> None:",
+      "245: def load_profile_cache(split_name: str) -> dict[str, dict]:",
+      "253: def merge_feature_chunks(split_name: str, output_prefix: str) -> Path:",
+      "276: def _build_row_cache(row: dict, source_idx: int) -> dict:",
+      "308: class PairFeatureComputer:",
+      "471: def compute_sbert_embeddings(df: pd.DataFrame, model_name: str = \"all-mpnet-base-v2\", batch_size: int = 64) -> np.ndarray:",
+      "491: class FeatureEngineer:",
+      "627: def build_entity_split(df: pd.DataFrame, pairs: pd.DataFrame, random_seed: int = 42):",
+      "655: def build_or_load_image_cache(df: pd.DataFrame, force: bool = False) -> dict:",
+      "667: def parse_args():",
+      "685: def main():"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/location.py",
+    "lines": 166,
+    "symbols": [
+      "15: def normalize_location(text: object) -> str:",
+      "35: def similarity(a: str, b: str) -> float:",
+      "48: def prepare_ontology(df: pd.DataFrame) -> pd.DataFrame:",
+      "55: def best_match(raw_norm: str, onto: pd.DataFrame) -> Tuple[Optional[pd.Series], float]:",
+      "70: def run(",
+      "132: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/pairs.py",
+    "lines": 555,
+    "symbols": [
+      "67: def _safe_str(val) -> str:",
+      "73: def _name_similarity(a: str, b: str) -> float:",
+      "82: class PairBuilder:",
+      "399: def run_quality_checks(labeled_pairs: pd.DataFrame, df_profiles: pd.DataFrame) -> dict:",
+      "461: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/prepare.py",
+    "lines": 448,
+    "symbols": [
+      "28: def load_all_profiles(base_path: str | Path = DEFAULT_DATASET_ROOT) -> pd.DataFrame:",
+      "76: def remove_emojis(text: str) -> str:",
+      "98: def normalize_text(text: str) -> str:",
+      "119: def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:",
+      "168: def split_by_platform(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:",
+      "190: def create_ground_truth_pairs(",
+      "245: def create_full_matching_dataset(",
+      "328: def run_preprocessing_pipeline(",
+      "431: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/train_base.py",
+    "lines": 590,
+    "symbols": [
+      "59: def ensure_dirs() -> None:",
+      "64: def set_seed(seed: int) -> None:",
+      "69: def clean_text(value: object) -> str:",
+      "75: def lower_text(value: object) -> str:",
+      "79: def parse_list_field(value: object) -> list[str]:",
+      "92: def parse_urls(value: object) -> set[str]:",
+      "101: def extract_domains(urls: set[str]) -> set[str]:",
+      "111: def parse_mentions(value: object) -> set[str]:",
+      "118: def extract_hashtags(text: str) -> set[str]:",
+      "122: def jaccard(a: set[str], b: set[str]) -> float:",
+      "129: def biolen_ratio(a: str, b: str) -> float:",
+      "138: def punct_ratio(text: str) -> float:",
+      "145: def avg_word_len(text: str) -> float:",
+      "152: def load_profiles() -> pd.DataFrame:",
+      "170: def build_ground_truth_pairs(profiles: pd.DataFrame) -> pd.DataFrame:",
+      "192: def save_ground_truth_matrix(profiles: pd.DataFrame, gt_pairs: pd.DataFrame) -> None:",
+      "211: def assign_splits(profiles: pd.DataFrame, seed: int) -> dict[int, str]:",
+      "237: def generate_negatives(",
+      "308: def make_profile_bundle(profiles: pd.DataFrame) -> dict[str, object]:",
+      "339: def compute_features(pairs: pd.DataFrame, profile_bundle: dict[str, object]) -> tuple[pd.DataFrame, list[str]]:",
+      "395: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "402: def single_feature_leakage_check(test_df: pd.DataFrame, feature_cols: list[str]) -> list[dict[str, object]]:",
+      "425: def train_and_eval(feature_df: pd.DataFrame, feature_cols: list[str], seed: int) -> dict[str, object]:",
+      "495: def build_dataset(profiles: pd.DataFrame, args: argparse.Namespace) -> tuple[pd.DataFrame, list[str], dict[str, object]]:",
+      "558: def parse_args() -> argparse.Namespace:",
+      "566: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/train_multimodal.py",
+    "lines": 478,
+    "symbols": [
+      "31: def ensure_dirs() -> None:",
+      "36: def load_base_module(module_name: str):",
+      "43: def configure_base_module(base, run_dir: Path) -> None:",
+      "54: def clean_text(value: object) -> str:",
+      "60: def lower_text(value: object) -> str:",
+      "64: def image_entropy(gray: np.ndarray) -> float:",
+      "70: def compute_local_image_descriptor(image_path: Path) -> dict[str, object]:",
+      "98: def scan_local_image_map() -> dict[int, Path]:",
+      "113: def build_image_profile_features(base, profiles: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:",
+      "211: def hash_similarity(hash_a: str, hash_b: str) -> float:",
+      "218: def make_multimodal_wrappers(base, experiment_kind: str, image_df: pd.DataFrame, caption_embeddings: np.ndarray):",
+      "311: def summarize_modalities(profiles: pd.DataFrame, image_df: pd.DataFrame, feature_df: pd.DataFrame) -> dict[str, object]:",
+      "342: def composite_score(metrics: dict[str, object]) -> float:",
+      "350: def run_experiment(run_name: str, experiment_kind: str, args: argparse.Namespace) -> dict[str, object]:",
+      "400: def parse_args() -> argparse.Namespace:",
+      "414: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/stages/train_neural.py",
+    "lines": 455,
+    "symbols": [
+      "36: def _read_parquet_compat(path: Path) -> pd.DataFrame:",
+      "47: def ensure_dirs(training_root: Path) -> tuple[Path, Path]:",
+      "55: def set_seed(seed: int) -> None:",
+      "63: def load_feature_frame(split_name: str, prefix: str, features_dir: Path) -> pd.DataFrame:",
+      "77: def load_feature_cols(prefix: str, artifacts_dir: Path, train_df: pd.DataFrame | None = None, features_dir: Path | None = None) -> list[str]:",
+      "106: def undersample_negatives(train_df: pd.DataFrame, target_ratio: float, seed: int) -> pd.DataFrame:",
+      "116: def parse_excluded_features(args: argparse.Namespace) -> set[str]:",
+      "128: class DataBundle:",
+      "144: def build_data_bundle(",
+      "185: class FocalLoss(nn.Module):",
+      "201: class IdentityMLP(nn.Module):",
+      "217: def make_loader(x: np.ndarray, y: np.ndarray, batch_size: int, shuffle: bool) -> DataLoader:",
+      "223: def predict_probs(model: nn.Module, x: np.ndarray, batch_size: int, device: torch.device) -> np.ndarray:",
+      "234: def choose_threshold(labels: np.ndarray, probs: np.ndarray) -> tuple[float, float]:",
+      "241: def expected_calibration_error(probs: np.ndarray, labels: np.ndarray, n_bins: int = 10) -> float:",
+      "254: def train_model(bundle: DataBundle, args: argparse.Namespace) -> tuple[IdentityMLP, dict]:",
+      "312: def evaluate_and_save(",
+      "403: def parse_args() -> argparse.Namespace:",
+      "425: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/workflows/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "src/identity_resolution/workflows/crm.py",
+    "lines": 432,
+    "symbols": [
+      "30: def ensure_dirs() -> None:",
+      "35: def load_profiles() -> pd.DataFrame:",
+      "53: def build_feature_engine():",
+      "74: def load_exact_and_scores() -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "94: def build_match_decisions(scored_df: pd.DataFrame, match_threshold: float, review_threshold: float) -> pd.DataFrame:",
+      "110: def heuristic_support_score(feature_name: str, value: float) -> float:",
+      "126: def build_review_queue(",
+      "217: def build_unified_tables(match_decisions: pd.DataFrame, profiles: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:",
+      "308: def build_lead_scores(unified_profiles: pd.DataFrame, profile_mapping: pd.DataFrame, profiles: pd.DataFrame) -> pd.DataFrame:",
+      "341: def parse_args() -> argparse.Namespace:",
+      "349: def main() -> None:"
+    ]
+  },
+  {
+    "path": "src/identity_resolution/workflows/full_candidate.py",
+    "lines": 490,
+    "symbols": [
+      "38: def ensure_dirs() -> None:",
+      "43: def prefix3(value: object) -> str:",
+      "50: def load_profiles() -> pd.DataFrame:",
+      "71: def count_cross_platform_all_pairs(df: pd.DataFrame) -> int:",
+      "81: def build_ground_truth_set(base_module, profiles: pd.DataFrame) -> tuple[set[int], pd.DataFrame]:",
+      "90: def build_exact_match_pairs(df: pd.DataFrame) -> tuple[set[int], dict[str, int]]:",
+      "125: def build_candidate_pairs(df: pd.DataFrame, exact_keys: set[int]) -> tuple[set[int], dict[str, int]]:",
+      "154: def export_pair_keys(keys: set[int], output_path: Path, pair_type: str, chunk_size: int = 500_000) -> int:",
+      "174: def load_best_model_artifacts():",
+      "188: def load_scored_candidates() -> pd.DataFrame:",
+      "195: def build_scoring_engine():",
+      "211: def score_candidates_chunked(",
+      "301: def parse_args() -> argparse.Namespace:",
+      "310: def main() -> None:"
+    ]
+  },
+  {
+    "path": "tests/__init__.py",
+    "lines": 1,
+    "symbols": []
+  },
+  {
+    "path": "tests/test_authoritative_v2_final_runner.py",
+    "lines": 156,
+    "symbols": [
+      "17: def run_fixture(tmp_path: Path):",
+      "23: def test_complete_synthetic_runner_is_not_manuscript_evidence(tmp_path):",
+      "35: def test_real_lazy_label_artifact_runs_only_at_final_boundary(tmp_path):",
+      "56: def test_final_budget_is_not_the_dry_run_budget():",
+      "60: def test_training_uses_frozen_three_to_one_negative_sampling():",
+      "70: def test_runner_rejects_pre_final_test_label_access(tmp_path):",
+      "77: def test_runner_rejects_overlapping_entities(tmp_path):",
+      "84: def test_runner_rejects_legacy_name_similarity_marker(tmp_path):",
+      "91: def test_runner_rejects_wrong_gb17_feature_count(tmp_path):",
+      "98: def test_runner_rejects_unexpected_gb18_feature(tmp_path):",
+      "105: def test_runner_rejects_unfair_policy_configuration(tmp_path):",
+      "117: def test_runner_rejects_budget_not_matching_protocol(tmp_path):",
+      "123: def test_runner_detects_policy_change_after_freeze(tmp_path):",
+      "133: def test_independent_recomputation_detects_tampered_row_decisions(tmp_path):",
+      "143: def test_provenance_fails_when_required_input_missing(tmp_path):",
+      "151: def test_hash_verification_detects_tampering(tmp_path):"
+    ]
+  },
+  {
+    "path": "tests/test_authoritative_v2_input_artifacts.py",
+    "lines": 91,
+    "symbols": [
+      "16: def tiny_profiles():",
+      "24: def tiny_routed():",
+      "34: def manifest():",
+      "39: def source_path(tmp_path):",
+      "45: def test_producer_separates_development_sealed_and_blocking_inputs(tmp_path):",
+      "62: def test_producer_rejects_noncanonical_routed_pair(tmp_path):",
+      "69: def test_producer_rejects_global_blocking_invariant_mismatch(tmp_path):",
+      "75: def test_validation_rejects_wrong_role_label_and_sealed_overlap(tmp_path):",
+      "84: def test_real_fixture_uses_role_specific_development_labels_and_blocking_misses(tmp_path):"
+    ]
+  },
+  {
+    "path": "tests/test_authoritative_v2_preflight.py",
+    "lines": 65,
+    "symbols": [
+      "15: def test_v2_preflight_artifacts_have_machine_readable_schema_and_scope():",
+      "42: def test_v2_preflight_sealing_equivalence_and_legacy_path():",
+      "52: def test_v2_split_manifests_are_present_and_role_complete():",
+      "59: def test_same_b2_b3_genome_has_identical_decisions():"
+    ]
+  },
+  {
+    "path": "tests/test_authoritative_v2_real_adapters.py",
+    "lines": 84,
+    "symbols": [
+      "18: def manifest():",
+      "23: def profiles():",
+      "27: def test_routes_real_candidate_schema_and_drops_cross_role_pairs():",
+      "35: def test_unknown_entity_conflict_and_cross_role_leakage_fail_closed():",
+      "46: def test_lazy_real_labels_reject_pre_final_and_prediction_labels(tmp_path):",
+      "57: def test_safe_final_join_is_keyed_unique_complete_and_order_independent(tmp_path):",
+      "74: def test_hidden_test_label_cache_path_is_rejected(tmp_path):",
+      "81: def test_canonical_key_rejects_noncanonical_pair_input():"
+    ]
+  },
+  {
+    "path": "tests/test_authoritative_v2_repair.py",
+    "lines": 83,
+    "symbols": [
+      "23: def test_corrected_name_sim_is_deterministic_and_uncensored():",
+      "29: def test_corrected_name_sim_has_deterministic_missing_behavior():",
+      "33: def test_name_sim_signature_has_no_predecessor_or_label_argument():",
+      "39: def test_sealed_labels_are_denied_before_final_evaluation():",
+      "46: def test_public_pre_final_data_rejects_label_and_entity_columns():",
+      "51: def test_boundary_opens_labels_only_after_phase_freeze():",
+      "62: def test_b0_uses_fixed_protocol_thresholds():",
+      "67: def test_b1_b2_b3_have_same_four_parameter_semantics():",
+      "78: def test_b2_and_b3_report_equal_realized_budget():"
+    ]
+  },
+  {
+    "path": "tests/test_core_architecture.py",
+    "lines": 96,
+    "symbols": [
+      "17: class ThresholdPolicyTests(unittest.TestCase):",
+      "35: class DomainPrimitiveTests(unittest.TestCase):",
+      "49: class CRMWorkflowBoundaryTests(unittest.TestCase):",
+      "67: class DependencyDirectionTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_feature_aware_ga.py",
+    "lines": 168,
+    "symbols": [
+      "21: class FeatureAwareGATests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_feature_registry.py",
+    "lines": 38,
+    "symbols": [
+      "10: class FeatureRegistryTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_ga_runner.py",
+    "lines": 132,
+    "symbols": [
+      "14: def synthetic_r1_data(test_actual):",
+      "35: class GARunnerIntegrationTests(unittest.TestCase):",
+      "107: class GARegressionTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_ga_threshold.py",
+    "lines": 71,
+    "symbols": [
+      "10: class GATresholdUnitTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_name_similarity.py",
+    "lines": 40,
+    "symbols": [
+      "13: class NameSimilarityTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_nested_protocol.py",
+    "lines": 170,
+    "symbols": [
+      "19: def sha256(path: Path) -> str:",
+      "23: def nested_training_inputs(seed: int = 11):",
+      "50: class NestedEntitySplitTests(unittest.TestCase):",
+      "96: class R2AntiLeakageTests(unittest.TestCase):",
+      "136: class R3AntiLeakageTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_r2_training.py",
+    "lines": 54,
+    "symbols": [
+      "11: class R2TrainingIntegrationTests(unittest.TestCase):"
+    ]
+  },
+  {
+    "path": "tests/test_reviewer_revision.py",
+    "lines": 65,
+    "symbols": [
+      "6: def test_closed_form_minimizes_declared_risk():",
+      "17: def test_positive_review_is_in_end_to_end_denominator():",
+      "33: def test_risk_rule_is_minimal_over_dense_posterior_grid():",
+      "41: def test_risk_rule_rejects_invalid_posteriors():",
+      "49: def test_review_rate_excludes_unreviewable_blocking_misses():",
+      "59: def test_documented_four_parameter_boundaries():"
+    ]
+  },
+  {
+    "path": "tests/test_v2r1_integrity.py",
+    "lines": 218,
+    "symbols": [
+      "26: def _sealed_fixture(tmp_path: Path) -> dict:",
+      "57: def fresh_guard():",
+      "69: def _run(tmp_path: Path) -> IntegrityRepairedRunner:",
+      "77: def test_full_run_passes_and_audit_is_zero(tmp_path):",
+      "91: def test_pre_final_label_materialization_raises(tmp_path):",
+      "97: def test_pre_final_label_column_request_raises(tmp_path):",
+      "103: def test_label_free_inspection_is_allowed_pre_final(tmp_path):",
+      "112: def test_final_evaluation_requires_freeze_manifest(tmp_path):",
+      "122: def test_prediction_tamper_between_freeze_and_evaluation_fails(tmp_path):",
+      "135: def test_pair_key_tamper_detected(tmp_path):",
+      "148: def test_unfrozen_policy_rejected(tmp_path):",
+      "157: def test_stale_lineage_hash_rejected(tmp_path):",
+      "173: def test_label_free_validation_does_not_materialize(tmp_path, monkeypatch):",
+      "198: def test_duplicate_final_join_keys_rejected(tmp_path):",
+      "211: def test_guard_counts_are_derived_not_hardcoded():"
+    ]
+  }
+]

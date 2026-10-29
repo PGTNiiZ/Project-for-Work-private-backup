@@ -1,0 +1,10 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "stage": "S5",
+  "key": "frozen-policy-and-cause-recall",
+  "config": {
+    "policy": "Chow cost 2:1:0.1 on frozen Platt calibrator",
+    "total_positives": 23391
+  },
+  "PLAN_sha256": "122343d4f0434c2ee63e6af097de01c81c24e7090b4ed3aab3d41b99d572e8c3"
+}

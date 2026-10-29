@@ -1,0 +1,111 @@
+
+## backup@ab93b36:experiments/icsec_final/authoritative_run_v2/policies.py
+8: from scipy.stats import qmc
+9: 
+10: NO_MATCH, REVIEW, MATCH = 0, 1, 2
+11: B0_FIXED = (0.98, 0.95)
+12: BOUNDS = np.array([[0.90, 0.999], [0.50, 0.90], [0.50, 1.0], [0.0, 0.60]])
+13: 
+14: 
+15: def b0_decide(prob: np.ndarray, thresholds: tuple[float, float] = B0_FIXED) -> np.ndarray:
+16:     """Fixed simple policy: MATCH, REVIEW, then NO_MATCH."""
+17:     t_match, t_review = thresholds
+18:     result = np.full(prob.shape, NO_MATCH, dtype=np.int8)
+19:     result[prob >= t_review] = REVIEW
+20:     result[prob >= t_match] = MATCH
+21:     return result
+22: 
+23: 
+24: def decide_four_parameter(prob: np.ndarray, name_sim: np.ndarray, genome: tuple[float, ...]) -> np.ndarray:
+25:     """Shared B2/B3 semantics for [t_match,t_review,c_promote,c_demote]."""
+26:     t_match, t_review, c_promote, c_demote = genome
+27:     if not (0.90 <= t_match <= 0.999 and 0.50 <= t_review <= t_match):
+28:         raise ValueError("invalid probability thresholds")
+29:     if not (0.50 <= c_promote <= 1.0 and 0.0 <= c_demote <= c_promote):
+30:         raise ValueError("invalid name thresholds")
+31:     result = np.full(prob.shape, REVIEW, dtype=np.int8)
+32:     result[prob < t_review] = NO_MATCH
+33:     band = (prob >= t_review) & (prob < t_match)
+34:     result[band & (name_sim >= c_promote)] = MATCH
+35:     result[band & (name_sim < c_demote)] = NO_MATCH
+38: 
+39: 
+40: def _cost(decisions: np.ndarray, actual: np.ndarray) -> float:
+41:     return float(
+42:         2.0 * np.sum((decisions == MATCH) & (actual == 0))
+43:         + np.sum((decisions == NO_MATCH) & (actual == 1))
+44:         + 0.1 * np.sum(decisions == REVIEW)
+45:     )
+46: 
+47: 
+48: def _simple_genome(point: np.ndarray) -> tuple[float, float]:
+49:     t_match, t_review = point
+50:     return float(max(t_match, t_review)), float(min(t_match, t_review))
+51: 
+52: 
+53: def b1_search(prob: np.ndarray, actual: np.ndarray, *, budget: int, seed: int = 0) -> tuple[tuple[float, float], dict[str, int]]:
+54:     """Deterministic Sobol search over B0's two-threshold family."""
+55:     sampler = qmc.Sobol(d=2, scramble=False)
+56:     points = qmc.scale(sampler.random(n=budget), [0.90, 0.50], [0.999, 0.999])
+57:     best, best_cost = None, float("inf")
+58:     evaluations = 0
+59:     for point in points:
+60:         genome = _simple_genome(point)
+61:         decisions = b0_decide(prob, genome)
+62:         value = _cost(decisions, actual)
+63:         evaluations += 1
+64:         if value < best_cost:
+65:             best, best_cost = genome, value
+66:     return best, {"requested_evaluations": budget, "realized_evaluations": evaluations}
+67: 
+68: 
+69: def _valid_genome(point: np.ndarray) -> tuple[float, float, float, float]:
+70:     t_match, t_review, cp, cd = point
+71:     return (float(t_match), float(min(t_review, t_match)), float(cp), float(min(cd, cp)))
+72: 
+73: 
+74: def b2_sobol_search(prob: np.ndarray, name_sim: np.ndarray, actual: np.ndarray, *, budget: int, seed: int = 0):
+75:     """Deterministic Sobol optimizer for the exact B3 policy class."""
+76:     sampler = qmc.Sobol(d=4, scramble=False)
+77:     points = qmc.scale(sampler.random(n=budget), BOUNDS[:, 0], BOUNDS[:, 1])
+78:     return _search_points(points, lambda g: _cost(decide_four_parameter(prob, name_sim, g), actual), budget)
+79: 
+80: 
+81: def _search_points(points: np.ndarray, objective: Callable[[tuple[float, ...]], float], budget: int):
+82:     best, best_cost = None, float("inf")
+83:     evaluations = 0
+84:     for point in points:
+85:         genome = _valid_genome(point)
+86:         value = objective(genome)
+87:         evaluations += 1
+88:         if value < best_cost:
+89:             best, best_cost = genome, value
+90:     return best, {"requested_evaluations": budget, "realized_evaluations": evaluations}
+91: 
+92: 
+93: def b3_ga_search(prob: np.ndarray, name_sim: np.ndarray, actual: np.ndarray, *, budget: int, seed: int = 0):
+94:     """Seeded GA over the same four-dimensional class and exact evaluation budget."""
+95:     rng = np.random.default_rng(seed)
+96:     population_size = 60
+97:     population = rng.uniform(BOUNDS[:, 0], BOUNDS[:, 1], size=(population_size, 4))
+98:     evaluations = 0
+99:     best, best_cost = None, float("inf")
+100:     while evaluations < budget:
+101:         scores = []
+102:         for point in population:
+103:             if evaluations >= budget:
+104:                 break
+105:             genome = _valid_genome(point)
+106:             value = _cost(decide_four_parameter(prob, name_sim, genome), actual)
+107:             evaluations += 1
+108:             scores.append((value, genome))
+109:             if value < best_cost:
+110:                 best, best_cost = genome, value
+111:         if evaluations >= budget:
+112:             break
+113:         scores.sort(key=lambda item: item[0])
+114:         elite = np.array([item[1] for item in scores[: max(2, len(scores) // 5)]])
+115:         population = np.vstack([elite, elite[rng.integers(len(elite), size=population_size-len(elite))]])
+116:         population += rng.normal(0, 0.02, population.shape) * (rng.random(population.shape) < 0.30)
+117:         population = np.clip(population, BOUNDS[:, 0], BOUNDS[:, 1])
+118:     return best, {"requested_evaluations": budget, "realized_evaluations": evaluations}

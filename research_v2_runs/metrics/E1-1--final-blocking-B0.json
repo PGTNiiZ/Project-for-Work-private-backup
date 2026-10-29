@@ -1,0 +1,20 @@
+{
+  "final_config_id": "blocking-B0",
+  "kind": "blocking",
+  "blocker": "B0",
+  "population": {
+    "ground_truth_pairs": 5852,
+    "candidate_pairs": 87702,
+    "found_positives": 5191,
+    "blocking_misses": 661,
+    "pc": 0.8870471633629529,
+    "pq": 0.059189072085015164,
+    "rr": 0.9951212076877333,
+    "all_cross_platform_pairs": 17976170,
+    "profiles": 7363
+  },
+  "prediction_artifact_sha256": "a2a70e39720e894bbedf1b4e474714b60118d3b8e78bad3477d1b00510118376",
+  "prediction_artifact_path": "data_derived/final/blocking-B0.npz",
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "runtime_seconds": 1.1749170000002778
+}

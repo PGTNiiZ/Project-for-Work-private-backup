@@ -1,0 +1,170 @@
+# CELL 0
+import os, itertools
+import numpy as np
+import pandas as pd
+
+OUTPUT_DIR = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed'
+RANDOM_SEED = 42
+NEG_TO_POS_RATIO = 5
+
+df_clean = pd.read_csv('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/all_profiles_cleaned.csv')
+candidate_pairs = pd.read_csv('/Users/tm/Documents/GitHub/Project-for-Work/data/processed/candidate_pairs.csv')
+print(f'df_clean: {len(df_clean):,} | candidate_pairs: {len(candidate_pairs):,}')
+
+# CELL 3
+# --- 8.1 Positive Pair Generation ---
+# profile_id เดียวกันข้าม platform = คนเดียวกัน (ground truth จาก dataset)
+
+NEG_TO_POS_RATIO = 5  # negative : positive ratio
+
+def build_positive_pairs(df: pd.DataFrame) -> pd.DataFrame:
+    """สร้าง positive pairs: profiles ที่มี profile_id เดียวกันข้ามแพลตฟอร์ม"""
+    pairs = []
+    grouped = df.groupby('profile_id')
+    
+    for pid, group in grouped:
+        if len(group) < 2 or not pid or pid == '':
+            continue
+        # เฉพาะ cross-platform
+        if group['platform'].nunique() < 2:
+            continue
+        for (i, row_a), (j, row_b) in itertools.combinations(group.iterrows(), 2):
+            if row_a['platform'] == row_b['platform']:
+                continue
+            pairs.append({
+                'profile_id_a': f"{row_a['platform']}_{row_a['userName_clean']}",
+                'profile_id_b': f"{row_b['platform']}_{row_b['userName_clean']}",
+                'entity_id_a': pid,
+                'platform_a': row_a['platform'],
+                'platform_b': row_b['platform'],
+                'label': 1,
+            })
+    return pd.DataFrame(pairs)
+
+positive_pairs = build_positive_pairs(df_clean)
+
+print("📊 Step 8.1: Positive Pair Generation")
+print("=" * 60)
+print(f"  Positive pairs: {len(positive_pairs):,}")
+if len(positive_pairs) > 0:
+    print(f"  Unique entities: {positive_pairs['entity_id_a'].nunique():,}")
+    print(f"\n  Platform combo distribution:")
+    combo = positive_pairs.apply(lambda r: f"{r['platform_a']}↔{r['platform_b']}", axis=1)
+    print(combo.value_counts().to_string(header=False))
+    print(f"\n  🔍 ตัวอย่าง positive pairs (5):")
+    for _, r in positive_pairs.head(5).iterrows():
+        print(f"    [{r['platform_a']}] {r['profile_id_a'][:25]} ↔ [{r['platform_b']}] {r['profile_id_b'][:25]} (entity={r['entity_id_a']})")
+print(f"\n✅ Step 8.1 เสร็จ")
+# CELL 5
+# --- 8.2 Random Negative Pair Generation ---
+
+def build_random_negatives(df: pd.DataFrame, n_neg: int, seed: int = 42) -> pd.DataFrame:
+    """สร้าง random negative pairs (คนละ profile_id ข้าม platform)"""
+    rng = np.random.default_rng(seed)
+    pairs = []
+    platforms = df['platform'].unique()
+    platform_dfs = {p: df[df['platform'] == p].reset_index(drop=True) for p in platforms}
+    platform_combos = list(itertools.combinations(platforms, 2))
+    
+    attempts = 0
+    max_attempts = n_neg * 10
+    
+    while len(pairs) < n_neg and attempts < max_attempts:
+        attempts += 1
+        p1, p2 = platform_combos[rng.integers(len(platform_combos))]
+        df1, df2 = platform_dfs[p1], platform_dfs[p2]
+        row_a = df1.iloc[rng.integers(len(df1))]
+        row_b = df2.iloc[rng.integers(len(df2))]
+        
+        if row_a['profile_id'] != row_b['profile_id']:
+            pairs.append({
+                'profile_id_a': f"{row_a['platform']}_{row_a['userName_clean']}",
+                'profile_id_b': f"{row_b['platform']}_{row_b['userName_clean']}",
+                'entity_id_a': row_a['profile_id'],
+                'platform_a': p1,
+                'platform_b': p2,
+                'label': 0,
+            })
+    return pd.DataFrame(pairs)
+
+n_neg_random = len(positive_pairs) * NEG_TO_POS_RATIO
+random_negatives = build_random_negatives(df_clean, n_neg_random)
+
+print("📊 Step 8.2: Random Negative Generation")
+print("=" * 60)
+print(f"  Target negatives : {n_neg_random:,} (ratio {NEG_TO_POS_RATIO}:1)")
+print(f"  Generated        : {len(random_negatives):,}")
+print(f"\n✅ Step 8.2 เสร็จ")
+# CELL 7
+# --- 8.3 Hard Negative Generation ---
+
+def build_hard_negatives(df: pd.DataFrame, candidate_pairs: pd.DataFrame,
+                         n_hard: int, seed: int = 42) -> pd.DataFrame:
+    """Hard negatives จาก blocking candidates ที่คล้ายกันแต่คนละ entity"""
+    if candidate_pairs is None or len(candidate_pairs) == 0:
+        return pd.DataFrame()
+    
+    profile_to_entity = df.set_index(
+        df.apply(lambda r: f"{r['platform']}_{r['userName_clean']}", axis=1)
+    )['profile_id'].to_dict()
+    
+    hard_pairs = []
+    for _, row in candidate_pairs.iterrows():
+        id_a = row['profile_id_a']
+        id_b = row['profile_id_b']
+        entity_a = profile_to_entity.get(id_a, id_a)
+        entity_b = profile_to_entity.get(id_b, id_b)
+        
+        if entity_a != entity_b:  # คนละคน = negative
+            hard_pairs.append({
+                'profile_id_a': id_a,
+                'profile_id_b': id_b,
+                'entity_id_a': entity_a,
+                'platform_a': id_a.split('_')[0] if '_' in str(id_a) else '',
+                'platform_b': id_b.split('_')[0] if '_' in str(id_b) else '',
+                'label': 0,
+            })
+    
+    hard_df = pd.DataFrame(hard_pairs)
+    if len(hard_df) > n_hard:
+        hard_df = hard_df.sample(n=n_hard, random_state=seed)
+    return hard_df
+
+n_hard = len(positive_pairs)  # hard negatives = จำนวน positive
+hard_negatives = build_hard_negatives(df_clean, candidate_pairs, n_hard)
+
+print("📊 Step 8.3: Hard Negative Generation")
+print("=" * 60)
+print(f"  Hard negatives available : {len(hard_negatives):,}")
+print(f"  Target                   : {n_hard:,}")
+print(f"\n✅ Step 8.3 เสร็จ")
+# CELL 9
+# --- 8.4 Combine & Shuffle ---
+
+all_parts = [positive_pairs]
+if len(random_negatives) > 0:
+    all_parts.append(random_negatives)
+if len(hard_negatives) > 0:
+    all_parts.append(hard_negatives)
+
+labeled_pairs = pd.concat(all_parts, ignore_index=True)
+labeled_pairs = labeled_pairs.sample(frac=1, random_state=RANDOM_SEED).reset_index(drop=True)
+
+# === Summary ===
+print("=" * 60)
+print("📊 STAGE 8 SUMMARY — Pair Construction & Label Building")
+print("=" * 60)
+n_pos = (labeled_pairs['label'] == 1).sum()
+n_neg = (labeled_pairs['label'] == 0).sum()
+print(f"  Total pairs   : {len(labeled_pairs):,}")
+print(f"  Positive (=1) : {n_pos:,} ({n_pos/len(labeled_pairs)*100:.1f}%)")
+print(f"  Negative (=0) : {n_neg:,} ({n_neg/len(labeled_pairs)*100:.1f}%)")
+print(f"  Ratio neg:pos : {n_neg/max(n_pos,1):.1f}:1")
+
+# Save
+lp_path = '/Users/tm/Documents/GitHub/Project-for-Work/data/processed/labeled_pairs.csv'
+labeled_pairs.to_csv(lp_path, index=False)
+print(f"\n  💾 Saved: labeled_pairs.csv ({len(labeled_pairs):,} rows)")
+print(f"\n{'='*60}")
+print(f"✅ Stage 8 COMPLETE")
+print(f"{'='*60}")

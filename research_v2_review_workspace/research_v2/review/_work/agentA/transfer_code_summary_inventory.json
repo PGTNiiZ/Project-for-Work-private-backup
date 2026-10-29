@@ -1,0 +1,8072 @@
+[
+  {
+    "path": "artifacts/decisioning/analysis_decision_matrix/summary.json",
+    "entries": [
+      {
+        "key": "confusion_matrix.MATCH.0",
+        "value": 925
+      },
+      {
+        "key": "confusion_matrix.MATCH.1",
+        "value": 19624
+      },
+      {
+        "key": "confusion_matrix.NO_MATCH.0",
+        "value": 1977158
+      },
+      {
+        "key": "confusion_matrix.NO_MATCH.1",
+        "value": 2242
+      },
+      {
+        "key": "confusion_matrix.REVIEW.0",
+        "value": 82231
+      },
+      {
+        "key": "confusion_matrix.REVIEW.1",
+        "value": 4065
+      },
+      {
+        "key": "fp_match_but_actually_no.n",
+        "value": 925
+      },
+      {
+        "key": "fp_match_but_actually_no.by_decision_source.AUTO_HIGH",
+        "value": 862
+      },
+      {
+        "key": "fp_match_but_actually_no.by_decision_source.AUTO_EXACT",
+        "value": 63
+      },
+      {
+        "key": "fp_match_but_actually_no.by_platform_pair.googleplus x twitter",
+        "value": 431
+      },
+      {
+        "key": "fp_match_but_actually_no.by_platform_pair.googleplus x instagram",
+        "value": 252
+      },
+      {
+        "key": "fp_match_but_actually_no.by_platform_pair.instagram x twitter",
+        "value": 242
+      },
+      {
+        "key": "fp_match_but_actually_no.score.min",
+        "value": 0.9827
+      },
+      {
+        "key": "fp_match_but_actually_no.score.25%",
+        "value": 0.9954
+      },
+      {
+        "key": "fp_match_but_actually_no.score.50%",
+        "value": 0.9954
+      },
+      {
+        "key": "fp_match_but_actually_no.score.75%",
+        "value": 0.9966
+      },
+      {
+        "key": "fp_match_but_actually_no.score.max",
+        "value": 1.0
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.n",
+        "value": 2242
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.by_decision_source.AUTO_LOW",
+        "value": 2242
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.by_platform_pair.googleplus x twitter",
+        "value": 993
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.by_platform_pair.googleplus x instagram",
+        "value": 780
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.by_platform_pair.instagram x twitter",
+        "value": 469
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.score.min",
+        "value": 0.0041
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.score.25%",
+        "value": 0.6061
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.score.50%",
+        "value": 0.8316
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.score.75%",
+        "value": 0.9286
+      },
+      {
+        "key": "fn_nomatch_but_actually_yes.score.max",
+        "value": 0.944
+      },
+      {
+        "key": "review_actual_match.n",
+        "value": 4065
+      },
+      {
+        "key": "review_actual_match.by_decision_source.AUTO_REVIEW",
+        "value": 4065
+      },
+      {
+        "key": "review_actual_match.by_platform_pair.googleplus x twitter",
+        "value": 1808
+      },
+      {
+        "key": "review_actual_match.by_platform_pair.googleplus x instagram",
+        "value": 1776
+      },
+      {
+        "key": "review_actual_match.by_platform_pair.instagram x twitter",
+        "value": 481
+      },
+      {
+        "key": "review_actual_match.score.min",
+        "value": 0.9505
+      },
+      {
+        "key": "review_actual_match.score.25%",
+        "value": 0.9783
+      },
+      {
+        "key": "review_actual_match.score.50%",
+        "value": 0.9783
+      },
+      {
+        "key": "review_actual_match.score.75%",
+        "value": 0.9783
+      },
+      {
+        "key": "review_actual_match.score.max",
+        "value": 0.9789
+      },
+      {
+        "key": "review_actual_nomatch.n",
+        "value": 82231
+      },
+      {
+        "key": "review_actual_nomatch.by_decision_source.AUTO_REVIEW",
+        "value": 82231
+      },
+      {
+        "key": "review_actual_nomatch.by_platform_pair.googleplus x twitter",
+        "value": 36195
+      },
+      {
+        "key": "review_actual_nomatch.by_platform_pair.googleplus x instagram",
+        "value": 29243
+      },
+      {
+        "key": "review_actual_nomatch.by_platform_pair.instagram x twitter",
+        "value": 16793
+      },
+      {
+        "key": "review_actual_nomatch.score.min",
+        "value": 0.95
+      },
+      {
+        "key": "review_actual_nomatch.score.25%",
+        "value": 0.9551
+      },
+      {
+        "key": "review_actual_nomatch.score.50%",
+        "value": 0.9551
+      },
+      {
+        "key": "review_actual_nomatch.score.75%",
+        "value": 0.9643
+      },
+      {
+        "key": "review_actual_nomatch.score.max",
+        "value": 0.9783
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/full_2m_crm_cost_v1/validation_selection.json",
+    "entries": [
+      {
+        "key": "policy.policy",
+        "value": "selector:name"
+      },
+      {
+        "key": "policy.validation_cost",
+        "value": 3498.6000000000004
+      },
+      {
+        "key": "policy.guard",
+        "value": "name"
+      },
+      {
+        "key": "policy.thresholds[0]",
+        "value": 0.999
+      },
+      {
+        "key": "policy.thresholds[1]",
+        "value": 0.9772757231237615
+      },
+      {
+        "key": "policy.thresholds[2]",
+        "value": 0.9870551274480683
+      },
+      {
+        "key": "policy.thresholds[3]",
+        "value": 0.0
+      },
+      {
+        "key": "policy.cost_policy_version",
+        "value": "crm_derived_v1"
+      },
+      {
+        "key": "policy.cost_weights.W_FP",
+        "value": 2.0
+      },
+      {
+        "key": "policy.cost_weights.W_FN",
+        "value": 1.0
+      },
+      {
+        "key": "policy.cost_weights.W_REV",
+        "value": 0.1
+      },
+      {
+        "key": "policy.selection_rule",
+        "value": "lower validation decision cost; no test metric was read before freeze"
+      },
+      {
+        "key": "population_rows",
+        "value": 2073842
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_20260914/validation_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_only",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      },
+      {
+        "key": "best_seed",
+        "value": 43
+      },
+      {
+        "key": "best_genome[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "best_genome[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "best_genome[2]",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "best_genome[3]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[4]",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "best_genome[5]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[6]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[7]",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "best_genome[8]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[9]",
+        "value": 0.0
+      },
+      {
+        "key": "thresholds[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "thresholds[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "weights.probability",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "weights.name",
+        "value": 0.0
+      },
+      {
+        "key": "weights.bio",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "weights.url",
+        "value": 0.0
+      },
+      {
+        "key": "weights.location",
+        "value": 0.0
+      },
+      {
+        "key": "weights.social",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "weights.image",
+        "value": 0.0
+      },
+      {
+        "key": "weights.style",
+        "value": 0.0
+      },
+      {
+        "key": "validation_metrics.fp",
+        "value": 24
+      },
+      {
+        "key": "validation_metrics.fn",
+        "value": 122
+      },
+      {
+        "key": "validation_metrics.review",
+        "value": 2074
+      },
+      {
+        "key": "validation_metrics.precision",
+        "value": 0.9933920704845814
+      },
+      {
+        "key": "validation_metrics.recall",
+        "value": 0.8226174190606476
+      },
+      {
+        "key": "validation_metrics.f1",
+        "value": 0.8999750561237216
+      },
+      {
+        "key": "validation_metrics.cost",
+        "value": 377.4
+      },
+      {
+        "key": "validation_metrics.precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.platform_precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_status",
+        "value": "BASIC_AND_PLATFORM_GATES_PASSED_REVIEW_CAPACITY_UNSET"
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_20260914_all8/validation_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_only",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      },
+      {
+        "key": "best_seed",
+        "value": 45
+      },
+      {
+        "key": "best_genome[0]",
+        "value": 0.9461792257049572
+      },
+      {
+        "key": "best_genome[1]",
+        "value": 0.10545017820205049
+      },
+      {
+        "key": "best_genome[2]",
+        "value": 0.7677885283840673
+      },
+      {
+        "key": "best_genome[3]",
+        "value": 0.007792146311165079
+      },
+      {
+        "key": "best_genome[4]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[5]",
+        "value": 0.004928504332240256
+      },
+      {
+        "key": "best_genome[6]",
+        "value": 0.18658363294312696
+      },
+      {
+        "key": "best_genome[7]",
+        "value": 0.023644222712111605
+      },
+      {
+        "key": "best_genome[8]",
+        "value": 0.009262965317288818
+      },
+      {
+        "key": "best_genome[9]",
+        "value": 0.0
+      },
+      {
+        "key": "thresholds[0]",
+        "value": 0.9461792257049572
+      },
+      {
+        "key": "thresholds[1]",
+        "value": 0.10545017820205049
+      },
+      {
+        "key": "weights.probability",
+        "value": 0.7677885283840673
+      },
+      {
+        "key": "weights.name",
+        "value": 0.007792146311165079
+      },
+      {
+        "key": "weights.bio",
+        "value": 0.0
+      },
+      {
+        "key": "weights.url",
+        "value": 0.004928504332240256
+      },
+      {
+        "key": "weights.location",
+        "value": 0.18658363294312696
+      },
+      {
+        "key": "weights.social",
+        "value": 0.023644222712111605
+      },
+      {
+        "key": "weights.image",
+        "value": 0.009262965317288818
+      },
+      {
+        "key": "weights.style",
+        "value": 0.0
+      },
+      {
+        "key": "validation_metrics.fp",
+        "value": 21
+      },
+      {
+        "key": "validation_metrics.fn",
+        "value": 127
+      },
+      {
+        "key": "validation_metrics.review",
+        "value": 2078
+      },
+      {
+        "key": "validation_metrics.precision",
+        "value": 0.9940895018294399
+      },
+      {
+        "key": "validation_metrics.recall",
+        "value": 0.8052895576835385
+      },
+      {
+        "key": "validation_metrics.f1",
+        "value": 0.8897846076332031
+      },
+      {
+        "key": "validation_metrics.cost",
+        "value": 376.8
+      },
+      {
+        "key": "validation_metrics.precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.platform_precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_status",
+        "value": "BASIC_AND_PLATFORM_GATES_PASSED_REVIEW_CAPACITY_UNSET"
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_full_20260914/all_dataset_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "projection_only",
+        "value": true
+      },
+      {
+        "key": "policy_tuning_performed",
+        "value": false
+      },
+      {
+        "key": "dataset_rows",
+        "value": 58696
+      },
+      {
+        "key": "split_rows.train",
+        "value": 41803
+      },
+      {
+        "key": "split_rows.val",
+        "value": 8580
+      },
+      {
+        "key": "split_rows.test",
+        "value": 8313
+      },
+      {
+        "key": "overall_metrics[0].policy",
+        "value": "one_stage_weighted_10gene"
+      },
+      {
+        "key": "overall_metrics[0].rows",
+        "value": 58696
+      },
+      {
+        "key": "overall_metrics[0].positive_support",
+        "value": 29243
+      },
+      {
+        "key": "overall_metrics[0].tp",
+        "value": 24541
+      },
+      {
+        "key": "overall_metrics[0].tn",
+        "value": 20260
+      },
+      {
+        "key": "overall_metrics[0].fp",
+        "value": 73
+      },
+      {
+        "key": "overall_metrics[0].fn",
+        "value": 380
+      },
+      {
+        "key": "overall_metrics[0].review",
+        "value": 13442
+      },
+      {
+        "key": "overall_metrics[0].precision",
+        "value": 0.9970342081742098
+      },
+      {
+        "key": "overall_metrics[0].recall",
+        "value": 0.8392093834421913
+      },
+      {
+        "key": "overall_metrics[0].f1",
+        "value": 0.911339287372115
+      },
+      {
+        "key": "overall_metrics[0].cost",
+        "value": 1870.2
+      },
+      {
+        "key": "overall_metrics[0].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[0].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[0].basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[1].policy",
+        "value": "score_only_2threshold"
+      },
+      {
+        "key": "overall_metrics[1].rows",
+        "value": 58696
+      },
+      {
+        "key": "overall_metrics[1].positive_support",
+        "value": 29243
+      },
+      {
+        "key": "overall_metrics[1].tp",
+        "value": 24277
+      },
+      {
+        "key": "overall_metrics[1].tn",
+        "value": 20291
+      },
+      {
+        "key": "overall_metrics[1].fp",
+        "value": 69
+      },
+      {
+        "key": "overall_metrics[1].fn",
+        "value": 382
+      },
+      {
+        "key": "overall_metrics[1].review",
+        "value": 13677
+      },
+      {
+        "key": "overall_metrics[1].precision",
+        "value": 0.9971658588679865
+      },
+      {
+        "key": "overall_metrics[1].recall",
+        "value": 0.83018158191704
+      },
+      {
+        "key": "overall_metrics[1].f1",
+        "value": 0.906044150851854
+      },
+      {
+        "key": "overall_metrics[1].cost",
+        "value": 1887.7
+      },
+      {
+        "key": "overall_metrics[1].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[1].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[1].basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[2].policy",
+        "value": "legacy_name_guard_4threshold"
+      },
+      {
+        "key": "overall_metrics[2].rows",
+        "value": 58696
+      },
+      {
+        "key": "overall_metrics[2].positive_support",
+        "value": 29243
+      },
+      {
+        "key": "overall_metrics[2].tp",
+        "value": 25097
+      },
+      {
+        "key": "overall_metrics[2].tn",
+        "value": 20353
+      },
+      {
+        "key": "overall_metrics[2].fp",
+        "value": 366
+      },
+      {
+        "key": "overall_metrics[2].fn",
+        "value": 390
+      },
+      {
+        "key": "overall_metrics[2].review",
+        "value": 12490
+      },
+      {
+        "key": "overall_metrics[2].precision",
+        "value": 0.9856262027255233
+      },
+      {
+        "key": "overall_metrics[2].recall",
+        "value": 0.8582224805936464
+      },
+      {
+        "key": "overall_metrics[2].f1",
+        "value": 0.9175227580155741
+      },
+      {
+        "key": "overall_metrics[2].cost",
+        "value": 2371.0
+      },
+      {
+        "key": "overall_metrics[2].precision_gate_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[2].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[2].basic_quality_gates_pass",
+        "value": false
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_full_20260914/full_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_selection_complete",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": true
+      },
+      {
+        "key": "test_rows",
+        "value": 8313
+      },
+      {
+        "key": "test_positive_support",
+        "value": 4387
+      },
+      {
+        "key": "test_metrics[0].policy",
+        "value": "score_only_2threshold"
+      },
+      {
+        "key": "test_metrics[0].test_rows",
+        "value": 8313
+      },
+      {
+        "key": "test_metrics[0].tp",
+        "value": 3559
+      },
+      {
+        "key": "test_metrics[0].tn",
+        "value": 2627
+      },
+      {
+        "key": "test_metrics[0].fp",
+        "value": 23
+      },
+      {
+        "key": "test_metrics[0].fn",
+        "value": 116
+      },
+      {
+        "key": "test_metrics[0].review",
+        "value": 1988
+      },
+      {
+        "key": "test_metrics[0].precision",
+        "value": 0.9935790061418203
+      },
+      {
+        "key": "test_metrics[0].recall",
+        "value": 0.8112605425119672
+      },
+      {
+        "key": "test_metrics[0].f1",
+        "value": 0.8932111933743255
+      },
+      {
+        "key": "test_metrics[0].cost",
+        "value": 360.8
+      },
+      {
+        "key": "test_metrics[0].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[0].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[0].basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[1].policy",
+        "value": "one_stage_weighted_10gene"
+      },
+      {
+        "key": "test_metrics[1].test_rows",
+        "value": 8313
+      },
+      {
+        "key": "test_metrics[1].tp",
+        "value": 3601
+      },
+      {
+        "key": "test_metrics[1].tn",
+        "value": 2625
+      },
+      {
+        "key": "test_metrics[1].fp",
+        "value": 26
+      },
+      {
+        "key": "test_metrics[1].fn",
+        "value": 116
+      },
+      {
+        "key": "test_metrics[1].review",
+        "value": 1945
+      },
+      {
+        "key": "test_metrics[1].precision",
+        "value": 0.992831541218638
+      },
+      {
+        "key": "test_metrics[1].recall",
+        "value": 0.8208342831091863
+      },
+      {
+        "key": "test_metrics[1].f1",
+        "value": 0.8986773146992763
+      },
+      {
+        "key": "test_metrics[1].cost",
+        "value": 362.5
+      },
+      {
+        "key": "test_metrics[1].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[1].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[1].basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[2].policy",
+        "value": "legacy_name_guard_4threshold"
+      },
+      {
+        "key": "test_metrics[2].test_rows",
+        "value": 8313
+      },
+      {
+        "key": "test_metrics[2].tp",
+        "value": 3689
+      },
+      {
+        "key": "test_metrics[2].tn",
+        "value": 2637
+      },
+      {
+        "key": "test_metrics[2].fp",
+        "value": 95
+      },
+      {
+        "key": "test_metrics[2].fn",
+        "value": 117
+      },
+      {
+        "key": "test_metrics[2].review",
+        "value": 1775
+      },
+      {
+        "key": "test_metrics[2].precision",
+        "value": 0.9748942917547568
+      },
+      {
+        "key": "test_metrics[2].recall",
+        "value": 0.8408935491224071
+      },
+      {
+        "key": "test_metrics[2].f1",
+        "value": 0.902949455391017
+      },
+      {
+        "key": "test_metrics[2].cost",
+        "value": 484.5
+      },
+      {
+        "key": "test_metrics[2].precision_gate_pass",
+        "value": false
+      },
+      {
+        "key": "test_metrics[2].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "test_metrics[2].basic_quality_gates_pass",
+        "value": false
+      },
+      {
+        "key": "one_stage_test_gate_pass",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_full_20260914/validation_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_only",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      },
+      {
+        "key": "best_seed",
+        "value": 43
+      },
+      {
+        "key": "best_genome[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "best_genome[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "best_genome[2]",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "best_genome[3]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[4]",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "best_genome[5]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[6]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[7]",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "best_genome[8]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[9]",
+        "value": 0.0
+      },
+      {
+        "key": "thresholds[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "thresholds[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "weights.probability",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "weights.name",
+        "value": 0.0
+      },
+      {
+        "key": "weights.bio",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "weights.url",
+        "value": 0.0
+      },
+      {
+        "key": "weights.location",
+        "value": 0.0
+      },
+      {
+        "key": "weights.social",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "weights.image",
+        "value": 0.0
+      },
+      {
+        "key": "weights.style",
+        "value": 0.0
+      },
+      {
+        "key": "validation_metrics.fp",
+        "value": 24
+      },
+      {
+        "key": "validation_metrics.fn",
+        "value": 122
+      },
+      {
+        "key": "validation_metrics.review",
+        "value": 2074
+      },
+      {
+        "key": "validation_metrics.precision",
+        "value": 0.9933920704845814
+      },
+      {
+        "key": "validation_metrics.recall",
+        "value": 0.8226174190606476
+      },
+      {
+        "key": "validation_metrics.f1",
+        "value": 0.8999750561237216
+      },
+      {
+        "key": "validation_metrics.cost",
+        "value": 377.4
+      },
+      {
+        "key": "validation_metrics.precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.platform_precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_status",
+        "value": "BASIC_AND_PLATFORM_GATES_PASSED_REVIEW_CAPACITY_UNSET"
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_full_2m_20260914/full_2m_result.json",
+    "entries": [
+      {
+        "key": "total_rows",
+        "value": 2086245
+      },
+      {
+        "key": "model_scored_rows",
+        "value": 2073842
+      },
+      {
+        "key": "exact_rows",
+        "value": 12403
+      },
+      {
+        "key": "projection_tuning_performed",
+        "value": false
+      },
+      {
+        "key": "frozen_policy_validation_rows",
+        "value": 1010926
+      },
+      {
+        "key": "absent_policy_features[0]",
+        "value": "social"
+      },
+      {
+        "key": "overall_metrics[0].policy",
+        "value": "one_stage_weighted_10gene"
+      },
+      {
+        "key": "overall_metrics[0].rows",
+        "value": 2086245
+      },
+      {
+        "key": "overall_metrics[0].positive_support",
+        "value": 25931
+      },
+      {
+        "key": "overall_metrics[0].tp",
+        "value": 20095
+      },
+      {
+        "key": "overall_metrics[0].tn",
+        "value": 2052805
+      },
+      {
+        "key": "overall_metrics[0].fp",
+        "value": 183
+      },
+      {
+        "key": "overall_metrics[0].fn",
+        "value": 2626
+      },
+      {
+        "key": "overall_metrics[0].review",
+        "value": 10536
+      },
+      {
+        "key": "overall_metrics[0].precision",
+        "value": 0.9909754413650261
+      },
+      {
+        "key": "overall_metrics[0].recall",
+        "value": 0.7749411900813697
+      },
+      {
+        "key": "overall_metrics[0].f1",
+        "value": 0.8697439892661603
+      },
+      {
+        "key": "overall_metrics[0].cost",
+        "value": 4045.6000000000004
+      },
+      {
+        "key": "overall_metrics[0].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[0].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[0].basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[1].policy",
+        "value": "legacy_name_guard_4threshold"
+      },
+      {
+        "key": "overall_metrics[1].rows",
+        "value": 2086245
+      },
+      {
+        "key": "overall_metrics[1].positive_support",
+        "value": 25931
+      },
+      {
+        "key": "overall_metrics[1].tp",
+        "value": 20812
+      },
+      {
+        "key": "overall_metrics[1].tn",
+        "value": 2039732
+      },
+      {
+        "key": "overall_metrics[1].fp",
+        "value": 240
+      },
+      {
+        "key": "overall_metrics[1].fn",
+        "value": 3114
+      },
+      {
+        "key": "overall_metrics[1].review",
+        "value": 22347
+      },
+      {
+        "key": "overall_metrics[1].precision",
+        "value": 0.9885996579897397
+      },
+      {
+        "key": "overall_metrics[1].recall",
+        "value": 0.8025914928078361
+      },
+      {
+        "key": "overall_metrics[1].f1",
+        "value": 0.8859374667432901
+      },
+      {
+        "key": "overall_metrics[1].cost",
+        "value": 5828.700000000001
+      },
+      {
+        "key": "overall_metrics[1].precision_gate_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[1].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[1].basic_quality_gates_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[2].policy",
+        "value": "score_only_2threshold"
+      },
+      {
+        "key": "overall_metrics[2].rows",
+        "value": 2086245
+      },
+      {
+        "key": "overall_metrics[2].positive_support",
+        "value": 25931
+      },
+      {
+        "key": "overall_metrics[2].tp",
+        "value": 14460
+      },
+      {
+        "key": "overall_metrics[2].tn",
+        "value": 2039731
+      },
+      {
+        "key": "overall_metrics[2].fp",
+        "value": 91
+      },
+      {
+        "key": "overall_metrics[2].fn",
+        "value": 3114
+      },
+      {
+        "key": "overall_metrics[2].review",
+        "value": 28849
+      },
+      {
+        "key": "overall_metrics[2].precision",
+        "value": 0.9937461342863033
+      },
+      {
+        "key": "overall_metrics[2].recall",
+        "value": 0.5576337202576067
+      },
+      {
+        "key": "overall_metrics[2].f1",
+        "value": 0.7143915814436045
+      },
+      {
+        "key": "overall_metrics[2].cost",
+        "value": 6180.9
+      },
+      {
+        "key": "overall_metrics[2].precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[2].recall_gate_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[2].basic_quality_gates_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[3].policy",
+        "value": "original_pipeline"
+      },
+      {
+        "key": "overall_metrics[3].rows",
+        "value": 2086245
+      },
+      {
+        "key": "overall_metrics[3].positive_support",
+        "value": 25931
+      },
+      {
+        "key": "overall_metrics[3].tp",
+        "value": 19624
+      },
+      {
+        "key": "overall_metrics[3].tn",
+        "value": 1977158
+      },
+      {
+        "key": "overall_metrics[3].fp",
+        "value": 925
+      },
+      {
+        "key": "overall_metrics[3].fn",
+        "value": 2242
+      },
+      {
+        "key": "overall_metrics[3].review",
+        "value": 86296
+      },
+      {
+        "key": "overall_metrics[3].precision",
+        "value": 0.9549856440702711
+      },
+      {
+        "key": "overall_metrics[3].recall",
+        "value": 0.7567776020978751
+      },
+      {
+        "key": "overall_metrics[3].f1",
+        "value": 0.8444061962134252
+      },
+      {
+        "key": "overall_metrics[3].cost",
+        "value": 12721.6
+      },
+      {
+        "key": "overall_metrics[3].precision_gate_pass",
+        "value": false
+      },
+      {
+        "key": "overall_metrics[3].recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "overall_metrics[3].basic_quality_gates_pass",
+        "value": false
+      },
+      {
+        "key": "full_cache_validation_tuning_performed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_v1_20260901/validation_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_only",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      },
+      {
+        "key": "best_seed",
+        "value": 43
+      },
+      {
+        "key": "best_genome[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "best_genome[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "best_genome[2]",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "best_genome[3]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[4]",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "best_genome[5]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[6]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[7]",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "best_genome[8]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[9]",
+        "value": 0.0
+      },
+      {
+        "key": "thresholds[0]",
+        "value": 0.9290405096256583
+      },
+      {
+        "key": "thresholds[1]",
+        "value": 0.09822185422619543
+      },
+      {
+        "key": "weights.probability",
+        "value": 0.9438248552353296
+      },
+      {
+        "key": "weights.name",
+        "value": 0.0
+      },
+      {
+        "key": "weights.bio",
+        "value": 0.02827462195868273
+      },
+      {
+        "key": "weights.url",
+        "value": 0.0
+      },
+      {
+        "key": "weights.location",
+        "value": 0.0
+      },
+      {
+        "key": "weights.social",
+        "value": 0.027900522805987645
+      },
+      {
+        "key": "weights.image",
+        "value": 0.0
+      },
+      {
+        "key": "weights.style",
+        "value": 0.0
+      },
+      {
+        "key": "validation_metrics.precision",
+        "value": 0.9933920704845814
+      },
+      {
+        "key": "validation_metrics.recall",
+        "value": 0.8226174190606476
+      },
+      {
+        "key": "validation_metrics.f1",
+        "value": 0.8999750561237216
+      },
+      {
+        "key": "validation_metrics.cost",
+        "value": 377.4
+      },
+      {
+        "key": "validation_metrics.precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.basic_quality_gates_pass",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "artifacts/decisioning/feature_aware_ga/one_stage_weighted_v1_gated_20260901/validation_result.json",
+    "entries": [
+      {
+        "key": "policy_version",
+        "value": "one_stage_weighted_v1"
+      },
+      {
+        "key": "validation_only",
+        "value": true
+      },
+      {
+        "key": "test_evaluated",
+        "value": false
+      },
+      {
+        "key": "best_seed",
+        "value": 50
+      },
+      {
+        "key": "best_genome[0]",
+        "value": 0.9292691254363367
+      },
+      {
+        "key": "best_genome[1]",
+        "value": 0.1136738673408006
+      },
+      {
+        "key": "best_genome[2]",
+        "value": 0.9221761381872645
+      },
+      {
+        "key": "best_genome[3]",
+        "value": 0.027207856174793765
+      },
+      {
+        "key": "best_genome[4]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[5]",
+        "value": 0.01764807303714192
+      },
+      {
+        "key": "best_genome[6]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[7]",
+        "value": 0.0
+      },
+      {
+        "key": "best_genome[8]",
+        "value": 0.03296793260079981
+      },
+      {
+        "key": "best_genome[9]",
+        "value": 0.0
+      },
+      {
+        "key": "thresholds[0]",
+        "value": 0.9292691254363367
+      },
+      {
+        "key": "thresholds[1]",
+        "value": 0.1136738673408006
+      },
+      {
+        "key": "weights.probability",
+        "value": 0.9221761381872645
+      },
+      {
+        "key": "weights.name",
+        "value": 0.027207856174793765
+      },
+      {
+        "key": "weights.bio",
+        "value": 0.0
+      },
+      {
+        "key": "weights.url",
+        "value": 0.01764807303714192
+      },
+      {
+        "key": "weights.location",
+        "value": 0.0
+      },
+      {
+        "key": "weights.social",
+        "value": 0.0
+      },
+      {
+        "key": "weights.image",
+        "value": 0.03296793260079981
+      },
+      {
+        "key": "weights.style",
+        "value": 0.0
+      },
+      {
+        "key": "validation_metrics.fp",
+        "value": 24
+      },
+      {
+        "key": "validation_metrics.fn",
+        "value": 127
+      },
+      {
+        "key": "validation_metrics.review",
+        "value": 2035
+      },
+      {
+        "key": "validation_metrics.precision",
+        "value": 0.9933259176863182
+      },
+      {
+        "key": "validation_metrics.recall",
+        "value": 0.8144094847241222
+      },
+      {
+        "key": "validation_metrics.f1",
+        "value": 0.8950137810072664
+      },
+      {
+        "key": "validation_metrics.cost",
+        "value": 378.5
+      },
+      {
+        "key": "validation_metrics.precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.recall_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.basic_quality_gates_pass",
+        "value": true
+      },
+      {
+        "key": "validation_metrics.platform_precision_gate_pass",
+        "value": true
+      },
+      {
+        "key": "validation_status",
+        "value": "BASIC_AND_PLATFORM_GATES_PASSED_REVIEW_CAPACITY_UNSET"
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/build_candidates.py",
+    "symbols": [
+      {
+        "name": "key",
+        "lines": [
+          23,
+          25
+        ]
+      },
+      {
+        "name": "unpack",
+        "lines": [
+          28,
+          29
+        ]
+      },
+      {
+        "name": "entity_hash",
+        "lines": [
+          32,
+          33
+        ]
+      },
+      {
+        "name": "build_gt",
+        "lines": [
+          36,
+          45
+        ]
+      },
+      {
+        "name": "pair_frame",
+        "lines": [
+          48,
+          55
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          58,
+          142
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/candidates/candidate_scope.json",
+    "entries": [
+      {
+        "key": "protocol_version",
+        "value": "authoritative_run_v1"
+      },
+      {
+        "key": "profiles_eligible",
+        "value": 36804
+      },
+      {
+        "key": "platform_counts.twitter",
+        "value": 13959
+      },
+      {
+        "key": "platform_counts.googleplus",
+        "value": 11889
+      },
+      {
+        "key": "platform_counts.instagram",
+        "value": 10956
+      },
+      {
+        "key": "all_platform_positives",
+        "value": 29247
+      },
+      {
+        "key": "cross_platform_positives",
+        "value": 29243
+      },
+      {
+        "key": "same_platform_positives",
+        "value": 4
+      },
+      {
+        "key": "possible_cross_platform_pairs",
+        "value": 449149239
+      },
+      {
+        "key": "exact_tier_pairs",
+        "value": 12403
+      },
+      {
+        "key": "model_scored_candidate_pairs",
+        "value": 2073842
+      },
+      {
+        "key": "workflow_candidate_pairs",
+        "value": 2086245
+      },
+      {
+        "key": "candidate_covered_cross_platform_positives",
+        "value": 25931
+      },
+      {
+        "key": "cross_platform_blocking_misses",
+        "value": 3312
+      },
+      {
+        "key": "retrieval_recall",
+        "value": 0.8867421263208289
+      },
+      {
+        "key": "candidate_space_reduction",
+        "value": 0.9953551184798958
+      },
+      {
+        "key": "exact_tier_breakdown.external_url_exact",
+        "value": 1270
+      },
+      {
+        "key": "blocking_key_breakdown.external_domain",
+        "value": 6061
+      },
+      {
+        "key": "invariants.exact_plus_scored_equals_workflow",
+        "value": true
+      },
+      {
+        "key": "invariants.covered_plus_missed_equals_cross_positive",
+        "value": true
+      },
+      {
+        "key": "invariants.all_equals_cross_plus_same",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/capture_provenance.py",
+    "symbols": [
+      {
+        "name": "write",
+        "lines": [
+          16,
+          17
+        ]
+      },
+      {
+        "name": "digest",
+        "lines": [
+          19,
+          24
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          26,
+          51
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/consistency_report.json",
+    "entries": [
+      {
+        "key": "status",
+        "value": "PASS"
+      },
+      {
+        "key": "scope_invariants.exact_plus_scored_equals_workflow",
+        "value": true
+      },
+      {
+        "key": "scope_invariants.covered_plus_missed_equals_cross_positive",
+        "value": true
+      },
+      {
+        "key": "scope_invariants.all_equals_cross_plus_same",
+        "value": true
+      },
+      {
+        "key": "rows_evaluated",
+        "value": 9
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/evaluate_authoritative.py",
+    "symbols": [
+      {
+        "name": "metric",
+        "lines": [
+          16,
+          31
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          34,
+          77
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/label_access_audit.json",
+    "entries": [
+      {
+        "key": "test_label_requests_before_final",
+        "value": 0
+      },
+      {
+        "key": "test_label_requests_after_final",
+        "value": 3
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/outer_101/training_metadata.json",
+    "entries": [
+      {
+        "key": "GB-17.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-17.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-17.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-17.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-17.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-17.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-17.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.0",
+        "value": 511988
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.1",
+        "value": 6749
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.0",
+        "value": 20247
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.1",
+        "value": 6749
+      },
+      {
+        "key": "GB-17.n_model_train_before_undersampling",
+        "value": 518737
+      },
+      {
+        "key": "GB-17.n_model_train_after_undersampling",
+        "value": 26996
+      },
+      {
+        "key": "GB-17.n_model_calibration",
+        "value": 20325
+      },
+      {
+        "key": "GB-17.calibration_average_precision",
+        "value": 0.9468877988741563
+      },
+      {
+        "key": "GB-17.fit_seconds",
+        "value": 19.50131133297691
+      },
+      {
+        "key": "GB-17.model_artifact",
+        "value": "model/gb17_model.pkl"
+      },
+      {
+        "key": "GB-17.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "GB-18.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-18.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-18.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-18.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-18.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-18.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-18.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.0",
+        "value": 511988
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.1",
+        "value": 6749
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.0",
+        "value": 20247
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.1",
+        "value": 6749
+      },
+      {
+        "key": "GB-18.n_model_train_before_undersampling",
+        "value": 518737
+      },
+      {
+        "key": "GB-18.n_model_train_after_undersampling",
+        "value": 26996
+      },
+      {
+        "key": "GB-18.n_model_calibration",
+        "value": 20325
+      },
+      {
+        "key": "GB-18.calibration_average_precision",
+        "value": 0.9565821837048792
+      },
+      {
+        "key": "GB-18.fit_seconds",
+        "value": 22.833311458001845
+      },
+      {
+        "key": "GB-18.model_artifact",
+        "value": "model/gb18_model.pkl"
+      },
+      {
+        "key": "GB-18.label_access.model_fit",
+        "value": "model_train only"
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/outer_202/training_metadata.json",
+    "entries": [
+      {
+        "key": "GB-17.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-17.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-17.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-17.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-17.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-17.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-17.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.0",
+        "value": 501930
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.1",
+        "value": 6691
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.0",
+        "value": 20073
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.1",
+        "value": 6691
+      },
+      {
+        "key": "GB-17.n_model_train_before_undersampling",
+        "value": 508621
+      },
+      {
+        "key": "GB-17.n_model_train_after_undersampling",
+        "value": 26764
+      },
+      {
+        "key": "GB-17.n_model_calibration",
+        "value": 27699
+      },
+      {
+        "key": "GB-17.calibration_average_precision",
+        "value": 0.9433411773649008
+      },
+      {
+        "key": "GB-17.fit_seconds",
+        "value": 20.243970417010132
+      },
+      {
+        "key": "GB-17.model_artifact",
+        "value": "model/gb17_model.pkl"
+      },
+      {
+        "key": "GB-17.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "GB-18.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-18.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-18.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-18.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-18.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-18.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-18.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.0",
+        "value": 501930
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.1",
+        "value": 6691
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.0",
+        "value": 20073
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.1",
+        "value": 6691
+      },
+      {
+        "key": "GB-18.n_model_train_before_undersampling",
+        "value": 508621
+      },
+      {
+        "key": "GB-18.n_model_train_after_undersampling",
+        "value": 26764
+      },
+      {
+        "key": "GB-18.n_model_calibration",
+        "value": 27699
+      },
+      {
+        "key": "GB-18.calibration_average_precision",
+        "value": 0.9489312309120224
+      },
+      {
+        "key": "GB-18.fit_seconds",
+        "value": 22.22774079197552
+      },
+      {
+        "key": "GB-18.model_artifact",
+        "value": "model/gb18_model.pkl"
+      },
+      {
+        "key": "GB-18.label_access.model_fit",
+        "value": "model_train only"
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/outer_303/training_metadata.json",
+    "entries": [
+      {
+        "key": "GB-17.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-17.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-17.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-17.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-17.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-17.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-17.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.0",
+        "value": 515674
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.1",
+        "value": 6677
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.0",
+        "value": 20031
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.1",
+        "value": 6677
+      },
+      {
+        "key": "GB-17.n_model_train_before_undersampling",
+        "value": 522351
+      },
+      {
+        "key": "GB-17.n_model_train_after_undersampling",
+        "value": 26708
+      },
+      {
+        "key": "GB-17.n_model_calibration",
+        "value": 25003
+      },
+      {
+        "key": "GB-17.calibration_average_precision",
+        "value": 0.9497493911704474
+      },
+      {
+        "key": "GB-17.fit_seconds",
+        "value": 18.794702082988806
+      },
+      {
+        "key": "GB-17.model_artifact",
+        "value": "model/gb17_model.pkl"
+      },
+      {
+        "key": "GB-17.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "GB-18.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-18.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-18.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-18.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-18.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-18.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-18.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.0",
+        "value": 515674
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.1",
+        "value": 6677
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.0",
+        "value": 20031
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.1",
+        "value": 6677
+      },
+      {
+        "key": "GB-18.n_model_train_before_undersampling",
+        "value": 522351
+      },
+      {
+        "key": "GB-18.n_model_train_after_undersampling",
+        "value": 26708
+      },
+      {
+        "key": "GB-18.n_model_calibration",
+        "value": 25003
+      },
+      {
+        "key": "GB-18.calibration_average_precision",
+        "value": 0.9556792305544416
+      },
+      {
+        "key": "GB-18.fit_seconds",
+        "value": 23.1110575000057
+      },
+      {
+        "key": "GB-18.model_artifact",
+        "value": "model/gb18_model.pkl"
+      },
+      {
+        "key": "GB-18.label_access.model_fit",
+        "value": "model_train only"
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/render_results.py",
+    "symbols": [
+      {
+        "name": "f",
+        "lines": [
+          12,
+          12
+        ]
+      },
+      {
+        "name": "pm",
+        "lines": [
+          13,
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run/run_authoritative_outer.py",
+    "symbols": [
+      {
+        "name": "hash_entity",
+        "lines": [
+          29,
+          30
+        ]
+      },
+      {
+        "name": "pair_digest",
+        "lines": [
+          33,
+          35
+        ]
+      },
+      {
+        "name": "build_cache",
+        "lines": [
+          38,
+          59
+        ]
+      },
+      {
+        "name": "constants",
+        "lines": [
+          62,
+          82
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          85,
+          166
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/__init__.py",
+    "symbols": []
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/artifact_producers.py",
+    "symbols": [
+      {
+        "name": "ArtifactProducerError",
+        "lines": [
+          20,
+          21
+        ]
+      },
+      {
+        "name": "_sha256",
+        "lines": [
+          24,
+          31
+        ]
+      },
+      {
+        "name": "_record",
+        "lines": [
+          34,
+          40
+        ]
+      },
+      {
+        "name": "_cross_platform_positive_keys",
+        "lines": [
+          43,
+          54
+        ]
+      },
+      {
+        "name": "_profile_roles",
+        "lines": [
+          57,
+          68
+        ]
+      },
+      {
+        "name": "_validate_routed_pairs",
+        "lines": [
+          71,
+          85
+        ]
+      },
+      {
+        "name": "_labels_for_pairs",
+        "lines": [
+          88,
+          94
+        ]
+      },
+      {
+        "name": "produce_scientific_input_artifacts",
+        "lines": [
+          97,
+          202
+        ]
+      },
+      {
+        "name": "validate_input_artifacts",
+        "lines": [
+          205,
+          226
+        ]
+      },
+      {
+        "name": "build_real_fixture",
+        "lines": [
+          229,
+          251
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/dry_run/final_runner_synthetic/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/dry_run/final_runner_synthetic/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.9090909090909091
+      },
+      {
+        "key": "B0.FN",
+        "value": 1
+      },
+      {
+        "key": "B0.FP",
+        "value": 0
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B0.TP",
+        "value": 5
+      },
+      {
+        "key": "B0.U",
+        "value": 1.0
+      },
+      {
+        "key": "B0.precision",
+        "value": 1.0
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.8333333333333334
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.9090909090909091
+      },
+      {
+        "key": "B1.FN",
+        "value": 1
+      },
+      {
+        "key": "B1.FP",
+        "value": 0
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B1.TP",
+        "value": 5
+      },
+      {
+        "key": "B1.U",
+        "value": 1.0
+      },
+      {
+        "key": "B1.precision",
+        "value": 1.0
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8333333333333334
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.9090909090909091
+      },
+      {
+        "key": "B2.FN",
+        "value": 1
+      },
+      {
+        "key": "B2.FP",
+        "value": 0
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B2.TP",
+        "value": 5
+      },
+      {
+        "key": "B2.U",
+        "value": 1.0
+      },
+      {
+        "key": "B2.precision",
+        "value": 1.0
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8333333333333334
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.9090909090909091
+      },
+      {
+        "key": "B3.FN",
+        "value": 1
+      },
+      {
+        "key": "B3.FP",
+        "value": 0
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B3.TP",
+        "value": 5
+      },
+      {
+        "key": "B3.U",
+        "value": 1.0
+      },
+      {
+        "key": "B3.precision",
+        "value": 1.0
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8333333333333334
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/dry_run/summary.json",
+    "entries": [
+      {
+        "key": "NOT_MANUSCRIPT_EVIDENCE",
+        "value": true
+      },
+      {
+        "key": "b0_decisions[0]",
+        "value": 2
+      },
+      {
+        "key": "b0_decisions[1]",
+        "value": 1
+      },
+      {
+        "key": "b0_decisions[2]",
+        "value": 0
+      },
+      {
+        "key": "b0_decisions[3]",
+        "value": 0
+      },
+      {
+        "key": "b0_decisions[4]",
+        "value": 0
+      },
+      {
+        "key": "b0_decisions[5]",
+        "value": 0
+      },
+      {
+        "key": "b1.policy[0]",
+        "value": 0.92475
+      },
+      {
+        "key": "b1.policy[1]",
+        "value": 0.87425
+      },
+      {
+        "key": "b1.requested_evaluations",
+        "value": 8
+      },
+      {
+        "key": "b1.realized_evaluations",
+        "value": 8
+      },
+      {
+        "key": "b2.policy[0]",
+        "value": 0.986625
+      },
+      {
+        "key": "b2.policy[1]",
+        "value": 0.8500000000000001
+      },
+      {
+        "key": "b2.policy[2]",
+        "value": 0.5625
+      },
+      {
+        "key": "b2.policy[3]",
+        "value": 0.22499999999999998
+      },
+      {
+        "key": "b2.requested_evaluations",
+        "value": 16
+      },
+      {
+        "key": "b2.realized_evaluations",
+        "value": 16
+      },
+      {
+        "key": "b3.policy[0]",
+        "value": 0.938770281052288
+      },
+      {
+        "key": "b3.policy[1]",
+        "value": 0.8561097408019169
+      },
+      {
+        "key": "b3.policy[2]",
+        "value": 0.6135787967666899
+      },
+      {
+        "key": "b3.policy[3]",
+        "value": 0.3739122868116254
+      },
+      {
+        "key": "b3.requested_evaluations",
+        "value": 16
+      },
+      {
+        "key": "b3.realized_evaluations",
+        "value": 16
+      },
+      {
+        "key": "b2_b3_budget_equal",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/features.py",
+    "symbols": [
+      {
+        "name": "_normalize",
+        "lines": [
+          22,
+          27
+        ]
+      },
+      {
+        "name": "corrected_name_sim",
+        "lines": [
+          30,
+          49
+        ]
+      },
+      {
+        "name": "build_handcrafted_features",
+        "lines": [
+          52,
+          113
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/final_evidence.json",
+    "entries": [
+      {
+        "key": "seeds.101.GB17_B0.TP",
+        "value": 5583
+      },
+      {
+        "key": "seeds.101.GB17_B0.FP",
+        "value": 65
+      },
+      {
+        "key": "seeds.101.GB17_B0.FN",
+        "value": 2377
+      },
+      {
+        "key": "seeds.101.GB17_B0.REVIEW",
+        "value": 884
+      },
+      {
+        "key": "seeds.101.GB17_B0.precision",
+        "value": 0.9884915014164306
+      },
+      {
+        "key": "seeds.101.GB17_B0.recall",
+        "value": 0.7013819095477387
+      },
+      {
+        "key": "seeds.101.GB17_B0.F1",
+        "value": 0.8205467372134039
+      },
+      {
+        "key": "seeds.101.GB17_B0.U",
+        "value": 2595.4
+      },
+      {
+        "key": "seeds.101.B0.TP",
+        "value": 5873
+      },
+      {
+        "key": "seeds.101.B0.FP",
+        "value": 32
+      },
+      {
+        "key": "seeds.101.B0.FN",
+        "value": 2454
+      },
+      {
+        "key": "seeds.101.B0.REVIEW",
+        "value": 502
+      },
+      {
+        "key": "seeds.101.B0.precision",
+        "value": 0.9945808636748518
+      },
+      {
+        "key": "seeds.101.B0.recall",
+        "value": 0.705296024978984
+      },
+      {
+        "key": "seeds.101.B0.F1",
+        "value": 0.8253232152894885
+      },
+      {
+        "key": "seeds.101.B0.U",
+        "value": 2568.2
+      },
+      {
+        "key": "seeds.101.B1.TP",
+        "value": 6897
+      },
+      {
+        "key": "seeds.101.B1.FP",
+        "value": 112
+      },
+      {
+        "key": "seeds.101.B1.FN",
+        "value": 1567
+      },
+      {
+        "key": "seeds.101.B1.REVIEW",
+        "value": 659
+      },
+      {
+        "key": "seeds.101.B1.precision",
+        "value": 0.984020545013554
+      },
+      {
+        "key": "seeds.101.B1.recall",
+        "value": 0.8148629489603024
+      },
+      {
+        "key": "seeds.101.B1.F1",
+        "value": 0.8914883991469009
+      },
+      {
+        "key": "seeds.101.B1.U",
+        "value": 1856.9
+      },
+      {
+        "key": "seeds.101.B2.TP",
+        "value": 6649
+      },
+      {
+        "key": "seeds.101.B2.FP",
+        "value": 83
+      },
+      {
+        "key": "seeds.101.B2.FN",
+        "value": 1575
+      },
+      {
+        "key": "seeds.101.B2.REVIEW",
+        "value": 914
+      },
+      {
+        "key": "seeds.101.B2.precision",
+        "value": 0.98767082590612
+      },
+      {
+        "key": "seeds.101.B2.recall",
+        "value": 0.8084873540856031
+      },
+      {
+        "key": "seeds.101.B2.F1",
+        "value": 0.8891414816795935
+      },
+      {
+        "key": "seeds.101.B2.U",
+        "value": 1832.4
+      },
+      {
+        "key": "seeds.101.B3.TP",
+        "value": 6646
+      },
+      {
+        "key": "seeds.101.B3.FP",
+        "value": 83
+      },
+      {
+        "key": "seeds.101.B3.FN",
+        "value": 1567
+      },
+      {
+        "key": "seeds.101.B3.REVIEW",
+        "value": 939
+      },
+      {
+        "key": "seeds.101.B3.precision",
+        "value": 0.9876653291722396
+      },
+      {
+        "key": "seeds.101.B3.recall",
+        "value": 0.8092049190308048
+      },
+      {
+        "key": "seeds.101.B3.F1",
+        "value": 0.8895730156605541
+      },
+      {
+        "key": "seeds.101.B3.U",
+        "value": 1826.9
+      },
+      {
+        "key": "seeds.202.GB17_B0.TP",
+        "value": 6487
+      },
+      {
+        "key": "seeds.202.GB17_B0.FP",
+        "value": 87
+      },
+      {
+        "key": "seeds.202.GB17_B0.FN",
+        "value": 2060
+      },
+      {
+        "key": "seeds.202.GB17_B0.REVIEW",
+        "value": 215
+      },
+      {
+        "key": "seeds.202.GB17_B0.precision",
+        "value": 0.9867660480681473
+      },
+      {
+        "key": "seeds.202.GB17_B0.recall",
+        "value": 0.758979758979759
+      },
+      {
+        "key": "seeds.202.GB17_B0.F1",
+        "value": 0.8580120362409894
+      },
+      {
+        "key": "seeds.202.GB17_B0.U",
+        "value": 2255.5
+      },
+      {
+        "key": "seeds.202.B0.TP",
+        "value": 6641
+      },
+      {
+        "key": "seeds.202.B0.FP",
+        "value": 145
+      },
+      {
+        "key": "seeds.202.B0.FN",
+        "value": 2089
+      },
+      {
+        "key": "seeds.202.B0.REVIEW",
+        "value": 4
+      },
+      {
+        "key": "seeds.202.B0.precision",
+        "value": 0.9786324786324786
+      },
+      {
+        "key": "seeds.202.B0.recall",
+        "value": 0.7607101947308132
+      },
+      {
+        "key": "seeds.202.B0.F1",
+        "value": 0.8560195926785253
+      },
+      {
+        "key": "seeds.202.B0.U",
+        "value": 2379.4
+      },
+      {
+        "key": "seeds.202.B1.TP",
+        "value": 6649
+      },
+      {
+        "key": "seeds.202.B1.FP",
+        "value": 147
+      },
+      {
+        "key": "seeds.202.B1.FN",
+        "value": 1523
+      },
+      {
+        "key": "seeds.202.B1.REVIEW",
+        "value": 968
+      },
+      {
+        "key": "seeds.202.B1.precision",
+        "value": 0.9783696291936433
+      },
+      {
+        "key": "seeds.202.B1.recall",
+        "value": 0.8136319138521781
+      },
+      {
+        "key": "seeds.202.B1.F1",
+        "value": 0.8884286477819346
+      },
+      {
+        "key": "seeds.202.B1.U",
+        "value": 1913.8
+      },
+      {
+        "key": "seeds.202.B2.TP",
+        "value": 6584
+      },
+      {
+        "key": "seeds.202.B2.FP",
+        "value": 116
+      },
+      {
+        "key": "seeds.202.B2.FN",
+        "value": 1523
+      },
+      {
+        "key": "seeds.202.B2.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "seeds.202.B2.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "seeds.202.B2.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "seeds.202.B2.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "seeds.202.B2.U",
+        "value": 1861.2
+      },
+      {
+        "key": "seeds.202.B3.TP",
+        "value": 6584
+      },
+      {
+        "key": "seeds.202.B3.FP",
+        "value": 116
+      },
+      {
+        "key": "seeds.202.B3.FN",
+        "value": 1523
+      },
+      {
+        "key": "seeds.202.B3.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "seeds.202.B3.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "seeds.202.B3.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "seeds.202.B3.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "seeds.202.B3.U",
+        "value": 1861.2
+      },
+      {
+        "key": "seeds.303.GB17_B0.TP",
+        "value": 6978
+      },
+      {
+        "key": "seeds.303.GB17_B0.FP",
+        "value": 115
+      },
+      {
+        "key": "seeds.303.GB17_B0.FN",
+        "value": 1975
+      },
+      {
+        "key": "seeds.303.GB17_B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "seeds.303.GB17_B0.precision",
+        "value": 0.983786832087974
+      },
+      {
+        "key": "seeds.303.GB17_B0.recall",
+        "value": 0.7794035518820507
+      },
+      {
+        "key": "seeds.303.GB17_B0.F1",
+        "value": 0.8697494702729651
+      },
+      {
+        "key": "seeds.303.GB17_B0.U",
+        "value": 2205.0
+      },
+      {
+        "key": "seeds.303.B0.TP",
+        "value": 6982
+      },
+      {
+        "key": "seeds.303.B0.FP",
+        "value": 87
+      },
+      {
+        "key": "seeds.303.B0.FN",
+        "value": 1971
+      },
+      {
+        "key": "seeds.303.B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "seeds.303.B0.precision",
+        "value": 0.9876927429622294
+      },
+      {
+        "key": "seeds.303.B0.recall",
+        "value": 0.7798503294984921
+      },
+      {
+        "key": "seeds.303.B0.F1",
+        "value": 0.871551616527275
+      },
+      {
+        "key": "seeds.303.B0.U",
+        "value": 2145.0
+      },
+      {
+        "key": "seeds.303.B1.TP",
+        "value": 6983
+      },
+      {
+        "key": "seeds.303.B1.FP",
+        "value": 87
+      },
+      {
+        "key": "seeds.303.B1.FN",
+        "value": 1583
+      },
+      {
+        "key": "seeds.303.B1.REVIEW",
+        "value": 660
+      },
+      {
+        "key": "seeds.303.B1.precision",
+        "value": 0.9876944837340877
+      },
+      {
+        "key": "seeds.303.B1.recall",
+        "value": 0.8151996264300724
+      },
+      {
+        "key": "seeds.303.B1.F1",
+        "value": 0.8931951905858275
+      },
+      {
+        "key": "seeds.303.B1.U",
+        "value": 1823.0
+      },
+      {
+        "key": "seeds.303.B2.TP",
+        "value": 7049
+      },
+      {
+        "key": "seeds.303.B2.FP",
+        "value": 124
+      },
+      {
+        "key": "seeds.303.B2.FN",
+        "value": 1583
+      },
+      {
+        "key": "seeds.303.B2.REVIEW",
+        "value": 555
+      },
+      {
+        "key": "seeds.303.B2.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "seeds.303.B2.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "seeds.303.B2.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "seeds.303.B2.U",
+        "value": 1886.5
+      },
+      {
+        "key": "seeds.303.B3.TP",
+        "value": 7049
+      },
+      {
+        "key": "seeds.303.B3.FP",
+        "value": 124
+      },
+      {
+        "key": "seeds.303.B3.FN",
+        "value": 1583
+      },
+      {
+        "key": "seeds.303.B3.REVIEW",
+        "value": 556
+      },
+      {
+        "key": "seeds.303.B3.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "seeds.303.B3.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "seeds.303.B3.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "seeds.303.B3.U",
+        "value": 1886.6
+      },
+      {
+        "key": "aggregate.GB17_B0.precision.mean",
+        "value": 0.9863481271908506
+      },
+      {
+        "key": "aggregate.GB17_B0.recall.mean",
+        "value": 0.7465884068031827
+      },
+      {
+        "key": "aggregate.GB17_B0.F1.mean",
+        "value": 0.8494360812424527
+      },
+      {
+        "key": "aggregate.GB17_B0.FP.mean",
+        "value": 89.0
+      },
+      {
+        "key": "aggregate.GB17_B0.FN.mean",
+        "value": 2137.3333333333335
+      },
+      {
+        "key": "aggregate.GB17_B0.REVIEW.mean",
+        "value": 366.3333333333333
+      },
+      {
+        "key": "aggregate.GB17_B0.U.mean",
+        "value": 2351.9666666666667
+      },
+      {
+        "key": "aggregate.B0.precision.mean",
+        "value": 0.9869686950898533
+      },
+      {
+        "key": "aggregate.B0.recall.mean",
+        "value": 0.7486188497360965
+      },
+      {
+        "key": "aggregate.B0.F1.mean",
+        "value": 0.8509648081650963
+      },
+      {
+        "key": "aggregate.B0.FP.mean",
+        "value": 88.0
+      },
+      {
+        "key": "aggregate.B0.FN.mean",
+        "value": 2171.3333333333335
+      },
+      {
+        "key": "aggregate.B0.REVIEW.mean",
+        "value": 168.66666666666666
+      },
+      {
+        "key": "aggregate.B0.U.mean",
+        "value": 2364.2000000000003
+      },
+      {
+        "key": "aggregate.B1.precision.mean",
+        "value": 0.983361552647095
+      },
+      {
+        "key": "aggregate.B1.recall.mean",
+        "value": 0.8145648297475176
+      },
+      {
+        "key": "aggregate.B1.F1.mean",
+        "value": 0.8910374125048878
+      },
+      {
+        "key": "aggregate.B1.FP.mean",
+        "value": 115.33333333333333
+      },
+      {
+        "key": "aggregate.B1.FN.mean",
+        "value": 1557.6666666666667
+      },
+      {
+        "key": "aggregate.B1.REVIEW.mean",
+        "value": 762.3333333333334
+      },
+      {
+        "key": "aggregate.B1.U.mean",
+        "value": 1864.5666666666666
+      },
+      {
+        "key": "aggregate.B2.precision.mean",
+        "value": 0.9843567814718739
+      },
+      {
+        "key": "aggregate.B2.recall.mean",
+        "value": 0.8124125390540603
+      },
+      {
+        "key": "aggregate.B2.F1.mean",
+        "value": 0.8901489319894692
+      },
+      {
+        "key": "aggregate.B2.FP.mean",
+        "value": 107.66666666666667
+      },
+      {
+        "key": "aggregate.B2.FN.mean",
+        "value": 1560.3333333333333
+      },
+      {
+        "key": "aggregate.B2.REVIEW.mean",
+        "value": 843.6666666666666
+      },
+      {
+        "key": "aggregate.B2.U.mean",
+        "value": 1860.0333333333335
+      },
+      {
+        "key": "aggregate.B3.precision.mean",
+        "value": 0.9843549492272472
+      },
+      {
+        "key": "aggregate.B3.recall.mean",
+        "value": 0.8126517273691275
+      },
+      {
+        "key": "aggregate.B3.F1.mean",
+        "value": 0.8902927766497895
+      },
+      {
+        "key": "aggregate.B3.FP.mean",
+        "value": 107.66666666666667
+      },
+      {
+        "key": "aggregate.B3.FN.mean",
+        "value": 1557.6666666666667
+      },
+      {
+        "key": "aggregate.B3.REVIEW.mean",
+        "value": 852.3333333333334
+      },
+      {
+        "key": "aggregate.B3.U.mean",
+        "value": 1858.2333333333336
+      },
+      {
+        "key": "policies.101.metadata.B0.optimizer",
+        "value": null
+      },
+      {
+        "key": "policies.101.metadata.B1.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B1.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.101.metadata.B2.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.101.metadata.B2.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B2.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.101.metadata.B3.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.101.metadata.B3.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B3.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.101.metadata.B3.seed",
+        "value": 101
+      },
+      {
+        "key": "policies.101.parameters.B0[0]",
+        "value": 0.98
+      },
+      {
+        "key": "policies.101.parameters.B0[1]",
+        "value": 0.95
+      },
+      {
+        "key": "policies.101.parameters.B1[0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.101.parameters.B1[1]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.parameters.B2[0]",
+        "value": 0.9160850830078126
+      },
+      {
+        "key": "policies.101.parameters.B2[1]",
+        "value": 0.574951171875
+      },
+      {
+        "key": "policies.101.parameters.B2[2]",
+        "value": 0.96966552734375
+      },
+      {
+        "key": "policies.101.parameters.B2[3]",
+        "value": 0.0312744140625
+      },
+      {
+        "key": "policies.101.parameters.B3[0]",
+        "value": 0.9328667891460326
+      },
+      {
+        "key": "policies.101.parameters.B3[1]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.101.parameters.B3[2]",
+        "value": 0.9712756320976768
+      },
+      {
+        "key": "policies.101.parameters.B3[3]",
+        "value": 0.11395647012659907
+      },
+      {
+        "key": "policies.202.metadata.B0.optimizer",
+        "value": null
+      },
+      {
+        "key": "policies.202.metadata.B1.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B1.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.202.metadata.B2.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.202.metadata.B2.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B2.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.202.metadata.B3.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.202.metadata.B3.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B3.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.202.metadata.B3.seed",
+        "value": 202
+      },
+      {
+        "key": "policies.202.parameters.B0[0]",
+        "value": 0.98
+      },
+      {
+        "key": "policies.202.parameters.B0[1]",
+        "value": 0.95
+      },
+      {
+        "key": "policies.202.parameters.B1[0]",
+        "value": 0.9131484375
+      },
+      {
+        "key": "policies.202.parameters.B1[1]",
+        "value": 0.5194921875
+      },
+      {
+        "key": "policies.202.parameters.B2[0]",
+        "value": 0.9943533325195313
+      },
+      {
+        "key": "policies.202.parameters.B2[1]",
+        "value": 0.5270751953125
+      },
+      {
+        "key": "policies.202.parameters.B2[2]",
+        "value": 0.977081298828125
+      },
+      {
+        "key": "policies.202.parameters.B2[3]",
+        "value": 0.33739013671875
+      },
+      {
+        "key": "policies.202.parameters.B3[0]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.202.parameters.B3[1]",
+        "value": 0.5287054791743097
+      },
+      {
+        "key": "policies.202.parameters.B3[2]",
+        "value": 0.9768137036760767
+      },
+      {
+        "key": "policies.202.parameters.B3[3]",
+        "value": 0.05408213418661234
+      },
+      {
+        "key": "policies.303.metadata.B0.optimizer",
+        "value": null
+      },
+      {
+        "key": "policies.303.metadata.B1.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B1.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.303.metadata.B2.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.303.metadata.B2.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B2.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[0][0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[0][1]",
+        "value": 0.999
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[1][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[1][1]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[2][0]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[2][1]",
+        "value": 1.0
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[3][0]",
+        "value": 0.0
+      },
+      {
+        "key": "policies.303.metadata.B3.bounds[3][1]",
+        "value": 0.6
+      },
+      {
+        "key": "policies.303.metadata.B3.realized_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B3.requested_evaluations",
+        "value": 12000
+      },
+      {
+        "key": "policies.303.metadata.B3.seed",
+        "value": 303
+      },
+      {
+        "key": "policies.303.parameters.B0[0]",
+        "value": 0.98
+      },
+      {
+        "key": "policies.303.parameters.B0[1]",
+        "value": 0.95
+      },
+      {
+        "key": "policies.303.parameters.B1[0]",
+        "value": 0.9
+      },
+      {
+        "key": "policies.303.parameters.B1[1]",
+        "value": 0.5
+      },
+      {
+        "key": "policies.303.parameters.B2[0]",
+        "value": 0.900966796875
+      },
+      {
+        "key": "policies.303.parameters.B2[1]",
+        "value": 0.56640625
+      },
+      {
+        "key": "policies.303.parameters.B2[2]",
+        "value": 0.9501953125
+      },
+      {
+        "key": "policies.303.parameters.B2[3]",
+        "value": 0.287109375
+      },
+      {
+        "key": "policies.303.parameters.B3[0]",
+        "value": 0.9125238304089598
+      },
+      {
+        "key": "policies.303.parameters.B3[1]",
+        "value": 0.5263206296522533
+      },
+      {
+        "key": "policies.303.parameters.B3[2]",
+        "value": 0.9505744583187686
+      },
+      {
+        "key": "policies.303.parameters.B3[3]",
+        "value": 0.3989742153389613
+      },
+      {
+        "key": "workflow_decomposition.101.GB17_B0.MODEL_SCORED",
+        "value": 190061
+      },
+      {
+        "key": "workflow_decomposition.101.GB17_B0.AUTO_EXACT",
+        "value": 3631
+      },
+      {
+        "key": "workflow_decomposition.101.GB17_B0.BLOCKING_MISS",
+        "value": 1034
+      },
+      {
+        "key": "workflow_decomposition.101.B0.MODEL_SCORED",
+        "value": 190061
+      },
+      {
+        "key": "workflow_decomposition.101.B0.AUTO_EXACT",
+        "value": 3631
+      },
+      {
+        "key": "workflow_decomposition.101.B0.BLOCKING_MISS",
+        "value": 1034
+      },
+      {
+        "key": "workflow_decomposition.101.B1.MODEL_SCORED",
+        "value": 190061
+      },
+      {
+        "key": "workflow_decomposition.101.B1.AUTO_EXACT",
+        "value": 3631
+      },
+      {
+        "key": "workflow_decomposition.101.B1.BLOCKING_MISS",
+        "value": 1034
+      },
+      {
+        "key": "workflow_decomposition.101.B2.MODEL_SCORED",
+        "value": 190061
+      },
+      {
+        "key": "workflow_decomposition.101.B2.AUTO_EXACT",
+        "value": 3631
+      },
+      {
+        "key": "workflow_decomposition.101.B2.BLOCKING_MISS",
+        "value": 1034
+      },
+      {
+        "key": "workflow_decomposition.101.B3.MODEL_SCORED",
+        "value": 190061
+      },
+      {
+        "key": "workflow_decomposition.101.B3.AUTO_EXACT",
+        "value": 3631
+      },
+      {
+        "key": "workflow_decomposition.101.B3.BLOCKING_MISS",
+        "value": 1034
+      },
+      {
+        "key": "workflow_decomposition.202.GB17_B0.MODEL_SCORED",
+        "value": 193851
+      },
+      {
+        "key": "workflow_decomposition.202.GB17_B0.AUTO_EXACT",
+        "value": 3680
+      },
+      {
+        "key": "workflow_decomposition.202.GB17_B0.BLOCKING_MISS",
+        "value": 1014
+      },
+      {
+        "key": "workflow_decomposition.202.B0.MODEL_SCORED",
+        "value": 193851
+      },
+      {
+        "key": "workflow_decomposition.202.B0.AUTO_EXACT",
+        "value": 3680
+      },
+      {
+        "key": "workflow_decomposition.202.B0.BLOCKING_MISS",
+        "value": 1014
+      },
+      {
+        "key": "workflow_decomposition.202.B1.MODEL_SCORED",
+        "value": 193851
+      },
+      {
+        "key": "workflow_decomposition.202.B1.AUTO_EXACT",
+        "value": 3680
+      },
+      {
+        "key": "workflow_decomposition.202.B1.BLOCKING_MISS",
+        "value": 1014
+      },
+      {
+        "key": "workflow_decomposition.202.B2.MODEL_SCORED",
+        "value": 193851
+      },
+      {
+        "key": "workflow_decomposition.202.B2.AUTO_EXACT",
+        "value": 3680
+      },
+      {
+        "key": "workflow_decomposition.202.B2.BLOCKING_MISS",
+        "value": 1014
+      },
+      {
+        "key": "workflow_decomposition.202.B3.MODEL_SCORED",
+        "value": 193851
+      },
+      {
+        "key": "workflow_decomposition.202.B3.AUTO_EXACT",
+        "value": 3680
+      },
+      {
+        "key": "workflow_decomposition.202.B3.BLOCKING_MISS",
+        "value": 1014
+      },
+      {
+        "key": "workflow_decomposition.303.GB17_B0.MODEL_SCORED",
+        "value": 200003
+      },
+      {
+        "key": "workflow_decomposition.303.GB17_B0.AUTO_EXACT",
+        "value": 3728
+      },
+      {
+        "key": "workflow_decomposition.303.GB17_B0.BLOCKING_MISS",
+        "value": 1007
+      },
+      {
+        "key": "workflow_decomposition.303.B0.MODEL_SCORED",
+        "value": 200003
+      },
+      {
+        "key": "workflow_decomposition.303.B0.AUTO_EXACT",
+        "value": 3728
+      },
+      {
+        "key": "workflow_decomposition.303.B0.BLOCKING_MISS",
+        "value": 1007
+      },
+      {
+        "key": "workflow_decomposition.303.B1.MODEL_SCORED",
+        "value": 200003
+      },
+      {
+        "key": "workflow_decomposition.303.B1.AUTO_EXACT",
+        "value": 3728
+      },
+      {
+        "key": "workflow_decomposition.303.B1.BLOCKING_MISS",
+        "value": 1007
+      },
+      {
+        "key": "workflow_decomposition.303.B2.MODEL_SCORED",
+        "value": 200003
+      },
+      {
+        "key": "workflow_decomposition.303.B2.AUTO_EXACT",
+        "value": 3728
+      },
+      {
+        "key": "workflow_decomposition.303.B2.BLOCKING_MISS",
+        "value": 1007
+      },
+      {
+        "key": "workflow_decomposition.303.B3.MODEL_SCORED",
+        "value": 200003
+      },
+      {
+        "key": "workflow_decomposition.303.B3.AUTO_EXACT",
+        "value": 3728
+      },
+      {
+        "key": "workflow_decomposition.303.B3.BLOCKING_MISS",
+        "value": 1007
+      },
+      {
+        "key": "candidate_scope.profiles_eligible",
+        "value": 36804
+      },
+      {
+        "key": "candidate_scope.all_platform_positives",
+        "value": 29247
+      },
+      {
+        "key": "candidate_scope.cross_platform_positives",
+        "value": 29243
+      },
+      {
+        "key": "candidate_scope.same_platform_positives",
+        "value": 4
+      },
+      {
+        "key": "candidate_scope.possible_cross_platform_pairs",
+        "value": 449149239
+      },
+      {
+        "key": "candidate_scope.exact_tier_pairs",
+        "value": 12403
+      },
+      {
+        "key": "candidate_scope.model_scored_candidate_pairs",
+        "value": 2073842
+      },
+      {
+        "key": "candidate_scope.workflow_candidate_pairs",
+        "value": 2086245
+      },
+      {
+        "key": "candidate_scope.candidate_covered_cross_platform_positives",
+        "value": 25931
+      },
+      {
+        "key": "candidate_scope.cross_platform_blocking_misses",
+        "value": 3312
+      },
+      {
+        "key": "pre_final_test_label_reads",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/final_runner.py",
+    "symbols": [
+      {
+        "name": "deterministic_sample_indices",
+        "lines": [
+          28,
+          37
+        ]
+      },
+      {
+        "name": "FinalRunnerError",
+        "lines": [
+          40,
+          41
+        ]
+      },
+      {
+        "name": "_json",
+        "lines": [
+          44,
+          45
+        ]
+      },
+      {
+        "name": "_digest_value",
+        "lines": [
+          48,
+          49
+        ]
+      },
+      {
+        "name": "_metrics",
+        "lines": [
+          52,
+          62
+        ]
+      },
+      {
+        "name": "FinalSealedEvaluationRunner",
+        "lines": [
+          65,
+          303
+        ]
+      },
+      {
+        "name": "make_synthetic_fixture",
+        "lines": [
+          306,
+          326
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/finalize_results.py",
+    "symbols": [
+      {
+        "name": "metrics",
+        "lines": [
+          16,
+          26
+        ]
+      },
+      {
+        "name": "sha256",
+        "lines": [
+          29,
+          34
+        ]
+      },
+      {
+        "name": "verify_manifest",
+        "lines": [
+          37,
+          42
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          45,
+          137
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/label_sealing.py",
+    "symbols": [
+      {
+        "name": "LabelAccessError",
+        "lines": [
+          8,
+          9
+        ]
+      },
+      {
+        "name": "SealedLabels",
+        "lines": [
+          13,
+          37
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/pipeline.py",
+    "symbols": [
+      {
+        "name": "PublicPairData",
+        "lines": [
+          11,
+          20
+        ]
+      },
+      {
+        "name": "V2EvaluationBoundary",
+        "lines": [
+          24,
+          38
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/policies.py",
+    "symbols": [
+      {
+        "name": "b0_decide",
+        "lines": [
+          15,
+          21
+        ]
+      },
+      {
+        "name": "decide_four_parameter",
+        "lines": [
+          24,
+          37
+        ]
+      },
+      {
+        "name": "_cost",
+        "lines": [
+          40,
+          45
+        ]
+      },
+      {
+        "name": "_simple_genome",
+        "lines": [
+          48,
+          50
+        ]
+      },
+      {
+        "name": "b1_search",
+        "lines": [
+          53,
+          66
+        ]
+      },
+      {
+        "name": "_valid_genome",
+        "lines": [
+          69,
+          71
+        ]
+      },
+      {
+        "name": "b2_sobol_search",
+        "lines": [
+          74,
+          78
+        ]
+      },
+      {
+        "name": "_search_points",
+        "lines": [
+          81,
+          90
+        ]
+      },
+      {
+        "name": "b3_ga_search",
+        "lines": [
+          93,
+          118
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/preflight/candidate_scope.json",
+    "entries": [
+      {
+        "key": "profiles_eligible",
+        "value": 36804
+      },
+      {
+        "key": "all_platform_positives",
+        "value": 29247
+      },
+      {
+        "key": "cross_platform_positives",
+        "value": 29243
+      },
+      {
+        "key": "same_platform_positives",
+        "value": 4
+      },
+      {
+        "key": "possible_cross_platform_pairs",
+        "value": 449149239
+      },
+      {
+        "key": "exact_tier_pairs",
+        "value": 12403
+      },
+      {
+        "key": "model_scored_candidate_pairs",
+        "value": 2073842
+      },
+      {
+        "key": "workflow_candidate_pairs",
+        "value": 2086245
+      },
+      {
+        "key": "candidate_covered_cross_platform_positives",
+        "value": 25931
+      },
+      {
+        "key": "cross_platform_blocking_misses",
+        "value": 3312
+      },
+      {
+        "key": "retrieval_recall",
+        "value": 0.8867421263208289
+      },
+      {
+        "key": "candidate_space_reduction",
+        "value": 0.9953551184798958
+      },
+      {
+        "key": "exact_tier_breakdown.external_url_exact",
+        "value": 1270
+      },
+      {
+        "key": "blocking_key_breakdown.external_domain",
+        "value": 6061
+      },
+      {
+        "key": "invariants.exact_plus_scored_equals_workflow",
+        "value": true
+      },
+      {
+        "key": "invariants.covered_plus_missed_equals_cross_positive",
+        "value": true
+      },
+      {
+        "key": "invariants.all_equals_cross_plus_same",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/provenance.py",
+    "symbols": [
+      {
+        "name": "sha256_file",
+        "lines": [
+          9,
+          14
+        ]
+      },
+      {
+        "name": "write_manifest",
+        "lines": [
+          17,
+          26
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/real_adapters.py",
+    "symbols": [
+      {
+        "name": "AdapterError",
+        "lines": [
+          17,
+          18
+        ]
+      },
+      {
+        "name": "entity_digest",
+        "lines": [
+          21,
+          25
+        ]
+      },
+      {
+        "name": "canonical_pair_key",
+        "lines": [
+          28,
+          36
+        ]
+      },
+      {
+        "name": "build_entity_role_map",
+        "lines": [
+          39,
+          68
+        ]
+      },
+      {
+        "name": "route_pairs",
+        "lines": [
+          71,
+          99
+        ]
+      },
+      {
+        "name": "LazySealedLabelStore",
+        "lines": [
+          103,
+          135
+        ]
+      },
+      {
+        "name": "assert_label_free_artifacts",
+        "lines": [
+          138,
+          147
+        ]
+      },
+      {
+        "name": "safe_final_join",
+        "lines": [
+          150,
+          161
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_101/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.8253232152894885
+      },
+      {
+        "key": "B0.FN",
+        "value": 2454
+      },
+      {
+        "key": "B0.FP",
+        "value": 32
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 502
+      },
+      {
+        "key": "B0.TP",
+        "value": 5873
+      },
+      {
+        "key": "B0.U",
+        "value": 2568.2
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9945808636748518
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.705296024978984
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8914883991469009
+      },
+      {
+        "key": "B1.FN",
+        "value": 1567
+      },
+      {
+        "key": "B1.FP",
+        "value": 112
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 659
+      },
+      {
+        "key": "B1.TP",
+        "value": 6897
+      },
+      {
+        "key": "B1.U",
+        "value": 1856.9
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.984020545013554
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8148629489603024
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8891414816795935
+      },
+      {
+        "key": "B2.FN",
+        "value": 1575
+      },
+      {
+        "key": "B2.FP",
+        "value": 83
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 914
+      },
+      {
+        "key": "B2.TP",
+        "value": 6649
+      },
+      {
+        "key": "B2.U",
+        "value": 1832.4
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.98767082590612
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8084873540856031
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8895730156605541
+      },
+      {
+        "key": "B3.FN",
+        "value": 1567
+      },
+      {
+        "key": "B3.FP",
+        "value": 83
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 939
+      },
+      {
+        "key": "B3.TP",
+        "value": 6646
+      },
+      {
+        "key": "B3.U",
+        "value": 1826.9
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9876653291722396
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8092049190308048
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8205467372134039
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 2377
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 65
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 884
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 5583
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2595.4
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.9884915014164306
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.7013819095477387
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_202/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.8560195926785253
+      },
+      {
+        "key": "B0.FN",
+        "value": 2089
+      },
+      {
+        "key": "B0.FP",
+        "value": 145
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 4
+      },
+      {
+        "key": "B0.TP",
+        "value": 6641
+      },
+      {
+        "key": "B0.U",
+        "value": 2379.4
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9786324786324786
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.7607101947308132
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8884286477819346
+      },
+      {
+        "key": "B1.FN",
+        "value": 1523
+      },
+      {
+        "key": "B1.FP",
+        "value": 147
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 968
+      },
+      {
+        "key": "B1.TP",
+        "value": 6649
+      },
+      {
+        "key": "B1.U",
+        "value": 1913.8
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.9783696291936433
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8136319138521781
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "B2.FN",
+        "value": 1523
+      },
+      {
+        "key": "B2.FP",
+        "value": 116
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "B2.TP",
+        "value": 6584
+      },
+      {
+        "key": "B2.U",
+        "value": 1861.2
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "B3.FN",
+        "value": 1523
+      },
+      {
+        "key": "B3.FP",
+        "value": 116
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "B3.TP",
+        "value": 6584
+      },
+      {
+        "key": "B3.U",
+        "value": 1861.2
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8580120362409894
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 2060
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 87
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 215
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 6487
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2255.5
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.9867660480681473
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.758979758979759
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2/scientific_outputs/outer_303/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.871551616527275
+      },
+      {
+        "key": "B0.FN",
+        "value": 1971
+      },
+      {
+        "key": "B0.FP",
+        "value": 87
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B0.TP",
+        "value": 6982
+      },
+      {
+        "key": "B0.U",
+        "value": 2145.0
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9876927429622294
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.7798503294984921
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8931951905858275
+      },
+      {
+        "key": "B1.FN",
+        "value": 1583
+      },
+      {
+        "key": "B1.FP",
+        "value": 87
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 660
+      },
+      {
+        "key": "B1.TP",
+        "value": 6983
+      },
+      {
+        "key": "B1.U",
+        "value": 1823.0
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.9876944837340877
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8151996264300724
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "B2.FN",
+        "value": 1583
+      },
+      {
+        "key": "B2.FP",
+        "value": 124
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 555
+      },
+      {
+        "key": "B2.TP",
+        "value": 7049
+      },
+      {
+        "key": "B2.U",
+        "value": 1886.5
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "B3.FN",
+        "value": 1583
+      },
+      {
+        "key": "B3.FP",
+        "value": 124
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 556
+      },
+      {
+        "key": "B3.TP",
+        "value": 7049
+      },
+      {
+        "key": "B3.U",
+        "value": 1886.6
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8697494702729651
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 1975
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 115
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 6978
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2205.0
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.983786832087974
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.7794035518820507
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/__init__.py",
+    "symbols": []
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/final_runner_r1.py",
+    "symbols": [
+      {
+        "name": "validate_input_artifacts_label_free",
+        "lines": [
+          38,
+          70
+        ]
+      },
+      {
+        "name": "build_real_fixture_label_free",
+        "lines": [
+          73,
+          99
+        ]
+      },
+      {
+        "name": "IntegrityRepairedRunner",
+        "lines": [
+          102,
+          190
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/optimizer_budget_transparency.json",
+    "entries": [
+      {
+        "key": "101.B2.realized",
+        "value": 12000
+      },
+      {
+        "key": "101.B2.unique",
+        "value": 12000
+      },
+      {
+        "key": "101.B2.best[0]",
+        "value": 0.9160850830078126
+      },
+      {
+        "key": "101.B2.best[1]",
+        "value": 0.574951171875
+      },
+      {
+        "key": "101.B2.best[2]",
+        "value": 0.96966552734375
+      },
+      {
+        "key": "101.B2.best[3]",
+        "value": 0.0312744140625
+      },
+      {
+        "key": "101.B3.realized",
+        "value": 12000
+      },
+      {
+        "key": "101.B3.unique",
+        "value": 8414
+      },
+      {
+        "key": "101.B3.best[0]",
+        "value": 0.9328667891460326
+      },
+      {
+        "key": "101.B3.best[1]",
+        "value": 0.5
+      },
+      {
+        "key": "101.B3.best[2]",
+        "value": 0.9712756320976768
+      },
+      {
+        "key": "101.B3.best[3]",
+        "value": 0.11395647012659907
+      },
+      {
+        "key": "202.B2.realized",
+        "value": 12000
+      },
+      {
+        "key": "202.B2.unique",
+        "value": 12000
+      },
+      {
+        "key": "202.B2.best[0]",
+        "value": 0.9943533325195313
+      },
+      {
+        "key": "202.B2.best[1]",
+        "value": 0.5270751953125
+      },
+      {
+        "key": "202.B2.best[2]",
+        "value": 0.977081298828125
+      },
+      {
+        "key": "202.B2.best[3]",
+        "value": 0.33739013671875
+      },
+      {
+        "key": "202.B3.realized",
+        "value": 12000
+      },
+      {
+        "key": "202.B3.unique",
+        "value": 8488
+      },
+      {
+        "key": "202.B3.best[0]",
+        "value": 0.999
+      },
+      {
+        "key": "202.B3.best[1]",
+        "value": 0.5287054791743097
+      },
+      {
+        "key": "202.B3.best[2]",
+        "value": 0.9768137036760767
+      },
+      {
+        "key": "202.B3.best[3]",
+        "value": 0.05408213418661234
+      },
+      {
+        "key": "303.B2.realized",
+        "value": 12000
+      },
+      {
+        "key": "303.B2.unique",
+        "value": 12000
+      },
+      {
+        "key": "303.B2.best[0]",
+        "value": 0.900966796875
+      },
+      {
+        "key": "303.B2.best[1]",
+        "value": 0.56640625
+      },
+      {
+        "key": "303.B2.best[2]",
+        "value": 0.9501953125
+      },
+      {
+        "key": "303.B2.best[3]",
+        "value": 0.287109375
+      },
+      {
+        "key": "303.B3.realized",
+        "value": 12000
+      },
+      {
+        "key": "303.B3.unique",
+        "value": 8874
+      },
+      {
+        "key": "303.B3.best[0]",
+        "value": 0.9125238304089598
+      },
+      {
+        "key": "303.B3.best[1]",
+        "value": 0.5263206296522533
+      },
+      {
+        "key": "303.B3.best[2]",
+        "value": 0.9505744583187686
+      },
+      {
+        "key": "303.B3.best[3]",
+        "value": 0.3989742153389613
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/run_v2r1.py",
+    "symbols": [
+      {
+        "name": "_git",
+        "lines": [
+          62,
+          66
+        ]
+      },
+      {
+        "name": "minilm_revision",
+        "lines": [
+          69,
+          87
+        ]
+      },
+      {
+        "name": "capture_provenance",
+        "lines": [
+          90,
+          121
+        ]
+      },
+      {
+        "name": "validate_gate",
+        "lines": [
+          124,
+          136
+        ]
+      },
+      {
+        "name": "execute",
+        "lines": [
+          139,
+          159
+        ]
+      },
+      {
+        "name": "main",
+        "lines": [
+          162,
+          170
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/process_label_access_audit.json",
+    "entries": [
+      {
+        "key": "pre_final_label_value_materializations",
+        "value": 0
+      },
+      {
+        "key": "final_evaluation_label_value_materializations",
+        "value": 5
+      },
+      {
+        "key": "events[0].order",
+        "value": 0
+      },
+      {
+        "key": "events[0].timestamp",
+        "value": 1788596844.619974
+      },
+      {
+        "key": "events[1].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[1].allowed",
+        "value": true
+      },
+      {
+        "key": "events[1].order",
+        "value": 1
+      },
+      {
+        "key": "events[1].timestamp",
+        "value": 1788596844.784807
+      },
+      {
+        "key": "events[2].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[2].allowed",
+        "value": true
+      },
+      {
+        "key": "events[2].order",
+        "value": 2
+      },
+      {
+        "key": "events[2].timestamp",
+        "value": 1788596844.9745579
+      },
+      {
+        "key": "events[3].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[3].allowed",
+        "value": true
+      },
+      {
+        "key": "events[3].order",
+        "value": 3
+      },
+      {
+        "key": "events[3].timestamp",
+        "value": 1788596845.476846
+      },
+      {
+        "key": "events[4].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[4].allowed",
+        "value": true
+      },
+      {
+        "key": "events[4].order",
+        "value": 4
+      },
+      {
+        "key": "events[4].timestamp",
+        "value": 1788596845.659602
+      },
+      {
+        "key": "events[5].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[5].allowed",
+        "value": true
+      },
+      {
+        "key": "events[5].order",
+        "value": 5
+      },
+      {
+        "key": "events[5].timestamp",
+        "value": 1788596846.158707
+      },
+      {
+        "key": "events[6].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[6].allowed",
+        "value": true
+      },
+      {
+        "key": "events[6].order",
+        "value": 6
+      },
+      {
+        "key": "events[6].timestamp",
+        "value": 1788596846.330197
+      },
+      {
+        "key": "events[7].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[7].allowed",
+        "value": true
+      },
+      {
+        "key": "events[7].order",
+        "value": 7
+      },
+      {
+        "key": "events[7].timestamp",
+        "value": 1788596847.339434
+      },
+      {
+        "key": "events[8].label_column_materialized",
+        "value": false
+      },
+      {
+        "key": "events[8].allowed",
+        "value": true
+      },
+      {
+        "key": "events[8].order",
+        "value": 8
+      },
+      {
+        "key": "events[8].timestamp",
+        "value": 1788596847.519233
+      },
+      {
+        "key": "events[9].order",
+        "value": 9
+      },
+      {
+        "key": "events[9].timestamp",
+        "value": 1788596853.857218
+      },
+      {
+        "key": "events[10].order",
+        "value": 10
+      },
+      {
+        "key": "events[10].timestamp",
+        "value": 1788596894.151192
+      },
+      {
+        "key": "events[11].order",
+        "value": 11
+      },
+      {
+        "key": "events[11].timestamp",
+        "value": 1788596898.708051
+      },
+      {
+        "key": "events[12].order",
+        "value": 12
+      },
+      {
+        "key": "events[12].timestamp",
+        "value": 1788596901.246921
+      },
+      {
+        "key": "events[13].requested_columns",
+        "value": null
+      },
+      {
+        "key": "events[13].label_column_materialized",
+        "value": true
+      },
+      {
+        "key": "events[13].allowed",
+        "value": true
+      },
+      {
+        "key": "events[13].order",
+        "value": 13
+      },
+      {
+        "key": "events[13].timestamp",
+        "value": 1788596901.415245
+      },
+      {
+        "key": "events[14].requested_columns",
+        "value": null
+      },
+      {
+        "key": "events[14].label_column_materialized",
+        "value": true
+      },
+      {
+        "key": "events[14].allowed",
+        "value": true
+      },
+      {
+        "key": "events[14].order",
+        "value": 14
+      },
+      {
+        "key": "events[14].timestamp",
+        "value": 1788596902.071788
+      },
+      {
+        "key": "events[15].requested_columns",
+        "value": null
+      },
+      {
+        "key": "events[15].label_column_materialized",
+        "value": true
+      },
+      {
+        "key": "events[15].allowed",
+        "value": true
+      },
+      {
+        "key": "events[15].order",
+        "value": 15
+      },
+      {
+        "key": "events[15].timestamp",
+        "value": 1788596902.721396
+      },
+      {
+        "key": "events[16].requested_columns",
+        "value": null
+      },
+      {
+        "key": "events[16].label_column_materialized",
+        "value": true
+      },
+      {
+        "key": "events[16].allowed",
+        "value": true
+      },
+      {
+        "key": "events[16].order",
+        "value": 16
+      },
+      {
+        "key": "events[16].timestamp",
+        "value": 1788596903.357016
+      },
+      {
+        "key": "events[17].requested_columns",
+        "value": null
+      },
+      {
+        "key": "events[17].label_column_materialized",
+        "value": true
+      },
+      {
+        "key": "events[17].allowed",
+        "value": true
+      },
+      {
+        "key": "events[17].order",
+        "value": 17
+      },
+      {
+        "key": "events[17].timestamp",
+        "value": 1788596903.983339
+      },
+      {
+        "key": "events[18].order",
+        "value": 18
+      },
+      {
+        "key": "events[18].timestamp",
+        "value": 1788596904.559702
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_101/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.8253232152894885
+      },
+      {
+        "key": "B0.FN",
+        "value": 2454
+      },
+      {
+        "key": "B0.FP",
+        "value": 32
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 502
+      },
+      {
+        "key": "B0.TP",
+        "value": 5873
+      },
+      {
+        "key": "B0.U",
+        "value": 2568.2
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9945808636748518
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.705296024978984
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8914883991469009
+      },
+      {
+        "key": "B1.FN",
+        "value": 1567
+      },
+      {
+        "key": "B1.FP",
+        "value": 112
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 659
+      },
+      {
+        "key": "B1.TP",
+        "value": 6897
+      },
+      {
+        "key": "B1.U",
+        "value": 1856.9
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.984020545013554
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8148629489603024
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8891414816795935
+      },
+      {
+        "key": "B2.FN",
+        "value": 1575
+      },
+      {
+        "key": "B2.FP",
+        "value": 83
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 914
+      },
+      {
+        "key": "B2.TP",
+        "value": 6649
+      },
+      {
+        "key": "B2.U",
+        "value": 1832.4
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.98767082590612
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8084873540856031
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8895730156605541
+      },
+      {
+        "key": "B3.FN",
+        "value": 1567
+      },
+      {
+        "key": "B3.FP",
+        "value": 83
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 939
+      },
+      {
+        "key": "B3.TP",
+        "value": 6646
+      },
+      {
+        "key": "B3.U",
+        "value": 1826.9
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9876653291722396
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8092049190308048
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8205467372134039
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 2377
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 65
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 884
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 5583
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2595.4
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.9884915014164306
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.7013819095477387
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/process_label_access_audit.json",
+    "entries": [
+      {
+        "key": "pre_final_label_value_materializations",
+        "value": 0
+      },
+      {
+        "key": "final_evaluation_label_value_materializations",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_202/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.8560195926785253
+      },
+      {
+        "key": "B0.FN",
+        "value": 2089
+      },
+      {
+        "key": "B0.FP",
+        "value": 145
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 4
+      },
+      {
+        "key": "B0.TP",
+        "value": 6641
+      },
+      {
+        "key": "B0.U",
+        "value": 2379.4
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9786324786324786
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.7607101947308132
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8884286477819346
+      },
+      {
+        "key": "B1.FN",
+        "value": 1523
+      },
+      {
+        "key": "B1.FP",
+        "value": 147
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 968
+      },
+      {
+        "key": "B1.TP",
+        "value": 6649
+      },
+      {
+        "key": "B1.U",
+        "value": 1913.8
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.9783696291936433
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8136319138521781
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "B2.FN",
+        "value": 1523
+      },
+      {
+        "key": "B2.FP",
+        "value": 116
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "B2.TP",
+        "value": 6584
+      },
+      {
+        "key": "B2.U",
+        "value": 1861.2
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8893091105558183
+      },
+      {
+        "key": "B3.FN",
+        "value": 1523
+      },
+      {
+        "key": "B3.FP",
+        "value": 116
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 1062
+      },
+      {
+        "key": "B3.TP",
+        "value": 6584
+      },
+      {
+        "key": "B3.U",
+        "value": 1861.2
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9826865671641791
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8121376588133712
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8580120362409894
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 2060
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 87
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 215
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 6487
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2255.5
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.9867660480681473
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.758979758979759
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/label_access_audit.json",
+    "entries": [
+      {
+        "key": "[0].allowed",
+        "value": true
+      },
+      {
+        "key": "[1].allowed",
+        "value": true
+      },
+      {
+        "key": "[2].allowed",
+        "value": true
+      },
+      {
+        "key": "[3].allowed",
+        "value": true
+      },
+      {
+        "key": "[4].allowed",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/process_label_access_audit.json",
+    "entries": [
+      {
+        "key": "pre_final_label_value_materializations",
+        "value": 0
+      },
+      {
+        "key": "final_evaluation_label_value_materializations",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/scientific_outputs/outer_303/summary.json",
+    "entries": [
+      {
+        "key": "B0.F1",
+        "value": 0.871551616527275
+      },
+      {
+        "key": "B0.FN",
+        "value": 1971
+      },
+      {
+        "key": "B0.FP",
+        "value": 87
+      },
+      {
+        "key": "B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "B0.TP",
+        "value": 6982
+      },
+      {
+        "key": "B0.U",
+        "value": 2145.0
+      },
+      {
+        "key": "B0.precision",
+        "value": 0.9876927429622294
+      },
+      {
+        "key": "B0.recall",
+        "value": 0.7798503294984921
+      },
+      {
+        "key": "B1.F1",
+        "value": 0.8931951905858275
+      },
+      {
+        "key": "B1.FN",
+        "value": 1583
+      },
+      {
+        "key": "B1.FP",
+        "value": 87
+      },
+      {
+        "key": "B1.REVIEW",
+        "value": 660
+      },
+      {
+        "key": "B1.TP",
+        "value": 6983
+      },
+      {
+        "key": "B1.U",
+        "value": 1823.0
+      },
+      {
+        "key": "B1.precision",
+        "value": 0.9876944837340877
+      },
+      {
+        "key": "B1.recall",
+        "value": 0.8151996264300724
+      },
+      {
+        "key": "B2.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "B2.FN",
+        "value": 1583
+      },
+      {
+        "key": "B2.FP",
+        "value": 124
+      },
+      {
+        "key": "B2.REVIEW",
+        "value": 555
+      },
+      {
+        "key": "B2.TP",
+        "value": 7049
+      },
+      {
+        "key": "B2.U",
+        "value": 1886.5
+      },
+      {
+        "key": "B2.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "B2.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "B3.F1",
+        "value": 0.8919962037329959
+      },
+      {
+        "key": "B3.FN",
+        "value": 1583
+      },
+      {
+        "key": "B3.FP",
+        "value": 124
+      },
+      {
+        "key": "B3.REVIEW",
+        "value": 556
+      },
+      {
+        "key": "B3.TP",
+        "value": 7049
+      },
+      {
+        "key": "B3.U",
+        "value": 1886.6
+      },
+      {
+        "key": "B3.precision",
+        "value": 0.9827129513453228
+      },
+      {
+        "key": "B3.recall",
+        "value": 0.8166126042632067
+      },
+      {
+        "key": "GB17_B0.F1",
+        "value": 0.8697494702729651
+      },
+      {
+        "key": "GB17_B0.FN",
+        "value": 1975
+      },
+      {
+        "key": "GB17_B0.FP",
+        "value": 115
+      },
+      {
+        "key": "GB17_B0.REVIEW",
+        "value": 0
+      },
+      {
+        "key": "GB17_B0.TP",
+        "value": 6978
+      },
+      {
+        "key": "GB17_B0.U",
+        "value": 2205.0
+      },
+      {
+        "key": "GB17_B0.precision",
+        "value": 0.983786832087974
+      },
+      {
+        "key": "GB17_B0.recall",
+        "value": 0.7794035518820507
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/authoritative_run_v2r1/sealed_guard.py",
+    "symbols": [
+      {
+        "name": "SealedLabelViolation",
+        "lines": [
+          29,
+          30
+        ]
+      },
+      {
+        "name": "SealedLabelGuard",
+        "lines": [
+          34,
+          124
+        ]
+      },
+      {
+        "name": "sealed_artifact_metadata",
+        "lines": [
+          132,
+          139
+        ]
+      },
+      {
+        "name": "sealed_pair_keys",
+        "lines": [
+          142,
+          148
+        ]
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/primary_reproduction/summary.json",
+    "entries": [
+      {
+        "key": "status",
+        "value": "completed"
+      },
+      {
+        "key": "test_evaluation_policy",
+        "value": "Test labels were fetched once after GA selection; GB-18-GA was evaluated exactly once on test."
+      },
+      {
+        "key": "comparison[0].score_model",
+        "value": "Original production baseline"
+      },
+      {
+        "key": "comparison[0].TP",
+        "value": 5864
+      },
+      {
+        "key": "comparison[0].FP",
+        "value": 88
+      },
+      {
+        "key": "comparison[0].FN",
+        "value": 1689
+      },
+      {
+        "key": "comparison[0].REVIEW",
+        "value": 8783
+      },
+      {
+        "key": "comparison[0].precision",
+        "value": 0.9852
+      },
+      {
+        "key": "comparison[0].recall",
+        "value": 0.6683
+      },
+      {
+        "key": "comparison[0].F1",
+        "value": 0.7964
+      },
+      {
+        "key": "comparison[0].cost",
+        "value": 2304.66
+      },
+      {
+        "key": "comparison[1].score_model",
+        "value": "MiniLM + IdentityMLP + GA"
+      },
+      {
+        "key": "comparison[1].TP",
+        "value": 6689.6
+      },
+      {
+        "key": "comparison[1].FP",
+        "value": 66.0
+      },
+      {
+        "key": "comparison[1].FN",
+        "value": 1565.0
+      },
+      {
+        "key": "comparison[1].REVIEW",
+        "value": 1119.4
+      },
+      {
+        "key": "comparison[1].precision",
+        "value": 0.9902
+      },
+      {
+        "key": "comparison[1].recall",
+        "value": 0.76236
+      },
+      {
+        "key": "comparison[1].F1",
+        "value": 0.86146
+      },
+      {
+        "key": "comparison[1].cost",
+        "value": 1917.388
+      },
+      {
+        "key": "comparison[2].score_model",
+        "value": "Gradient Boosting + 17 handcrafted features"
+      },
+      {
+        "key": "comparison[2].TP",
+        "value": 3736
+      },
+      {
+        "key": "comparison[2].FP",
+        "value": 19
+      },
+      {
+        "key": "comparison[2].FN",
+        "value": 1976
+      },
+      {
+        "key": "comparison[2].REVIEW",
+        "value": 3192
+      },
+      {
+        "key": "comparison[2].precision",
+        "value": 0.9949
+      },
+      {
+        "key": "comparison[2].recall",
+        "value": 0.4258
+      },
+      {
+        "key": "comparison[2].F1",
+        "value": 0.5963
+      },
+      {
+        "key": "comparison[2].cost",
+        "value": 2333.2
+      },
+      {
+        "key": "comparison[3].score_model",
+        "value": "Gradient Boosting + 17 features + MiniLM cosine"
+      },
+      {
+        "key": "comparison[3].TP",
+        "value": 6391
+      },
+      {
+        "key": "comparison[3].FP",
+        "value": 75
+      },
+      {
+        "key": "comparison[3].FN",
+        "value": 1831
+      },
+      {
+        "key": "comparison[3].REVIEW",
+        "value": 623
+      },
+      {
+        "key": "comparison[3].precision",
+        "value": 0.9884
+      },
+      {
+        "key": "comparison[3].recall",
+        "value": 0.7283
+      },
+      {
+        "key": "comparison[3].F1",
+        "value": 0.8387
+      },
+      {
+        "key": "comparison[3].cost",
+        "value": 2043.3
+      },
+      {
+        "key": "comparison[4].score_model",
+        "value": "Same calibrated GB-18 probabilities + GA rule"
+      },
+      {
+        "key": "comparison[4].TP",
+        "value": 6730
+      },
+      {
+        "key": "comparison[4].FP",
+        "value": 107
+      },
+      {
+        "key": "comparison[4].FN",
+        "value": 1565
+      },
+      {
+        "key": "comparison[4].REVIEW",
+        "value": 847
+      },
+      {
+        "key": "comparison[4].precision",
+        "value": 0.9843
+      },
+      {
+        "key": "comparison[4].recall",
+        "value": 0.767
+      },
+      {
+        "key": "comparison[4].F1",
+        "value": 0.8622
+      },
+      {
+        "key": "comparison[4].cost",
+        "value": 1863.7
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.TP",
+        "value": 2655.0
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.FP",
+        "value": 56.0
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.FN",
+        "value": -145.0
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.REVIEW",
+        "value": -2569.0
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.precision",
+        "value": -0.006500000000000061
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.recall",
+        "value": 0.30249999999999994
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.F1",
+        "value": 0.24239999999999995
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.cost",
+        "value": -289.89999999999986
+      },
+      {
+        "key": "isolated_effects.GB-17_to_GB-18_MiniLM_effect.cost_reduction",
+        "value": 289.89999999999986
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.TP",
+        "value": 339.0
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.FP",
+        "value": 32.0
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.FN",
+        "value": -266.0
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.REVIEW",
+        "value": 224.0
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.precision",
+        "value": -0.0040999999999999925
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.recall",
+        "value": 0.03870000000000007
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.F1",
+        "value": 0.023499999999999965
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.cost",
+        "value": -179.5999999999999
+      },
+      {
+        "key": "isolated_effects.GB-18_to_GB-18-GA_decision_layer_effect.cost_reduction",
+        "value": 179.5999999999999
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.TP",
+        "value": 40.399999999999636
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.FP",
+        "value": 41.0
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.FN",
+        "value": 0.0
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.REVIEW",
+        "value": -272.4000000000001
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.precision",
+        "value": -0.005900000000000016
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.recall",
+        "value": 0.0046399999999999775
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.F1",
+        "value": 0.0007399999999999629
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.cost",
+        "value": -53.687999999999874
+      },
+      {
+        "key": "isolated_effects.R3_to_GB-18-GA_model_family_effect.cost_reduction",
+        "value": 53.687999999999874
+      },
+      {
+        "key": "winner_by_lowest_weighted_cost",
+        "value": "GB-18-GA"
+      },
+      {
+        "key": "selected_ga.policy",
+        "value": "minimum ga_validation weighted cost; ties resolved by smallest GA seed"
+      },
+      {
+        "key": "selected_ga.selected_seed",
+        "value": 999
+      },
+      {
+        "key": "selected_ga.selected_genome.t_m",
+        "value": 0.9798877883476613
+      },
+      {
+        "key": "selected_ga.selected_genome.t_r",
+        "value": 0.6035751931953067
+      },
+      {
+        "key": "selected_ga.selected_genome.c_promote",
+        "value": 0.9561245224549983
+      },
+      {
+        "key": "selected_ga.selected_genome.c_demote",
+        "value": 0.6561585668398386
+      },
+      {
+        "key": "selected_ga.selected_validation_cost",
+        "value": 589.8
+      },
+      {
+        "key": "selected_ga.seed_statistics.val_cost.mean",
+        "value": 589.96
+      },
+      {
+        "key": "selected_ga.seed_statistics.val_cost.min",
+        "value": 589.8
+      },
+      {
+        "key": "selected_ga.seed_statistics.val_cost.max",
+        "value": 590.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.objective_val_cost.mean",
+        "value": 231.95999999999998
+      },
+      {
+        "key": "selected_ga.seed_statistics.objective_val_cost.min",
+        "value": 231.8
+      },
+      {
+        "key": "selected_ga.seed_statistics.objective_val_cost.max",
+        "value": 232.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_m.mean",
+        "value": 0.9774731567517192
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_m.min",
+        "value": 0.9726771966761525
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_m.max",
+        "value": 0.9808174722780885
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_r.mean",
+        "value": 0.6002582725126256
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_r.min",
+        "value": 0.5923439660350598
+      },
+      {
+        "key": "selected_ga.seed_statistics.t_r.max",
+        "value": 0.6086098479235141
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_promote.mean",
+        "value": 0.9562741244761707
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_promote.min",
+        "value": 0.9561245224549983
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_promote.max",
+        "value": 0.9565985418725562
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_demote.mean",
+        "value": 0.2902034508677157
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_demote.min",
+        "value": 0.13787019764103792
+      },
+      {
+        "key": "selected_ga.seed_statistics.c_demote.max",
+        "value": 0.6561585668398386
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_TP.mean",
+        "value": 2227.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_TP.min",
+        "value": 2227.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_TP.max",
+        "value": 2227.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FP.mean",
+        "value": 12.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FP.min",
+        "value": 12.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FP.max",
+        "value": 12.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FN.mean",
+        "value": 547.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FN.min",
+        "value": 547.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_FN.max",
+        "value": 547.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_REVIEW.mean",
+        "value": 189.6
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_REVIEW.min",
+        "value": 188.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_REVIEW.max",
+        "value": 190.0
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_precision.mean",
+        "value": 0.9945999999999999
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_precision.min",
+        "value": 0.9946
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_precision.max",
+        "value": 0.9946
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_recall.mean",
+        "value": 0.7608
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_recall.min",
+        "value": 0.7608
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_recall.max",
+        "value": 0.7608
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_F1.mean",
+        "value": 0.8622
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_F1.min",
+        "value": 0.8622
+      },
+      {
+        "key": "selected_ga.seed_statistics.validation_F1.max",
+        "value": 0.8622
+      },
+      {
+        "key": "selected_ga.test_evaluations_during_selection",
+        "value": 0
+      },
+      {
+        "key": "ga_trials[0].seed",
+        "value": 7
+      },
+      {
+        "key": "ga_trials[0].t_m",
+        "value": 0.9808174722780885
+      },
+      {
+        "key": "ga_trials[0].t_r",
+        "value": 0.6086098479235141
+      },
+      {
+        "key": "ga_trials[0].c_promote",
+        "value": 0.9562517742312504
+      },
+      {
+        "key": "ga_trials[0].c_demote",
+        "value": 0.2588784235132703
+      },
+      {
+        "key": "ga_trials[0].validation_TP",
+        "value": 2227
+      },
+      {
+        "key": "ga_trials[0].validation_FP",
+        "value": 12
+      },
+      {
+        "key": "ga_trials[0].validation_FN",
+        "value": 547
+      },
+      {
+        "key": "ga_trials[0].validation_REVIEW",
+        "value": 190
+      },
+      {
+        "key": "ga_trials[0].validation_precision",
+        "value": 0.9946
+      },
+      {
+        "key": "ga_trials[0].validation_recall",
+        "value": 0.7608
+      },
+      {
+        "key": "ga_trials[0].validation_F1",
+        "value": 0.8622
+      },
+      {
+        "key": "ga_trials[0].val_cost",
+        "value": 590.0
+      },
+      {
+        "key": "ga_trials[0].objective_val_cost",
+        "value": 232.0
+      },
+      {
+        "key": "ga_trials[0].runtime_seconds",
+        "value": 0.380764
+      },
+      {
+        "key": "ga_trials[0].test_labels_accessed",
+        "value": false
+      },
+      {
+        "key": "ga_trials[1].seed",
+        "value": 42
+      },
+      {
+        "key": "ga_trials[1].t_m",
+        "value": 0.9739321715235536
+      },
+      {
+        "key": "ga_trials[1].t_r",
+        "value": 0.5940441119522459
+      },
+      {
+        "key": "ga_trials[1].c_promote",
+        "value": 0.9565985418725562
+      },
+      {
+        "key": "ga_trials[1].c_demote",
+        "value": 0.13787019764103792
+      },
+      {
+        "key": "ga_trials[1].validation_TP",
+        "value": 2227
+      },
+      {
+        "key": "ga_trials[1].validation_FP",
+        "value": 12
+      },
+      {
+        "key": "ga_trials[1].validation_FN",
+        "value": 547
+      },
+      {
+        "key": "ga_trials[1].validation_REVIEW",
+        "value": 190
+      },
+      {
+        "key": "ga_trials[1].validation_precision",
+        "value": 0.9946
+      },
+      {
+        "key": "ga_trials[1].validation_recall",
+        "value": 0.7608
+      },
+      {
+        "key": "ga_trials[1].validation_F1",
+        "value": 0.8622
+      },
+      {
+        "key": "ga_trials[1].val_cost",
+        "value": 590.0
+      },
+      {
+        "key": "ga_trials[1].objective_val_cost",
+        "value": 232.0
+      },
+      {
+        "key": "ga_trials[1].runtime_seconds",
+        "value": 0.389105
+      },
+      {
+        "key": "ga_trials[1].test_labels_accessed",
+        "value": false
+      },
+      {
+        "key": "ga_trials[2].seed",
+        "value": 123
+      },
+      {
+        "key": "ga_trials[2].t_m",
+        "value": 0.9726771966761525
+      },
+      {
+        "key": "ga_trials[2].t_r",
+        "value": 0.6027182434570013
+      },
+      {
+        "key": "ga_trials[2].c_promote",
+        "value": 0.9562689740935496
+      },
+      {
+        "key": "ga_trials[2].c_demote",
+        "value": 0.15387934430767283
+      },
+      {
+        "key": "ga_trials[2].validation_TP",
+        "value": 2227
+      },
+      {
+        "key": "ga_trials[2].validation_FP",
+        "value": 12
+      },
+      {
+        "key": "ga_trials[2].validation_FN",
+        "value": 547
+      },
+      {
+        "key": "ga_trials[2].validation_REVIEW",
+        "value": 190
+      },
+      {
+        "key": "ga_trials[2].validation_precision",
+        "value": 0.9946
+      },
+      {
+        "key": "ga_trials[2].validation_recall",
+        "value": 0.7608
+      },
+      {
+        "key": "ga_trials[2].validation_F1",
+        "value": 0.8622
+      },
+      {
+        "key": "ga_trials[2].val_cost",
+        "value": 590.0
+      },
+      {
+        "key": "ga_trials[2].objective_val_cost",
+        "value": 232.0
+      },
+      {
+        "key": "ga_trials[2].runtime_seconds",
+        "value": 0.385527
+      },
+      {
+        "key": "ga_trials[2].test_labels_accessed",
+        "value": false
+      },
+      {
+        "key": "ga_trials[3].seed",
+        "value": 999
+      },
+      {
+        "key": "ga_trials[3].t_m",
+        "value": 0.9798877883476613
+      },
+      {
+        "key": "ga_trials[3].t_r",
+        "value": 0.6035751931953067
+      },
+      {
+        "key": "ga_trials[3].c_promote",
+        "value": 0.9561245224549983
+      },
+      {
+        "key": "ga_trials[3].c_demote",
+        "value": 0.6561585668398386
+      },
+      {
+        "key": "ga_trials[3].validation_TP",
+        "value": 2227
+      },
+      {
+        "key": "ga_trials[3].validation_FP",
+        "value": 12
+      },
+      {
+        "key": "ga_trials[3].validation_FN",
+        "value": 547
+      },
+      {
+        "key": "ga_trials[3].validation_REVIEW",
+        "value": 188
+      },
+      {
+        "key": "ga_trials[3].validation_precision",
+        "value": 0.9946
+      },
+      {
+        "key": "ga_trials[3].validation_recall",
+        "value": 0.7608
+      },
+      {
+        "key": "ga_trials[3].validation_F1",
+        "value": 0.8622
+      },
+      {
+        "key": "ga_trials[3].val_cost",
+        "value": 589.8
+      },
+      {
+        "key": "ga_trials[3].objective_val_cost",
+        "value": 231.8
+      },
+      {
+        "key": "ga_trials[3].runtime_seconds",
+        "value": 0.381904
+      },
+      {
+        "key": "ga_trials[3].test_labels_accessed",
+        "value": false
+      },
+      {
+        "key": "ga_trials[4].seed",
+        "value": 2025
+      },
+      {
+        "key": "ga_trials[4].t_m",
+        "value": 0.9800511549331394
+      },
+      {
+        "key": "ga_trials[4].t_r",
+        "value": 0.5923439660350598
+      },
+      {
+        "key": "ga_trials[4].c_promote",
+        "value": 0.9561268097284988
+      },
+      {
+        "key": "ga_trials[4].c_demote",
+        "value": 0.24423072203675888
+      },
+      {
+        "key": "ga_trials[4].validation_TP",
+        "value": 2227
+      },
+      {
+        "key": "ga_trials[4].validation_FP",
+        "value": 12
+      },
+      {
+        "key": "ga_trials[4].validation_FN",
+        "value": 547
+      },
+      {
+        "key": "ga_trials[4].validation_REVIEW",
+        "value": 190
+      },
+      {
+        "key": "ga_trials[4].validation_precision",
+        "value": 0.9946
+      },
+      {
+        "key": "ga_trials[4].validation_recall",
+        "value": 0.7608
+      },
+      {
+        "key": "ga_trials[4].validation_F1",
+        "value": 0.8622
+      },
+      {
+        "key": "ga_trials[4].val_cost",
+        "value": 590.0
+      },
+      {
+        "key": "ga_trials[4].objective_val_cost",
+        "value": 232.0
+      },
+      {
+        "key": "ga_trials[4].runtime_seconds",
+        "value": 0.379046
+      },
+      {
+        "key": "ga_trials[4].test_labels_accessed",
+        "value": false
+      },
+      {
+        "key": "training.GB-17.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "training.GB-17.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "training.GB-17.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "training.GB-17.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "training.GB-17.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "training.GB-17.model_seed",
+        "value": 42
+      },
+      {
+        "key": "training.GB-17.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "training.GB-17.class_counts_before_undersampling.0",
+        "value": 498209
+      },
+      {
+        "key": "training.GB-17.class_counts_before_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "training.GB-17.class_counts_after_undersampling.0",
+        "value": 20277
+      },
+      {
+        "key": "training.GB-17.class_counts_after_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "training.GB-17.n_model_train_before_undersampling",
+        "value": 504968
+      },
+      {
+        "key": "training.GB-17.n_model_train_after_undersampling",
+        "value": 27036
+      },
+      {
+        "key": "training.GB-17.n_model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "training.GB-17.calibration_average_precision",
+        "value": 0.9218741303706499
+      },
+      {
+        "key": "training.GB-17.fit_seconds",
+        "value": 25.59472337504849
+      },
+      {
+        "key": "training.GB-17.model_artifact",
+        "value": "model/gb17_model.pkl"
+      },
+      {
+        "key": "training.GB-17.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "training.GB-18.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "training.GB-18.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "training.GB-18.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "training.GB-18.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "training.GB-18.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "training.GB-18.model_seed",
+        "value": 42
+      },
+      {
+        "key": "training.GB-18.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "training.GB-18.class_counts_before_undersampling.0",
+        "value": 498209
+      },
+      {
+        "key": "training.GB-18.class_counts_before_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "training.GB-18.class_counts_after_undersampling.0",
+        "value": 20277
+      },
+      {
+        "key": "training.GB-18.class_counts_after_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "training.GB-18.n_model_train_before_undersampling",
+        "value": 504968
+      },
+      {
+        "key": "training.GB-18.n_model_train_after_undersampling",
+        "value": 27036
+      },
+      {
+        "key": "training.GB-18.n_model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "training.GB-18.calibration_average_precision",
+        "value": 0.9428317677645
+      },
+      {
+        "key": "training.GB-18.fit_seconds",
+        "value": 29.422921207966283
+      },
+      {
+        "key": "training.GB-18.model_artifact",
+        "value": "model/gb18_model.pkl"
+      },
+      {
+        "key": "training.GB-18.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "training.shared_fairness_assertions.same_model_train_rows",
+        "value": true
+      },
+      {
+        "key": "training.shared_fairness_assertions.same_labels",
+        "value": true
+      },
+      {
+        "key": "training.shared_fairness_assertions.same_hyperparameters",
+        "value": true
+      },
+      {
+        "key": "training.shared_fairness_assertions.same_model_seed",
+        "value": true
+      },
+      {
+        "key": "training.shared_fairness_assertions.calibrators_are_separate",
+        "value": true
+      },
+      {
+        "key": "training.role_counts_scored_pairs.model_train",
+        "value": 504968
+      },
+      {
+        "key": "training.role_counts_scored_pairs.model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "training.role_counts_scored_pairs.ga_validation",
+        "value": 21617
+      },
+      {
+        "key": "training.role_counts_scored_pairs.test",
+        "value": 191693
+      },
+      {
+        "key": "training.role_counts_scored_pairs.drop",
+        "value": 1330663
+      },
+      {
+        "key": "split_manifest.seed",
+        "value": 42
+      },
+      {
+        "key": "split_manifest.development_entity_allocation.model_train",
+        "value": 70
+      },
+      {
+        "key": "split_manifest.development_entity_allocation.model_calibration",
+        "value": 15
+      },
+      {
+        "key": "split_manifest.development_entity_allocation.ga_validation",
+        "value": 15
+      },
+      {
+        "key": "split_manifest.pair_counts.model_train",
+        "value": 510981
+      },
+      {
+        "key": "split_manifest.pair_counts.model_calibration",
+        "value": 26246
+      },
+      {
+        "key": "split_manifest.pair_counts.ga_validation",
+        "value": 22873
+      },
+      {
+        "key": "split_manifest.pair_counts.test",
+        "value": 195440
+      },
+      {
+        "key": "split_manifest.pair_counts.dropped",
+        "value": 1330705
+      },
+      {
+        "key": "split_manifest.entity_counts.model_train",
+        "value": 7413
+      },
+      {
+        "key": "split_manifest.entity_counts.model_calibration",
+        "value": 1606
+      },
+      {
+        "key": "split_manifest.entity_counts.ga_validation",
+        "value": 1510
+      },
+      {
+        "key": "split_manifest.entity_counts.test",
+        "value": 4554
+      },
+      {
+        "key": "split_manifest.source_inputs.scored_pairs_enriched.bytes",
+        "value": 9577326
+      },
+      {
+        "key": "split_manifest.source_inputs.pair_features17.bytes",
+        "value": 32494840
+      },
+      {
+        "key": "split_manifest.source_inputs.pair_bert_cos.bytes",
+        "value": 13456136
+      },
+      {
+        "key": "split_manifest.source_inputs.blocking_missed_pairs.bytes",
+        "value": 1844539
+      },
+      {
+        "key": "split_manifest.source_inputs.profiles.bytes",
+        "value": 19790271
+      },
+      {
+        "key": "split_manifest.source_inputs.runner_source.bytes",
+        "value": 40552
+      },
+      {
+        "key": "split_manifest.source_inputs.exp_lib_source.bytes",
+        "value": 11524
+      },
+      {
+        "key": "split_manifest.source_inputs.ga_source.bytes",
+        "value": 7610
+      },
+      {
+        "key": "split_manifest.source_inputs.r2_source.bytes",
+        "value": 46220
+      },
+      {
+        "key": "split_manifest.source_inputs.gb_benchmark_source.bytes",
+        "value": 9321
+      },
+      {
+        "key": "split_manifest.source_inputs.r0_nested_summary.bytes",
+        "value": 6925
+      },
+      {
+        "key": "split_manifest.source_inputs.r3_summary.bytes",
+        "value": 6898
+      },
+      {
+        "key": "split_manifest.scored_feature_row_count",
+        "value": 2073842
+      },
+      {
+        "key": "split_manifest.smoke",
+        "value": false
+      },
+      {
+        "key": "input_artifacts.scored_pairs_enriched.bytes",
+        "value": 9577326
+      },
+      {
+        "key": "input_artifacts.pair_features17.bytes",
+        "value": 32494840
+      },
+      {
+        "key": "input_artifacts.pair_bert_cos.bytes",
+        "value": 13456136
+      },
+      {
+        "key": "input_artifacts.blocking_missed_pairs.bytes",
+        "value": 1844539
+      },
+      {
+        "key": "input_artifacts.profiles.bytes",
+        "value": 19790271
+      },
+      {
+        "key": "input_artifacts.runner_source.bytes",
+        "value": 40552
+      },
+      {
+        "key": "input_artifacts.exp_lib_source.bytes",
+        "value": 11524
+      },
+      {
+        "key": "input_artifacts.ga_source.bytes",
+        "value": 7610
+      },
+      {
+        "key": "input_artifacts.r2_source.bytes",
+        "value": 46220
+      },
+      {
+        "key": "input_artifacts.gb_benchmark_source.bytes",
+        "value": 9321
+      },
+      {
+        "key": "input_artifacts.r0_nested_summary.bytes",
+        "value": 6925
+      },
+      {
+        "key": "input_artifacts.r3_summary.bytes",
+        "value": 6898
+      },
+      {
+        "key": "runtime_seconds",
+        "value": 83.88931808300549
+      },
+      {
+        "key": "verification.gb17_gb18_same_labels",
+        "value": true
+      },
+      {
+        "key": "verification.gb17_gb18_same_hyperparameters",
+        "value": true
+      },
+      {
+        "key": "verification.gb18_and_ga_probability_artifact_same",
+        "value": true
+      },
+      {
+        "key": "verification.test_labels_accessed_before_final_evaluation",
+        "value": false
+      },
+      {
+        "key": "verification.selected_ga_test_evaluations",
+        "value": 1
+      },
+      {
+        "key": "verification.drop_pairs_used_for_training_or_evaluation",
+        "value": false
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/primary_reproduction/training_metadata.json",
+    "entries": [
+      {
+        "key": "GB-17.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-17.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-17.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-17.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-17.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-17.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-17.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.0",
+        "value": 498209
+      },
+      {
+        "key": "GB-17.class_counts_before_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.0",
+        "value": 20277
+      },
+      {
+        "key": "GB-17.class_counts_after_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "GB-17.n_model_train_before_undersampling",
+        "value": 504968
+      },
+      {
+        "key": "GB-17.n_model_train_after_undersampling",
+        "value": 27036
+      },
+      {
+        "key": "GB-17.n_model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "GB-17.calibration_average_precision",
+        "value": 0.9218741303706499
+      },
+      {
+        "key": "GB-17.fit_seconds",
+        "value": 25.59472337504849
+      },
+      {
+        "key": "GB-17.model_artifact",
+        "value": "model/gb17_model.pkl"
+      },
+      {
+        "key": "GB-17.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "GB-18.model",
+        "value": "sklearn.ensemble.GradientBoostingClassifier"
+      },
+      {
+        "key": "GB-18.hyperparameters.n_estimators",
+        "value": 300
+      },
+      {
+        "key": "GB-18.hyperparameters.learning_rate",
+        "value": 0.05
+      },
+      {
+        "key": "GB-18.hyperparameters.max_depth",
+        "value": 6
+      },
+      {
+        "key": "GB-18.hyperparameters.random_state",
+        "value": 42
+      },
+      {
+        "key": "GB-18.model_seed",
+        "value": 42
+      },
+      {
+        "key": "GB-18.train_neg_ratio",
+        "value": 3.0
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.0",
+        "value": 498209
+      },
+      {
+        "key": "GB-18.class_counts_before_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.0",
+        "value": 20277
+      },
+      {
+        "key": "GB-18.class_counts_after_undersampling.1",
+        "value": 6759
+      },
+      {
+        "key": "GB-18.n_model_train_before_undersampling",
+        "value": 504968
+      },
+      {
+        "key": "GB-18.n_model_train_after_undersampling",
+        "value": 27036
+      },
+      {
+        "key": "GB-18.n_model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "GB-18.calibration_average_precision",
+        "value": 0.9428317677645
+      },
+      {
+        "key": "GB-18.fit_seconds",
+        "value": 29.422921207966283
+      },
+      {
+        "key": "GB-18.model_artifact",
+        "value": "model/gb18_model.pkl"
+      },
+      {
+        "key": "GB-18.label_access.model_fit",
+        "value": "model_train only"
+      },
+      {
+        "key": "shared_fairness_assertions.same_model_train_rows",
+        "value": true
+      },
+      {
+        "key": "shared_fairness_assertions.same_labels",
+        "value": true
+      },
+      {
+        "key": "shared_fairness_assertions.same_hyperparameters",
+        "value": true
+      },
+      {
+        "key": "shared_fairness_assertions.same_model_seed",
+        "value": true
+      },
+      {
+        "key": "shared_fairness_assertions.calibrators_are_separate",
+        "value": true
+      },
+      {
+        "key": "role_counts_scored_pairs.model_train",
+        "value": 504968
+      },
+      {
+        "key": "role_counts_scored_pairs.model_calibration",
+        "value": 24901
+      },
+      {
+        "key": "role_counts_scored_pairs.ga_validation",
+        "value": 21617
+      },
+      {
+        "key": "role_counts_scored_pairs.test",
+        "value": 191693
+      },
+      {
+        "key": "role_counts_scored_pairs.drop",
+        "value": 1330663
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/reconciliation/independent_recomputation.json",
+    "entries": [
+      {
+        "key": "source_lineage.experiments/scored_pairs_enriched.parquet.bytes",
+        "value": 9577326
+      },
+      {
+        "key": "source_lineage.experiments/pair_features17.parquet.bytes",
+        "value": 32494840
+      },
+      {
+        "key": "source_lineage.experiments/pair_bert_cos.parquet.bytes",
+        "value": 13456136
+      },
+      {
+        "key": "source_lineage.experiments/icsec_final/primary_reproduction/gb17_probabilities.parquet.bytes",
+        "value": 6166125
+      },
+      {
+        "key": "source_lineage.experiments/icsec_final/primary_reproduction/gb18_probabilities.parquet.bytes",
+        "value": 6311873
+      },
+      {
+        "key": "source_lineage.experiments/icsec_final/primary_reproduction/decisions/sealed_test_decisions.parquet.bytes",
+        "value": 951622
+      },
+      {
+        "key": "source_lineage.experiments/icsec_final/primary_reproduction/test_results.csv.bytes",
+        "value": 513
+      },
+      {
+        "key": "source_lineage.experiments/icsec_final/primary_reproduction/raw_metrics_recomputed.csv.bytes",
+        "value": 323
+      },
+      {
+        "key": "candidate_scope.profiles_raw",
+        "value": 36807
+      },
+      {
+        "key": "candidate_scope.workflow_pairs",
+        "value": 2086245
+      },
+      {
+        "key": "candidate_scope.exact_tier_pairs",
+        "value": 12403
+      },
+      {
+        "key": "candidate_scope.model_scored_pairs",
+        "value": 2073842
+      },
+      {
+        "key": "candidate_scope.sum_check",
+        "value": 2086245
+      },
+      {
+        "key": "candidate_scope.all_cross_platform_pairs",
+        "value": 449149239
+      },
+      {
+        "key": "candidate_scope.positive_total_all_platforms",
+        "value": 29247
+      },
+      {
+        "key": "candidate_scope.positive_cross_platform",
+        "value": 29243
+      },
+      {
+        "key": "candidate_scope.positive_same_platform",
+        "value": 4
+      },
+      {
+        "key": "candidate_scope.candidate_covered_cross_platform_positive",
+        "value": 25931
+      },
+      {
+        "key": "candidate_scope.blocking_misses_cross_platform",
+        "value": 3312
+      },
+      {
+        "key": "candidate_scope.retrieval_recall",
+        "value": 0.8867421263208289
+      },
+      {
+        "key": "candidate_scope.space_reduction",
+        "value": 0.9953551184798958
+      },
+      {
+        "key": "test_model_scored_scope.rows",
+        "value": 191693
+      },
+      {
+        "key": "test_model_scored_scope.positive_rows",
+        "value": 4033
+      },
+      {
+        "key": "test_model_scored_scope.negative_rows",
+        "value": 187660
+      },
+      {
+        "key": "test_model_scored_scope.pair_key_alignment_with_probability_artifacts",
+        "value": true
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.TP",
+        "value": 0
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.FP",
+        "value": 8
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.FN",
+        "value": 970
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.REVIEW",
+        "value": 3192
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.precision",
+        "value": 0.0
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.recall",
+        "value": 0.0
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.F1",
+        "value": 0.0
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-17.utility_2_1_01",
+        "value": 1305.2
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.TP",
+        "value": 2655
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.FP",
+        "value": 64
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.FN",
+        "value": 825
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.REVIEW",
+        "value": 623
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.precision",
+        "value": 0.9764619345347554
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.recall",
+        "value": 0.7629310344827587
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.F1",
+        "value": 0.8565897725439586
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18.utility_2_1_01",
+        "value": 1015.3
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.TP",
+        "value": 2994
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.FP",
+        "value": 96
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.FN",
+        "value": 559
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.REVIEW",
+        "value": 847
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.precision",
+        "value": 0.9689320388349515
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.recall",
+        "value": 0.8426681677455671
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.F1",
+        "value": 0.9013999698931205
+      },
+      {
+        "key": "test_model_scored_scope.metrics.GB-18-GA.utility_2_1_01",
+        "value": 835.7
+      },
+      {
+        "key": "current_candidate_test_exact_scope.rows",
+        "value": 3747
+      },
+      {
+        "key": "current_candidate_test_exact_scope.TP",
+        "value": 3736
+      },
+      {
+        "key": "current_candidate_test_exact_scope.FP",
+        "value": 11
+      },
+      {
+        "key": "scope_checks.exact_plus_model_scored_equals_workflow",
+        "value": true
+      },
+      {
+        "key": "scope_checks.same_platform_positive_difference_equals_four",
+        "value": true
+      }
+    ]
+  },
+  {
+    "path": "experiments/icsec_final/reviewer_revision/aggregate.json",
+    "entries": [
+      {
+        "key": "B0.TP.mean",
+        "value": 6498.666666666667
+      },
+      {
+        "key": "B0.FP.mean",
+        "value": 88.0
+      },
+      {
+        "key": "B0.FN.mean",
+        "value": 2171.3333333333335
+      },
+      {
+        "key": "B0.positive_REVIEW.mean",
+        "value": 160.66666666666666
+      },
+      {
+        "key": "B0.REVIEW.mean",
+        "value": 168.66666666666666
+      },
+      {
+        "key": "B0.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "B0.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "B0.precision.mean",
+        "value": 0.9869686950898533
+      },
+      {
+        "key": "B0.decision_recall.mean",
+        "value": 0.7486188497360965
+      },
+      {
+        "key": "B0.end_to_end_recall.mean",
+        "value": 0.7357436130375733
+      },
+      {
+        "key": "B0.decision_F1.mean",
+        "value": 0.8509648081650963
+      },
+      {
+        "key": "B0.end_to_end_F1.mean",
+        "value": 0.84195195673009
+      },
+      {
+        "key": "B0.review_rate.mean",
+        "value": 0.0008706645263329513
+      },
+      {
+        "key": "B0.coverage.mean",
+        "value": 0.9991293354736671
+      },
+      {
+        "key": "B0.U.mean",
+        "value": 2364.2000000000003
+      },
+      {
+        "key": "B1.TP.mean",
+        "value": 6843.0
+      },
+      {
+        "key": "B1.FP.mean",
+        "value": 115.33333333333333
+      },
+      {
+        "key": "B1.FN.mean",
+        "value": 1557.6666666666667
+      },
+      {
+        "key": "B1.positive_REVIEW.mean",
+        "value": 430.0
+      },
+      {
+        "key": "B1.REVIEW.mean",
+        "value": 762.3333333333334
+      },
+      {
+        "key": "B1.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "B1.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "B1.precision.mean",
+        "value": 0.983361552647095
+      },
+      {
+        "key": "B1.decision_recall.mean",
+        "value": 0.8145648297475176
+      },
+      {
+        "key": "B1.end_to_end_recall.mean",
+        "value": 0.7748476501979941
+      },
+      {
+        "key": "B1.decision_F1.mean",
+        "value": 0.8910374125048878
+      },
+      {
+        "key": "B1.end_to_end_F1.mean",
+        "value": 0.8667217608216932
+      },
+      {
+        "key": "B1.review_rate.mean",
+        "value": 0.0038474571164223217
+      },
+      {
+        "key": "B1.coverage.mean",
+        "value": 0.9961525428835776
+      },
+      {
+        "key": "B1.U.mean",
+        "value": 1864.5666666666666
+      },
+      {
+        "key": "B2.TP.mean",
+        "value": 6760.666666666667
+      },
+      {
+        "key": "B2.FP.mean",
+        "value": 107.66666666666667
+      },
+      {
+        "key": "B2.FN.mean",
+        "value": 1560.3333333333333
+      },
+      {
+        "key": "B2.positive_REVIEW.mean",
+        "value": 509.6666666666667
+      },
+      {
+        "key": "B2.REVIEW.mean",
+        "value": 843.6666666666666
+      },
+      {
+        "key": "B2.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "B2.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "B2.precision.mean",
+        "value": 0.9843567814718739
+      },
+      {
+        "key": "B2.decision_recall.mean",
+        "value": 0.8124125390540603
+      },
+      {
+        "key": "B2.end_to_end_recall.mean",
+        "value": 0.7654363775635181
+      },
+      {
+        "key": "B2.decision_F1.mean",
+        "value": 0.8901489319894692
+      },
+      {
+        "key": "B2.end_to_end_F1.mean",
+        "value": 0.8611047434231627
+      },
+      {
+        "key": "B2.review_rate.mean",
+        "value": 0.004273127892711218
+      },
+      {
+        "key": "B2.coverage.mean",
+        "value": 0.9957268721072888
+      },
+      {
+        "key": "B2.U.mean",
+        "value": 1860.0333333333335
+      },
+      {
+        "key": "B3.TP.mean",
+        "value": 6759.666666666667
+      },
+      {
+        "key": "B3.FP.mean",
+        "value": 107.66666666666667
+      },
+      {
+        "key": "B3.FN.mean",
+        "value": 1557.6666666666667
+      },
+      {
+        "key": "B3.positive_REVIEW.mean",
+        "value": 513.3333333333334
+      },
+      {
+        "key": "B3.REVIEW.mean",
+        "value": 852.3333333333334
+      },
+      {
+        "key": "B3.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "B3.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "B3.precision.mean",
+        "value": 0.9843549492272472
+      },
+      {
+        "key": "B3.decision_recall.mean",
+        "value": 0.8126517273691275
+      },
+      {
+        "key": "B3.end_to_end_recall.mean",
+        "value": 0.7653228186264299
+      },
+      {
+        "key": "B3.decision_F1.mean",
+        "value": 0.8902927766497895
+      },
+      {
+        "key": "B3.end_to_end_F1.mean",
+        "value": 0.8610310927828085
+      },
+      {
+        "key": "B3.review_rate.mean",
+        "value": 0.004317787669124829
+      },
+      {
+        "key": "B3.coverage.mean",
+        "value": 0.9956822123308752
+      },
+      {
+        "key": "B3.U.mean",
+        "value": 1858.2333333333336
+      },
+      {
+        "key": "Chow.TP.mean",
+        "value": 6659.333333333333
+      },
+      {
+        "key": "Chow.FP.mean",
+        "value": 96.0
+      },
+      {
+        "key": "Chow.FN.mean",
+        "value": 1281.0
+      },
+      {
+        "key": "Chow.positive_REVIEW.mean",
+        "value": 890.3333333333334
+      },
+      {
+        "key": "Chow.REVIEW.mean",
+        "value": 4060.3333333333335
+      },
+      {
+        "key": "Chow.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "Chow.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "Chow.precision.mean",
+        "value": 0.9858687243252798
+      },
+      {
+        "key": "Chow.decision_recall.mean",
+        "value": 0.8384232863888977
+      },
+      {
+        "key": "Chow.end_to_end_recall.mean",
+        "value": 0.7539896981800149
+      },
+      {
+        "key": "Chow.decision_F1.mean",
+        "value": 0.9061454581071239
+      },
+      {
+        "key": "Chow.end_to_end_F1.mean",
+        "value": 0.8542156601037506
+      },
+      {
+        "key": "Chow.review_rate.mean",
+        "value": 0.02044175256157577
+      },
+      {
+        "key": "Chow.coverage.mean",
+        "value": 0.9795582474384242
+      },
+      {
+        "key": "Chow.U.mean",
+        "value": 1879.0333333333335
+      },
+      {
+        "key": "GB17_B0.TP.mean",
+        "value": 6349.333333333333
+      },
+      {
+        "key": "GB17_B0.FP.mean",
+        "value": 89.0
+      },
+      {
+        "key": "GB17_B0.FN.mean",
+        "value": 2137.3333333333335
+      },
+      {
+        "key": "GB17_B0.positive_REVIEW.mean",
+        "value": 344.0
+      },
+      {
+        "key": "GB17_B0.REVIEW.mean",
+        "value": 366.3333333333333
+      },
+      {
+        "key": "GB17_B0.candidates.mean",
+        "value": 198318.0
+      },
+      {
+        "key": "GB17_B0.workflow_rows.mean",
+        "value": 199336.33333333334
+      },
+      {
+        "key": "GB17_B0.precision.mean",
+        "value": 0.9863481271908506
+      },
+      {
+        "key": "GB17_B0.decision_recall.mean",
+        "value": 0.7465884068031827
+      },
+      {
+        "key": "GB17_B0.end_to_end_recall.mean",
+        "value": 0.7187392362970021
+      },
+      {
+        "key": "GB17_B0.decision_F1.mean",
+        "value": 0.8494360812424527
+      },
+      {
+        "key": "GB17_B0.end_to_end_F1.mean",
+        "value": 0.8299517532433499
+      },
+      {
+        "key": "GB17_B0.review_rate.mean",
+        "value": 0.0018841278788148622
+      },
+      {
+        "key": "GB17_B0.coverage.mean",
+        "value": 0.998115872121185
+      },
+      {
+        "key": "GB17_B0.U.mean",
+        "value": 2351.9666666666667
+      }
+    ]
+  },
+  {
+    "path": "handoff/worktrees/research-phase15-integration/experiments/icsec_final/authoritative_run_v2/features.py",
+    "symbols": [
+      {
+        "name": "_normalize",
+        "lines": [
+          22,
+          27
+        ]
+      },
+      {
+        "name": "corrected_name_sim",
+        "lines": [
+          30,
+          49
+        ]
+      },
+      {
+        "name": "build_handcrafted_features",
+        "lines": [
+          52,
+          113
+        ]
+      }
+    ]
+  },
+  {
+    "path": "src/identity_resolution/core/decisioning.py",
+    "symbols": [
+      {
+        "name": "ThresholdPolicy",
+        "lines": [
+          11,
+          46
+        ]
+      }
+    ]
+  }
+]

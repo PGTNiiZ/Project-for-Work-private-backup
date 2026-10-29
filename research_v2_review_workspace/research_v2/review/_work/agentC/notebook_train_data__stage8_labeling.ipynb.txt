@@ -1,0 +1,61 @@
+# main@1e0a2db:train_data/stage8_labeling.ipynb — code cells ONLY; outputs intentionally excluded
+CELL 3
+cell_source_L19; raw_JSON_L[143]:                 continue
+cell_source_L20; raw_JSON_L[144, 236]:             pairs.append({
+cell_source_L21; raw_JSON_L[145, 237]:                 'profile_id_a': f"{row_a['platform']}_{row_a['userName_clean']}",
+cell_source_L22; raw_JSON_L[146, 238]:                 'profile_id_b': f"{row_b['platform']}_{row_b['userName_clean']}",
+cell_source_L23; raw_JSON_L[147]:                 'entity_id_a': pid,
+cell_source_L24; raw_JSON_L[148]:                 'platform_a': row_a['platform'],
+cell_source_L25; raw_JSON_L[149]:                 'platform_b': row_b['platform'],
+cell_source_L34; raw_JSON_L[158]: print(f"  Positive pairs: {len(positive_pairs):,}")
+cell_source_L35; raw_JSON_L[159]: if len(positive_pairs) > 0:
+cell_source_L36; raw_JSON_L[160]:     print(f"  Unique entities: {positive_pairs['entity_id_a'].nunique():,}")
+cell_source_L37; raw_JSON_L[161]:     print(f"\n  Platform combo distribution:")
+cell_source_L38; raw_JSON_L[162]:     combo = positive_pairs.apply(lambda r: f"{r['platform_a']}↔{r['platform_b']}", axis=1)
+cell_source_L40; raw_JSON_L[164]:     print(f"\n  🔍 ตัวอย่าง positive pairs (5):")
+cell_source_L41; raw_JSON_L[165]:     for _, r in positive_pairs.head(5).iterrows():
+cell_source_L42; raw_JSON_L[166]:         print(f"    [{r['platform_a']}] {r['profile_id_a'][:25]} ↔ [{r['platform_b']}] {r['profile_id_b'][:25]} (entity={r['entity_id_a']})")
+cell_source_L43; raw_JSON_L[167]: print(f"\n✅ Step 8.1 เสร็จ")
+CELL 5
+cell_source_L21; raw_JSON_L[235]:         if row_a['profile_id'] != row_b['profile_id']:
+cell_source_L22; raw_JSON_L[144, 236]:             pairs.append({
+cell_source_L23; raw_JSON_L[145, 237]:                 'profile_id_a': f"{row_a['platform']}_{row_a['userName_clean']}",
+cell_source_L24; raw_JSON_L[146, 238]:                 'profile_id_b': f"{row_b['platform']}_{row_b['userName_clean']}",
+cell_source_L25; raw_JSON_L[239]:                 'entity_id_a': row_a['profile_id'],
+cell_source_L26; raw_JSON_L[240]:                 'platform_a': p1,
+cell_source_L27; raw_JSON_L[241]:                 'platform_b': p2,
+CELL 7
+cell_source_L3; raw_JSON_L[304]: def build_hard_negatives(df: pd.DataFrame, candidate_pairs: pd.DataFrame,
+cell_source_L4; raw_JSON_L[305]:                          n_hard: int, seed: int = 42) -> pd.DataFrame:
+cell_source_L5; raw_JSON_L[306]:     """Hard negatives จาก blocking candidates ที่คล้ายกันแต่คนละ entity"""
+cell_source_L6; raw_JSON_L[307]:     if candidate_pairs is None or len(candidate_pairs) == 0:
+cell_source_L7; raw_JSON_L[308]:         return pd.DataFrame()
+cell_source_L8; raw_JSON_L[134, 224, 227, 309, 313, 330]: 
+cell_source_L9; raw_JSON_L[310]:     profile_to_entity = df.set_index(
+cell_source_L10; raw_JSON_L[311]:         df.apply(lambda r: f"{r['platform']}_{r['userName_clean']}", axis=1)
+cell_source_L11; raw_JSON_L[312]:     )['profile_id'].to_dict()
+cell_source_L13; raw_JSON_L[314]:     hard_pairs = []
+cell_source_L14; raw_JSON_L[315]:     for _, row in candidate_pairs.iterrows():
+cell_source_L15; raw_JSON_L[316]:         id_a = row['profile_id_a']
+cell_source_L16; raw_JSON_L[317]:         id_b = row['profile_id_b']
+cell_source_L17; raw_JSON_L[318]:         entity_a = profile_to_entity.get(id_a, id_a)
+cell_source_L18; raw_JSON_L[319]:         entity_b = profile_to_entity.get(id_b, id_b)
+cell_source_L19; raw_JSON_L[234, 320]: 
+cell_source_L20; raw_JSON_L[321]:         if entity_a != entity_b:  # คนละคน = negative
+cell_source_L21; raw_JSON_L[322]:             hard_pairs.append({
+cell_source_L22; raw_JSON_L[323]:                 'profile_id_a': id_a,
+cell_source_L23; raw_JSON_L[324]:                 'profile_id_b': id_b,
+cell_source_L24; raw_JSON_L[325]:                 'entity_id_a': entity_a,
+cell_source_L25; raw_JSON_L[326]:                 'platform_a': id_a.split('_')[0] if '_' in str(id_a) else '',
+cell_source_L26; raw_JSON_L[327]:                 'platform_b': id_b.split('_')[0] if '_' in str(id_b) else '',
+cell_source_L30; raw_JSON_L[331]:     hard_df = pd.DataFrame(hard_pairs)
+cell_source_L31; raw_JSON_L[332]:     if len(hard_df) > n_hard:
+cell_source_L32; raw_JSON_L[333]:         hard_df = hard_df.sample(n=n_hard, random_state=seed)
+cell_source_L33; raw_JSON_L[334]:     return hard_df
+cell_source_L34; raw_JSON_L[29, 33, 54, 56, 59, 107, 112, 119, 127, 129, 131, 153, 155, 209, 216, 218, 245, 248, 296, 303, 306, 335, 338, 388, 390, 399, 405, 408, 419]: 
+CELL 9
+cell_source_L8; raw_JSON_L[29, 33, 54, 56, 59, 107, 112, 119, 127, 129, 131, 153, 155, 209, 216, 218, 245, 248, 296, 303, 306, 335, 338, 388, 390, 399, 405, 408, 419]: 
+cell_source_L9; raw_JSON_L[406]: labeled_pairs = pd.concat(all_parts, ignore_index=True)
+cell_source_L10; raw_JSON_L[407]: labeled_pairs = labeled_pairs.sample(frac=1, random_state=RANDOM_SEED).reset_index(drop=True)
+cell_source_L11; raw_JSON_L[29, 33, 54, 56, 59, 107, 112, 119, 127, 129, 131, 153, 155, 209, 216, 218, 245, 248, 296, 303, 306, 335, 338, 388, 390, 399, 405, 408, 419]: 
+cell_source_L12; raw_JSON_L[409]: # === Summary ===

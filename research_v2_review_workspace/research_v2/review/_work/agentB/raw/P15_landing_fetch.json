@@ -1,0 +1,48 @@
+{
+  "url": "https://doi.org/10.18653/v1/d19-1410",
+  "final_url": "https://aclanthology.org/D19-1410/",
+  "status": 200,
+  "bytes": 41681,
+  "metadata": [
+    {
+      "name": "citation_title",
+      "content": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"
+    },
+    {
+      "name": "citation_author",
+      "content": "Nils Reimers"
+    },
+    {
+      "name": "citation_author",
+      "content": "Iryna Gurevych"
+    },
+    {
+      "name": "citation_conference_title",
+      "content": "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+    },
+    {
+      "name": "citation_publication_date",
+      "content": "2019/11"
+    },
+    {
+      "name": "citation_pdf_url",
+      "content": "https://aclanthology.org/D19-1410.pdf"
+    },
+    {
+      "name": "citation_firstpage",
+      "content": "3982"
+    },
+    {
+      "name": "citation_lastpage",
+      "content": "3992"
+    },
+    {
+      "name": "citation_doi",
+      "content": "10.18653/v1/D19-1410"
+    },
+    {
+      "name": "og:description",
+      "content": "Nils Reimers, Iryna Gurevych. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 2019."
+    }
+  ]
+}

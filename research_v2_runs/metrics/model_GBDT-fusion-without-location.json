@@ -1,0 +1,81 @@
+{
+  "name": "GBDT-fusion-without-location",
+  "exp_id": "E5-4",
+  "learner": "GBDT",
+  "feature": "fusion",
+  "params": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 15,
+    "max_iter": 150,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.28297338396242927
+  },
+  "group": null,
+  "exclude_group": "location",
+  "seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "seed_AP": [
+    0.977005139327513,
+    0.9774530709478036,
+    0.9770940720417566,
+    0.9767792504460469,
+    0.9769863808954464
+  ],
+  "seed_AP_SD": 0.00024639971194684925,
+  "mean_score_AP": 0.9776849982207726,
+  "model_paths": [
+    "artifacts/model_GBDT-fusion-without-location_seed11.pkl",
+    "artifacts/model_GBDT-fusion-without-location_seed23.pkl",
+    "artifacts/model_GBDT-fusion-without-location_seed42.pkl",
+    "artifacts/model_GBDT-fusion-without-location_seed71.pkl",
+    "artifacts/model_GBDT-fusion-without-location_seed101.pkl"
+  ],
+  "model_hashes": {
+    "artifacts/model_GBDT-fusion-without-location_seed11.pkl": "95221dff61a73d6bf261e3d680643f4fc9d2931ea4bf2f90898fc5474122659d",
+    "artifacts/model_GBDT-fusion-without-location_seed23.pkl": "6af78879c8692dd642b3e4343e0b2af33d9b9a2990db1facf504d716bea3a4eb",
+    "artifacts/model_GBDT-fusion-without-location_seed42.pkl": "4b5b96be3f38715783373f75bd180e63df148a6fbf950443c82db925dc07dbe7",
+    "artifacts/model_GBDT-fusion-without-location_seed71.pkl": "0931fe5166167e1b5ba1b99fd464adb304e5698931d97db180567f7dd2efed5a",
+    "artifacts/model_GBDT-fusion-without-location_seed101.pkl": "3c15ab61359765604672f4db65a7703cc6454bffa1fa07dd5804782bf2dba28e"
+  },
+  "oof_path": "artifacts/oof_GBDT-fusion-without-location.npz",
+  "oof_sha256": "b827a67f3b3ae2b358d0d8366d16d1f8a6b219ad0dd6d946bfa2fafba6b18428",
+  "operating_points": {
+    "validation_F1_threshold": 0.9,
+    "validation_F1": 0.95209780230235,
+    "precision_target_threshold": 0.5644030144655231,
+    "P_target": 0.9,
+    "target_feasible": true
+  },
+  "training_jobs": 25,
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)",
+  "development_metrics": {
+    "candidate_ap": 0.9776849982207773,
+    "precision": 0.8797923492617336,
+    "recall": 0.9582869855394883,
+    "f1": 0.9173636222463785,
+    "tp": 20676,
+    "fp": 2825,
+    "tn": 327093,
+    "fn": 900,
+    "automatic_fn": 900,
+    "utility_fn": 900,
+    "rejected_positive_fn": 900,
+    "workflow_misses": 0,
+    "candidate_positives": 21576,
+    "total_positives": 21576,
+    "n_pairs": 351494,
+    "review": 0,
+    "review_positives": 0,
+    "review_rate": 0.0,
+    "end_to_end_recall": 0.9582869855394883,
+    "raw_cost": 6550.0,
+    "cost_per_pair": 0.018634741987060947,
+    "brier": 0.008339125556800737,
+    "ece15_equalmass": 0.0161068580776342
+  }
+}

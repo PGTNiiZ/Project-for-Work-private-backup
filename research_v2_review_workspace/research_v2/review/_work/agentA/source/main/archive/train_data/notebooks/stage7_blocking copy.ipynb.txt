@@ -1,0 +1,550 @@
+# CELL 1
+"""
+Advanced Deep Blocking Script สำหรับ Cross-Platform User Matching
+
+เพิ่มความแม่นยำด้วย:
+- Multiple blocking keys (name, fullname, url, location, bio)
+- Advanced similarity scoring (Jaro-Winkler, Token Sort)
+- Edge pruning และ threshold optimization
+- Deep blocking strategies
+"""
+
+import pandas as pd
+import numpy as np
+import os
+from collections import defaultdict
+import itertools
+from difflib import SequenceMatcher
+
+# =============================================================================
+# CONFIGURATION
+# =============================================================================
+
+INPUT_FILE = r"d:\66070260-Year3_Term2\Project1\Code\Project-for-Work\data_for_project\nomalized_profiles.csv"
+OUTPUT_DIR = r"d:\66070260-Year3_Term2\Project1\Code\Project-for-Work\data_for_project"
+
+# Advanced blocking config
+MAX_BLOCK_SIZE = 500  # Cap block size เพื่อไม่ให้ใหญ่เกินไป
+SIMILARITY_THRESHOLD = 0.7  # Threshold สำหรับสร้าง candidate pairs
+PRUNE_THRESHOLD = 0.5  # Threshold สำหรับตัด edge ที่ similarity ต่ำ
+
+# Similarity weights
+WEIGHTS = {
+    "name_similarity": 0.4,
+    "fullname_similarity": 0.3,
+    "url_similarity": 0.2,
+    "location_similarity": 0.1
+}
+
+# =============================================================================
+# UTILITY FUNCTIONS
+# =============================================================================
+
+
+def safe_str(value):
+    """Safe string conversion"""
+    if pd.isna(value) or value is None:
+        return ""
+    return str(value).strip()
+
+
+def calculate_string_similarity(str1, str2, method="jaro_winkler"):
+    """คำนวณ string similarity ด้วยหลายวิธี"""
+    s1 = safe_str(str1).lower()
+    s2 = safe_str(str2).lower()
+
+    if not s1 or not s2:
+        return 0.0
+
+    if method == "jaro_winkler":
+        # Approximate Jaro-Winkler
+        matcher = SequenceMatcher(None, s1, s2)
+        return matcher.ratio() * 1.1  # Boost ratio slightly
+    elif method == "token_sort":
+        # Token sort ratio
+        tokens1 = sorted(s1.split())
+        tokens2 = sorted(s2.split())
+        matcher = SequenceMatcher(None, " ".join(tokens1), " ".join(tokens2))
+        return matcher.ratio()
+    else:
+        # Basic ratio
+        matcher = SequenceMatcher(None, s1, s2)
+        return matcher.ratio()
+
+
+def extract_location_prefix(location, length=3):
+    """Extract meaningful prefix from location"""
+    loc = safe_str(location).lower()
+    # Skip if it's coordinates
+    if "," in loc and any(char.isdigit() for char in loc):
+        return ""
+    # Extract first meaningful words
+    words = loc.split()[:2]  # Take first 2 words
+    prefix = "".join(words)[:length]
+    return prefix if len(prefix) >= 2 else ""
+
+
+def extract_bio_prefix(bio, length=4):
+    """Extract prefix from bio text"""
+    bio_text = safe_str(bio).lower()
+    # Remove emojis and special chars roughly
+    import re
+
+    bio_clean = re.sub(r"[^\w\s]", "", bio_text)
+    words = bio_clean.split()[:3]  # First 3 words
+    prefix = "".join(words)[:length]
+    return prefix if len(prefix) >= 3 else ""
+
+
+# =============================================================================
+# BLOCKING FUNCTIONS
+# =============================================================================
+
+
+def create_advanced_blocking_keys(df):
+    """สร้าง blocking keys ที่หลากหลายและ deep"""
+
+    print("🔑 Creating advanced blocking keys...")
+
+    # 1. Name-based keys
+    df["name_prefix3"] = df["userName"].astype(str).str[:3].str.lower().str.strip()
+    df["name_prefix4"] = df["userName"].astype(str).str[:4].str.lower().str.strip()
+
+    # 2. Fullname-based keys
+    df["fullname_prefix3"] = df["fullName"].astype(str).str[:3].str.lower().str.strip()
+    df["fullname_prefix4"] = df["fullName"].astype(str).str[:4].str.lower().str.strip()
+
+    # 3. URL-based keys
+    df["url_domain"] = df["externalUrl_clean"].apply(
+        lambda x: safe_str(x).split("/")[0] if "/" in safe_str(x) else safe_str(x)
+    )
+    df["url_prefix4"] = df["externalUrl_clean"].astype(str).str[:4].str.lower().str.strip()
+
+    # 4. Location-based keys
+    df["location_prefix"] = df["location"].apply(lambda x: extract_location_prefix(x))
+
+    # 5. Bio-based keys
+    df["bio_prefix"] = df["bio"].apply(lambda x: extract_bio_prefix(x))
+
+    # 6. Combined keys (more specific)
+    df["name_fullname_combo"] = df.apply(
+        lambda row: f"{safe_str(row['userName'])[:2]}_{safe_str(row['fullName'])[:2]}", axis=1
+    )
+
+    print("✅ Advanced blocking keys created")
+    return df
+
+
+def create_multi_key_blocks(df):
+    """สร้าง blocks จากหลาย keys พร้อมกัน"""
+
+    blocking_strategies = [
+        "name_prefix3",
+        "name_prefix4",
+        "fullname_prefix3",
+        "fullname_prefix4",
+        "url_domain",
+        "url_prefix4",
+        "location_prefix",
+        "bio_prefix",
+        "name_fullname_combo",
+    ]
+
+    all_blocks = {}
+
+    for strategy in blocking_strategies:
+        if strategy not in df.columns:
+            continue
+
+        print(f"  Processing {strategy}...")
+
+        strategy_blocks = defaultdict(list)
+
+        for _, row in df.iterrows():
+            key_val = safe_str(row[strategy])
+            if key_val and len(key_val) >= 2:  # Minimum key length
+                strategy_blocks[key_val].append(
+                    {
+                        "profile_id": row["profile_id"],
+                        "platform": row["platform"],
+                        "userName": row["userName"],
+                        "fullName": row["fullName"],
+                        "externalUrl_clean": row["externalUrl_clean"],
+                        "location": row["location"],
+                        "bio": row["bio"],
+                    }
+                )
+
+        # Filter blocks with cross-platform potential
+        filtered_blocks = {}
+        for key, members in strategy_blocks.items():
+            if len(members) < 2:
+                continue
+
+            platforms = set(m["platform"] for m in members)
+            if len(platforms) >= 2:  # Must have cross-platform
+                # Cap block size
+                if len(members) > MAX_BLOCK_SIZE:
+                    # Random sample to reduce size
+                    np.random.seed(42)
+                    members = list(
+                        np.random.choice(members, size=MAX_BLOCK_SIZE, replace=False)
+                    )
+
+                filtered_blocks[f"{strategy}:{key}"] = members
+
+        all_blocks.update(filtered_blocks)
+        print(f"    Created {len(filtered_blocks)} blocks")
+
+    print(f"✅ Total blocks across all strategies: {len(all_blocks)}")
+    return all_blocks
+
+
+def calculate_comprehensive_similarity(row_a, row_b):
+    """คำนวณ similarity score ที่ครอบคลุมหลายมิติ"""
+
+    scores = {}
+
+    # 1. Name similarity
+    name_sim = calculate_string_similarity(
+        row_a["userName"], row_b["userName"], "jaro_winkler"
+    )
+    scores["name"] = name_sim
+
+    # 2. Fullname similarity
+    fullname_sim = calculate_string_similarity(
+        row_a["fullName"], row_b["fullName"], "token_sort"
+    )
+    scores["fullname"] = fullname_sim
+
+    # 3. URL similarity
+    url_sim = (
+        1.0
+        if safe_str(row_a["externalUrl_clean"])
+        == safe_str(row_b["externalUrl_clean"])
+        and safe_str(row_a["externalUrl_clean"])
+        else 0.0
+    )
+    scores["url"] = url_sim
+
+    # 4. Location similarity (if both have valid locations)
+    loc_a = safe_str(row_a["location"])
+    loc_b = safe_str(row_b["location"])
+    if loc_a and loc_b and not any(char.isdigit() for char in loc_a + loc_b):
+        loc_sim = calculate_string_similarity(loc_a, loc_b, "token_sort")
+        scores["location"] = loc_sim
+    else:
+        scores["location"] = 0.0
+
+    # Weighted average
+    weighted_score = (
+        WEIGHTS["name_similarity"] * scores["name"]
+        + WEIGHTS["fullname_similarity"] * scores["fullname"]
+        + WEIGHTS["url_similarity"] * scores["url"]
+        + WEIGHTS["location_similarity"] * scores["location"]
+    )
+
+    return weighted_score, scores
+
+
+def generate_advanced_candidate_pairs(blocks):
+    """สร้าง candidate pairs ด้วย similarity scoring"""
+
+    print("📊 Generating advanced candidate pairs...")
+
+    candidates = []
+
+    total_blocks = len(blocks)
+    processed = 0
+
+    for block_key, members in blocks.items():
+        processed += 1
+        if processed % 100 == 0:
+            print(f"  Progress: {processed}/{total_blocks} blocks")
+
+        # Generate all cross-platform pairs in this block
+        for p1, p2 in itertools.combinations(members, 2):
+            if p1["platform"] != p2["platform"]:
+                # Calculate comprehensive similarity
+                similarity_score, detailed_scores = calculate_comprehensive_similarity(
+                    p1, p2
+                )
+
+                if similarity_score >= SIMILARITY_THRESHOLD:
+                    candidates.append(
+                        {
+                            "profile_id_a": p1["profile_id"],
+                            "platform_a": p1["platform"],
+                            "userName_a": p1["userName"],
+                            "profile_id_b": p2["profile_id"],
+                            "platform_b": p2["platform"],
+                            "userName_b": p2["userName"],
+                            "block_key": block_key,
+                            "similarity_score": similarity_score,
+                            "name_sim": detailed_scores["name"],
+                            "fullname_sim": detailed_scores["fullname"],
+                            "url_sim": detailed_scores["url"],
+                            "location_sim": detailed_scores["location"],
+                        }
+                    )
+
+    candidates_df = pd.DataFrame(candidates)
+
+    if len(candidates_df) > 0:
+        # Sort by similarity score (highest first)
+        candidates_df = candidates_df.sort_values(
+            "similarity_score", ascending=False
+        ).reset_index(drop=True)
+
+        # Prune low similarity edges
+        candidates_df = candidates_df[
+            candidates_df["similarity_score"] >= PRUNE_THRESHOLD
+        ]
+
+    print(f"✅ Generated {len(candidates_df)} advanced candidate pairs")
+    return candidates_df
+
+
+# =============================================================================
+# MAIN EXECUTION
+# =============================================================================
+
+
+def main():
+    print("🚀 Advanced Deep Blocking for Cross-Platform User Matching")
+    print("=" * 65)
+
+    # 1. Load data
+    print("📂 Loading data...")
+    df = pd.read_csv(INPUT_FILE)
+    print(f"✅ Loaded {len(df):,} profiles")
+
+    # 2. Create advanced blocking keys
+    df = create_advanced_blocking_keys(df)
+
+    # 3. Find exact matches (same as before)
+    print("🔍 Finding exact matches...")
+    exact_matches = find_exact_matches(df)
+
+    # 4. Create multi-key blocks
+    blocks = create_multi_key_blocks(df)
+
+    # 5. Generate advanced candidate pairs
+    candidate_pairs = generate_advanced_candidate_pairs(blocks)
+
+    # 6. Save results
+    save_results(exact_matches, candidate_pairs)
+
+    # 7. Print summary
+    print_summary(df, exact_matches, candidate_pairs)
+
+
+def find_exact_matches(df):
+    """Find exact matches (same as before)"""
+    exact_pairs = []
+
+    # Group by userName
+    username_groups = df.groupby("userName")
+
+    for username, group in username_groups:
+        if len(group) < 2 or not username or str(username).strip() == "":
+            continue
+
+        platforms = group["platform"].unique()
+        if len(platforms) < 2:
+            continue
+
+        for i, j in itertools.combinations(group.index, 2):
+            row_a = group.loc[i]
+            row_b = group.loc[j]
+
+            if row_a["platform"] != row_b["platform"]:
+                exact_pairs.append(
+                    {
+                        "profile_id_a": row_a["profile_id"],
+                        "platform_a": row_a["platform"],
+                        "userName_a": row_a["userName"],
+                        "profile_id_b": row_b["profile_id"],
+                        "platform_b": row_b["platform"],
+                        "userName_b": row_b["userName"],
+                        "match_type": "exact_username",
+                    }
+                )
+
+    return pd.DataFrame(exact_pairs)
+
+
+def save_results(exact_matches, candidate_pairs):
+    """Save results"""
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    if len(exact_matches) > 0:
+        exact_path = os.path.join(OUTPUT_DIR, "exact_matches_advanced.csv")
+        exact_matches.to_csv(exact_path, index=False)
+        print(f"💾 Saved: {exact_path}")
+
+    if len(candidate_pairs) > 0:
+        candidates_path = os.path.join(OUTPUT_DIR, "candidate_pairs_advanced.csv")
+        candidate_pairs.to_csv(candidates_path, index=False)
+        print(f"💾 Saved: {candidates_path}")
+
+
+def print_summary(df, exact_matches, candidate_pairs):
+    """Print comprehensive summary"""
+    print("\n" + "=" * 65)
+    print("📊 ADVANCED BLOCKING RESULTS SUMMARY")
+    print("=" * 65)
+
+    print(f"\n📥 INPUT DATA:")
+    print(f"   Total profiles: {len(df):,}")
+    print(f"   Unique users: {df['profile_id'].nunique():,}")
+
+    platform_dist = df["platform"].value_counts()
+    print(f"   Platform distribution:")
+    for platform, count in platform_dist.items():
+        pct = count / len(df) * 100
+        print(f"     - {platform}: {count:,} ({pct:.1f}%)")
+
+    print(f"\n🔍 EXACT MATCHES:")
+    print(f"   Found: {len(exact_matches):,} pairs")
+
+    print(f"\n📊 ADVANCED CANDIDATE PAIRS:")
+    print(f"   Generated: {len(candidate_pairs):,} pairs")
+
+    if len(candidate_pairs) > 0:
+        print(
+            f"   Similarity score range: {candidate_pairs['similarity_score'].min():.3f} - {candidate_pairs['similarity_score'].max():.3f}"
+        )
+        print(f"   Average similarity: {candidate_pairs['similarity_score'].mean():.3f}")
+        print(f"   Median similarity: {candidate_pairs['similarity_score'].median():.3f}")
+
+        # Similarity distribution
+        high_sim = (candidate_pairs["similarity_score"] >= 0.8).sum()
+        med_sim = (
+            (candidate_pairs["similarity_score"] >= 0.6)
+            & (candidate_pairs["similarity_score"] < 0.8)
+        ).sum()
+        low_sim = (candidate_pairs["similarity_score"] < 0.6).sum()
+
+        print(f"   High similarity (≥0.8): {high_sim:,} pairs")
+        print(f"   Medium similarity (0.6-0.8): {med_sim:,} pairs")
+        print(f"   Low similarity (<0.6): {low_sim:,} pairs")
+
+        # Blocking key distribution
+        key_dist = candidate_pairs["block_key"].str.split(":").str[0].value_counts()
+        print(f"   Blocking strategies used:")
+        for strategy, count in key_dist.items():
+            pct = count / len(candidate_pairs) * 100
+            print(f"     - {strategy}: {count:,} ({pct:.1f}%)")
+
+    # Efficiency calculation
+    total_possible = len(df) * (len(df) - 1) // 2
+    total_selected = len(exact_matches) + len(candidate_pairs)
+    reduction = (1 - total_selected / total_possible) * 100 if total_possible > 0 else 0
+
+    print(f"\n📉 EFFICIENCY:")
+    print(f"   Possible pairs: {total_possible:,}")
+    print(f"   Selected pairs: {total_selected:,}")
+    print(f"   Reduction: {reduction:.2f}%")
+
+    if len(candidate_pairs) > 0:
+        print(f"\n🎯 TOP SIMILAR PAIRS:")
+        top_pairs = candidate_pairs.head(5)
+        for _, row in top_pairs.iterrows():
+            print(
+                f"   sim={row['similarity_score']:.3f} | [{row['platform_a']}] {row['userName_a']} ↔ [{row['platform_b']}] {row['userName_b']}"
+            )
+            print(
+                f"      via {row['block_key']} (name:{row['name_sim']:.2f}, fullname:{row['fullname_sim']:.2f})"
+            )
+
+    print("\n✅ ADVANCED BLOCKING COMPLETE!")
+    print("   Ready for sophisticated ML training with high-quality candidates")
+   
+
+if __name__ == "__main__":
+    main()
+# CELL 3
+# Code สำหรับแสดงผลการ evaluate evaluation ชัดเจน
+
+import pandas as pd
+from IPython.display import display, Markdown
+
+def display_evaluation_results(quality_summary):
+    """
+    แสดงผลการ evaluate ในรูปแบบที่อ่านง่าย
+    """
+    if not quality_summary:
+        print("❌ ไม่มีข้อมูล quality_summary")
+        return
+    
+    # แสดงข้อมูลพื้นฐาน
+    print("📊 **EVALUATION RESULTS SUMMARY**")
+    print(f"Total profiles: {quality_summary.get('total_profiles', 'N/A'):,}")
+    print(f"Total possible cross-platform pairs: {quality_summary.get('total_possible_cross_platform_pairs', 'N/A'):,}")
+    print()
+    
+    # สร้าง comparison table
+    s = quality_summary.get("simple", {})
+    a = quality_summary.get("advanced", {})
+    imp = quality_summary.get("improvement", {})
+    
+    comparison_data = {
+        "Metric": [
+            "Candidate Pairs",
+            "Exact Matches", 
+            "Total Selected",
+            "Search Space Reduction"
+        ],
+        "Simple Blocking": [
+            f"{s.get('candidate_pairs', 0):,}",
+            f"{s.get('exact_matches', 0):,}",
+            f"{s.get('total_selected', 0):,}",
+            f"{s.get('search_space_reduction_pct', 0):.4f}%"
+        ],
+        "Advanced Blocking": [
+            f"{a.get('candidate_pairs', 0):,}",
+            f"{a.get('exact_matches', 0):,}",
+            f"{a.get('total_selected', 0):,}",
+            f"{a.get('search_space_reduction_pct', 0):.4f}%"
+        ],
+        "Improvement": [
+            f"{imp.get('candidate_pairs_reduction_pct', 0):.2f}% fewer",
+            "Same",
+            f"{imp.get('total_selected_reduction_pct', 0):.2f}% fewer",
+            f"+{imp.get('search_space_reduction_gain_pct_point', 0):.4f} pts"
+        ]
+    }
+    
+    df_comp = pd.DataFrame(comparison_data)
+    print("### Comparison Table:")
+    display(df_comp)
+    print()
+    
+    # แสดง advanced quality analysis
+    adv_dist = a.get("similarity_distribution", {})
+    if adv_dist:
+        print("🔍 **Advanced Quality Analysis**")
+        print(f"- Similarity Score Distribution: {adv_dist.get('min', 0):.2f} - {adv_dist.get('max', 0):.2f} (avg {adv_dist.get('mean', 0):.2f}, median {adv_dist.get('median', 0):.2f})")
+        print(f"- High similarity (≥ 0.8): {adv_dist.get('high_0_8_plus', 0):,} pairs ({adv_dist.get('pct_high_0_8_plus', 0):.2f}%)")
+        print(f"- Medium similarity (0.6 - 0.8): {adv_dist.get('mid_0_6_0_8', 0):,} pairs")
+        print(f"- Low similarity (< 0.6): {adv_dist.get('low_below_0_6', 0):,} pairs")
+        print()
+    
+    # แสดง blocking strategies
+    strategy_dist = a.get("blocking_strategy_distribution", {})
+    if strategy_dist:
+        print("🧩 **Blocking Strategies Used (Advanced)**")
+        for strategy, info in sorted(strategy_dist.items(), key=lambda x: x[1].get('count', 0), reverse=True):
+            print(f"  - {strategy}: {info.get('count', 0):,} ({info.get('pct', 0):.2f}%)")
+        print()
+
+# เรียกใช้ function เพื่อแสดงผล
+# ถ้า quality_summary ยังไม่มี ให้ run evaluation ก่อน
+if 'quality_summary' not in globals():
+    print("🔄 Running evaluation to create quality_summary...")
+    quality_summary = main()
+    print("✅ quality_summary created!")
+
+display_evaluation_results(quality_summary)
+# CELL 4

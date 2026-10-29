@@ -1,0 +1,36 @@
+# CELL 1
+from pathlib import Path
+import sys, json, inspect
+import pandas as pd
+from IPython.display import Markdown, display
+
+def find_root():
+    candidates = [Path.cwd().resolve(), *Path.cwd().resolve().parents,
+                  Path(r'D:/66070260-Year3_Term2/Project1/Code')]
+    for candidate in candidates:
+        if (candidate / 'exp_lib.py').exists(): return candidate
+    raise FileNotFoundError('Project root containing exp_lib.py was not found')
+
+ROOT = find_root(); EXP = ROOT / 'experiments'
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+
+def source(module, *names):
+    for name in names:
+        display(Markdown(f'### `{module.__name__}.{name}`'))
+        print(inspect.getsource(getattr(module, name)))
+
+def read_json(relative):
+    return json.loads((ROOT / relative).read_text(encoding='utf-8'))
+
+print('Project root:', ROOT)
+
+# CELL 3
+import exp_r4_bloom_privacy as r4
+import exp_r1_ga_redecision as ga
+source(r4, 'eval_ga'); source(ga, 'run_ga', 'decide_code')
+# CELL 5
+r = read_json('experiments/r4_privacy_tradeoff.json')
+rows=[]
+for L,x in r['per_L'].items():
+ rows += [{'L':int(L),'experiment':'R4 manual',**x['R4_manual']['test']},{'L':int(L),'experiment':'R5 GA',**x['R5_ga']['test']}]
+display(pd.DataFrame(rows).sort_values(['L','experiment'], ascending=[False,True]))

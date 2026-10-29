@@ -1,0 +1,306 @@
+A note on using the F-measure for evaluating record linkage algorithms | Statistics and Computing | Springer Nature Link
+Skip to main content
+Advertisement
+Log in
+A note on using the F-measure for evaluating record linkage algorithms
+Published:
+19 April 2017
+Volume 28
+, pages 539–547 (
+2018
+)
+Cite this article
+Save article
+View saved research
+Statistics and Computing
+Aims and scope
+Submit manuscript
+David Hand
+1
+,
+2
+&
+Peter Christen
+ORCID:
+orcid.org/0000-0003-3435-2015
+3
+4525
+Accesses
+238
+Citations
+16
+Altmetric
+1
+Mention
+Explore all metrics
+Abstract
+Record linkage is the process of identifying and linking records about the same entities from one or more databases. Record linkage can be viewed as a classification problem where the aim is to decide whether a pair of records is a match (i.e. two records refer to the same real-world entity) or a non-match (two records refer to two different entities). Various classification techniques—including supervised, unsupervised, semi-supervised and active learning based—have been employed for record linkage. If ground truth data in the form of known true matches and non-matches are available, the quality of classified links can be evaluated. Due to the generally high class imbalance in record linkage problems, standard accuracy or misclassification rate are not meaningful for assessing the quality of a set of linked records. Instead, precision and recall, as commonly used in information retrieval and machine learning, are used. These are often combined into the popular F-measure, which is the harmonic mean of precision and recall. We show that the F-measure can also be expressed as a weighted sum of precision and recall, with weights which depend on the linkage method being used. This reformulation reveals that the F-measure has a major conceptual weakness: the relative importance assigned to precision and recall should be an aspect of the problem and the researcher or user, but not of the particular linkage method being used. We suggest alternative measures which do not suffer from this fundamental flaw.
+This is a preview of subscription content,
+log in via an institution
+to check access.
+Access this article
+Log in via an institution
+Subscribe and save
+Springer+
+from €37.37 /Month
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+View plans
+Buy Now
+Buy article PDF 39,95 €
+Price includes VAT (Thailand)
+Instant access to the full article PDF.
+Institutional subscriptions
+Fig. 1
+Fig. 2
+Fig. 3
+Similar content being viewed by others
+Record Linkage
+Chapter
+© 2017
+Record Linkage
+Chapter
+© 2023
+Record Linkage as a Pre-processing Tool in Big Data Applications Using Machine Learning
+Chapter
+© 2025
+Explore related subjects
+Discover the latest articles, books and news in related subjects, suggested using machine learning.
+Logical Analysis
+Genetic Linkage
+Measure and Integration
+Standardization
+Information Storage and Retrieval
+Performance Assessment
+Privacy-Preserving Record Linkage in Health Data Integration
+Notes
+And of course also from data set to data set, however it is generally not meaningful to evaluate and compare linkage results across different data sets.
+http://secondstring.sourceforge.net
+.
+http://dl.ncsbe.gov
+.
+References
+Belin, T.R., Rubin, D.B.: A method for calibrating false-match rates in record linkage. J. Am. Stat. Assoc.
+90
+(430), 694–707 (1995)
+Article
+MATH
+Google Scholar
+Christen, P.: Development and user experiences of an open source data cleaning, deduplication and record linkage system. SIGKDD Explor.
+11
+(1), 39–48 (2009)
+Article
+Google Scholar
+Christen, P.: Data Matching—Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection. Data-Centric Systems and Applications. Springer, Berlin (2012)
+Google Scholar
+Christen, P.: A survey of indexing techniques for scalable record linkage and deduplication. IEEE Trans. Knowl. Data Eng.
+24
+(9), 1537–1555 (2012)
+Article
+Google Scholar
+Christen, P.: Preparation of a Real Temporal Voter Data Set for Record Linkage and Duplicate Detection Research. Technical Report, The Australian National University (2014)
+Christen, P., Goiser, K.: Quality and complexity measures for data linkage and deduplication. In: Guillet, F., Hamilton, H. (eds.) Quality Measures in Data Mining, Studies in Computational Intelligence, vol. 43, pp. 127–151. Springer, Berlin (2007)
+Chapter
+Google Scholar
+Christen, P., Vatsalan, D., Wang, Q.: Efficient entity resolution with adaptive and interactive training data selection. In: IEEE International Conference on Data Mining, pp. 727–732. Atlantic City (2015)
+Copas, J., Hilton, F.: Record linkage: statistical models for matching computer records. J. R. Stat. Soc. Ser. A (Stat. Soc.)
+153
+(3), 287–320 (1990)
+Article
+Google Scholar
+Domingo-Ferrer, J., Torra, V.: Disclosure risk assessment in statistical microdata protection via advanced record linkage. Stat. Comput.
+13
+(4), 343–354 (2003)
+Article
+MathSciNet
+Google Scholar
+Fellegi, I.P., Sunter, A.B.: A theory for record linkage. J. Am. Stat. Assoc.
+64
+(328), 1183–1210 (1969)
+Article
+MATH
+Google Scholar
+Getoor, L., Machanavajjhala, A.: Entity resolution: theory, practice and open challenges. VLDB Endow.
+5
+(12), 2018–2019 (2012)
+Article
+Google Scholar
+Gutman, R., Afendulis, C.C., Zaslavsky, A.M.: A Bayesian procedure for file linking to analyze end-of-life medical costs. J. Am. Stat. Assoc.
+108
+(501), 34–47 (2013)
+Article
+MathSciNet
+MATH
+Google Scholar
+Gutman, R., Sammartino, C., Green, T., Montague, B.: Error adjustments for file linking methods using encrypted unique client identifier (eUCI) with application to recently released prisoners who are HIV+. Stat. Med.
+35
+(1), 115–129 (2016)
+Hand, D.J.: Construction and Assessment of Classification Rules. Wiley, New York (1997)
+MATH
+Google Scholar
+Hand, D.J.: Measuring classifier performance: a coherent alternative to the area under the ROC curve. Mach. Learn.
+77
+(1), 103–123 (2009)
+Hand, D.J.: Evaluating diagnostic tests: the area under the ROC curve and the balance of errors. Stat. Med.
+29
+(14), 1502–1510 (2010)
+MathSciNet
+Google Scholar
+Hand, D.J.: Assessing the performance of classification methods. Int. Stat. Rev.
+80
+(3), 400–414 (2012)
+Article
+MathSciNet
+Google Scholar
+Harron, K., Goldstein, H., Dibben, C.: Methodological Developments in Data Linkage. Wiley, New York (2015)
+Book
+Google Scholar
+Herzog, T., Scheuren, F., Winkler, W.E.: Data Quality and Record Linkage Techniques. Springer, Berlin (2007)
+MATH
+Google Scholar
+Jaro, M.A.: Advances in record-linkage methodology a applied to matching the 1985 Census of Tampa, Florida. J. Am. Stat. Assoc.
+84
+(406), 414–420 (1989)
+Article
+Google Scholar
+Larsen, M.D., Rubin, D.B.: Iterative automated record linkage using mixture models. J. Am. Stat. Assoc.
+96
+(453), 32–41 (2001)
+Article
+MathSciNet
+Google Scholar
+Manning, C.D., Raghavan, P., Schütze, H.: Introduction to Information Retrieval. Cambridge University Press, Cambridge (2008)
+Book
+MATH
+Google Scholar
+McCallum, A., Nigam, K., Ungar, L.H.: Efficient clustering of high-dimensional data sets with application to reference matching. In: ACM SIGKDD Conference on Knowledge Discovery and Data Mining, pp. 169–178. Boston (2000)
+Murray, J.S.: Probabilistic record linkage and deduplication after indexing, blocking, and filtering. J. Priv. Confid.
+7
+(1), 2 (2016)
+MathSciNet
+Google Scholar
+Naumann, F., Herschel, M.: An introduction to duplicate detection. In: Synthesis Lectures on Data Management, vol. 3. Morgan and Claypool Publishers (2010)
+Newcombe, H.B.: Handbook of Record Linkage: Methods for Health and Statistical Studies, Administration, and Business. Oxford University Press Inc, New York (1988)
+Google Scholar
+Reid, A., Davies, R., Garrett, E.: Nineteenth-century Scottish demography from linked censuses and civil registers. Hist. Comput.
+14
+(1–2), 61–86 (2002)
+Article
+Google Scholar
+Sadinle, M.: Detecting duplicates in a homicide registry using a Bayesian partitioning approach. Ann. Appl. Stat.
+8
+(4), 2404–2434 (2014)
+Article
+MathSciNet
+MATH
+Google Scholar
+Sadinle, M., Fienberg, S.E.: A generalized Fellegi–Sunter framework for multiple record linkage with application to homicide record systems. J. Am. Stat. Assoc.
+108
+(502), 385–397 (2013)
+Article
+MathSciNet
+MATH
+Google Scholar
+van Rijsbergen, C.: Information Retrieval. Butterworth, Oxford (1979)
+MATH
+Google Scholar
+Vatsalan, D., Christen, P., Verykios, V.S.: A taxonomy of privacy-preserving record linkage techniques. Inf. Syst.
+38
+(6), 946–969 (2013)
+Article
+Google Scholar
+Winkler, W.E.: Methods for evaluating and creating data quality. Inf. Syst.
+29
+(7), 531–550 (2004)
+Article
+Google Scholar
+Winkler, W.E., Yancey, W.E., Porter, E.H.: Fast record linkage of very large files in support of decennial and administrative records projects. In: Proceedings of the Section on Survey Research Methods, pp. 2120–2130. American Statistical Association (2010)
+Download references
+Acknowledgements
+This paper was developed during discussions at the Isaac Newton Institute as part of the programme on
+Data Linkage and Anonymisation
+, July to December 2016 (
+https://www.newton.ac.uk/event/dla
+). We like to thank David Hawking and Paul Thomas for their advice on the use of the F-measure in information retrieval and Mark Elliot, Ross Gayler, Yosi Rinott, Rainer Schnell, and Dinusha Vatsalan for their comments during the development of this paper.
+Author information
+Authors and Affiliations
+Imperial College, London, UK
+David Hand
+Winton Group Limited, London, UK
+David Hand
+The Australian National University, Canberra, Australia
+Peter Christen
+Authors
+David Hand
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Peter Christen
+View author publications
+Search author on:
+PubMed
+Google Scholar
+Corresponding author
+Correspondence to
+Peter Christen
+.
+Additional information
+The authors would like to thank the Isaac Newton Institute for Mathematical Sciences, Cambridge, for support and hospitality during the programme Data Linkage and Anonymisation where this work was conducted (EPSRC Grant EP/K032208/1). Peter Christen was also supported by a Grant from the Simons Foundation.
+Rights and permissions
+Reprints and permissions
+About this article
+Cite this article
+Hand, D., Christen, P. A note on using the F-measure for evaluating record linkage algorithms.
+Stat Comput
+28
+, 539–547 (2018). https://doi.org/10.1007/s11222-017-9746-6
+Download citation
+Received
+:
+31 October 2016
+Accepted
+:
+10 April 2017
+Published
+:
+19 April 2017
+Issue date
+:
+May 2018
+DOI
+:
+https://doi.org/10.1007/s11222-017-9746-6
+Share this article
+Anyone you share the following link with will be able to read this content:
+Get shareable link
+Sorry, a shareable link is not currently available for this article.
+Copy shareable link to clipboard
+Provided by the Springer Nature SharedIt content-sharing initiative
+Keywords
+Data linkage
+Entity resolution
+Classification
+Precision
+Recall
+Class imbalance
+Access this article
+Log in via an institution
+Subscribe and save
+Springer+
+from €37.37 /Month
+Starting from 10 chapters or articles per month
+Access and download chapters and articles from more than 300k books and 2,500 journals
+Cancel anytime
+View plans
+Buy Now
+Buy article PDF 39,95 €
+Price includes VAT (Thailand)
+Instant access to the full article PDF.
+Institutional subscriptions
+Advertisement
+Footer Navigation
+124.120.116.108
+Not affiliated
+© 2026 Springer Nature

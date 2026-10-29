@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "configuration": "blocking-B0",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "blocking-sparse",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "blocking-hybrid_rrf",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "matcher-rule",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "matcher-GBDT-lexical",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "matcher-GBDT-fusion",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "matcher-GBDT-lexical-single-fullname",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-1",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-2",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-3",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-4",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-5",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "policy-E6-6",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B0-M0-P0",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B0-M0-P1",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B0-M1-P0",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B0-M1-P1",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B1-M0-P0",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B1-M0-P1",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B1-M1-P0",
+      "independent_count_check": "PASS"
+    },
+    {
+      "configuration": "factorial-B1-M1-P1",
+      "independent_count_check": "PASS"
+    }
+  ],
+  "classification": "EXPLORATORY (LinkSocial, retrospectively exposed)"
+}

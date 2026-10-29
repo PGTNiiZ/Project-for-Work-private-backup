@@ -1,0 +1,60 @@
+{
+  "classification": "POST-HOC, DEVELOPMENT-ONLY, EXPLORATORY",
+  "purpose": "Diagnose misses, freeze multi-pass blocker, compare four GBDT feature contracts without locked test access",
+  "allowed_folds": [0, 1, 2, 3],
+  "never_read": ["sealed_test.parquet", "data_derived/final", "primary_contrasts.json", "final_summary.json", "split_manifest.parquet", "full raw profile CSV", "full historical profile/image caches"],
+  "preserve_original_results": true,
+  "taxonomy": {
+    "high_similarity": 0.85,
+    "name_dissimilar": 0.5,
+    "low_signal_cutoff": 0.2,
+    "text_signals": "nonempty-guarded username/fullname same-field and cross-field JaroWinkler, TFIDF cosine and token Jaccard; bio/location same-field JaroWinkler/token Jaccard. No predecessor model score.",
+    "link_signal": "exact nonempty URL or non-generic normalized domain",
+    "assignment_priority": ["e", "d", "c", "a", "b", "f"],
+    "e": "max defined lexical text signal <0.2 and no link signal; apparent ceiling for these features only, not universally unrecoverable",
+    "d": "link signal and no text signal>=0.85; no prior e",
+    "c": "at least one username/fullname absent; no prior e/d",
+    "a": "username same-field >=0.85 and fullname same-field <0.5; no prior e/d/c",
+    "b": "max username-to-opposite-fullname >=0.85; no prior e/d/c/a",
+    "f": "other",
+    "also_report_overlapping_flags": true,
+    "not_human_causal_adjudication": true
+  },
+  "blocking": {
+    "pass_names": ["username_tfidf", "fullname_tfidf", "cross_field_username_fullname", "link_domain_key"],
+    "vectorizer": {"analyzer": "char_wb", "ngram_range": [3,4], "min_df": 2, "max_features": 60000},
+    "fit_scope": "three development folds excluding evaluated fold; no labels in retrieval",
+    "initial_pool_per_query_platform_pass": 50,
+    "ranking": "rank rounds then deterministic seed42 hash of pass/query/target-platform/pair; deduplicate canonical undirected pairs, prefix exact budget; no raw cosine across passes/queries",
+    "zero_similarity_text_proposals": "exclude",
+    "domain_generic_exclusions": "reuse rep.GENERIC_DOMAINS; exact nonempty URL keys allowed",
+    "budget_multipliers": [1.0, 1.5, 2.0],
+    "rounding": "ceil per-fold baseline candidate count times multiplier",
+    "baseline": "original frozen full-profile sparse TFIDF global-budget retrieval using existing fold-specific fitted retrievers",
+    "selection": "highest pooled development PC among measured method/budget choices, ties fewer candidates then method name; freeze artifacts before feature comparison"
+  },
+  "features": ["F-LEX35", "historical-23", "historical-41", "historical-23+F-LEX35"],
+  "training": {
+    "model": "HistGradientBoostingClassifier",
+    "parameter_space": "reuse original protocol.GBDT, not original final result",
+    "configs_per_feature": 200,
+    "selection": "mean AP over four held development folds, TPE seed42",
+    "selected_model_seeds": [11,23,42,71,101],
+    "train_negative_ratio_limit": 3,
+    "OOF": "train on union of three fold-local candidate populations; evaluate fourth; no cross-fold pairs",
+    "selected_training_jobs_per_feature": 20,
+    "no_full_refit_needed": true,
+    "importance": "held-fold single-column permutation AP decrease on at most25000 uniformly sampled validation pairs, three repeats, model seed42 only; report mean/SD across folds and repeats; constant columns verified zero contribution without needless inference; correlated features not causal importance",
+    "candidate_selection_bias": "blocker and model selection reuse development; OOF results conditional on this post-hoc selection, not independent nested estimates"
+  },
+  "frozen_policy": {
+    "source": "original development-only metrics/policy_selection.json best_policy family and artifacts/calibrator.pkl",
+    "reuse_all_policy_seeds": true,
+    "no_threshold_or_calibration_refit": true,
+    "calibration_transport_warning": "fixed calibrator was learned on original candidate population/features; probability transfer may be poor; AP unaffected by policy",
+    "recall_denominator": "all canonical cross-platform development positives, including blocking misses; REVIEW positives not auto-recovered"
+  },
+  "historical_contract_rule": "trace exact source definitions; reimplement label-blind/train-only defects; absent image != unavailable image mapping; block historical41 if safe development-only image linkage cannot be verified",
+  "privacy": "no profile values, handles, URLs, entity/profile IDs in public reports, logs or worker messages; private arrays remain local",
+  "original_gate_status": "researcher-declared G0/G1; no references added by this post-hoc run; no confirmatory claims"
+}
